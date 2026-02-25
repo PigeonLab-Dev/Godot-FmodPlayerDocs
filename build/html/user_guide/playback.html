@@ -1,45 +1,133 @@
+
+
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<html lang="en" data-content_root="../">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>播放控制 &mdash; Godot FmodPlayer  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
-    <title>播放控制 &#8212; Godot FmodPlayer  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
-    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
-    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
-    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="混音系统" href="mixer.html" />
-    <link rel="prev" title="音频资源" href="audio_resources.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
+    <link rel="prev" title="音频资源" href="audio_resources.html" /> 
+</head>
 
-  
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="../index.html" class="icon icon-home">
+            Godot FmodPlayer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/quick_start.html">快速开始</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用户指南</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="audio_resources.html">音频资源</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">播放控制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">播放节点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fmodaudiostreamplayer">FmodAudioStreamPlayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fmodaudiosampleemitter">FmodAudioSampleEmitter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">直接代码播放</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">基本播放</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">高级播放控制</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">通道控制</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">播放状态控制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">音量和音调</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">播放位置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">循环控制</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#d">3D 音频</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">设置 3D 位置和属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">3D 监听器</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">性能优化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id14">虚拟语音</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">最佳实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mixer.html">混音系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsp_effects.html">DSP 效果器</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/core.html">核心类 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/audio.html">音频资源 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/playback.html">播放控制 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/nodes.html">节点 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/dsp.html">DSP 效果器 API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../export.html">导出说明</a></li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Godot FmodPlayer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">播放控制</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/user_guide/playback.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="id1">
-<h1>播放控制<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<h1>播放控制<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>Godot-FmodPlayer 提供灵活的播放控制功能，支持通过节点或代码直接控制音频播放。</p>
 <section id="id2">
-<h2>播放节点<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<h2>播放节点<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <section id="fmodaudiostreamplayer">
-<h3>FmodAudioStreamPlayer<a class="headerlink" href="#fmodaudiostreamplayer" title="Link to this heading">¶</a></h3>
+<h3>FmodAudioStreamPlayer<a class="headerlink" href="#fmodaudiostreamplayer" title="Link to this heading"></a></h3>
 <p>用于播放 <code class="docutils literal notranslate"><span class="pre">FmodAudioStream</span></code> 资源的节点，适合背景音乐和长时间音频。</p>
 <p><strong>主要属性：</strong></p>
 <table class="docutils align-default">
@@ -121,7 +209,7 @@
 </div>
 </section>
 <section id="fmodaudiosampleemitter">
-<h3>FmodAudioSampleEmitter<a class="headerlink" href="#fmodaudiosampleemitter" title="Link to this heading">¶</a></h3>
+<h3>FmodAudioSampleEmitter<a class="headerlink" href="#fmodaudiosampleemitter" title="Link to this heading"></a></h3>
 <p>用于播放 <code class="docutils literal notranslate"><span class="pre">FmodAudioSample</span></code> 资源的节点，适合音效和短音频。</p>
 <p><strong>主要属性：</strong></p>
 <table class="docutils align-default">
@@ -179,10 +267,10 @@
 </section>
 </section>
 <section id="id3">
-<h2>直接代码播放<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<h2>直接代码播放<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <p>不通过节点，直接使用 <code class="docutils literal notranslate"><span class="pre">FmodSystem</span></code> 播放音频。</p>
 <section id="id4">
-<h3>基本播放<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<h3>基本播放<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">play_sound_simple</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
 
@@ -200,7 +288,7 @@
 </div>
 </section>
 <section id="id5">
-<h3>高级播放控制<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<h3>高级播放控制<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">play_sound_advanced</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
 
@@ -227,10 +315,10 @@
 </section>
 </section>
 <section id="id6">
-<h2>通道控制<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<h2>通道控制<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">FmodChannel</span></code> 代表一个正在播放的声音实例。</p>
 <section id="id7">
-<h3>播放状态控制<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<h3>播放状态控制<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">control_playback</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span><span class="w"> </span><span class="n">FmodChannel</span><span class="p">):</span>
 <span class="w">    </span><span class="c1"># 暂停/继续</span>
 <span class="w">    </span><span class="n">channel</span><span class="o">.</span><span class="n">set_paused</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span>
@@ -246,7 +334,7 @@
 </div>
 </section>
 <section id="id8">
-<h3>音量和音调<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<h3>音量和音调<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">adjust_audio</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span><span class="w"> </span><span class="n">FmodChannel</span><span class="p">):</span>
 <span class="w">    </span><span class="c1"># 设置音量（分贝）</span>
 <span class="w">    </span><span class="n">channel</span><span class="o">.</span><span class="n">set_volume_db</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">)</span><span class="w">  </span><span class="c1"># -10 dB</span>
@@ -266,7 +354,7 @@
 </div>
 </section>
 <section id="id9">
-<h3>播放位置<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<h3>播放位置<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">control_position</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span><span class="w"> </span><span class="n">FmodChannel</span><span class="p">):</span>
 <span class="w">    </span><span class="c1"># 获取当前位置（毫秒）</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">position_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">channel</span><span class="o">.</span><span class="n">get_position</span><span class="p">(</span><span class="n">FmodChannel</span><span class="o">.</span><span class="n">TIMEUNIT_MS</span><span class="p">)</span>
@@ -282,7 +370,7 @@
 </div>
 </section>
 <section id="id10">
-<h3>循环控制<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<h3>循环控制<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">setup_looping</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span><span class="w"> </span><span class="n">FmodChannel</span><span class="p">):</span>
 <span class="w">    </span><span class="c1"># 设置循环次数（-1 = 无限循环）</span>
 <span class="w">    </span><span class="n">channel</span><span class="o">.</span><span class="n">set_loop_count</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -297,9 +385,9 @@
 </section>
 </section>
 <section id="d">
-<h2>3D 音频<a class="headerlink" href="#d" title="Link to this heading">¶</a></h2>
+<h2>3D 音频<a class="headerlink" href="#d" title="Link to this heading"></a></h2>
 <section id="id11">
-<h3>设置 3D 位置和属性<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<h3>设置 3D 位置和属性<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
 
 <span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioStreamPlayer</span>
@@ -326,7 +414,7 @@
 </div>
 </section>
 <section id="id12">
-<h3>3D 监听器<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<h3>3D 监听器<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody3D</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
@@ -344,9 +432,9 @@
 </section>
 </section>
 <section id="id13">
-<h2>性能优化<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
+<h2>性能优化<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <section id="id14">
-<h3>虚拟语音<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<h3>虚拟语音<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
 <p>FMOD 使用虚拟语音系统管理大量声音：</p>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
@@ -364,7 +452,7 @@
 </section>
 </section>
 <section id="id15">
-<h2>最佳实践<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
+<h2>最佳实践<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p><strong>使用节点播放背景音乐</strong> - 便于场景管理</p></li>
 <li><p><strong>使用 Emitter 播放音效</strong> - 便于复用和批量管理</p></li>
@@ -374,7 +462,7 @@
 </ol>
 </section>
 <section id="id16">
-<h2>注意事项<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
+<h2>注意事项<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>通道数量受 <code class="docutils literal notranslate"><span class="pre">max_channels</span></code> 限制</p></li>
 <li><p>停止播放的通道会自动释放</p></li>
@@ -385,100 +473,34 @@
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="audio_resources.html" class="btn btn-neutral float-left" title="音频资源" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mixer.html" class="btn btn-neutral float-right" title="混音系统" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, LuYingYiLong.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Godot FmodPlayer</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">安装指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/quick_start.html">快速开始</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">用户指南</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="audio_resources.html">音频资源</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">播放控制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">播放节点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">直接代码播放</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">通道控制</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#d">3D 音频</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">性能优化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id15">最佳实践</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id16">注意事项</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mixer.html">混音系统</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dsp_effects.html">DSP 效果器</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">API 参考</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/core.html">核心类 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/audio.html">音频资源 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/playback.html">播放控制 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/nodes.html">节点 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/dsp.html">DSP 效果器 API</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">其他</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../export.html">导出说明</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="audio_resources.html" title="previous chapter">音频资源</a></li>
-      <li>Next: <a href="mixer.html" title="next chapter">混音系统</a></li>
-  </ul></li>
-</ul>
-</div>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &#169;2026, LuYingYiLong.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
-      
-      |
-      <a href="../_sources/user_guide/playback.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
