@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>节点 API &mdash; Godot-FmodPlayer 1.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=34088549"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=540d3cec"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="DSP 效果器 API" href="dsp.html" />
+    <link rel="prev" title="播放控制 API" href="playback.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Godot-FmodPlayer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/quick_start.html">快速开始</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用户指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/audio_resources.html">音频资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/playback.html">播放控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/mixer.html">混音系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/dsp_effects.html">DSP 效果器</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">核心类 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">音频资源 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playback.html">播放控制 API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">节点 API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fmodaudiostreamplayer">FmodAudioStreamPlayer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">信号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fmodaudiosampleemitter">FmodAudioSampleEmitter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">属性对比</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dsp.html">DSP 效果器 API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../export.html">导出说明</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Godot-FmodPlayer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">节点 API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_reference/nodes.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>节点 API<a class="headerlink" href="#api" title="链接到此标题。"></a></h1>
+<section id="fmodaudiostreamplayer">
+<h2>FmodAudioStreamPlayer<a class="headerlink" href="#fmodaudiostreamplayer" title="链接到此标题。"></a></h2>
+<p>继承自：Node</p>
+<p>用于播放 <code class="docutils literal notranslate"><span class="pre">FmodAudioStream</span></code> 资源的节点，适合背景音乐和长时间音频。</p>
+<section id="id1">
+<h3>属性<a class="headerlink" href="#id1" title="链接到此标题。"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>属性</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stream</span></code></p></td>
+<td><p>FmodAudioStream</p></td>
+<td><p>要播放的音频流</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">playing</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>是否正在播放（只读）</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">volume_db</span></code></p></td>
+<td><p>float</p></td>
+<td><p>音量（分贝，默认 0.0）</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pitch</span></code></p></td>
+<td><p>float</p></td>
+<td><p>音调（默认 1.0）</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">autoplay</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>自动播放（默认 false）</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bus</span></code></p></td>
+<td><p>String</p></td>
+<td><p>音频总线名称（默认 &quot;Master&quot;）</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stream_paused</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>流暂停状态</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h3>方法<a class="headerlink" href="#id2" title="链接到此标题。"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>返回值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">play(from_position=0.0)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>从指定位置开始播放</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stop()</span></code></p></td>
+<td><p>void</p></td>
+<td><p>停止播放</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">seek(position)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>跳转到指定位置（秒）</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_playback_position()</span></code></p></td>
+<td><p>float</p></td>
+<td><p>获取当前播放位置（秒）</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_stream(stream)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>设置音频流</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_stream()</span></code></p></td>
+<td><p>FmodAudioStream</p></td>
+<td><p>获取音频流</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_bus(bus)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>设置音频总线</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_bus()</span></code></p></td>
+<td><p>String</p></td>
+<td><p>获取音频总线</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_volume_db(volume_db)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>设置音量</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_volume_db()</span></code></p></td>
+<td><p>float</p></td>
+<td><p>获取音量</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_pitch(pitch)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>设置音调</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_pitch()</span></code></p></td>
+<td><p>float</p></td>
+<td><p>获取音调</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id3">
+<h3>信号<a class="headerlink" href="#id3" title="链接到此标题。"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>信号</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">finished()</span></code></p></td>
+<td><p>播放完成时发出</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h3>示例<a class="headerlink" href="#id4" title="链接到此标题。"></a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
+
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioStreamPlayer</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
+<span class="w">    </span><span class="c1"># 加载并播放</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://music/bgm.mp3&quot;</span>
+
+<span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span>
+<span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">volume_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">6.0</span>
+<span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1"># 连接完成信号</span>
+<span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">finished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_on_playback_finished</span><span class="p">)</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_on_playback_finished</span><span class="p">():</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Playback finished!&quot;</span><span class="p">)</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">fade_out</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">tween</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_tween</span><span class="p">()</span>
+<span class="w">    </span><span class="n">tween</span><span class="o">.</span><span class="n">tween_property</span><span class="p">(</span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;volume_db&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">80.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">tween</span><span class="o">.</span><span class="n">tween_callback</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fmodaudiosampleemitter">
+<h2>FmodAudioSampleEmitter<a class="headerlink" href="#fmodaudiosampleemitter" title="链接到此标题。"></a></h2>
+<p>继承自：Node</p>
+<p>用于播放 <code class="docutils literal notranslate"><span class="pre">FmodAudioSample</span></code> 资源的节点，适合音效和短音频。</p>
+<section id="id5">
+<h3>属性<a class="headerlink" href="#id5" title="链接到此标题。"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>属性</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sample</span></code></p></td>
+<td><p>FmodAudioSample</p></td>
+<td><p>要播放的采样</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">auto_emit</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>自动发射（默认 false）</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bus</span></code></p></td>
+<td><p>String</p></td>
+<td><p>音频总线名称（默认 &quot;Master&quot;）</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h3>方法<a class="headerlink" href="#id6" title="链接到此标题。"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>返回值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">emit()</span></code></p></td>
+<td><p>void</p></td>
+<td><p>播放一次采样</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_sample(sample)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>设置采样</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_sample()</span></code></p></td>
+<td><p>FmodAudioSample</p></td>
+<td><p>获取采样</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_bus(bus)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>设置音频总线</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_bus()</span></code></p></td>
+<td><p>String</p></td>
+<td><p>获取音频总线</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id7">
+<h3>示例<a class="headerlink" href="#id7" title="链接到此标题。"></a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
+
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">emitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioSampleEmitter</span>
+<span class="k">var</span><span class="w"> </span><span class="n">shoot_sample</span><span class="p">:</span><span class="w"> </span><span class="n">FmodAudioSample</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
+<span class="w">    </span><span class="c1"># 预加载采样</span>
+<span class="w">    </span><span class="n">shoot_sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioSample</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="n">shoot_sample</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://sfx/shoot.wav&quot;</span>
+
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shoot_sample</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SFX&quot;</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;shoot&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="n">play_shoot_sound</span><span class="p">()</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">play_shoot_sound</span><span class="p">():</span>
+<span class="w">    </span><span class="c1"># 添加随机音调变化</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+
+<span class="c1"># 自动发射示例</span>
+<span class="k">func</span><span class="w"> </span><span class="n">setup_auto_emit</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioSample</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="n">sample</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://sfx/heartbeat.wav&quot;</span>
+
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">auto_emit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span><span class="w">  </span><span class="c1"># 设置 sample 时自动播放</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id8">
+<h2>属性对比<a class="headerlink" href="#id8" title="链接到此标题。"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>特性</p></th>
+<th class="head"><p>FmodAudioStreamPlayer</p></th>
+<th class="head"><p>FmodAudioSampleEmitter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>资源类型</p></td>
+<td><p>FmodAudioStream</p></td>
+<td><p>FmodAudioSample</p></td>
+</tr>
+<tr class="row-odd"><td><p>播放方式</p></td>
+<td><p>播放/停止/跳转</p></td>
+<td><p>发射（一次性）</p></td>
+</tr>
+<tr class="row-even"><td><p>适合场景</p></td>
+<td><p>背景音乐、长音频</p></td>
+<td><p>音效、短音频</p></td>
+</tr>
+<tr class="row-odd"><td><p>音量控制</p></td>
+<td><p>✅</p></td>
+<td><p>❌（使用总线）</p></td>
+</tr>
+<tr class="row-even"><td><p>音调控制</p></td>
+<td><p>✅</p></td>
+<td><p>❌</p></td>
+</tr>
+<tr class="row-odd"><td><p>自动播放</p></td>
+<td><p>autoplay 属性</p></td>
+<td><p>auto_emit 属性</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="playback.html" class="btn btn-neutral float-left" title="播放控制 API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="dsp.html" class="btn btn-neutral float-right" title="DSP 效果器 API" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2026, LuYingYiLong。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

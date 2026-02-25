@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>音频资源 &mdash; Godot-FmodPlayer 1.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=34088549"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=540d3cec"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="播放控制" href="playback.html" />
+    <link rel="prev" title="快速开始" href="../getting_started/quick_start.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Godot-FmodPlayer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/quick_start.html">快速开始</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用户指南</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">音频资源</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">音频资源类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fmodaudiostream">FmodAudioStream（流式音频）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fmodaudiosample">FmodAudioSample（采样音频）</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">加载模式对比</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">支持的音频格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">资源加载方式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">从文件系统加载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">从内存加载</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">资源属性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">公共属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">使用示例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">背景音乐的流式播放</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">音效池管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">动态加载大文件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">最佳实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="playback.html">播放控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixer.html">混音系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsp_effects.html">DSP 效果器</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/core.html">核心类 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/audio.html">音频资源 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/playback.html">播放控制 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/nodes.html">节点 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/dsp.html">DSP 效果器 API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../export.html">导出说明</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Godot-FmodPlayer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">音频资源</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/user_guide/audio_resources.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>音频资源<a class="headerlink" href="#id1" title="链接到此标题。"></a></h1>
+<p>Godot-FmodPlayer 提供两种音频资源类型，适用于不同的使用场景。</p>
+<section id="id2">
+<h2>音频资源类型<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
+<section id="fmodaudiostream">
+<h3>FmodAudioStream（流式音频）<a class="headerlink" href="#fmodaudiostream" title="链接到此标题。"></a></h3>
+<p>适合播放大型音频文件，如背景音乐、环境音效等。音频数据按需从磁盘流式读取，内存占用低。</p>
+<p><strong>特点：</strong></p>
+<ul class="simple">
+<li><p>内存效率高（只缓存少量数据）</p></li>
+<li><p>适合长时间播放</p></li>
+<li><p>支持无缝循环</p></li>
+<li><p>可实时跳转播放位置</p></li>
+</ul>
+<p><strong>创建方式：</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://music/background.mp3&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="fmodaudiosample">
+<h3>FmodAudioSample（采样音频）<a class="headerlink" href="#fmodaudiosample" title="链接到此标题。"></a></h3>
+<p>适合播放短音效，如按钮点击、爆炸声等。音频数据完全加载到内存，播放延迟低。</p>
+<p><strong>特点：</strong></p>
+<ul class="simple">
+<li><p>播放延迟极低</p></li>
+<li><p>适合频繁触发</p></li>
+<li><p>支持多实例同时播放</p></li>
+<li><p>内存占用与文件大小成正比</p></li>
+</ul>
+<p><strong>创建方式：</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioSample</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://sfx/explosion.wav&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>加载模式对比<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>特性</p></th>
+<th class="head"><p>FmodAudioStream</p></th>
+<th class="head"><p>FmodAudioSample</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>内存占用</p></td>
+<td><p>低</p></td>
+<td><p>高（完整文件）</p></td>
+</tr>
+<tr class="row-odd"><td><p>播放延迟</p></td>
+<td><p>较高</p></td>
+<td><p>极低</p></td>
+</tr>
+<tr class="row-even"><td><p>适用场景</p></td>
+<td><p>背景音乐、长音频</p></td>
+<td><p>音效、短音频</p></td>
+</tr>
+<tr class="row-odd"><td><p>支持格式</p></td>
+<td><p>所有 FMOD 格式</p></td>
+<td><p>所有 FMOD 格式</p></td>
+</tr>
+<tr class="row-even"><td><p>循环支持</p></td>
+<td><p>是</p></td>
+<td><p>是</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h2>支持的音频格式<a class="headerlink" href="#id4" title="链接到此标题。"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>格式</p></th>
+<th class="head"><p>扩展名</p></th>
+<th class="head"><p>Stream</p></th>
+<th class="head"><p>Sample</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MP3</p></td>
+<td><p>.mp3</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>WAV</p></td>
+<td><p>.wav</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>OGG Vorbis</p></td>
+<td><p>.ogg</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>FLAC</p></td>
+<td><p>.flac</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>MOD</p></td>
+<td><p>.mod</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>XM</p></td>
+<td><p>.xm</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>S3M</p></td>
+<td><p>.s3m</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>IT</p></td>
+<td><p>.it</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>MIDI</p></td>
+<td><p>.mid</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>AIFF</p></td>
+<td><p>.aiff</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h2>资源加载方式<a class="headerlink" href="#id5" title="链接到此标题。"></a></h2>
+<section id="id6">
+<h3>从文件系统加载<a class="headerlink" href="#id6" title="链接到此标题。"></a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 Godot 资源路径</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://music/song.mp3&quot;</span>
+
+<span class="c1"># 使用用户数据路径</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user://recordings/voice.wav&quot;</span>
+
+<span class="c1"># 使用绝对路径（不推荐）</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;C:/Music/song.mp3&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3>从内存加载<a class="headerlink" href="#id7" title="链接到此标题。"></a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="c1"># 从 PackedByteArray 加载</span>
+<span class="k">var</span><span class="w"> </span><span class="n">audio_data</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">PackedByteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_audio_from</span><span class="w"> </span><span class="n">somewhere</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">audio_data</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id8">
+<h2>资源属性<a class="headerlink" href="#id8" title="链接到此标题。"></a></h2>
+<section id="id9">
+<h3>公共属性<a class="headerlink" href="#id9" title="链接到此标题。"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>属性</p></th>
+<th class="head"><p>类型</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">file_path</span></code></p></td>
+<td><p>String</p></td>
+<td><p>音频文件路径</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>PackedByteArray</p></td>
+<td><p>原始音频数据（内存加载）</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">data_loaded</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>数据是否已加载</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h3>方法<a class="headerlink" href="#id10" title="链接到此标题。"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>方法</p></th>
+<th class="head"><p>返回值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_sound()</span></code></p></td>
+<td><p>FmodSound</p></td>
+<td><p>获取 FMOD 声音对象</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_length()</span></code></p></td>
+<td><p>float</p></td>
+<td><p>获取音频长度（秒）</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="id11">
+<h2>使用示例<a class="headerlink" href="#id11" title="链接到此标题。"></a></h2>
+<section id="id12">
+<h3>背景音乐的流式播放<a class="headerlink" href="#id12" title="链接到此标题。"></a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
+
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">bgm_player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">BGMPlayer</span>
+<span class="k">var</span><span class="w"> </span><span class="n">bgm_tracks</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Array</span><span class="p">[</span><span class="n">FmodAudioStream</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<span class="k">var</span><span class="w"> </span><span class="n">current_track</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
+<span class="w">    </span><span class="c1"># 加载播放列表</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">        </span><span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://music/track_</span><span class="si">%d</span><span class="s2">.mp3&quot;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i</span>
+<span class="w">        </span><span class="n">bgm_tracks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">play_track</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">play_track</span><span class="p">(</span><span class="n">index</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">):</span>
+<span class="w">    </span><span class="n">current_track</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index</span>
+<span class="w">    </span><span class="n">bgm_player</span><span class="o">.</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bgm_tracks</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+<span class="w">    </span><span class="n">bgm_player</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1"># 监听播放结束</span>
+<span class="w">    </span><span class="c1"># 注意：需要在 FmodAudioStreamPlayer 中设置 loop = false</span>
+</pre></div>
+</div>
+</section>
+<section id="id13">
+<h3>音效池管理<a class="headerlink" href="#id13" title="链接到此标题。"></a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">sfx_cache</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">preload_sfx</span><span class="p">(</span><span class="n">sfx_name</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioSample</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="n">sample</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span>
+<span class="w">    </span><span class="n">sfx_cache</span><span class="p">[</span><span class="n">sfx_name</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">play_sfx</span><span class="p">(</span><span class="n">sfx_name</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">,</span><span class="w"> </span><span class="n">bus</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SFX&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">sfx_cache</span><span class="o">.</span><span class="n">has</span><span class="p">(</span><span class="n">sfx_name</span><span class="p">):</span>
+<span class="w">        </span><span class="n">push_error</span><span class="p">(</span><span class="s2">&quot;SFX not found: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sfx_name</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+
+<span class="w">    </span><span class="c1"># 使用 emitter 播放</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">emitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioSampleEmitter</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="n">add_child</span><span class="p">(</span><span class="n">emitter</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sfx_cache</span><span class="p">[</span><span class="n">sfx_name</span><span class="p">]</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bus</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1"># 播放完成后自动释放</span>
+<span class="w">    </span><span class="n">await</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id14">
+<h3>动态加载大文件<a class="headerlink" href="#id14" title="链接到此标题。"></a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
+
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioStreamPlayer</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">load_and_play_large_file</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
+<span class="w">    </span><span class="c1"># 创建加载线程避免卡顿</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">thread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Thread</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="k">func</span><span class="p">():</span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">        </span><span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span>
+
+<span class="w">        </span><span class="c1"># 返回主线程更新 UI</span>
+<span class="w">        </span><span class="n">call_deferred</span><span class="p">(</span><span class="s2">&quot;_on_stream_loaded&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_on_stream_loaded</span><span class="p">(</span><span class="n">stream</span><span class="p">:</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="p">):</span>
+<span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span>
+<span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id15">
+<h2>最佳实践<a class="headerlink" href="#id15" title="链接到此标题。"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>背景音乐使用 Stream</strong> - 降低内存占用，支持大文件</p></li>
+<li><p><strong>音效使用 Sample</strong> - 确保低延迟播放</p></li>
+<li><p><strong>预加载常用资源</strong> - 在游戏启动时加载常用音效</p></li>
+<li><p><strong>使用资源路径</strong> - 优先使用 <code class="docutils literal notranslate"><span class="pre">res://</span></code> 路径，便于打包</p></li>
+<li><p><strong>注意文件格式</strong> - OGG 适合音乐，WAV 适合短音效</p></li>
+</ol>
+</section>
+<section id="id16">
+<h2>注意事项<a class="headerlink" href="#id16" title="链接到此标题。"></a></h2>
+<ul class="simple">
+<li><p>流式音频在播放期间文件必须保持可访问</p></li>
+<li><p>采样音频会占用与文件大小相等的内存</p></li>
+<li><p>某些格式（如 MIDI）可能需要额外配置</p></li>
+<li><p>移动设备上注意流式音频的磁盘 I/O 消耗</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../getting_started/quick_start.html" class="btn btn-neutral float-left" title="快速开始" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="playback.html" class="btn btn-neutral float-right" title="播放控制" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2026, LuYingYiLong。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

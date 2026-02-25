@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Godot-FmodPlayerDocs documentation &mdash; Godot-FmodPlayer 1.0.0 文档</title>
+  <title>Godot-FmodPlayer 文档 &mdash; Godot-FmodPlayer 1.0.0 文档</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="Usage" href="usage.html" /> 
+    <link rel="next" title="安装指南" href="getting_started/installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,8 +42,29 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+              <p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">安装指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/quick_start.html">快速开始</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用户指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/audio_resources.html">音频资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/playback.html">播放控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/mixer.html">混音系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/dsp_effects.html">DSP 效果器</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/core.html">核心类 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/audio.html">音频资源 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/playback.html">播放控制 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/nodes.html">节点 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/dsp.html">DSP 效果器 API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="export.html">导出说明</a></li>
 </ul>
 
         </div>
@@ -60,7 +81,7 @@
           <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Godot-FmodPlayerDocs documentation</li>
+      <li class="breadcrumb-item active">Godot-FmodPlayer 文档</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -70,25 +91,231 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="godot-fmodplayerdocs-documentation">
-<h1>Godot-FmodPlayerDocs documentation<a class="headerlink" href="#godot-fmodplayerdocs-documentation" title="链接到此标题。"></a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
-<p>Check out the <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a> section for further information, including how to
-<a class="reference internal" href="usage.html#installation"><span class="std std-ref">install</span></a> the project.</p>
-<div class="toctree-wrapper compound">
+  <section id="godot-fmodplayer">
+<h1>Godot-FmodPlayer 文档<a class="headerlink" href="#godot-fmodplayer" title="链接到此标题。"></a></h1>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="_static/banner.png"><img alt="Godot-FmodPlayer Banner" src="_static/banner.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Godot-FmodPlayer 插件</span><a class="headerlink" href="#id7" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<p>Godot-FmodPlayer 是一个 <strong>Godot 4 GDExtension</strong> 插件，通过 FMOD Core API 提供高级音频播放功能。</p>
+<section id="id1">
+<h2>功能特性<a class="headerlink" href="#id1" title="链接到此标题。"></a></h2>
+<dl class="simple">
+<dt>🎵 多格式音频支持</dt><dd><p>支持 MP3、WAV、OGG、FLAC、MOD 等主流音频格式</p>
+</dd>
+<dt>📂 灵活加载模式</dt><dd><p>文件系统、内存缓冲区、Godot PCK、流式加载</p>
+</dd>
+<dt>🎛️ 专业 DSP 效果器</dt><dd><p>内置 16+ 种音频效果：混响、EQ、滤波器、延迟、失真等</p>
+</dd>
+<dt>🎚️ 动态混音系统</dt><dd><p>音频总线、通道组、实时参数调整</p>
+</dd>
+<dt>📊 性能监控</dt><dd><p>集成 Godot Performance Monitor，实时监控 CPU 和内存使用</p>
+</dd>
+<dt>🛠️ 编辑器集成</dt><dd><p>音频资源导入器、Inspector 属性编辑、自定义图标</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>本插件使用 <strong>FMOD Core API</strong> （底层 API），而非 FMOD Studio API。
+如需 Studio API 支持，请使用 <a class="reference external" href="https://github.com/utopia-rise/fmod-gdextension">fmod-gdextension</a> 。</p>
 </div>
-<section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="链接到此标题。"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>FMOD 是 Firelight Technologies Pty Ltd 的专有音频引擎。
+商业使用需要从 <a class="reference external" href="https://www.fmod.com">fmod.com</a> 获取 FMOD 许可证。</p>
+</div>
+</section>
+<section id="id2">
+<h2>快速导航<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/installation.html">安装指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#id2">系统要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#id3">安装方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#id10">验证安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#id11">常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/installation.html#id14">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/quick_start.html">快速开始</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/quick_start.html#id2">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/quick_start.html#id3">第一个项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/quick_start.html#id8">代码示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/quick_start.html#id15">学习路径</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started/quick_start.html#id16">示例项目</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">用户指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/audio_resources.html">音频资源</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id2">音频资源类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id3">加载模式对比</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id4">支持的音频格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id5">资源加载方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id8">资源属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id11">使用示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id15">最佳实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/audio_resources.html#id16">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/playback.html">播放控制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/playback.html#id2">播放节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/playback.html#id3">直接代码播放</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/playback.html#id6">通道控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/playback.html#d">3D 音频</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/playback.html#id13">性能优化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/playback.html#id15">最佳实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/playback.html#id16">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/mixer.html">混音系统</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/mixer.html#id2">核心概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/mixer.html#id3">使用音频总线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/mixer.html#id7">自定义总线布局</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/mixer.html#id11">混音技术</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/mixer.html#id13">性能监控</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/mixer.html#id14">最佳实践</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/mixer.html#id15">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/dsp_effects.html">DSP 效果器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/dsp_effects.html#id1">DSP 类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/dsp_effects.html#id3">使用 DSP 效果器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/dsp_effects.html#id8">常用效果器详解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/dsp_effects.html#id9">效果器路由</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/dsp_effects.html#id12">动态效果器管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/dsp_effects.html#id15">性能考虑</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/dsp_effects.html#id16">最佳实践</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/core.html">核心类 API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/core.html#fmodserver">FmodServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/core.html#fmodsystem">FmodSystem</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/audio.html">音频资源 API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/audio.html#fmodaudiostream">FmodAudioStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/audio.html#fmodaudiosample">FmodAudioSample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/audio.html#fmodsound">FmodSound</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/audio.html#fmodaudiobus">FmodAudioBus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/audio.html#fmodaudiobuslayout">FmodAudioBusLayout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/playback.html">播放控制 API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/playback.html#fmodchannelcontrol">FmodChannelControl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/playback.html#fmodchannel">FmodChannel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/playback.html#fmodchannelgroup">FmodChannelGroup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/nodes.html">节点 API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/nodes.html#fmodaudiostreamplayer">FmodAudioStreamPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/nodes.html#fmodaudiosampleemitter">FmodAudioSampleEmitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/nodes.html#id8">属性对比</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference/dsp.html">DSP 效果器 API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/dsp.html#fmoddsp">FmodDSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/dsp.html#fmoddspconnection">FmodDSPConnection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/dsp.html#fmodaudioeffect">FmodAudioEffect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_reference/dsp.html#id13">DSP 参数信息</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="export.html">导出说明</a></li>
+</ul>
+</div>
+</section>
+<section id="id3">
+<h2>快速开始<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
+<p>基本流式播放:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>extends Node
+
+@onready var player = $FmodAudioStreamPlayer
+
+func _ready():
+    var stream = FmodAudioStream.new()
+    stream.file_path = &quot;res://music/background.mp3&quot;
+
+    player.stream = stream
+    player.volume_db = -6.0
+    player.play()
+</pre></div>
+</div>
+<p>采样播放（一次性音效）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>func play_explosion():
+    var emitter = $FmodAudioSampleEmitter
+    var sample = FmodAudioSample.new()
+    sample.file_path = &quot;res://sfx/explosion.wav&quot;
+
+    emitter.sample = sample
+    emitter.bus = &quot;SFX&quot;
+    emitter.play()
+</pre></div>
+</div>
+<p>添加混响效果:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="n">add_reverb</span><span class="p">():</span>
+    <span class="n">var</span> <span class="n">system</span> <span class="o">=</span> <span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
+    <span class="n">var</span> <span class="n">reverb</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">create_dsp_by_type</span><span class="p">(</span><span class="n">FmodDSP</span><span class="o">.</span><span class="n">DSP_TYPE_SFXREVERB</span><span class="p">)</span>
+
+    <span class="n">reverb</span><span class="o">.</span><span class="n">set_parameter_float</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Decay time</span>
+    <span class="n">reverb</span><span class="o">.</span><span class="n">set_parameter_float</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># Early delay</span>
+
+    <span class="n">var</span> <span class="n">master_bus</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">get_master_channel_group</span><span class="p">()</span>
+    <span class="n">master_bus</span><span class="o">.</span><span class="n">add_dsp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">reverb</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>平台支持<a class="headerlink" href="#id4" title="链接到此标题。"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>平台</p></th>
+<th class="head"><p>架构</p></th>
+<th class="head"><p>状态</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p>x64</p></td>
+<td><p>✅ 支持</p></td>
+</tr>
+<tr class="row-odd"><td><p>Android</p></td>
+<td><p>arm64, arm32, x86, x86_64</p></td>
+<td><p>✅ 支持</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h2>相关链接<a class="headerlink" href="#id5" title="链接到此标题。"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/LuYingYiLong/Godot-FmodPlayer">GitHub 仓库</a></p></li>
+<li><p><a class="reference external" href="https://www.fmod.com/docs/2.03/api/core-api.html">FMOD Core API 文档</a></p></li>
+<li><p><a class="reference external" href="https://godotengine.org">Godot 引擎</a></p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>索引和表格<a class="headerlink" href="#id6" title="链接到此标题。"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">索引</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">搜索页面</span></a></p></li>
+</ul>
 </section>
 </section>
 
@@ -96,7 +323,7 @@ documentation for details.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="getting_started/installation.html" class="btn btn-neutral float-right" title="安装指南" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

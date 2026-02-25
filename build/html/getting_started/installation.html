@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>安装指南 &mdash; Godot-FmodPlayer 1.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=34088549"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=540d3cec"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="快速开始" href="quick_start.html" />
+    <link rel="prev" title="Godot-FmodPlayer 文档" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Godot-FmodPlayer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">系统要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">安装方式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">方式一：预编译二进制文件（推荐）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">方式二：从源码构建</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">前置要求</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">获取源码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows 构建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#android">Android 构建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">构建选项说明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">输出位置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">验证安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">常见问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">插件未显示在节点列表中</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fmod">FMOD 初始化失败</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Android 构建失败</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">下一步</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">快速开始</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用户指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/audio_resources.html">音频资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/playback.html">播放控制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/mixer.html">混音系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/dsp_effects.html">DSP 效果器</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API 参考</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/core.html">核心类 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/audio.html">音频资源 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/playback.html">播放控制 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/nodes.html">节点 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/dsp.html">DSP 效果器 API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../export.html">导出说明</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Godot-FmodPlayer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">安装指南</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting_started/installation.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>安装指南<a class="headerlink" href="#id1" title="链接到此标题。"></a></h1>
+<section id="id2">
+<h2>系统要求<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
+<ul class="simple">
+<li><p><strong>Godot 版本</strong>: 4.1 或更高版本</p></li>
+<li><p><strong>操作系统</strong>: Windows 10/11, Android</p></li>
+<li><p><strong>编译器</strong> (如需从源码构建):
+- Windows: MSVC v145+ (Visual Studio 2022)
+- Android: Android NDK</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>FMOD 运行库已包含在插件中，无需额外下载。</p>
+</div>
+</section>
+<section id="id3">
+<h2>安装方式<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
+<section id="id4">
+<h3>方式一：预编译二进制文件（推荐）<a class="headerlink" href="#id4" title="链接到此标题。"></a></h3>
+<ol class="arabic">
+<li><p>从 <a class="reference external" href="https://github.com/LuYingYiLong/Godot-FmodPlayer/releases">GitHub Releases</a> 下载最新版本</p></li>
+<li><p>解压下载的文件，将 <code class="docutils literal notranslate"><span class="pre">addons/fmod_player</span></code> 文件夹复制到你的 Godot 项目的 <code class="docutils literal notranslate"><span class="pre">res://addons/</span></code> 目录下</p></li>
+<li><p>确保以下文件结构:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>res://
+└── addons/
+    └── fmod_player/
+        ├── bin/
+        │   ├── fmod_player.gdextension
+        │   ├── fmod.dll
+        │   └── fmod_player.windows.*.dll
+        └── ...
+</pre></div>
+</div>
+</li>
+<li><p>在 Godot 编辑器中，进入 <strong>项目 &gt; 项目设置 &gt; 插件</strong>，启用 &quot;FmodPlayer&quot;</p></li>
+</ol>
+</section>
+<section id="id5">
+<h3>方式二：从源码构建<a class="headerlink" href="#id5" title="链接到此标题。"></a></h3>
+<section id="id6">
+<h4>前置要求<a class="headerlink" href="#id6" title="链接到此标题。"></a></h4>
+<ul class="simple">
+<li><p>Python 3.8+</p></li>
+<li><p>SCons 4.0+</p></li>
+<li><p>C++ 编译器 (MSVC v145+ 或 Android NDK)</p></li>
+<li><p>Git</p></li>
+</ul>
+</section>
+<section id="id7">
+<h4>获取源码<a class="headerlink" href="#id7" title="链接到此标题。"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/LuYingYiLong/Godot-FmodPlayer.git
+<span class="nb">cd</span><span class="w"> </span>Godot-FmodPlayer
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">--recursive</span></code> 参数确保 <code class="docutils literal notranslate"><span class="pre">godot-cpp</span></code> 子模块被正确克隆。</p>
+</div>
+</section>
+<section id="windows">
+<h4>Windows 构建<a class="headerlink" href="#windows" title="链接到此标题。"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 调试版本</span>
+scons<span class="w"> </span><span class="nv">platform</span><span class="o">=</span>windows<span class="w"> </span><span class="nv">target</span><span class="o">=</span>template_debug<span class="w"> </span><span class="nv">arch</span><span class="o">=</span>x86_64
+
+<span class="c1"># 发布版本</span>
+scons<span class="w"> </span><span class="nv">platform</span><span class="o">=</span>windows<span class="w"> </span><span class="nv">target</span><span class="o">=</span>template_release<span class="w"> </span><span class="nv">arch</span><span class="o">=</span>x86_64
+
+<span class="c1"># 编辑器版本</span>
+scons<span class="w"> </span><span class="nv">platform</span><span class="o">=</span>windows<span class="w"> </span><span class="nv">target</span><span class="o">=</span>editor<span class="w"> </span><span class="nv">arch</span><span class="o">=</span>x86_64
+</pre></div>
+</div>
+</section>
+<section id="android">
+<h4>Android 构建<a class="headerlink" href="#android" title="链接到此标题。"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ARM64 调试版本</span>
+scons<span class="w"> </span><span class="nv">platform</span><span class="o">=</span>android<span class="w"> </span><span class="nv">target</span><span class="o">=</span>template_debug<span class="w"> </span><span class="nv">arch</span><span class="o">=</span>arm64
+
+<span class="c1"># ARM64 发布版本</span>
+scons<span class="w"> </span><span class="nv">platform</span><span class="o">=</span>android<span class="w"> </span><span class="nv">target</span><span class="o">=</span>template_release<span class="w"> </span><span class="nv">arch</span><span class="o">=</span>arm64
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h4>构建选项说明<a class="headerlink" href="#id8" title="链接到此标题。"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>选项</p></th>
+<th class="head"><p>可选值</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">platform</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">windows</span></code>, <code class="docutils literal notranslate"><span class="pre">android</span></code></p></td>
+<td><p>目标平台</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">target</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">template_debug</span></code>, <code class="docutils literal notranslate"><span class="pre">template_release</span></code>, <code class="docutils literal notranslate"><span class="pre">editor</span></code></p></td>
+<td><p>构建目标类型</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">arch</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x86_64</span></code>, <code class="docutils literal notranslate"><span class="pre">arm64</span></code>, <code class="docutils literal notranslate"><span class="pre">arm32</span></code>, <code class="docutils literal notranslate"><span class="pre">x86_32</span></code></p></td>
+<td><p>目标架构</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h4>输出位置<a class="headerlink" href="#id9" title="链接到此标题。"></a></h4>
+<p>构建完成后，二进制文件位于:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>addons/bin/
+├── fmod_player.windows.{target}.{arch}.dll    # Windows
+├── libfmod_player.android.{target}.{arch}.so  # Android
+└── ...
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id10">
+<h2>验证安装<a class="headerlink" href="#id10" title="链接到此标题。"></a></h2>
+<ol class="arabic simple">
+<li><p>打开 Godot 编辑器</p></li>
+<li><p>创建一个新场景</p></li>
+<li><p>在节点面板中搜索 &quot;Fmod&quot;，应该能看到以下节点：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FmodAudioStreamPlayer</span></code> - 流式音频播放器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FmodAudioSampleEmitter</span></code> - 采样音频发射器</p></li>
+</ul>
+</li>
+<li><p>在资源面板中创建新资源，应该能看到：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FmodAudioStream</span></code> - 流式音频资源</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FmodAudioSample</span></code> - 采样音频资源</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FmodAudioBusLayout</span></code> - 音频总线布局</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id11">
+<h2>常见问题<a class="headerlink" href="#id11" title="链接到此标题。"></a></h2>
+<section id="id12">
+<h3>插件未显示在节点列表中<a class="headerlink" href="#id12" title="链接到此标题。"></a></h3>
+<ul class="simple">
+<li><p>检查 <code class="docutils literal notranslate"><span class="pre">addons/bin/fmod_player.gdextension</span></code> 文件是否存在</p></li>
+<li><p>检查对应平台的 DLL/SO 文件是否存在</p></li>
+<li><p>查看 Godot 编辑器的 <strong>输出</strong> 面板是否有加载错误</p></li>
+<li><p>确认 Godot 版本 &gt;= 4.1</p></li>
+</ul>
+</section>
+<section id="fmod">
+<h3>FMOD 初始化失败<a class="headerlink" href="#fmod" title="链接到此标题。"></a></h3>
+<ul class="simple">
+<li><p>检查 <code class="docutils literal notranslate"><span class="pre">fmod.dll</span></code> (Windows) 或 <code class="docutils literal notranslate"><span class="pre">libfmod.so</span></code> (Android) 是否在正确位置</p></li>
+<li><p>检查音频设备是否正常工作</p></li>
+<li><p>查看 Godot 控制台输出获取详细错误信息</p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>Android 构建失败<a class="headerlink" href="#id13" title="链接到此标题。"></a></h3>
+<ul>
+<li><p>确保 Android NDK 已正确安装并设置环境变量</p></li>
+<li><p>确认 <code class="docutils literal notranslate"><span class="pre">godot-cpp</span></code> 子模块已初始化:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span> <span class="o">--</span><span class="n">recursive</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="id14">
+<h2>下一步<a class="headerlink" href="#id14" title="链接到此标题。"></a></h2>
+<p>安装完成后，请阅读 <a class="reference internal" href="quick_start.html"><span class="doc">快速开始</span></a> 了解如何使用本插件。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Godot-FmodPlayer 文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="quick_start.html" class="btn btn-neutral float-right" title="快速开始" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2026, LuYingYiLong。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
