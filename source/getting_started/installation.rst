@@ -10,9 +10,16 @@
   - Windows: MSVC v145+ (Visual Studio 2022)
   - Android: Android NDK
 
-.. note::
+.. important::
    
-   FMOD 运行库已包含在插件中，无需额外下载。
+   **FMOD 运行库需要手动下载**
+   
+   由于 FMOD 的许可协议不允许二次分发，你需要自行从 
+   `FMOD 官网 <https://www.fmod.com/download>`_ 下载 FMOD Core API。
+   
+   - 注册/登录 FMOD 账户
+   - 下载对应平台的 FMOD Core API
+   - 将运行库文件（如 Windows 的 ``fmod.dll``）放置到插件目录
 
 安装方式
 --------
@@ -24,21 +31,23 @@
 
 2. 解压下载的文件，将 ``addons/fmod_player`` 文件夹复制到你的 Godot 项目的 ``res://addons/`` 目录下
 
-3. 确保以下文件结构::
+3. 从 FMOD 官网下载 FMOD Core API，将运行库文件放入插件目录::
 
     res://
     └── addons/
         └── fmod_player/
             ├── bin/
-            │   ├── fmod_player.gdextension
-            │   ├── fmod.dll
-            │   └── fmod_player.windows.*.dll
+            │   ├── fmod_player.gdextension      # GDExtension 配置
+            │   ├── fmod.dll                     # Windows FMOD 运行库（需自行下载）
+            │   ├── libfmod.so                   # Android FMOD 运行库（需自行下载）
+            │   ├── fmod_player.windows.*.dll    # 插件 DLL
+            │   └── ...
             └── ...
 
 4. 在 Godot 编辑器中，进入 **项目 > 项目设置 > 插件**，启用 "FmodPlayer"
 
 方式二：从源码构建
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 前置要求
 ^^^^^^^^
@@ -113,6 +122,43 @@ Android 构建
     ├── fmod_player.windows.{target}.{arch}.dll    # Windows
     ├── libfmod_player.android.{target}.{arch}.so  # Android
     └── ...
+
+FMOD 运行库获取
+----------------
+
+由于 FMOD 的许可协议不允许二次分发，你需要自行下载 FMOD Core API 运行库。
+
+下载步骤
+~~~~~~~~
+
+1. 访问 `FMOD 官网下载页面 <https://www.fmod.com/download>`_
+2. 注册或登录 FMOD 账户
+3. 下载 **FMOD Engine** （选择对应你的开发平台的版本）
+4. 解压下载的文件
+
+获取运行库文件
+~~~~~~~~~~~~~~
+
+根据你的目标平台，从下载的 FMOD Engine 中找到对应的运行库文件：
+
+**Windows:**
+
+- 文件: ``fmod.dll`` （发布版）或 ``fmodL.dll`` （调试版）
+- 位置: ``api/core/lib/x64/``
+- 放置到: ``addons/fmod_player/bin/``
+
+**Android:**
+
+- 文件: ``libfmod.so`` （发布版）或 ``libfmodL.so`` （调试版）
+- 位置: ``api/core/lib/android/`` （按架构选择子目录）
+- 放置到: 需要打包到 APK 的库目录
+
+许可证说明
+~~~~~~~~~~
+
+- FMOD 允许免费用于非商业项目
+- **商业项目需要获取 FMOD 许可证**
+- 详见 `FMOD 许可页面 <https://www.fmod.com/licensing>`_
 
 验证安装
 --------
