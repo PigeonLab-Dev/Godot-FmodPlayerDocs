@@ -139,7 +139,7 @@
 <td><p>float</p></td>
 <td><p>音调（默认 1.0）</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">autoplay</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">auto_play</span></code></p></td>
 <td><p>bool</p></td>
 <td><p>自动播放（默认 false）</p></td>
 </tr>
@@ -237,9 +237,9 @@
 <span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioStreamPlayer</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="c1"># 加载并播放</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-<span class="w">    </span><span class="n">stream</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://music/bgm.mp3&quot;</span>
+<span class="w">    </span><span class="c1"># 加载并播放（流式模式）</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">load_from_file</span><span class="p">(</span><span class="s2">&quot;res://music/bgm.mp3&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">MODE_STREAM</span><span class="p">)</span>
 
 <span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span>
 <span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="n">volume_db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">6.0</span>
@@ -262,7 +262,7 @@
 <section id="fmodaudiosampleemitter">
 <h2>FmodAudioSampleEmitter<a class="headerlink" href="#fmodaudiosampleemitter" title="Link to this heading"></a></h2>
 <p>继承自：Node</p>
-<p>用于播放 <code class="docutils literal notranslate"><span class="pre">FmodAudioSample</span></code> 资源的节点，适合音效和短音频。</p>
+<p>用于播放短音频（音效）的节点，内部使用 <code class="docutils literal notranslate"><span class="pre">FmodAudioStream</span></code> 并自动设置 <code class="docutils literal notranslate"><span class="pre">MODE_SAMPLE</span></code> 标志。</p>
 <section id="id5">
 <h3>属性<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
@@ -273,13 +273,13 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sample</span></code></p></td>
-<td><p>FmodAudioSample</p></td>
-<td><p>要播放的采样</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stream</span></code></p></td>
+<td><p>FmodAudioStream</p></td>
+<td><p>要播放的音频（自动使用样本模式）</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">auto_emit</span></code></p></td>
 <td><p>bool</p></td>
-<td><p>自动发射（默认 false）</p></td>
+<td><p>自动发射（设置流时自动播放，默认 false）</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bus</span></code></p></td>
 <td><p>String</p></td>
@@ -300,23 +300,23 @@
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">emit()</span></code></p></td>
 <td><p>void</p></td>
-<td><p>播放一次采样</p></td>
+<td><p>播放一次音频</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_sample(sample)</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_stream(stream)</span></code></p></td>
 <td><p>void</p></td>
-<td><p>设置采样</p></td>
+<td><p>设置音频流</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_sample()</span></code></p></td>
-<td><p>FmodAudioSample</p></td>
-<td><p>获取采样</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_stream()</span></code></p></td>
+<td><p>FmodAudioStream</p></td>
+<td><p>获取音频流</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_bus(bus)</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_auto_emit(enable)</span></code></p></td>
 <td><p>void</p></td>
-<td><p>设置音频总线</p></td>
+<td><p>设置自动发射</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_bus()</span></code></p></td>
-<td><p>String</p></td>
-<td><p>获取音频总线</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">is_autoemit_enabled()</span></code></p></td>
+<td><p>bool</p></td>
+<td><p>获取自动发射状态</p></td>
 </tr>
 </tbody>
 </table>
@@ -326,14 +326,14 @@
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
 <span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">emitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioSampleEmitter</span>
-<span class="k">var</span><span class="w"> </span><span class="n">shoot_sample</span><span class="p">:</span><span class="w"> </span><span class="n">FmodAudioSample</span>
+<span class="k">var</span><span class="w"> </span><span class="n">shoot_stream</span><span class="p">:</span><span class="w"> </span><span class="n">FmodAudioStream</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="c1"># 预加载采样</span>
-<span class="w">    </span><span class="n">shoot_sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioSample</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-<span class="w">    </span><span class="n">shoot_sample</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://sfx/shoot.wav&quot;</span>
+<span class="w">    </span><span class="c1"># 预加载音效（样本模式）</span>
+<span class="w">    </span><span class="n">shoot_stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">load_from_file</span><span class="p">(</span><span class="s2">&quot;res://sfx/shoot.wav&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">MODE_SAMPLE</span><span class="p">)</span>
 
-<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shoot_sample</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shoot_stream</span>
 <span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SFX&quot;</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -341,16 +341,15 @@
 <span class="w">        </span><span class="n">play_shoot_sound</span><span class="p">()</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">play_shoot_sound</span><span class="p">():</span>
-<span class="w">    </span><span class="c1"># 添加随机音调变化</span>
 <span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
 
 <span class="c1"># 自动发射示例</span>
 <span class="k">func</span><span class="w"> </span><span class="n">setup_auto_emit</span><span class="p">():</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioSample</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-<span class="w">    </span><span class="n">sample</span><span class="o">.</span><span class="n">file_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://sfx/heartbeat.wav&quot;</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">load_from_file</span><span class="p">(</span><span class="s2">&quot;res://sfx/heartbeat.wav&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">FmodAudioStream</span><span class="o">.</span><span class="n">MODE_SAMPLE</span><span class="p">)</span>
 
-<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sample</span>
-<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">auto_emit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span><span class="w">  </span><span class="c1"># 设置 sample 时自动播放</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span>
+<span class="w">    </span><span class="n">emitter</span><span class="o">.</span><span class="n">auto_emit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span><span class="w">  </span><span class="c1"># 设置流时自动播放</span>
 </pre></div>
 </div>
 </section>
@@ -367,7 +366,7 @@
 <tbody>
 <tr class="row-even"><td><p>资源类型</p></td>
 <td><p>FmodAudioStream</p></td>
-<td><p>FmodAudioSample</p></td>
+<td><p>FmodAudioStream</p></td>
 </tr>
 <tr class="row-odd"><td><p>播放方式</p></td>
 <td><p>播放/停止/跳转</p></td>
@@ -386,7 +385,7 @@
 <td><p>❌</p></td>
 </tr>
 <tr class="row-odd"><td><p>自动播放</p></td>
-<td><p>autoplay 属性</p></td>
+<td><p>auto_play 属性</p></td>
 <td><p>auto_emit 属性</p></td>
 </tr>
 </tbody>

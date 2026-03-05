@@ -6,7 +6,35 @@ FmodAudioStream
 
 继承自：Resource
 
-流式音频资源类，适合播放大型音频文件。
+音频流资源类，支持流式加载和内存加载两种模式，通过 ``mode_flags`` 控制加载行为。
+
+枚举
+~~~~
+
+CreateMode
+^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+
+   * - 枚举值
+     - 值
+     - 说明
+   * - ``MODE_DEFAULT``
+     - 0
+     - 默认模式
+   * - ``MODE_STREAM``
+     - 1
+     - 流式加载（从内存流式播放，适合大文件）
+   * - ``MODE_SAMPLE``
+     - 2
+     - 样本模式（加载到内存，适合音效）
+   * - ``MODE_LOOP``
+     - 4
+     - 循环播放
+   * - ``MODE_LOOP_BIDI``
+     - 8
+     - 双向循环（ ping-pong 循环）
 
 属性
 ~~~~
@@ -17,12 +45,12 @@ FmodAudioStream
    * - 属性
      - 类型
      - 说明
-   * - ``file_path``
-     - String
-     - 音频文件路径
-   * - ``data``
+   * - ``audio_data``
      - PackedByteArray
-     - 原始音频数据
+     - 音频数据（二进制）
+   * - ``mode_flags``
+     - int
+     - 创建模式标志（组合使用 CreateMode 枚举）
    * - ``data_loaded``
      - bool
      - 数据是否已加载（只读）
@@ -36,89 +64,74 @@ FmodAudioStream
    * - 方法
      - 返回值
      - 说明
-   * - ``set_file_path(path)``
+   * - ``set_audio_data(data)``
      - void
-     - 设置文件路径
-   * - ``get_file_path()``
-     - String
-     - 获取文件路径
+     - 设置音频数据
+   * - ``get_audio_data()``
+     - PackedByteArray
+     - 获取音频数据
+   * - ``set_mode_flags(flags)``
+     - void
+     - 设置创建模式标志
+   * - ``get_mode_flags()``
+     - int
+     - 获取创建模式标志
+   * - ``add_mode_flag(flag)``
+     - void
+     - 添加单个模式标志
+   * - ``remove_mode_flag(flag)``
+     - void
+     - 移除单个模式标志
+   * - ``has_mode_flag(flag)``
+     - bool
+     - 检查是否包含某个模式标志
    * - ``get_sound()``
      - FmodSound
-     - 获取 FMOD 声音对象
+     - 获取 FMOD 声音对象（延迟创建）
    * - ``get_length()``
      - float
      - 获取音频长度（秒）
+   * - ``clear()``
+     - void
+     - 清理音频数据和声音资源
+   * - ``load_from_file(path, flags)`` (静态)
+     - FmodAudioStream
+     - 从文件加载音频，返回新的流实例
 
 示例
 ~~~~
+
+**从文件加载（流式模式 - 适合背景音乐）：**
+
+.. code-block:: gdscript
+
+    # 流式加载（默认）
+    var stream = FmodAudioStream.load_from_file("res://music/background.mp3")
+    stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
+    
+    var player = $FmodAudioStreamPlayer
+    player.stream = stream
+    player.play()
+
+**从文件加载（样本模式 - 适合音效）：**
+
+.. code-block:: gdscript
+
+    # 样本模式加载到内存
+    var sfx = FmodAudioStream.load_from_file("res://sfx/explosion.wav", 
+        FmodAudioStream.MODE_SAMPLE)
+    
+    var emitter = $FmodAudioSampleEmitter
+    emitter.stream = sfx
+    emitter.emit()
+
+**从内存加载：**
 
 .. code-block:: gdscript
 
     var stream = FmodAudioStream.new()
-    stream.file_path = "res://music/background.mp3"
-    
-    var length = stream.get_length()
-    print("Duration: %.2f seconds" % length)
-
-FmodAudioSample
----------------
-
-继承自：Resource
-
-采样音频资源类，完全加载到内存，适合音效。
-
-属性
-~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 说明
-   * - ``file_path``
-     - String
-     - 音频文件路径
-   * - ``data``
-     - PackedByteArray
-     - 原始音频数据
-   * - ``data_loaded``
-     - bool
-     - 数据是否已加载（只读）
-
-方法
-~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 方法
-     - 返回值
-     - 说明
-   * - "set_file_path(path)"
-     - void
-     - 设置文件路径
-   * - ``get_file_path()``
-     - String
-     - 获取文件路径
-   * - ``get_sound()``
-     - FmodSound
-     - 获取 FMOD 声音对象
-   * - ``get_length()``
-     - float
-     - 获取音频长度（秒）
-
-示例
-~~~~
-
-.. code-block:: gdscript
-
-    var sample = FmodAudioSample.new()
-    sample.file_path = "res://sfx/explosion.wav"
-    
-    var emitter = $FmodAudioSampleEmitter
-    emitter.sample = sample
-    emitter.play()
+    stream.audio_data = loaded_bytes
+    stream.mode_flags = FmodAudioStream.MODE_SAMPLE
 
 FmodSound
 ---------
