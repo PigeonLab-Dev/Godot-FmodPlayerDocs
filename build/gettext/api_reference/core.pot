@@ -1,0 +1,443 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 19:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/api_reference/core.rst:2
+msgid "核心类 API"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:5
+#: ../../source/api_reference/core.rst:19
+#: ../../source/api_reference/core.rst:35
+msgid "FmodServer"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:7
+msgid "全局单例，管理 FMOD 系统的生命周期。"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:10
+msgid "静态属性"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:15
+msgid "属性"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:16
+msgid "类型"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:17
+#: ../../source/api_reference/core.rst:33
+#: ../../source/api_reference/core.rst:75
+#: ../../source/api_reference/core.rst:97
+#: ../../source/api_reference/core.rst:116
+#: ../../source/api_reference/core.rst:138
+#: ../../source/api_reference/core.rst:154
+#: ../../source/api_reference/core.rst:173
+#: ../../source/api_reference/core.rst:192
+msgid "说明"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:18
+msgid "``singleton``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:20
+msgid "全局单例实例"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:21
+msgid "``main_system``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:22
+#: ../../source/api_reference/core.rst:38
+#: ../../source/api_reference/core.rst:60
+msgid "FmodSystem"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:23
+msgid "主 FMOD 系统实例"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:26
+#: ../../source/api_reference/core.rst:31
+#: ../../source/api_reference/core.rst:65
+#: ../../source/api_reference/core.rst:73
+#: ../../source/api_reference/core.rst:95
+#: ../../source/api_reference/core.rst:114
+#: ../../source/api_reference/core.rst:136
+#: ../../source/api_reference/core.rst:152
+#: ../../source/api_reference/core.rst:171
+msgid "方法"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:32
+#: ../../source/api_reference/core.rst:74
+#: ../../source/api_reference/core.rst:96
+#: ../../source/api_reference/core.rst:115
+#: ../../source/api_reference/core.rst:137
+#: ../../source/api_reference/core.rst:153
+#: ../../source/api_reference/core.rst:172
+msgid "返回值"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:34
+msgid "``get_singleton()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:36
+msgid "获取单例实例"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:37
+msgid "``get_main_system()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:39
+msgid "获取主系统"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:40
+#: ../../source/api_reference/core.rst:123
+msgid "``get_master_channel_group()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:41
+#: ../../source/api_reference/core.rst:121
+#: ../../source/api_reference/core.rst:124
+#: ../../source/api_reference/core.rst:127
+msgid "FmodChannelGroup"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:42
+#: ../../source/api_reference/core.rst:125
+msgid "获取主通道组"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:43
+msgid "``get_audio_bus_layout()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:44
+msgid "FmodAudioBusLayout"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:45
+msgid "获取音频总线布局"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:48
+#: ../../source/api_reference/core.rst:216
+msgid "示例"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:62
+msgid "FMOD::System 的包装类，负责创建声音、通道、DSP 等。"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:68
+msgid "系统管理"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:76
+msgid "``init(max_channels, flags)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:77
+msgid "bool"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:78
+msgid "初始化系统"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:79
+msgid "``update()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:80
+#: ../../source/api_reference/core.rst:83
+#: ../../source/api_reference/core.rst:86
+#: ../../source/api_reference/core.rst:175
+#: ../../source/api_reference/core.rst:178
+msgid "void"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:81
+msgid "更新系统（每帧自动调用）"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:82
+msgid "``release()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:84
+msgid "释放系统资源"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:85
+msgid "\"set_advanced_settings(settings)\""
+msgstr ""
+
+#: ../../source/api_reference/core.rst:87
+msgid "设置高级参数"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:90
+msgid "声音创建"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:98
+msgid "``create_sound_from_file(path, mode)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:99
+#: ../../source/api_reference/core.rst:102
+#: ../../source/api_reference/core.rst:105
+msgid "FmodSound"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:100
+msgid "从文件创建声音"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:101
+msgid "``create_sound_from_memory(data, mode)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:103
+msgid "从内存创建声音"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:104
+msgid "``create_stream_from_file(path, mode)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:106
+msgid "创建流式声音"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:109
+msgid "通道和组"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:117
+msgid "``play_sound(sound, group, paused)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:118
+msgid "FmodChannel"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:119
+msgid "播放声音"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:120
+msgid "``create_channel_group(name)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:122
+msgid "创建通道组"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:126
+msgid "``get_channel_group_by_name(name)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:128
+msgid "通过名称获取通道组"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:131
+msgid "DSP 创建"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:139
+msgid "``create_dsp_by_type(type)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:140
+#: ../../source/api_reference/core.rst:143
+msgid "FmodDSP"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:141
+msgid "通过类型创建 DSP"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:142
+msgid "``create_dsp_by_index(index)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:144
+msgid "通过索引创建 DSP"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:147
+msgid "状态查询"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:155
+msgid "``get_cpu_usage()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:156
+#: ../../source/api_reference/core.rst:159
+#: ../../source/api_reference/core.rst:162
+msgid "Dictionary"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:157
+msgid "获取 CPU 使用率"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:158
+msgid "\"get_channels_playing()\""
+msgstr ""
+
+#: ../../source/api_reference/core.rst:160
+msgid "获取播放中的通道数"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:161
+msgid "``get_memory_info()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:163
+msgid "获取内存使用信息"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:166
+msgid "3D 音频"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:174
+msgid "\"set_3d_listener_attributes(index, pos, vel, forward, up)\""
+msgstr ""
+
+#: ../../source/api_reference/core.rst:176
+msgid "设置 3D 监听器属性"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:177
+msgid "``set_3d_settings(doppler, distance, rolloff)``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:179
+msgid "设置 3D 全局设置"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:182
+#: ../../source/api_reference/core.rst:190
+msgid "常量"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:185
+msgid "加载模式"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:191
+msgid "值"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:193
+msgid "``MODE_DEFAULT``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:194
+msgid "0x00000000"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:195
+msgid "默认模式"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:196
+msgid "\"MODE_LOOP_OFF\""
+msgstr ""
+
+#: ../../source/api_reference/core.rst:197
+msgid "0x00000001"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:198
+msgid "不循环"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:199
+msgid "``MODE_LOOP_NORMAL``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:200
+msgid "0x00000002"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:201
+msgid "正常循环"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:202
+msgid "``MODE_3D``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:203
+msgid "0x00000010"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:204
+msgid "3D 声音"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:205
+msgid "``MODE_CREATESAMPLE``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:206
+msgid "0x00000100"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:207
+msgid "创建采样"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:208
+msgid "``MODE_CREATESTREAM``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:209
+msgid "0x00000200"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:210
+msgid "创建流"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:211
+msgid "``MODE_NONBLOCKING``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:212
+msgid "0x00010000"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:213
+msgid "非阻塞加载"
+msgstr ""

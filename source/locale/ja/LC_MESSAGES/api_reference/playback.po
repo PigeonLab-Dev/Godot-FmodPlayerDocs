@@ -1,0 +1,533 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 19:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/api_reference/playback.rst:2
+msgid "播放控制 API"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:5
+msgid "FmodChannelControl"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:7
+msgid "继承自：RefCounted"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:9
+msgid "通道控制的抽象基类，``FmodChannel`` 和 ``FmodChannelGroup`` 都继承自此类。"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:12
+#: ../../source/api_reference/playback.rst:20
+#: ../../source/api_reference/playback.rst:42
+#: ../../source/api_reference/playback.rst:70
+#: ../../source/api_reference/playback.rst:92
+#: ../../source/api_reference/playback.rst:114
+#: ../../source/api_reference/playback.rst:138
+#: ../../source/api_reference/playback.rst:143
+#: ../../source/api_reference/playback.rst:218
+#: ../../source/api_reference/playback.rst:223
+msgid "方法"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:15
+msgid "播放控制"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:21
+#: ../../source/api_reference/playback.rst:43
+#: ../../source/api_reference/playback.rst:71
+#: ../../source/api_reference/playback.rst:93
+#: ../../source/api_reference/playback.rst:115
+#: ../../source/api_reference/playback.rst:144
+#: ../../source/api_reference/playback.rst:224
+msgid "返回值"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:22
+#: ../../source/api_reference/playback.rst:44
+#: ../../source/api_reference/playback.rst:72
+#: ../../source/api_reference/playback.rst:94
+#: ../../source/api_reference/playback.rst:116
+#: ../../source/api_reference/playback.rst:145
+#: ../../source/api_reference/playback.rst:182
+#: ../../source/api_reference/playback.rst:225
+msgid "说明"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:23
+msgid "``is_playing()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:24
+#: ../../source/api_reference/playback.rst:33
+#: ../../source/api_reference/playback.rst:61
+msgid "bool"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:25
+msgid "是否正在播放"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:26
+msgid "``stop()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:27
+#: ../../source/api_reference/playback.rst:30
+#: ../../source/api_reference/playback.rst:46
+#: ../../source/api_reference/playback.rst:52
+#: ../../source/api_reference/playback.rst:58
+#: ../../source/api_reference/playback.rst:74
+#: ../../source/api_reference/playback.rst:80
+#: ../../source/api_reference/playback.rst:96
+#: ../../source/api_reference/playback.rst:99
+#: ../../source/api_reference/playback.rst:118
+#: ../../source/api_reference/playback.rst:124
+#: ../../source/api_reference/playback.rst:127
+#: ../../source/api_reference/playback.rst:147
+#: ../../source/api_reference/playback.rst:150
+#: ../../source/api_reference/playback.rst:159
+#: ../../source/api_reference/playback.rst:165
+#: ../../source/api_reference/playback.rst:227
+#: ../../source/api_reference/playback.rst:230
+#: ../../source/api_reference/playback.rst:248
+msgid "void"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:28
+msgid "停止播放"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:29
+msgid "``set_paused(paused)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:31
+msgid "设置暂停状态"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:32
+msgid "``get_paused()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:34
+msgid "获取暂停状态"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:37
+msgid "音量控制"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:45
+msgid "``set_volume(volume)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:47
+msgid "设置音量（线性 0.0-1.0）"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:48
+msgid "``get_volume()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:49
+#: ../../source/api_reference/playback.rst:55
+#: ../../source/api_reference/playback.rst:77
+#: ../../source/api_reference/playback.rst:83
+msgid "float"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:50
+msgid "获取音量（线性）"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:51
+msgid "``set_volume_db(volume_db)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:53
+msgid "设置音量（分贝）"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:54
+msgid "``get_volume_db()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:56
+msgid "获取音量（分贝）"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:57
+msgid "``set_mute(mute)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:59
+msgid "设置静音"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:60
+msgid "``get_mute()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:62
+msgid "获取静音状态"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:65
+msgid "音调和声像"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:73
+msgid "``set_pitch(pitch)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:75
+msgid "设置音调（1.0 = 正常）"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:76
+msgid "``get_pitch()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:78
+msgid "获取音调"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:79
+msgid "``set_pan(pan)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:81
+msgid "设置声像（-1.0 ~ 1.0）"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:82
+msgid "``get_pan()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:84
+msgid "获取声像"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:87
+msgid "DSP 效果"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:95
+msgid "``add_dsp(index, dsp)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:97
+msgid "添加 DSP 效果器"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:98
+msgid "``remove_dsp(dsp)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:100
+msgid "移除 DSP 效果器"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:101
+msgid "``get_dsp(index)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:102
+msgid "FmodDSP"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:103
+msgid "获取指定索引的 DSP"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:104
+msgid "``get_num_dsps()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:105
+#: ../../source/api_reference/playback.rst:153
+#: ../../source/api_reference/playback.rst:162
+#: ../../source/api_reference/playback.rst:233
+#: ../../source/api_reference/playback.rst:239
+msgid "int"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:106
+msgid "获取 DSP 数量"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:109
+msgid "3D 属性"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:117
+msgid "``set_3d_attributes(pos, vel)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:119
+msgid "设置 3D 位置和速度"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:120
+msgid "``get_3d_attributes()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:121
+msgid "Dictionary"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:122
+msgid "获取 3D 属性"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:123
+msgid "``set_3d_min_max_distance(min, max)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:125
+msgid "设置 3D 最小/最大距离"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:126
+msgid "``set_3d_level(level)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:128
+msgid "设置 3D 级别"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:131
+#: ../../source/api_reference/playback.rst:242
+msgid "FmodChannel"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:133
+#: ../../source/api_reference/playback.rst:213
+msgid "继承自：FmodChannelControl"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:135
+msgid "代表一个正在播放的声音实例。"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:146
+msgid "``setup(channel)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:148
+msgid "设置内部 FMOD 通道"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:149
+msgid "``set_position(position, timeunit)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:151
+msgid "设置播放位置"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:152
+msgid "``get_position(timeunit)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:154
+msgid "获取播放位置"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:155
+msgid "``get_current_sound()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:156
+msgid "FmodSound"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:157
+msgid "获取当前播放的声音"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:158
+msgid "``set_loop_count(loopcount)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:160
+msgid "设置循环次数（-1=无限）"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:161
+msgid "``get_loop_count()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:163
+msgid "获取循环次数"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:164
+msgid "``set_channel_group(group)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:166
+msgid "设置所属通道组"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:167
+msgid "``get_channel_group()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:168
+#: ../../source/api_reference/playback.rst:211
+#: ../../source/api_reference/playback.rst:236
+msgid "FmodChannelGroup"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:169
+msgid "获取所属通道组"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:172
+#: ../../source/api_reference/playback.rst:180
+msgid "常量"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:175
+msgid "时间单位"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:181
+msgid "值"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:183
+msgid "``TIMEUNIT_MS``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:184
+msgid "1"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:185
+msgid "毫秒"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:186
+msgid "``TIMEUNIT_PCM``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:187
+msgid "2"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:188
+msgid "PCM 采样"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:189
+msgid "``TIMEUNIT_PCMBYTES``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:190
+msgid "4"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:191
+msgid "PCM 字节"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:194
+#: ../../source/api_reference/playback.rst:252
+msgid "示例"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:215
+msgid "通道组，用于将多个通道组织在一起进行混音控制。"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:226
+msgid "\"setup(channel_group)\""
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:228
+msgid "设置内部 FMOD 通道组"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:229
+msgid "``add_group(group, propagatedspclock)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:231
+msgid "添加子组"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:232
+msgid "``get_num_groups()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:234
+msgid "获取子组数量"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:235
+msgid "``get_group(index)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:237
+msgid "获取指定子组"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:238
+msgid "``get_num_channels()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:240
+msgid "获取通道数量"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:241
+msgid "``get_channel(index)``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:243
+msgid "获取指定通道"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:244
+msgid "``get_name()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:245
+msgid "String"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:246
+msgid "获取组名称"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:247
+msgid "``release()``"
+msgstr ""
+
+#: ../../source/api_reference/playback.rst:249
+msgid "释放通道组"
+msgstr ""
+

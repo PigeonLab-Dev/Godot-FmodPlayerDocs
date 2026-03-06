@@ -1,0 +1,378 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 19:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/user_guide/dsp_effects.rst:2
+msgid "DSP 效果器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:4
+msgid "Godot-FmodPlayer 内置 16+ 种专业级 DSP（数字信号处理）效果器，用于实时音频处理。"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:7
+msgid "DSP 类型"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:10
+msgid "效果器列表"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:15
+msgid "效果器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:16
+msgid "类型常量"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:17
+msgid "说明"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:18
+msgid "增益"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:19
+msgid "``DSP_TYPE_AMPLIFY``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:20
+msgid "简单的音量放大/衰减"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:21
+msgid "6段均衡器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:22
+msgid "``DSP_TYPE_EQ6``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:23
+msgid "6段参数均衡器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:24
+msgid "10段均衡器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:25
+msgid "``DSP_TYPE_EQ10``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:26
+msgid "10段参数均衡器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:27
+msgid "21段均衡器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:28
+msgid "``DSP_TYPE_EQ21``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:29
+msgid "21段参数均衡器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:30
+msgid "滤波器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:31
+msgid "``DSP_TYPE_FILTER``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:32
+msgid "低通/高通/带通/陷波滤波器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:33
+msgid "混响"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:34
+msgid "``DSP_TYPE_SFXREVERB``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:35
+msgid "房间混响效果"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:36
+msgid "延迟"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:37
+msgid "``DSP_TYPE_DELAY``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:38
+msgid "回声和延迟线"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:39
+msgid "合唱"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:40
+msgid "``DSP_TYPE_CHORUS``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:41
+msgid "立体声合唱效果"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:42
+msgid "失真"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:43
+msgid "``DSP_TYPE_DISTORTION``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:44
+msgid "过驱动和失真"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:45
+msgid "移相器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:46
+msgid "``DSP_TYPE_PHASER``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:47
+msgid "相位偏移效果"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:48
+msgid "音高变换"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:49
+msgid "``DSP_TYPE_PITCHSHIFT``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:50
+msgid "实时音高变换"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:51
+msgid "压缩器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:52
+msgid "``DSP_TYPE_COMPRESSOR``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:53
+msgid "动态范围压缩"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:54
+msgid "限制器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:55
+msgid "``DSP_TYPE_HARDLIMITER``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:56
+msgid "硬限制器/峰值限制"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:57
+msgid "声像器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:58
+msgid "``DSP_TYPE_PANNER``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:59
+msgid "立体声定位"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:60
+msgid "立体声增强"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:61
+msgid "``DSP_TYPE_STEREOENHANCE``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:62
+msgid "立体声宽度控制"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:63
+msgid "频谱分析器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:64
+msgid "``DSP_TYPE_SPECTRUMANALYZER``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:65
+msgid "实时频率分析"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:66
+msgid "录音"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:67
+msgid "``DSP_TYPE_RECORD``"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:68
+msgid "音频录制到文件"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:71
+msgid "使用 DSP 效果器"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:74
+msgid "创建 DSP"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:88
+msgid "添加到通道或总线"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:107
+msgid "控制 DSP 参数"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:132
+msgid "从通道/总线移除 DSP"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:145
+msgid "常用效果器详解"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:148
+msgid "混响（Reverb）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:180
+msgid "均衡器（EQ）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:211
+msgid "滤波器（Filter）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:234
+msgid "延迟（Delay）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:253
+msgid "失真（Distortion）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:267
+msgid "音高变换（Pitch Shift）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:287
+msgid "频谱分析器（Spectrum Analyzer）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:316
+msgid "效果器路由"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:319
+msgid "串联连接"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:321
+msgid "信号依次通过多个效果器："
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:337
+msgid "并联连接"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:339
+msgid "使用 DSP 连接创建并行处理："
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:360
+msgid "动态效果器管理"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:363
+msgid "效果器预设"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:400
+msgid "运行时切换效果"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:417
+msgid "性能考虑"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:419
+msgid "**DSP 消耗 CPU** - 每个激活的 DSP 都会增加 CPU 负担"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:420
+msgid "**使用旁通而非移除** - 临时禁用效果时使用 ``set_bypass(true)`` 比频繁添加/移除更高效"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:421
+msgid "**注意 FFT 大小** - 音高变换和频谱分析器的 FFT 大小影响延迟和 CPU 使用"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:422
+msgid "**复用 DSP** - 相同设置的效果器可以在多个通道间复用"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:425
+msgid "最佳实践"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:427
+msgid "**效果顺序** - EQ -> 动态处理（压缩器）-> 空间效果（混响）"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:428
+msgid "**总线效果** - 将混响等效果放在总线上，多个通道共享"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:429
+msgid "**参数平滑** - 避免每帧大幅改变 DSP 参数，使用插值"
+msgstr ""
+
+#: ../../source/user_guide/dsp_effects.rst:430
+msgid "**资源管理** - 场景切换时记得释放不再使用的 DSP"
+msgstr ""
+

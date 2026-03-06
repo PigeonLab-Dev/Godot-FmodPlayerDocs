@@ -1,0 +1,503 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 19:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/export.rst:2
+msgid "导出说明"
+msgstr ""
+
+#: ../../source/export.rst:4
+msgid "本文档说明如何在导出 Godot 项目时正确配置 FmodPlayer 插件。"
+msgstr ""
+
+#: ../../source/export.rst:7
+msgid "导出前准备"
+msgstr ""
+
+#: ../../source/export.rst:10
+msgid "确认文件结构"
+msgstr ""
+
+#: ../../source/export.rst:12
+msgid "确保 ``addons/`` 目录包含以下文件::"
+msgstr ""
+
+#: ../../source/export.rst:28
+msgid "平台特定文件"
+msgstr ""
+
+#: ../../source/export.rst:30
+msgid "**Windows 导出需要：**"
+msgstr ""
+
+#: ../../source/export.rst:32
+msgid "``fmod_player.windows.template_release.x86_64.dll`` （发布版）"
+msgstr ""
+
+#: ../../source/export.rst:33
+msgid "``fmod.dll`` （FMOD 运行库，发布版）"
+msgstr ""
+
+#: ../../source/export.rst:35
+msgid "**Android 导出需要：**"
+msgstr ""
+
+#: ../../source/export.rst:37
+msgid "``libfmod_player.android.template_release.arm64.so``"
+msgstr ""
+
+#: ../../source/export.rst:38
+msgid "``libfmod.so`` （需要手动添加到 APK）"
+msgstr ""
+
+#: ../../source/export.rst:41
+msgid "Godot 导出配置"
+msgstr ""
+
+#: ../../source/export.rst:44
+msgid "导出预设设置"
+msgstr ""
+
+#: ../../source/export.rst:46
+msgid "打开 **项目 > 导出**"
+msgstr ""
+
+#: ../../source/export.rst:47
+msgid "选择或创建导出预设"
+msgstr ""
+
+#: ../../source/export.rst:48
+msgid "在 **资源** 标签页中："
+msgstr ""
+
+#: ../../source/export.rst:50
+msgid "确保 ``addons/fmod_player/`` 目录被包含"
+msgstr ""
+
+#: ../../source/export.rst:51
+msgid "不需要的文件（如 ``.obj``, ``.os``）可以排除"
+msgstr ""
+
+#: ../../source/export.rst:54
+msgid "Windows 导出"
+msgstr ""
+
+#: ../../source/export.rst:59 ../../source/export.rst:78
+msgid "设置项"
+msgstr ""
+
+#: ../../source/export.rst:60 ../../source/export.rst:79
+msgid "推荐值"
+msgstr ""
+
+#: ../../source/export.rst:61 ../../source/export.rst:80
+msgid "说明"
+msgstr ""
+
+#: ../../source/export.rst:62
+msgid "导出路径"
+msgstr ""
+
+#: ../../source/export.rst:63
+msgid "项目目录"
+msgstr ""
+
+#: ../../source/export.rst:64
+msgid "便于调试"
+msgstr ""
+
+#: ../../source/export.rst:65
+msgid "可执行文件"
+msgstr ""
+
+#: ../../source/export.rst:66
+msgid "自定义名称"
+msgstr ""
+
+#: ../../source/export.rst:67
+msgid "如 ``MyGame.exe``"
+msgstr ""
+
+#: ../../source/export.rst:68
+msgid "嵌入 PCK"
+msgstr ""
+
+#: ../../source/export.rst:69
+msgid "可选"
+msgstr ""
+
+#: ../../source/export.rst:70
+msgid "单文件发布时启用"
+msgstr ""
+
+#: ../../source/export.rst:73
+msgid "Android 导出"
+msgstr ""
+
+#: ../../source/export.rst:81
+msgid "导出格式"
+msgstr ""
+
+#: ../../source/export.rst:82
+msgid "APK 或 AAB"
+msgstr ""
+
+#: ../../source/export.rst:83
+msgid "根据发布需求选择"
+msgstr ""
+
+#: ../../source/export.rst:84
+msgid "架构"
+msgstr ""
+
+#: ../../source/export.rst:85
+msgid "arm64-v8a"
+msgstr ""
+
+#: ../../source/export.rst:86
+msgid "主要目标架构"
+msgstr ""
+
+#: ../../source/export.rst:87
+msgid "目标 SDK"
+msgstr ""
+
+#: ../../source/export.rst:88
+msgid "30+"
+msgstr ""
+
+#: ../../source/export.rst:89
+msgid "Google Play 要求"
+msgstr ""
+
+#: ../../source/export.rst:92
+msgid "FMOD 库配置"
+msgstr ""
+
+#: ../../source/export.rst:95
+msgid "Windows"
+msgstr ""
+
+#: ../../source/export.rst:97
+msgid "发布时使用 FMOD 发布版库："
+msgstr ""
+
+#: ../../source/export.rst:106
+msgid "Android"
+msgstr ""
+
+#: ../../source/export.rst:108
+msgid "需要将 FMOD 库打包到 APK："
+msgstr ""
+
+#: ../../source/export.rst:112
+msgid "**FMOD Android 运行库需要手动下载**"
+msgstr ""
+
+#: ../../source/export.rst:114
+msgid ""
+"由于 FMOD 的许可协议不允许二次分发，你需要自行从 `FMOD 官网 <https://www.fmod.com/download>`_ 下载"
+" FMOD Engine Android 运行库，并将 ``libfmod.so`` 文件添加到你的项目中"
+msgstr ""
+
+#: ../../source/export.rst:117
+msgid ""
+"下载 `OpenJDK17 "
+"<https://adoptium.net/temurin/releases/?variant=openjdk17&version=17&os=any&arch=any>`_"
+msgstr ""
+
+#: ../../source/export.rst:118
+msgid "下载 `Android SDK <https://developer.android.com/studio>`_"
+msgstr ""
+
+#: ../../source/export.rst:119
+msgid ""
+"下载 `Gradle-8.11.1-bin "
+"<https://services.gradle.org/distributions/gradle-8.11.1-bin.zip>`_"
+msgstr ""
+
+#: ../../source/export.rst:120
+msgid "安装 Android 构建模板： **项目** > **安装 Android 模板**"
+msgstr ""
+
+#: ../../source/export.rst:125
+msgid ""
+"将 ``FMOD runtime library`` 和 ``libfmod_player.so`` 文件复制到 "
+"``res://android/build/libs/debug/`` 和 "
+"``res://android/build/libs/release/`` 目录下"
+msgstr ""
+
+#: ../../source/export.rst:126
+msgid ""
+"将 ``fmod.jar`` 添加到 ``res://android/build/libs/`` 目录，并在 "
+"``res://android/build/build.gradle`` 中添加依赖："
+msgstr ""
+
+#: ../../source/export.rst:134
+msgid ""
+"在 ``res://android/build/src/main/java/com/godot/game/GodotApp.java`` 中加载 "
+"FMOD 库："
+msgstr ""
+
+#: ../../source/export.rst:148
+msgid "在导出设置中选择正确的架构（arm64-v8a）"
+msgstr ""
+
+#: ../../source/export.rst:149
+msgid "选择 ``gradle_build/use_gradle_build`` 选项以使用 Gradle 构建系统"
+msgstr ""
+
+#: ../../source/export.rst:154
+msgid "导出 APK 或 AAB 文件"
+msgstr ""
+
+#: ../../source/export.rst:157
+msgid "GDExtension 配置"
+msgstr ""
+
+#: ../../source/export.rst:159
+msgid "检查 ``fmod_player.gdextension`` 文件确保包含发布库路径："
+msgstr ""
+
+#: ../../source/export.rst:178
+msgid "自定义构建"
+msgstr ""
+
+#: ../../source/export.rst:181
+msgid "从源码构建发布版"
+msgstr ""
+
+#: ../../source/export.rst:183 ../../source/export.rst:234
+msgid "**Windows：**"
+msgstr ""
+
+#: ../../source/export.rst:189 ../../source/export.rst:238
+msgid "**Android：**"
+msgstr ""
+
+#: ../../source/export.rst:196
+msgid "优化选项"
+msgstr ""
+
+#: ../../source/export.rst:208
+msgid "调试导出问题"
+msgstr ""
+
+#: ../../source/export.rst:211
+msgid "常见问题"
+msgstr ""
+
+#: ../../source/export.rst:213
+msgid "**FMOD 初始化失败**"
+msgstr ""
+
+#: ../../source/export.rst:215
+msgid "检查 ``fmod.dll`` 是否在可执行文件同目录"
+msgstr ""
+
+#: ../../source/export.rst:216
+msgid "检查音频设备是否正常工作"
+msgstr ""
+
+#: ../../source/export.rst:217
+msgid "查看 Godot 控制台错误输出"
+msgstr ""
+
+#: ../../source/export.rst:219
+msgid "**找不到 GDExtension**"
+msgstr ""
+
+#: ../../source/export.rst:221
+msgid "确认 ``.gdextension`` 文件路径正确"
+msgstr ""
+
+#: ../../source/export.rst:222
+msgid "检查对应平台的 DLL/SO 文件是否存在"
+msgstr ""
+
+#: ../../source/export.rst:223
+msgid "检查 Godot 版本兼容性"
+msgstr ""
+
+#: ../../source/export.rst:225
+msgid "**Android 崩溃**"
+msgstr ""
+
+#: ../../source/export.rst:227
+msgid "确认所有必要的 ``.so`` 文件已打包"
+msgstr ""
+
+#: ../../source/export.rst:228
+msgid "检查 ABI 架构匹配"
+msgstr ""
+
+#: ../../source/export.rst:229
+msgid "查看 Android Logcat 日志"
+msgstr ""
+
+#: ../../source/export.rst:232
+msgid "日志查看"
+msgstr ""
+
+#: ../../source/export.rst:236
+msgid "使用 Godot 编辑器的 **输出** 面板或命令行启动查看日志。"
+msgstr ""
+
+#: ../../source/export.rst:246
+msgid "性能优化"
+msgstr ""
+
+#: ../../source/export.rst:249
+msgid "导出前优化建议"
+msgstr ""
+
+#: ../../source/export.rst:251
+msgid "**音频格式优化**"
+msgstr ""
+
+#: ../../source/export.rst:253
+msgid "背景音乐使用 OGG Vorbis（压缩率高）"
+msgstr ""
+
+#: ../../source/export.rst:254
+msgid "音效使用短 WAV 或 OGG"
+msgstr ""
+
+#: ../../source/export.rst:255
+msgid "避免使用未压缩的大 WAV 文件"
+msgstr ""
+
+#: ../../source/export.rst:257
+msgid "**流式 vs 采样**"
+msgstr ""
+
+#: ../../source/export.rst:259
+msgid "大文件使用 ``FmodAudioStream``"
+msgstr ""
+
+#: ../../source/export.rst:260
+msgid "音效使用 ``FmodAudioSample``"
+msgstr ""
+
+#: ../../source/export.rst:262
+msgid "**DSP 效果**"
+msgstr ""
+
+#: ../../source/export.rst:264
+msgid "移动设备减少 DSP 使用"
+msgstr ""
+
+#: ../../source/export.rst:265
+msgid "在总线上共享效果器"
+msgstr ""
+
+#: ../../source/export.rst:267
+msgid "**通道数限制**"
+msgstr ""
+
+#: ../../source/export.rst:269
+msgid "设置合理的 ``max_channels``"
+msgstr ""
+
+#: ../../source/export.rst:270
+msgid "使用虚拟语音系统"
+msgstr ""
+
+#: ../../source/export.rst:273
+msgid "发布清单"
+msgstr ""
+
+#: ../../source/export.rst:276
+msgid "Windows 发布检查"
+msgstr ""
+
+#: ../../source/export.rst:278
+msgid "[ ] ``fmod_player.windows.template_release.x86_64.dll``"
+msgstr ""
+
+#: ../../source/export.rst:279
+msgid "[ ] ``fmod.dll`` （发布版，非 fmodL.dll）"
+msgstr ""
+
+#: ../../source/export.rst:280 ../../source/export.rst:289
+msgid "[ ] ``fmod_player.gdextension``"
+msgstr ""
+
+#: ../../source/export.rst:281
+msgid "[ ] 所有音频资源已包含"
+msgstr ""
+
+#: ../../source/export.rst:282
+msgid "[ ] 测试音频播放正常"
+msgstr ""
+
+#: ../../source/export.rst:285
+msgid "Android 发布检查"
+msgstr ""
+
+#: ../../source/export.rst:287
+msgid "[ ] ``libfmod_player.android.template_release.arm64.so``"
+msgstr ""
+
+#: ../../source/export.rst:288
+msgid "[ ] ``libfmod.so`` 已打包"
+msgstr ""
+
+#: ../../source/export.rst:290
+msgid "[ ] 目标架构设置正确"
+msgstr ""
+
+#: ../../source/export.rst:291
+msgid "[ ] 权限配置（如需录音功能）"
+msgstr ""
+
+#: ../../source/export.rst:294
+msgid "许可证合规"
+msgstr ""
+
+#: ../../source/export.rst:297
+msgid "FMOD 许可"
+msgstr ""
+
+#: ../../source/export.rst:299
+msgid "FMOD 是 Firelight Technologies Pty Ltd 的专有音频引擎"
+msgstr ""
+
+#: ../../source/export.rst:300
+msgid "非商业项目可以免费使用"
+msgstr ""
+
+#: ../../source/export.rst:301
+msgid "商业项目需要从 `fmod.com <https://www.fmod.com>`_ 获取许可证"
+msgstr ""
+
+#: ../../source/export.rst:302
+msgid "需要在游戏中显示 FMOD 署名（非商业）"
+msgstr ""
+
+#: ../../source/export.rst:305
+msgid "MIT 许可"
+msgstr ""
+
+#: ../../source/export.rst:307
+msgid "Godot-FmodPlayer 插件本身使用 MIT 许可证，可以自由使用和修改。"
+msgstr ""
+

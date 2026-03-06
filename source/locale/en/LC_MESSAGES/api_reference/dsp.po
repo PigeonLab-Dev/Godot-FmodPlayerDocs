@@ -1,0 +1,757 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 19:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/api_reference/dsp.rst:2
+msgid "DSP 效果器 API"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:5 ../../source/api_reference/dsp.rst:258
+msgid "FmodDSP"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:7 ../../source/api_reference/dsp.rst:196
+msgid "继承自：RefCounted"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:9
+msgid "FMOD::DSP 的包装类，代表数字信号处理器。"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:12 ../../source/api_reference/dsp.rst:20
+#: ../../source/api_reference/dsp.rst:48 ../../source/api_reference/dsp.rst:88
+#: ../../source/api_reference/dsp.rst:107
+#: ../../source/api_reference/dsp.rst:201
+#: ../../source/api_reference/dsp.rst:206
+#: ../../source/api_reference/dsp.rst:243
+#: ../../source/api_reference/dsp.rst:248
+#: ../../source/api_reference/dsp.rst:267
+msgid "方法"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:15
+msgid "生命周期"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:21 ../../source/api_reference/dsp.rst:49
+#: ../../source/api_reference/dsp.rst:89 ../../source/api_reference/dsp.rst:108
+#: ../../source/api_reference/dsp.rst:207
+#: ../../source/api_reference/dsp.rst:249
+#: ../../source/api_reference/dsp.rst:268
+msgid "返回值"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:22 ../../source/api_reference/dsp.rst:50
+#: ../../source/api_reference/dsp.rst:90 ../../source/api_reference/dsp.rst:109
+#: ../../source/api_reference/dsp.rst:137
+#: ../../source/api_reference/dsp.rst:208
+#: ../../source/api_reference/dsp.rst:237
+#: ../../source/api_reference/dsp.rst:250
+#: ../../source/api_reference/dsp.rst:269
+#: ../../source/api_reference/dsp.rst:327
+msgid "说明"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:23
+msgid "``setup(dsp)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:24 ../../source/api_reference/dsp.rst:27
+#: ../../source/api_reference/dsp.rst:30 ../../source/api_reference/dsp.rst:36
+#: ../../source/api_reference/dsp.rst:52 ../../source/api_reference/dsp.rst:58
+#: ../../source/api_reference/dsp.rst:64 ../../source/api_reference/dsp.rst:70
+#: ../../source/api_reference/dsp.rst:114
+#: ../../source/api_reference/dsp.rst:117
+#: ../../source/api_reference/dsp.rst:210
+#: ../../source/api_reference/dsp.rst:216
+#: ../../source/api_reference/dsp.rst:252
+#: ../../source/api_reference/dsp.rst:255
+msgid "void"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:25
+msgid "设置内部 FMOD DSP"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:26
+msgid "``release()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:28
+msgid "释放 DSP 资源"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:29
+msgid "``set_active(active)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:31
+msgid "设置激活状态"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:32
+msgid "``get_active()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:33 ../../source/api_reference/dsp.rst:39
+#: ../../source/api_reference/dsp.rst:67 ../../source/api_reference/dsp.rst:271
+#: ../../source/api_reference/dsp.rst:274
+#: ../../source/api_reference/dsp.rst:277
+msgid "bool"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:34
+msgid "获取激活状态"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:35
+msgid "``set_bypass(bypass)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:37
+msgid "设置旁通状态"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:38
+msgid "``get_bypass()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:40
+msgid "获取旁通状态"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:43
+msgid "参数控制"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:51
+msgid "``set_parameter_float(index, value)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:53
+msgid "设置浮点参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:54
+msgid "``get_parameter_float(index)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:55 ../../source/api_reference/dsp.rst:213
+#: ../../source/api_reference/dsp.rst:341
+#: ../../source/api_reference/dsp.rst:344
+#: ../../source/api_reference/dsp.rst:347
+msgid "float"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:56
+msgid "获取浮点参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:57
+msgid "``set_parameter_int(index, value)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:59
+msgid "设置整数参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:60
+msgid "``get_parameter_int(index)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:61 ../../source/api_reference/dsp.rst:76
+#: ../../source/api_reference/dsp.rst:92 ../../source/api_reference/dsp.rst:95
+#: ../../source/api_reference/dsp.rst:120
+#: ../../source/api_reference/dsp.rst:123
+#: ../../source/api_reference/dsp.rst:338
+msgid "int"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:62
+msgid "获取整数参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:63
+msgid "``set_parameter_bool(index, value)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:65
+msgid "设置布尔参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:66
+msgid "``get_parameter_bool(index)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:68
+msgid "获取布尔参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:69
+msgid "``set_parameter_data(index, data)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:71
+msgid "设置数据参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:72
+msgid "``get_parameter_data(index)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:73 ../../source/api_reference/dsp.rst:79
+msgid "Dictionary"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:74
+msgid "获取数据参数"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:75
+msgid "``get_num_parameters()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:77
+msgid "获取参数数量"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:78
+msgid "``get_parameter_info(index)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:80
+msgid "获取参数信息"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:83
+msgid "信息查询"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:91
+msgid "``get_type()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:93
+msgid "获取 DSP 类型"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:94
+msgid "``get_id()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:96
+msgid "获取 DSP ID"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:97
+msgid "``get_name()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:98 ../../source/api_reference/dsp.rst:329
+#: ../../source/api_reference/dsp.rst:332
+#: ../../source/api_reference/dsp.rst:335
+msgid "String"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:99
+msgid "获取 DSP 名称"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:102
+msgid "连接路由"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:110
+msgid "``add_input(target_dsp)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:111
+#: ../../source/api_reference/dsp.rst:194
+msgid "FmodDSPConnection"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:112
+msgid "添加输入连接"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:113
+msgid "``disconnect_from(target_dsp)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:115
+msgid "断开连接"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:116
+msgid "``disconnect_all()```"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:118
+msgid "断开所有连接"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:119
+msgid "\"get_num_inputs()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:121
+msgid "获取输入数量"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:122
+msgid "\"get_num_outputs()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:124
+msgid "获取输出数量"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:127
+#: ../../source/api_reference/dsp.rst:135
+msgid "常量"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:130
+msgid "DSP 类型"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:136
+msgid "值"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:138
+msgid "``DSP_TYPE_AMPLIFY``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:139
+msgid "0"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:140
+msgid "增益"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:141
+msgid "``DSP_TYPE_EQ6``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:142
+msgid "1"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:143
+msgid "6段均衡器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:144
+msgid "``DSP_TYPE_EQ10``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:145
+msgid "2"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:146
+msgid "10段均衡器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:147
+msgid "``DSP_TYPE_EQ21``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:148
+msgid "3"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:149
+msgid "21段均衡器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:150
+msgid "``DSP_TYPE_FILTER``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:151
+msgid "4"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:152
+msgid "滤波器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:153
+msgid "``DSP_TYPE_SFXREVERB``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:154
+msgid "5"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:155
+msgid "混响"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:156
+msgid "``DSP_TYPE_DELAY``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:157
+msgid "6"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:158
+msgid "延迟"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:159
+msgid "``DSP_TYPE_CHORUS``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:160
+msgid "7"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:161
+msgid "合唱"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:162
+msgid "``DSP_TYPE_DISTORTION``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:163
+msgid "8"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:164
+msgid "失真"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:165
+msgid "``DSP_TYPE_PHASER``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:166
+msgid "9"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:167
+msgid "移相器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:168
+msgid "``DSP_TYPE_PITCHSHIFT``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:169
+msgid "10"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:170
+msgid "音高变换"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:171
+msgid "``DSP_TYPE_COMPRESSOR``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:172
+msgid "11"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:173
+msgid "压缩器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:174
+msgid "``DSP_TYPE_HARDLIMITER``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:175
+msgid "12"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:176
+msgid "硬限制器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:177
+msgid "``DSP_TYPE_PANNER``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:178
+msgid "13"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:179
+msgid "声像器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:180
+msgid "``DSP_TYPE_STEREOENHANCE``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:181
+msgid "14"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:182
+msgid "立体声增强"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:183
+msgid "``DSP_TYPE_SPECTRUMANALYZER``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:184
+msgid "15"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:185
+msgid "频谱分析器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:186
+msgid "``DSP_TYPE_RECORD``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:187
+msgid "16"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:188
+msgid "录音"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:189
+msgid "``DSP_TYPE_CAPTURE``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:190
+msgid "17"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:191
+msgid "捕获"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:198
+msgid "DSP 之间的连接，用于信号路由。"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:209
+msgid "``set_mix(mix)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:211
+msgid "设置混合比例（0.0-1.0）"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:212
+msgid "``get_mix()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:214
+msgid "获取混合比例"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:215
+msgid "``set_mix_matrix(matrix)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:217
+msgid "设置混合矩阵"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:218
+msgid "``get_mix_matrix()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:219
+msgid "Array"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:220
+msgid "获取混合矩阵"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:223
+msgid "FmodAudioEffect"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:225
+msgid "继承自：Resource"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:227
+msgid "自定义音频效果的抽象基类。"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:230
+#: ../../source/api_reference/dsp.rst:235
+msgid "属性"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:236
+#: ../../source/api_reference/dsp.rst:326
+msgid "类型"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:238
+msgid "``bus``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:239
+msgid "FmodChannelGroup"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:240
+msgid "目标总线"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:251
+msgid "``apply_to(bus)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:253
+msgid "应用到总线"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:254
+msgid "``remove_from_bus()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:256
+msgid "从总线移除"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:257
+msgid "``create_custom_dsp(system)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:259
+msgid "创建自定义 DSP"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:262
+msgid "回调方法（子类实现）"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:270
+msgid "``_on_dsp_create(dsp_state)``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:272
+msgid "DSP 创建回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:273
+msgid "\"_on_dsp_process(dsp_state, length, inbuffer, outbuffer, op)\""
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:275
+msgid "DSP 处理回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:276
+msgid "\"_on_dsp_release(dsp_state)\""
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:278
+msgid "DSP 释放回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:281
+msgid "示例"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:284
+msgid "创建自定义效果"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:318
+msgid "DSP 参数信息"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:320
+msgid "``get_parameter_info()`` 返回的字典包含："
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:325
+msgid "键"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:328
+msgid "``name``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:330
+msgid "参数名称"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:331
+msgid "\"label\""
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:333
+msgid "参数标签"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:334
+msgid "\"description\""
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:336
+msgid "参数描述"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:337
+msgid "\"type``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:339
+msgid "参数类型（0=float, 1=int, 2=bool, 3=data）"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:340
+msgid "\"min``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:342
+msgid "最小值"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:343
+msgid "\"max``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:345
+msgid "最大值"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:346
+msgid "\"default``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:348
+msgid "默认值"
+msgstr ""
+

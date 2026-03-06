@@ -25,3 +25,13 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+# 多语言配置
+languages = ['zh_CN', 'en', 'de', 'ja']
+html_context = {
+    'languages': languages,
+    'current_language': 'zh_CN',
+}
+
+locale_dirs = ['locale/']   # path is example but recommended.
+gettext_compact = False     # optional.

@@ -1,0 +1,262 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-06 19:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/getting_started/quick_start.rst:2
+msgid "快速开始"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:4
+msgid "本指南将帮助你在几分钟内开始使用 Godot-FmodPlayer。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:7
+msgid "基本概念"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:9
+msgid "在使用插件之前，了解以下核心概念会很有帮助："
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:12
+msgid "FmodServer"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:14
+msgid "全局单例，管理 FMOD 系统的生命周期。所有 FMOD 功能都通过它访问。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:15
+msgid "FmodSystem"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:17
+msgid "FMOD 核心系统的包装类，用于创建声音、通道、DSP 等。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:18
+msgid "FmodAudioStream"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:20
+msgid "流式音频资源，适合播放大型音乐文件（如背景音乐）。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:21
+msgid "FmodAudioSample"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:23
+msgid "采样音频资源，完全加载到内存，适合播放音效。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:24
+msgid "FmodChannel"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:26
+msgid "代表一个正在播放的声音实例，可以控制播放状态、音量、音调等。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:27
+msgid "FmodChannelGroup"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:29
+msgid "通道组，用于将多个通道组织在一起进行统一控制（混音总线）。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:30
+msgid "FmodDSP"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:32
+msgid "数字信号处理器，用于添加音频效果（混响、EQ 等）。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:35
+msgid "第一个项目"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:38
+msgid "步骤 1：创建场景"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:40
+msgid "创建一个新的 Godot 场景"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:41
+msgid "添加一个 ``Node`` 作为根节点"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:42
+msgid "将场景保存为 ``main.tscn``"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:45
+msgid "步骤 2：添加流式播放器"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:47
+msgid "在场景中添加 ``FmodAudioStreamPlayer`` 节点"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:48
+msgid "将其命名为 ``MusicPlayer``"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:49
+msgid "在 Inspector 中设置以下属性："
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:51
+msgid "**Bus**: ``Master``"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:52
+msgid "**Volume Db**: ``0.0``"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:53
+msgid "**Pitch**: ``1.0``"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:56
+msgid "步骤 3：创建音频资源"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:58
+msgid "在文件系统面板中，右键点击 ``res://`` 文件夹"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:59
+msgid "选择 **新建资源...**"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:60
+msgid "搜索并选择 ``FmodAudioStream``"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:61
+msgid "将资源保存为 ``res://music_stream.tres``"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:62
+msgid ""
+"在 Inspector 中设置 **File Path** 为你的音乐文件路径（例如 "
+"``res://assets/music/background.mp3``）"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:65
+msgid "步骤 4：播放音乐"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:67
+msgid "选择 ``MusicPlayer`` 节点"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:68
+msgid "在 Inspector 中将 ``music_stream.tres`` 拖到 **Stream** 属性上"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:69
+msgid "勾选 **Autoplay** 选项"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:71
+msgid "运行场景，你应该能听到音乐播放了！"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:74
+msgid "代码示例"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:76
+msgid "除了使用编辑器，你也可以通过代码控制音频播放。"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:79
+msgid "基本流式播放"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:98
+msgid "播放采样音效"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:115
+msgid "使用代码播放（不通过节点）"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:136
+msgid "添加音效"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:157
+msgid "控制播放"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:181
+msgid "性能监控"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:199
+msgid "学习路径"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:201
+msgid "继续阅读 :doc:`../user_guide/audio_resources` 深入了解音频资源"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:202
+msgid "学习 :doc:`../user_guide/playback` 掌握播放控制"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:203
+msgid "探索 :doc:`../user_guide/mixer` 了解混音系统"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:204
+msgid "查看 :doc:`../user_guide/dsp_effects` 使用 DSP 效果器"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:207
+msgid "示例项目"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:209
+msgid ""
+"你可以在 `GitHub 仓库 <https://github.com/LuYingYiLong/Godot-FmodPlayer>`_ 的 "
+"``examples/`` 目录中找到完整的示例项目："
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:211
+msgid "**BasicPlayback** - 基础播放示例"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:212
+msgid "**DSPDemo** - DSP 效果器演示"
+msgstr ""
+
+#: ../../source/getting_started/quick_start.rst:213
+msgid "**MixerExample** - 混音系统示例"
+msgstr ""
+

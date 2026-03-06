@@ -107,16 +107,51 @@ Android
 
 需要将 FMOD 库打包到 APK：
 
-1. 在 Godot 导出设置中，添加自定义构建模板
-2. 在项目根目录创建 ``android/`` 文件夹结构::
+.. important::
+   
+   **FMOD Android 运行库需要手动下载**
+   
+   由于 FMOD 的许可协议不允许二次分发，你需要自行从 
+   `FMOD 官网 <https://www.fmod.com/download>`_ 下载 FMOD Engine Android 运行库
 
-    android/
-    └── build/
-        └── libs/
-            └── arm64-v8a/
-                └── libfmod.so
+1. 下载 `OpenJDK17 <https://adoptium.net/temurin/releases/?variant=openjdk17&version=17&os=any&arch=any>`_
+2. 下载 `Android SDK <https://developer.android.com/studio>`_
+3. 下载 `Gradle-8.11.1-bin <https://services.gradle.org/distributions/gradle-8.11.1-bin.zip>`_
+4. 安装 Android 构建模板： **项目** > **安装 Android 模板**
 
-3. 或者使用 Gradle 构建设置自动包含
+  .. image:: _static/install_android_template.png
+     :align: center
+
+5. 将 ``FMOD runtime library`` 和 ``libfmod_player.so`` 文件复制到 ``res://android/build/libs/debug/`` 和 ``res://android/build/libs/release/`` 目录下
+6. 将 ``fmod.jar`` 添加到 ``res://android/build/libs/`` 目录，并在 ``res://android/build/build.gradle`` 中添加依赖：
+
+   .. code-block:: gradle
+
+       dependencies {
+           implementation files('libs/fmod.jar')
+       }
+
+7. 在 ``res://android/build/src/main/java/com/godot/game/GodotApp.java`` 中加载 FMOD 库：
+
+   .. code-block:: java
+
+       @Override
+       public void onCreate(Bundle savedInstanceState) {
+           // Decide according to your own situation whether to load debug or release version
+           System.loadLibrary("fmodL");           // Debug version
+           System.loadLibrary("fmod");            // Release version
+           SplashScreen.installSplashScreen(this);
+           EdgeToEdge.enable(this);
+           super.onCreate(savedInstanceState);
+       }
+
+8. 在导出设置中选择正确的架构（arm64-v8a）
+9. 选择 ``gradle_build/use_gradle_build`` 选项以使用 Gradle 构建系统
+
+  .. image:: _static/use_gradle_build.png
+      :align: center
+    
+10. 导出 APK 或 AAB 文件
 
 GDExtension 配置
 ~~~~~~~~~~~~~~~~
