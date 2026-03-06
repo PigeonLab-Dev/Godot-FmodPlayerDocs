@@ -1,35 +1,29 @@
 # Read the Docs configuration file for Sphinx projects
-# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
-
-# Required
 version: 2
 
-# Set the OS, Python version and other tools you might need
 build:
   os: ubuntu-24.04
   tools:
     python: "3.12"
   commands:
+    # 安装依赖
     - pip install -r requirements.txt
-    - sphinx-intl build --source-dir source
-    - mkdir -p $READTHEDOCS_OUTPUT/html
-    - sphinx-build -T -b html -d _build/doctrees -D language=zh_CN source $READTHEDOCS_OUTPUT/html
-    - sphinx-build -T -b html -d _build/doctrees -D language=en source $READTHEDOCS_OUTPUT/html/en
-    - sphinx-build -T -b html -d _build/doctrees -D language=de source $READTHEDOCS_OUTPUT/html/de
-    - sphinx-build -T -b html -d _build/doctrees -D language=ja source $READTHEDOCS_OUTPUT/html/ja
+    
+    # 构建中文版 (默认)
+    - python -m sphinx -T -b html -d _build/doctrees -D language=zh_CN source $READTHEDOCS_OUTPUT/html
+    
+    # 构建英文版
+    - python -m sphinx -T -b html -d _build/doctrees -D language=en source $READTHEDOCS_OUTPUT/html/en
+    
+    # 构建德文版
+    - python -m sphinx -T -b html -d _build/doctrees -D language=de source $READTHEDOCS_OUTPUT/html/de
+    
+    # 构建日文版
+    - python -m sphinx -T -b html -d _build/doctrees -D language=ja source $READTHEDOCS_OUTPUT/html/ja
 
-# Build documentation in the "docs/" directory with Sphinx
 sphinx:
   configuration: source/conf.py
 
-# 不启用额外格式，使用上面自定义的 build.commands
-# formats:
-#   - pdf
-#   - epub
-
-# Optional but recommended, declare the Python requirements required
-# to build your documentation
-# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
 python:
   install:
     - requirements: requirements.txt
