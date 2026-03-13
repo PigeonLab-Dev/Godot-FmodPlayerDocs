@@ -1,0 +1,13 @@
+# Sphinx 构建输出
+build/
+_build/
+*.mo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
