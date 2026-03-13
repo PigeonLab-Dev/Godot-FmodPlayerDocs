@@ -25,7 +25,11 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # multi-language docs
-language = 'zh_CN'
+import os
+
+# 检测 Read the Docs 的语言设置，默认为中文
+language = os.getenv('READTHEDOCS_LANGUAGE', 'zh_CN')
+
 locale_dirs = ['../locales/']   # 翻译文件存放目录
 gettext_compact = False         # 为每个源文件生成独立的 .po 文件
 gettext_uuid = True             # 为翻译字符串添加唯一标识符
