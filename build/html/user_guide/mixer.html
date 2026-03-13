@@ -1,24 +1,25 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>混音系统 &mdash; Godot FmodPlayer  documentation</title>
+  <title>混音系统 &mdash; Godot FmodPlayer  文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/documentation_options.js?v=7d86a446"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=540d3cec"></script>
     <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="DSP 效果器" href="dsp_effects.html" />
     <link rel="prev" title="播放控制" href="playback.html" /> 
 </head>
@@ -36,12 +37,12 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/installation.html">安装指南</a></li>
@@ -100,19 +101,19 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Godot FmodPlayer</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">混音系统</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/user_guide/mixer.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/user_guide/mixer.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
   </ul>
   <hr/>
@@ -121,27 +122,27 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>混音系统<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1>混音系统<a class="headerlink" href="#id1" title="链接到此标题。"></a></h1>
 <p>Godot-FmodPlayer 提供专业级的混音系统，支持音频总线、通道组和实时参数调整。</p>
 <section id="id2">
-<h2>核心概念<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<h2>核心概念<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
 <section id="audio-bus">
-<h3>音频总线（Audio Bus）<a class="headerlink" href="#audio-bus" title="Link to this heading"></a></h3>
+<h3>音频总线（Audio Bus）<a class="headerlink" href="#audio-bus" title="链接到此标题。"></a></h3>
 <p>音频总线是混音系统的基本单元，用于组织和控制一组音频通道。每个总线都有自己的音量、效果和路由设置。</p>
 </section>
 <section id="channel-group">
-<h3>通道组（Channel Group）<a class="headerlink" href="#channel-group" title="Link to this heading"></a></h3>
+<h3>通道组（Channel Group）<a class="headerlink" href="#channel-group" title="链接到此标题。"></a></h3>
 <p>通道组是 FMOD 底层的混音概念，<code class="docutils literal notranslate"><span class="pre">FmodAudioBus</span></code> 对其进行了包装，提供更友好的接口。</p>
 </section>
 <section id="bus-layout">
-<h3>总线布局（Bus Layout）<a class="headerlink" href="#bus-layout" title="Link to this heading"></a></h3>
+<h3>总线布局（Bus Layout）<a class="headerlink" href="#bus-layout" title="链接到此标题。"></a></h3>
 <p>总线布局定义了项目中所有音频总线的结构，与 Godot 的 AudioServer 同步。</p>
 </section>
 </section>
 <section id="id3">
-<h2>使用音频总线<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<h2>使用音频总线<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
 <section id="id4">
-<h3>默认总线结构<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<h3>默认总线结构<a class="headerlink" href="#id4" title="链接到此标题。"></a></h3>
 <p>插件初始化时会创建与 Godot AudioServer 同步的总线结构:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Master
 ├── Music
@@ -152,7 +153,7 @@
 </div>
 </section>
 <section id="id5">
-<h3>将声音路由到总线<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<h3>将声音路由到总线<a class="headerlink" href="#id5" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
 <span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioStreamPlayer</span>
@@ -172,7 +173,7 @@
 </div>
 </section>
 <section id="id6">
-<h3>控制总线参数<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<h3>控制总线参数<a class="headerlink" href="#id6" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">control_bus</span><span class="p">():</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">music_bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">system</span><span class="o">.</span><span class="n">get_channel_group_by_name</span><span class="p">(</span><span class="s2">&quot;Music&quot;</span><span class="p">)</span>
@@ -193,9 +194,9 @@
 </section>
 </section>
 <section id="id7">
-<h2>自定义总线布局<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<h2>自定义总线布局<a class="headerlink" href="#id7" title="链接到此标题。"></a></h2>
 <section id="id8">
-<h3>创建总线<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<h3>创建总线<a class="headerlink" href="#id8" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">create_custom_bus</span><span class="p">():</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">get_audio_bus_layout</span><span class="p">()</span>
 
@@ -208,7 +209,7 @@
 </div>
 </section>
 <section id="id9">
-<h3>嵌套总线<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<h3>嵌套总线<a class="headerlink" href="#id9" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">create_nested_buses</span><span class="p">():</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">layout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">get_audio_bus_layout</span><span class="p">()</span>
 
@@ -223,7 +224,7 @@
 </div>
 </section>
 <section id="id10">
-<h3>程序化总线管理<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<h3>程序化总线管理<a class="headerlink" href="#id10" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
 <span class="k">var</span><span class="w"> </span><span class="n">bus_volumes</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
@@ -267,9 +268,9 @@
 </section>
 </section>
 <section id="id11">
-<h2>混音技术<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<h2>混音技术<a class="headerlink" href="#id11" title="链接到此标题。"></a></h2>
 <section id="id12">
-<h3>淡入淡出<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<h3>淡入淡出<a class="headerlink" href="#id12" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">fade_bus</span><span class="p">(</span><span class="n">bus_name</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">,</span><span class="w"> </span><span class="n">target_db</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">,</span><span class="w"> </span><span class="n">duration</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">):</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">system</span><span class="o">.</span><span class="n">get_channel_group_by_name</span><span class="p">(</span><span class="n">bus_name</span><span class="p">)</span>
@@ -293,7 +294,7 @@
 </div>
 </section>
 <section id="ducking">
-<h3>侧链压缩（Ducking）<a class="headerlink" href="#ducking" title="Link to this heading"></a></h3>
+<h3>侧链压缩（Ducking）<a class="headerlink" href="#ducking" title="链接到此标题。"></a></h3>
 <p>当语音播放时自动降低音乐音量：</p>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
@@ -331,7 +332,7 @@
 </div>
 </section>
 <section id="mix-snapshots">
-<h3>快照系统（Mix Snapshots）<a class="headerlink" href="#mix-snapshots" title="Link to this heading"></a></h3>
+<h3>快照系统（Mix Snapshots）<a class="headerlink" href="#mix-snapshots" title="链接到此标题。"></a></h3>
 <p>保存和恢复混音状态：</p>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">class_name</span><span class="w"> </span><span class="n">MixSnapshot</span>
 <span class="k">extends</span><span class="w"> </span><span class="n">RefCounted</span>
@@ -372,8 +373,8 @@ var pause_snapshot: MixSnapshot</p>
 <dt>func _ready():</dt><dd><p>gameplay_snapshot = MixSnapshot.capture()</p>
 <p># 创建暂停时的混音状态
 var system = FmodServer.main_system
-var music = system.get_channel_group_by_name(“Music”)
-var sfx = system.get_channel_group_by_name(“SFX”)</p>
+var music = system.get_channel_group_by_name(&quot;Music&quot;)
+var sfx = system.get_channel_group_by_name(&quot;SFX&quot;)</p>
 <p>music.set_volume_db(-6.0)
 sfx.set_mute(true)</p>
 <p>pause_snapshot = MixSnapshot.capture()</p>
@@ -388,7 +389,7 @@ gameplay_snapshot.apply()</p>
 </section>
 </section>
 <section id="id13">
-<h2>性能监控<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<h2>性能监控<a class="headerlink" href="#id13" title="链接到此标题。"></a></h2>
 <p>使用 Godot Performance 监视器查看混音性能：</p>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
 <span class="w">    </span><span class="c1"># 获取 CPU 使用率</span>
@@ -408,17 +409,17 @@ gameplay_snapshot.apply()</p>
 </div>
 </section>
 <section id="id14">
-<h2>最佳实践<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<h2>最佳实践<a class="headerlink" href="#id14" title="链接到此标题。"></a></h2>
 <ol class="arabic simple">
 <li><p><strong>规划总线结构</strong> - 在项目早期设计好总线层级</p></li>
-<li><p><strong>标准化命名</strong> - 使用统一的命名规范（如 “Music”, “SFX”, “Voice”）</p></li>
+<li><p><strong>标准化命名</strong> - 使用统一的命名规范（如 &quot;Music&quot;, &quot;SFX&quot;, &quot;Voice&quot;）</p></li>
 <li><p><strong>默认音量归一化</strong> - 所有总线默认 0 dB，通过调整音频文件本身来平衡</p></li>
 <li><p><strong>使用快照管理状态</strong> - 为不同游戏状态（游戏、暂停、菜单）创建混音快照</p></li>
 <li><p><strong>避免过多总线</strong> - 总线过多会增加 CPU 开销，保持简洁的层级结构</p></li>
 </ol>
 </section>
 <section id="id15">
-<h2>注意事项<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<h2>注意事项<a class="headerlink" href="#id15" title="链接到此标题。"></a></h2>
 <ul class="simple">
 <li><p>总线布局与 Godot AudioServer 同步，修改一个会影响另一个</p></li>
 <li><p>通道组可以嵌套，但建议保持层级不要太深</p></li>
@@ -431,20 +432,20 @@ gameplay_snapshot.apply()</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="playback.html" class="btn btn-neutral float-left" title="播放控制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="dsp_effects.html" class="btn btn-neutral float-right" title="DSP 效果器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="playback.html" class="btn btn-neutral float-left" title="播放控制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="dsp_effects.html" class="btn btn-neutral float-right" title="DSP 效果器" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2026, LuYingYiLong.</p>
+    <p>&#169; 版权所有 2026, LuYingYiLong。</p>
   </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

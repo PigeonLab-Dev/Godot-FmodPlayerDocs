@@ -1,0 +1,549 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/user_guide/playback.rst:2 c11d9134821043a588a6479e905bd0b7
+msgid "播放控制"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:4 04d9a074dac54dfd8c16104b0556951c
+msgid "Godot-FmodPlayer 提供灵活的播放控制功能，支持通过节点或代码直接控制音频播放。"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:7 1d7ab74854e94c299e28f67d0787a899
+msgid "播放节点"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:10 b8be0bd336494a06a9d7b191e428c57a
+msgid "FmodAudioStreamPlayer"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:12 5fa79295fb624418b62000fc323026db
+msgid "用于播放 ``FmodAudioStream`` 资源的节点，适合背景音乐和长时间音频。"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:14
+#: ../../source/user_guide/playback.rst:85 3cfc212d9d7943e5829c22f388bb6b70
+#: b96c0ee2d10944aeaf73c4439c01f6ad
+msgid "**主要属性：**"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:19
+#: ../../source/user_guide/playback.rst:90 6007a46bd8ed4df9b26e33d2f1d5d151
+#: 6d8207c70340444ea92d3ca949780048
+msgid "属性"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:20
+#: ../../source/user_guide/playback.rst:91 7713701d15b745b697c7fda73ec1e566
+#: bfd20c3f378d4aa387b3fcc713de28b9
+msgid "类型"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:21
+#: ../../source/user_guide/playback.rst:47
+#: ../../source/user_guide/playback.rst:92
+#: ../../source/user_guide/playback.rst:109 2e5468f6c531486c9ce00bec9ace0a36
+#: 7bf8de8833224e3d9919770e0ce48590 88b375aa0aa04589bf88552cccf04e7b
+msgid "说明"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:22 bf3b0ffa145a4665857b82cd92b15ba5
+msgid "``stream``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:23 e45a8e4b7de84db48b9561b36656836f
+msgid "FmodAudioStream"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:24 018e016fb34b4ddda2693d4248403837
+msgid "要播放的音频流"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:25 3bf42ff153f04e23b4023d03b86220c2
+msgid "``playing``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:26 81807b0b506d48d98583acb71299fac0
+msgid "bool (readonly)"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:27 e45e8e548d1443099a58dda2ecd6cbce
+msgid "是否正在播放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:28 2b8e2dd6836f46e8b0c54080fd4a41dc
+msgid "``volume_db``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:29
+#: ../../source/user_guide/playback.rst:32 3e918d7a719a4c90bdef27cf07fb9b01
+#: d9ad1a27aa3d459682e007c71ef57d14
+msgid "float"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:30 6ef0c9a521004822b3f2e0f7efa38c0e
+msgid "音量（分贝）"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:31 73066af26d934d82b5b87db8423a0289
+msgid "``pitch``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:33 a410b93da4dd4d1ca5b6a6ed8c13091b
+msgid "音调（1.0 = 正常）"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:34 1d81ed5c0fb94869ba4185d2dbaf7740
+msgid "``autoplay``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:35
+#: ../../source/user_guide/playback.rst:97 2815ea04d34e4707b0013adc1eeb7757
+#: 43ddefe83da74a5c97fa07c3487abccf
+msgid "bool"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:36 559cc65d95954193a66235d1d5c64171
+msgid "场景开始时自动播放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:37
+#: ../../source/user_guide/playback.rst:99 3c229297ab734fbc927fec4fc960cbe7
+#: 402067175ea44b9fa53f02f06cbc999b
+msgid "``bus``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:38
+#: ../../source/user_guide/playback.rst:100 da4f995f8562456fb5db105dd6b7a1b1
+#: f9076b02122144f4ad688980fb08efe6
+msgid "String"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:39
+#: ../../source/user_guide/playback.rst:101 cffbd54ab1fa4d19bb28856b8dccff88
+#: d7a441edaef045b6ade2417181938838
+msgid "音频总线名称"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:41
+#: ../../source/user_guide/playback.rst:103 26982997a08f4cde8518f2b0eea439a2
+#: 3ed447705b9e4c67a662ea07b3ebbdb5
+msgid "**主要方法：**"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:46
+#: ../../source/user_guide/playback.rst:108 7d811ae1c38447b2a542950f31eca5d3
+#: 8c29ae9d175743feb90c8571349ef39d
+msgid "方法"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:48 f68f557116bd4cf6b4406a4cada36a6d
+msgid "``play(from_position=0.0)``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:49 224bb84817fc49d5858edf1875355abf
+msgid "从指定位置开始播放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:50 0ad1c671a140482cbbc668f1d07ac390
+msgid "``stop()``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:51 75a9bea3e2d3421dbcae90cc0f7d4f00
+msgid "停止播放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:52 712a6a19efb5492ab67ce834cfc9c285
+msgid "``seek(position)``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:53 3b1f1d716f7549ecad1389841b247681
+msgid "跳转到指定位置"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:54 0f978c592d22429f99c48adb41c62f10
+msgid "``get_playback_position()``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:55 324abb6731c4418e91782ec90b811aa9
+msgid "获取当前播放位置"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:57
+#: ../../source/user_guide/playback.rst:115 90beb6ec47794523b774d066bc0f373a
+#: c064b44082f7485092d24a6ee9b7b47c
+msgid "**代码示例：**"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:59 3cc8761785b746739195c3a99d9ed1ef
+msgid ""
+"extends Node\n"
+"\n"
+"@onready var player = $FmodAudioStreamPlayer\n"
+"\n"
+"func _ready():\n"
+"    var stream = FmodAudioStream.new()\n"
+"    stream.file_path = \"res://music/bgm.mp3\"\n"
+"    player.stream = stream\n"
+"\n"
+"func play_music():\n"
+"    player.play()\n"
+"\n"
+"func stop_music():\n"
+"    player.stop()\n"
+"\n"
+"func fade_volume(target_db: float, duration: float):\n"
+"    var tween = create_tween()\n"
+"    tween.tween_property(player, \"volume_db\", target_db, duration)"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:81 74d44c9a1478464eb2415e51caae3c6f
+msgid "FmodAudioSampleEmitter"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:83 650d9c2bb24b4a8ca780a2ade94d6b56
+msgid "用于播放 ``FmodAudioSample`` 资源的节点，适合音效和短音频。"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:93 ed3a0ae423434bb3a9b0f37c4b724b3d
+msgid "``sample``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:94 ba7b2e36dad44a7486ee2e72ce46b908
+msgid "FmodAudioSample"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:95 c8b387a30aaa4f129593055b95fb870c
+msgid "要播放的采样"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:96 cd9fe71e490049fda1fedeb2a636d46b
+msgid "``auto_emit``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:98 8fa4309676524635b0933d77f244b634
+msgid "自动发射（设置 sample 时自动播放）"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:110 436e96787944485884bf5c55bf0e3de6
+msgid "``emit()``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:111 3c98e8c526394cd4b8498de1e2ea2ab3
+msgid "播放一次采样"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:112 888e064603c244e8946501b89313ca36
+msgid "``set_sample(sample)``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:113 e4eb610fc5b64c58a0c06b394f1af3e2
+msgid "设置并加载采样"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:117 a366683d6aa84bd187bfd2d45c142b9d
+msgid ""
+"extends Node\n"
+"\n"
+"@onready var emitter = $FmodAudioSampleEmitter\n"
+"\n"
+"func _ready():\n"
+"    var sample = FmodAudioSample.new()\n"
+"    sample.file_path = \"res://sfx/shoot.wav\"\n"
+"    emitter.sample = sample\n"
+"\n"
+"func play_shoot():\n"
+"    emitter.emit()"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:132 c4571197e66b452db4dbdf6f8fc89ea7
+msgid "直接代码播放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:134 1d1e2169dfa043a482c8bcb228c2b05d
+msgid "不通过节点，直接使用 ``FmodSystem`` 播放音频。"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:137 8da1883b1a4f47759a04a894719ad464
+msgid "基本播放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:139 32da5a67c7654f4eb7fe3de1d925248b
+msgid ""
+"func play_sound_simple(path: String):\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # 创建声音\n"
+"    var sound = system.create_sound_from_file(path, "
+"FmodSystem.MODE_DEFAULT)\n"
+"\n"
+"    # 获取主通道组\n"
+"    var master = system.get_master_channel_group()\n"
+"\n"
+"    # 播放（paused=false 立即播放）\n"
+"    var channel = system.play_sound(sound, master, false)\n"
+"\n"
+"    return channel"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:156 2297c224798545fe99831ca919a1d64c
+msgid "高级播放控制"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:158 ec4a9b9906cf46ea8cd1aa3f00aa9844
+msgid ""
+"func play_sound_advanced(path: String):\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # 创建声音（使用特定模式）\n"
+"    var mode = FmodSystem.MODE_LOOP_OFF | FmodSystem.MODE_3D\n"
+"    var sound = system.create_sound_from_file(path, mode)\n"
+"\n"
+"    # 创建通道组\n"
+"    var sfx_group = system.create_channel_group(\"SFX\")\n"
+"\n"
+"    # 播放并暂停（准备状态）\n"
+"    var channel = system.play_sound(sound, sfx_group, true)\n"
+"\n"
+"    # 设置参数\n"
+"    channel.set_volume_db(-6.0)\n"
+"    channel.set_pitch(1.2)\n"
+"\n"
+"    # 开始播放\n"
+"    channel.set_paused(false)\n"
+"\n"
+"    return channel"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:183 9e0fa46eb3274332ac0f82b799f28c06
+msgid "通道控制"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:185 acffb6789a0d4e75aab1c5ab933305ae
+msgid "``FmodChannel`` 代表一个正在播放的声音实例。"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:188 783d5f9a8be94e1a9e5296511ddfd524
+msgid "播放状态控制"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:190 d0bed062791b44f089f3b6e0452c0807
+msgid ""
+"func control_playback(channel: FmodChannel):\n"
+"    # 暂停/继续\n"
+"    channel.set_paused(true)\n"
+"    channel.set_paused(false)\n"
+"\n"
+"    # 停止\n"
+"    channel.stop()\n"
+"\n"
+"    # 检查播放状态\n"
+"    if channel.is_playing():\n"
+"        print(\"Channel is playing\")"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:205 02bba542dbe04ce9b90847a004a4e1e6
+msgid "音量和音调"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:207 b75e71a06a58417682a5557f287c396e
+msgid ""
+"func adjust_audio(channel: FmodChannel):\n"
+"    # 设置音量（分贝）\n"
+"    channel.set_volume_db(-10.0)  # -10 dB\n"
+"    channel.set_volume_db(0.0)    # 0 dB（原始音量）\n"
+"    channel.set_volume_db(6.0)    // +6 dB（放大）\n"
+"\n"
+"    # 设置音调\n"
+"    channel.set_pitch(1.0)   # 正常\n"
+"    channel.set_pitch(0.5)   # 一半速度（低八度）\n"
+"    channel.set_pitch(2.0)   # 双倍速度（高八度）\n"
+"\n"
+"    # 设置声像\n"
+"    channel.set_pan(-1.0)    # 左声道\n"
+"    channel.set_pan(0.0)     # 居中\n"
+"    channel.set_pan(1.0)     # 右声道"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:226 6a8290e6a7a0479eafeb08a8a14960b3
+msgid "播放位置"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:228 185f7d36ca4a46c7b26c7edd08af04c0
+#, python-format
+msgid ""
+"func control_position(channel: FmodChannel):\n"
+"    # 获取当前位置（毫秒）\n"
+"    var position_ms = channel.get_position(FmodChannel.TIMEUNIT_MS)\n"
+"\n"
+"    # 跳转到指定位置\n"
+"    channel.set_position(30000, FmodChannel.TIMEUNIT_MS)  # 30秒处\n"
+"\n"
+"    # 获取总长度\n"
+"    var sound = channel.get_current_sound()\n"
+"    var length = sound.get_length()\n"
+"    print(\"Total length: %.2f seconds\" % length)"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:243 2cd8770a1c774536bdcc3ea7be0cc8f9
+msgid "循环控制"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:245 2cac91e0a190433abc2b421588483a79
+msgid ""
+"func setup_looping(channel: FmodChannel):\n"
+"    # 设置循环次数（-1 = 无限循环）\n"
+"    channel.set_loop_count(-1)\n"
+"\n"
+"    # 设置循环次数（3次）\n"
+"    channel.set_loop_count(3)\n"
+"\n"
+"    # 关闭循环\n"
+"    channel.set_loop_count(0)"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:258 fb86beb87a194db79b6033776e25c442
+msgid "3D 音频"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:261 2eb40778f2b941849ee97f6e15176b58
+msgid "设置 3D 位置和属性"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:263 3a347a28f6c64691a51e43448d7c3adc
+msgid ""
+"extends Node3D\n"
+"\n"
+"@onready var player = $FmodAudioStreamPlayer\n"
+"\n"
+"func _ready():\n"
+"    # 启用 3D 模式需要在创建声音时设置 MODE_3D\n"
+"    var system = FmodServer.main_system\n"
+"    var sound = system.create_sound_from_file(\n"
+"        \"res://sfx/3d_sound.wav\",\n"
+"        FmodSystem.MODE_3D\n"
+"    )\n"
+"\n"
+"    # 获取通道并设置 3D 属性\n"
+"    var channel = system.play_sound(sound, null, false)\n"
+"\n"
+"    # 设置位置\n"
+"    var pos = Vector3(10, 0, 5)\n"
+"    channel.set_3d_attributes(pos, Vector3.ZERO)\n"
+"\n"
+"    # 设置衰减模式\n"
+"    channel.set_3d_min_max_distance(1.0, 100.0)\n"
+"    channel.set_3d_level(1.0)"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:289 4ebf25c6c3d4400aae70170dae0a1c90
+msgid "3D 监听器"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:291 abf54a076f97431abc6a45d606989d73
+msgid ""
+"extends CharacterBody3D\n"
+"\n"
+"func _physics_process(delta):\n"
+"    # 更新监听器位置（通常与摄像机关联）\n"
+"    var system = FmodServer.main_system\n"
+"    system.set_3d_listener_attributes(\n"
+"        0,                          # 监听器索引\n"
+"        global_position,            # 位置\n"
+"        velocity,                   # 速度\n"
+"        -global_transform.basis.z,  # 前向向量\n"
+"        global_transform.basis.y    # 上向量\n"
+"    )"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:307 17350e85f37749b4bbd0d5c2b20899b4
+msgid "性能优化"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:310 0bed0b0c29f24c0c8f64411c265c53ed
+msgid "虚拟语音"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:312 1a109596f8fa46ab91490f3d05cecace
+msgid "FMOD 使用虚拟语音系统管理大量声音："
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:314 7002a34e22df404087f33686e8f4df62
+#, python-brace-format
+msgid ""
+"func _ready():\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # 设置最大真实通道数\n"
+"    system.set_advanced_settings({\n"
+"        \"max_channels\": 64,\n"
+"        \"max_virtual_channels\": 1024\n"
+"    })\n"
+"\n"
+"    # 距离太远的声音会自动变为虚拟（静音但继续\"播放\"）\n"
+"    # 当听众靠近时会自动恢复真实播放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:329 cb5b91d5b7e84609b1709073c9b77de9
+msgid "最佳实践"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:331 2199bae00c5d46f7bc1cd2fdfd44ce5a
+msgid "**使用节点播放背景音乐** - 便于场景管理"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:332 6b2d15779e2f40e88cb84e43576758d4
+msgid "**使用 Emitter 播放音效** - 便于复用和批量管理"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:333 546590c140664b8c96c15383779b6562
+msgid "**及时释放资源** - 不再使用的 Channel 会自动释放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:334 eeb5795042094c4488351bee8944333e
+msgid "**合理使用通道组** - 按类型（音乐、音效、语音）分组管理"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:335 22305955e1a24fd591d97aa914ea293c
+msgid "**3D 音频优化** - 设置合适的衰减距离，避免远距离计算"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:338 3b5708cf172548beb125a040f196f685
+msgid "注意事项"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:340 36a212fa5f8e462c9f49e5e5fd3dd480
+msgid "通道数量受 ``max_channels`` 限制"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:341 e01a81d75927454ea979071eb0d60d17
+msgid "停止播放的通道会自动释放"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:342 9eeee2dbbf3042b6a51fc0e4caa22f8b
+msgid "3D 音频需要在创建声音时启用 ``MODE_3D``"
+msgstr ""
+
+#: ../../source/user_guide/playback.rst:343 9c47b1d96c7c4aae9a49ef1112b220b3
+msgid "音调变化会影响播放速度（以及音高）"
+msgstr ""
+

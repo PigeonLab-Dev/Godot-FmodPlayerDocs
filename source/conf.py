@@ -18,20 +18,15 @@ extensions = []
 templates_path = ['_templates']
 exclude_patterns = []
 
-
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-# 多语言配置
-languages = ['zh_CN', 'en', 'de', 'ja']
-html_context = {
-    'languages': languages,
-    'current_language': 'zh_CN',
-}
-
-locale_dirs = ['locale/']   # path is example but recommended.
-gettext_compact = False     # optional.
+# multi-language docs
+language = 'zh_CN'
+locale_dirs = ['../locales/']   # 翻译文件存放目录
+gettext_compact = False         # 为每个源文件生成独立的 .po 文件
+gettext_uuid = True             # 为翻译字符串添加唯一标识符
+gettext_additional_targets = ['literal-block']  # 允许翻译代码块

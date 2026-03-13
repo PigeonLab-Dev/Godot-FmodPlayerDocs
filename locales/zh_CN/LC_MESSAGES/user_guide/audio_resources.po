@@ -1,0 +1,751 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/user_guide/audio_resources.rst:2
+#: 61118030090f48bdbf0cf4bb5f980b05
+msgid "音频资源"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:4
+#: df84a195d8a34f98a933751ce03fc0cd
+msgid ""
+"Godot-FmodPlayer 使用统一的 ``FmodAudioStream`` 资源类来管理音频数据，通过不同的 "
+"**创建模式标志（CreateMode）** 来适应不同的使用场景。"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:7
+#: d5457409d9d44900b5f839d94b5bf308
+msgid "音频资源类型"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:10
+#: 24e1fda5271b414ea3a16f33fbbf939f
+msgid "FmodAudioStream"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:12
+#: d4d46724433443e18eb9f7a2fda5071f
+msgid "统一的音频资源类，支持流式和样本两种加载模式。"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:14
+#: 54f5414138f5410187c585dab89799cf
+msgid "**创建模式标志：**"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:19
+#: cbafe59a3e5b4b56bd4f5bc985e06a05
+msgid "标志"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:20
+#: ../../source/user_guide/audio_resources.rst:152
+#: ../../source/user_guide/audio_resources.rst:171
+#: 7a2742b133ae4d4e9ba87ee3d825f92e 83e9e6c413eb43138f512518fbab6088
+msgid "说明"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:21
+#: ../../source/user_guide/audio_resources.rst:64
+#: 929d1bd948f84315b15f42491ede1b4b 948ddf24fed64be58b749592f0dc051b
+msgid "适用场景"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:22
+#: 8fb20981082d4f95aad2bb8023402922
+msgid "``MODE_STREAM``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:23
+#: a37b665e76dd4141a958cca4e16ae399
+msgid "流式加载，数据按需从内存流式读取"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:24
+#: 211beffc7d0c443ba86db4a5e1ad47a7
+msgid "背景音乐、长音频、环境音效"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:25
+#: 43bcb9d6ee414b8c8ce5c26521075422
+msgid "``MODE_SAMPLE``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:26
+#: 52ec783ab2bb43a1ae3be2f1dcea4e4f
+msgid "样本模式，数据完全加载到内存"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:27
+#: 82e8a9839ef54397a5f6caea5b6d866b
+msgid "音效、短音频、需要低延迟播放"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:28
+#: ea83e27dd1d240cd88ae06795beaf528
+msgid "``MODE_LOOP``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:29
+#: 68df9d7f09c74e8fb37bace5c9b6cbb9
+msgid "循环播放标志"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:30
+#: 6d0ec9650b7f4559876f04f5d221fc97
+msgid "需要循环的音频"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:31
+#: 113f7f4dfb6b49d186669a7e6ef3ed2c
+msgid "``MODE_LOOP_BIDI``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:32
+#: a248d8e226be4e54add30b5a68b1b7da
+msgid "双向循环（乒乓循环）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:33
+#: 459ca80b24a6424da9e1a9285967bb21
+msgid "特殊循环效果"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:35
+#: 2231c9623c73495292bc535662116e9a
+msgid "**流式模式（MODE_STREAM）特点：**"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:37
+#: 173736ca21354c33a86f9288546449cd
+msgid "内存效率高（只缓存少量数据）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:38
+#: 9c3df3a3d99a478893c9648b27447f30
+msgid "适合长时间播放"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:39
+#: 11c7f1b57c84487ba84283867d1f557c
+msgid "支持无缝循环"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:40
+#: b950c275bb5e471ea3710f5647c46ca6
+msgid "可实时跳转播放位置"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:42
+#: b9fda4a7718e49f68286c42a48232a6c
+msgid "**样本模式（MODE_SAMPLE）特点：**"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:44
+#: 58fde8fe407843e9808fc11ce012d9a2
+msgid "播放延迟极低"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:45
+#: deffee38f15746b497a681aba46ac14d
+msgid "适合频繁触发"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:46
+#: 2838bbd1f3684b2c9bbc53309d578b08
+msgid "支持多实例同时播放"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:47
+#: d57e916a92e849cd8ce603b3dfffb239
+msgid "内存占用与文件大小成正比"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:50
+#: 80e3228b3af24fb29c9cb9191df49b88
+msgid "加载模式对比"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:55
+#: 95498e843ecf4f4aa500a0a3d0e54836
+msgid "特性"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:56
+#: ce56e2c49c9f4734a361f6e2eb44cf4d
+msgid "MODE_STREAM"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:57
+#: a46058d7c9c14506a94eb2d477aaf3ac
+msgid "MODE_SAMPLE"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:58
+#: fc4de4c5319e464dbce82011680d3fc5
+msgid "内存占用"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:59
+#: 70bd0c8be82a467a9c23287a4092edd1
+msgid "低"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:60
+#: 858cfa8c98504c10b962026ff50d5815
+msgid "高（完整文件）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:61
+#: 5fefa303d61c475e9918298b83ed296d
+msgid "播放延迟"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:62
+#: 27e0da694c1e4afd8e6cd00fff20b0dc
+msgid "较高"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:63
+#: 87f637646cb44c96a5c29eb393698361
+msgid "极低"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:65
+#: 79e3c88c2935413bb605ad750c94fb47
+msgid "背景音乐、长音频"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:66
+#: 1889e3e48c11461681fae03670abf3ca
+msgid "音效、短音频"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:67
+#: 37e18ce5431a43a993fa60da62c1a3f9
+msgid "支持格式"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:68
+#: ../../source/user_guide/audio_resources.rst:69
+#: aff060df126e49d7a026070ec0ffdc2d f510f7f55fb7486291dd414d4b9ebc6d
+msgid "所有 FMOD 格式"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:70
+#: 833a2ea15ff847fc962aef0d68b1b838
+msgid "循环支持"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:71
+#: ../../source/user_guide/audio_resources.rst:72
+#: c8e71435c778429b80604da082dca622 ce855d3513eb4f7184c3a157f233f594
+msgid "是"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:75
+#: d9c0d084aab9447ab17c96de3720adb6
+msgid "支持的音频格式"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:80
+#: ea50dcc36165408aa4a317fb4adddeb5
+msgid "格式"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:81
+#: ca879ebfa8f34923938504adff713e92
+msgid "扩展名"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:82
+#: 127b86b09ec14781b90c7c41a970ac42
+msgid "支持情况"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:83
+#: 814c1c1faee14033a342e25e8bc97e8e
+msgid "MP3"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:84
+#: 85b90ce492c044ddbf57d70c99f47175
+msgid ".mp3"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:85
+#: ../../source/user_guide/audio_resources.rst:88
+#: ../../source/user_guide/audio_resources.rst:91
+#: ../../source/user_guide/audio_resources.rst:94
+#: ../../source/user_guide/audio_resources.rst:97
+#: ../../source/user_guide/audio_resources.rst:100
+#: ../../source/user_guide/audio_resources.rst:103
+#: ../../source/user_guide/audio_resources.rst:106
+#: ../../source/user_guide/audio_resources.rst:109
+#: ../../source/user_guide/audio_resources.rst:112
+#: 3e5152657cb947689830096025dbfcb0 496c3ca52f8e4f67a39a92fff46c13ca
+#: 634ae84277ba44e8a85d92aa0465ffe2 856a490dd88142a19d2439bf3219158f
+#: b833404c4d9c4d6495f94a6236e0fa3b d36b4d9f16cf43c1af646b4d6f47cd25
+#: e0e8fde6674240e69a96641dfa25d728 e3ebf11dc0bd4472b7b7971fd47fef1a
+#: f5ca816d518b48c3a481712b77b6c843 fefe346b1df44d1c95d3329ae22c0e1c
+msgid "✅"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:86
+#: a2fbad3e16a54d1fa23a24ef0ae6e623
+msgid "WAV"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:87
+#: de436993e53140dba9053ecdfbbfccff
+msgid ".wav"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:89
+#: 3cc010c263e548aba79e20798f51264e
+msgid "OGG Vorbis"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:90
+#: cef8ebd569ba4d54901a12b831bf2419
+msgid ".ogg"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:92
+#: ab625e8d181d4603adcde623d3bf34c7
+msgid "FLAC"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:93
+#: bb57ef1690bc4b8e90f776bce4aff6cb
+msgid ".flac"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:95
+#: 725d53b04a7541ba8c75b84b31e0e8b5
+msgid "MOD"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:96
+#: 67c68e4e12de49ba836d2ab08b31b566
+msgid ".mod"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:98
+#: d320b67523094cb69a448824df17fb79
+msgid "XM"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:99
+#: 2818e4ac4c4347d5a58204357dafd892
+msgid ".xm"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:101
+#: 58b669485d5d4260b5b76f226ca5c1f2
+msgid "S3M"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:102
+#: 3411b765c5f74e55b1a127fddb5f65e8
+msgid ".s3m"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:104
+#: 48d8121ad5e74a37817410674a7a5f36
+msgid "IT"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:105
+#: e83d934385854dcbacf987458cc357d0
+msgid ".it"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:107
+#: 1d7bb7a353c444748c69a5bbaf67dd60
+msgid "MIDI"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:108
+#: 76c87e7febcd4d1d9173b4eefe0dbbdc
+msgid ".mid"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:110
+#: 439ce5779e0e41f7ac3564ed647d2201
+msgid "AIFF"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:111
+#: c2f3e50a0b71449ca8e4b692be89b5aa
+msgid ".aiff"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:115
+#: 50079fc3e9a54fcdafbc46dbdc555597
+msgid "资源加载方式"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:118
+#: f94ed3b9c5814aa78a4ae10aa7b2af8e
+msgid "从文件加载（推荐）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:120
+#: 0cf47ac6fa8247268b8acba29bb55c8a
+msgid "使用静态方法 ``load_from_file()`` 从文件系统加载音频："
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:122
+#: 6d78ad83b9704aea85891244c03ff2e2
+msgid ""
+"# 流式加载 - 适合背景音乐（默认）\n"
+"var bgm_stream = "
+"FmodAudioStream.load_from_file(\"res://music/background.mp3\")\n"
+"bgm_stream.mode_flags = FmodAudioStream.MODE_STREAM | "
+"FmodAudioStream.MODE_LOOP\n"
+"\n"
+"# 样本加载 - 适合音效\n"
+"var sfx_stream = "
+"FmodAudioStream.load_from_file(\"res://sfx/explosion.wav\",\n"
+"    FmodAudioStream.MODE_SAMPLE)"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:133
+#: 1c347d9e286a47ef9e1d3b51e64af1fe
+msgid "从内存加载"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:135
+#: bb8af3a3dc3243fa8f8cd4b0824ef94b
+msgid ""
+"# 从 PackedByteArray 加载\n"
+"var audio_data: PackedByteArray = load_audio_from_somewhere()\n"
+"\n"
+"var stream = FmodAudioStream.new()\n"
+"stream.audio_data = audio_data\n"
+"stream.mode_flags = FmodAudioStream.MODE_SAMPLE"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:145
+#: a127579938fc472abd1bdd0b25e4745c
+msgid "资源属性"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:150
+#: ef55b6570eea4c18a8e807c2ffa2be39
+msgid "属性"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:151
+#: 1ca72aeb8056461e800c8c097d14e073
+msgid "类型"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:153
+#: b40969e53d9a4cd8abd619c9277a119e
+msgid "``audio_data``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:154
+#: 48095dcd652d4728a1aeb2f2bafdf91b
+msgid "PackedByteArray"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:155
+#: 398c675c2ae643e9b869e8de5d9dce2a
+msgid "原始音频数据（二进制）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:156
+#: 68dc496eca394ca4bf1da845e5652399
+msgid "``mode_flags``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:157
+#: 15dc6c6e643d42079649d8402819382f
+msgid "int"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:158
+#: 296742292e364434849b9efe950b4ffc
+msgid "创建模式标志组合"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:159
+#: b2e603315c4144f59bb8aec9091223ee
+msgid "``data_loaded``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:160
+#: 2b9a806b50b14cdc92c601e41a606125
+msgid "bool"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:161
+#: 99c33c6e6bd54bc2956b8c96b2715cda
+msgid "数据是否已加载（只读）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:164
+#: ../../source/user_guide/audio_resources.rst:169
+#: d3439609ecd34f7d9dc4297284a69ddf
+msgid "方法"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:170
+#: 1711a11edd9f4ac2911377708818d9f2
+msgid "返回值"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:172
+#: b04c847172f5445ba18b62d16e36218e
+msgid "``get_sound()``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:173
+#: ff935754a3b84e2cb200226440a8f96e
+msgid "FmodSound"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:174
+#: 065fefd0f482434e9acf94e19cb2ca7f
+msgid "获取 FMOD 声音对象（延迟创建）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:175
+#: dadaac9457404bdcab3d769293e1250e
+msgid "``get_length()``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:176
+#: 96a02f07f50b4e6c8fbd2eb87719421b
+msgid "float"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:177
+#: 2fd4ae9f3b0e40d2841dae53c2106a60
+msgid "获取音频长度（秒）"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:178
+#: dac5bfa4a39d481ba2209e8037bee053
+msgid "``clear()``"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:179
+#: 91b96a9ff100408793c79e01d964a30b
+msgid "void"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:180
+#: 4d707f5bac2e473d89fe16012e2c6956
+msgid "清理音频数据和声音资源"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:183
+#: 07b13c3b6a124cd29b1afe496dab0a81
+msgid "使用示例"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:186
+#: 977a148bba844be0a05df957a537dd29
+msgid "背景音乐的流式播放"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:188
+#: 7715a3a6f9de4697bb45b070937575f5
+#, python-format
+msgid ""
+"extends Node\n"
+"\n"
+"@onready var bgm_player = $BGMPlayer\n"
+"var bgm_tracks: Array[FmodAudioStream] = []\n"
+"var current_track: int = 0\n"
+"\n"
+"func _ready():\n"
+"    # 加载播放列表（流式模式）\n"
+"    for i in range(3):\n"
+"        var stream = FmodAudioStream.load_from_file(\n"
+"            \"res://music/track_%d.mp3\" % i,\n"
+"            FmodAudioStream.MODE_STREAM)\n"
+"        bgm_tracks.append(stream)\n"
+"\n"
+"    play_track(0)\n"
+"\n"
+"func play_track(index: int):\n"
+"    current_track = index\n"
+"    bgm_player.stream = bgm_tracks[index]\n"
+"    bgm_player.play()"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:212
+#: 516a2921e1884180b7b953893c5303da
+msgid "音效池管理"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:214
+#: a1489cfbcac74884b4311d7a966c2fad
+#, python-brace-format
+msgid ""
+"extends Node\n"
+"\n"
+"var sfx_cache: Dictionary = {}\n"
+"\n"
+"func preload_sfx(sfx_name: String, path: String):\n"
+"    # 使用样本模式加载音效\n"
+"    var stream = FmodAudioStream.load_from_file(path,\n"
+"        FmodAudioStream.MODE_SAMPLE)\n"
+"    sfx_cache[sfx_name] = stream\n"
+"\n"
+"func play_sfx(sfx_name: String, bus: String = \"SFX\"):\n"
+"    if not sfx_cache.has(sfx_name):\n"
+"        push_error(\"SFX not found: \" + sfx_name)\n"
+"        return\n"
+"\n"
+"    # 使用 emitter 播放\n"
+"    var emitter = FmodAudioSampleEmitter.new()\n"
+"    add_child(emitter)\n"
+"\n"
+"    emitter.stream = sfx_cache[sfx_name]\n"
+"    emitter.bus = bus\n"
+"    emitter.emit()\n"
+"\n"
+"    # 播放完成后自动释放\n"
+"    await get_tree().create_timer(5.0).timeout\n"
+"    emitter.queue_free()"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:244
+#: a41270a8005a41b8917f82d90f912a5f
+msgid "动态加载大文件"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:246
+#: ab54c32900fa442298dcef24f62e1452
+msgid ""
+"extends Node\n"
+"\n"
+"@onready var player = $FmodAudioStreamPlayer\n"
+"\n"
+"func load_and_play_large_file(path: String):\n"
+"    # 创建加载线程避免卡顿\n"
+"    var thread = Thread.new()\n"
+"    thread.start(func():\n"
+"        var stream = FmodAudioStream.load_from_file(path,\n"
+"            FmodAudioStream.MODE_STREAM)\n"
+"\n"
+"        # 返回主线程更新\n"
+"        call_deferred(\"_on_stream_loaded\", stream)\n"
+"    )\n"
+"\n"
+"func _on_stream_loaded(stream: FmodAudioStream):\n"
+"    player.stream = stream\n"
+"    player.play()"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:268
+#: 875d7f8f71664e808c8c858ff588b15b
+msgid "循环播放设置"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:270
+#: 1969b1e226484c5183ebd8432c98a896
+msgid ""
+"extends Node\n"
+"\n"
+"func setup_looping_music():\n"
+"    var stream = FmodAudioStream.load_from_file(\"res://music/loop.mp3\")"
+"\n"
+"\n"
+"    # 设置循环模式\n"
+"    stream.mode_flags = FmodAudioStream.MODE_STREAM | "
+"FmodAudioStream.MODE_LOOP\n"
+"\n"
+"    # 或使用双向循环\n"
+"    # stream.mode_flags = FmodAudioStream.MODE_STREAM | "
+"FmodAudioStream.MODE_LOOP_BIDI\n"
+"\n"
+"    $MusicPlayer.stream = stream\n"
+"    $MusicPlayer.play()"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:287
+#: dd98c25563cc459080edda9ff226f701
+msgid "最佳实践"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:289
+#: 08cfa53b559143af949e78c631a74400
+msgid "**背景音乐使用 MODE_STREAM** - 降低内存占用，支持大文件"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:290
+#: 77035aaad4144a0398bc8f99782f3270
+msgid "**音效使用 MODE_SAMPLE** - 确保低延迟播放"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:291
+#: 5f525ceec86443deb6010eb3018d2554
+msgid "**预加载常用资源** - 在游戏启动时加载常用音效"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:292
+#: ab385413c35b40c4857e75b4238a67e7
+msgid "**使用资源路径** - 优先使用 ``res://`` 路径，便于打包"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:293
+#: 6629ebb739a049969326e0a135cedaeb
+msgid "**注意文件格式** - OGG 适合音乐，WAV 适合短音效"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:294
+#: d1be3648d29d42dfb6539db10ca58305
+msgid "**及时清理资源** - 不再使用的音频调用 ``clear()`` 释放内存"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:297
+#: 5bc3b9cc38c54ffca1be5257bbcc9721
+msgid "注意事项"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:299
+#: d65e31005491432ba035c0baba918349
+msgid "流式音频在播放期间音频数据必须保持有效"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:300
+#: 8d303f1f394140f4995aef1f34fc6bca
+msgid "样本音频会占用与文件大小相等的内存"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:301
+#: 089dfa5ff78c4830b98a6eea3e726acd
+msgid "某些格式（如 MIDI）可能需要额外配置"
+msgstr ""
+
+#: ../../source/user_guide/audio_resources.rst:302
+#: f2aa824e24114deeb3c0671a5e3289b1
+msgid "移动设备上注意流式音频的内存占用"
+msgstr ""
+

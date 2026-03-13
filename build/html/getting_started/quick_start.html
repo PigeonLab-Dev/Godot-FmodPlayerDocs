@@ -1,24 +1,25 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>快速开始 &mdash; Godot FmodPlayer  documentation</title>
+  <title>快速开始 &mdash; Godot FmodPlayer  文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/documentation_options.js?v=7d86a446"></script>
       <script src="../_static/doctools.js?v=fd6eb6e6"></script>
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=540d3cec"></script>
     <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="音频资源" href="../user_guide/audio_resources.html" />
     <link rel="prev" title="安装指南" href="installation.html" /> 
 </head>
@@ -36,12 +37,12 @@
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <p class="caption" role="heading"><span class="caption-text">入门指南</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">安装指南</a></li>
@@ -92,19 +93,19 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Godot FmodPlayer</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">快速开始</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/getting_started/quick_start.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/getting_started/quick_start.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
   </ul>
   <hr/>
@@ -113,32 +114,32 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>快速开始<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1>快速开始<a class="headerlink" href="#id1" title="链接到此标题。"></a></h1>
 <p>本指南将帮助你在几分钟内开始使用 Godot-FmodPlayer。</p>
 <section id="id2">
-<h2>基本概念<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<h2>基本概念<a class="headerlink" href="#id2" title="链接到此标题。"></a></h2>
 <p>在使用插件之前，了解以下核心概念会很有帮助：</p>
 <dl class="simple glossary">
-<dt id="term-FmodServer">FmodServer<a class="headerlink" href="#term-FmodServer" title="Link to this term"></a></dt><dd><p>全局单例，管理 FMOD 系统的生命周期。所有 FMOD 功能都通过它访问。</p>
+<dt id="term-FmodServer">FmodServer<a class="headerlink" href="#term-FmodServer" title="链接到此术语。"></a></dt><dd><p>全局单例，管理 FMOD 系统的生命周期。所有 FMOD 功能都通过它访问。</p>
 </dd>
-<dt id="term-FmodSystem">FmodSystem<a class="headerlink" href="#term-FmodSystem" title="Link to this term"></a></dt><dd><p>FMOD 核心系统的包装类，用于创建声音、通道、DSP 等。</p>
+<dt id="term-FmodSystem">FmodSystem<a class="headerlink" href="#term-FmodSystem" title="链接到此术语。"></a></dt><dd><p>FMOD 核心系统的包装类，用于创建声音、通道、DSP 等。</p>
 </dd>
-<dt id="term-FmodAudioStream">FmodAudioStream<a class="headerlink" href="#term-FmodAudioStream" title="Link to this term"></a></dt><dd><p>流式音频资源，适合播放大型音乐文件（如背景音乐）。</p>
+<dt id="term-FmodAudioStream">FmodAudioStream<a class="headerlink" href="#term-FmodAudioStream" title="链接到此术语。"></a></dt><dd><p>流式音频资源，适合播放大型音乐文件（如背景音乐）。</p>
 </dd>
-<dt id="term-FmodAudioSample">FmodAudioSample<a class="headerlink" href="#term-FmodAudioSample" title="Link to this term"></a></dt><dd><p>采样音频资源，完全加载到内存，适合播放音效。</p>
+<dt id="term-FmodAudioSample">FmodAudioSample<a class="headerlink" href="#term-FmodAudioSample" title="链接到此术语。"></a></dt><dd><p>采样音频资源，完全加载到内存，适合播放音效。</p>
 </dd>
-<dt id="term-FmodChannel">FmodChannel<a class="headerlink" href="#term-FmodChannel" title="Link to this term"></a></dt><dd><p>代表一个正在播放的声音实例，可以控制播放状态、音量、音调等。</p>
+<dt id="term-FmodChannel">FmodChannel<a class="headerlink" href="#term-FmodChannel" title="链接到此术语。"></a></dt><dd><p>代表一个正在播放的声音实例，可以控制播放状态、音量、音调等。</p>
 </dd>
-<dt id="term-FmodChannelGroup">FmodChannelGroup<a class="headerlink" href="#term-FmodChannelGroup" title="Link to this term"></a></dt><dd><p>通道组，用于将多个通道组织在一起进行统一控制（混音总线）。</p>
+<dt id="term-FmodChannelGroup">FmodChannelGroup<a class="headerlink" href="#term-FmodChannelGroup" title="链接到此术语。"></a></dt><dd><p>通道组，用于将多个通道组织在一起进行统一控制（混音总线）。</p>
 </dd>
-<dt id="term-FmodDSP">FmodDSP<a class="headerlink" href="#term-FmodDSP" title="Link to this term"></a></dt><dd><p>数字信号处理器，用于添加音频效果（混响、EQ 等）。</p>
+<dt id="term-FmodDSP">FmodDSP<a class="headerlink" href="#term-FmodDSP" title="链接到此术语。"></a></dt><dd><p>数字信号处理器，用于添加音频效果（混响、EQ 等）。</p>
 </dd>
 </dl>
 </section>
 <section id="id3">
-<h2>第一个项目<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<h2>第一个项目<a class="headerlink" href="#id3" title="链接到此标题。"></a></h2>
 <section id="id4">
-<h3>步骤 1：创建场景<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<h3>步骤 1：创建场景<a class="headerlink" href="#id4" title="链接到此标题。"></a></h3>
 <ol class="arabic simple">
 <li><p>创建一个新的 Godot 场景</p></li>
 <li><p>添加一个 <code class="docutils literal notranslate"><span class="pre">Node</span></code> 作为根节点</p></li>
@@ -146,7 +147,7 @@
 </ol>
 </section>
 <section id="id5">
-<h3>步骤 2：添加流式播放器<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<h3>步骤 2：添加流式播放器<a class="headerlink" href="#id5" title="链接到此标题。"></a></h3>
 <ol class="arabic simple">
 <li><p>在场景中添加 <code class="docutils literal notranslate"><span class="pre">FmodAudioStreamPlayer</span></code> 节点</p></li>
 <li><p>将其命名为 <code class="docutils literal notranslate"><span class="pre">MusicPlayer</span></code></p></li>
@@ -160,17 +161,17 @@
 </ol>
 </section>
 <section id="id6">
-<h3>步骤 3：创建音频资源<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<h3>步骤 3：创建音频资源<a class="headerlink" href="#id6" title="链接到此标题。"></a></h3>
 <ol class="arabic simple">
 <li><p>在文件系统面板中，右键点击 <code class="docutils literal notranslate"><span class="pre">res://</span></code> 文件夹</p></li>
-<li><p>选择 <strong>新建资源…</strong></p></li>
+<li><p>选择 <strong>新建资源...</strong></p></li>
 <li><p>搜索并选择 <code class="docutils literal notranslate"><span class="pre">FmodAudioStream</span></code></p></li>
 <li><p>将资源保存为 <code class="docutils literal notranslate"><span class="pre">res://music_stream.tres</span></code></p></li>
 <li><p>在 Inspector 中设置 <strong>File Path</strong> 为你的音乐文件路径（例如 <code class="docutils literal notranslate"><span class="pre">res://assets/music/background.mp3</span></code>）</p></li>
 </ol>
 </section>
 <section id="id7">
-<h3>步骤 4：播放音乐<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<h3>步骤 4：播放音乐<a class="headerlink" href="#id7" title="链接到此标题。"></a></h3>
 <ol class="arabic simple">
 <li><p>选择 <code class="docutils literal notranslate"><span class="pre">MusicPlayer</span></code> 节点</p></li>
 <li><p>在 Inspector 中将 <code class="docutils literal notranslate"><span class="pre">music_stream.tres</span></code> 拖到 <strong>Stream</strong> 属性上</p></li>
@@ -180,10 +181,10 @@
 </section>
 </section>
 <section id="id8">
-<h2>代码示例<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<h2>代码示例<a class="headerlink" href="#id8" title="链接到此标题。"></a></h2>
 <p>除了使用编辑器，你也可以通过代码控制音频播放。</p>
 <section id="id9">
-<h3>基本流式播放<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<h3>基本流式播放<a class="headerlink" href="#id9" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
 <span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioStreamPlayer</span>
@@ -201,7 +202,7 @@
 </div>
 </section>
 <section id="id10">
-<h3>播放采样音效<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<h3>播放采样音效<a class="headerlink" href="#id10" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
 <span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">sfx_emitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioSampleEmitter</span>
@@ -217,7 +218,7 @@
 </div>
 </section>
 <section id="id11">
-<h3>使用代码播放（不通过节点）<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<h3>使用代码播放（不通过节点）<a class="headerlink" href="#id11" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">play_sound_directly</span><span class="p">():</span>
 <span class="w">    </span><span class="c1"># 获取 FMOD 系统</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
@@ -237,7 +238,7 @@
 </div>
 </section>
 <section id="id12">
-<h3>添加音效<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<h3>添加音效<a class="headerlink" href="#id12" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">add_reverb_effect</span><span class="p">():</span>
 <span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
 
@@ -257,7 +258,7 @@
 </div>
 </section>
 <section id="id13">
-<h3>控制播放<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<h3>控制播放<a class="headerlink" href="#id13" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
 <span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">FmodAudioStreamPlayer</span>
@@ -280,7 +281,7 @@
 </div>
 </section>
 <section id="id14">
-<h3>性能监控<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<h3>性能监控<a class="headerlink" href="#id14" title="链接到此标题。"></a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
 <span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
@@ -298,7 +299,7 @@
 </section>
 </section>
 <section id="id15">
-<h2>学习路径<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<h2>学习路径<a class="headerlink" href="#id15" title="链接到此标题。"></a></h2>
 <ul class="simple">
 <li><p>继续阅读 <a class="reference internal" href="../user_guide/audio_resources.html"><span class="doc">音频资源</span></a> 深入了解音频资源</p></li>
 <li><p>学习 <a class="reference internal" href="../user_guide/playback.html"><span class="doc">播放控制</span></a> 掌握播放控制</p></li>
@@ -307,7 +308,7 @@
 </ul>
 </section>
 <section id="id16">
-<h2>示例项目<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<h2>示例项目<a class="headerlink" href="#id16" title="链接到此标题。"></a></h2>
 <p>你可以在 <a class="reference external" href="https://github.com/LuYingYiLong/Godot-FmodPlayer">GitHub 仓库</a> 的 <code class="docutils literal notranslate"><span class="pre">examples/</span></code> 目录中找到完整的示例项目：</p>
 <ul class="simple">
 <li><p><strong>BasicPlayback</strong> - 基础播放示例</p></li>
@@ -320,20 +321,20 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="installation.html" class="btn btn-neutral float-left" title="安装指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../user_guide/audio_resources.html" class="btn btn-neutral float-right" title="音频资源" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="installation.html" class="btn btn-neutral float-left" title="安装指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../user_guide/audio_resources.html" class="btn btn-neutral float-right" title="音频资源" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2026, LuYingYiLong.</p>
+    <p>&#169; 版权所有 2026, LuYingYiLong。</p>
   </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
    
 
 </footer>

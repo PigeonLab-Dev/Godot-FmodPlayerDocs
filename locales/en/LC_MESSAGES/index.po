@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:47
+msgid "入门指南"
+msgstr ""
+
+#: ../../source/index.rst:54
+msgid "用户指南"
+msgstr ""
+
+#: ../../source/index.rst:63
+msgid "API 参考"
+msgstr ""
+
+#: ../../source/index.rst:73
+msgid "其他"
+msgstr ""
+
+#: ../../source/index.rst:2 c33bb7ed87694d19943e0be100c64716
+msgid "Godot-FmodPlayer 文档"
+msgstr ""
+
+#: ../../source/index.rst:4 9e6578802a3a4826b4ab0bb035c6bacf
+msgid "Godot-FmodPlayer Banner"
+msgstr ""
+
+#: ../../source/index.rst:9 047b227b314447e3a9f4eae0551bf7cd
+msgid "Godot-FmodPlayer 插件"
+msgstr ""
+
+#: ../../source/index.rst:11 b99b6fd4de574faaaec72d74dbeb1282
+msgid ""
+"Godot-FmodPlayer 是一个 **Godot 4 GDExtension** 插件，通过 FMOD Core API "
+"提供高级音频播放功能。"
+msgstr ""
+
+#: ../../source/index.rst:14 5808948089754bc1968e231740dedad9
+msgid "功能特性"
+msgstr ""
+
+#: ../../source/index.rst:16 df4303aac8e5454eb802e9b2b4fba120
+msgid "🎵 多格式音频支持"
+msgstr ""
+
+#: ../../source/index.rst:17 b6dc08192873457e86651125c25aff49
+msgid "支持 MP3、WAV、OGG、FLAC、MOD 等主流音频格式"
+msgstr ""
+
+#: ../../source/index.rst:19 c66c07caa9d84d5d970a9c21eb8a0c25
+msgid "📂 灵活加载模式"
+msgstr ""
+
+#: ../../source/index.rst:20 401bf1cb1634400dac9ef2ec3fa71c65
+msgid "文件系统、内存缓冲区、Godot PCK、流式加载"
+msgstr ""
+
+#: ../../source/index.rst:22 d3e650a573684445801073ac877365da
+msgid "🎛️ 专业 DSP 效果器"
+msgstr ""
+
+#: ../../source/index.rst:23 6567272ecea64b11a698996208ce5557
+msgid "内置 16+ 种音频效果：混响、EQ、滤波器、延迟、失真等"
+msgstr ""
+
+#: ../../source/index.rst:25 8892314b70dd4d58a1e9a642f6c83443
+msgid "🎚️ 动态混音系统"
+msgstr ""
+
+#: ../../source/index.rst:26 ddc989474e7c4492b60064fa4ca0250a
+msgid "音频总线、通道组、实时参数调整"
+msgstr ""
+
+#: ../../source/index.rst:28 17433fcc6de74f94a3078a36b3c2b5ac
+msgid "📊 性能监控"
+msgstr ""
+
+#: ../../source/index.rst:29 70a2352529434445bfd08c6d5c1abccf
+msgid "集成 Godot Performance Monitor，实时监控 CPU 和内存使用"
+msgstr ""
+
+#: ../../source/index.rst:31 9aab604ae7b247748457530c996c378a
+msgid "🛠️ 编辑器集成"
+msgstr ""
+
+#: ../../source/index.rst:32 3d236757da8940bca3e8a9fcf0ce12ee
+msgid "音频资源导入器、Inspector 属性编辑、自定义图标"
+msgstr ""
+
+#: ../../source/index.rst:36 0f3053435fca4c3995db3415fe963db9
+msgid ""
+"本插件使用 **FMOD Core API** （底层 API），而非 FMOD Studio API。 如需 Studio API 支持，请使用"
+" `fmod-gdextension <https://github.com/utopia-rise/fmod-gdextension>`_ 。"
+msgstr ""
+
+#: ../../source/index.rst:41 22cc21e38e6d4f7ba671d2e79b70045f
+msgid ""
+"FMOD 是 Firelight Technologies Pty Ltd 的专有音频引擎。 商业使用需要从 `fmod.com "
+"<https://www.fmod.com>`_ 获取 FMOD 许可证。"
+msgstr ""
+
+#: ../../source/index.rst:45 5106cea6b9354949b44f1ae91171636f
+msgid "快速导航"
+msgstr ""
+
+#: ../../source/index.rst:80 087df6c4955e4d75ad9f027f64fa9770
+msgid "快速开始"
+msgstr ""
+
+#: ../../source/index.rst:82 8e499d267cd94f9fba8bf7a45cae5169
+msgid "基本流式播放::"
+msgstr ""
+
+#: ../../source/index.rst:84 3a86da53d62c4e3a8826eacec736d6b9
+msgid ""
+"extends Node\n"
+"\n"
+"@onready var player = $FmodAudioStreamPlayer\n"
+"\n"
+"func _ready():\n"
+"    var stream = FmodAudioStream.new()\n"
+"    stream.file_path = \"res://music/background.mp3\"\n"
+"\n"
+"    player.stream = stream\n"
+"    player.volume_db = -6.0\n"
+"    player.play()"
+msgstr ""
+
+#: ../../source/index.rst:96 29aed5cab54b4638a076c7edc272b766
+msgid "采样播放（一次性音效）::"
+msgstr ""
+
+#: ../../source/index.rst:98 dcfcfbba7bbd42a486b5a98ec27230e9
+msgid ""
+"func play_explosion():\n"
+"    var emitter = $FmodAudioSampleEmitter\n"
+"    var sample = FmodAudioSample.new()\n"
+"    sample.file_path = \"res://sfx/explosion.wav\"\n"
+"\n"
+"    emitter.sample = sample\n"
+"    emitter.bus = \"SFX\"\n"
+"    emitter.play()"
+msgstr ""
+
+#: ../../source/index.rst:107 990ab31183de4ae68b15ffd3060885c0
+msgid "添加混响效果::"
+msgstr ""
+
+#: ../../source/index.rst:109 9b83d9fb52b04974bbeaa882dfc79582
+msgid ""
+"func add_reverb():\n"
+"    var system = FmodServer.main_system\n"
+"    var reverb = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)\n"
+"\n"
+"    reverb.set_parameter_float(0, 0.5)  # Decay time\n"
+"    reverb.set_parameter_float(1, 0.3)  # Early delay\n"
+"\n"
+"    var master_bus = system.get_master_channel_group()\n"
+"    master_bus.add_dsp(0, reverb)"
+msgstr ""
+
+#: ../../source/index.rst:120 d54709518fbf485ea74aca3be98ff29f
+msgid "平台支持"
+msgstr ""
+
+#: ../../source/index.rst:125 b40f14b4003641c8b3eb73a445315b38
+msgid "平台"
+msgstr ""
+
+#: ../../source/index.rst:126 17e21ea02fff4c8f8be15487536d0f15
+msgid "架构"
+msgstr ""
+
+#: ../../source/index.rst:127 9652f92a40384b52ada94f14e2c0d0a2
+msgid "状态"
+msgstr ""
+
+#: ../../source/index.rst:128 320fca637f7144daa075d1d3257a3e3f
+msgid "Windows"
+msgstr ""
+
+#: ../../source/index.rst:129 895ced1f7e4047ffa3e52e259df1b086
+msgid "x64"
+msgstr ""
+
+#: ../../source/index.rst:130 ../../source/index.rst:133
+#: 642e420b6a6444c7b0176cda56a325d9 7e784f382ae642b592754603d0049411
+msgid "✅ 支持"
+msgstr ""
+
+#: ../../source/index.rst:131 e022c2fc9eb7435e97797d8f488bef03
+msgid "Android"
+msgstr ""
+
+#: ../../source/index.rst:132 ca35057483334ff59ae2e0562ee22707
+msgid "arm64, arm32, x86, x86_64"
+msgstr ""
+
+#: ../../source/index.rst:136 13329eaffdaa46988d21223fda5b7c0b
+msgid "相关链接"
+msgstr ""
+
+#: ../../source/index.rst:138 8963999ebc0c4605b006c9eb1e23c93e
+msgid "`GitHub 仓库 <https://github.com/LuYingYiLong/Godot-FmodPlayer>`_"
+msgstr ""
+
+#: ../../source/index.rst:139 b76efbaab4604db680bd9d3f3b68f5c8
+msgid "`FMOD Core API 文档 <https://www.fmod.com/docs/2.03/api/core-api.html>`_"
+msgstr ""
+
+#: ../../source/index.rst:140 c177c095e98140bf8112102115ccc8c7
+msgid "`Godot 引擎 <https://godotengine.org>`_"
+msgstr ""
+
+#: ../../source/index.rst:143 1be2eb263b3c4beca6f98f52152d55e4
+msgid "索引和表格"
+msgstr ""
+
+#: ../../source/index.rst:145 a4b05a750b634b32be2ec32e4eafa6f1
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../source/index.rst:146 430b395d24e6495f81e0255a16828ced
+msgid ":ref:`search`"
+msgstr ""
+
