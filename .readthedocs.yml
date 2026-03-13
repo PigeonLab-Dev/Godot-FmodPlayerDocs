@@ -1,6 +1,10 @@
 # Read the Docs configuration file for Sphinx projects
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
 version: 2
 
+# Set the OS, Python version and other tools you might need
 build:
   os: ubuntu-24.04
   tools:
@@ -14,13 +18,13 @@ build:
     
     # 构建英文版
     - python -m sphinx -T -b html -d _build/doctrees -D language=en source $READTHEDOCS_OUTPUT/html/en
-    
-    # 更多语言版本可以在这里添加
-    # - python -m sphinx -T -b html -d _build/doctrees -D language=de source $READTHEDOCS_OUTPUT/html/de
 
+# Build documentation in the "source/" directory with Sphinx
 sphinx:
   configuration: source/conf.py
 
+# Optional but recommended, declare the Python requirements required
+# to build your documentation
 python:
   install:
     - requirements: requirements.txt
