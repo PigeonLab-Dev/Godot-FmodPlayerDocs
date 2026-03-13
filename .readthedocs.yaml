@@ -9,19 +9,15 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.12"
-  commands:
-    # 安装依赖
-    - pip install -r requirements.txt
-    
-    # 构建中文版 (默认)
-    - python -m sphinx -T -b html -d _build/doctrees -D language=zh_CN source $READTHEDOCS_OUTPUT/html
-    
-    # 构建英文版
-    - python -m sphinx -T -b html -d _build/doctrees -D language=en source $READTHEDOCS_OUTPUT/html/en
 
 # Build documentation in the "source/" directory with Sphinx
 sphinx:
   configuration: source/conf.py
+
+# Optionally build your docs in additional formats such as PDF and ePub
+# formats:
+#   - pdf
+#   - epub
 
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
