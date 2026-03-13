@@ -15,11 +15,8 @@ build:
     # 构建英文版
     - python -m sphinx -T -b html -d _build/doctrees -D language=en source $READTHEDOCS_OUTPUT/html/en
     
-    # 构建德文版
-    - python -m sphinx -T -b html -d _build/doctrees -D language=de source $READTHEDOCS_OUTPUT/html/de
-    
-    # 构建日文版
-    - python -m sphinx -T -b html -d _build/doctrees -D language=ja source $READTHEDOCS_OUTPUT/html/ja
+    # 更多语言版本可以在这里添加
+    # - python -m sphinx -T -b html -d _build/doctrees -D language=de source $READTHEDOCS_OUTPUT/html/de
 
 sphinx:
   configuration: source/conf.py
