@@ -177,6 +177,12 @@ DSP 创建
    * - ``set_3d_settings(doppler, distance, rolloff)``
      - void
      - 设置 3D 全局设置
+   * - ``set_3d_rolloff_callback(callback)``
+     - void
+     - 设置 3D 声音距离衰减回调
+   * - ``get_3d_rolloff_callback()``
+     - Callable
+     - 获取 3D 声音距离衰减回调
 
 常量
 ~~~~
@@ -212,8 +218,21 @@ DSP 创建
      - 0x00010000
      - 非阻塞加载
 
-示例
-~~~~
+3D 衰减回调
+^^^^^^^^^^^
+
+通过 ``set_3d_rolloff_callback`` 可以设置自定义的 3D 声音距离衰减函数，替代 FMOD 内置的衰减算法。
+
+**回调函数签名：**
+
+.. code-block:: gdscript
+
+    func custom_rolloff_callback(distance: float) -> float:
+        # distance: 听众与声源的距离
+        # 返回值: 音量衰减系数 (0.0 - 1.0)
+        return 1.0 / (1.0 + distance * 0.1)
+
+**示例：**
 
 .. code-block:: gdscript
 
@@ -231,3 +250,27 @@ DSP 创建
     # 获取性能信息
     var cpu = system.get_cpu_usage()
     print("DSP: %.2f%%" % cpu["dsp"])
+
+自定义 3D 衰减示例
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: gdscript
+
+    var system = FmodServer.main_system
+    
+    # 定义自定义衰减回调
+    func my_custom_rolloff(distance: float) -> float:
+        # 自定义衰减曲线：近距离不衰减，超过 10 单位后开始衰减
+        if distance < 10.0:
+            return 1.0
+        else:
+            # 对数衰减
+            return max(0.0, 1.0 - log(distance - 9.0) / log(100.0))
+    
+    # 设置回调
+    system.set_3d_rolloff_callback(my_custom_rolloff)
+    
+    # 后续播放的 3D 声音将使用此衰减曲线
+    
+    # 移除回调（恢复默认行为）
+    system.set_3d_rolloff_callback(Callable())

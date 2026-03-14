@@ -76,9 +76,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id9">常量</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id10">加载模式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">3D 衰减回调</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">自定义 3D 衰减示例</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">示例</a></li>
 </ul>
 </li>
 </ul>
@@ -87,6 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="playback.html">播放控制 API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nodes.html">节点 API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dsp.html">DSP 效果器 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial.html">空间音频 API</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">其他</span></p>
 <ul>
@@ -336,6 +338,14 @@
 <td><p>void</p></td>
 <td><p>设置 3D 全局设置</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_3d_rolloff_callback(callback)</span></code></p></td>
+<td><p>void</p></td>
+<td><p>设置 3D 声音距离衰减回调</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_3d_rolloff_callback()</span></code></p></td>
+<td><p>Callable</p></td>
+<td><p>获取 3D 声音距离衰减回调</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -383,9 +393,17 @@
 </tbody>
 </table>
 </section>
-</section>
 <section id="id11">
-<h3>示例<a class="headerlink" href="#id11" title="链接到此标题。"></a></h3>
+<h4>3D 衰减回调<a class="headerlink" href="#id11" title="链接到此标题。"></a></h4>
+<p>通过 <code class="docutils literal notranslate"><span class="pre">set_3d_rolloff_callback</span></code> 可以设置自定义的 3D 声音距离衰减函数，替代 FMOD 内置的衰减算法。</p>
+<p><strong>回调函数签名：</strong></p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span><span class="w"> </span><span class="n">custom_rolloff_callback</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># distance: 听众与声源的距离</span>
+<span class="w">    </span><span class="c1"># 返回值: 音量衰减系数 (0.0 - 1.0)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>示例：</strong></p>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
 
 <span class="c1"># 创建声音</span>
@@ -402,6 +420,30 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DSP: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">cpu</span><span class="p">[</span><span class="s2">&quot;dsp&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
+</section>
+<section id="id12">
+<h4>自定义 3D 衰减示例<a class="headerlink" href="#id12" title="链接到此标题。"></a></h4>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FmodServer</span><span class="o">.</span><span class="n">main_system</span>
+
+<span class="c1"># 定义自定义衰减回调</span>
+<span class="k">func</span><span class="w"> </span><span class="n">my_custom_rolloff</span><span class="p">(</span><span class="n">distance</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 自定义衰减曲线：近距离不衰减，超过 10 单位后开始衰减</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10.0</span><span class="p">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">1.0</span>
+<span class="w">    </span><span class="k">else</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># 对数衰减</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">log</span><span class="p">(</span><span class="n">distance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">9.0</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">log</span><span class="p">(</span><span class="mf">100.0</span><span class="p">))</span>
+
+<span class="c1"># 设置回调</span>
+<span class="n">system</span><span class="o">.</span><span class="n">set_3d_rolloff_callback</span><span class="p">(</span><span class="n">my_custom_rolloff</span><span class="p">)</span>
+
+<span class="c1"># 后续播放的 3D 声音将使用此衰减曲线</span>
+
+<span class="c1"># 移除回调（恢复默认行为）</span>
+<span class="n">system</span><span class="o">.</span><span class="n">set_3d_rolloff_callback</span><span class="p">(</span><span class="n">Callable</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 </section>

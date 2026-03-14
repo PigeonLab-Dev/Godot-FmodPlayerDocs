@@ -258,8 +258,12 @@ FmodAudioEffect
      - FmodDSP
      - 创建自定义 DSP
 
-回调方法（子类实现）
-^^^^^^^^^^^^^^^^^^^^
+DSP 回调
+^^^^^^^^
+
+FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行为。
+
+**生命周期回调：**
 
 .. list-table::
    :header-rows: 1
@@ -267,21 +271,147 @@ FmodAudioEffect
    * - 方法
      - 返回值
      - 说明
-   * - ``_on_dsp_create(dsp_state)``
-     - bool
+   * - ``set_create_callback(callback)`` / ``get_create_callback()``
+     - void / Callable
      - DSP 创建回调
-   * - "_on_dsp_process(dsp_state, length, inbuffer, outbuffer, op)"
-     - bool
-     - DSP 处理回调
-   * - "_on_dsp_release(dsp_state)"
-     - bool
+   * - ``set_release_callback(callback)`` / ``get_release_callback()``
+     - void / Callable
      - DSP 释放回调
+   * - ``set_reset_callback(callback)`` / ``get_reset_callback()``
+     - void / Callable
+     - DSP 重置回调
+
+**处理回调：**
+
+.. list-table::
+   :header-rows: 1
+
+   * - 方法
+     - 返回值
+     - 说明
+   * - ``set_read_callback(callback)`` / ``get_read_callback()``
+     - void / Callable
+     - DSP 读取回调（逐采样处理）
+   * - ``set_process_callback(callback)`` / ``get_process_callback()``
+     - void / Callable
+     - DSP 处理回调（块处理）
+   * - ``set_shouldiprocess_callback(callback)`` / ``get_shouldiprocess_callback()``
+     - void / Callable
+     - 是否需要处理回调
+   * - ``set_setposition_callback(callback)`` / ``get_setposition_callback()``
+     - void / Callable
+     - 设置位置回调
+
+**参数回调：**
+
+.. list-table::
+   :header-rows: 1
+
+   * - 方法
+     - 返回值
+     - 说明
+   * - ``set_setparam_float_callback(callback)`` / ``get_setparam_float_callback()``
+     - void / Callable
+     - 设置浮点参数回调
+   * - ``set_setparam_int_callback(callback)`` / ``get_setparam_int_callback()``
+     - void / Callable
+     - 设置整数参数回调
+   * - ``set_setparam_bool_callback(callback)`` / ``get_setparam_bool_callback()``
+     - void / Callable
+     - 设置布尔参数回调
+   * - ``set_setparam_data_callback(callback)`` / ``get_setparam_data_callback()``
+     - void / Callable
+     - 设置数据参数回调
+   * - ``set_getparam_float_callback(callback)`` / ``get_getparam_float_callback()``
+     - void / Callable
+     - 获取浮点参数回调
+   * - ``set_getparam_int_callback(callback)`` / ``get_getparam_int_callback()``
+     - void / Callable
+     - 获取整数参数回调
+   * - ``set_getparam_bool_callback(callback)`` / ``get_getparam_bool_callback()``
+     - void / Callable
+     - 获取布尔参数回调
+   * - ``set_getparam_data_callback(callback)`` / ``get_getparam_data_callback()``
+     - void / Callable
+     - 获取数据参数回调
+
+回调函数签名
+^^^^^^^^^^^^
+
+**创建回调：**
+
+.. code-block:: gdscript
+
+    func create_callback() -> int:
+        # 返回 FMOD_RESULT 枚举值 (FMOD_OK = 0)
+        return 0
+
+**处理回调：**
+
+.. code-block:: gdscript
+
+    func process_callback(length: int, in_buffers: Dictionary, inputs_idle: bool, op: int) -> Dictionary:
+        # length: 采样数
+        # in_buffers: 输入缓冲区字典 {索引: PackedFloat32Array}
+        # inputs_idle: 输入是否空闲
+        # op: 处理操作类型 (0=查询, 1=执行)
+        
+        # 返回字典:
+        return {
+            "outbuffers": {0: output_array},  # 输出缓冲区
+            "outchannels": [channel_count],   # 输出通道数
+            "result": 0  # FMOD_RESULT
+        }
+
+**读取回调：**
+
+.. code-block:: gdscript
+
+    func read_callback(in_array: PackedFloat32Array, length: int, in_channels: int) -> Dictionary:
+        # in_array: 输入音频数据
+        # length: 采样数
+        # in_channels: 输入通道数
+        
+        # 处理音频...
+        var out_array = PackedFloat32Array()
+        out_array.resize(length * in_channels)
+        
+        for i in range(length * in_channels):
+            out_array[i] = in_array[i] * 0.5  # 衰减
+        
+        return {
+            "output": out_array,
+            "outchannels": in_channels,
+            "result": 0  # FMOD_RESULT
+        }
+
+**参数设置回调：**
+
+.. code-block:: gdscript
+
+    func set_param_float_callback(index: int, value: float) -> int:
+        # index: 参数索引
+        # value: 参数值
+        print("设置参数 ", index, " = ", value)
+        return 0  # FMOD_OK
+
+**参数获取回调：**
+
+.. code-block:: gdscript
+
+    func get_param_float_callback(index: int) -> Dictionary:
+        # index: 参数索引
+        return {
+            "value": 1.0,       # 参数值
+            "valuestr": "1.0",  # 值的字符串表示
+            "result": 0         # FMOD_RESULT
+        }
 
 示例
 ~~~~
 
-创建自定义效果
-^^^^^^^^^^^^^^
+创建自定义效果（旧方式）
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: gdscript
 
@@ -313,6 +443,104 @@ FmodAudioEffect
         var system = FmodServer.main_system
         var master = system.get_master_channel_group()
         effect.apply_to(master)
+
+使用回调创建自定义 DSP（新方式）
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: gdscript
+
+    func create_custom_dsp():
+        var system = FmodServer.main_system
+        
+        # 创建自定义 DSP
+        var dsp = system.create_dsp("MyCustomDSP")
+        
+        # 设置创建回调
+        dsp.set_create_callback(func() -> int:
+            print("DSP 已创建")
+            return 0  # FMOD_OK
+        )
+        
+        # 设置处理回调
+        dsp.set_process_callback(func(length: int, in_buffers: Dictionary, inputs_idle: bool, op: int) -> Dictionary:
+            if op == 0:  # FMOD_DSP_PROCESS_QUERY
+                # 返回支持的输出格式
+                return {
+                    "outchannels": [2],  # 立体声输出
+                    "result": 0
+                }
+            
+            # op == 1: FMOD_DSP_PROCESS_PERFORM
+            var out_buffers = {}
+            
+            for i in in_buffers.keys():
+                var in_data: PackedFloat32Array = in_buffers[i]
+                var out_data = PackedFloat32Array()
+                out_data.resize(in_data.size())
+                
+                # 简单的增益处理
+                for j in range(in_data.size()):
+                    out_data[j] = in_data[j] * 0.7  # 降低音量
+                
+                out_buffers[i] = out_data
+            
+            return {
+                "outbuffers": out_buffers,
+                "outchannels": [2],
+                "result": 0  # FMOD_OK
+            }
+        )
+        
+        # 设置释放回调
+        dsp.set_release_callback(func() -> int:
+            print("DSP 已释放")
+            return 0
+        )
+        
+        # 添加到主总线
+        var master = system.get_master_channel_group()
+        master.add_dsp(0, dsp)
+
+使用读取回调的简单效果器
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: gdscript
+
+    func create_simple_gain_dsp():
+        var system = FmodServer.main_system
+        var dsp = system.create_dsp("GainDSP")
+        
+        var gain = 0.5
+        
+        # 设置读取回调（逐采样处理）
+        dsp.set_read_callback(func(in_array: PackedFloat32Array, length: int, in_channels: int) -> Dictionary:
+            var out_array = PackedFloat32Array()
+            out_array.resize(length * in_channels)
+            
+            for i in range(length * in_channels):
+                out_array[i] = in_array[i] * gain
+            
+            return {
+                "output": out_array,
+                "outchannels": in_channels,
+                "result": 0
+            }
+        )
+        
+        # 设置参数回调以动态调整增益
+        dsp.set_setparam_float_callback(func(index: int, value: float) -> int:
+            if index == 0:
+                gain = value
+            return 0
+        )
+        
+        dsp.set_getparam_float_callback(func(index: int) -> Dictionary:
+            if index == 0:
+                return {"value": gain, "valuestr": str(gain), "result": 0}
+            return {"value": 0.0, "valuestr": "0", "result": 0}
+        )
+        
+        return dsp
 
 DSP 参数信息
 ------------
