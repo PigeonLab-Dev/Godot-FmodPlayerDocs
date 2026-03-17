@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot FmodPlayer \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"POT-Creation-Date: 2026-03-17 19:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -20,54 +20,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../source/api_reference/nodes.rst:2 24008c796c3d4bc088681b679f28ae34
+#: ../../source/api_reference/nodes.rst:2 5037a20891c34ab3adfdbb87275a8bbc
 msgid "节点 API"
-msgstr ""
+msgstr "Node API"
 
 #: ../../source/api_reference/nodes.rst:5
-#: ../../source/api_reference/nodes.rst:219 5eb5df184b824e9cb725e73ebfd37438
-#: bfffc09e764b4ece82c4eef81e29e364
+#: ../../source/api_reference/nodes.rst:508 cad509542f634d20ba93f633e5e68bd2
+#: dc4120eeb2ed4d519731fedce8e99200
 msgid "FmodAudioStreamPlayer"
 msgstr ""
 
 #: ../../source/api_reference/nodes.rst:7
-#: ../../source/api_reference/nodes.rst:131 2abfc04f438c4fc49f97262c41c4d002
-#: b7ec9f0635e5419e84c6862ec7c1ea3f
+#: ../../source/api_reference/nodes.rst:131 85fbb9feae214f05b0d24da4007b5b0d
+#: ee5b1b9c6d404ab68a77ba0d39106c64
 msgid "继承自：Node"
-msgstr ""
+msgstr "Inherits from: Node"
 
-#: ../../source/api_reference/nodes.rst:9 cd5128931d3840e49e0e6902bd07b611
+#: ../../source/api_reference/nodes.rst:9 9e617d97bb9f401889db4dff50ed500d
 msgid "用于播放 ``FmodAudioStream`` 资源的节点，适合背景音乐和长时间音频。"
-msgstr ""
+msgstr "Node for playing ``FmodAudioStream`` resources, suitable for background music and long-duration audio."
 
 #: ../../source/api_reference/nodes.rst:12
 #: ../../source/api_reference/nodes.rst:17
 #: ../../source/api_reference/nodes.rst:136
-#: ../../source/api_reference/nodes.rst:141 0e31ab00337d4f9b9e552b2e180901e0
-#: 47824bcfdb8e458eb114c1758784f842 a3039812241c48408bec4071cb3e902e
-#: bf7336f0a54147029ec9adbbbc6c5faa
+#: ../../source/api_reference/nodes.rst:141
+#: ../../source/api_reference/nodes.rst:220
+#: ../../source/api_reference/nodes.rst:228
+#: ../../source/api_reference/nodes.rst:259
+#: ../../source/api_reference/nodes.rst:281
+#: ../../source/api_reference/nodes.rst:300
+#: ../../source/api_reference/nodes.rst:316 01e268fb5ba94aecbfc58df8df6e2b76
+#: 0bb1f2b017a84a23b0eccdad5471da37 3fc0f954e5c1432282b20ae6a7f167e7
+#: 54d4703649b64498a86c70c940d77ecb 80010f0c52af48788fec48530ae17727
+#: 815d378bc0e54b60af76cfb9ee75f073 ae842cc9ec18471792217ac63047a869
+#: c78221e9be7346fc971f1ff170adaf6f cee4acbd2d1941a495fad49350128172
+#: fd448e5bbe594c9297f5e638afa0f725
 msgid "属性"
-msgstr ""
+msgstr "Properties"
 
 #: ../../source/api_reference/nodes.rst:18
-#: ../../source/api_reference/nodes.rst:142 8276f430d0cf488f8fca9fd940d000f6
-#: e4a2f9c5122940338d33285d559b4f81
+#: ../../source/api_reference/nodes.rst:142
+#: ../../source/api_reference/nodes.rst:229
+#: ../../source/api_reference/nodes.rst:260
+#: ../../source/api_reference/nodes.rst:282
+#: ../../source/api_reference/nodes.rst:301
+#: ../../source/api_reference/nodes.rst:317 0059b6c128dd4d62a52909c8c8571d4c
+#: 1e9f3960168e4d359f03c272f5781e2a 4134bb19a3a94e31b7d46d3944cc6ef6
+#: 681fed15ddb9427a9064bd7a3fbf780d 9b25a387b86e4981b81afb790fb2fcc9
+#: c3bd83dbb31840deaa2b9ef69a9ca458 f0e566f6e97643b4bfb642306b7ed3a5
 msgid "类型"
-msgstr ""
+msgstr "Type"
 
 #: ../../source/api_reference/nodes.rst:19
 #: ../../source/api_reference/nodes.rst:50
 #: ../../source/api_reference/nodes.rst:95
 #: ../../source/api_reference/nodes.rst:143
-#: ../../source/api_reference/nodes.rst:162 3e032bf6a674498287ba592b218dcb2d
-#: 5381665798524cd7bb8ff9da66901fcd 5857d430d6104c0eb2f1dae54f32eab9
-#: 75f964f0b82d4963a5b40d048afa68bd
+#: ../../source/api_reference/nodes.rst:162
+#: ../../source/api_reference/nodes.rst:230
+#: ../../source/api_reference/nodes.rst:261
+#: ../../source/api_reference/nodes.rst:283
+#: ../../source/api_reference/nodes.rst:302
+#: ../../source/api_reference/nodes.rst:318
+#: ../../source/api_reference/nodes.rst:331
+#: ../../source/api_reference/nodes.rst:368
+#: ../../source/api_reference/nodes.rst:390
+#: ../../source/api_reference/nodes.rst:408 134043e9844e41f982330d2814090dff
+#: 2aa6f333764d4032abbeb944e8467118 2ab81d8fdb7b41babddc9c172e92ec7c
+#: 2f7d4414d44847faa0a61db64b4865bc 445418163da149b49aebd9765fa9a2e9
+#: 53fc3e304c5041aebaa5ff48faa4820e 6437dcaf6145493f87eb2f8e384b2ea3
+#: 71e0446378334c9faf0c3fb054cbace6 7e0887379dd2419bb2500648721926f0
+#: abf02bd5c7a9487fa35882291ff0761c af44880dc53949f0a9d04f405e3dae1d
+#: c833f173b5d74c2eaf1b2211ac72302f daee3f280e7d4a96b66529a64f25d091
+#: e614ca651eb34734995feff99cd779a9
 msgid "说明"
-msgstr ""
+msgstr "Description"
 
 #: ../../source/api_reference/nodes.rst:20
-#: ../../source/api_reference/nodes.rst:144 19386ed437f14e66a00a863e3989b230
-#: 5912451db4e648408d884704d5a06842
+#: ../../source/api_reference/nodes.rst:144
+#: ../../source/api_reference/nodes.rst:231 a2ddf95fd44f416089e88b08b4b31b53
+#: b47d79f039504117a29ce0cf5a6ed164 ffedc1bb9e804d42b01118cd70f8d2e4
 msgid "``stream``"
 msgstr ""
 
@@ -75,17 +106,27 @@ msgstr ""
 #: ../../source/api_reference/nodes.rst:67
 #: ../../source/api_reference/nodes.rst:145
 #: ../../source/api_reference/nodes.rst:170
-#: ../../source/api_reference/nodes.rst:222
-#: ../../source/api_reference/nodes.rst:223 5dae782e422d46159d12340b1ab03ea1
-#: 92139ccedffd43f98c6e8de7acee11d0 ad3ea305b49e452e818f1514e98b9c32
+#: ../../source/api_reference/nodes.rst:232
+#: ../../source/api_reference/nodes.rst:348
+#: ../../source/api_reference/nodes.rst:516
+#: ../../source/api_reference/nodes.rst:517
+#: ../../source/api_reference/nodes.rst:518 23d8b98a78e747b7b715d6359f6fdb63
+#: 40bf6eb6e60141cd9712bc551939793f 43b37f887f5043fcb8a7bc1bf81651b7
+#: 92e0ba82befa43eea64ddbb7c2b9a5d4 b0347d2e39264b82b793b591bd0348b0
+#: ce2137cda39941609d2134ad9d1e6506 ee0f60b9e2424d838a96eb85f0388a5d
+#: fcd8449205094976b71148f0bd151b9c fdd19f42684742cf98e850576d30b7ca
 msgid "FmodAudioStream"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:22 187d5cd094164a418034c2d21618bebf
+#: ../../source/api_reference/nodes.rst:22
+#: ../../source/api_reference/nodes.rst:233 14996be3b62f4feb9c48600bb9fbe105
+#: b4f34a25d2f44288944daff755533d16
 msgid "要播放的音频流"
-msgstr ""
+msgstr "The audio stream to play"
 
-#: ../../source/api_reference/nodes.rst:23 483ba5c9ddf549d0ae29c00ed8674c1a
+#: ../../source/api_reference/nodes.rst:23
+#: ../../source/api_reference/nodes.rst:234 091bdbab4c0a42d0a874a6459cb737a8
+#: 812e8d9c02e14a9885aa9add4b613ed3
 msgid "``playing``"
 msgstr ""
 
@@ -93,17 +134,29 @@ msgstr ""
 #: ../../source/api_reference/nodes.rst:33
 #: ../../source/api_reference/nodes.rst:39
 #: ../../source/api_reference/nodes.rst:148
-#: ../../source/api_reference/nodes.rst:176 459a253cccc64431b101faebda3a5310
-#: 4de5f5993afe48e2ac2ae44223f50e3f 5f19c25000bc42c19acd067494bf6d4e
-#: cab6cefed95843c7abe672fb48575f58
+#: ../../source/api_reference/nodes.rst:176
+#: ../../source/api_reference/nodes.rst:235
+#: ../../source/api_reference/nodes.rst:238
+#: ../../source/api_reference/nodes.rst:247
+#: ../../source/api_reference/nodes.rst:285
+#: ../../source/api_reference/nodes.rst:342 0529c58b681d40109a234a91cd02d0d6
+#: 0b23cd2f6ba24242879616a8e37d38d5 0b7f819efdcf4aab8a7a9d31087ae0b1
+#: 390d337be35048468cd9caf688555f8d 408f4c09ba204e589147d11abebf6bb6
+#: 49c81ce7537f47a8ba66ddd64ae57b8e bbe08e9b8ea8416a8ccd29e0a003a2d0
+#: c60fb08b38d84fe29d95bf2519afe4a3 cd2986be5a054087b5a7eed04f750fa4
+#: eea69d92be2940a588b706124423fce4
 msgid "bool"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:25 7ec086486d514e6182b28d62e4e0ecf0
+#: ../../source/api_reference/nodes.rst:25
+#: ../../source/api_reference/nodes.rst:236 472426783a6b4fba8885ae8c97c0196e
+#: 6ec4487183ca452fb927d5debacf4016
 msgid "是否正在播放（只读）"
-msgstr ""
+msgstr "Whether currently playing (read-only)"
 
-#: ../../source/api_reference/nodes.rst:26 67aab86698764d45ac48bc015734a50f
+#: ../../source/api_reference/nodes.rst:26
+#: ../../source/api_reference/nodes.rst:240 3b2b28f6ffe8499badc2326dbe9f1de1
+#: 7e9896093ed442dc9cbc80f670c7a1d8
 msgid "``volume_db``"
 msgstr ""
 
@@ -111,75 +164,107 @@ msgstr ""
 #: ../../source/api_reference/nodes.rst:30
 #: ../../source/api_reference/nodes.rst:61
 #: ../../source/api_reference/nodes.rst:79
-#: ../../source/api_reference/nodes.rst:85 610350e9171144909564e9f6107f39c0
-#: 6ce25242091045afb3451249bd1d7da1 7d97abfd68cc4ba78154e4a52521536c
-#: 816fb6da48a64adea1f0d1fe71fe20f8 d46ea47ee9d343e5ab146732fbe88a51
+#: ../../source/api_reference/nodes.rst:85
+#: ../../source/api_reference/nodes.rst:241
+#: ../../source/api_reference/nodes.rst:244
+#: ../../source/api_reference/nodes.rst:263
+#: ../../source/api_reference/nodes.rst:266
+#: ../../source/api_reference/nodes.rst:288
+#: ../../source/api_reference/nodes.rst:291
+#: ../../source/api_reference/nodes.rst:304
+#: ../../source/api_reference/nodes.rst:307
+#: ../../source/api_reference/nodes.rst:345 00ab71d1643a421c949d4327a8b19b20
+#: 28b2005a5c6e45e4b6a741b6c4d5d7a1 3bebd49f856c42418b9ba25c6938276c
+#: 3edac9549b8841ba9b96160ba9bf5682 4a3f6c62096b43179796a5f507640c10
+#: 5b78243cb3bf40fb9f6cf3c217e725f8 a2f8ca05b31148c088c301553b6af746
+#: a8bff25c148d4b8884d41db9abf62369 b8bd7bfd2c334f6e9cd620e5fa237688
+#: c474212b27624204949a1f236605eb59 c63056e98c9e4e6aa38647cf33b7b280
+#: d702c1aadb7f4c9d98709446191da3cf dbd5e17c47074ce799a18d9bbfc19006
+#: e9c6e8323475425583f2a26e7e07a5f1
 msgid "float"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:28 6be12213eee042d4813d6f572497e216
+#: ../../source/api_reference/nodes.rst:28 9c29f53f6a71480b9c3fe92685e6d67c
 msgid "音量（分贝，默认 0.0）"
-msgstr ""
+msgstr "Volume (in decibels, default 0.0)"
 
-#: ../../source/api_reference/nodes.rst:29 2aa4b6935f1f46909fd390e7b879b918
+#: ../../source/api_reference/nodes.rst:29
+#: ../../source/api_reference/nodes.rst:243 82d4c507b7b2498a92f18d35e8167a80
+#: e190c793c7eb4c3989ee335f9a6bef7d
 msgid "``pitch``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:31 83bdab6221d540f89d4918b9ce40eeaf
+#: ../../source/api_reference/nodes.rst:31 42292e191a2c4fb79a1fcc019eb3f7da
 msgid "音调（默认 1.0）"
-msgstr ""
+msgstr "Pitch (default 1.0)"
 
-#: ../../source/api_reference/nodes.rst:32 8fcbec793e1c4836b7a78e0381fab559
+#: ../../source/api_reference/nodes.rst:32
+#: ../../source/api_reference/nodes.rst:246 3c9c81f68e964e9ebc690b6a3afcd269
+#: b78925f78b63488d82f6b0a88823298c
 msgid "``auto_play``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:34 51973879a9a945579f6f89105ad75e29
+#: ../../source/api_reference/nodes.rst:34
+#: ../../source/api_reference/nodes.rst:248 accc33e14c8d481590540cbe2cb6174a
+#: c84f2694c1da424eb685e8f2cf73e858
 msgid "自动播放（默认 false）"
-msgstr ""
+msgstr "Auto-play (default false)"
 
 #: ../../source/api_reference/nodes.rst:35
-#: ../../source/api_reference/nodes.rst:150 51457e16da86457d9270f7f8db6ab381
-#: eee5af7e0d3b4035b2e5d87c8f877a30
+#: ../../source/api_reference/nodes.rst:150
+#: ../../source/api_reference/nodes.rst:249 46f1ef99e3564baa842f65da205382b5
+#: caeb962de3be408b90e7497408d8a87b ef1bfc0e87a449dca555dcee756346f4
 msgid "``bus``"
 msgstr ""
 
 #: ../../source/api_reference/nodes.rst:36
 #: ../../source/api_reference/nodes.rst:73
-#: ../../source/api_reference/nodes.rst:151 0f0d7a9e26b749d48aa19adb704b2134
-#: 0f67c0ff6eef441d8405f04b06ada55d aec23b860e654acdb1696899d42942b8
+#: ../../source/api_reference/nodes.rst:151 1dc904773ff34501ba3870b7bd99ad14
+#: 5bb3268a3274428dbe362c760e1cbe28 e9408a63282344809ff7198c2161daa0
 msgid "String"
 msgstr ""
 
 #: ../../source/api_reference/nodes.rst:37
-#: ../../source/api_reference/nodes.rst:152 3e8c1f79ca0a490c90126e0e53039e51
-#: a8ddf5b212a444bd94876075228a733e
+#: ../../source/api_reference/nodes.rst:152
+#: ../../source/api_reference/nodes.rst:251 9611d0b4b901454a9ddf6b6c4e840472
+#: be31bcb864984f85a29ba135e4908ce3 dcfb45cf88e144dbaebd728315fc7dff
 msgid "音频总线名称（默认 \"Master\"）"
-msgstr ""
+msgstr "Audio bus name (default \"Master\")"
 
-#: ../../source/api_reference/nodes.rst:38 a4ba0ac47f11423486f9c26d14415608
+#: ../../source/api_reference/nodes.rst:38
+#: ../../source/api_reference/nodes.rst:237 b63a7967270141d49d71bf91d2414031
+#: cc5fc7bf3c37449da094068de66a33f4
 msgid "``stream_paused``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:40 69792f2072064d34905990964b923f47
+#: ../../source/api_reference/nodes.rst:40
+#: ../../source/api_reference/nodes.rst:239 6600d297d1644e18a4c9780ddd67befa
+#: ba4052240bdb40eea87284a1568f4c50
 msgid "流暂停状态"
-msgstr ""
+msgstr "Stream paused state"
 
 #: ../../source/api_reference/nodes.rst:43
 #: ../../source/api_reference/nodes.rst:48
 #: ../../source/api_reference/nodes.rst:155
-#: ../../source/api_reference/nodes.rst:160 5e0bba382e6d4ae5895810550fbff0ab
-#: 76dc834d281a404695d9c684c1fa87a0 c44494abf9a841d0bf8a85c72822cf25
-#: f8347bc87b78472cadf4adc9bc323846
+#: ../../source/api_reference/nodes.rst:160
+#: ../../source/api_reference/nodes.rst:324
+#: ../../source/api_reference/nodes.rst:329 0a73c89b085c41ffba790d87f9f02720
+#: 425432a1379c44dbb92622477478fdf7 586162629dfc4150bd6df8d4f616b54e
+#: 9a27e80371bc4788919d8d5cd4640aef c294ee6101e04dfb84073c6891f8e88a
+#: f69dca3c9f9e41359f2bb1d22c7aa0b3
 msgid "方法"
-msgstr ""
+msgstr "Methods"
 
 #: ../../source/api_reference/nodes.rst:49
-#: ../../source/api_reference/nodes.rst:161 58a850dca3474ec2bc97d5208c213f3d
-#: 8afcf860b1b14f4fadbe292d720d0763
+#: ../../source/api_reference/nodes.rst:161
+#: ../../source/api_reference/nodes.rst:330 05168749fcb24de5864bf41fe1e42bda
+#: 0a35433a53654105bb4ba9d9f10f11d3 1066f1969049491c856493dd068d941c
 msgid "返回值"
-msgstr ""
+msgstr "Return Value"
 
-#: ../../source/api_reference/nodes.rst:51 381b3d2b47af440cb15153aef632c433
+#: ../../source/api_reference/nodes.rst:51
+#: ../../source/api_reference/nodes.rst:332 396a3f34fdf04c568e0e498f57df3f78
+#: bce96c8514274b9389d414c44d2bddd2
 msgid "``play(from_position=0.0)``"
 msgstr ""
 
@@ -192,135 +277,166 @@ msgstr ""
 #: ../../source/api_reference/nodes.rst:82
 #: ../../source/api_reference/nodes.rst:164
 #: ../../source/api_reference/nodes.rst:167
-#: ../../source/api_reference/nodes.rst:173 016ca50dd5954979b2907dc4252621ce
-#: 180ef6c138164b0b86c39d7e312324dd 7068105b34a6434989387ef034190a53
-#: 95d34bfc648b4dd7a2eed9a3bab0ec63 a5139f7af582429f991257bc612642b9
-#: b9b52619bd1a4138b15ba862092d28c9 da41e9ba8280498787d35e1c4afd42a4
-#: fbdcd87964794bafbaefeeee937ae746
+#: ../../source/api_reference/nodes.rst:173
+#: ../../source/api_reference/nodes.rst:333
+#: ../../source/api_reference/nodes.rst:336
+#: ../../source/api_reference/nodes.rst:339
+#: ../../source/api_reference/nodes.rst:351 009497259ec340e4b92c394b88a04814
+#: 295253c631c947fdbe4125b48ed065fc 2b505b981b374552bbea80c8c99a6a90
+#: 405e3684c55448ac9d3f2c22dd2f22aa 47b0405c38cc402a8f7cf385bba3c96d
+#: 60c49ff983a04b259fc578503155204a 716e95471a3e494ab63fd7ad0501b01b
+#: 7f1114c55cbc4be69015b5e3f99e9d2e 8a4a429c66f64d7dafb74e3faf94f0ec
+#: 94b740f02ebf4424825c8e74714766ce 9eabdce3ed4f4fed89caa74916d56374
+#: a5317da7296343e98dc74406dcb0f611 a5e2fff3d6c94479948b434f9811ce8e
+#: c00006c64a7b44c68220ca5eb33d5af0
 msgid "void"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:53 bdcfbc9587b54cc0b2c056339e5cf451
+#: ../../source/api_reference/nodes.rst:53 56aa7ee11eaf414f8ec70ce859a46b9e
 msgid "从指定位置开始播放"
-msgstr ""
+msgstr "Start playing from specified position"
 
-#: ../../source/api_reference/nodes.rst:54 6457a7835869427690bf4e5a125eab58
+#: ../../source/api_reference/nodes.rst:54
+#: ../../source/api_reference/nodes.rst:338 074d3230875741b392c3c522783e1ae7
+#: c550761062fc4f3fa0611938b24a605c
 msgid "``stop()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:56 90a33e16655a4c8982da7bd20003dd71
+#: ../../source/api_reference/nodes.rst:56
+#: ../../source/api_reference/nodes.rst:340 8847625910704361a3badcd9ff5ff2a4
+#: c6e9bdd49f314feca7979d84f53f4857
 msgid "停止播放"
-msgstr ""
+msgstr "Stop playback"
 
-#: ../../source/api_reference/nodes.rst:57 90c9a34461384848aaad7b4c61bd5114
+#: ../../source/api_reference/nodes.rst:57
+#: ../../source/api_reference/nodes.rst:335 8aee8177748848888e6f4ce01cab0371
+#: a6e10e3aa85a47b486f601abde78c823
 msgid "``seek(position)``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:59 084e06ac813b4f238e6b9ed433ca6403
+#: ../../source/api_reference/nodes.rst:59
+#: ../../source/api_reference/nodes.rst:337 3cea8d1ba2cf44eab0644442a0a40b45
+#: b8b551ca915d4b4094301f7fd5635f7b
 msgid "跳转到指定位置（秒）"
-msgstr ""
+msgstr "Jump to specified position (seconds)"
 
-#: ../../source/api_reference/nodes.rst:60 3e84012657dd476b8a90500041ee7d9f
+#: ../../source/api_reference/nodes.rst:60
+#: ../../source/api_reference/nodes.rst:344 c8f244dbae8042da8fa620adedce5d2d
+#: c967ec2801c8478f85c4dff03c945d4b
 msgid "``get_playback_position()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:62 42ecf7a4e8f34f7a839c529014774b9c
+#: ../../source/api_reference/nodes.rst:62
+#: ../../source/api_reference/nodes.rst:346 c28ab5a5605d45ebaaada970db67c91a
+#: d3bf6c9fb4294569b92062a5da48c152
 msgid "获取当前播放位置（秒）"
-msgstr ""
+msgstr "Get current playback position (seconds)"
 
 #: ../../source/api_reference/nodes.rst:63
-#: ../../source/api_reference/nodes.rst:166 15e9d97df99a48e791ae3d6f3e693b81
-#: aecfcbcd73e644b28f4be5782f7f029d
+#: ../../source/api_reference/nodes.rst:166
+#: ../../source/api_reference/nodes.rst:350 39febb2cd5ec4d87856c99b1a0985bdb
+#: cdae6f8d2e6a47f3a1184621b8c5c156 f234dc389a724d17864bc572489a76b0
 msgid "``set_stream(stream)``"
 msgstr ""
 
 #: ../../source/api_reference/nodes.rst:65
-#: ../../source/api_reference/nodes.rst:168 e50b67d815e9473f9b0dca6e676d1e49
-#: fab3968deab44e5b835a460a7c8e486e
+#: ../../source/api_reference/nodes.rst:168
+#: ../../source/api_reference/nodes.rst:352 314b331ab7724b64898c37fee9f19c58
+#: 421aa686acf0410a8c82d892a4225f20 db51df815b61424b9e5888ffad82d270
 msgid "设置音频流"
-msgstr ""
+msgstr "Set audio stream"
 
 #: ../../source/api_reference/nodes.rst:66
-#: ../../source/api_reference/nodes.rst:169 58db2660c2c0416199081d79d4d6ae87
-#: dd256233a7da43bf831f4e87b0fbe6ce
+#: ../../source/api_reference/nodes.rst:169
+#: ../../source/api_reference/nodes.rst:347 74fee704063849f5870ab2d4458c1669
+#: bc1dc3959aa44542809e27d12ff8087b e1e432198ee74fa4b20e6f6c892d57b6
 msgid "``get_stream()``"
 msgstr ""
 
 #: ../../source/api_reference/nodes.rst:68
-#: ../../source/api_reference/nodes.rst:171 89ff0b130a294986a38a8ec64bf18ff9
-#: c66aff20f71147d8a815a6e5345ecce1
+#: ../../source/api_reference/nodes.rst:171
+#: ../../source/api_reference/nodes.rst:349 00198838186b4858ba797db268c3ccda
+#: 483a13770daa4d07b0184522a57dd974 e58c461cbabb4c3bae49ee3b1da50794
 msgid "获取音频流"
-msgstr ""
+msgstr "Get audio stream"
 
-#: ../../source/api_reference/nodes.rst:69 608c6c41796c4e27a9908054cb06029b
+#: ../../source/api_reference/nodes.rst:69 b7d99dbed3b3460c90bd74ac5001b984
 msgid "``set_bus(bus)``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:71 c06399288ec14bc9abd44cd450e61d3b
+#: ../../source/api_reference/nodes.rst:71 eb56a2ccc91b4a8f9446725227870871
 msgid "设置音频总线"
-msgstr ""
+msgstr "Set audio bus"
 
-#: ../../source/api_reference/nodes.rst:72 d6f6b587ecf44622bce74150e7c04f1a
+#: ../../source/api_reference/nodes.rst:72 e452809da93e4f5290f4e5f1fc9b224f
 msgid "``get_bus()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:74 da724e0752db4bdca8ce163873b2eaa0
+#: ../../source/api_reference/nodes.rst:74 75f13021bc934f6d8c56ae7e822b4b65
 msgid "获取音频总线"
-msgstr ""
+msgstr "Get audio bus"
 
-#: ../../source/api_reference/nodes.rst:75 6f2059ebe20e427b8ae4603817a0cd2c
+#: ../../source/api_reference/nodes.rst:75 5da03d40421d4fa99d5b018089907920
 msgid "``set_volume_db(volume_db)``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:77 1ca2acd3678f4311b8c8d47eecdaf8b8
+#: ../../source/api_reference/nodes.rst:77 3af21a05cda540c186ca04ffb2b6ca65
 msgid "设置音量"
-msgstr ""
+msgstr "Set volume"
 
-#: ../../source/api_reference/nodes.rst:78 87de2395e880426da9be20578887438a
+#: ../../source/api_reference/nodes.rst:78 e8ef35038a3c40b68c57904dde32c722
 msgid "``get_volume_db()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:80 db2d95e42871498db58a528c8754ce55
+#: ../../source/api_reference/nodes.rst:80 ff604baba7c74123aa250194b97e3a53
 msgid "获取音量"
-msgstr ""
+msgstr "Get volume"
 
-#: ../../source/api_reference/nodes.rst:81 1a894e1b97dd40f78611591d8cc46047
+#: ../../source/api_reference/nodes.rst:81 9ccc5e53f7794b42b5567fae5872a5b6
 msgid "``set_pitch(pitch)``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:83 6349c59addd946b5adfcae5fe32da9ba
+#: ../../source/api_reference/nodes.rst:83 86fa1994ab9e48cfa2deb7702be81950
 msgid "设置音调"
-msgstr ""
+msgstr "Set pitch"
 
-#: ../../source/api_reference/nodes.rst:84 e56e80afcaee4677a0e811a61d9729eb
+#: ../../source/api_reference/nodes.rst:84 e2db71930dce47a0b556acf6c0e8e3bd
 msgid "``get_pitch()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:86 d2a6c9b4f2a1409fb65e0fc9fb51eb6f
+#: ../../source/api_reference/nodes.rst:86 df5d732dfa8844028701b141f4d231bb
 msgid "获取音调"
-msgstr ""
+msgstr "Get pitch"
 
 #: ../../source/api_reference/nodes.rst:89
-#: ../../source/api_reference/nodes.rst:94 991a5b8b01b04f27aaa0148e34fdeace
-#: d9f6bc83dda2490fa1816d0e0f01b808
+#: ../../source/api_reference/nodes.rst:94
+#: ../../source/api_reference/nodes.rst:402
+#: ../../source/api_reference/nodes.rst:407 0289d0462add4f5caaf6afe35aa4ffa2
+#: 369b37ccd7be48a2b3f55d014f2640f9 93e8583540fb4b67919c2e48c3b33c35
+#: 9ad2da3011b44cbea3c8270e8220632f
 msgid "信号"
-msgstr ""
+msgstr "Signals"
 
-#: ../../source/api_reference/nodes.rst:96 045ee932fef848d6b13520d916b8adea
+#: ../../source/api_reference/nodes.rst:96
+#: ../../source/api_reference/nodes.rst:409 136771056d35465c983eaf614c61c9f4
+#: 55879c9512704bca96153c4736743d56
 msgid "``finished()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:97 25da3ed6bbbf4ff7b766d61c25ade742
+#: ../../source/api_reference/nodes.rst:97
+#: ../../source/api_reference/nodes.rst:410 28453cc201b8499081d83b97e435e9de
+#: d55205273ff1423783975e4f30f70a9a
 msgid "播放完成时发出"
-msgstr ""
+msgstr "Emitted when playback finishes"
 
 #: ../../source/api_reference/nodes.rst:100
-#: ../../source/api_reference/nodes.rst:180 68a1c3e7b50a4648b15b12452772d169
-#: 9a005df5cf9f4b5aabc697a15d8555a4
+#: ../../source/api_reference/nodes.rst:180
+#: ../../source/api_reference/nodes.rst:413 39a70072f72d4fe787a54dd2827e2d17
+#: 49ac35a6dd6442149ba974959f9cd856 bd6914c0db3c40e09dd2927d710be877
 msgid "示例"
-msgstr ""
+msgstr "Examples"
 
-#: ../../source/api_reference/nodes.rst:102 2f8a4e8dc90c4e38913e0584bd46c03e
+#: ../../source/api_reference/nodes.rst:102 0c4f33e89db94e24a72eec41033a9de1
 msgid ""
 "extends Node\n"
 "\n"
@@ -346,53 +462,77 @@ msgid ""
 "    tween.tween_property(player, \"volume_db\", -80.0, 2.0)\n"
 "    tween.tween_callback(player.stop)"
 msgstr ""
+"extends Node\n"
+"\n"
+"@onready var player = $FmodAudioStreamPlayer\n"
+"\n"
+"func _ready():\n"
+"    # Load and play (streaming mode)\n"
+"    var stream = FmodAudioStream.load_from_file(\"res://music/bgm.mp3\",\n"
+"        FmodAudioStream.MODE_STREAM)\n"
+"\n"
+"    player.stream = stream\n"
+"    player.volume_db = -6.0\n"
+"    player.play()\n"
+"\n"
+"    # Connect finished signal\n"
+"    player.finished.connect(_on_playback_finished)\n"
+"\n"
+"func _on_playback_finished():\n"
+"    print(\"Playback finished!\")\n"
+"\n"
+"func fade_out():\n"
+"    var tween = create_tween()\n"
+"    tween.tween_property(player, \"volume_db\", -80.0, 2.0)\n"
+"    tween.tween_callback(player.stop)"
 
 #: ../../source/api_reference/nodes.rst:129
-#: ../../source/api_reference/nodes.rst:220 37dfe2861eaa4c5e8dbb753ff16efb80
+#: ../../source/api_reference/nodes.rst:509 bb867733075e410c831e060d35eb0bbd
+#: d8d8ede2c50843b6909685cfdc9c59b7
 msgid "FmodAudioSampleEmitter"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:133 54ea3b29f97f4ba8b89a7d67db36292d
+#: ../../source/api_reference/nodes.rst:133 fe117ed64fbb4ee686dd4c11d57e3145
 msgid "用于播放短音频（音效）的节点，内部使用 ``FmodAudioStream`` 并自动设置 ``MODE_SAMPLE`` 标志。"
-msgstr ""
+msgstr "Node for playing short audio (sound effects), internally uses ``FmodAudioStream`` and automatically sets the ``MODE_SAMPLE`` flag."
 
-#: ../../source/api_reference/nodes.rst:146 1d929ef775ca478daee3daf9f286a144
+#: ../../source/api_reference/nodes.rst:146 a924b4deb36c4f6a90fa96719c02cd28
 msgid "要播放的音频（自动使用样本模式）"
-msgstr ""
+msgstr "Audio to play (automatically uses sample mode)"
 
-#: ../../source/api_reference/nodes.rst:147 2416f7cfaf604db38dae04320817b0fb
+#: ../../source/api_reference/nodes.rst:147 51648c66c59c40d78512d0c97ef44b5e
 msgid "``auto_emit``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:149 e9615bc0414a4575b5900948cc1cd393
+#: ../../source/api_reference/nodes.rst:149 19718cd9b22445ce87fe9b36e799a19f
 msgid "自动发射（设置流时自动播放，默认 false）"
-msgstr ""
+msgstr "Auto-emit (auto-play when setting stream, default false)"
 
-#: ../../source/api_reference/nodes.rst:163 e2dc09a7caa14b9b9e1975fabc7dd557
+#: ../../source/api_reference/nodes.rst:163 2932d49fb70d4698973e1d814a5a12ae
 msgid "``emit()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:165 9e221b8ea0cf4851951b8007d637dd65
+#: ../../source/api_reference/nodes.rst:165 e69f0610215946ab945cc13ed4cd76c0
 msgid "播放一次音频"
-msgstr ""
+msgstr "Play audio once"
 
-#: ../../source/api_reference/nodes.rst:172 5b5ff62d3f284435a833b28d139bbc44
+#: ../../source/api_reference/nodes.rst:172 016d76ef8af042d9a0d09070913369f0
 msgid "``set_auto_emit(enable)``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:174 a78dfd7c7be94592a310bd8f0ba09f64
+#: ../../source/api_reference/nodes.rst:174 f05b694989be450091f8706bf8a044f3
 msgid "设置自动发射"
-msgstr ""
+msgstr "Set auto-emit"
 
-#: ../../source/api_reference/nodes.rst:175 5c6b1493ae3e4cdc885717cda83ecd55
+#: ../../source/api_reference/nodes.rst:175 ed8d2aa58ec94973aeff120836ac7204
 msgid "``is_autoemit_enabled()``"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:177 8c80586b7fe049a1a83fe5ba8f7f2658
+#: ../../source/api_reference/nodes.rst:177 c7ba7f06b232469692eeb7cacdd05aca
 msgid "获取自动发射状态"
-msgstr ""
+msgstr "Get auto-emit status"
 
-#: ../../source/api_reference/nodes.rst:182 d9b3630f1ee74c7591d7193d79f83a5a
+#: ../../source/api_reference/nodes.rst:182 c8f771e8dc23454499d0d86bee7bedee
 msgid ""
 "extends Node\n"
 "\n"
@@ -424,73 +564,578 @@ msgid ""
 "    emitter.stream = stream\n"
 "    emitter.auto_emit = true  # 设置流时自动播放"
 msgstr ""
+"extends Node\n"
+"\n"
+"@onready var emitter = $FmodAudioSampleEmitter\n"
+"var shoot_stream: FmodAudioStream\n"
+"\n"
+"func _ready():\n"
+"    # Preload sound effect (sample mode)\n"
+"    shoot_stream = "
+"FmodAudioStream.load_from_file(\"res://sfx/shoot.wav\",\n"
+"        FmodAudioStream.MODE_SAMPLE)\n"
+"\n"
+"    emitter.stream = shoot_stream\n"
+"    emitter.bus = \"SFX\"\n"
+"\n"
+"func _input(event):\n"
+"    if event.is_action_pressed(\"shoot\"):\n"
+"        play_shoot_sound()\n"
+"\n"
+"func play_shoot_sound():\n"
+"    emitter.emit()\n"
+"\n"
+"# Auto-emit example\n"
+"func setup_auto_emit():\n"
+"    var stream = "
+"FmodAudioStream.load_from_file(\"res://sfx/heartbeat.wav\",\n"
+"        FmodAudioStream.MODE_SAMPLE)\n"
+"\n"
+"    emitter.stream = stream\n"
+"    emitter.auto_emit = true  # Auto-play when setting stream"
 
-#: ../../source/api_reference/nodes.rst:213 eb54293e25bb49629647b816b35ba43a
+#: ../../source/api_reference/nodes.rst:213
+#: ../../source/api_reference/nodes.rst:510 b51cf247d03c40ecab69be76fa627c44
+#: ea9dd746d6f94f0b8ec611928d3713d4
+msgid "FmodAudioStreamPlayer3D"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:215 db95efe0a8c9422d93bfc6fb2b65d679
+msgid "继承自：Node3D"
+msgstr "Inherits from: Node3D"
+
+#: ../../source/api_reference/nodes.rst:217 d50bbfda5b5b4bed896b403a67ddce31
+msgid "用于在 3D 空间中播放音频的节点，支持距离衰减、多普勒效应和定向发射。适合环境音效、NPC 语音等需要空间定位的音频。"
+msgstr "Node for playing audio in 3D space, supporting distance attenuation, Doppler effect, and directional emission. Suitable for ambient sounds, NPC voices, and other spatially-positioned audio."
+
+#: ../../source/api_reference/nodes.rst:223 8808499c488143378d0df5179b87035d
+msgid "基础属性"
+msgstr "Basic Properties"
+
+#: ../../source/api_reference/nodes.rst:242 2a56ca3b753a42b4a3d444bbbf328162
+msgid "音量（分贝，默认 0.0，范围 -80~24）"
+msgstr "Volume (dB, default 0.0, range -80~24)"
+
+#: ../../source/api_reference/nodes.rst:245 9fccc7037f234da7b263c47fc38374c6
+msgid "音调（默认 1.0，范围 0.01~4.0）"
+msgstr "Pitch (default 1.0, range 0.01~4.0)"
+
+#: ../../source/api_reference/nodes.rst:250 f4c24059ec3e4fc095ee4ecfda74cbbb
+msgid "StringName"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:254 fb79fe5392524348a86028b07ab2b615
+msgid "3D 属性"
+msgstr "3D Properties"
+
+#: ../../source/api_reference/nodes.rst:262 3d3573401b96483ea246b6d29bc2b781
+msgid "``max_distance``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:264 5251b6ecb9294288bbcc5e6bafa9df8a
+msgid "最大距离（米，默认 10.0）"
+msgstr "Maximum distance (meters, default 10.0)"
+
+#: ../../source/api_reference/nodes.rst:265 47fe0175e5334e64925f31cea0458fd1
+msgid "``unit_size``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:267 bb11e1e9ff714b389553da06dbc2c67f
+msgid "单位大小（米，默认 1.0，控制衰减起点）"
+msgstr "Unit size (meters, default 1.0, controls attenuation start point)"
+
+#: ../../source/api_reference/nodes.rst:268 c39dc806d9b64070a6bd81d37aa09cd9
+msgid "``attenuation_model``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:269
+#: ../../source/api_reference/nodes.rst:272
+#: ../../source/api_reference/nodes.rst:320 0fbd33c23f8e4ce484a7d27e7f1c436d
+#: 8f7d49f95a844587b83112727057c64b c69ed8d5b4d148ed964f8976f6d88bff
+msgid "int"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:270 7b572279529c4abb88819de147c39809
+msgid "衰减模型（见下方常量）"
+msgstr "Attenuation model (see constants below)"
+
+#: ../../source/api_reference/nodes.rst:271 5b24f3e610434bfaaee961f52f39263a
+msgid "``area_mask``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:273 d766e1fe6c3a4f6096cd8c425abe7046
+msgid "区域遮罩（用于 Area 过滤）"
+msgstr "Area mask (for Area filtering)"
+
+#: ../../source/api_reference/nodes.rst:276 a33c123fada4482fb2989e22daaa41f8
+msgid "发射角度"
+msgstr "Emission Angle"
+
+#: ../../source/api_reference/nodes.rst:284 26176222b472493296fe48789f30cec4
+msgid "``emission_angle_enabled``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:286 37cf20da721549cab6cd8dcf18d56a91
+msgid "启用发射角度限制（默认 false）"
+msgstr "Enable emission angle limit (default false)"
+
+#: ../../source/api_reference/nodes.rst:287 824bac492d6b453ead110cf3eb03addd
+msgid "``emission_angle``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:289 ba44cc08f85445c68a65b4e91d4d787f
+msgid "发射角度（度，默认 45，范围 0~90）"
+msgstr "Emission angle (degrees, default 45, range 0~90)"
+
+#: ../../source/api_reference/nodes.rst:290 139a60d56d6e4d788ba7dc24bbcdd7e1
+msgid "``emission_angle_filter_attenuation_db``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:292 e44e7cb0e8084b1f81f1b56c16b272e0
+msgid "超出角度时的衰减（dB，默认 -12）"
+msgstr "Attenuation when outside angle (dB, default -12)"
+
+#: ../../source/api_reference/nodes.rst:295 32d99bfb31cc4763b906c032d9c615b1
+msgid "距离滤波器"
+msgstr "Distance Filter"
+
+#: ../../source/api_reference/nodes.rst:303 f28f4a87741748068089c72732c133bb
+msgid "``attenuation_filter_cutoff_hz``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:305 0d87a2f3579549ad9007b4f76cbde665
+msgid "距离滤波器截止频率（Hz，默认 5000）"
+msgstr "Distance filter cutoff frequency (Hz, default 5000)"
+
+#: ../../source/api_reference/nodes.rst:306 a1cc85a827cf4d159911fc3ae3bf1511
+msgid "``attenuation_filter_db``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:308 d96909f11e5746799c559030aa09bd6c
+msgid "距离滤波器衰减（dB，默认 0，范围 -80~0）"
+msgstr "Distance filter attenuation (dB, default 0, range -80~0)"
+
+#: ../../source/api_reference/nodes.rst:311
+#: ../../source/api_reference/nodes.rst:535 add01c40c21f4ea0b58c7d7b0f52d5e8
+#: c6f14ec5b9f64c9bb93c01b3faeda982
+msgid "多普勒效应"
+msgstr "Doppler Effect"
+
+#: ../../source/api_reference/nodes.rst:319 7dd8fe9f71f24fe1a408d31f6fe2e333
+msgid "``doppler_tracking``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:321 f34d0e8b15df4ab8aae9d9c901896663
+msgid "多普勒追踪模式（见下方常量）"
+msgstr "Doppler tracking mode (see constants below)"
+
+#: ../../source/api_reference/nodes.rst:334 ec3cc794e8614edd8dacf9928a1c9840
+msgid "从指定位置开始播放（秒）"
+msgstr "Start playing from specified position (seconds)"
+
+#: ../../source/api_reference/nodes.rst:341 01c68e5c77164dd7a58df84666eb88e6
+msgid "``is_playing()``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:343 419057928b3e447eb074d228c33d2530
+msgid "是否正在播放"
+msgstr "Whether currently playing"
+
+#: ../../source/api_reference/nodes.rst:353 a37cb35732464203829887729753df62
+msgid "``get_channel()``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:354 f6f8e635dce2462c9a9cad7c51187f5f
+msgid "FmodChannel"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:355 621d442013b74579ad18d6a8eb75fb11
+msgid "获取内部通道（用于高级控制）"
+msgstr "Get internal channel (for advanced control)"
+
+#: ../../source/api_reference/nodes.rst:358
+#: ../../source/api_reference/nodes.rst:366
+#: ../../source/api_reference/nodes.rst:388 2c056ef77e2a42c4869e09f8af63c0c9
+#: 41d21033bbef4beabfc53a7b0a5c87aa 95d718e6991e42ae8b4bde620444b2dd
+msgid "常量"
+msgstr "Constants"
+
+#: ../../source/api_reference/nodes.rst:361 be3d64872508474ea5bdffe8a6601e2a
+msgid "衰减模型"
+msgstr "Attenuation Models"
+
+#: ../../source/api_reference/nodes.rst:367
+#: ../../source/api_reference/nodes.rst:389 70715f1cc56b441eb25d0b6ce38b455d
+#: b0ae7e39472b40cc94057caafdc88a3a
+msgid "值"
+msgstr "Value"
+
+#: ../../source/api_reference/nodes.rst:369 68fff24d39ca4f618ebe3907156dbb2b
+msgid "``ATTENUATION_INVERSE_DISTANCE``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:370
+#: ../../source/api_reference/nodes.rst:392 127c3aa16d6a42c891429435808fdb39
+#: 6aa9a15215b74010a734f71084467d5f
+msgid "0"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:371 20f766f33ea04bbd894be1985b1838e3
+msgid "反距离衰减"
+msgstr "Inverse distance attenuation"
+
+#: ../../source/api_reference/nodes.rst:372 9dd284b109c14098b98a57643d5e7b4f
+msgid "``ATTENUATION_INVERSE_SQUARE_DISTANCE``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:373
+#: ../../source/api_reference/nodes.rst:395 4ec3f4f092ac454e923c4dad8325698f
+#: c768fc7c7aa4481eb178fceb4f8ca9f8
+msgid "1"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:374 1596ab5b17154bc481851014b1e7318a
+msgid "反距离平方衰减"
+msgstr "Inverse square distance attenuation"
+
+#: ../../source/api_reference/nodes.rst:375 96233d16f2744266afa4aef526e7c1d5
+msgid "``ATTENUATION_LOGARITHMIC``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:376
+#: ../../source/api_reference/nodes.rst:398 87a9d4eec9394943addecefa51ea5b50
+#: d93eb428b4544ff7a501dae868264948
+msgid "2"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:377 7e140868b3d0420e821dea0f3e1d5887
+msgid "对数衰减（线性到最大距离）"
+msgstr "Logarithmic attenuation (linear to max distance)"
+
+#: ../../source/api_reference/nodes.rst:378 44a2a35a74094758b8c8f8e1374c73bf
+msgid "``ATTENUATION_DISABLED``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:379 812b90f7bd2e40ab9d159e08acda2ba9
+msgid "3"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:380 3d791dbc12724c1db0410f9d3fe19ead
+msgid "禁用衰减"
+msgstr "Disable attenuation"
+
+#: ../../source/api_reference/nodes.rst:383 8c91720d51a04e20837990b51e92e2cf
+msgid "多普勒追踪"
+msgstr "Doppler Tracking"
+
+#: ../../source/api_reference/nodes.rst:391 87de49c2860643eca3e0f500c5bffbb9
+msgid "``DOPPLER_TRACKING_DISABLED``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:393 2a4b05782aaa4d9791295fa96cb30244
+msgid "禁用多普勒效应"
+msgstr "Disable Doppler effect"
+
+#: ../../source/api_reference/nodes.rst:394 befb05adaaed40798d876b689ce9fcb6
+msgid "``DOPPLER_TRACKING_IDLE_STEP``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:396 a46213ec78fb418f81440aa0a28a6a72
+msgid "在 _process 中追踪"
+msgstr "Track in _process"
+
+#: ../../source/api_reference/nodes.rst:397 9be5b6658d96471289a77817f93d1c5f
+msgid "``DOPPLER_TRACKING_PHYSICS_STEP``"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:399 61ffb8b0a1cb4a6190ad1b2c9679fa22
+msgid "在 _physics_process 中追踪"
+msgstr "Track in _physics_process"
+
+#: ../../source/api_reference/nodes.rst:416 bc7505f06327489d807d0c507b7678d6
+msgid "基础 3D 音频"
+msgstr "Basic 3D Audio"
+
+#: ../../source/api_reference/nodes.rst:418 8b365c9fbec24731a63da1d51abded88
+msgid ""
+"extends Node3D\n"
+"\n"
+"@onready var player_3d = $FmodAudioStreamPlayer3D\n"
+"\n"
+"func _ready():\n"
+"    # 加载 3D 音频流\n"
+"    var stream = FmodAudioStream.load_from_file(\n"
+"        \"res://audio/ambience_cave.wav\",\n"
+"        FmodAudioStream.MODE_STREAM\n"
+"    )\n"
+"\n"
+"    player_3d.stream = stream\n"
+"    player_3d.volume_db = -6.0\n"
+"    player_3d.max_distance = 20.0\n"
+"    player_3d.unit_size = 2.0\n"
+"    player_3d.auto_play = true"
+msgstr ""
+"extends Node3D\n"
+"\n"
+"@onready var player_3d = $FmodAudioStreamPlayer3D\n"
+"\n"
+"func _ready():\n"
+"    # Load 3D audio stream\n"
+"    var stream = FmodAudioStream.load_from_file(\n"
+"        \"res://audio/ambience_cave.wav\",\n"
+"        FmodAudioStream.MODE_STREAM\n"
+"    )\n"
+"\n"
+"    player_3d.stream = stream\n"
+"    player_3d.volume_db = -6.0\n"
+"    player_3d.max_distance = 20.0\n"
+"    player_3d.unit_size = 2.0\n"
+"    player_3d.auto_play = true"
+
+#: ../../source/api_reference/nodes.rst:438 d93b9fcf58f94740a98c5bf64f560a9c
+msgid "带发射角度的音频"
+msgstr "Audio with Emission Angle"
+
+#: ../../source/api_reference/nodes.rst:440 c37ff8f32128406ba8cb92595e859000
+msgid ""
+"extends Node3D\n"
+"\n"
+"@onready var speaker = $FmodAudioStreamPlayer3D\n"
+"\n"
+"func _ready():\n"
+"    var stream = FmodAudioStream.load_from_file(\n"
+"        \"res://audio/announcement.wav\",\n"
+"        FmodAudioStream.MODE_STREAM\n"
+"    )\n"
+"\n"
+"    speaker.stream = stream\n"
+"\n"
+"    # 启用定向发射（类似喇叭）\n"
+"    speaker.emission_angle_enabled = true\n"
+"    speaker.emission_angle = 30.0  # 30度内为清晰区域\n"
+"    speaker.emission_angle_filter_attenuation_db = -20.0\n"
+"\n"
+"    # 让发射方向跟随节点旋转\n"
+"    speaker.rotation.y = PI / 4  # 指向特定方向"
+msgstr ""
+"extends Node3D\n"
+"\n"
+"@onready var speaker = $FmodAudioStreamPlayer3D\n"
+"\n"
+"func _ready():\n"
+"    var stream = FmodAudioStream.load_from_file(\n"
+"        \"res://audio/announcement.wav\",\n"
+"        FmodAudioStream.MODE_STREAM\n"
+"    )\n"
+"\n"
+"    speaker.stream = stream\n"
+"\n"
+"    # Enable directional emission (like a speaker)\n"
+"    speaker.emission_angle_enabled = true\n"
+"    speaker.emission_angle = 30.0  # Clear zone within 30 degrees\n"
+"    speaker.emission_angle_filter_attenuation_db = -20.0\n"
+"\n"
+"    # Make emission direction follow node rotation\n"
+"    speaker.rotation.y = PI / 4  # Point in specific direction"
+
+#: ../../source/api_reference/nodes.rst:463 ff4ce03bf2e741fdba09cd0ca9e2e4da
+msgid "动态控制 3D 音频"
+msgstr "Dynamic 3D Audio Control"
+
+#: ../../source/api_reference/nodes.rst:465 794dd984616b4b5581bca4133763d9bf
+msgid ""
+"extends CharacterBody3D\n"
+"\n"
+"@onready var engine_sound = $FmodAudioStreamPlayer3D\n"
+"\n"
+"func _ready():\n"
+"    var stream = FmodAudioStream.load_from_file(\n"
+"        \"res://audio/engine.wav\",\n"
+"        FmodAudioStream.MODE_STREAM\n"
+"    )\n"
+"\n"
+"    engine_sound.stream = stream\n"
+"    engine_sound.doppler_tracking = "
+"FmodAudioStreamPlayer3D.DOPPLER_TRACKING_PHYSICS_STEP\n"
+"    engine_sound.attenuation_model = "
+"FmodAudioStreamPlayer3D.ATTENUATION_INVERSE_SQUARE_DISTANCE\n"
+"    engine_sound.max_distance = 50.0\n"
+"    engine_sound.play()\n"
+"\n"
+"func _physics_process(delta):\n"
+"    # 根据速度调整音调\n"
+"    var speed = velocity.length()\n"
+"    engine_sound.pitch = 1.0 + (speed / 100.0)"
+msgstr ""
+"extends CharacterBody3D\n"
+"\n"
+"@onready var engine_sound = $FmodAudioStreamPlayer3D\n"
+"\n"
+"func _ready():\n"
+"    var stream = FmodAudioStream.load_from_file(\n"
+"        \"res://audio/engine.wav\",\n"
+"        FmodAudioStream.MODE_STREAM\n"
+"    )\n"
+"\n"
+"    engine_sound.stream = stream\n"
+"    engine_sound.doppler_tracking = "
+"FmodAudioStreamPlayer3D.DOPPLER_TRACKING_PHYSICS_STEP\n"
+"    engine_sound.attenuation_model = "
+"FmodAudioStreamPlayer3D.ATTENUATION_INVERSE_SQUARE_DISTANCE\n"
+"    engine_sound.max_distance = 50.0\n"
+"    engine_sound.play()\n"
+"\n"
+"func _physics_process(delta):\n"
+"    # Adjust pitch based on speed\n"
+"    var speed = velocity.length()\n"
+"    engine_sound.pitch = 1.0 + (speed / 100.0)"
+
+#: ../../source/api_reference/nodes.rst:489 4d93a2a777414f8389f435c02d8241c1
+msgid "切换音频总线"
+msgstr "Switch Audio Bus"
+
+#: ../../source/api_reference/nodes.rst:491 9ab52155423c4543885ef9b0e33c9cb6
+msgid ""
+"extends Area3D\n"
+"\n"
+"# 当进入水下区域时切换音频总线\n"
+"func _on_body_entered(body):\n"
+"    if body.has_node(\"FmodAudioStreamPlayer3D\"):\n"
+"        var player = body.get_node(\"FmodAudioStreamPlayer3D\")\n"
+"        player.bus = \"Underwater\"  # 使用带低通滤波器的总线"
+msgstr ""
+"extends Area3D\n"
+"\n"
+"# Switch audio bus when entering underwater area\n"
+"func _on_body_entered(body):\n"
+"    if body.has_node(\"FmodAudioStreamPlayer3D\"):\n"
+"        var player = body.get_node(\"FmodAudioStreamPlayer3D\")\n"
+"        player.bus = \"Underwater\"  # Use bus with low-pass filter"
+
+#: ../../source/api_reference/nodes.rst:502 bb870c3a70064ed7bb956682786e0e1a
 msgid "属性对比"
-msgstr ""
+msgstr "Property Comparison"
 
-#: ../../source/api_reference/nodes.rst:218 ca31d1880ead443eb1e2b863c151ed09
+#: ../../source/api_reference/nodes.rst:507 c03f5d89b225423bbee0ba31098a6a02
 msgid "特性"
+msgstr "Feature"
+
+#: ../../source/api_reference/nodes.rst:511 17034605788e4ef3a0caefedf746a87d
+msgid "继承自"
+msgstr "Inherits from"
+
+#: ../../source/api_reference/nodes.rst:512
+#: ../../source/api_reference/nodes.rst:513 4d3848bcfa1a404c9621f05bf62055c8
+#: 4f15e8bd22a64b97b03573a6496e31db
+msgid "Node"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:221 5710bea2bc1e489ca7165accbbd08c34
+#: ../../source/api_reference/nodes.rst:514 a043614cd0104937a8f208c811d69949
+msgid "Node3D"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:515 4c087f38901b433aa8945071ab7c0bc4
 msgid "资源类型"
-msgstr ""
+msgstr "Resource Type"
 
-#: ../../source/api_reference/nodes.rst:224 1e64c9699ee64a8e8bfe073aa80ed305
+#: ../../source/api_reference/nodes.rst:519 db0b52edd08a4234af7b64e98fb41bb5
 msgid "播放方式"
-msgstr ""
+msgstr "Playback Mode"
 
-#: ../../source/api_reference/nodes.rst:225 501e9dcc60744cb083c03e94cdaac3ea
+#: ../../source/api_reference/nodes.rst:520 545e38e481bb48b897c7a04d708b03ea
 msgid "播放/停止/跳转"
-msgstr ""
+msgstr "Play/Stop/Seek"
 
-#: ../../source/api_reference/nodes.rst:226 46553ca9e9f543358d12e237e011d1d1
+#: ../../source/api_reference/nodes.rst:521 bd1625f16d124ec693c5a88e32830245
 msgid "发射（一次性）"
-msgstr ""
+msgstr "Emit (one-shot)"
 
-#: ../../source/api_reference/nodes.rst:227 2516a68a85034a6cb0ffdc7de54ee0e5
+#: ../../source/api_reference/nodes.rst:522 5bf1557eb6d04ed2b21a30f0fa6e7fe2
+msgid "播放/停止/跳转（3D）"
+msgstr "Play/Stop/Seek (3D)"
+
+#: ../../source/api_reference/nodes.rst:523 057041f5f417472c8783fa08393fed80
 msgid "适合场景"
-msgstr ""
+msgstr "Suitable for"
 
-#: ../../source/api_reference/nodes.rst:228 3c9771d3139f400086b918f39abfdfd3
+#: ../../source/api_reference/nodes.rst:524 9050489d141a460aac419abcef47e3dd
 msgid "背景音乐、长音频"
-msgstr ""
+msgstr "Background music, long audio"
 
-#: ../../source/api_reference/nodes.rst:229 4bdbd8b9cdd2418ab2cd9624db6559a3
+#: ../../source/api_reference/nodes.rst:525 33f722f6501144899b7f3e38cc1e81b2
 msgid "音效、短音频"
-msgstr ""
+msgstr "Sound effects, short audio"
 
-#: ../../source/api_reference/nodes.rst:230 2ed192d773fd4e68a1f551c5a8b0564b
-msgid "音量控制"
-msgstr ""
+#: ../../source/api_reference/nodes.rst:526 9065870332eb44afa761aee886efeeb9
+msgid "3D 空间音频"
+msgstr "3D spatial audio"
 
-#: ../../source/api_reference/nodes.rst:231
-#: ../../source/api_reference/nodes.rst:234 e5baf47e10724aa5959a3a13f9c3b597
-msgid "✅"
-msgstr ""
+#: ../../source/api_reference/nodes.rst:527 3ab2243b2ecd4f2bb7907dfc29eef8f7
+msgid "3D 支持"
+msgstr "3D Support"
 
-#: ../../source/api_reference/nodes.rst:232 3cb0ab652e0c4b059aebc0e71c208336
-msgid "❌（使用总线）"
-msgstr ""
-
-#: ../../source/api_reference/nodes.rst:233 c7c4396022ba46be8d79906a3654e545
-msgid "音调控制"
-msgstr ""
-
-#: ../../source/api_reference/nodes.rst:235 e8190d7b59ab41c3832c2c904e804206
+#: ../../source/api_reference/nodes.rst:528
+#: ../../source/api_reference/nodes.rst:529
+#: ../../source/api_reference/nodes.rst:532
+#: ../../source/api_reference/nodes.rst:533
+#: ../../source/api_reference/nodes.rst:536
+#: ../../source/api_reference/nodes.rst:537
+#: ../../source/api_reference/nodes.rst:540
+#: ../../source/api_reference/nodes.rst:541
+#: ../../source/api_reference/nodes.rst:549 1493e687a84f46bf84ffacab21583dbb
+#: 25e2c26afe404fd2a7469ee47b9c06cd 4a7d6d7d799d474895efd38036830ee7
+#: 85f09e995fd24c8eb05d5a96a483d109 863c477609e34c0083b17049f3086124
+#: c4db084cff8449678fd9f213ed76336b e3ccc264cdc24fc8b97e0e29932c8c43
+#: fa00a55650474110a9af3e07a1affaed fb137a8baf684f708b003469cad28399
 msgid "❌"
 msgstr ""
 
-#: ../../source/api_reference/nodes.rst:236 8d91e3ab357f40988d111e039b216473
+#: ../../source/api_reference/nodes.rst:530
+#: ../../source/api_reference/nodes.rst:534
+#: ../../source/api_reference/nodes.rst:538
+#: ../../source/api_reference/nodes.rst:542
+#: ../../source/api_reference/nodes.rst:544
+#: ../../source/api_reference/nodes.rst:546
+#: ../../source/api_reference/nodes.rst:548
+#: ../../source/api_reference/nodes.rst:550 07f4cd3500924553a177da3603da996f
+#: 0dc3ff9ca80a4df7a75dc61453334870 669bc94952c242f59abdb2137fdb2c45
+#: 7e6918c509944d60ba7db1d1fe81c5b8 96052e362c9e4f2dba66f1cbdbc5ee40
+#: a4072d7eb4ec45f4af064f935ca11b18 e088fa857d424d6494b32148d5c8bf55
+#: f79eeac56ebc4017b62b12fec34fe4fb
+msgid "✅"
+msgstr ""
+
+#: ../../source/api_reference/nodes.rst:531 48fa859880c74fd9a55886a06b9f4228
+msgid "距离衰减"
+msgstr "Distance attenuation"
+
+#: ../../source/api_reference/nodes.rst:539 b4074317a13644afb79003e931e282fa
+msgid "定向发射"
+msgstr "Directional emission"
+
+#: ../../source/api_reference/nodes.rst:543 0549cd695c7a45f89031eedd73f914d1
+msgid "音量控制"
+msgstr "Volume control"
+
+#: ../../source/api_reference/nodes.rst:545 86a5edd54cd248cc9bea600f5fc4e5e2
+msgid "❌（使用总线）"
+msgstr "❌ (use bus)"
+
+#: ../../source/api_reference/nodes.rst:547 7e787dce7c8447c08242b158f73055d5
+msgid "音调控制"
+msgstr "Pitch control"
+
+#: ../../source/api_reference/nodes.rst:551 991d66ce98544c2a980e6cb689286c7d
 msgid "自动播放"
-msgstr ""
+msgstr "Auto-play"
 
-#: ../../source/api_reference/nodes.rst:237 87685bb4d1c24d0ea24196d00b1c9658
+#: ../../source/api_reference/nodes.rst:552
+#: ../../source/api_reference/nodes.rst:554 73df15ed6a1a44ccb76719c951bdf127
+#: da3cec69907f4d2b92982b2b312ba6e6
 msgid "auto_play 属性"
-msgstr ""
+msgstr "auto_play property"
 
-#: ../../source/api_reference/nodes.rst:238 01943d6861b54e31ac218528ec602ef6
+#: ../../source/api_reference/nodes.rst:553 f0455a91916c4a4292c5230e19556de7
 msgid "auto_emit 属性"
-msgstr ""
+msgstr "auto_emit property"
 

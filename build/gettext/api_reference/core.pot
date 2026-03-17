@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot FmodPlayer \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"POT-Creation-Date: 2026-03-17 19:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/api_reference/core.rst:2
-#: 1a6631aaae3c4ffca76a59760e3b74be
+#: 8cccdc313d6340c3b59c82b0a8facc6f
 msgid "核心类 API"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:5
 #: ../../source/api_reference/core.rst:19
 #: ../../source/api_reference/core.rst:35
-#: 0f0d826489c846b3a0f5e5f014735ed3
-#: 1246e937bf5347fdaff3ea96c7fe7c0c
-#: 05121d684c054b0394269fc2e661e3c0
+#: c43f6da691ca4787a71732d8e5f66258
+#: 94559ca525a046e99e1609a1349cf572
+#: 39fad7c11d3b4224b6174035636f1f0f
 msgid "FmodServer"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:7
-#: 02152c4df6794b4ebdffeb0103ed15e1
+#: a099ef2e75d542bbbf0d4c274ada2002
 msgid "全局单例，管理 FMOD 系统的生命周期。"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:10
-#: b6a9e211aec048939917a32d509b292e
+#: 1800d4204eea4498a63f3a09bcd8a415
 msgid "静态属性"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:15
-#: 42113718c8844767b67d5d3aad2e1765
+#: d0814fb1c44b476f89184e06755622b7
 msgid "属性"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:16
-#: 69942fe68f5349dc85a44611dcad21f3
+#: d89a82d6328e42f680197f87daf82bb8
 msgid "类型"
 msgstr ""
 
@@ -58,45 +58,45 @@ msgstr ""
 #: ../../source/api_reference/core.rst:138
 #: ../../source/api_reference/core.rst:154
 #: ../../source/api_reference/core.rst:173
-#: ../../source/api_reference/core.rst:192
-#: 4e830850ac18405c8bb35e26c463c1ff
-#: d79703417aa941cda8fb5c6f6cc43ce4
-#: 3e345acfe5d84c9eb38fbed101d76a3b
-#: 3e345acfe5d84c9eb38fbed101d76a3b
-#: 3e345acfe5d84c9eb38fbed101d76a3b
-#: 3e345acfe5d84c9eb38fbed101d76a3b
-#: 3e345acfe5d84c9eb38fbed101d76a3b
-#: 3e345acfe5d84c9eb38fbed101d76a3b
-#: 3e345acfe5d84c9eb38fbed101d76a3b
+#: ../../source/api_reference/core.rst:198
+#: 9d165d08e72546efa152b186c8b2ebda
+#: dfe85d79bb114fc09cd0dac9298fec9a
+#: 2d4f4fcea5054ce9abc9af9556c20700
+#: 2a59344c4e3b40d39ac44dcce4d86116
+#: 6397a00c86f949a89e34053c1099bcfb
+#: 7da998e70eaa4ac3b44cde68e39622ac
+#: 031690292aec4b4797c171df0a2b3987
+#: 612dffdbad5c415cb98cc5e66ad3c424
+#: c97710ebf03e4a8797981a780d887947
 msgid "说明"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:18
-#: 8bb93fcef91d47518b10996e2c38eb98
+#: c3c5c1afc83f4b9aa3bac5fa148623af
 msgid "``singleton``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:20
-#: 192be439a3ec45b398e44de299070a88
+#: ce696a8cb76b443cbdb5671169b5438e
 msgid "全局单例实例"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:21
-#: e26276704d784fd1987b033fcd73ff89
+#: 9c17df5fc72c41978313734105ac9036
 msgid "``main_system``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:22
 #: ../../source/api_reference/core.rst:38
 #: ../../source/api_reference/core.rst:60
-#: 2227af8473e54a80af3ab04bc3e1bb6b
-#: 9db7e5f7415b4ffb9b8b9aaaf4b7c655
-#: a4fc890e8c984cada2b3d78cb50528ec
+#: 2704b11ec30449b3987190d2a91fe932
+#: a743676556ab4ef6b6a2d3bd262ff085
+#: 282eacbe633e4aa58955fb31d1a6919a
 msgid "FmodSystem"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:23
-#: d1e2a5499eca44ccb0191dcfc44f5367
+#: 376604cbbc8e4bc28c8f814a88a8e1ee
 msgid "主 FMOD 系统实例"
 msgstr ""
 
@@ -109,15 +109,15 @@ msgstr ""
 #: ../../source/api_reference/core.rst:136
 #: ../../source/api_reference/core.rst:152
 #: ../../source/api_reference/core.rst:171
-#: 2d527f71b5cc4e2dab05564a9415a090
-#: 8c8e129c7f59451ab4da2bf1a0acf9b8
-#: 40c2c00264f948feac6a3701299660aa
-#: 40c2c00264f948feac6a3701299660aa
-#: 40c2c00264f948feac6a3701299660aa
-#: 40c2c00264f948feac6a3701299660aa
-#: 40c2c00264f948feac6a3701299660aa
-#: 40c2c00264f948feac6a3701299660aa
-#: 40c2c00264f948feac6a3701299660aa
+#: 8226d4344975408285f5e0db064b43e0
+#: 6f8a38d2ea1b40bb99aacb647d0f0b1d
+#: 7c6b1b945d654476b469c5ba45526743
+#: 609234f4be1e4b399f28667aede4639b
+#: 70a945d5ed664af5b1020d6d7170128a
+#: 178f1ecc52c8435da53f6eeaf7b9fd9f
+#: ae2fadf0e90a4ff4a95c0a553d5b4b95
+#: 426be61b55254ed5ba4ac7b8b9c6edfe
+#: b866ee7ff5874039ac5c5725d80cf674
 msgid "方法"
 msgstr ""
 
@@ -128,40 +128,40 @@ msgstr ""
 #: ../../source/api_reference/core.rst:137
 #: ../../source/api_reference/core.rst:153
 #: ../../source/api_reference/core.rst:172
-#: fc05b4cd184942a283871de7161ecee0
-#: 29d37c25e273454a8f9c7898503c5d86
-#: 29d37c25e273454a8f9c7898503c5d86
-#: 29d37c25e273454a8f9c7898503c5d86
-#: 29d37c25e273454a8f9c7898503c5d86
-#: 29d37c25e273454a8f9c7898503c5d86
-#: 29d37c25e273454a8f9c7898503c5d86
+#: 44a53c34988b4b458f68e96472f20605
+#: d2c2afdb7835407f98c131b075a193a1
+#: 79e1f2f9c4e04c148c885b69e59df0b5
+#: 2f046d7b8a404f0bbab9ffa4a543e878
+#: 6c3884a82cfe4f5f93b8f494707f3088
+#: 2c6e0eb4af6f4999bd0e55e362f2f877
+#: f953916434364972a8942b73e7b5de2a
 msgid "返回值"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:34
-#: e1eefe33648b4a49bf31b5edc243687a
+#: fe527652dbae4b1bbbcc8b5ce3b5160a
 msgid "``get_singleton()``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:36
-#: b91791845bdd4b44896043db73105667
+#: 56badf04cae54c148b53b67ebabddbc9
 msgid "获取单例实例"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:37
-#: 8825c032f3a64f7a872225912ed7ab77
+#: 0c42c2c34f4c4c5a9c9b2aaebf5b2522
 msgid "``get_main_system()``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:39
-#: c32ca00676cd4be09730167529f56317
+#: 0427322813e74abd965248af4cbc48a1
 msgid "获取主系统"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:40
 #: ../../source/api_reference/core.rst:123
-#: 2b16706873e146b685997f7cb7417674
-#: 699bb3da4efa4d22b4de1081acbc26f0
+#: f2567c5ff4024e1e997f5c5dea58583c
+#: d2c42abce9a0436cbd54302646de086a
 msgid "``get_master_channel_group()``"
 msgstr ""
 
@@ -169,44 +169,42 @@ msgstr ""
 #: ../../source/api_reference/core.rst:121
 #: ../../source/api_reference/core.rst:124
 #: ../../source/api_reference/core.rst:127
-#: 1dd94c9b465947c8a057991e87e10801
-#: 7232557b1208450a9d91e72ac98fd9b9
-#: 7232557b1208450a9d91e72ac98fd9b9
-#: 7232557b1208450a9d91e72ac98fd9b9
+#: 1b8ca5d84c684a689aad2ddb9178dd38
+#: 308ee2da303c479b9a509f1ffc173fc9
+#: 16374579beaf42b1837853c8f7dfa2ab
+#: abb2ee0ae3384e079670b8972756802a
 msgid "FmodChannelGroup"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:42
 #: ../../source/api_reference/core.rst:125
-#: 95788e9f11c648fa84d84dc2c41f70d6
-#: 28efb31219e94117a91bd4e9464ee89f
+#: 2a66efab51ee4a2e9277c662fad3a33b
+#: 1c4467fc720b475bad64d09551f95cb4
 msgid "获取主通道组"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:43
-#: f3dab187fe09406681520e20d105e593
+#: c46a113324604b94894152355b19ade5
 msgid "``get_audio_bus_layout()``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:44
-#: 1980f9c9fc524a4fa6f18276ba9ef2f5
+#: cca53aa9435848a8bf7432430854eb90
 msgid "FmodAudioBusLayout"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:45
-#: a1228063be984d3ba270993853732e2a
+#: a105c0743f7547beb90013222fb74c06
 msgid "获取音频总线布局"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:48
-#: ../../source/api_reference/core.rst:216
-#: 40968cf3ef6e49499070b00606690ee2
-#: 0f285f6975374b4b874eee05c56d6222
+#: 44332f89fa6b4b55b7fccecd63559400
 msgid "示例"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:50
-#: 46737b3fe7e740babe998cfd77a552dd
+#: 245a6c84467c471d8d1f8cd416e8e87c
 msgid "# 获取主系统\n"
 "var system = FmodServer.get_main_system()\n"
 "\n"
@@ -216,32 +214,32 @@ msgid "# 获取主系统\n"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:62
-#: 70fbf60c0ca346b88a001671f98489b0
+#: 88879df92edd47edaed8961114d5ac2e
 msgid "FMOD::System 的包装类，负责创建声音、通道、DSP 等。"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:68
-#: f89b6167558c44928a67b462ecb76007
+#: 9369e27b8acf4ed486b0168e243e0824
 msgid "系统管理"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:76
-#: 504ce75126654fc7a83bbbdcad2330b4
+#: 398ecc4a2a894ef8922ff5bce2328b7f
 msgid "``init(max_channels, flags)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:77
-#: 5a991002cdd442df946e10827f75f2d3
+#: 884a152efb5f426cbd9049c9f6e1fa83
 msgid "bool"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:78
-#: c991a588ebea4d99a16d28a5decde8ee
+#: b89402d72acf410ba6a0f79b693f66a4
 msgid "初始化系统"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:79
-#: 1b5dd7f5cffc46afaeac2b64de87c949
+#: 9fcca07b1839454f827abf524a5def7d
 msgid "``update()``"
 msgstr ""
 
@@ -250,348 +248,403 @@ msgstr ""
 #: ../../source/api_reference/core.rst:86
 #: ../../source/api_reference/core.rst:175
 #: ../../source/api_reference/core.rst:178
-#: 0a35211bfd0143c392fa4fb6a10cd7a3
-#: 0a35211bfd0143c392fa4fb6a10cd7a3
-#: 0a35211bfd0143c392fa4fb6a10cd7a3
-#: 0a35211bfd0143c392fa4fb6a10cd7a3
-#: 0a35211bfd0143c392fa4fb6a10cd7a3
+#: ../../source/api_reference/core.rst:181
+#: 6796fa37cfbf48a0b1466917a4228e3f
+#: 174bf44899394ebfa9f6a3aae0cdeaab
+#: e4386d84127144789d360b9c65248f38
+#: 2ce769cb3db1464393b499f63d4da1e4
+#: 38971afcabb0449d8a1030fe948594dc
+#: 585d6618b75e44b99e9f247fa247f1b3
 msgid "void"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:81
-#: 09dc79d6a9d142d2b4cb7f630f825bf0
+#: 454c392f35904ab5b2740bfe9a1c923c
 msgid "更新系统（每帧自动调用）"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:82
-#: 453c18a96fd64ffe87950777954094ad
+#: b0846b7b681d474c985b9a46bcfbb6fb
 msgid "``release()``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:84
-#: fa960f9059c04c65a74dc782fcd0d8e8
+#: 123971f43b8047eabf34bce3533d1e31
 msgid "释放系统资源"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:85
-#: 5ffbdc5b362346919b13c1602955635d
+#: c13c5b077ba24ee18c7e17199d3570db
 msgid "\"set_advanced_settings(settings)\""
 msgstr ""
 
 #: ../../source/api_reference/core.rst:87
-#: b40890898dd748eebfbd8b422d568c0a
+#: c0fc12c52297460684e65e50eb8509b1
 msgid "设置高级参数"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:90
-#: 76233f87df354dcab838b3fc0a2b9d37
+#: 177e39d2c08b4f09a6959f3a90af2e38
 msgid "声音创建"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:98
-#: b34dd18f2e3640438182695e688f05d2
+#: e6d2904c1f504cde9c49d5f058ee4270
 msgid "``create_sound_from_file(path, mode)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:99
 #: ../../source/api_reference/core.rst:102
 #: ../../source/api_reference/core.rst:105
-#: 75799aa3f3a54281a007053ed9a4ae5a
-#: 75799aa3f3a54281a007053ed9a4ae5a
-#: 75799aa3f3a54281a007053ed9a4ae5a
+#: fe10d2bf4e354bbb80f7ca616f83b0a7
+#: c041cb2ee3124c9abd2d1d075ef1b6aa
+#: 5eda201350e74dc7ac3d804f0eb8d418
 msgid "FmodSound"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:100
-#: 188f56d037c34ba2900f846715d75feb
+#: 56d0e3b478964913b4e6f61fa7fd8710
 msgid "从文件创建声音"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:101
-#: 19a53bdabb894fd3b0dabca642cdb60e
+#: dc54113abe9f46a8bc8772e3e302e136
 msgid "``create_sound_from_memory(data, mode)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:103
-#: 1490991f09864ce8ae17a8d493784886
+#: 37d3ad297ac5497489de028d60bf4fc7
 msgid "从内存创建声音"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:104
-#: 0411298ab13347ada4ce32f16779a669
+#: 5a8cdb8a739e49ff87c42d1d24f3cb62
 msgid "``create_stream_from_file(path, mode)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:106
-#: defd6a61a5384e158ea52f7791fc264f
+#: f26e10e5790b48b2b0e221a17e25f761
 msgid "创建流式声音"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:109
-#: 2d47415f9c1f4bc1ac61b9358fdf1d86
+#: 8508e8b3909b486c8744d7bf570c6f34
 msgid "通道和组"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:117
-#: 18c3fd07ee2c425c9d1959aac6ac3f37
+#: 03e30456607040c1bbf18eff7c21c8c4
 msgid "``play_sound(sound, group, paused)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:118
-#: b5e47ae9930244ee83e6377bde83cf34
+#: ed71c37507254c06a0cbeb66be99c02c
 msgid "FmodChannel"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:119
-#: 200a6d1cab264eccb59587d5502721ed
+#: ceba717a1356472c91eed9f477731d33
 msgid "播放声音"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:120
-#: ac2a6d8f123745dfa1f1367edad22f0c
+#: 9f403f0691d74c30961857e6b4f8fa0c
 msgid "``create_channel_group(name)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:122
-#: ce70ac87a89049e2a771847ab95d1c27
+#: a423e35b23634063b127763d286171ed
 msgid "创建通道组"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:126
-#: 89d921c202474cf2b50853e4c286452f
+#: c8e9b11da4bf46ce80d8186df8907a51
 msgid "``get_channel_group_by_name(name)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:128
-#: 6126f212d6de4562b45b13c73afef767
+#: cf5f5f78d9b6455b91577840aa510168
 msgid "通过名称获取通道组"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:131
-#: c6ccd9fd7b4c4b6996ece5b1dd4731ea
+#: bead6ca9c1964875a42012a889cbc30a
 msgid "DSP 创建"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:139
-#: 87cf50e8e845477299ab5267f21284e6
+#: 73c403c1141f4a4a8ed68bc613bacadd
 msgid "``create_dsp_by_type(type)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:140
 #: ../../source/api_reference/core.rst:143
-#: 72903df34a044dfa959df6fabbec1869
-#: 72903df34a044dfa959df6fabbec1869
+#: 5fde4ef5e29e496598381ac9546e38a2
+#: 85f7b3a5e655446db40a882d733a04d4
 msgid "FmodDSP"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:141
-#: 0548721332a947be811d2ee63cf0b787
+#: ef957a6e85d34e589a5593bad821b0ca
 msgid "通过类型创建 DSP"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:142
-#: f9db4c498c3b4c37a4b6a6c3a37bf5e4
+#: 41c6081d8da643d4a1bd6f7e8aee75e4
 msgid "``create_dsp_by_index(index)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:144
-#: a17fd71b1f374ec59abe21733aced0eb
+#: 293a03d8f8184bdaa822a6a99db13e03
 msgid "通过索引创建 DSP"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:147
-#: 1f5cd0d60c2d4f3d81906738412f1392
+#: 903f0d8346724583ad80ac1e09571eea
 msgid "状态查询"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:155
-#: 62b2abf0d2b84c7ea28aef9f8938e54f
+#: a7c4efae1de74bfa9cbfee5d4ed77f42
 msgid "``get_cpu_usage()``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:156
 #: ../../source/api_reference/core.rst:159
 #: ../../source/api_reference/core.rst:162
-#: 3ad8fe1b5f2648e59698958d4f5ea911
-#: 3ad8fe1b5f2648e59698958d4f5ea911
-#: 3ad8fe1b5f2648e59698958d4f5ea911
+#: bc8a7339c79946a88c9b913182e0403d
+#: cf5195f0f6f040078cfc628ca2996a97
+#: 8f0471129e7944e192cc80b28fb4c6b7
 msgid "Dictionary"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:157
-#: 11b4538ee6f549c086e063e4c8af02ce
+#: b6cc758354254e1393145db1b28d2d05
 msgid "获取 CPU 使用率"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:158
-#: d2b13783695147d2ac02085531dc035e
+#: daa26308d9a8496b92805136eb4b56de
 msgid "\"get_channels_playing()\""
 msgstr ""
 
 #: ../../source/api_reference/core.rst:160
-#: 1e8a6bf77a344de1b96c6628fbc1360f
+#: 97b57ed4f8bb43c4a8779638ed924e88
 msgid "获取播放中的通道数"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:161
-#: 533ee7e9aa6b48eab29c7df8c6268aa7
+#: bb0b9cc7681a4876aefaca0175211f48
 msgid "``get_memory_info()``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:163
-#: cd90fe76ea6249228163e17a82b21131
+#: eb322afc53fd49bb859e2a8c169fc1aa
 msgid "获取内存使用信息"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:166
-#: ab552758bdae466bb7efdfde34ea9649
+#: 8873fa28a6174efb8e7e19b0d79ff7c6
 msgid "3D 音频"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:174
-#: 1d0bc48434df47ce8cf943550ff6c932
+#: 19c526e50e754f9db2afb2263a0b0374
 msgid "\"set_3d_listener_attributes(index, pos, vel, forward, up)\""
 msgstr ""
 
 #: ../../source/api_reference/core.rst:176
-#: fa0abea507ac47b0b16b995a8c2cd2fa
+#: 15a33f7c29554ce9b3082baedd6b3a74
 msgid "设置 3D 监听器属性"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:177
-#: e2657b16e37b453ca9993c59fec94d15
+#: 6b47772c28a54ce8a7c6aafbed32e6af
 msgid "``set_3d_settings(doppler, distance, rolloff)``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:179
-#: ac4b7374995349bb8639ac545adf2813
+#: b733d98cc179433d91cdd5f8d1dac0d7
 msgid "设置 3D 全局设置"
 msgstr ""
 
+#: ../../source/api_reference/core.rst:180
+#: 5b65714b22ce46e0b324ed8d79f11d48
+msgid "``set_3d_rolloff_callback(callback)``"
+msgstr ""
+
 #: ../../source/api_reference/core.rst:182
-#: ../../source/api_reference/core.rst:190
-#: ab30f591362b4c9f9ec6fe37df470d69
-#: ab30f591362b4c9f9ec6fe37df470d69
-msgid "常量"
+#: 7291e496bd8d41968caedb0c319bae53
+msgid "设置 3D 声音距离衰减回调"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:183
+#: 140ec836a2cf409894a55d0d90f64f90
+msgid "``get_3d_rolloff_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:184
+#: d500ae67e97947c3b46f0133d9d648ce
+msgid "Callable"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:185
-#: 0677cbbfee2c48cc853c4e4b74392529
-msgid "加载模式"
+#: 4741e3f28ef34491bde39b2c3e2ae4ad
+msgid "获取 3D 声音距离衰减回调"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:188
+#: ../../source/api_reference/core.rst:196
+#: 036afa695b314d45a7678312df3dd7c9
+#: b289ce49b55d4b42b4c82336a10ef4c9
+msgid "常量"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:191
-#: 5b953418a59142dd9e8386db54b498cb
-msgid "值"
-msgstr ""
-
-#: ../../source/api_reference/core.rst:193
-#: 50be622dc18b4480953be65397dcf91b
-msgid "``MODE_DEFAULT``"
-msgstr ""
-
-#: ../../source/api_reference/core.rst:194
-#: bde4d6a60891415995f68080fd463154
-msgid "0x00000000"
-msgstr ""
-
-#: ../../source/api_reference/core.rst:195
-#: 60d672163a614076b60be22968662438
-msgid "默认模式"
-msgstr ""
-
-#: ../../source/api_reference/core.rst:196
-#: 735e1bf89c6f489f9ec01b0213a32568
-msgid "\"MODE_LOOP_OFF\""
+#: ef3a3d5296ad42078472f4a36721eebd
+msgid "加载模式"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:197
-#: b7ddebc785ef437bb263d555f01297b7
-msgid "0x00000001"
-msgstr ""
-
-#: ../../source/api_reference/core.rst:198
-#: 2017c81f149245f9947b607a365d01fe
-msgid "不循环"
+#: fabba5bd95574143876c60e9adc73316
+msgid "值"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:199
-#: 8ad3c0dd52d846718deb555bfae99494
-msgid "``MODE_LOOP_NORMAL``"
+#: 5556e2d0e29347438c25e920a4c67bb6
+msgid "``MODE_DEFAULT``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:200
-#: 3b111af87303460e81affbe4f6c0b829
-msgid "0x00000002"
+#: 3153d700142a4c3bbf055c43fe8cb8c4
+msgid "0x00000000"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:201
-#: fcce4119e6ae4fdcb131df99ce799711
-msgid "正常循环"
+#: e045a1d02b624bf5b8d1ce705bd81377
+msgid "默认模式"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:202
-#: 764d336f999449d2a81c955c822cabb7
-msgid "``MODE_3D``"
+#: 7711786aed95404f9f5713620158c10a
+msgid "\"MODE_LOOP_OFF\""
 msgstr ""
 
 #: ../../source/api_reference/core.rst:203
-#: 203c165d20e74f719322edde0f330e17
-msgid "0x00000010"
+#: e970fbba5dbe43e0824fed391d000e02
+msgid "0x00000001"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:204
-#: dfd461e2e87043d6856675683e3c71cc
-msgid "3D 声音"
+#: 511e803e8d6a4fccba760a9f380edac3
+msgid "不循环"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:205
-#: c89aea909a604be89ca984e6b2a0f3eb
-msgid "``MODE_CREATESAMPLE``"
+#: b7707e5bc809497eb937c60462873991
+msgid "``MODE_LOOP_NORMAL``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:206
-#: 443cb6361baa4a7b8e10f58460d3a27a
-msgid "0x00000100"
+#: d576485f67cd4bad8823f33dc6b56b2d
+msgid "0x00000002"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:207
-#: 080784b33bdb4f629da5647ff515a542
-msgid "创建采样"
+#: 67d81fe006594605b1cf5ed3c57417d0
+msgid "正常循环"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:208
-#: 8614d58db1e04048a8ae1969321a78ad
-msgid "``MODE_CREATESTREAM``"
+#: e9ddcaf460e0492cb269c142faae0c6a
+msgid "``MODE_3D``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:209
-#: e3d501e10d4a4d12b0391c54aadce262
-msgid "0x00000200"
+#: 1ee8045c083a4fc4af9c9e0adf2f1a70
+msgid "0x00000010"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:210
-#: d891e15a5a754b5fb94343ca54dcc619
-msgid "创建流"
+#: ab0ad85a8bff4f99b82a3900647298f2
+msgid "3D 声音"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:211
-#: c38cfed7c3f24e1e8ee8a2fa5b477b36
-msgid "``MODE_NONBLOCKING``"
+#: 632c5098752e4b73a0c76e8dedc30618
+msgid "``MODE_CREATESAMPLE``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:212
-#: 18cac70a8dcf4f5d8d041f84e27526e5
-msgid "0x00010000"
+#: ef42a2efae894da38725730fcda83eff
+msgid "0x00000100"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:213
-#: 00aab86a046d44fe814ec564904e0677
-msgid "非阻塞加载"
+#: 599c9619edca493da7ff710e46ab9bee
+msgid "创建采样"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:214
+#: 4bec5be1fc5245debf5e1c4f5c5bceda
+msgid "``MODE_CREATESTREAM``"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:215
+#: 1882abc9173644f3bd05e780c55d95ee
+msgid "0x00000200"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:216
+#: 8b37d4be3a784c9b9220163562842ec2
+msgid "创建流"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:217
+#: 4f936b6c1a78423883b2eff0273a3802
+msgid "``MODE_NONBLOCKING``"
 msgstr ""
 
 #: ../../source/api_reference/core.rst:218
-#: a9bfbf9c50c846148a801f3c1513a58e
+#: c91b515511344dae8f11e1ccdb8c3616
+msgid "0x00010000"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:219
+#: eed5ac596867436f81ba4aa6126d132d
+msgid "非阻塞加载"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:222
+#: 76616d7445c544a1b91f866dc3819502
+msgid "3D 衰减回调"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:224
+#: e10f5379c93e41a09a446a1d5b4d21d5
+msgid "通过 ``set_3d_rolloff_callback`` 可以设置自定义的 3D 声音距离衰减函数，替代 FMOD 内置的衰减算法。"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:226
+#: 4fa2ae40a44d4b139a293c6707803d3d
+msgid "**回调函数签名：**"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:228
+#: 3af19219b1df4c84971f95104a42faa6
+msgid "func custom_rolloff_callback(distance: float) -> float:\n"
+"    # distance: 听众与声源的距离\n"
+"    # 返回值: 音量衰减系数 (0.0 - 1.0)\n"
+"    return 1.0 / (1.0 + distance * 0.1)"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:235
+#: 9434f90fa5424ebbb94abbb4b4d113e8
+msgid "**示例：**"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:237
+#: 3a9f535982634183a7bbda6ce5bed641
 msgid "var system = FmodServer.main_system\n"
 "\n"
 "# 创建声音\n"
@@ -606,4 +659,31 @@ msgid "var system = FmodServer.main_system\n"
 "# 获取性能信息\n"
 "var cpu = system.get_cpu_usage()\n"
 "print(\"DSP: %.2f%%\" % cpu[\"dsp\"])"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:255
+#: 8f8f972c3c3c4bc7a05184e3dbc2ec4c
+msgid "自定义 3D 衰减示例"
+msgstr ""
+
+#: ../../source/api_reference/core.rst:257
+#: ab1b4a59fd334c939a8e1efd0f1c3eef
+msgid "var system = FmodServer.main_system\n"
+"\n"
+"# 定义自定义衰减回调\n"
+"func my_custom_rolloff(distance: float) -> float:\n"
+"    # 自定义衰减曲线：近距离不衰减，超过 10 单位后开始衰减\n"
+"    if distance < 10.0:\n"
+"        return 1.0\n"
+"    else:\n"
+"        # 对数衰减\n"
+"        return max(0.0, 1.0 - log(distance - 9.0) / log(100.0))\n"
+"\n"
+"# 设置回调\n"
+"system.set_3d_rolloff_callback(my_custom_rolloff)\n"
+"\n"
+"# 后续播放的 3D 声音将使用此衰减曲线\n"
+"\n"
+"# 移除回调（恢复默认行为）\n"
+"system.set_3d_rolloff_callback(Callable())"
 msgstr ""

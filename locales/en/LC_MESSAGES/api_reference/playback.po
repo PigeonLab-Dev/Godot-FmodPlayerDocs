@@ -22,19 +22,19 @@ msgstr ""
 
 #: ../../source/api_reference/playback.rst:2 630fb487fe9c480abfc9a6edee4d7f5f
 msgid "播放控制 API"
-msgstr ""
+msgstr "Playback Control API"
 
 #: ../../source/api_reference/playback.rst:5 19d2adeaf40c4988b0cc929068c82c5c
 msgid "FmodChannelControl"
-msgstr ""
+msgstr "FmodChannelControl"
 
 #: ../../source/api_reference/playback.rst:7 b1563f0804b84359af7776343af512f0
 msgid "继承自：RefCounted"
-msgstr ""
+msgstr "Inherits: RefCounted"
 
 #: ../../source/api_reference/playback.rst:9 a239d09aa88340f0b521ba69073e9dc8
 msgid "通道控制的抽象基类，``FmodChannel`` 和 ``FmodChannelGroup`` 都继承自此类。"
-msgstr ""
+msgstr "Abstract base class for channel control. Both ``FmodChannel`` and ``FmodChannelGroup`` inherit from this class."
 
 #: ../../source/api_reference/playback.rst:12
 #: ../../source/api_reference/playback.rst:20
@@ -52,11 +52,11 @@ msgstr ""
 #: dcd02835997d44ccbe5599814c1e1c27 f0ec4b9d858747cbbade58a52268eb52
 #: fd3c930382754919ab2361946673f2e7
 msgid "方法"
-msgstr ""
+msgstr "Methods"
 
 #: ../../source/api_reference/playback.rst:15 8d33c90238684433803749e072d190d8
 msgid "播放控制"
-msgstr ""
+msgstr "Playback Control"
 
 #: ../../source/api_reference/playback.rst:21
 #: ../../source/api_reference/playback.rst:43
@@ -69,7 +69,7 @@ msgstr ""
 #: 3a841fb6f50b4f6bba863e0ea6de89a4 8b1c87c2d1bc47d0b8e8672dc4ca4d32
 #: 8d6140c78bac479eb397894626fc2185 a6344bd74e3547ac87c7dead1c901d1b
 msgid "返回值"
-msgstr ""
+msgstr "Returns"
 
 #: ../../source/api_reference/playback.rst:22
 #: ../../source/api_reference/playback.rst:44
@@ -84,26 +84,26 @@ msgstr ""
 #: 7eb000f43d2642af8d2575997364b5d0 89a933302f2f4154a53619a99eef370d
 #: a82a9cbc6ef14a67901e48538d745163
 msgid "说明"
-msgstr ""
+msgstr "Description"
 
 #: ../../source/api_reference/playback.rst:23 0411851181754c2984c7906b426d4285
 msgid "``is_playing()``"
-msgstr ""
+msgstr "``is_playing()``"
 
 #: ../../source/api_reference/playback.rst:24
 #: ../../source/api_reference/playback.rst:33
 #: ../../source/api_reference/playback.rst:61 a856c81e0a664380b788c01418374063
 #: bbd599d121e64bd0a3e0756aa8096b55 d999e8e49ff548a595eae49535cf8223
 msgid "bool"
-msgstr ""
+msgstr "bool"
 
 #: ../../source/api_reference/playback.rst:25 303b2bf1a21c457ab3182f0de99a743c
 msgid "是否正在播放"
-msgstr ""
+msgstr "Whether currently playing"
 
 #: ../../source/api_reference/playback.rst:26 aeda21fd705f4e2b8d877e59832cc19f
 msgid "``stop()``"
-msgstr ""
+msgstr "``stop()``"
 
 #: ../../source/api_reference/playback.rst:27
 #: ../../source/api_reference/playback.rst:30
@@ -133,43 +133,43 @@ msgstr ""
 #: d09c528585a243fb9431fcd347947322 ec14d8fc5a234725b56b127a0baaaacb
 #: f9b4f1c797b5454b97ee054b92e89fc9 fe796a0ff9ca4ac59c825fe72038bfb7
 msgid "void"
-msgstr ""
+msgstr "void"
 
 #: ../../source/api_reference/playback.rst:28 930e0f71d587474a897687c0fdba8354
 msgid "停止播放"
-msgstr ""
+msgstr "Stop playback"
 
 #: ../../source/api_reference/playback.rst:29 e7ae0c86e5514d35ad02d1a7b21ede49
 msgid "``set_paused(paused)``"
-msgstr ""
+msgstr "``set_paused(paused)``"
 
 #: ../../source/api_reference/playback.rst:31 890d2e70ea504ea3927c7e1331c8e810
 msgid "设置暂停状态"
-msgstr ""
+msgstr "Set paused state"
 
 #: ../../source/api_reference/playback.rst:32 b9b3ed58363d40f0aa5d6997db453b06
 msgid "``get_paused()``"
-msgstr ""
+msgstr "``get_paused()``"
 
 #: ../../source/api_reference/playback.rst:34 eee887d3c1fe4daebc2c8853470a8329
 msgid "获取暂停状态"
-msgstr ""
+msgstr "Get paused state"
 
 #: ../../source/api_reference/playback.rst:37 a816a808ab194fe5b2c48e37a5514d4a
 msgid "音量控制"
-msgstr ""
+msgstr "Volume Control"
 
 #: ../../source/api_reference/playback.rst:45 a02173a7efca45dab6a6ef7e208aeeb8
 msgid "``set_volume(volume)``"
-msgstr ""
+msgstr "``set_volume(volume)``"
 
 #: ../../source/api_reference/playback.rst:47 a72642dd5c2c49cda82abbb6a896d758
 msgid "设置音量（线性 0.0-1.0）"
-msgstr ""
+msgstr "Set volume (linear 0.0-1.0)"
 
 #: ../../source/api_reference/playback.rst:48 900ac8471fcc458d9c6e073e8fcfb683
 msgid "``get_volume()``"
-msgstr ""
+msgstr "``get_volume()``"
 
 #: ../../source/api_reference/playback.rst:49
 #: ../../source/api_reference/playback.rst:55
@@ -178,115 +178,115 @@ msgstr ""
 #: 148a60aab8d74db583ff5d3056c85fe6 1fb2aa0eaa7848ada523957d9d64cbf9
 #: 278f5851859c4ab9b97b5f9076f16050
 msgid "float"
-msgstr ""
+msgstr "float"
 
 #: ../../source/api_reference/playback.rst:50 36a0e549b1804bcfbdb62defd2fd92ef
 msgid "获取音量（线性）"
-msgstr ""
+msgstr "Get volume (linear)"
 
 #: ../../source/api_reference/playback.rst:51 a85c80f66525449d89247337bb29bca8
 msgid "``set_volume_db(volume_db)``"
-msgstr ""
+msgstr "``set_volume_db(volume_db)``"
 
 #: ../../source/api_reference/playback.rst:53 14a6a45287d34573a0909f1b74a9562f
 msgid "设置音量（分贝）"
-msgstr ""
+msgstr "Set volume (decibels)"
 
 #: ../../source/api_reference/playback.rst:54 b94dd10a5c4945b3a4c9c6bff9ba210c
 msgid "``get_volume_db()``"
-msgstr ""
+msgstr "``get_volume_db()``"
 
 #: ../../source/api_reference/playback.rst:56 25a9754399a8419abc9275ee7a3c50fc
 msgid "获取音量（分贝）"
-msgstr ""
+msgstr "Get volume (decibels)"
 
 #: ../../source/api_reference/playback.rst:57 b0c5fa44c17d4c64a50c572ab50834a1
 msgid "``set_mute(mute)``"
-msgstr ""
+msgstr "``set_mute(mute)``"
 
 #: ../../source/api_reference/playback.rst:59 b7f11023efdb4c20bc7cbcdd3e6748c8
 msgid "设置静音"
-msgstr ""
+msgstr "Set mute"
 
 #: ../../source/api_reference/playback.rst:60 6ce918508fa74a18acbbb7f87fb04276
 msgid "``get_mute()``"
-msgstr ""
+msgstr "``get_mute()``"
 
-#: ../../source/api_reference/playback.rst:62 9e71f90a3073413ea6500b0b23e98872
+#: ../../source/api_reference/playback.rst:62 9e71f90a3073413ea650b0b0b23e98872
 msgid "获取静音状态"
-msgstr ""
+msgstr "Get mute state"
 
 #: ../../source/api_reference/playback.rst:65 d656c17771434f36a8e8c336777070eb
 msgid "音调和声像"
-msgstr ""
+msgstr "Pitch and Pan"
 
 #: ../../source/api_reference/playback.rst:73 6683cefc115d4b9ba51394843db7cce6
 msgid "``set_pitch(pitch)``"
-msgstr ""
+msgstr "``set_pitch(pitch)``"
 
 #: ../../source/api_reference/playback.rst:75 32418e54524e427c98516e0e91bd3bf3
 msgid "设置音调（1.0 = 正常）"
-msgstr ""
+msgstr "Set pitch (1.0 = normal)"
 
 #: ../../source/api_reference/playback.rst:76 77eaf96a9f834685891cbc882a8f74f6
 msgid "``get_pitch()``"
-msgstr ""
+msgstr "``get_pitch()``"
 
 #: ../../source/api_reference/playback.rst:78 af2884bf72e345b8bc724a6367e02af8
 msgid "获取音调"
-msgstr ""
+msgstr "Get pitch"
 
 #: ../../source/api_reference/playback.rst:79 d7fa1a630a8f4072aeabdc842df71b1c
 msgid "``set_pan(pan)``"
-msgstr ""
+msgstr "``set_pan(pan)``"
 
 #: ../../source/api_reference/playback.rst:81 2d013b05a69b4bdf82bd2bc3f7a6a86e
 msgid "设置声像（-1.0 ~ 1.0）"
-msgstr ""
+msgstr "Set pan (-1.0 ~ 1.0)"
 
 #: ../../source/api_reference/playback.rst:82 1504daae3a744a9188b01b73ce02badf
 msgid "``get_pan()``"
-msgstr ""
+msgstr "``get_pan()``"
 
 #: ../../source/api_reference/playback.rst:84 06fe76a0982f4584bc381138c216bfea
 msgid "获取声像"
-msgstr ""
+msgstr "Get pan"
 
 #: ../../source/api_reference/playback.rst:87 ae94b0b0ab7f44428cec55aee01d9ce8
 msgid "DSP 效果"
-msgstr ""
+msgstr "DSP Effects"
 
 #: ../../source/api_reference/playback.rst:95 dd636543c96f412ebe9c0cb13ecdcc5e
 msgid "``add_dsp(index, dsp)``"
-msgstr ""
+msgstr "``add_dsp(index, dsp)``"
 
 #: ../../source/api_reference/playback.rst:97 6a3aa8a376d94f95b6b2fe202ed6001a
 msgid "添加 DSP 效果器"
-msgstr ""
+msgstr "Add DSP effect"
 
 #: ../../source/api_reference/playback.rst:98 6fbc4577719945edbbf2bf1821064883
 msgid "``remove_dsp(dsp)``"
-msgstr ""
+msgstr "``remove_dsp(dsp)``"
 
 #: ../../source/api_reference/playback.rst:100 f32baaa767b144ad83dab54ca150845a
 msgid "移除 DSP 效果器"
-msgstr ""
+msgstr "Remove DSP effect"
 
 #: ../../source/api_reference/playback.rst:101 a92d6a1af8ef473f8f048d892c2d106c
 msgid "``get_dsp(index)``"
-msgstr ""
+msgstr "``get_dsp(index)``"
 
 #: ../../source/api_reference/playback.rst:102 eb75c1d39ea7465eac1e78c7e725a04f
 msgid "FmodDSP"
-msgstr ""
+msgstr "FmodDSP"
 
 #: ../../source/api_reference/playback.rst:103 1ac589e4b0184ca0958a7263bb0fec9d
 msgid "获取指定索引的 DSP"
-msgstr ""
+msgstr "Get DSP at specified index"
 
 #: ../../source/api_reference/playback.rst:104 32d2ef539fd343b28d700419a5d78e1b
 msgid "``get_num_dsps()``"
-msgstr ""
+msgstr "``get_num_dsps()``"
 
 #: ../../source/api_reference/playback.rst:105
 #: ../../source/api_reference/playback.rst:153
@@ -296,198 +296,198 @@ msgstr ""
 #: 3c4c450ca8f6478384706d03b5919a3c d4788f1dd75b43b4aa1c9cd33c1248ca
 #: f3b405c9092c4599b9fae835652d5470
 msgid "int"
-msgstr ""
+msgstr "int"
 
 #: ../../source/api_reference/playback.rst:106 45cd187af86744c6b4491f1bf0a83470
 msgid "获取 DSP 数量"
-msgstr ""
+msgstr "Get number of DSPs"
 
 #: ../../source/api_reference/playback.rst:109 3a14533c82354362881d057aac705759
 msgid "3D 属性"
-msgstr ""
+msgstr "3D Attributes"
 
 #: ../../source/api_reference/playback.rst:117 a8bed70580ea4af7bacedac2cf9efe28
 msgid "``set_3d_attributes(pos, vel)``"
-msgstr ""
+msgstr "``set_3d_attributes(pos, vel)``"
 
 #: ../../source/api_reference/playback.rst:119 2558d07aea9346548904e8693dd05302
 msgid "设置 3D 位置和速度"
-msgstr ""
+msgstr "Set 3D position and velocity"
 
 #: ../../source/api_reference/playback.rst:120 4bbfd0f8204c4ce38dfca073a2e67635
 msgid "``get_3d_attributes()``"
-msgstr ""
+msgstr "``get_3d_attributes()``"
 
 #: ../../source/api_reference/playback.rst:121 35b88466bccc439592f0c927b690bb37
 msgid "Dictionary"
-msgstr ""
+msgstr "Dictionary"
 
 #: ../../source/api_reference/playback.rst:122 8487d7bd45654b609083c9ffea0e1c53
 msgid "获取 3D 属性"
-msgstr ""
+msgstr "Get 3D attributes"
 
 #: ../../source/api_reference/playback.rst:123 de0ca29b4a0f4600b6f8d787374a810f
 msgid "``set_3d_min_max_distance(min, max)``"
-msgstr ""
+msgstr "``set_3d_min_max_distance(min, max)``"
 
 #: ../../source/api_reference/playback.rst:125 e29e1b2542444e3f865a5aa80e4e3d43
 msgid "设置 3D 最小/最大距离"
-msgstr ""
+msgstr "Set 3D min/max distance"
 
 #: ../../source/api_reference/playback.rst:126 58df9d502a1d40db87b1db8fb0d9060c
 msgid "``set_3d_level(level)``"
-msgstr ""
+msgstr "``set_3d_level(level)``"
 
 #: ../../source/api_reference/playback.rst:128 e3433002fb6d474596d82ad829e8ca0a
 msgid "设置 3D 级别"
-msgstr ""
+msgstr "Set 3D level"
 
 #: ../../source/api_reference/playback.rst:131
 #: ../../source/api_reference/playback.rst:242 215798390ee241dcbbf20b23d4c6c26d
 #: 224bdbcf55b34d1eabc97c1d42357d9e
 msgid "FmodChannel"
-msgstr ""
+msgstr "FmodChannel"
 
 #: ../../source/api_reference/playback.rst:133
 #: ../../source/api_reference/playback.rst:213 0a6f05af3a534c1c9d5270651d08f5ca
 #: 892ab8bd49de4d9396205c3b5dc5315a
 msgid "继承自：FmodChannelControl"
-msgstr ""
+msgstr "Inherits: FmodChannelControl"
 
 #: ../../source/api_reference/playback.rst:135 22adf7cab7004829bed5c4c46cf254f2
 msgid "代表一个正在播放的声音实例。"
-msgstr ""
+msgstr "Represents a playing sound instance."
 
 #: ../../source/api_reference/playback.rst:146 b860476f64aa4fcb8d7bf3f1fcab3d2c
 msgid "``setup(channel)``"
-msgstr ""
+msgstr "``setup(channel)``"
 
 #: ../../source/api_reference/playback.rst:148 56a02231357b4c26b417e2cb951b7691
 msgid "设置内部 FMOD 通道"
-msgstr ""
+msgstr "Set internal FMOD channel"
 
 #: ../../source/api_reference/playback.rst:149 76cefe4055a945ceb1e9aa03405fe869
 msgid "``set_position(position, timeunit)``"
-msgstr ""
+msgstr "``set_position(position, timeunit)``"
 
 #: ../../source/api_reference/playback.rst:151 42f705f7857c4899b4d8e69c127037cc
 msgid "设置播放位置"
-msgstr ""
+msgstr "Set playback position"
 
 #: ../../source/api_reference/playback.rst:152 58840aa10cef4a8e90bf47b6e69ae7cb
 msgid "``get_position(timeunit)``"
-msgstr ""
+msgstr "``get_position(timeunit)``"
 
 #: ../../source/api_reference/playback.rst:154 2a0041cd1bbc42ba999f9d041b793a7c
 msgid "获取播放位置"
-msgstr ""
+msgstr "Get playback position"
 
 #: ../../source/api_reference/playback.rst:155 357f2dbda73e48b1801d82b20372dc09
 msgid "``get_current_sound()``"
-msgstr ""
+msgstr "``get_current_sound()``"
 
 #: ../../source/api_reference/playback.rst:156 53310a4fb6864ede91ce376176a4c6d7
 msgid "FmodSound"
-msgstr ""
+msgstr "FmodSound"
 
 #: ../../source/api_reference/playback.rst:157 8939a93c0f2b466197e9265e96baf5cc
 msgid "获取当前播放的声音"
-msgstr ""
+msgstr "Get currently playing sound"
 
 #: ../../source/api_reference/playback.rst:158 d645ffad2670496a9f69e78a6beeb3b1
 msgid "``set_loop_count(loopcount)``"
-msgstr ""
+msgstr "``set_loop_count(loopcount)``"
 
 #: ../../source/api_reference/playback.rst:160 f6992318c2854b5c82b2212908615923
 msgid "设置循环次数（-1=无限）"
-msgstr ""
+msgstr "Set loop count (-1=infinite)"
 
 #: ../../source/api_reference/playback.rst:161 3f0ff0e98bb94a32bd387c8adc997bb6
 msgid "``get_loop_count()``"
-msgstr ""
+msgstr "``get_loop_count()``"
 
 #: ../../source/api_reference/playback.rst:163 e80e2de0b80f44738be777c8b919ece4
 msgid "获取循环次数"
-msgstr ""
+msgstr "Get loop count"
 
 #: ../../source/api_reference/playback.rst:164 fa71ff47579f492ba8aeec9e5f510530
 msgid "``set_channel_group(group)``"
-msgstr ""
+msgstr "``set_channel_group(group)``"
 
 #: ../../source/api_reference/playback.rst:166 6a5830f0da9b4ce38df5956edb296641
 msgid "设置所属通道组"
-msgstr ""
+msgstr "Set channel group"
 
 #: ../../source/api_reference/playback.rst:167 17b308ea0eee4f5c97686ea6c564aee4
 msgid "``get_channel_group()``"
-msgstr ""
+msgstr "``get_channel_group()``"
 
 #: ../../source/api_reference/playback.rst:168
 #: ../../source/api_reference/playback.rst:211
 #: ../../source/api_reference/playback.rst:236 1b96f5d01f3643fcb635c2a703cb4b49
 #: 8fef19dc69c54308a11fc84c8c98523c
 msgid "FmodChannelGroup"
-msgstr ""
+msgstr "FmodChannelGroup"
 
 #: ../../source/api_reference/playback.rst:169 c9ba1a41b7c34cf2869a45e66addda3c
 msgid "获取所属通道组"
-msgstr ""
+msgstr "Get channel group"
 
 #: ../../source/api_reference/playback.rst:172
 #: ../../source/api_reference/playback.rst:180 4591d04b971c4f4e95814be9d08543c7
 #: 59c47845e36e48fdb6cd4c73aec51f53
 msgid "常量"
-msgstr ""
+msgstr "Constants"
 
 #: ../../source/api_reference/playback.rst:175 6cccb97a460547568d61f5056eede282
 msgid "时间单位"
-msgstr ""
+msgstr "Time Units"
 
 #: ../../source/api_reference/playback.rst:181 55d91a9b6a044973968d6379c68d03ea
 msgid "值"
-msgstr ""
+msgstr "Value"
 
 #: ../../source/api_reference/playback.rst:183 7c8998a5c259458fb01e698e3131d880
 msgid "``TIMEUNIT_MS``"
-msgstr ""
+msgstr "``TIMEUNIT_MS``"
 
 #: ../../source/api_reference/playback.rst:184 75669da762f3475ab24d9deb18b65d82
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../source/api_reference/playback.rst:185 cb4ad461367245cd8053c357f45795dd
 msgid "毫秒"
-msgstr ""
+msgstr "Milliseconds"
 
 #: ../../source/api_reference/playback.rst:186 4d0197ce5d064a2a88308c49c42cf25a
 msgid "``TIMEUNIT_PCM``"
-msgstr ""
+msgstr "``TIMEUNIT_PCM``"
 
 #: ../../source/api_reference/playback.rst:187 ebc97d4b7332406db59b0861e2168a7c
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../source/api_reference/playback.rst:188 26814595da2b4c87ad1a508686e58fbc
 msgid "PCM 采样"
-msgstr ""
+msgstr "PCM samples"
 
 #: ../../source/api_reference/playback.rst:189 e4dada7526d24e1abbb23b23cc8ae78c
 msgid "``TIMEUNIT_PCMBYTES``"
-msgstr ""
+msgstr "``TIMEUNIT_PCMBYTES``"
 
 #: ../../source/api_reference/playback.rst:190 1f40066e6a0f4324afcf486d1fb49a01
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: ../../source/api_reference/playback.rst:191 c9663a71cea04c64b02fc9cfc7c8f6bc
 msgid "PCM 字节"
-msgstr ""
+msgstr "PCM bytes"
 
 #: ../../source/api_reference/playback.rst:194
 #: ../../source/api_reference/playback.rst:252 0817a372098445508da511211c479bfb
 #: 7ea3247e33d84577a215ef42f6070f67
 msgid "示例"
-msgstr ""
+msgstr "Example"
 
 #: ../../source/api_reference/playback.rst:196 a60ae15910d74c7ba726375b82680bb0
 msgid ""
@@ -503,78 +503,89 @@ msgid ""
 "# 设置无限循环\n"
 "channel.set_loop_count(-1)"
 msgstr ""
+"var channel = system.play_sound(sound, null, false)\n"
+"\n"
+"# Set volume and pitch\n"
+"channel.set_volume_db(-6.0)\n"
+"channel.set_pitch(1.2)\n"
+"\n"
+"# Jump to 30 seconds\n"
+"channel.set_position(30000, FmodChannel.TIMEUNIT_MS)\n"
+"\n"
+"# Set infinite loop\n"
+"channel.set_loop_count(-1)"
 
 #: ../../source/api_reference/playback.rst:215 903839f40c21449ab6ecc9d6d413131b
 msgid "通道组，用于将多个通道组织在一起进行混音控制。"
-msgstr ""
+msgstr "Channel group for organizing multiple channels together for mixing control."
 
 #: ../../source/api_reference/playback.rst:226 ef9a4f45dc54461fb725f648dd4db1cf
 msgid "\"setup(channel_group)\""
-msgstr ""
+msgstr "``setup(channel_group)``"
 
 #: ../../source/api_reference/playback.rst:228 921efc4f89244890a86b22d854e1b484
 msgid "设置内部 FMOD 通道组"
-msgstr ""
+msgstr "Set internal FMOD channel group"
 
 #: ../../source/api_reference/playback.rst:229 e8c6669557fc485ab0cf7b59392aa31e
 msgid "``add_group(group, propagatedspclock)``"
-msgstr ""
+msgstr "``add_group(group, propagatedspclock)``"
 
 #: ../../source/api_reference/playback.rst:231 88d919137d184a038179893403068edb
 msgid "添加子组"
-msgstr ""
+msgstr "Add subgroup"
 
 #: ../../source/api_reference/playback.rst:232 95c5ed1dce24453db8653b5811c7f4c7
 msgid "``get_num_groups()``"
-msgstr ""
+msgstr "``get_num_groups()``"
 
 #: ../../source/api_reference/playback.rst:234 38bb71ff0f664dbcb295a924b5d4ce85
 msgid "获取子组数量"
-msgstr ""
+msgstr "Get number of subgroups"
 
 #: ../../source/api_reference/playback.rst:235 299eaf9bdee1432f8fa7da484b1c73b3
 msgid "``get_group(index)``"
-msgstr ""
+msgstr "``get_group(index)``"
 
 #: ../../source/api_reference/playback.rst:237 cd4c3d46d1db4e9f85f6913298b65cf2
 msgid "获取指定子组"
-msgstr ""
+msgstr "Get specified subgroup"
 
 #: ../../source/api_reference/playback.rst:238 0084466c045143e1bdb8d0e9decea5c7
 msgid "``get_num_channels()``"
-msgstr ""
+msgstr "``get_num_channels()``"
 
 #: ../../source/api_reference/playback.rst:240 aaff44cb7c04404ebbeea67fca8457d0
 msgid "获取通道数量"
-msgstr ""
+msgstr "Get number of channels"
 
 #: ../../source/api_reference/playback.rst:241 27f0029c10fb4c62b4ea7fba96b01d5f
 msgid "``get_channel(index)``"
-msgstr ""
+msgstr "``get_channel(index)``"
 
 #: ../../source/api_reference/playback.rst:243 a4c9ad0ba15345a0bb5ae87ff545a703
 msgid "获取指定通道"
-msgstr ""
+msgstr "Get specified channel"
 
 #: ../../source/api_reference/playback.rst:244 76de30bc2d574a3ca020e318e355bced
 msgid "``get_name()``"
-msgstr ""
+msgstr "``get_name()``"
 
 #: ../../source/api_reference/playback.rst:245 27ddf14a37504f708653a2dcdeafdea4
 msgid "String"
-msgstr ""
+msgstr "String"
 
 #: ../../source/api_reference/playback.rst:246 32df0c3d21aa44539f56d29b7c76239e
 msgid "获取组名称"
-msgstr ""
+msgstr "Get group name"
 
 #: ../../source/api_reference/playback.rst:247 44317907961b4617a74130f5acf7f83f
 msgid "``release()``"
-msgstr ""
+msgstr "``release()``"
 
 #: ../../source/api_reference/playback.rst:249 a8808701f0b0453c95d0e22063ef24fd
 msgid "释放通道组"
-msgstr ""
+msgstr "Release channel group"
 
 #: ../../source/api_reference/playback.rst:254 56fdbaec6ea541a08d33dfd856b47922
 msgid ""
@@ -590,4 +601,14 @@ msgid ""
 "sfx_group.set_volume_db(-12.0)\n"
 "sfx_group.set_mute(true)"
 msgstr ""
-
+"# Create SFX group\n"
+"var sfx_group = system.create_channel_group(\"SFX\")\n"
+"var master = system.get_master_channel_group()\n"
+"master.add_group(sfx_group)\n"
+"\n"
+"# Play to SFX group\n"
+"var channel = system.play_sound(sound, sfx_group, false)\n"
+"\n"
+"# Control entire group\n"
+"sfx_group.set_volume_db(-12.0)\n"
+"sfx_group.set_mute(true)"

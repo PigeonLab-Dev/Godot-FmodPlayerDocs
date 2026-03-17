@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot FmodPlayer \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"POT-Creation-Date: 2026-03-17 19:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/api_reference/dsp.rst:2
-#: 5260be338b3e48fabd7c017709d8d929
+#: 314ee93f4ecf4629a05c9074532ef4af
 msgid "DSP 效果器 API"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:5
 #: ../../source/api_reference/dsp.rst:258
-#: c3aff5ac286b412d8cc309f58c2f495f
-#: 208addf859094d0ea19a53929b1c5786
+#: b78cb776cceb401aa232e7ac29f75fea
+#: 9eeb979867c44d739d6fa14be40d346b
 msgid "FmodDSP"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:7
 #: ../../source/api_reference/dsp.rst:196
-#: 14e1cb1bfa134e51a33fd2fcfab01393
-#: 7778410c64bd4977bb606f13a5223ec2
+#: 265182ad2c6f4c77810d4126c6a32e1e
+#: 7051439c6f28405e8e91cbbdf1db4f6a
 msgid "继承自：RefCounted"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:9
-#: 71aa08659c34475ea237431dec02a529
+#: 94dd163d485b46458ca160905c8ba7c8
 msgid "FMOD::DSP 的包装类，代表数字信号处理器。"
 msgstr ""
 
@@ -49,22 +49,26 @@ msgstr ""
 #: ../../source/api_reference/dsp.rst:206
 #: ../../source/api_reference/dsp.rst:243
 #: ../../source/api_reference/dsp.rst:248
-#: ../../source/api_reference/dsp.rst:267
-#: 3aa267157a3f4105ada7a1ef0715644f
-#: 0157e746d9de42758b6be01b1d58258c
-#: 9afe65140b374c1aa0f3b3c369798797
-#: c8ea8b60448145f5944593100e727b51
-#: 049ae984eb0d4624ac57a17ac83b33a9
-#: 962eb7cd57a14538b1280ba82c5eb92d
-#: 24b3b345fd8748b1981afefbc046fa50
-#: 8ff6e876c9da48d3ba8e2e3872ee0b50
-#: a503d25eabbc409ab643e0b4fc35df10
-#: dc8ce83620d6446b8f214300e88dee91
+#: ../../source/api_reference/dsp.rst:271
+#: ../../source/api_reference/dsp.rst:289
+#: ../../source/api_reference/dsp.rst:310
+#: 681d05934bdc4ae483d2119629645f2a
+#: 9bc5d20ad1ee4c5b8778f94017a48788
+#: af74db2db8504bcf87428f426c5e240a
+#: 3fc7b7709df745c3ab3c427e0058b279
+#: d38b4e7e4bba4129a4830533f359f5cb
+#: 7b0905d0e4624eb98f885558b3da39c0
+#: 1a7e95e4d1d94a46bcecd5dd7bf2f956
+#: 9fd92b6aa0124546bfc492fd9fb8cd00
+#: 1d6a77b7a2004b4c8fcd21cd1da42783
+#: 114e4e72e7ef43df81ed0c5062e3624e
+#: 0abdcbccced04f1e994cf3aa0bc3704a
+#: 62ca783836904769bc14043991bcbe6a
 msgid "方法"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:15
-#: 81fb283fbedf4ec98a20582454367993
+#: 97b8ef33df4f4a1a902776025e2784a6
 msgid "生命周期"
 msgstr ""
 
@@ -74,14 +78,18 @@ msgstr ""
 #: ../../source/api_reference/dsp.rst:108
 #: ../../source/api_reference/dsp.rst:207
 #: ../../source/api_reference/dsp.rst:249
-#: ../../source/api_reference/dsp.rst:268
-#: b2228d53124a4badb2d0095e72ad726d
-#: 35cad849a6e24d019da25084589f0944
-#: 4946b97a1ef841b98dc994a003fc3c3c
-#: 3dddb34cc8ce4b1e947fd194b47a1917
-#: bd66a728fab04aa59d5705e1c742dae5
-#: e373f577c28c433f9d15b247329ded1c
-#: 47afa6d6c1a04d298e778f90f90e9bf9
+#: ../../source/api_reference/dsp.rst:272
+#: ../../source/api_reference/dsp.rst:290
+#: ../../source/api_reference/dsp.rst:311
+#: 48c04601f736436c832cd7a5c27d770b
+#: 3c97ebb140044255a00886ce69794b5c
+#: 871756f6ee8b43af871bc44d561af2a8
+#: c1c5c897e52f430ca28e9302d9402a54
+#: 5551afe03e24497e99c557e24e370de0
+#: 583eed1b3dae4466b95f6f77869e3241
+#: 626119014d1543a1b3240d64c239db4f
+#: b6849623cc20472a916f842599d3cfb3
+#: 76613d498db94eb6a35e21d0986e4549
 msgid "返回值"
 msgstr ""
 
@@ -93,23 +101,27 @@ msgstr ""
 #: ../../source/api_reference/dsp.rst:208
 #: ../../source/api_reference/dsp.rst:237
 #: ../../source/api_reference/dsp.rst:250
-#: ../../source/api_reference/dsp.rst:269
-#: ../../source/api_reference/dsp.rst:327
-#: 08fdef9614524e5aa3c1692fa1a3db59
-#: 5976c1b687bb4f93b36fd18540e6b9c3
-#: 3f92f14b1d5e4795b6a1dce7cb41a9d6
-#: a95c8129a48d4f36b859cab49737f430
-#: 610a8e8a0c584092b7edc7d0a8b88708
-#: 8847e910ab6248a39e09206c3a3c615a
-#: b2c3acc77e26400e84c84a38132d2063
-#: 32f81e5a5f654c97b64769c91d530c49
-#: e0a998908a514abba2a75e9e9ee427cc
-#: 85e9f6a6ed3f45379d4f6991c1b3c8c3
+#: ../../source/api_reference/dsp.rst:273
+#: ../../source/api_reference/dsp.rst:291
+#: ../../source/api_reference/dsp.rst:312
+#: ../../source/api_reference/dsp.rst:555
+#: 49c1c6a32379491d934ea22c7e4a13c9
+#: ccf63a7edaa14f739f57565bc729c6b6
+#: e7d9441e920d4a6897f5aa8c76f5b84b
+#: 31220fbb5a4b460fb1f1605db058e56a
+#: 16bc6ca33e804b0abe88ea14f85fdeb1
+#: 0f97fe89c0a64ae08cd97c71a4960e6d
+#: 544963335f42477fba300551a311620b
+#: 14313f9f32604f3891d8b936a97952b8
+#: 377a9cc3f9ea4b2da6d0403ae6bb3d57
+#: 2ea75ab6d37b4591bd6f918881212ff1
+#: 71db89e9cb124df4adfdf46346db793c
+#: a5ce1e265bac4900af550fa1e00eaa48
 msgid "说明"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:23
-#: 7a621edc061a4997b858a3080b35e56a
+#: 8b06299b681a4ea8a567c5feef52fb43
 msgid "``setup(dsp)``"
 msgstr ""
 
@@ -127,143 +139,137 @@ msgstr ""
 #: ../../source/api_reference/dsp.rst:216
 #: ../../source/api_reference/dsp.rst:252
 #: ../../source/api_reference/dsp.rst:255
-#: 60fd9767db4e4d0c80aac776e53bf07f
-#: fea73922e4a64a5fb1e43bc6e2a30d89
-#: facba727a74c44e5a2dad0d2214f2267
-#: bf1255ca1678463995e20ad75501667b
-#: ae9b4e29cdc6420287963b06d64309fe
-#: 2fdb7159902e4e4980cef452742ea907
-#: 364c35604d75437a8373d78c373a16d0
-#: 311011c212b746539b851ba5947eddf8
-#: 07f859fa8db8413b8e345298838f1110
-#: aaf3852af46c40c48aeba90f7d474e19
-#: b3931601090643c9842ddba76c846e60
-#: 7f300e9597d6428c898a0ccadd953f75
-#: cb4e6a9e4fcb4b9a8edffc17d402cf0c
-#: c8eea34e71624cf3a1564bb3abccaabc
+#: 0a2cd760329d4464be4f01d8278afa38
+#: d21dc4c91e4c4c79b4e6acbd51c6c18f
+#: 41d04f7e78a24554896e80ed1f5093f1
+#: efb67854b805472da33527f5473cbafd
+#: 2d1d4f40a20945f2892bafc7f56f417a
+#: 24c9be37088f40a8a839b3e2ad427994
+#: 89967db12b024f4d8b13d678704cfe02
+#: 323733c807604dd68fcc17cbb934330b
+#: 43bf79e7816f49909d3a5a11bafa7b20
+#: ed126c1fbf884b5bb590cc28063c12c6
+#: 5065cc96decd490f9c1b4e4e3c87de68
+#: cfc69f418dea44b0be9d0266b8bffdaa
+#: d9de2c9a31d744e4bfb2f29776ccab23
+#: 92bc9ab45ab341949d2de73e591b7d3b
 msgid "void"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:25
-#: e0c9381da218416db3fd38549708a193
+#: c0b97109a95649b1ab38cb1341c5403f
 msgid "设置内部 FMOD DSP"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:26
-#: b86a206329134565a14b8cd97b019cb2
+#: 824ba1ebed464a5c82db24df198a1617
 msgid "``release()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:28
-#: 24732a9f2c0f49df8851076b7db439d0
+#: 85fcfec188b6414fbeecaf33adccff17
 msgid "释放 DSP 资源"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:29
-#: eb6a1f62dc3849da878843424397d61e
+#: 1029f5691c144c98a1634c9c271bc99b
 msgid "``set_active(active)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:31
-#: 105e16d2004d47b88bdd63edddac79e8
+#: 41da8dfaa5b343f3a1703c922caeb5ac
 msgid "设置激活状态"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:32
-#: d1b74c0f5b294da0aff443c48e250197
+#: be76277581194261b7927358d130b42b
 msgid "``get_active()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:33
 #: ../../source/api_reference/dsp.rst:39
 #: ../../source/api_reference/dsp.rst:67
-#: ../../source/api_reference/dsp.rst:271
-#: ../../source/api_reference/dsp.rst:274
-#: ../../source/api_reference/dsp.rst:277
-#: c075b47d066c4787bcb055aeeeed40de
-#: 2c5880321cb54a5b83e359c60f156917
-#: 58a969ea0c1e4ceeb74004a518e2bf16
-#: 3988b318bc1c4ffab39082bf04a68ee3
-#: 74de3817b7bc4d23b117d91e478b7ecf
-#: 75bab200a13c4439bab9c9d1b06d2257
+#: d68e08152dc84e35a4a6eb38744dc2fb
+#: 176e0b8d4f8644f9884f8059349a1aa3
+#: dfae7ee3945443ff838124d7fec5f0c6
 msgid "bool"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:34
-#: 02c870c718bd46b78833b135b6135960
+#: 9d354696a6b546e79a2810856d6c8258
 msgid "获取激活状态"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:35
-#: 26d5e67792264b4f8fee0452fe06675c
+#: 6231e210e2874b8c9a08bf305f2def60
 msgid "``set_bypass(bypass)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:37
-#: 9f5b51f0a861425fa9c4cbe774e328ed
+#: 6e86752d7fd44ad0be3dae17f589fbf1
 msgid "设置旁通状态"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:38
-#: 40d0b889c52e4d05bcb2c523412863a6
+#: 32e2a105639c4df490e5469a9acfab1d
 msgid "``get_bypass()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:40
-#: aa0e73e6cede44b09fc86933564c78d6
+#: 03db95d7b411482d8bc14e0ed3fc6c6d
 msgid "获取旁通状态"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:43
-#: 914adcbdd4e34c44a84d78c1e95c68d0
+#: 86dec21ff8b046a180783a62afa0fe30
 msgid "参数控制"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:51
-#: cfab76f0de1745248a45c79051eb5411
+#: 874e33252e4b4942b79d6ab24519edcd
 msgid "``set_parameter_float(index, value)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:53
-#: be0a41fba657498ca9d87730e22ccf2f
+#: 55476c11c5a74790903206b0254be790
 msgid "设置浮点参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:54
-#: c26c0d8ce445466db4deae57c435eb5e
+#: f6e1759ea8b248e3b099a9192b6b2655
 msgid "``get_parameter_float(index)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:55
 #: ../../source/api_reference/dsp.rst:213
-#: ../../source/api_reference/dsp.rst:341
-#: ../../source/api_reference/dsp.rst:344
-#: ../../source/api_reference/dsp.rst:347
-#: 70a60d12434441949e3df6db98f9f982
-#: 25335b0cb8264634b7e8c12543938326
-#: c5f78695b978460e8c2d3a4893e16bc1
-#: c5f78695b978460e8c2d3a4893e16bc1
-#: c5f78695b978460e8c2d3a4893e16bc1
+#: ../../source/api_reference/dsp.rst:569
+#: ../../source/api_reference/dsp.rst:572
+#: ../../source/api_reference/dsp.rst:575
+#: 1b48cef56e004c0cb10e0073612157ae
+#: ae656f0418694276a8543ca1daa6740e
+#: 4c07cfa6b0024a6a896a4c04749ee966
+#: d6687e5f7bdc4b5f9f4c259834d1c996
+#: c43c45ab66084c50828f6792c78d5b89
 msgid "float"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:56
-#: cadc5a0af1b24522bb8859af326af48d
+#: 0c18fb5fc4994d2684e43fe2c9d8d07a
 msgid "获取浮点参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:57
-#: 1e7d1019bf8144c1ad7f5a7f7811b987
+#: d46cdea1b8e249a1b247beb2ea0dd62a
 msgid "``set_parameter_int(index, value)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:59
-#: 172dd0baa6e849acab7bb3e33dba9bb9
+#: d44ca1ec2ccf480991a9e10cab8d5ca2
 msgid "设置整数参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:60
-#: 24840479e4fc4098b4dde53a9f7466d6
+#: 9f8c19fdd37d4258894bdd21742ee87f
 msgid "``get_parameter_int(index)``"
 msgstr ""
 
@@ -273,655 +279,919 @@ msgstr ""
 #: ../../source/api_reference/dsp.rst:95
 #: ../../source/api_reference/dsp.rst:120
 #: ../../source/api_reference/dsp.rst:123
-#: ../../source/api_reference/dsp.rst:338
-#: 280c623505c342dda349a1ba28423f2c
-#: 5fb592287ea84d81bdf61ee21e9141af
-#: 1159d5421ad348fea0ec8b5a6f67cdbe
-#: cb6d9deb0cff44adaadd7e7448a65036
-#: 1e903efebe1649b98eb2de3766ea5468
-#: 56d743502eb94969ae54ff6c3fb2d6af
-#: 22417ab4184c465c83293365e3e87746
+#: ../../source/api_reference/dsp.rst:566
+#: c1c079f0ba704907b9b89ca33a38f203
+#: 7f1542e1d6664da09f156bc7af082d14
+#: 5503450c2f054e528fe02026bd21ef66
+#: 1db8157746f7413d9b2e5257ab2eb509
+#: 2dcb719565f342fabdb2e15bbedeb76d
+#: 25d54f8c72894740ae6ada8302c8d605
+#: 5905111e3ddc4fbaa32f605538f98980
 msgid "int"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:62
-#: 1a771a979e054b0581957cc287435d1f
+#: 5b66c7c36a1c4abca128ee5111619b59
 msgid "获取整数参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:63
-#: 744172155f704377a10bfb1262499891
+#: 91dab108cb1947d0a7a62b3f1a593511
 msgid "``set_parameter_bool(index, value)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:65
-#: cd0342e53c1b48eeb8e757efc2049f5e
+#: c02deaf7ebbc4474b5d70b8739641c27
 msgid "设置布尔参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:66
-#: fddaf2eaaaca41749c88750cb4a7da8a
+#: e1accbc5ba1a4f3492c08d3194e1ebb5
 msgid "``get_parameter_bool(index)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:68
-#: 93969bcc93694a0c844ac37cb0372c64
+#: dd7fb82de50640c4a1e6b5157521c1c2
 msgid "获取布尔参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:69
-#: aa4846c957094726ad9d2c1e14acb42b
+#: ecac62625fc64a038d3d1898fe2b1117
 msgid "``set_parameter_data(index, data)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:71
-#: 4ecb49b0f4b047f39cc8b5cca5040d18
+#: aba2ac16e70d46cf8bd72ddc8c7a568f
 msgid "设置数据参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:72
-#: c8c334cfd8564a13984039e5f5038ded
+#: 8fb3ca6589c04ccd95228c1c26c43e48
 msgid "``get_parameter_data(index)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:73
 #: ../../source/api_reference/dsp.rst:79
-#: e411a091c67e466199bb2a12eeb1813c
-#: 7fad4dfaebb8478f9fad38208ee297cd
+#: 991841f83a89428185560dcb5cd9b4ea
+#: 58005bd08cea438b893d5812b91b7e45
 msgid "Dictionary"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:74
-#: 119cd253d7e1426285c59f5c2aab7ba8
+#: 27d92df276ba4d738ec2b5b3d6e6c549
 msgid "获取数据参数"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:75
-#: 129164afb9ae49608634357c616f7b5a
+#: 5299cfcf3327470e972c2ebdf4fe827b
 msgid "``get_num_parameters()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:77
-#: c4d1ac396bfb4a558efab38090faf905
+#: 303d1918ef8544b997685feb47d9b1d5
 msgid "获取参数数量"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:78
-#: 678e0324db2a4e198f1ee1bb609a025e
+#: 4d41d0e295a342ddb488cafc9dd99293
 msgid "``get_parameter_info(index)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:80
-#: 99ee382e79264d29b7c78ff8188f7216
+#: 127f719d661d4734ab6335f40a9f1c6d
 msgid "获取参数信息"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:83
-#: 66e616d7a670490da918a606943f1fc8
+#: 277048330d15468299e32e32eaede84b
 msgid "信息查询"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:91
-#: 95f99529fead42cfa8a921749c66b373
+#: 116c551ac5de4898bf29266a069d7c30
 msgid "``get_type()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:93
-#: 040cee7f39fa431b81cb01d474008944
+#: 56fe8a82a83d44f08c809399f9da9c10
 msgid "获取 DSP 类型"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:94
-#: 64e7f6eccebc4b0292a8af8fbd28df85
+#: dd4cd57df7914dd98ea0f15a120d68ab
 msgid "``get_id()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:96
-#: 56749ab533fa460399742758802c7405
+#: 36dce244628c414ba643d4f3c4b70ec5
 msgid "获取 DSP ID"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:97
-#: ac288e8a97be45329c7ac0f9948c9138
+#: ff422c288d5741e3a7d5f74bd5eeb8ef
 msgid "``get_name()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:98
-#: ../../source/api_reference/dsp.rst:329
-#: ../../source/api_reference/dsp.rst:332
-#: ../../source/api_reference/dsp.rst:335
-#: 9123c705b4b748cfb27a88654ad451c1
-#: d6e295d4383141a3846ae26dccd3ff12
-#: d6e295d4383141a3846ae26dccd3ff12
-#: d6e295d4383141a3846ae26dccd3ff12
+#: ../../source/api_reference/dsp.rst:557
+#: ../../source/api_reference/dsp.rst:560
+#: ../../source/api_reference/dsp.rst:563
+#: 4bed3f5b2eb248198db7b25d1f8b7ed2
+#: 3e58bd02c7dc48beb7d3ae9be8bf27de
+#: d971a90ed81649b19ec98391134ab59c
+#: e4a547b0bb844155a59d3a60d3221a39
 msgid "String"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:99
-#: e0cb6fb0b9a3441aab6fc941ffdee5b1
+#: a53e0e6a3b6e4428ac0b9e91a361b166
 msgid "获取 DSP 名称"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:102
-#: 0991d662b27a41bab2a2d0aabf1f9f72
+#: e12d7b4e25f3469e9864eab19b3709ee
 msgid "连接路由"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:110
-#: b091c55701b94d9c87da976e79281d19
+#: c53d2447a8fd419786d4a99ff01137f7
 msgid "``add_input(target_dsp)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:111
 #: ../../source/api_reference/dsp.rst:194
-#: f6f07a982f964a8aa4f5353357d16eca
-#: f3f68f3b636d4432a585a60382f73fce
+#: 0b5e2b18cde0456f95a688c7646eecbe
+#: a63d36e6543b4a8fa5392b1ad6dbd8e3
 msgid "FmodDSPConnection"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:112
-#: c3cde8fc5855414d99a713e62360d9df
+#: 98ad72f8ea0743b0b4efa2179d036fd5
 msgid "添加输入连接"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:113
-#: 7862580fe9434a6da6f4cb72beef50ac
+#: 8c995f49033a4cc3a880c7b001d15ad8
 msgid "``disconnect_from(target_dsp)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:115
-#: 56961714523746c4abd925fd28aea12d
+#: 735804ccf749417880a4176b3beacddb
 msgid "断开连接"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:116
-#: 5411da834f654605b3ba1d6a8b191786
+#: 9088656608e642798e5d8c97b5231572
 msgid "``disconnect_all()```"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:118
-#: 6ef6fa92d2084bb9afedda3645851e8c
+#: 7e81ec09034c4f759e2c6986fd3e4c2b
 msgid "断开所有连接"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:119
-#: 2c1ea88ae39a4f9b8f44b820bebbc4c1
+#: 84f4e11c8b124f8eae9cc34ad5316e3a
 msgid "\"get_num_inputs()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:121
-#: 133cc36c3f8a42a89f2b617540e94295
+#: e15d650446d94353a891c8c0afabb407
 msgid "获取输入数量"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:122
-#: 3bd64e50447a44189af7239dd4368cb7
+#: f155e7c05b2a45e5b38586bf1ef0b8b3
 msgid "\"get_num_outputs()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:124
-#: 00edd4334f6b498ab866e2eeda4a57a4
+#: 52597509c39f4fc2b757c27865e02c81
 msgid "获取输出数量"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:127
 #: ../../source/api_reference/dsp.rst:135
-#: 4b1775098a454ef49d4ab7af07f2fd84
-#: e5e994ba03984f1d8da1f95f82ece9c7
+#: c8574cccc4cf48849115e32d898d29cf
+#: 540905c2287547c2856c17c1ca242f2a
 msgid "常量"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:130
-#: 2d64eccc1f154824a5d03ea59d51a998
+#: 3d428c06e60844e39a7854c2a0ab8841
 msgid "DSP 类型"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:136
-#: f38886b7a717401c8d545515885c2e42
+#: ee800a16614140a6abaa80c9b12e453f
 msgid "值"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:138
-#: 53bc7ee828b34e6dafbab845e6a13d46
+#: 5680574241094c1f96b9b0eb4cda0c3a
 msgid "``DSP_TYPE_AMPLIFY``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:139
-#: 67f09eba5f6647619e443b0236adb323
+#: 19dfe5feb378484da06d1037b9a9bbfd
 msgid "0"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:140
-#: 977e9bc2039543d1a8ded8347d4d106f
+#: d3f42dda9f60487f8ab6a206e9c13082
 msgid "增益"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:141
-#: ec924e2d7e0b4df39aa2976a1a67879a
+#: 2f925fb1da6646c28d968dddc79e588f
 msgid "``DSP_TYPE_EQ6``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:142
-#: c1f0fe28856742ee988f434ab5d8cf6d
+#: bab22483d3354cb495943692955e0253
 msgid "1"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:143
-#: a8167b51eebc4acaac29fa00cb571213
+#: e33a94faba22476e82566b7501b4e737
 msgid "6段均衡器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:144
-#: f5c48f1f95f940889b2c9ae3f9deed8e
+#: b2040daad85f426db5cdb07b241eeb8b
 msgid "``DSP_TYPE_EQ10``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:145
-#: df14ab297fe645a282120905edec2a1c
+#: 3aa03a0918a541f3a06a092707ec630c
 msgid "2"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:146
-#: 291ad45a2408466c9ce20388d55e3068
+#: 50790038174743dcb3dacf1378c6bc75
 msgid "10段均衡器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:147
-#: d8d3653695d84f62a2f358de52c18f25
+#: 29a55e9cf5994931bc136ed3a950c0a2
 msgid "``DSP_TYPE_EQ21``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:148
-#: fc7e31c8f0544bc786ecd0e7bbb2956b
+#: e9fc232b8e2b4d80aa5094e936236c45
 msgid "3"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:149
-#: 19b57a565f8b4889b2ae64b34fc642f1
+#: 08c8d4ab46aa4f5794005ca324a81842
 msgid "21段均衡器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:150
-#: 674c0c4c15e7467bad8663aee7f72c45
+#: 18cfa58aed36476cabe808733fdd9024
 msgid "``DSP_TYPE_FILTER``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:151
-#: 4345fcafd0b74c81ae28d4c49d763db2
+#: 105ca07ebd634ad292143d8b462cca22
 msgid "4"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:152
-#: ac6bbda3294a4cbeb0e732d59fa51265
+#: d953801a44f44b68ac4faf1905ab75d4
 msgid "滤波器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:153
-#: a858a357c5644f05bae7bdd42a52d9c1
+#: eedd31188fa24685ba7b1f1c1dd2c090
 msgid "``DSP_TYPE_SFXREVERB``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:154
-#: 1c001f1e79da454388b68cc09f4b94ef
+#: 06adf1a8dc154c1c980d854564968be7
 msgid "5"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:155
-#: 301a98ceee1a43e6bc37846ce252af17
+#: 8fa83e076e35489cbe249b637d58c919
 msgid "混响"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:156
-#: b2dcdf12dd404a6cb96efea040980781
+#: ffaf47fdbbb249579512306eee2cba4d
 msgid "``DSP_TYPE_DELAY``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:157
-#: 82e7f7f8f67a4450bdbb8a3054316c9d
+#: 2060ec4045324c64be117bcb3ced7287
 msgid "6"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:158
-#: 3e15fddb196141a2ba892845b497554c
+#: f1a258098ec34fcf9624aa6a8f30cb8f
 msgid "延迟"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:159
-#: 6151358026454d54b1db677077afdcbd
+#: 817e64cf890342649f610a079dac9571
 msgid "``DSP_TYPE_CHORUS``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:160
-#: 2790894e5cc448cb80a06a5681ab48fc
+#: 85904161d7eb4ed2b374d686ce5e6020
 msgid "7"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:161
-#: bfc9e0e7d24a4c8d9d39dfc416457159
+#: 34dfb25b993a455a89316337a521b9bd
 msgid "合唱"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:162
-#: 35e5f9dfb0084f62961af05451784197
+#: 339e8858183849a385e1a85035b0da52
 msgid "``DSP_TYPE_DISTORTION``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:163
-#: 62fc0b7a363f4b81bfd6467f061dee6f
+#: bf47ff4d78364b158cca31f360e124af
 msgid "8"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:164
-#: 3c146e69718c486b8e7a876c2c0da241
+#: 16f271027c8d4df084fbcc174e737c04
 msgid "失真"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:165
-#: 067b877845ee4120a13a2e424c092883
+#: 171564009359436c87d529330a1a3372
 msgid "``DSP_TYPE_PHASER``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:166
-#: def339a674324addbe79d673731106b6
+#: e486f84198ad41afaee15511d28505e1
 msgid "9"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:167
-#: 4fb9a7bc13634862b80207ee4c8dcf1a
+#: a47ad227aaf342619fce11a26fb38fb7
 msgid "移相器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:168
-#: bdc53c1f77a9473bb6c598792f938393
+#: f9a13abf44d3497f8d5358edb011b513
 msgid "``DSP_TYPE_PITCHSHIFT``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:169
-#: bf0fcbaae4bb49e785236894ce25fc0c
+#: 1c16a17a56b941f195168816f1c3d7be
 msgid "10"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:170
-#: 8ce14d9eabcc4d31abda635a9150e543
+#: 5c0eb0af70484cd3ba4c8e408281c460
 msgid "音高变换"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:171
-#: d068ff40b22740fba1debeff11020cd3
+#: b6b4a63f0f9244fd8b44c2d40fa876f8
 msgid "``DSP_TYPE_COMPRESSOR``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:172
-#: a2dd909893a946de9ec7b7525d849225
+#: ca9f18cd6d6d4c4f8daeaf7cfea79ed8
 msgid "11"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:173
-#: 5ec7aa50bc644f1cabcd7edc21811b40
+#: 5fe8d4d906da45a39a7326929a964e42
 msgid "压缩器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:174
-#: 6e70c2ba0d9a44d09ed7f727c1b1e9bd
+#: 00cb0e1feaf34279af031ebf7e65f794
 msgid "``DSP_TYPE_HARDLIMITER``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:175
-#: b8ec0d4ae25b42b288308ef49a75c4ae
+#: b73161a9a8b04c6da5284ac5eb796543
 msgid "12"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:176
-#: 2609f8c14cab4cc299072832f8a926dc
+#: 2a9e42afb57146f7982bc2720c07f335
 msgid "硬限制器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:177
-#: c2bc798b20b244adaf8c2f930aca29be
+#: a167eb1bbc6e46c2a1173241f957244d
 msgid "``DSP_TYPE_PANNER``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:178
-#: a930b10ed0814326a05b481823ef8f2d
+#: 7497fa43e2fb45a0a2511466f86d2601
 msgid "13"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:179
-#: ef43919a884d4edfb3de608540dc1108
+#: 5034fbdeab814b008c40d7fb93f7f985
 msgid "声像器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:180
-#: 87ef003c1bcc42edaab11a1b3aef271e
+#: ae70b5f3147d4a4a90f04750645d774b
 msgid "``DSP_TYPE_STEREOENHANCE``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:181
-#: db11a600179c441da8f237cfee8cbf30
+#: 993033be74154da7b8b38a7d0fdf5cca
 msgid "14"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:182
-#: 7e135188cffc46ef9133f0adf182bd99
+#: 214b6c07aadb4650833b3aac0aedf77b
 msgid "立体声增强"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:183
-#: 242109326eee49eeae2fbc09fda93a5e
+#: ac74ad72c0ad4bdfb917a0fdbb19c139
 msgid "``DSP_TYPE_SPECTRUMANALYZER``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:184
-#: edbd476b6056482f945834984d69a387
+#: 57a4c508c6aa4e509809f822d368f00b
 msgid "15"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:185
-#: 1b5c73fa6aea44fc9e5d5dcba7c3cc0a
+#: c9db2324ad654d49b78637b46c6a109c
 msgid "频谱分析器"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:186
-#: d4488ca5381047538c123ffc1f4af43c
+#: 01aa7684cb7f4d88bb46bc43b5e757f4
 msgid "``DSP_TYPE_RECORD``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:187
-#: bedec36e95aa4f5f97491ce1bb485798
+#: 926cb7f7f43b4fb882e24e1ecaf3e307
 msgid "16"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:188
-#: ee62148dea5848edb612a6ef0b297c9b
+#: 42c37511cc474e5080bf0ab4f5f33a63
 msgid "录音"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:189
-#: 57fb02fff0bf420082470668ba1e76c7
+#: 03789360546f4e988a9996ceffbde46d
 msgid "``DSP_TYPE_CAPTURE``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:190
-#: d6ebc27176794684a95a16659744912f
+#: b31503f7d1b9419baa450697e9040130
 msgid "17"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:191
-#: 6bed3025880b41758ee7c971d7f3e2d0
+#: 54e4c3bd53b8477aa52f739ceaf811ff
 msgid "捕获"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:198
-#: 4b21b439033341b0babed80a0088a453
+#: aca22a1c3a994ea69bda55bf9191a20e
 msgid "DSP 之间的连接，用于信号路由。"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:209
-#: d1978d0eec9142b3bf38b87841f334c4
+#: d84c4b98e7ed4f08b2f6e6bd9eb86882
 msgid "``set_mix(mix)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:211
-#: 09caf776a680473fbef0090cacc6599d
+#: cd4935985f9a476fa01c1678ff310e47
 msgid "设置混合比例（0.0-1.0）"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:212
-#: bd3a5dae09304c1caf1f8f0ce359e09f
+#: 4a8b7c3e57a044deac493ab71953b055
 msgid "``get_mix()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:214
-#: 67251983cd024077aac18ba9e832993a
+#: 93c070c87fe2452985d6b3aa09749895
 msgid "获取混合比例"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:215
-#: 4864c84d7bad4a1ead89a7c931b591d5
+#: 67b8b431e254474ea99f8aaec6c78d21
 msgid "``set_mix_matrix(matrix)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:217
-#: 61b41320c2ec4eaf8ad2d4a741328276
+#: ab3699f2d8ee4384bcb2ba208c638425
 msgid "设置混合矩阵"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:218
-#: 09ce7bd45e2f4149bbaf585df55a3567
+#: 69ecb274be304be99d1095a6ca71eafe
 msgid "``get_mix_matrix()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:219
-#: 665e69c7c63e4eac8e1fd769c6a02de6
+#: 68cd6e62ff164734a3d881ab3e7651de
 msgid "Array"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:220
-#: 7f0f0ada196a444795f8180d7ce75412
+#: 9fd182fd2d4742b5a21dbe75976ed6e5
 msgid "获取混合矩阵"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:223
-#: 9e9aeeca7bca4f3cbd21254dc9d81bf0
+#: df32556f39334a8c8e76086d40431fd0
 msgid "FmodAudioEffect"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:225
-#: 7cc6c5116a054d8d94ba183bda022893
+#: 26c27c44bd684c67b41b55416a26adee
 msgid "继承自：Resource"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:227
-#: 4b02b15fc65e4d99928721fd6860eadf
+#: 7d0283b85a534c30b43a0a22633c4413
 msgid "自定义音频效果的抽象基类。"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:230
 #: ../../source/api_reference/dsp.rst:235
-#: a713ecae8ad7472cbd20594c7f5477c9
-#: c3392156edd549a5b8c2b8e6cb4c409a
+#: f34826923a734c16855f6653c2093f72
+#: 48218efbd0014a4aaa7c32e5b33d5f7b
 msgid "属性"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:236
-#: ../../source/api_reference/dsp.rst:326
-#: b3ca6c1442fa4aedb054592abfd233a3
-#: 23e2a013dd884eefb27ceccc3799743d
+#: ../../source/api_reference/dsp.rst:554
+#: 9f6271698562430ba53c2b78e55baf0f
+#: 8500b7c1c44648fb9607c64816690690
 msgid "类型"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:238
-#: 11a6c1e791c94ea89935ba9eb54da558
+#: d8ab68a1242b48dcbc9a6f39acc1fbd9
 msgid "``bus``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:239
-#: 791340c1a09b406a998c555e2d29f840
+#: bc5590950d00497591323572e24dc7df
 msgid "FmodChannelGroup"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:240
-#: 6cddd909e8e440e68231e6d982609818
+#: f6af913874204e2d8818e3305730e81c
 msgid "目标总线"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:251
-#: 079540c1df304e3da8002224e9f89308
+#: 9774c524fbdc4c138a5bfff98d6dfd9e
 msgid "``apply_to(bus)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:253
-#: 2f2d9b949ad748b494de6c889438451a
+#: b1f0f390186b43399440b2be5228dfa9
 msgid "应用到总线"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:254
-#: 47660d3cf4214bd39317bff5046ebc32
+#: 34346aff3efe4af99ecfaac7abd522eb
 msgid "``remove_from_bus()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:256
-#: 0424b949541f4d94a54a493b25e6ada4
+#: 5af969a3a697445d8c53c53533cc6446
 msgid "从总线移除"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:257
-#: f3a358aa758a427a8cef551764bb875d
+#: fb281a98483f43e183325814dd89fd18
 msgid "``create_custom_dsp(system)``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:259
-#: 44f5bac679e44778af37e34e1b7cd718
+#: e7ad8f4800a24133ac3dd32d4cfcc04b
 msgid "创建自定义 DSP"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:262
-#: aab724585809415a89ec8ddef17245da
-msgid "回调方法（子类实现）"
+#: 0003613c8ecc4d9c8c6d9a3a20929567
+msgid "DSP 回调"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:270
-#: 888b787e8a5d4961bacf43b561f0840d
-msgid "``_on_dsp_create(dsp_state)``"
+#: ../../source/api_reference/dsp.rst:264
+#: 5967480c84c64a54be62a36012b81e4a
+msgid "FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行为。"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:272
-#: 777653ab50914cafa64522eb51709911
-msgid "DSP 创建回调"
+#: ../../source/api_reference/dsp.rst:266
+#: 370348df30314944a781157535f6ee62
+msgid "**生命周期回调：**"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:273
-#: ada7b014930d4817971ff22fabe09c83
-msgid "\"_on_dsp_process(dsp_state, length, inbuffer, outbuffer, op)\""
+#: ../../source/api_reference/dsp.rst:274
+#: 7ddcae024f4c4aed8ca5d11ad360465d
+msgid "``set_create_callback(callback)`` / ``get_create_callback()``"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:275
-#: dd57271a56de4b3688e8698b105c7158
-msgid "DSP 处理回调"
+#: ../../source/api_reference/dsp.rst:278
+#: ../../source/api_reference/dsp.rst:281
+#: ../../source/api_reference/dsp.rst:293
+#: ../../source/api_reference/dsp.rst:296
+#: ../../source/api_reference/dsp.rst:299
+#: ../../source/api_reference/dsp.rst:302
+#: ../../source/api_reference/dsp.rst:314
+#: ../../source/api_reference/dsp.rst:317
+#: ../../source/api_reference/dsp.rst:320
+#: ../../source/api_reference/dsp.rst:323
+#: ../../source/api_reference/dsp.rst:326
+#: ../../source/api_reference/dsp.rst:329
+#: ../../source/api_reference/dsp.rst:332
+#: ../../source/api_reference/dsp.rst:335
+#: 88875a781d764acfb67137a7de194c6e
+#: baa6950531c94a21809df42524311339
+#: 111542c3f46f47e88c48f006ed60d4cc
+#: 06a9651ca26241ec829667a6c842805d
+#: 626e76fc2edb4704bddd78750a0ca59a
+#: 4eb55259f7ba4771a4c22d8dc7eda9f5
+#: 2342d0be7d764e3fb7c2ea71148e848c
+#: 2cb0225aabe6475d971d9f13cb741996
+#: ccf2962efd5549af87cc7942bf9b883f
+#: ffa1293d47bb4dbc99d9936f0a3c6f83
+#: db2b6a487a4a40aeac904635ee06d1e0
+#: f8455c660c4740e79c4004122dc38ca9
+#: c977b33395054a86b04541a511bed61a
+#: 8f03195b224542a48e8b6ac136ca76d6
+#: f175ffa4b0564b30a3273fad92176b5a
+msgid "void / Callable"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:276
-#: 4bc6f349a6e34d17a9dd4818034c5e35
-msgid "\"_on_dsp_release(dsp_state)\""
+#: 9a47dc7c556c48c08d6e8a18679ee938
+msgid "DSP 创建回调"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:278
-#: e7792d2cd9ac42ec8e8d3e0af8b0c255
+#: ../../source/api_reference/dsp.rst:277
+#: 8264b718f2b54755a638b3799ba072c6
+msgid "``set_release_callback(callback)`` / ``get_release_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:279
+#: 18fe2fbf96ae4ac793528028c52bd02f
 msgid "DSP 释放回调"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:281
-#: 72f9412d73a840239ec98aba26ee610b
-msgid "示例"
+#: ../../source/api_reference/dsp.rst:280
+#: 10559f83a475412abcf9ce7e96dae404
+msgid "``set_reset_callback(callback)`` / ``get_reset_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:282
+#: b8f437eac7b5469a8c5c60e213d430a2
+msgid "DSP 重置回调"
 msgstr ""
 
 #: ../../source/api_reference/dsp.rst:284
-#: d9a3d62147224594850bc25a8400d1da
-msgid "创建自定义效果"
+#: ../../source/api_reference/dsp.rst:349
+#: 7130499ed2934fefaaedfb1bca841094
+#: b4711b60462c402c98797759b7b3f017
+msgid "**处理回调：**"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:286
-#: 087e5c4ce80d4c8e920fe2784a2e639e
+#: ../../source/api_reference/dsp.rst:292
+#: eadcd8cb25724f349507911f07db6168
+msgid "``set_read_callback(callback)`` / ``get_read_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:294
+#: e2751279c33d43e68993e34b2db86c04
+msgid "DSP 读取回调（逐采样处理）"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:295
+#: d657cd9f1b3c4d2d81dbd7a0da426725
+msgid "``set_process_callback(callback)`` / ``get_process_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:297
+#: 34d619a644fc4eb49d0c6de6303cbc26
+msgid "DSP 处理回调（块处理）"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:298
+#: c0a5fee840ea483c8bc55adfd3d58323
+msgid "``set_shouldiprocess_callback(callback)`` / ``get_shouldiprocess_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:300
+#: 721a4f760f6b443f907817487f23b843
+msgid "是否需要处理回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:301
+#: a5ad3f3c74e3410a844b629081bc73db
+msgid "``set_setposition_callback(callback)`` / ``get_setposition_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:303
+#: 22c4ddddaa214b5ab41d6c5610b10c82
+msgid "设置位置回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:305
+#: 7d088fd34a284ebea33e838a506f794d
+msgid "**参数回调：**"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:313
+#: 591d2b2f57084e72bdde772314da37e1
+msgid "``set_setparam_float_callback(callback)`` / ``get_setparam_float_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:315
+#: fef0720bac8e483ab382b55f9e800c42
+msgid "设置浮点参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:316
+#: e6580a4a28454cb5b8f92d476151fd2c
+msgid "``set_setparam_int_callback(callback)`` / ``get_setparam_int_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:318
+#: 0d54da73c0324c9081c87d3ca346bc25
+msgid "设置整数参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:319
+#: b33d029b5f1b44239369f33edd7d65d4
+msgid "``set_setparam_bool_callback(callback)`` / ``get_setparam_bool_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:321
+#: 1558ffc1e85f46bf81669c82e899f75b
+msgid "设置布尔参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:322
+#: 108ec3a9dd8f4e78beeeacd8b686b7f6
+msgid "``set_setparam_data_callback(callback)`` / ``get_setparam_data_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:324
+#: 8848fd06caf04b5ea9c183fce73456c2
+msgid "设置数据参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:325
+#: 4fc38aaf00d04908b8a8f33b35527b53
+msgid "``set_getparam_float_callback(callback)`` / ``get_getparam_float_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:327
+#: 89811ab9671448538e43b97435cceceb
+msgid "获取浮点参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:328
+#: b1ba0367a199442baa52134b3e0310f2
+msgid "``set_getparam_int_callback(callback)`` / ``get_getparam_int_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:330
+#: 04550574a4a84df898e319420fc46dc2
+msgid "获取整数参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:331
+#: b8df739f203045acb395a64ae7949a04
+msgid "``set_getparam_bool_callback(callback)`` / ``get_getparam_bool_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:333
+#: 0977cc22e6a4415d8a73c53968dd3562
+msgid "获取布尔参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:334
+#: f42f6c4609534bebb38a0075b17a1339
+msgid "``set_getparam_data_callback(callback)`` / ``get_getparam_data_callback()``"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:336
+#: ba80973193094385b2c1f9b0548862e4
+msgid "获取数据参数回调"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:339
+#: cc65439c89c447c192d89775bc9fc4df
+msgid "回调函数签名"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:341
+#: 934524c5661445bfbaff7e2d9fc91f77
+msgid "**创建回调：**"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:343
+#: ad43e6fbd39f487887956d006c710677
+msgid "func create_callback() -> int:\n"
+"    # 返回 FMOD_RESULT 枚举值 (FMOD_OK = 0)\n"
+"    return 0"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:351
+#: 3f32e375aab042e6a6c18e18f922dee8
+msgid "func process_callback(length: int, in_buffers: Dictionary, inputs_idle: bool, op: int) -> Dictionary:\n"
+"    # length: 采样数\n"
+"    # in_buffers: 输入缓冲区字典 {索引: PackedFloat32Array}\n"
+"    # inputs_idle: 输入是否空闲\n"
+"    # op: 处理操作类型 (0=查询, 1=执行)\n"
+"\n"
+"    # 返回字典:\n"
+"    return {\n"
+"        \"outbuffers\": {0: output_array},  # 输出缓冲区\n"
+"        \"outchannels\": [channel_count],   # 输出通道数\n"
+"        \"result\": 0  # FMOD_RESULT\n"
+"    }"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:366
+#: 97381d2d360e464a80a07f84753e0812
+msgid "**读取回调：**"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:368
+#: a4820e10ae844707aaf29ea3c244cec2
+msgid "func read_callback(in_array: PackedFloat32Array, length: int, in_channels: int) -> Dictionary:\n"
+"    # in_array: 输入音频数据\n"
+"    # length: 采样数\n"
+"    # in_channels: 输入通道数\n"
+"\n"
+"    # 处理音频...\n"
+"    var out_array = PackedFloat32Array()\n"
+"    out_array.resize(length * in_channels)\n"
+"\n"
+"    for i in range(length * in_channels):\n"
+"        out_array[i] = in_array[i] * 0.5  # 衰减\n"
+"\n"
+"    return {\n"
+"        \"output\": out_array,\n"
+"        \"outchannels\": in_channels,\n"
+"        \"result\": 0  # FMOD_RESULT\n"
+"    }"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:388
+#: 9f96abaa78f446f8b2957402ca223f5d
+msgid "**参数设置回调：**"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:390
+#: 62e357b3298b4f1ea27be8e823c8d59c
+msgid "func set_param_float_callback(index: int, value: float) -> int:\n"
+"    # index: 参数索引\n"
+"    # value: 参数值\n"
+"    print(\"设置参数 \", index, \" = \", value)\n"
+"    return 0  # FMOD_OK"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:398
+#: af8d4ad942664d368fb31fb45e146bce
+msgid "**参数获取回调：**"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:400
+#: 333d87e0a94648aba18d371357f15621
+msgid "func get_param_float_callback(index: int) -> Dictionary:\n"
+"    # index: 参数索引\n"
+"    return {\n"
+"        \"value\": 1.0,       # 参数值\n"
+"        \"valuestr\": \"1.0\",  # 值的字符串表示\n"
+"        \"result\": 0         # FMOD_RESULT\n"
+"    }"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:411
+#: fe74096234f445b9b33642de13a47075
+msgid "示例"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:414
+#: a663f7f290924261b462a5361b921d2c
+msgid "创建自定义效果（旧方式）"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:416
+#: e01a416f13504fe4b83f4a33fd65338c
 msgid "class_name MyCustomEffect\n"
 "extends FmodAudioEffect\n"
 "\n"
@@ -952,87 +1222,191 @@ msgid "class_name MyCustomEffect\n"
 "    effect.apply_to(master)"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:318
-#: 30a4622b2ea14554b53a1f10f74c9289
+#: ../../source/api_reference/dsp.rst:448
+#: bd873e0c805c418587044b0662dd2ee2
+msgid "使用回调创建自定义 DSP（新方式）"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:450
+#: ce467c2085d34fde9d31608fb7d36bf3
+msgid "func create_custom_dsp():\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # 创建自定义 DSP\n"
+"    var dsp = system.create_dsp(\"MyCustomDSP\")\n"
+"\n"
+"    # 设置创建回调\n"
+"    dsp.set_create_callback(func() -> int:\n"
+"        print(\"DSP 已创建\")\n"
+"        return 0  # FMOD_OK\n"
+"    )\n"
+"\n"
+"    # 设置处理回调\n"
+"    dsp.set_process_callback(func(length: int, in_buffers: Dictionary, inputs_idle: bool, op: int) -> Dictionary:\n"
+"        if op == 0:  # FMOD_DSP_PROCESS_QUERY\n"
+"            # 返回支持的输出格式\n"
+"            return {\n"
+"                \"outchannels\": [2],  # 立体声输出\n"
+"                \"result\": 0\n"
+"            }\n"
+"\n"
+"        # op == 1: FMOD_DSP_PROCESS_PERFORM\n"
+"        var out_buffers = {}\n"
+"\n"
+"        for i in in_buffers.keys():\n"
+"            var in_data: PackedFloat32Array = in_buffers[i]\n"
+"            var out_data = PackedFloat32Array()\n"
+"            out_data.resize(in_data.size())\n"
+"\n"
+"            # 简单的增益处理\n"
+"            for j in range(in_data.size()):\n"
+"                out_data[j] = in_data[j] * 0.7  # 降低音量\n"
+"\n"
+"            out_buffers[i] = out_data\n"
+"\n"
+"        return {\n"
+"            \"outbuffers\": out_buffers,\n"
+"            \"outchannels\": [2],\n"
+"            \"result\": 0  # FMOD_OK\n"
+"        }\n"
+"    )\n"
+"\n"
+"    # 设置释放回调\n"
+"    dsp.set_release_callback(func() -> int:\n"
+"        print(\"DSP 已释放\")\n"
+"        return 0\n"
+"    )\n"
+"\n"
+"    # 添加到主总线\n"
+"    var master = system.get_master_channel_group()\n"
+"    master.add_dsp(0, dsp)"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:505
+#: 0d3dcdff8a2147c3a195fdae91e09dbb
+msgid "使用读取回调的简单效果器"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:507
+#: 5d6e80513e79488d990016badd588618
+msgid "func create_simple_gain_dsp():\n"
+"    var system = FmodServer.main_system\n"
+"    var dsp = system.create_dsp(\"GainDSP\")\n"
+"\n"
+"    var gain = 0.5\n"
+"\n"
+"    # 设置读取回调（逐采样处理）\n"
+"    dsp.set_read_callback(func(in_array: PackedFloat32Array, length: int, in_channels: int) -> Dictionary:\n"
+"        var out_array = PackedFloat32Array()\n"
+"        out_array.resize(length * in_channels)\n"
+"\n"
+"        for i in range(length * in_channels):\n"
+"            out_array[i] = in_array[i] * gain\n"
+"\n"
+"        return {\n"
+"            \"output\": out_array,\n"
+"            \"outchannels\": in_channels,\n"
+"            \"result\": 0\n"
+"        }\n"
+"    )\n"
+"\n"
+"    # 设置参数回调以动态调整增益\n"
+"    dsp.set_setparam_float_callback(func(index: int, value: float) -> int:\n"
+"        if index == 0:\n"
+"            gain = value\n"
+"        return 0\n"
+"    )\n"
+"\n"
+"    dsp.set_getparam_float_callback(func(index: int) -> Dictionary:\n"
+"        if index == 0:\n"
+"            return {\"value\": gain, \"valuestr\": str(gain), \"result\": 0}\n"
+"        return {\"value\": 0.0, \"valuestr\": \"0\", \"result\": 0}\n"
+"    )\n"
+"\n"
+"    return dsp"
+msgstr ""
+
+#: ../../source/api_reference/dsp.rst:546
+#: db6d0bb691cf405da5150ebe65990dd0
 msgid "DSP 参数信息"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:320
-#: a7977457e3dd45438a701074ef8f673c
+#: ../../source/api_reference/dsp.rst:548
+#: 14ed8b2763254611b63ec5425ab1dfd2
 msgid "``get_parameter_info()`` 返回的字典包含："
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:325
-#: 673cbcc3ef164c6eb658cb3e0c9db249
+#: ../../source/api_reference/dsp.rst:553
+#: fe5b89328860432b895605b48cd1018f
 msgid "键"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:328
-#: 61c713970a424b1b9adab438c99a0dbb
+#: ../../source/api_reference/dsp.rst:556
+#: 84deadb6b34649f3be0a3b83770ec079
 msgid "``name``"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:330
-#: 1eee02da080746748048c8e707f6c167
+#: ../../source/api_reference/dsp.rst:558
+#: 0feb6291d35b4a7bbd41fcce0bcfae05
 msgid "参数名称"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:331
-#: 52eb78ae114248348af529be7192d20e
+#: ../../source/api_reference/dsp.rst:559
+#: a527973e0ad446ab965d5111386a5c7e
 msgid "\"label\""
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:333
-#: 27df630476f04bc08982325b89945843
+#: ../../source/api_reference/dsp.rst:561
+#: 71f64abc6c7b455bb54519957cdeb9a4
 msgid "参数标签"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:334
-#: c42ddc4db31d49cf928226c03935b755
+#: ../../source/api_reference/dsp.rst:562
+#: ca217c612a59448e865a9a86036add97
 msgid "\"description\""
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:336
-#: 3ec4c369bb724dbaaf87b9c921c38dff
+#: ../../source/api_reference/dsp.rst:564
+#: bf973c9ae42243b4b95631818b96e84d
 msgid "参数描述"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:337
-#: 0dbe3e7aca1c4fe39d47133426456656
+#: ../../source/api_reference/dsp.rst:565
+#: f4f58552fb064fe9bc381b1539e094ad
 msgid "\"type``"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:339
-#: f157ad55e3e0402280b10fa90088a5fa
+#: ../../source/api_reference/dsp.rst:567
+#: 75a2e0e35b294c78856f2b15482902c9
 msgid "参数类型（0=float, 1=int, 2=bool, 3=data）"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:340
-#: eed9aaf9ff93478eb22e76b017351c00
+#: ../../source/api_reference/dsp.rst:568
+#: 6f1f30f1d99248808262a0c50dccbda2
 msgid "\"min``"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:342
-#: 6f5b13913c7e4d09bc5d40fc8f19a91f
+#: ../../source/api_reference/dsp.rst:570
+#: 461682e29c8443eb9e81e9bd90c7baeb
 msgid "最小值"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:343
-#: 3f0eed9d85e04f47a117aeef93c0d4c0
+#: ../../source/api_reference/dsp.rst:571
+#: aca8cc12e5104a5682922eb9add53ef6
 msgid "\"max``"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:345
-#: d23c4529f73642bcb5ec8283f4a07abd
+#: ../../source/api_reference/dsp.rst:573
+#: 68e9506ecb4740539be7a2540bf1a99c
 msgid "最大值"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:346
-#: 09804134839141e9a476d666c88190eb
+#: ../../source/api_reference/dsp.rst:574
+#: a0ee13abcde2472ca4a78b15cfddab0c
 msgid "\"default``"
 msgstr ""
 
-#: ../../source/api_reference/dsp.rst:348
-#: 2c292153c65d4ba185d153818747e0d3
+#: ../../source/api_reference/dsp.rst:576
+#: 9c4996a160e945b296386ce0d34966d8
 msgid "默认值"
 msgstr ""

@@ -1,0 +1,1268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-17 19:16+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/api_reference/spatial.rst:2 808801090fbc4136936587cd742eb068
+msgid "空间音频 API"
+msgstr "Spatial Audio API"
+
+#: ../../source/api_reference/spatial.rst:4 2f4f15bd17b948e2933e736ecb617f9b
+msgid "本节介绍用于 3D 音频空间化的类，包括几何遮挡、3D 混响区域和声音分组。"
+msgstr "This section covers classes for 3D audio spatialization, including geometry occlusion, 3D reverb zones, and sound grouping."
+
+#: ../../source/api_reference/spatial.rst:7 3c8d7ddfdd634ea5bc973cd0af40b878
+msgid "FmodGeometry"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:9
+#: ../../source/api_reference/spatial.rst:218
+#: ../../source/api_reference/spatial.rst:416 38ffeacc0c7e489e94b7ef3ec82c567c
+#: 39ced3ded0c740e9a5e02144886e2be1 cd2f8eba94874c7a884fa0f4e1b53721
+msgid "继承自：RefCounted"
+msgstr "Inherits: RefCounted"
+
+#: ../../source/api_reference/spatial.rst:11 94a27f063e6442d69b607bfd72ee91be
+msgid "用于 3D 音频遮挡计算的几何体对象。"
+msgstr "Geometry object used for 3D audio occlusion calculations."
+
+#: ../../source/api_reference/spatial.rst:13 ea352480b475407db01db4a1c176a172
+msgid "FmodGeometry 用于创建影响 3D 音频传播的几何形状。你可以定义多边形作为遮挡物，根据属性阻挡或衰减声音。"
+msgstr "FmodGeometry is used to create geometric shapes that affect 3D audio propagation. You can define polygons as occluders to block or attenuate sound based on their properties."
+
+#: ../../source/api_reference/spatial.rst:16 d5fca872fe7e4ab99974f2706fb9cee9
+msgid "几何遮挡需要在系统初始化时设置 ``FMOD_INIT_FLAG_CHANNEL_LOWPASS`` 标志。"
+msgstr "Geometry occlusion requires the ``FMOD_INIT_FLAG_CHANNEL_LOWPASS`` flag to be set during system initialization."
+
+#: ../../source/api_reference/spatial.rst:19 a3d86994a9b648e48318a20258413bdf
+msgid "主要功能"
+msgstr "Key Features"
+
+#: ../../source/api_reference/spatial.rst:21 85feabffa7204da788ffd15c665e6b0f
+msgid "创建多边形形状阻挡声源和听者之间的路径"
+msgstr "Create polygon shapes to block paths between sound sources and listeners"
+
+#: ../../source/api_reference/spatial.rst:22 0d186e381fd6439e94735146d1a6bfa0
+msgid "配置遮挡属性（直达声和混响路径衰减）"
+msgstr "Configure occlusion properties (direct and reverb path attenuation)"
+
+#: ../../source/api_reference/spatial.rst:23 34d7e47c81464ab982da0cc53110618c
+msgid "支持双面多边形"
+msgstr "Support for double-sided polygons"
+
+#: ../../source/api_reference/spatial.rst:24 44bc3c7768494e08be2ff38648b54b59
+msgid "在 3D 空间中定位、旋转和缩放几何体"
+msgstr "Position, rotate, and scale geometry in 3D space"
+
+#: ../../source/api_reference/spatial.rst:25 2c01618ab3ed42e2a978afb0bfd986c2
+msgid "序列化几何体数据以高效加载/保存"
+msgstr "Serialize geometry data for efficient loading/saving"
+
+#: ../../source/api_reference/spatial.rst:28
+#: ../../source/api_reference/spatial.rst:33
+#: ../../source/api_reference/spatial.rst:253
+#: ../../source/api_reference/spatial.rst:284
+#: ../../source/api_reference/spatial.rst:315
+#: ../../source/api_reference/spatial.rst:430
+#: ../../source/api_reference/spatial.rst:435 4afa8c45448a43faa2bfa3d1bc0b4a45
+#: 55edc247e2df4d3f96a578adaf8e00c5 64a2b20dcbe84bd98957d0b73ccfeaaf
+#: 734a5041c3c74b29b85f7dc991929671 88c74becb3354365bcdc464b9e43ff69
+#: 8cf695165fa747829388887eb0a5c007 a654c33b356a40328b8a4fb8462b4f94
+msgid "属性"
+msgstr "Properties"
+
+#: ../../source/api_reference/spatial.rst:34
+#: ../../source/api_reference/spatial.rst:254
+#: ../../source/api_reference/spatial.rst:285
+#: ../../source/api_reference/spatial.rst:316
+#: ../../source/api_reference/spatial.rst:436 2453f1b9f1694570b4eac12bcc6f2ce1
+#: 2dd40333c9c24aa4aeda736c0b06e8ea 53b4d1e7149a40e482ada6763538ea10
+#: 7121f9795c6a42cb8860de8d73e874de 7b47916555e34d839b4b978cecc21735
+msgid "类型"
+msgstr "Type"
+
+#: ../../source/api_reference/spatial.rst:35
+#: ../../source/api_reference/spatial.rst:77
+#: ../../source/api_reference/spatial.rst:105
+#: ../../source/api_reference/spatial.rst:133
+#: ../../source/api_reference/spatial.rst:152
+#: ../../source/api_reference/spatial.rst:235
+#: ../../source/api_reference/spatial.rst:256
+#: ../../source/api_reference/spatial.rst:287
+#: ../../source/api_reference/spatial.rst:319
+#: ../../source/api_reference/spatial.rst:339
+#: ../../source/api_reference/spatial.rst:438
+#: ../../source/api_reference/spatial.rst:464
+#: ../../source/api_reference/spatial.rst:483 0baa8abec62b448ab70652382ce8e3e2
+#: 345bda30413c4f41bd33fc48be2c48a3 456e6650cbed4bc08b724e55c78261d0
+#: 630f6ed0a8c346e4aab5705b41cffc57 6acec4166f994fcca5aa3cf9a916fbd6
+#: 7bdec2dc38ae47a29c3c7931584499e3 8028891d0a7e49228ecbd21d66fd62cd
+#: 8fe9f1aff5bf4274abfeae67feaacdda 9d3114610ad64a32ae651a2c85986247
+#: beaf5cb0a5bb4d1a8edf1d9ebfd9dd20 c64f9a5ec8b5415d895a20e30bb08626
+#: d1c9462309744fc182ee301ccfd5e524 ec50bff2cd994b719d424e156aa7988d
+msgid "说明"
+msgstr "Description"
+
+#: ../../source/api_reference/spatial.rst:36 c92e192e119b46bcb8b45cf1b1241256
+msgid "``active``"
+msgstr "``active``"
+
+#: ../../source/api_reference/spatial.rst:37
+#: ../../source/api_reference/spatial.rst:154
+#: ../../source/api_reference/spatial.rst:157
+#: ../../source/api_reference/spatial.rst:160
+#: ../../source/api_reference/spatial.rst:344
+#: ../../source/api_reference/spatial.rst:347
+#: ../../source/api_reference/spatial.rst:350
+#: ../../source/api_reference/spatial.rst:527
+#: ../../source/api_reference/spatial.rst:530 04f37a1a0fde430aacce7c491430a1fc
+#: 102b1247733b4b03bffddfcd376d209f 211c887831024207859d34e1896f44ac
+#: 49ba72ebe12c468494cb322fa4e203a0 575245824521475d9f0d9495f5c1e56d
+#: 730b9292d4da481bb211cd93790edb5c 7c89efa33c4e4511b7f79ed5c1128863
+#: fd8e6db8a119446aa102de3165a755ad ffd43d2960b14d90994378796b48f540
+msgid "bool"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:38 66475e32a0b94288a170f23e03a65d62
+msgid "几何体是否参与遮挡计算"
+msgstr "Whether the geometry participates in occlusion calculations"
+
+#: ../../source/api_reference/spatial.rst:39 50c67fe8ee5c46f09de7936b9ea0bbee
+msgid "``position``"
+msgstr "``position``"
+
+#: ../../source/api_reference/spatial.rst:40
+#: ../../source/api_reference/spatial.rst:43
+#: ../../source/api_reference/spatial.rst:46
+#: ../../source/api_reference/spatial.rst:88
+#: ../../source/api_reference/spatial.rst:91
+#: ../../source/api_reference/spatial.rst:94
+#: ../../source/api_reference/spatial.rst:119 20b7e16522ea4a97b2344f5a04c68d60
+#: 5055811665aa4d92b9f06ec1463c6d70 cd53847efb3f4cd4b562122c9c4cdbbc
+#: d5890b6ab8d74099a168119763fb411e e3946db3d189485baf8e30f1b76b65b4
+#: e4b17f8a91394cc8b20b5f8a1f643810 ecf06f9f59b5430fafa55f941c241a05
+msgid "Vector3"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:41 c1902eccd6384b94a60dbef8a92a2f38
+msgid "几何体在世界空间中的位置"
+msgstr "Position of the geometry in world space"
+
+#: ../../source/api_reference/spatial.rst:42 6146ad813b70442991d457567b946b28
+msgid "``rotation``"
+msgstr "``rotation``"
+
+#: ../../source/api_reference/spatial.rst:44 7253f7a9159c4640b01689de8358f4f5
+msgid "几何体在世界空间中的旋转（度）"
+msgstr "Rotation of the geometry in world space (degrees)"
+
+#: ../../source/api_reference/spatial.rst:45 37214e3d5f194607b6d1960af2f90d4b
+msgid "``scale``"
+msgstr "``scale``"
+
+#: ../../source/api_reference/spatial.rst:47 c281934e8df549ab9a6ed6f71623811f
+msgid "几何体的缩放"
+msgstr "Scale of the geometry"
+
+#: ../../source/api_reference/spatial.rst:50
+#: ../../source/api_reference/spatial.rst:75
+#: ../../source/api_reference/spatial.rst:103
+#: ../../source/api_reference/spatial.rst:131
+#: ../../source/api_reference/spatial.rst:150
+#: ../../source/api_reference/spatial.rst:233
+#: ../../source/api_reference/spatial.rst:337
+#: ../../source/api_reference/spatial.rst:476
+#: ../../source/api_reference/spatial.rst:481 11f837165a034618a7a7f7170a49f504
+#: 264b4936adfa400cbc00dc27f489be93 2e56f21b07cb4b579d0e9a53dc71b0c0
+#: 434213a8ac1d4affa40daa6ab93ea24e 43c18b1f1d204ecca7953dc27d0bdafa
+#: 673b76a5781b4338bd0fec44dd264332 9b23d23b44e34d7692200ef22296fcce
+#: a8d7a8cb57f24b07b3c96de67f06ec94 e5e50075f6a84ca9a754785a57e1e912
+msgid "方法"
+msgstr "Methods"
+
+#: ../../source/api_reference/spatial.rst:53 40aabdb915d046d68557e41c1946350c
+msgid "添加多边形"
+msgstr "Add Polygon"
+
+#: ../../source/api_reference/spatial.rst:55 90ebdbda111b4793adf8d80a17c93fd4
+msgid ""
+"add_polygon(direct_occlusion: float, reverb_occlusion: float, "
+"double_sided: bool, num_vertices: int, vertices: Array[Vector3]) -> int"
+msgstr ""
+"add_polygon(direct_occlusion: float, reverb_occlusion: float, "
+"double_sided: bool, num_vertices: int, vertices: Array[Vector3]) -> int"
+
+#: ../../source/api_reference/spatial.rst:59 2359a20656254849ae0d2b24f45ce368
+msgid "添加多边形到几何体："
+msgstr "Add a polygon to the geometry:"
+
+#: ../../source/api_reference/spatial.rst:61 be2d668bbef143008579725b8e2bfb7f
+msgid "``direct_occlusion``: 直达声遮挡因子（0.0 = 无遮挡，1.0 = 完全遮挡）"
+msgstr "``direct_occlusion``: Direct occlusion factor (0.0 = no occlusion, 1.0 = full occlusion)"
+
+#: ../../source/api_reference/spatial.rst:62 e945dd8a89ab4b2f9b404603432bbb2f
+msgid "``reverb_occlusion``: 混响路径遮挡因子"
+msgstr "``reverb_occlusion``: Reverb path occlusion factor"
+
+#: ../../source/api_reference/spatial.rst:63 6bf93c0984ff4a9db422a0482c6ce2f3
+msgid "``double_sided``: 是否双面遮挡"
+msgstr "``double_sided``: Whether occlusion applies from both sides"
+
+#: ../../source/api_reference/spatial.rst:64 6923143573f04a3db9fbb04df18f8754
+msgid "``num_vertices``: 顶点数量（至少 3 个）"
+msgstr "``num_vertices``: Number of vertices (minimum 3)"
+
+#: ../../source/api_reference/spatial.rst:65 5eda7a95b08d4c5b9b15cbc4f7c5eedf
+msgid "``vertices``: 顶点位置数组"
+msgstr "``vertices``: Array of vertex positions"
+
+#: ../../source/api_reference/spatial.rst:67 0f6e9dbd6eda49ba962ed480304a9ae3
+msgid "返回多边形索引，失败返回 -1。"
+msgstr "Returns the polygon index, or -1 on failure."
+
+#: ../../source/api_reference/spatial.rst:70 2bfc42992e7e42758a2727df6f8e7ca8
+msgid "变换方法"
+msgstr "Transform Methods"
+
+#: ../../source/api_reference/spatial.rst:76
+#: ../../source/api_reference/spatial.rst:104
+#: ../../source/api_reference/spatial.rst:132
+#: ../../source/api_reference/spatial.rst:151
+#: ../../source/api_reference/spatial.rst:234
+#: ../../source/api_reference/spatial.rst:338
+#: ../../source/api_reference/spatial.rst:482 32c3cb2248504956b0b88ad2d9e5b1e0
+#: 62754d490d074fd9b9b7a5b2acfd3382 679a27b5dcc248e5add8d2e2182bed43
+#: 880c736986e549c29735927e2a0530bc bd5ded31065e4691ada685916a548613
+#: be0c4a6062d047e99cd7436f322ffc6b ee8f15964b824ecb9ea3ce266f92f90c
+msgid "返回值"
+msgstr "Returns"
+
+#: ../../source/api_reference/spatial.rst:78 1910591e8d424e92bcafb38ead1f308f
+msgid "``set_position(position)``"
+msgstr "``set_position(position)``"
+
+#: ../../source/api_reference/spatial.rst:79
+#: ../../source/api_reference/spatial.rst:82
+#: ../../source/api_reference/spatial.rst:85
+#: ../../source/api_reference/spatial.rst:113
+#: ../../source/api_reference/spatial.rst:122
+#: ../../source/api_reference/spatial.rst:141
+#: ../../source/api_reference/spatial.rst:163
+#: ../../source/api_reference/spatial.rst:237
+#: ../../source/api_reference/spatial.rst:341
+#: ../../source/api_reference/spatial.rst:353
+#: ../../source/api_reference/spatial.rst:485
+#: ../../source/api_reference/spatial.rst:491
+#: ../../source/api_reference/spatial.rst:497
+#: ../../source/api_reference/spatial.rst:503
+#: ../../source/api_reference/spatial.rst:521
+#: ../../source/api_reference/spatial.rst:524 09aafb467c6341a1b7d33b8155cb2a29
+#: 19ff41d74bec49aca8df08379f1e97e0 1b326a9b16bb4d04b26e70acce314725
+#: 21c9e29796ee41d7a12eec35cb2543f8 3519921b655b41129ed0baab59e7c6b4
+#: 3b31cdd9d1964bce983d3a88d92cd31e 414b28132b604fa6b645a8f758613abd
+#: 56545903c2cb41739416b3b5ccc56baf 6bb88b95c466490ebceb88a2aed8a3cf
+#: 79aebbfb6c5143f1b8a4b3602283bab1 7ef22338c94f43ce98b5a0b2f9e1a6ba
+#: 7f569fa206d948d39b8396ed3a641947 7f8c1f26046240ae9c3028a22605b818
+#: 953b6e2788db4b51aa9c2f91b7bd2a46 a3efae99b9164d4283e9ce494f73450f
+#: f6c8503f27f546a1a2bc36af6fd02c91
+msgid "void"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:80 8b926884331947a1a642cfa363fa5075
+msgid "设置几何体位置"
+msgstr "Set geometry position"
+
+#: ../../source/api_reference/spatial.rst:81 ad9159905a054893b57136a58948164e
+msgid "``set_rotation(rotation)``"
+msgstr "``set_rotation(rotation)``"
+
+#: ../../source/api_reference/spatial.rst:83 d7f9124053c0453d81d552b4b4de5cad
+msgid "设置几何体旋转（度）"
+msgstr "Set geometry rotation (degrees)"
+
+#: ../../source/api_reference/spatial.rst:84 d7e1b6a9933347e690c075d261ed63ff
+msgid "``set_scale(scale)``"
+msgstr "``set_scale(scale)``"
+
+#: ../../source/api_reference/spatial.rst:86 7ec68cf353054ed8897ec9d1cd562574
+msgid "设置几何体缩放"
+msgstr "Set geometry scale"
+
+#: ../../source/api_reference/spatial.rst:87 230fac82d87249b99d352fb597ed7443
+msgid "``get_position()``"
+msgstr "``get_position()``"
+
+#: ../../source/api_reference/spatial.rst:89 1b64dd5c5eff4c3a9fe6f7056ba7180c
+msgid "获取位置"
+msgstr "Get position"
+
+#: ../../source/api_reference/spatial.rst:90 c4fdf125d44444fa96af03c7b1f2bf54
+msgid "``get_rotation()``"
+msgstr "``get_rotation()``"
+
+#: ../../source/api_reference/spatial.rst:92 fbeecfbd6c2f48a085858d4284fb9a83
+msgid "获取旋转"
+msgstr "Get rotation"
+
+#: ../../source/api_reference/spatial.rst:93 f88b22632d3242379f341056e51a0a54
+msgid "``get_scale()``"
+msgstr "``get_scale()``"
+
+#: ../../source/api_reference/spatial.rst:95 f6e1f0c006494cb0bfb90a2b59cfcae3
+msgid "获取缩放"
+msgstr "Get scale"
+
+#: ../../source/api_reference/spatial.rst:98 e22efef2619542878a47da2a663b2367
+msgid "多边形操作"
+msgstr "Polygon Operations"
+
+#: ../../source/api_reference/spatial.rst:106 880403fc60e648eaaa75aabb01ce91dc
+msgid "``get_num_polygons()``"
+msgstr "``get_num_polygons()``"
+
+#: ../../source/api_reference/spatial.rst:107
+#: ../../source/api_reference/spatial.rst:116
+#: ../../source/api_reference/spatial.rst:135
+#: ../../source/api_reference/spatial.rst:440
+#: ../../source/api_reference/spatial.rst:488
+#: ../../source/api_reference/spatial.rst:512
+#: ../../source/api_reference/spatial.rst:515 0f4fabb59b554afebe9dacf4e38c47c3
+#: 17865964adfb4915ace63c89092de9c9 3b9df873c0cb4895bb9d9be4d81aa83a
+#: 3c42605b03884698b9bccab600f7b66c 5088522c4b6a480b82bcf01239cae64e
+#: 9c81e2c748e540c9a4995754a125d7b1 e2f6e7c8bfec4fe6821dd0101397566c
+msgid "int"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:108 9f28b352523347f1a048f40164167125
+msgid "获取多边形数量"
+msgstr "Get number of polygons"
+
+#: ../../source/api_reference/spatial.rst:109 c09020b9fd8a4168a22addb8261e4af0
+msgid "``get_polygon_attributes(index)``"
+msgstr "``get_polygon_attributes(index)``"
+
+#: ../../source/api_reference/spatial.rst:110
+#: ../../source/api_reference/spatial.rst:240 07bde927cb47488a8a4c10d582b50389
+#: b8bd5656251e4be18254ff865a385c51
+msgid "Dictionary"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:111 f50987c6223e477dabe72b7046796517
+msgid "获取多边形属性"
+msgstr "Get polygon attributes"
+
+#: ../../source/api_reference/spatial.rst:112 15d9e11bee654ea6b867c7249b843f1c
+msgid ""
+"``set_polygon_attributes(index, direct_occlusion, reverb_occlusion, "
+"double_sided)``"
+msgstr ""
+"``set_polygon_attributes(index, direct_occlusion, reverb_occlusion, "
+"double_sided)``"
+
+#: ../../source/api_reference/spatial.rst:114 628c18da058446fc869c2fd48bb5601a
+msgid "设置多边形属性"
+msgstr "Set polygon attributes"
+
+#: ../../source/api_reference/spatial.rst:115 60bb290fb2f04dab97da1cec5aa7ca8b
+msgid "``get_polygon_num_vertices(index)``"
+msgstr "``get_polygon_num_vertices(index)``"
+
+#: ../../source/api_reference/spatial.rst:117 83fa2eeca98046ea8ebef79197e127aa
+msgid "获取多边形顶点数"
+msgstr "Get number of polygon vertices"
+
+#: ../../source/api_reference/spatial.rst:118 7a6b65630aa14f019c3b6f3ed0aad7b0
+msgid "``get_polygon_vertex(index, vertex_index)``"
+msgstr "``get_polygon_vertex(index, vertex_index)``"
+
+#: ../../source/api_reference/spatial.rst:120 da6a3189022e480db3bc63a69d9b1b12
+msgid "获取多边形顶点位置"
+msgstr "Get polygon vertex position"
+
+#: ../../source/api_reference/spatial.rst:121 7190b82c1c654720b47b8df566a788d7
+msgid "``set_polygon_vertex(index, vertex_index, vertex)``"
+msgstr "``set_polygon_vertex(index, vertex_index, vertex)``"
+
+#: ../../source/api_reference/spatial.rst:123 1798e8da1047407cb7deeb0425da339d
+msgid "设置多边形顶点位置"
+msgstr "Set polygon vertex position"
+
+#: ../../source/api_reference/spatial.rst:126 4814c75cf45b4844a3eec9f05bd96fe8
+msgid "序列化"
+msgstr "Serialization"
+
+#: ../../source/api_reference/spatial.rst:134 c4e4bfa56be442ebbfe1afd365277782
+msgid "``get_save_size()``"
+msgstr "``get_save_size()``"
+
+#: ../../source/api_reference/spatial.rst:136 57dbcf71b526400d9c23563a59d046fb
+msgid "获取序列化所需字节数"
+msgstr "Get the number of bytes required for serialization"
+
+#: ../../source/api_reference/spatial.rst:137 75f207ae3a8e4a06bbc16cad239cbc69
+msgid "``save()``"
+msgstr "``save()``"
+
+#: ../../source/api_reference/spatial.rst:138 5fb8f6f1d9b74254be208ac4c85630ba
+msgid "PackedByteArray"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:139 6cf6d2e33e9e48dd9f661d0d50e80f8e
+msgid "序列化几何体到字节数组"
+msgstr "Serialize geometry to byte array"
+
+#: ../../source/api_reference/spatial.rst:140
+#: ../../source/api_reference/spatial.rst:352
+#: ../../source/api_reference/spatial.rst:523 2c3677ab34084af8a815d492dfa9634c
+#: 73353e79319744be95aad4400a328b94 777b6103d77e4494b165432764011f06
+msgid "``release()``"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:142 267f96de73394a6c8e63d775ca55bbd0
+msgid "释放几何体资源"
+msgstr "Release geometry resources"
+
+#: ../../source/api_reference/spatial.rst:145 309235e6efba477c98bd9aa3ca41997a
+msgid "状态检查"
+msgstr "State Checking"
+
+#: ../../source/api_reference/spatial.rst:153 9c1b5d73b34341a98ca7160c9fb88e0b
+msgid "``geometry_is_valid()``"
+msgstr "``geometry_is_valid()``"
+
+#: ../../source/api_reference/spatial.rst:155 49eae3bdeef845cbb9d4a89f3664ae06
+msgid "几何体是否有效"
+msgstr "Whether the geometry is valid"
+
+#: ../../source/api_reference/spatial.rst:156 084ed299ed4547f6a45352af081080cb
+msgid "``geometry_is_null()``"
+msgstr "``geometry_is_null()``"
+
+#: ../../source/api_reference/spatial.rst:158 c103129045924ea98ed33fac02d3b615
+msgid "几何体句柄是否为空"
+msgstr "Whether the geometry handle is null"
+
+#: ../../source/api_reference/spatial.rst:159
+#: ../../source/api_reference/spatial.rst:343 0bb07dcd59b54972905a2f2aa6c806d0
+#: 4d012c1227fe498bb431074c8f5ebd1f
+msgid "``get_active()``"
+msgstr "``get_active()``"
+
+#: ../../source/api_reference/spatial.rst:161 b5d84d7cc093453cb5d974fa7e436754
+msgid "几何体是否激活"
+msgstr "Whether the geometry is active"
+
+#: ../../source/api_reference/spatial.rst:162
+#: ../../source/api_reference/spatial.rst:340 0df7804689dd4b479128bcd435ebaff6
+#: 815a96dbe0f74d86835f8c4a981a445d
+msgid "``set_active(active)``"
+msgstr "``set_active(active)``"
+
+#: ../../source/api_reference/spatial.rst:164 9147ca251274402abc8a9f00a300e51c
+msgid "设置激活状态"
+msgstr "Set active state"
+
+#: ../../source/api_reference/spatial.rst:167
+#: ../../source/api_reference/spatial.rst:357
+#: ../../source/api_reference/spatial.rst:534 1ebe2229f020415d94cc541930440148
+#: e4ef2457500a4c1da06ba3af5cc90773 f36d9e315e164683a0cf6d2ee7871a63
+msgid "使用示例"
+msgstr "Usage Examples"
+
+#: ../../source/api_reference/spatial.rst:169 236cf9454bc8435a8b9ba0838992d776
+msgid "**创建墙体遮挡：**"
+msgstr "**Creating Wall Occlusion:**"
+
+#: ../../source/api_reference/spatial.rst:171 68b3eff2e3a64a9ebf7c0c75e01cd98a
+msgid ""
+"extends Node3D\n"
+"\n"
+"var wall_geometry: FmodGeometry\n"
+"\n"
+"func _ready():\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # Create geometry (max 10 polygons, 100 vertices)\n"
+"    wall_geometry = system.create_geometry(10, 100)\n"
+"\n"
+"    # Define wall rectangle (4 vertices)\n"
+"    var vertices = [\n"
+"        Vector3(-5, 0, 0),\n"
+"        Vector3(5, 0, 0),\n"
+"        Vector3(5, 3, 0),\n"
+"        Vector3(-5, 3, 0)\n"
+"    ]\n"
+"\n"
+"    # Add double-sided occlusion polygon\n"
+"    wall_geometry.add_polygon(\n"
+"        1.0,    # Full direct occlusion\n"
+"        0.8,    # Strong reverb occlusion\n"
+"        true,   # Double-sided occlusion\n"
+"        4,      # 4 vertices\n"
+"        vertices\n"
+"    )\n"
+"\n"
+"    # Set position\n"
+"    wall_geometry.position = Vector3(0, 0, 10)\n"
+"\n"
+"func _exit_tree():\n"
+"    if wall_geometry:\n"
+"        wall_geometry.release()"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:207 12894e22ac1b40008dcbc6b94bc734df
+msgid "**动态启用/禁用遮挡：**"
+msgstr "**Dynamically Enable/Disable Occlusion:**"
+
+#: ../../source/api_reference/spatial.rst:209 69c0f297e47049ed8b11c0b0aedb101f
+msgid ""
+"func toggle_door(is_open: bool):\n"
+"    # Disable occlusion when door is open, enable when closed\n"
+"    wall_geometry.set_active(not is_open)"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:216 547a36aed6bc49689148f60e564774c6
+msgid "FmodReverb3D"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:220 bf37f96ba77f49ff9ce07308b223f4eb
+msgid "3D 混响区域，用于空间音频混响效果。"
+msgstr "3D reverb zone for spatial audio reverb effects."
+
+#: ../../source/api_reference/spatial.rst:222 e4b2844cd88d490fa6d659344362555f
+msgid ""
+"FmodReverb3D 在 3D "
+"空间中创建球形混响区域，根据与混响中心的距离为声音应用环境混响。这允许你创建真实的空间音频环境，声音进入特定区域（如洞穴、大厅或房间）时变得更加混响。"
+msgstr ""
+"FmodReverb3D creates a spherical reverb zone in 3D "
+"space that applies ambient reverb to sounds based on their distance from the reverb center. This allows you to create realistic spatial audio environments where sounds become more reverberant when entering specific areas (such as caves, halls, or rooms)."
+
+#: ../../source/api_reference/spatial.rst:225 fd8fa970e1a3408894ee728739dd26a0
+msgid "使用 ``FmodSystem.create_reverb_3d()`` 创建此类的实例。"
+msgstr "Use ``FmodSystem.create_reverb_3d()`` to create an instance of this class."
+
+#: ../../source/api_reference/spatial.rst:228 537ab73e72ee44c793cbe30a83614ce4
+msgid "3D 属性"
+msgstr "3D Attributes"
+
+#: ../../source/api_reference/spatial.rst:236 da93ae1925cc4af794e7102740bee4e3
+msgid "``set_3d_attributes(position, min_distance, max_distance)``"
+msgstr "``set_3d_attributes(position, min_distance, max_distance)``"
+
+#: ../../source/api_reference/spatial.rst:238 a539dd9ead1a46dd993c8a64626510b2
+msgid "设置 3D 属性"
+msgstr "Set 3D attributes"
+
+#: ../../source/api_reference/spatial.rst:239 481652cfa6ea4e43a232a8a902c2fe5f
+msgid "``get_3d_attributes()``"
+msgstr "``get_3d_attributes()``"
+
+#: ../../source/api_reference/spatial.rst:241 12c633402b8148d2a6a92eb27c5ff917
+msgid "获取 3D 属性（position, min_distance, max_distance）"
+msgstr "Get 3D attributes (position, min_distance, max_distance)"
+
+#: ../../source/api_reference/spatial.rst:243 f4633d9b77d14e28bd2e9587d09597f6
+msgid "当声源在 ``min_distance`` 内时，获得完整混响"
+msgstr "Full reverb is applied when the sound source is within ``min_distance``"
+
+#: ../../source/api_reference/spatial.rst:244 f2dc26c2d2e248449a2a39c441187024
+msgid "在 ``min_distance`` 和 ``max_distance`` 之间，混响逐渐衰减"
+msgstr "Reverb attenuates gradually between ``min_distance`` and ``max_distance``"
+
+#: ../../source/api_reference/spatial.rst:245 6163c2e7f25f44dc8e7009882b508bff
+msgid "超过 ``max_distance``，无混响效果"
+msgstr "No reverb effect beyond ``max_distance``"
+
+#: ../../source/api_reference/spatial.rst:248 3fbebeca2f864ae8a82633a0c96a5843
+msgid "混响参数"
+msgstr "Reverb Parameters"
+
+#: ../../source/api_reference/spatial.rst:255
+#: ../../source/api_reference/spatial.rst:286
+#: ../../source/api_reference/spatial.rst:317
+#: ../../source/api_reference/spatial.rst:437 1849a569125f4a1690282088160ce538
+#: 31d36480d3f947d0888ceede8dcc91e4 a79e88bd26934135a27d7af60f1d3ac2
+#: e0165639681e40ae972b52b4e0c1e022
+msgid "默认值"
+msgstr "Default Value"
+
+#: ../../source/api_reference/spatial.rst:257 29e898f1b82d47d48bb17c94151f3e68
+msgid "``decay_time``"
+msgstr "``decay_time``"
+
+#: ../../source/api_reference/spatial.rst:258
+#: ../../source/api_reference/spatial.rst:262
+#: ../../source/api_reference/spatial.rst:266
+#: ../../source/api_reference/spatial.rst:270
+#: ../../source/api_reference/spatial.rst:274
+#: ../../source/api_reference/spatial.rst:289
+#: ../../source/api_reference/spatial.rst:293
+#: ../../source/api_reference/spatial.rst:297
+#: ../../source/api_reference/spatial.rst:301
+#: ../../source/api_reference/spatial.rst:305
+#: ../../source/api_reference/spatial.rst:321
+#: ../../source/api_reference/spatial.rst:326
+#: ../../source/api_reference/spatial.rst:448
+#: ../../source/api_reference/spatial.rst:452
+#: ../../source/api_reference/spatial.rst:500
+#: ../../source/api_reference/spatial.rst:506 06425cfa21aa4d34905244f8629291d8
+#: 086200db5fd94bfdab2d63f36e763187 0a52c47931a14609b3533d6d3800dffa
+#: 3229a5c24f3d4f6c8b086da7d0fc7728 4f73e32606094ea8b4ff72127deb73b8
+#: 4f7b5a69aa4f49a087bcfba6ac2c782d 6e213fac63c844a1a506308101435a04
+#: 98205125ac794cd89c486268ec285472 9dbcf7bf73034e3ba32d29d984f273fe
+#: d4e67c57185248c6a4de78baa57fd954 e1685c4073e54671b953395632949269
+#: e2c76da337ba45acb6b7a3d6c87af357 ec21c8757f0b42caaa334d334ad3dd60
+#: ef1414869e13432d931dbfbca2ad00b5 f02670bc04314fb0a72d82eeb74de783
+#: f57c12f58102425f83cbaf2d4d26f720
+msgid "float"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:259 79f463e864e8406bb6b45b765c143108
+msgid "1500.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:260 cd8f818a18c54714ac7495a4fe74b17b
+msgid "混响衰减时间（毫秒）"
+msgstr "Reverb decay time (milliseconds)"
+
+#: ../../source/api_reference/spatial.rst:261 88a366da231c427fa84248f2e623b50f
+msgid "``early_delay``"
+msgstr "``early_delay``"
+
+#: ../../source/api_reference/spatial.rst:263 a20b1e1e3a4f44a5aecba19e3c687327
+msgid "7.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:264 74b835a82c5f491da6881d548adf1cbc
+msgid "早期反射延迟（毫秒）"
+msgstr "Early reflection delay (milliseconds)"
+
+#: ../../source/api_reference/spatial.rst:265 eb70603f083e439db9011f711167ccb0
+msgid "``late_delay``"
+msgstr "``late_delay``"
+
+#: ../../source/api_reference/spatial.rst:267 34e760394d7643ea90217fff368561f6
+msgid "11.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:268 b1727e45137348308058eba7de3b2af4
+msgid "后期混响延迟（毫秒）"
+msgstr "Late reverb delay (milliseconds)"
+
+#: ../../source/api_reference/spatial.rst:269 b49400213cb940aaac37188f9b3e7472
+msgid "``early_late_mix``"
+msgstr "``early_late_mix``"
+
+#: ../../source/api_reference/spatial.rst:271
+#: ../../source/api_reference/spatial.rst:290
+#: ../../source/api_reference/spatial.rst:327 05039abd185040c2b6802409f2de876b
+#: 7780fa8a75ea451f9be1ba9513b5e6ef e062b3fa7eff48ddb85f8d16cb2d3b03
+msgid "50.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:272 6e86117d61be4611a20d28923282a87e
+msgid "早期/后期混响混合比例"
+msgstr "Early/late reverb mix ratio"
+
+#: ../../source/api_reference/spatial.rst:273 d33010213ff145a99bd775538fdbeb48
+msgid "``wet_level``"
+msgstr "``wet_level``"
+
+#: ../../source/api_reference/spatial.rst:275 afa5cefebe9b4d749581f39a0d274cd2
+msgid "-6.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:276 f763d660dc5d4ab18bc8350849899a1b
+msgid "湿信号电平（dB）"
+msgstr "Wet signal level (dB)"
+
+#: ../../source/api_reference/spatial.rst:279 464982a85cee4cd29e927fed5b16848d
+msgid "频率控制"
+msgstr "Frequency Control"
+
+#: ../../source/api_reference/spatial.rst:288 9cf61873fa7449ed832ee503016c97ed
+msgid "``hf_decay_ratio``"
+msgstr "``hf_decay_ratio``"
+
+#: ../../source/api_reference/spatial.rst:291 9c2dd3117e4c4c47b8fe07947fa7d37d
+msgid "高频衰减比例（%）"
+msgstr "High frequency decay ratio (%)"
+
+#: ../../source/api_reference/spatial.rst:292 72e8bf7962d94afdb44466372ccb95d9
+msgid "``hf_reference``"
+msgstr "``hf_reference``"
+
+#: ../../source/api_reference/spatial.rst:294 91b68c8137ef4af5a5377ae8731a5abb
+msgid "5000.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:295 fcbd4c7c88fd43418912c9e914492ed9
+msgid "高频参考频率（Hz）"
+msgstr "High frequency reference (Hz)"
+
+#: ../../source/api_reference/spatial.rst:296 987e7ef3a34c4201853e22db97eaa3c7
+msgid "``high_cut``"
+msgstr "``high_cut``"
+
+#: ../../source/api_reference/spatial.rst:298
+#: ../../source/api_reference/spatial.rst:306
+#: ../../source/api_reference/spatial.rst:449
+#: ../../source/api_reference/spatial.rst:453 0759ae832144414f9f82796e6c628a98
+#: 0f73bc70a5ec4426bfc111311d55c316 3ba0eb62c5eb45b3aa8acf443933c408
+#: a6ca8f69fbc54412b5d60a1f36ec8eab
+msgid "0.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:299 05ebb6ad8b3848dab5ae696a3411295a
+msgid "高频截止（dB）"
+msgstr "High frequency cutoff (dB)"
+
+#: ../../source/api_reference/spatial.rst:300 0774af76bc91476b8d303aea3793eafe
+msgid "``low_shelf_frequency``"
+msgstr "``low_shelf_frequency``"
+
+#: ../../source/api_reference/spatial.rst:302 7633caade9df4967906c8d98ad5d555f
+msgid "250.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:303 b64686d2891a4c019aa4ebaeecb4eb49
+msgid "低频参考频率（Hz）"
+msgstr "Low frequency reference (Hz)"
+
+#: ../../source/api_reference/spatial.rst:304 062d2e70cc9b43b5bdb48c735f64b18a
+msgid "``low_shelf_gain``"
+msgstr "``low_shelf_gain``"
+
+#: ../../source/api_reference/spatial.rst:307 40307110c1484d1f937f3236174ba718
+msgid "低频增益（dB）"
+msgstr "Low frequency gain (dB)"
+
+#: ../../source/api_reference/spatial.rst:310 ade215a654964d87aa932a61c2029e53
+msgid "密度控制"
+msgstr "Density Control"
+
+#: ../../source/api_reference/spatial.rst:318 f69eff70f6e84b19bb04798c0732c550
+msgid "范围"
+msgstr "Range"
+
+#: ../../source/api_reference/spatial.rst:320 5ab67d8ac6b54e8d8625fb51e7c9a6e0
+msgid "``density``"
+msgstr "``density``"
+
+#: ../../source/api_reference/spatial.rst:322 05e89bd3bffc47d988c44e26234c264f
+msgid "100.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:323
+#: ../../source/api_reference/spatial.rst:328 ba80c44bed134e54bae80b6528b60830
+#: e09c66d2ad6e4c8191508c04d785b361
+msgid "0.0-100.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:324 cad682203c5e4367adf8e7d0b3d4d42e
+msgid "模态密度"
+msgstr "Modal density"
+
+#: ../../source/api_reference/spatial.rst:325 0eda2852524b4409959f57925392605e
+msgid "``diffusion``"
+msgstr "``diffusion``"
+
+#: ../../source/api_reference/spatial.rst:329 3c953188499e4b56bdb3a9fe7cfad179
+msgid "扩散度（回声密度）"
+msgstr "Diffusion (echo density)"
+
+#: ../../source/api_reference/spatial.rst:332 28830b60fc804a98a6c6b18e4adee42e
+msgid "状态管理"
+msgstr "State Management"
+
+#: ../../source/api_reference/spatial.rst:342 a05814d818274c669929e0938a960045
+msgid "启用/禁用混响区域"
+msgstr "Enable/disable reverb zone"
+
+#: ../../source/api_reference/spatial.rst:345 1546101960114b71be836a41419e1d95
+msgid "是否激活"
+msgstr "Whether active"
+
+#: ../../source/api_reference/spatial.rst:346 b86c767d9659411bbb75eb23df3d6bcf
+msgid "``reverb_3d_is_valid()``"
+msgstr "``reverb_3d_is_valid()``"
+
+#: ../../source/api_reference/spatial.rst:348 e76896b87e17485c9e9f5a1441316112
+msgid "混响是否有效"
+msgstr "Whether the reverb is valid"
+
+#: ../../source/api_reference/spatial.rst:349 fa884b783d194fca89be68909bfdcea6
+msgid "``reverb_3d_is_null()``"
+msgstr "``reverb_3d_is_null()``"
+
+#: ../../source/api_reference/spatial.rst:351
+#: ../../source/api_reference/spatial.rst:531 03e21f2faa324f5c9b7bf64365f2b4e1
+#: e4f5fe2ba40649c8ba612b40558d137e
+msgid "句柄是否为空"
+msgstr "Whether the handle is null"
+
+#: ../../source/api_reference/spatial.rst:354 c0dfcf130bb9463eaff0e4d21acee7f7
+msgid "释放资源"
+msgstr "Release resources"
+
+#: ../../source/api_reference/spatial.rst:359 8d691cc9a9764527912d8e8dfcbaaed9
+msgid "**创建洞穴混响效果：**"
+msgstr "**Creating Cave Reverb Effect:**"
+
+#: ../../source/api_reference/spatial.rst:361 0de33cddbf0b483dbfb936d1d506f4ae
+msgid ""
+"extends Node3D\n"
+"\n"
+"@export var cave_position: Vector3 = Vector3(50, 0, 50)\n"
+"var cave_reverb: FmodReverb3D\n"
+"\n"
+"func _ready():\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # Create 3D reverb zone\n"
+"    cave_reverb = system.create_reverb_3d()\n"
+"\n"
+"    # Set position and influence range\n"
+"    cave_reverb.set_3d_attributes(\n"
+"        cave_position,  # Center position\n"
+"        5.0,            # Full reverb within 5 meters\n"
+"        20.0            # No reverb beyond 20 meters\n"
+"    )\n"
+"\n"
+"    # Configure cave reverb parameters\n"
+"    cave_reverb.decay_time = 2500.0      # Long decay (large cave)\n"
+"    cave_reverb.density = 80.0           # High density\n"
+"    cave_reverb.diffusion = 70.0         # High diffusion\n"
+"    cave_reverb.early_delay = 20.0       # Long early delay\n"
+"    cave_reverb.late_delay = 40.0        # Long late delay\n"
+"    cave_reverb.hf_decay_ratio = 40.0    # High frequency rapid decay\n"
+"    cave_reverb.wet_level = -3.0         # Stronger reverb\n"
+"\n"
+"func _exit_tree():\n"
+"    if cave_reverb:\n"
+"        cave_reverb.release()"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:394 303bee34a4dc4485ba597883d9983768
+msgid "**预设配置：**"
+msgstr "**Preset Configuration:**"
+
+#: ../../source/api_reference/spatial.rst:396 337c2b2a886c4aa3b4a3b4e9de69c655
+msgid ""
+"func apply_room_preset(reverb: FmodReverb3D, room_type: String):\n"
+"    match room_type:\n"
+"        \"small_room\":\n"
+"            reverb.decay_time = 500.0\n"
+"            reverb.early_delay = 5.0\n"
+"            reverb.density = 70.0\n"
+"        \"hall\":\n"
+"            reverb.decay_time = 2000.0\n"
+"            reverb.early_delay = 15.0\n"
+"            reverb.density = 90.0\n"
+"        \"cave\":\n"
+"            reverb.decay_time = 3000.0\n"
+"            reverb.early_delay = 30.0\n"
+"            reverb.hf_decay_ratio = 30.0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:414 d2e558512e464d049049ee22d1acd78f
+msgid "FmodSoundGroup"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:418 821f1d655f1649d3b86120598c178dea
+msgid "声音分组，用于控制播放限制和集体行为。"
+msgstr "Sound group for controlling playback limits and collective behavior."
+
+#: ../../source/api_reference/spatial.rst:420 a0c83c63b5ec4b5a9d703c39f6d5d3ce
+msgid "FmodSoundGroup 用于管理具有共享播放约束的声音集合。它允许你限制同时可听到的声音数量，并定义当超过该限制时的行为。"
+msgstr "FmodSoundGroup is used to manage collections of sounds with shared playback constraints. It allows you to limit the number of simultaneously audible sounds and define behavior when that limit is exceeded."
+
+#: ../../source/api_reference/spatial.rst:423 130ef3ae37944d1a9a7a66779c97b573
+msgid "适用场景"
+msgstr "Applicable Scenarios"
+
+#: ../../source/api_reference/spatial.rst:425 9b35ec24e3cd4d40820c1fdf7f44650a
+msgid "**武器声音** - 限制同时播放数量，防止音频混乱"
+msgstr "**Weapon Sounds** - Limit simultaneous playback count to prevent audio clutter"
+
+#: ../../source/api_reference/spatial.rst:426 1aaf99264729403d8536bfc39aaba75e
+msgid "**环境音效** - 平滑淡入淡出"
+msgstr "**Ambient Sounds** - Smooth fade in/out"
+
+#: ../../source/api_reference/spatial.rst:427 3059e549a30841a5b215044203851076
+msgid "**语音/对话** - 优先播放重要台词"
+msgstr "**Voice/Dialogue** - Prioritize important lines"
+
+#: ../../source/api_reference/spatial.rst:439 81018656a3704cc1b361078475f85886
+msgid "``max_audible``"
+msgstr "``max_audible``"
+
+#: ../../source/api_reference/spatial.rst:441
+#: ../../source/api_reference/spatial.rst:466 073115d7bf984299af9b0429d38477a5
+#: 380c42d5af4e49c19cdb8d3aae91d7a9
+msgid "0"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:442 13077a2072a847e0a79734c079859e47
+msgid "最大同时可听声音数（0 = 无限制）"
+msgstr "Maximum number of simultaneously audible sounds (0 = unlimited)"
+
+#: ../../source/api_reference/spatial.rst:443 0712e431f89a46a6a485005cc7fcfaa5
+msgid "``behavior``"
+msgstr "``behavior``"
+
+#: ../../source/api_reference/spatial.rst:444
+#: ../../source/api_reference/spatial.rst:494 0ab39070b95a4712929d3caaefbcc697
+#: 4b6dd6493c4a4f9bbaa884efdcae11f5
+msgid "Behavior"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:445 33ef2974126b496989bddb5c6bc219d3
+msgid "FAIL"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:446 ec9c8c2c8c334586a9a6df45bd6c4d47
+msgid "超过限制时的行为"
+msgstr "Behavior when limit is exceeded"
+
+#: ../../source/api_reference/spatial.rst:447 7fb18db98dbd44af81995f3f9c145b25
+msgid "``mute_fade_speed``"
+msgstr "``mute_fade_speed``"
+
+#: ../../source/api_reference/spatial.rst:450 acbbd046d63643239ab2529815cf45ae
+msgid "静音淡入淡出速度"
+msgstr "Mute fade speed"
+
+#: ../../source/api_reference/spatial.rst:451 f92f0355a32c43b7a1fffa3bfaf37768
+msgid "``volume_db``"
+msgstr "``volume_db``"
+
+#: ../../source/api_reference/spatial.rst:454 31806445f2b8426cad6e8bf86a88d248
+msgid "分组音量（dB）"
+msgstr "Group volume (dB)"
+
+#: ../../source/api_reference/spatial.rst:457 fca2987bc0fd43908725e5442d380c68
+msgid "行为枚举"
+msgstr "Behavior Enum"
+
+#: ../../source/api_reference/spatial.rst:462 c2b01d58dc7d440a923aab682dd2a91f
+msgid "常量"
+msgstr "Constant"
+
+#: ../../source/api_reference/spatial.rst:463 d6d6294473d14bf2bd54d2883ba4ec55
+msgid "值"
+msgstr "Value"
+
+#: ../../source/api_reference/spatial.rst:465 c012f1de81ec4fb6b945316e97e70343
+msgid "``BEHAVIOR_FAIL``"
+msgstr "``BEHAVIOR_FAIL``"
+
+#: ../../source/api_reference/spatial.rst:467 89b8a94a71af48b6b1c19dacb8e150aa
+msgid "超过限制时播放失败"
+msgstr "Playback fails when limit is exceeded"
+
+#: ../../source/api_reference/spatial.rst:468 44eb2fe1cba94de199dd935e76ec6ba1
+msgid "``BEHAVIOR_MUTE``"
+msgstr "``BEHAVIOR_MUTE``"
+
+#: ../../source/api_reference/spatial.rst:469 752c231089164383a44f041beb1432ef
+msgid "1"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:470 c478fa383d8e4618ab3fdf947ff81741
+msgid "新声音静音，其他停止后恢复"
+msgstr "New sounds are muted and resume when others stop"
+
+#: ../../source/api_reference/spatial.rst:471 060b01230c7f4744a9ac10c0173cb430
+msgid "``BEHAVIOR_STEAL_LOWEST``"
+msgstr "``BEHAVIOR_STEAL_LOWEST``"
+
+#: ../../source/api_reference/spatial.rst:472 133bd93978074ce3a4ec5471fd2d37d6
+msgid "2"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:473 e69837e6d55243d8abd2728878f637ab
+msgid "抢夺音量最低的声音"
+msgstr "Steal the quietest sound"
+
+#: ../../source/api_reference/spatial.rst:484 2a86ed2b538f4cfb928f42f77fad2084
+msgid "``set_max_audible(max_audible)``"
+msgstr "``set_max_audible(max_audible)``"
+
+#: ../../source/api_reference/spatial.rst:486 7dc61539e9574400b22516e1a3f812ea
+msgid "设置最大可听数量"
+msgstr "Set maximum audible count"
+
+#: ../../source/api_reference/spatial.rst:487 365b84a6c9664300a3f958147a9c46d8
+msgid "``get_max_audible()``"
+msgstr "``get_max_audible()``"
+
+#: ../../source/api_reference/spatial.rst:489 c410e8091e1547a496617c4a8a5e1686
+msgid "获取最大可听数量"
+msgstr "Get maximum audible count"
+
+#: ../../source/api_reference/spatial.rst:490 b95571b2588f4a2683d16a175e0cf598
+msgid "``set_max_audible_behavior(behavior)``"
+msgstr "``set_max_audible_behavior(behavior)``"
+
+#: ../../source/api_reference/spatial.rst:492 3aa2caf2191641c5a8b6b1fb038710ec
+msgid "设置行为模式"
+msgstr "Set behavior mode"
+
+#: ../../source/api_reference/spatial.rst:493 38b0afab1b1e46f7bdbb16249985f54c
+msgid "``get_max_audible_behavior()``"
+msgstr "``get_max_audible_behavior()``"
+
+#: ../../source/api_reference/spatial.rst:495 a19dce7c5e45440bafbdda694f1d6721
+msgid "获取行为模式"
+msgstr "Get behavior mode"
+
+#: ../../source/api_reference/spatial.rst:496 400cdf8ee5b14e2f952cd62ee9575f11
+msgid "``set_mute_fade_speed(speed)``"
+msgstr "``set_mute_fade_speed(speed)``"
+
+#: ../../source/api_reference/spatial.rst:498 85b1baf1707240aa9105932f67a9ccaf
+msgid "设置淡入淡出速度"
+msgstr "Set fade speed"
+
+#: ../../source/api_reference/spatial.rst:499 ac0d3156ee6b46ada1194f661138c876
+msgid "``get_mute_fade_speed()``"
+msgstr "``get_mute_fade_speed()``"
+
+#: ../../source/api_reference/spatial.rst:501 cefaac6fe25a4433a328eac895bb3f48
+msgid "获取淡入淡出速度"
+msgstr "Get fade speed"
+
+#: ../../source/api_reference/spatial.rst:502 2402c2c714ef42cd971e49b9e236e4e8
+msgid "``set_volume_db(volume_db)``"
+msgstr "``set_volume_db(volume_db)``"
+
+#: ../../source/api_reference/spatial.rst:504 1360c9343fbb4d578f94e8ce62b84b26
+msgid "设置分组音量"
+msgstr "Set group volume"
+
+#: ../../source/api_reference/spatial.rst:505 8e0722b1bc43448b97debff07d38c859
+msgid "``get_volume_db()``"
+msgstr "``get_volume_db()``"
+
+#: ../../source/api_reference/spatial.rst:507 54d053365af343afa00269a0c61eb8f9
+msgid "获取分组音量"
+msgstr "Get group volume"
+
+#: ../../source/api_reference/spatial.rst:508 b678ece660a64955b9bb0142f1ea35b3
+msgid "``get_name()``"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:509 7f4715ec9d24458cbb5b8d16861cfe45
+msgid "String"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:510 785536fa688d4c85a171642cae3a2c20
+msgid "获取分组名称"
+msgstr "Get group name"
+
+#: ../../source/api_reference/spatial.rst:511 8eda0f8941e94d9eaf617cf6f3ded4c6
+msgid "``get_num_sounds()``"
+msgstr "``get_num_sounds()``"
+
+#: ../../source/api_reference/spatial.rst:513 dd38beac5b9648069cb546725eceff1e
+msgid "获取声音数量"
+msgstr "Get number of sounds"
+
+#: ../../source/api_reference/spatial.rst:514 699e5125d1dc4317bc5294e4cc6af40f
+msgid "``get_num_playing()``"
+msgstr "``get_num_playing()``"
+
+#: ../../source/api_reference/spatial.rst:516 bfaedf2d2e78436286067af93da7e1b4
+msgid "获取正在播放的通道数"
+msgstr "Get number of playing channels"
+
+#: ../../source/api_reference/spatial.rst:517 db0941a145c54e81b754fd9133126833
+msgid "``get_sound(index)``"
+msgstr "``get_sound(index)``"
+
+#: ../../source/api_reference/spatial.rst:518 64ecccc9c0e74a3bbb7c77d88c4e4b69
+msgid "FmodSound"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:519 e2e8eee1499d4a598bffc777ca2c460a
+msgid "获取指定索引的声音"
+msgstr "Get sound at specified index"
+
+#: ../../source/api_reference/spatial.rst:520 9e6530c00541464c94d5e14b5d648380
+msgid "``stop()``"
+msgstr "``stop()``"
+
+#: ../../source/api_reference/spatial.rst:522 729f10d117c4446d81d48e15bd8bba71
+msgid "停止组内所有声音"
+msgstr "Stop all sounds in group"
+
+#: ../../source/api_reference/spatial.rst:525 b1948c1b718043cf9c8b3553db7908dc
+msgid "释放分组"
+msgstr "Release group"
+
+#: ../../source/api_reference/spatial.rst:526 273fb7671a6c4c4fabfa5ac962865f86
+msgid "``sound_group_is_valid()``"
+msgstr "``sound_group_is_valid()``"
+
+#: ../../source/api_reference/spatial.rst:528 00e0e6ad42654dcd93ccd6cf13a9af87
+msgid "分组是否有效"
+msgstr "Whether the group is valid"
+
+#: ../../source/api_reference/spatial.rst:529 a373c8d55e004a009616febcbe748abf
+msgid "``sound_group_is_null()``"
+msgstr "``sound_group_is_null()``"
+
+#: ../../source/api_reference/spatial.rst:536 4d1d1f456b154e87840739c7b2e59d7b
+msgid "**限制武器音效数量：**"
+msgstr "**Limiting Weapon Sound Effects:**"
+
+#: ../../source/api_reference/spatial.rst:538 8d90ec7fb6784735a82717b2a0671aca
+#, python-format
+msgid ""
+"extends Node\n"
+"\n"
+"var weapon_sound_group: FmodSoundGroup\n"
+"\n"
+"func _ready():\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # Create weapon sound group\n"
+"    weapon_sound_group = system.create_sound_group(\"Weapons\")\n"
+"\n"
+"    # Maximum 4 simultaneous weapon sounds\n"
+"    weapon_sound_group.max_audible = 4\n"
+"\n"
+"    # Steal quietest sound when limit exceeded\n"
+"    weapon_sound_group.behavior = FmodSoundGroup.BEHAVIOR_STEAL_LOWEST\n"
+"\n"
+"    # Set fade speed\n"
+"    weapon_sound_group.mute_fade_speed = 5.0\n"
+"\n"
+"func play_weapon_sound(weapon_type: String):\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    # Create sound and assign to group\n"
+"    var sound = system.create_sound_from_file(\n"
+"        \"res://sfx/weapons/%s.wav\" % weapon_type\n"
+"    )\n"
+"\n"
+"    # Add sound to group (via FMOD API)\n"
+"    # Then play\n"
+"    var channel = system.play_sound(sound, null, false)\n"
+"\n"
+"func _exit_tree():\n"
+"    if weapon_sound_group:\n"
+"        weapon_sound_group.release()"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:575 0ce5d08498a3498fad2a905808647b51
+msgid "**环境音效分组控制：**"
+msgstr "**Ambient Sound Group Control:**"
+
+#: ../../source/api_reference/spatial.rst:577 a1e19b19d398439fa55c944c2df72b31
+msgid ""
+"extends Node\n"
+"\n"
+"var ambient_group: FmodSoundGroup\n"
+"\n"
+"func _ready():\n"
+"    var system = FmodServer.main_system\n"
+"    ambient_group = system.create_sound_group(\"Ambience\")\n"
+"\n"
+"    # Allow multiple ambient sounds to play simultaneously\n"
+"    ambient_group.max_audible = 10\n"
+"\n"
+"    # New sounds muted and waiting\n"
+"    ambient_group.behavior = FmodSoundGroup.BEHAVIOR_MUTE\n"
+"\n"
+"    // Slow fade in\n"
+"    ambient_group.mute_fade_speed = 2.0\n"
+"\n"
+"func fade_out_ambience():\n"
+"    # Lower volume of entire ambient group\n"
+"    var tween = create_tween()\n"
+"    tween.tween_method(\n"
+"        func(vol): ambient_group.volume_db = vol,\n"
+"        ambient_group.volume_db,\n"
+"        -80.0,\n"
+"        3.0\n"
+"    )"
+msgstr ""
+
+#: ../../source/api_reference/spatial.rst:607 ee46e805d9574876a5c4cc22a0d03dc2
+msgid "综合示例"
+msgstr "Comprehensive Example"
+
+#: ../../source/api_reference/spatial.rst:609 369648aad54c4d069b70443248159d1a
+msgid "**完整的 3D 音频场景：**"
+msgstr "**Complete 3D Audio Scene:**"
+
+#: ../../source/api_reference/spatial.rst:611 3e27718034e847e5a63308548a55257c
+msgid ""
+"extends Node3D\n"
+"\n"
+"var room_geometry: FmodGeometry\n"
+"var room_reverb: FmodReverb3D\n"
+"var fx_group: FmodSoundGroup\n"
+"\n"
+"func _ready():\n"
+"    setup_room_occlusion()\n"
+"    setup_room_reverb()\n"
+"    setup_sound_groups()\n"
+"\n"
+"func setup_room_occlusion():\n"
+"    var system = FmodServer.main_system\n"
+"    room_geometry = system.create_geometry(100, 1000)\n"
+"\n"
+"    # Create four walls\n"
+"    var walls = [\n"
+"        [Vector3(-10, 0, -10), Vector3(10, 0, -10), Vector3(10, 5, -10), "
+"Vector3(-10, 5, -10)],  # Back wall\n"
+"        [Vector3(-10, 0, 10), Vector3(-10, 0, -10), Vector3(-10, 5, -10),"
+" Vector3(-10, 5, 10)],   # Left wall\n"
+"        # ... other walls\n"
+"    ]\n"
+"\n"
+"    for wall in walls:\n"
+"        room_geometry.add_polygon(1.0, 0.9, true, wall.size(), wall)\n"
+"\n"
+"func setup_room_reverb():\n"
+"    var system = FmodServer.main_system\n"
+"    room_reverb = system.create_reverb_3d()\n"
+"    room_reverb.set_3d_attributes(Vector3.ZERO, 8.0, 15.0)\n"
+"    room_reverb.decay_time = 1200.0\n"
+"    room_reverb.diffusion = 60.0\n"
+"\n"
+"func setup_sound_groups():\n"
+"    var system = FmodServer.main_system\n"
+"    fx_group = system.create_sound_group(\"Effects\")\n"
+"    fx_group.max_audible = 8\n"
+"    fx_group.behavior = FmodSoundGroup.BEHAVIOR_STEAL_LOWEST\n"
+"\n"
+"func _exit_tree():\n"
+"    if room_geometry:\n"
+"        room_geometry.release()\n"
+"    if room_reverb:\n"
+"        room_reverb.release()\n"
+"    if fx_group:\n"
+"        fx_group.release()"
+msgstr ""
+

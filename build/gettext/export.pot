@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot FmodPlayer \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"POT-Creation-Date: 2026-03-17 19:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/export.rst:2
-#: 14dda6f46c4f4b67b42925ca34e3a3d0
+#: e581e55f1c274108851cf8c03333d88e
 msgid "导出说明"
 msgstr ""
 
 #: ../../source/export.rst:4
-#: 089f20cad5624642ac1d77bb0058f446
+#: ed0d2a4cafac43938bc8f8c81c1e2e18
 msgid "本文档说明如何在导出 Godot 项目时正确配置 FmodPlayer 插件。"
 msgstr ""
 
 #: ../../source/export.rst:7
-#: 8c780eafa0c54dac97d5ad3064ad7306
+#: 2da5de55f5e14842b459363a62e0ea68
 msgid "导出前准备"
 msgstr ""
 
 #: ../../source/export.rst:10
-#: 159a067bb3c34aa5b22cfa31c3fdda80
+#: 98f6566c0c11481db1cabbf339979784
 msgid "确认文件结构"
 msgstr ""
 
 #: ../../source/export.rst:12
-#: 752a1718d3ca46e2b012377739b62501
+#: ea0867f667c3437fa3c60787a975cfd6
 msgid "确保 ``addons/`` 目录包含以下文件::"
 msgstr ""
 
 #: ../../source/export.rst:14
-#: 2470f9dd3d4943dd81edeeb51fa00d17
+#: 1cf956ef51194c2f9dfa5178896b1f23
 msgid "res://\n"
 "└── addons/\n"
 "    └── fmod_player/\n"
@@ -58,282 +58,282 @@ msgid "res://\n"
 msgstr ""
 
 #: ../../source/export.rst:28
-#: 2394bf0ef69c454d9c7bc47f56014efe
+#: 5ad01dfe12c84326a7e108c0396d3c8f
 msgid "平台特定文件"
 msgstr ""
 
 #: ../../source/export.rst:30
-#: d9409b9f6ee547cabecc52079cd8e7a3
+#: 18cb0cd47ea94341a78ed91a6307cdff
 msgid "**Windows 导出需要：**"
 msgstr ""
 
 #: ../../source/export.rst:32
-#: aea821ec1eee4ff69dfb83acdc8fe937
+#: d49b298696774516b27e7aadf1cffe86
 msgid "``fmod_player.windows.template_release.x86_64.dll`` （发布版）"
 msgstr ""
 
 #: ../../source/export.rst:33
-#: 7fcef308839e464d9a79ea8efd6f3576
+#: 70871f5a61c84542a14fac75a4ea86fc
 msgid "``fmod.dll`` （FMOD 运行库，发布版）"
 msgstr ""
 
 #: ../../source/export.rst:35
-#: b25e642a89444ab88321c15525140b6f
+#: 669b7dde4e084fe68e7f00ec22828ca2
 msgid "**Android 导出需要：**"
 msgstr ""
 
 #: ../../source/export.rst:37
-#: b4d20ce3c6cb40e49032953f3d4d5ae5
+#: 26eafc39ae1d4504bf68abd743e65ac7
 msgid "``libfmod_player.android.template_release.arm64.so``"
 msgstr ""
 
 #: ../../source/export.rst:38
-#: 21e0da8b99be46cb992d285fcd3a0c1d
+#: a060ebd3e8944049879a21e8020db579
 msgid "``libfmod.so`` （需要手动添加到 APK）"
 msgstr ""
 
 #: ../../source/export.rst:41
-#: 299d112f9b3e4af283162a85ceb2bb45
+#: a967c68afc9740c5bb50882ff946c924
 msgid "Godot 导出配置"
 msgstr ""
 
 #: ../../source/export.rst:44
-#: eb2187ed84664e5aa0f333b3b6d43339
+#: 7c6c786cd4b4483da262801de1884a11
 msgid "导出预设设置"
 msgstr ""
 
 #: ../../source/export.rst:46
-#: 3df3e33ce54245e995afebba2c5d5d13
+#: 2e827de8d9c04756a2cbd0b7ef6e50ea
 msgid "打开 **项目 > 导出**"
 msgstr ""
 
 #: ../../source/export.rst:47
-#: 6ea4c46b96bc4c08b1cb98e6c3d3bcbf
+#: 6780af74d9a243ee9e82ad8dd48de8a5
 msgid "选择或创建导出预设"
 msgstr ""
 
 #: ../../source/export.rst:48
-#: fd6c94f88de94d6eb36e28c08ecdba72
+#: c2d3deda1f42418daeca822483de6cff
 msgid "在 **资源** 标签页中："
 msgstr ""
 
 #: ../../source/export.rst:50
-#: d363995ae0a8409a948745a6fecbefcb
+#: 8ce9ce3b969e47fc9f661e809d94785a
 msgid "确保 ``addons/fmod_player/`` 目录被包含"
 msgstr ""
 
 #: ../../source/export.rst:51
-#: a7bfd1fc176540b0b61c86afb5b15f13
+#: 10355bc2c420446f8c2d111c6d2d11d2
 msgid "不需要的文件（如 ``.obj``, ``.os``）可以排除"
 msgstr ""
 
 #: ../../source/export.rst:54
-#: bd666b44035e42dfb74e1238fa5d3091
+#: 6c87d577e5cf4285bdc42acddc2fb0bf
 msgid "Windows 导出"
 msgstr ""
 
 #: ../../source/export.rst:59
 #: ../../source/export.rst:78
-#: df988031e31b4ba1a5361e5c68b77ba0
-#: df988031e31b4ba1a5361e5c68b77ba0
+#: 92b630c38a5046259cd78bff2d93bc33
+#: c2d14d1967e0402baca5f47f2a650ea8
 msgid "设置项"
 msgstr ""
 
 #: ../../source/export.rst:60
 #: ../../source/export.rst:79
-#: c8fa28a06d824fab954be9c1f0d3fe16
-#: c8fa28a06d824fab954be9c1f0d3fe16
+#: 3ef349debd204299ae9a9d51a4d2bb6f
+#: 43d98e2d0a8a403dba6d5b75f090d868
 msgid "推荐值"
 msgstr ""
 
 #: ../../source/export.rst:61
 #: ../../source/export.rst:80
-#: 48d75caef6e7490cbd0e423ae6d1d797
-#: 48d75caef6e7490cbd0e423ae6d1d797
+#: ad86677a61924489a2fbf644188de44a
+#: e4556361201b4e30ade97444837242ce
 msgid "说明"
 msgstr ""
 
 #: ../../source/export.rst:62
-#: 652fa12aaba940c19c39d1928466b73d
+#: 34947951697d4a779ac1512263dbace1
 msgid "导出路径"
 msgstr ""
 
 #: ../../source/export.rst:63
-#: 7b8e6260e91f49899ac0390f37d790c8
+#: 939afbb4d0544fd2b8ddc68edfb6cf2f
 msgid "项目目录"
 msgstr ""
 
 #: ../../source/export.rst:64
-#: bb350c35d8534969a30d7e67d9dc2bc9
+#: 2d9ebd5f5e374e258950b1f7a4f3d653
 msgid "便于调试"
 msgstr ""
 
 #: ../../source/export.rst:65
-#: d221f037c3ce4bdcb575959201513973
+#: ed59390767da4e6d8452f5f8306969f1
 msgid "可执行文件"
 msgstr ""
 
 #: ../../source/export.rst:66
-#: 8fb5ca5b774f42d480dff33b949463e2
+#: b8e94704f7d2422b8f0e7edad092a531
 msgid "自定义名称"
 msgstr ""
 
 #: ../../source/export.rst:67
-#: 7617cffb883045d987baa0c33fbca339
+#: 6f3483c9e02f4b9abaa46561cf75461e
 msgid "如 ``MyGame.exe``"
 msgstr ""
 
 #: ../../source/export.rst:68
-#: 0564d6c7f0be4f45a31fb304618c9bc4
+#: 86614911939d4e8fb1af4acdeadbbb00
 msgid "嵌入 PCK"
 msgstr ""
 
 #: ../../source/export.rst:69
-#: 257497cf0e314014b87ed47fc4e345b8
+#: 1c05c6236d9b4039a61ca6b73ce3e67e
 msgid "可选"
 msgstr ""
 
 #: ../../source/export.rst:70
-#: d7939a79804b4e0d874252e8a6cc7851
+#: 365b1d32a4614d5298d39aaa130fef02
 msgid "单文件发布时启用"
 msgstr ""
 
 #: ../../source/export.rst:73
-#: 9fe60f5229ef4351a0eac7f5a4beef26
+#: 0ed68f86f53a43c39ada4cf09d9c7eff
 msgid "Android 导出"
 msgstr ""
 
 #: ../../source/export.rst:81
-#: 2177a7db28174854b164b9d94ddc3d39
+#: 962b336d631645509a93328d4232494e
 msgid "导出格式"
 msgstr ""
 
 #: ../../source/export.rst:82
-#: c6194d16be4e4cf788847736c32e2cce
+#: a848a7eddbdb4544b04cace4750c673a
 msgid "APK 或 AAB"
 msgstr ""
 
 #: ../../source/export.rst:83
-#: 4d76f0da72b44e64b69c56e1de00bb4f
+#: c06c1242d36242abaca0ba497d8a488b
 msgid "根据发布需求选择"
 msgstr ""
 
 #: ../../source/export.rst:84
-#: 05aa93550f924f85a9064a88399bcd45
+#: bdeab24041a3493e8e2d8a5cb2dcc3f8
 msgid "架构"
 msgstr ""
 
 #: ../../source/export.rst:85
-#: 971ba520e6474df78e3406b5c77df04f
+#: 15c4af16135041da84ad58810a012679
 msgid "arm64-v8a"
 msgstr ""
 
 #: ../../source/export.rst:86
-#: 5a6ca8d2a83b44638a4d53bdcf5de486
+#: fa72f944efa843fbac8a96bd8a71e9b8
 msgid "主要目标架构"
 msgstr ""
 
 #: ../../source/export.rst:87
-#: c980a7e542f0486e9a5e2c32de621d4e
+#: 9b3d67100f9c4fe3b1db2617eb833e0b
 msgid "目标 SDK"
 msgstr ""
 
 #: ../../source/export.rst:88
-#: 0116481c76754c349cad50d66bb86064
+#: ccb36d619d2f446ea5896ba9ae10ad62
 msgid "30+"
 msgstr ""
 
 #: ../../source/export.rst:89
-#: 38181852e9c94766bfb1f204b028d58e
+#: 27307f5348ef43e1800885587233ebf6
 msgid "Google Play 要求"
 msgstr ""
 
 #: ../../source/export.rst:92
-#: 0c983e6dc338452fbd2e729595b8877a
+#: 83de6a586fcb44dc8bcc5c5048c66e7e
 msgid "FMOD 库配置"
 msgstr ""
 
 #: ../../source/export.rst:95
-#: 30f076ef540a43f78d09a4f8f5371574
+#: ed20484faac54bb7a812bae18b66d598
 msgid "Windows"
 msgstr ""
 
 #: ../../source/export.rst:97
-#: e2d4ef8047ed4a1ea05f95d2eef8f317
+#: b24452e7730c4b21b1005004922bcc7a
 msgid "发布时使用 FMOD 发布版库："
 msgstr ""
 
 #: ../../source/export.rst:99
-#: 27ccac093417402e9c9ac5fa4ab008c2
+#: 980748e3064f4f57a62902cdfe256f24
 msgid "# 确保使用 fmod.dll（而非 fmodL.dll）\n"
 "# 调试版（Debug）：fmodL.dll\n"
 "# 发布版（Release）：fmod.dll"
 msgstr ""
 
 #: ../../source/export.rst:106
-#: 3542b95b5428458780fa6182022931ea
+#: f0692361413b409ca223ed39b857d3e7
 msgid "Android"
 msgstr ""
 
 #: ../../source/export.rst:108
-#: 4cfbabcf8a1d49a49958f38ec5131915
+#: 463f759dcb04472c8abf52650fe3db2c
 msgid "需要将 FMOD 库打包到 APK："
 msgstr ""
 
 #: ../../source/export.rst:112
-#: 422c522469984b0eb22801fcdffc2757
+#: 9a97e06b085c430db76d21a647dfc88d
 msgid "**FMOD Android 运行库需要手动下载**"
 msgstr ""
 
 #: ../../source/export.rst:114
-#: f08b822f0cd943a3b74057ffe9df5c7f
+#: e3ee53d90e224684a252b7a3399f8dfe
 msgid "由于 FMOD 的许可协议不允许二次分发，你需要自行从 `FMOD 官网 <https://www.fmod.com/download>`_ 下载 FMOD Engine Android 运行库"
 msgstr ""
 
 #: ../../source/export.rst:117
-#: c58f35bd4ef4441c9573935c80810bc4
+#: 20f4ad840aa343368d94c4fff5e43769
 msgid "下载 `OpenJDK17 <https://adoptium.net/temurin/releases/?variant=openjdk17&version=17&os=any&arch=any>`_"
 msgstr ""
 
 #: ../../source/export.rst:118
-#: 1f0c5ba913c14c6388a5b1fa40e699f8
+#: 4ff6520407ff4cdb84180877bd66e903
 msgid "下载 `Android SDK <https://developer.android.com/studio>`_"
 msgstr ""
 
 #: ../../source/export.rst:119
-#: 039d14cc264f45668c9f875e75348878
+#: b54fb8b75a3a471192b2ed35d483bb1e
 msgid "下载 `Gradle-8.11.1-bin <https://services.gradle.org/distributions/gradle-8.11.1-bin.zip>`_"
 msgstr ""
 
 #: ../../source/export.rst:120
-#: ae0e7eabaec846638a0f28d5ea9f3fb4
+#: 9a9b47956d80405fbdac29a9105939ba
 msgid "安装 Android 构建模板： **项目** > **安装 Android 模板**"
 msgstr ""
 
 #: ../../source/export.rst:125
-#: 648ac3e936dd45f8b4cd6678b2039d44
+#: b9d9d49c078e43f1a07a998862a57e49
 msgid "将 ``FMOD runtime library`` 和 ``libfmod_player.so`` 文件复制到 ``res://android/build/libs/debug/`` 和 ``res://android/build/libs/release/`` 目录下"
 msgstr ""
 
 #: ../../source/export.rst:126
-#: f80249ddc6b44fcfabda8434da53bb9a
+#: 099aac6f11114a0b83aad3089b3ffec9
 msgid "将 ``fmod.jar`` 添加到 ``res://android/build/libs/`` 目录，并在 ``res://android/build/build.gradle`` 中添加依赖："
 msgstr ""
 
 #: ../../source/export.rst:128
-#: 5bba3d8c6ffc4bbfb6fe77282b3717fc
+#: e65cba6d98684e5eae60358582e13215
 msgid "dependencies {\n"
 "    implementation files('libs/fmod.jar')\n"
 "}"
 msgstr ""
 
 #: ../../source/export.rst:134
-#: b0cd45d32546492390886b90f8c06691
+#: d78ab75532d94b50824367c759727c31
 msgid "在 ``res://android/build/src/main/java/com/godot/game/GodotApp.java`` 中加载 FMOD 库："
 msgstr ""
 
 #: ../../source/export.rst:136
-#: 903ddcdb7f0f4ec3bbaf415513107981
+#: 6b6a17b66a924a97b643166050001147
 msgid "@Override\n"
 "public void onCreate(Bundle savedInstanceState) {\n"
 "    // Decide according to your own situation whether to load debug or release version\n"
@@ -346,32 +346,32 @@ msgid "@Override\n"
 msgstr ""
 
 #: ../../source/export.rst:148
-#: e6fb6a18dee04aac98957b4b0c1268f7
+#: a5108c27731e4cb6a1dab2fbd6af0bde
 msgid "在导出设置中选择正确的架构（arm64-v8a）"
 msgstr ""
 
 #: ../../source/export.rst:149
-#: 5247b1c5723a4900838fe69de71a14f2
+#: 9b922448a3d746e386b264b8b8d29d5a
 msgid "选择 ``gradle_build/use_gradle_build`` 选项以使用 Gradle 构建系统"
 msgstr ""
 
 #: ../../source/export.rst:154
-#: ce6c48f8cddc40fca74e3a4fa886e8a6
+#: bffa46c6aa744911abec323c24694ffb
 msgid "导出 APK 或 AAB 文件"
 msgstr ""
 
 #: ../../source/export.rst:157
-#: 818e01bf168a49ce9aaf5ce84ab457fb
+#: d72d2e484741415699a99f4341eba02c
 msgid "GDExtension 配置"
 msgstr ""
 
 #: ../../source/export.rst:159
-#: fa718cadf75040268445d2aea6381b39
+#: 5ef0fb1b56604ed28db2d1cf99c3591c
 msgid "检查 ``fmod_player.gdextension`` 文件确保包含发布库路径："
 msgstr ""
 
 #: ../../source/export.rst:161
-#: ce073756ea0b47e3b5e2a43d90221553
+#: 4a09617bb2bf436a8cd2d355fb8d81e4
 msgid "[configuration]\n"
 "entry_symbol = \"example_library_init\"\n"
 "compatibility_minimum = \"4.1\"\n"
@@ -388,46 +388,46 @@ msgid "[configuration]\n"
 msgstr ""
 
 #: ../../source/export.rst:178
-#: d6d74af53a394942bebd369ebb96a7a6
+#: 762f7d0cbfbe462a8ded0614085d134e
 msgid "自定义构建"
 msgstr ""
 
 #: ../../source/export.rst:181
-#: 4fba4bc9b0b644549c7501d94d2a977f
+#: 8d7c7654715f4cd98fcdf283fa2cd51a
 msgid "从源码构建发布版"
 msgstr ""
 
 #: ../../source/export.rst:183
 #: ../../source/export.rst:234
-#: cdc0c0c105c7492dbc1fe7c2373ace41
-#: cdc0c0c105c7492dbc1fe7c2373ace41
+#: ddfaf0687d2743aca73370375754ff63
+#: b6e513e8a1d7489ba3e1d918628717ef
 msgid "**Windows：**"
 msgstr ""
 
 #: ../../source/export.rst:185
-#: 8c17b00c14054960bba295cf4acf39c8
+#: f6058e5fc66b42f0b134c3e74ab8af06
 msgid "scons platform=windows target=template_release arch=x86_64"
 msgstr ""
 
 #: ../../source/export.rst:189
 #: ../../source/export.rst:238
-#: f0a8183c5504491c901d3698a27866ff
-#: f0a8183c5504491c901d3698a27866ff
+#: 2dd8541839244d43ae9135fa7b01ada7
+#: 0966c84ff4bd4c028318b8ad2a083a1d
 msgid "**Android：**"
 msgstr ""
 
 #: ../../source/export.rst:191
-#: b4d20ce3c6cb40e49032953f3d4d5ae5
+#: 7679ce83f36d44d5b41dbcc9bf895bc9
 msgid "scons platform=android target=template_release arch=arm64"
 msgstr ""
 
 #: ../../source/export.rst:196
-#: 56e08e82a4924987a31398786d76ed8d
+#: 959f13a08ea442319f314144cceefcd5
 msgid "优化选项"
 msgstr ""
 
 #: ../../source/export.rst:198
-#: 50639929a0364b2f98608ac0380393da
+#: ef3caaa4b8844b02b14d8fa7b2f92707
 msgid "# 在 SConstruct 中添加优化选项\n"
 "# 发布版默认启用优化\n"
 "\n"
@@ -437,264 +437,264 @@ msgid "# 在 SConstruct 中添加优化选项\n"
 msgstr ""
 
 #: ../../source/export.rst:208
-#: 545c31987fd24f47828bd85597a78d57
+#: ad4765af0fb14e96b00831ea983603c2
 msgid "调试导出问题"
 msgstr ""
 
 #: ../../source/export.rst:211
-#: 5c8f67f0ca1c46e3b828a367374c3547
+#: 6858e213fecd4fb89aeda32f861b6b7f
 msgid "常见问题"
 msgstr ""
 
 #: ../../source/export.rst:213
-#: a1cb1fad8e234bc49df83cae02db3749
+#: 8c6e6613174d41dc92f2f057714c5a1a
 msgid "**FMOD 初始化失败**"
 msgstr ""
 
 #: ../../source/export.rst:215
-#: 339a95c610494141a525b5e41350ae56
+#: 61a6015d06ad4bc3b6b3f069a8936844
 msgid "检查 ``fmod.dll`` 是否在可执行文件同目录"
 msgstr ""
 
 #: ../../source/export.rst:216
-#: d0c73aff601d4d1d8142ee03abce3cef
+#: 2d7c690fce8244b9baf013740f7712b1
 msgid "检查音频设备是否正常工作"
 msgstr ""
 
 #: ../../source/export.rst:217
-#: daed6f39c5c74b92ad6bd95193339a38
+#: fb5709dc501d4886a4e9cd57cec45095
 msgid "查看 Godot 控制台错误输出"
 msgstr ""
 
 #: ../../source/export.rst:219
-#: 0ad36a243b814b6b8ccb3831314aeea3
+#: 0a338f1328a944ef90de599409f49b0b
 msgid "**找不到 GDExtension**"
 msgstr ""
 
 #: ../../source/export.rst:221
-#: ee6abfe7fa2f485cb8c84261b2dc5b12
+#: 6889a093daa24d4e9b40d6701b5d453b
 msgid "确认 ``.gdextension`` 文件路径正确"
 msgstr ""
 
 #: ../../source/export.rst:222
-#: 5322b9659ab44d6f94c3d4b223c4aa23
+#: 3bd59539a5c4480c918f121a03dcb33d
 msgid "检查对应平台的 DLL/SO 文件是否存在"
 msgstr ""
 
 #: ../../source/export.rst:223
-#: 4b80e6df749d4ed19cd8dd24b6bcc2a0
+#: bb4ff5a354c04b02ae6e7fe16b20a99f
 msgid "检查 Godot 版本兼容性"
 msgstr ""
 
 #: ../../source/export.rst:225
-#: a4130bc681504173a1c7d12870925733
+#: 8a95449f94a14a17a3d5ba628afc3902
 msgid "**Android 崩溃**"
 msgstr ""
 
 #: ../../source/export.rst:227
-#: f45c79a22ca64b6d95cb8db9667b321b
+#: d71541c2b79443fe8423270575675bbe
 msgid "确认所有必要的 ``.so`` 文件已打包"
 msgstr ""
 
 #: ../../source/export.rst:228
-#: d4c6c630153d4a33ae9c839b875196d4
+#: 4ae88ff8545b43b8b96c85e6c844b495
 msgid "检查 ABI 架构匹配"
 msgstr ""
 
 #: ../../source/export.rst:229
-#: eec58e2330c24cb4b94dcff31da35b41
+#: cb3d60842cf34fc09eeda584cc0e2376
 msgid "查看 Android Logcat 日志"
 msgstr ""
 
 #: ../../source/export.rst:232
-#: 2d01b7870b9b4e788be311f35677ef36
+#: f5736d056e4544d1971178930a7e0934
 msgid "日志查看"
 msgstr ""
 
 #: ../../source/export.rst:236
-#: 4c9fa4412f454075a92492fbfed33211
+#: fe2548ad47cb4b388ca5c4ddaed6c042
 msgid "使用 Godot 编辑器的 **输出** 面板或命令行启动查看日志。"
 msgstr ""
 
 #: ../../source/export.rst:240
-#: 3cdc33d078a44bb993471d8cefcf008c
+#: f5ced1ae7da74548a681eb268572184d
 msgid "adb logcat -s godot\n"
 "adb logcat | grep FMOD"
 msgstr ""
 
 #: ../../source/export.rst:246
-#: 01e0af9ece944f47804f06c2033c34dd
+#: b3339fa536e24ea8a7bd6918d9aed317
 msgid "性能优化"
 msgstr ""
 
 #: ../../source/export.rst:249
-#: cdb9c864f3114c86ad72484006a7bff1
+#: 58801a9708384b7486babb4eeb1c5b4f
 msgid "导出前优化建议"
 msgstr ""
 
 #: ../../source/export.rst:251
-#: d03a78fb85c14abfa6b31735733401b8
+#: 4d9fd953ecea451b95867bcbc1366724
 msgid "**音频格式优化**"
 msgstr ""
 
 #: ../../source/export.rst:253
-#: 1363dbd2e3754dcf89bfeb41bf83fac7
+#: fcc9887f575442e88a9783118a486067
 msgid "背景音乐使用 OGG Vorbis（压缩率高）"
 msgstr ""
 
 #: ../../source/export.rst:254
-#: e07e0fbbffd140269217a03a51a44963
+#: ffe0a91ba27448e7b24ea50cfbfb8f52
 msgid "音效使用短 WAV 或 OGG"
 msgstr ""
 
 #: ../../source/export.rst:255
-#: a7e5da6d260a4cfda7572939e5d8281f
+#: da5d50df06b043f5815cf5965cf7c3b5
 msgid "避免使用未压缩的大 WAV 文件"
 msgstr ""
 
 #: ../../source/export.rst:257
-#: 9128e444d5744e4ba0f5ec00896186a4
+#: 5e44673e3348458ea5a664d67f6f781e
 msgid "**流式 vs 采样**"
 msgstr ""
 
 #: ../../source/export.rst:259
-#: 1e6fb5a8fce545b78f9b1d0148e3508b
+#: eef09eca5954426d8907dd012e237212
 msgid "大文件使用 ``FmodAudioStream``"
 msgstr ""
 
 #: ../../source/export.rst:260
-#: 4b108d9cf1ef4a50b3f7a78f9148832a
+#: 4254059d8366450ca2164f179df3ece8
 msgid "音效使用 ``FmodAudioSample``"
 msgstr ""
 
 #: ../../source/export.rst:262
-#: 37239ebe30fe407394188ec2baedcb6e
+#: b5d462b11c974a5eb79e27e24cd863bb
 msgid "**DSP 效果**"
 msgstr ""
 
 #: ../../source/export.rst:264
-#: 2b5ce448d3094f10a6c393d6f8d30b2a
+#: 21cfd38f7fba4704b1c786ca8e88d855
 msgid "移动设备减少 DSP 使用"
 msgstr ""
 
 #: ../../source/export.rst:265
-#: 35cf1c44220b4489b264a074caabdef1
+#: 56a1a8e1e56140dcae29fb160b0324e7
 msgid "在总线上共享效果器"
 msgstr ""
 
 #: ../../source/export.rst:267
-#: 9a4cc7b1188b4afea1aa499e548244ff
+#: 4029b024044041baa5d50d8242517b3e
 msgid "**通道数限制**"
 msgstr ""
 
 #: ../../source/export.rst:269
-#: f339d17553c04b2fb2c0321a8a3c1f58
+#: cf7c28ccb89e419eae3350a2ca67abc4
 msgid "设置合理的 ``max_channels``"
 msgstr ""
 
 #: ../../source/export.rst:270
-#: 8f259b6214a94790a80f94c55d49de62
+#: 63ffd8e7a25a4fcc95102cf3072fa140
 msgid "使用虚拟语音系统"
 msgstr ""
 
 #: ../../source/export.rst:273
-#: ea25687a10cb45dea90cb78bd08790ba
+#: 1ad87795d00e47edbf81e600562f9070
 msgid "发布清单"
 msgstr ""
 
 #: ../../source/export.rst:276
-#: e39131b95d0a4c51ac12f65475c0a085
+#: d83b938acaab497b988ac849fff77d41
 msgid "Windows 发布检查"
 msgstr ""
 
 #: ../../source/export.rst:278
-#: 471c773734a64271a3a6b7d6e930fde7
+#: 351a0db29dc14fbb9dec5c104e77303f
 msgid "[ ] ``fmod_player.windows.template_release.x86_64.dll``"
 msgstr ""
 
 #: ../../source/export.rst:279
-#: 0c95e39bb6bb4049886e403f0c8e1385
+#: 96330b6e57334cc5a30c78344a98f617
 msgid "[ ] ``fmod.dll`` （发布版，非 fmodL.dll）"
 msgstr ""
 
 #: ../../source/export.rst:280
 #: ../../source/export.rst:289
-#: b2a3390b6dd14edf901e2ffc15ef1c2d
-#: b2a3390b6dd14edf901e2ffc15ef1c2d
+#: db753add9f0141788c6badd33aec6231
+#: 37b04898907949949c5964b1ad289321
 msgid "[ ] ``fmod_player.gdextension``"
 msgstr ""
 
 #: ../../source/export.rst:281
-#: 3e94284304f942f092c0f5a1d387ef1f
+#: 805c9e538437401c80bd7f8354367e82
 msgid "[ ] 所有音频资源已包含"
 msgstr ""
 
 #: ../../source/export.rst:282
-#: 25a1e43bc3124f1fbb2814c0df57f11b
+#: f54c8d9cc5c3430eadd4cfcfabc13729
 msgid "[ ] 测试音频播放正常"
 msgstr ""
 
 #: ../../source/export.rst:285
-#: cdcf062972c2406e954b64d3bbc954bc
+#: 83e91334e7074667b4ef0aace0d4ca82
 msgid "Android 发布检查"
 msgstr ""
 
 #: ../../source/export.rst:287
-#: 52604f9351ec4eb09aff41401ec4d81d
+#: cc10cbfae4a14ca893cd04ff62248012
 msgid "[ ] ``libfmod_player.android.template_release.arm64.so``"
 msgstr ""
 
 #: ../../source/export.rst:288
-#: e6c83d15ca5b4e7ca790f8fc0073c94a
+#: d9dd574725884b24b99557552f520ba9
 msgid "[ ] ``libfmod.so`` 已打包"
 msgstr ""
 
 #: ../../source/export.rst:290
-#: 0345bb28d529461381b03cf9e0fe6c04
+#: 3a460716d1254278abc66b9ead3f15ee
 msgid "[ ] 目标架构设置正确"
 msgstr ""
 
 #: ../../source/export.rst:291
-#: 17b5d64bb3124c4189894353ffe4957e
+#: 79e6e2cbaa85408a92924222ddf0bbde
 msgid "[ ] 权限配置（如需录音功能）"
 msgstr ""
 
 #: ../../source/export.rst:294
-#: ab93db7369a34a76b37e9cdbeddb4ca3
+#: f9c9544d2f7a4acf94202849276027c0
 msgid "许可证合规"
 msgstr ""
 
 #: ../../source/export.rst:297
-#: 76aaf60ccdd64425b939df8fc7cc0142
+#: 473a158be7734e7d8d23f17e57bb8f60
 msgid "FMOD 许可"
 msgstr ""
 
 #: ../../source/export.rst:299
-#: 5788fed5afe745d9b599d11bbebc281b
+#: 8803941bc6e843209693d7b257670678
 msgid "FMOD 是 Firelight Technologies Pty Ltd 的专有音频引擎"
 msgstr ""
 
 #: ../../source/export.rst:300
-#: fda6f17694154483819458dfc46903ef
+#: 01c78ad76e3a4a039df9c9db9b06537b
 msgid "非商业项目可以免费使用"
 msgstr ""
 
 #: ../../source/export.rst:301
-#: ef4f0bedffdb4b15b2c1b9982333a55c
+#: daae8e7988b44338aa1e453d327b0b4d
 msgid "商业项目需要从 `fmod.com <https://www.fmod.com>`_ 获取许可证"
 msgstr ""
 
 #: ../../source/export.rst:302
-#: 5d5539f386dc4d178bbf6d580a1f65a6
+#: 73d27ed44e0c4d649d77f117b42503cd
 msgid "需要在游戏中显示 FMOD 署名（非商业）"
 msgstr ""
 
 #: ../../source/export.rst:305
-#: 665ded325e49453daf8f677c3c9fd40e
+#: 39e9f940bcf148ff9cacde9eb42c9166
 msgid "MIT 许可"
 msgstr ""
 
 #: ../../source/export.rst:307
-#: fe530152e5a440a6a3d60797ff1bf05f
+#: e01a0babbc62485abde94800c523287b
 msgid "Godot-FmodPlayer 插件本身使用 MIT 许可证，可以自由使用和修改。"
 msgstr ""

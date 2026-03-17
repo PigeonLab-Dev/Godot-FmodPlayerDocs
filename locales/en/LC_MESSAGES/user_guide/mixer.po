@@ -22,51 +22,51 @@ msgstr ""
 
 #: ../../source/user_guide/mixer.rst:2 4a17d57dfe7b40fda8c8b436bbdecd5a
 msgid "混音系统"
-msgstr ""
+msgstr "Mixer System"
 
 #: ../../source/user_guide/mixer.rst:4 0a27b96e568140eaa786aa15cf773349
 msgid "Godot-FmodPlayer 提供专业级的混音系统，支持音频总线、通道组和实时参数调整。"
-msgstr ""
+msgstr "Godot-FmodPlayer provides a professional-grade mixing system supporting audio buses, channel groups, and real-time parameter adjustment."
 
 #: ../../source/user_guide/mixer.rst:7 8e24854318d74d059d6a2d95cd448609
 msgid "核心概念"
-msgstr ""
+msgstr "Core Concepts"
 
 #: ../../source/user_guide/mixer.rst:10 f653e463ba404440a6e1ec4c816dc834
 msgid "音频总线（Audio Bus）"
-msgstr ""
+msgstr "Audio Bus"
 
 #: ../../source/user_guide/mixer.rst:12 c1fc69a983fd4e33b7bef4ae1e7ec325
 msgid "音频总线是混音系统的基本单元，用于组织和控制一组音频通道。每个总线都有自己的音量、效果和路由设置。"
-msgstr ""
+msgstr "Audio buses are the fundamental units of the mixing system, used to organize and control a group of audio channels. Each bus has its own volume, effects, and routing settings."
 
 #: ../../source/user_guide/mixer.rst:15 35f55d5bad5047b68870b0dc2428c24a
 msgid "通道组（Channel Group）"
-msgstr ""
+msgstr "Channel Group"
 
 #: ../../source/user_guide/mixer.rst:17 533c1699b8564e59b0931c6fb768071b
 msgid "通道组是 FMOD 底层的混音概念，``FmodAudioBus`` 对其进行了包装，提供更友好的接口。"
-msgstr ""
+msgstr "Channel groups are the underlying mixing concept in FMOD, wrapped by ``FmodAudioBus`` to provide a more user-friendly interface."
 
 #: ../../source/user_guide/mixer.rst:20 93dbc6f44d11493bb67feeeccc0b31ab
 msgid "总线布局（Bus Layout）"
-msgstr ""
+msgstr "Bus Layout"
 
 #: ../../source/user_guide/mixer.rst:22 d42be191c8614f738ed0960b955c204f
 msgid "总线布局定义了项目中所有音频总线的结构，与 Godot 的 AudioServer 同步。"
-msgstr ""
+msgstr "Bus layout defines the structure of all audio buses in the project, synchronized with Godot's AudioServer."
 
 #: ../../source/user_guide/mixer.rst:25 08a28867296d4abc9723cb8ca0f7689b
 msgid "使用音频总线"
-msgstr ""
+msgstr "Using Audio Buses"
 
 #: ../../source/user_guide/mixer.rst:28 549a06e63b5e4a3caa07d24593af9529
 msgid "默认总线结构"
-msgstr ""
+msgstr "Default Bus Structure"
 
 #: ../../source/user_guide/mixer.rst:30 7de4bacaa37849478c07004de130ac94
 msgid "插件初始化时会创建与 Godot AudioServer 同步的总线结构::"
-msgstr ""
+msgstr "The plugin creates a bus structure synchronized with Godot AudioServer during initialization::"
 
 #: ../../source/user_guide/mixer.rst:32 42593676d9da4a69a4cadc78412c853a
 msgid ""
@@ -76,10 +76,15 @@ msgid ""
 "├── Voice\n"
 "└── Ambient"
 msgstr ""
+"Master\n"
+"├── Music\n"
+"├── SFX\n"
+"├── Voice\n"
+"└── Ambient"
 
 #: ../../source/user_guide/mixer.rst:39 838d7b8a25d749609ac3480257ec416b
 msgid "将声音路由到总线"
-msgstr ""
+msgstr "Routing Sound to Buses"
 
 #: ../../source/user_guide/mixer.rst:41 bd18a71dc5774f8f89b49cc1cab166c0
 msgid ""
@@ -99,10 +104,25 @@ msgid ""
 "    var sound = system.create_sound_from_file(\"res://sfx/hit.wav\")\n"
 "    var channel = system.play_sound(sound, sfx_bus, false)"
 msgstr ""
+"extends Node\n"
+"\n"
+"@onready var player = $FmodAudioStreamPlayer\n"
+"\n"
+"func _ready():\n"
+"    # Method 1: Via node property\n"
+"    player.bus = \"Music\"\n"
+"\n"
+"func play_on_bus():\n"
+"    # Method 2: Specify when playing via code\n"
+"    var system = FmodServer.main_system\n"
+"    var sfx_bus = system.get_channel_group_by_name(\"SFX\")\n"
+"\n"
+"    var sound = system.create_sound_from_file(\"res://sfx/hit.wav\")\n"
+"    var channel = system.play_sound(sound, sfx_bus, false)"
 
 #: ../../source/user_guide/mixer.rst:60 6451220004244c2cae7133615d4653d5
 msgid "控制总线参数"
-msgstr ""
+msgstr "Controlling Bus Parameters"
 
 #: ../../source/user_guide/mixer.rst:62 4b83c00b66414ddbb2cd369278e1445b
 msgid ""
@@ -122,14 +142,29 @@ msgid ""
 "    # 暂停该总线下所有通道\n"
 "    music_bus.set_paused(true)"
 msgstr ""
+"func control_bus():\n"
+"    var system = FmodServer.main_system\n"
+"    var music_bus = system.get_channel_group_by_name(\"Music\")\n"
+"\n"
+"    # Set volume (decibels)\n"
+"    music_bus.set_volume_db(-12.0)\n"
+"\n"
+"    # Mute\n"
+"    music_bus.set_mute(true)\n"
+"\n"
+"    # Solo (mute other buses)\n"
+"    music_bus.set_solo(true)\n"
+"\n"
+"    # Pause all channels under this bus\n"
+"    music_bus.set_paused(true)"
 
 #: ../../source/user_guide/mixer.rst:81 41a060cc6a8445e780015be9e603c2c5
 msgid "自定义总线布局"
-msgstr ""
+msgstr "Custom Bus Layout"
 
 #: ../../source/user_guide/mixer.rst:84 b2259f1713e24d82a321092c4e3af0d1
 msgid "创建总线"
-msgstr ""
+msgstr "Creating Buses"
 
 #: ../../source/user_guide/mixer.rst:86 deacc98160a34170a95d0ecd6c7a2d1b
 msgid ""
@@ -142,10 +177,18 @@ msgid ""
 "    # 设置初始音量\n"
 "    ui_bus.set_volume_db(-6.0)"
 msgstr ""
+"func create_custom_bus():\n"
+"    var layout = FmodServer.get_audio_bus_layout()\n"
+"\n"
+"    # Create new bus under Master\n"
+"    var ui_bus = layout.create_audio_bus(\"UI\", \"Master\")\n"
+"\n"
+"    # Set initial volume\n"
+"    ui_bus.set_volume_db(-6.0)"
 
 #: ../../source/user_guide/mixer.rst:98 8bccbb5d643c443b9232b43774c9f8ab
 msgid "嵌套总线"
-msgstr ""
+msgstr "Nested Buses"
 
 #: ../../source/user_guide/mixer.rst:100 cf6d733990b54cf7a3109d56da6242a8
 msgid ""
@@ -160,10 +203,20 @@ msgid ""
 "    # Master -> SFX -> Weapons\n"
 "    #            -> Footsteps"
 msgstr ""
+"func create_nested_buses():\n"
+"    var layout = FmodServer.get_audio_bus_layout()\n"
+"\n"
+"    # Create SFX sub-buses\n"
+"    var weapon_bus = layout.create_audio_bus(\"Weapons\", \"SFX\")\n"
+"    var footstep_bus = layout.create_audio_bus(\"Footsteps\", \"SFX\")\n"
+"\n"
+"    # Create hierarchy\n"
+"    # Master -> SFX -> Weapons\n"
+"    #            -> Footsteps"
 
 #: ../../source/user_guide/mixer.rst:114 29c4531437554966a932761c2b8cf78f
 msgid "程序化总线管理"
-msgstr ""
+msgstr "Programmatic Bus Management"
 
 #: ../../source/user_guide/mixer.rst:116 7cb77db360d5428e927cda7c3de14e73
 #, python-brace-format
@@ -207,14 +260,52 @@ msgid ""
 "            bus.set_volume_db(bus_volumes[name])\n"
 "        bus.set_mute(false)"
 msgstr ""
+"extends Node\n"
+"\n"
+"var bus_volumes: Dictionary = {}\n"
+"\n"
+"func _ready():\n"
+"    # Save original volumes\n"
+"    save_bus_volumes()\n"
+"\n"
+"func save_bus_volumes():\n"
+"    var system = FmodServer.main_system\n"
+"    var master = system.get_master_channel_group()\n"
+"\n"
+"    # Iterate through all sub-buses\n"
+"    var num_buses = master.get_num_groups()\n"
+"    for i in range(num_buses):\n"
+"        var bus = master.get_group(i)\n"
+"        bus_volumes[bus.get_name()] = bus.get_volume_db()\n"
+"\n"
+"func mute_all_except(bus_name: String):\n"
+"    var system = FmodServer.main_system\n"
+"    var master = system.get_master_channel_group()\n"
+"\n"
+"    var num_buses = master.get_num_groups()\n"
+"    for i in range(num_buses):\n"
+"        var bus = master.get_group(i)\n"
+"        bus.set_mute(bus.get_name() != bus_name)\n"
+"\n"
+"func restore_all_buses():\n"
+"    var system = FmodServer.main_system\n"
+"    var master = system.get_master_channel_group()\n"
+"\n"
+"    var num_buses = master.get_num_groups()\n"
+"    for i in range(num_buses):\n"
+"        var bus = master.get_group(i)\n"
+"        var name = bus.get_name()\n"
+"        if bus_volumes.has(name):\n"
+"            bus.set_volume_db(bus_volumes[name])\n"
+"        bus.set_mute(false)"
 
 #: ../../source/user_guide/mixer.rst:158 fa0c6a92886b416099e236dddf6e7a84
 msgid "混音技术"
-msgstr ""
+msgstr "Mixing Techniques"
 
 #: ../../source/user_guide/mixer.rst:161 5b5705a3dd4241bbb355034f032cc626
 msgid "淡入淡出"
-msgstr ""
+msgstr "Fade In/Out"
 
 #: ../../source/user_guide/mixer.rst:163 e8221069449441aa857d90d599822c22
 msgid ""
@@ -238,14 +329,33 @@ msgid ""
 "        var current_db = lerp(start_db, target_db, t)\n"
 "        bus.set_volume_db(current_db)"
 msgstr ""
+"func fade_bus(bus_name: String, target_db: float, duration: float):\n"
+"    var system = FmodServer.main_system\n"
+"    var bus = system.get_channel_group_by_name(bus_name)\n"
+"\n"
+"    var tween = create_tween()\n"
+"    tween.set_trans(Tween.TRANS_LINEAR)\n"
+"    tween.set_ease(Tween.EASE_IN_OUT)\n"
+"\n"
+"    # Note: Custom volume interpolation method needed here\n"
+"    # because ChannelGroup doesn't support direct tweening\n"
+"    var start_db = bus.get_volume_db()\n"
+"    var elapsed = 0.0\n"
+"\n"
+"    while elapsed < duration:\n"
+"        await get_tree().process_frame\n"
+"        elapsed += get_process_delta_time()\n"
+"        var t = elapsed / duration\n"
+"        var current_db = lerp(start_db, target_db, t)\n"
+"        bus.set_volume_db(current_db)"
 
 #: ../../source/user_guide/mixer.rst:186 ff2c07488c90497d969f92d50ab3b33e
 msgid "侧链压缩（Ducking）"
-msgstr ""
+msgstr "Sidechain Compression (Ducking)"
 
 #: ../../source/user_guide/mixer.rst:188 4bb14c33d6cf4b06b2ada24716fc492b
 msgid "当语音播放时自动降低音乐音量："
-msgstr ""
+msgstr "Automatically reduce music volume when voice plays:"
 
 #: ../../source/user_guide/mixer.rst:190 3c6d753408394c3bae48d33e9dde92e7
 msgid ""
@@ -282,14 +392,46 @@ msgid ""
 "    var target_db = ducked_music_db if duck else normal_music_db\n"
 "    fade_bus(\"Music\", target_db, 0.3)"
 msgstr ""
+"extends Node\n"
+"\n"
+"@onready var voice_player = $VoicePlayer\n"
+"var music_bus: FmodChannelGroup\n"
+"var normal_music_db: float = 0.0\n"
+"var ducked_music_db: float = -12.0\n"
+"\n"
+"func _ready():\n"
+"    var system = FmodServer.main_system\n"
+"    music_bus = system.get_channel_group_by_name(\"Music\")\n"
+"    normal_music_db = music_bus.get_volume_db()\n"
+"\n"
+"func play_voice(path: String):\n"
+"    # Duck music\n"
+"    duck_music(true)\n"
+"\n"
+"    # Play voice\n"
+"    var system = FmodServer.main_system\n"
+"    var voice_bus = system.get_channel_group_by_name(\"Voice\")\n"
+"    var sound = system.create_sound_from_file(path)\n"
+"    var channel = system.play_sound(sound, voice_bus, false)\n"
+"\n"
+"    # Wait for voice to finish\n"
+"    while channel.is_playing():\n"
+"        await get_tree().process_frame\n"
+"\n"
+"    # Restore music\n"
+"    duck_music(false)\n"
+"\n"
+"func duck_music(duck: bool):\n"
+"    var target_db = ducked_music_db if duck else normal_music_db\n"
+"    fade_bus(\"Music\", target_db, 0.3)"
 
 #: ../../source/user_guide/mixer.rst:226 c1f5176179ed4740b6957141e6b6745c
 msgid "快照系统（Mix Snapshots）"
-msgstr ""
+msgstr "Mix Snapshots"
 
 #: ../../source/user_guide/mixer.rst:228 5dfbddaca5754258820db687d80af926
 msgid "保存和恢复混音状态："
-msgstr ""
+msgstr "Save and restore mixing states:"
 
 #: ../../source/user_guide/mixer.rst:230 e8f87556de1247bb8856e86c494c8a03
 #, python-brace-format
@@ -325,18 +467,48 @@ msgid ""
 "            else:\n"
 "                bus.set_volume_db(bus_volumes[bus_name])"
 msgstr ""
+"class_name MixSnapshot\n"
+"extends RefCounted\n"
+"\n"
+"var bus_volumes: Dictionary = {}\n"
+"var bus_effects: Dictionary = {}\n"
+"\n"
+"static func capture() -> MixSnapshot:\n"
+"    var snapshot = MixSnapshot.new()\n"
+"    var system = FmodServer.main_system\n"
+"    var master = system.get_master_channel_group()\n"
+"\n"
+"    var num_buses = master.get_num_groups()\n"
+"    for i in range(num_buses):\n"
+"        var bus = master.get_group(i)\n"
+"        var name = bus.get_name()\n"
+"        snapshot.bus_volumes[name] = bus.get_volume_db()\n"
+"\n"
+"    return snapshot\n"
+"\n"
+"func apply(duration: float = 0.0):\n"
+"    var system = FmodServer.main_system\n"
+"\n"
+"    for bus_name in bus_volumes:\n"
+"        var bus = system.get_channel_group_by_name(bus_name)\n"
+"        if bus:\n"
+"            if duration > 0:\n"
+"                # Use tween for transition\n"
+"                pass  # Implement fade in/out\n"
+"            else:\n"
+"                bus.set_volume_db(bus_volumes[bus_name])"
 
 #: ../../source/user_guide/mixer.rst:263 36da5422cbb04d82942376fe4bf447a1
 msgid "# 使用示例 var gameplay_snapshot: MixSnapshot var pause_snapshot: MixSnapshot"
-msgstr ""
+msgstr "# Usage example var gameplay_snapshot: MixSnapshot var pause_snapshot: MixSnapshot"
 
 #: ../../source/user_guide/mixer.rst:267 802e64503e7040169cce4567cbe523e8
 msgid "func _ready():"
-msgstr ""
+msgstr "func _ready():"
 
 #: ../../source/user_guide/mixer.rst:268 63580c9ffeb54eb5be36d3fba93ecff9
 msgid "gameplay_snapshot = MixSnapshot.capture()"
-msgstr ""
+msgstr "gameplay_snapshot = MixSnapshot.capture()"
 
 #: ../../source/user_guide/mixer.rst:270 c6cfc8a20cc044f6a9b6fb45747f7b12
 msgid ""
@@ -344,42 +516,45 @@ msgid ""
 "system.get_channel_group_by_name(\"Music\") var sfx = "
 "system.get_channel_group_by_name(\"SFX\")"
 msgstr ""
+"# Create mix state for pause var system = FmodServer.main_system var music = "
+"system.get_channel_group_by_name(\"Music\") var sfx = "
+"system.get_channel_group_by_name(\"SFX\")"
 
 #: ../../source/user_guide/mixer.rst:275 551901b7b25747b4bb7fee30d6ca3c8b
 msgid "music.set_volume_db(-6.0) sfx.set_mute(true)"
-msgstr ""
+msgstr "music.set_volume_db(-6.0) sfx.set_mute(true)"
 
 #: ../../source/user_guide/mixer.rst:278 ac581fb574e34d249a6c0dc1980433bf
 msgid "pause_snapshot = MixSnapshot.capture()"
-msgstr ""
+msgstr "pause_snapshot = MixSnapshot.capture()"
 
 #: ../../source/user_guide/mixer.rst:280 b9172eeb3b734cb3a7bc299828bef571
 msgid "# 恢复游戏状态 gameplay_snapshot.apply()"
-msgstr ""
+msgstr "# Restore gameplay state gameplay_snapshot.apply()"
 
 #: ../../source/user_guide/mixer.rst:283 fa167bd797cf4c039747053b42b7ebd0
 msgid "func on_game_paused():"
-msgstr ""
+msgstr "func on_game_paused():"
 
 #: ../../source/user_guide/mixer.rst:284 3c70dcb7814c49b09eff4139795417e9
 msgid "pause_snapshot.apply(0.5)  # 0.5秒过渡"
-msgstr ""
+msgstr "pause_snapshot.apply(0.5)  # 0.5 second transition"
 
 #: ../../source/user_guide/mixer.rst:286 d311566d9f05416bb3ef1d12a593c8db
 msgid "func on_game_resumed():"
-msgstr ""
+msgstr "func on_game_resumed():"
 
 #: ../../source/user_guide/mixer.rst:287 d11b9bf8ca5b43b2b556fdba430c06b4
 msgid "gameplay_snapshot.apply(0.5)"
-msgstr ""
+msgstr "gameplay_snapshot.apply(0.5)"
 
 #: ../../source/user_guide/mixer.rst:290 5d74e32ec95a43e7939e9be3ee6e7829
 msgid "性能监控"
-msgstr ""
+msgstr "Performance Monitoring"
 
 #: ../../source/user_guide/mixer.rst:292 4121b6a0818a45f79bf37dea316a3929
 msgid "使用 Godot Performance 监视器查看混音性能："
-msgstr ""
+msgstr "Use Godot Performance monitor to view mixing performance:"
 
 #: ../../source/user_guide/mixer.rst:294 0ec1fbd7cfc5461e80d9a8cb3aa12ef5
 #, python-format
@@ -399,48 +574,62 @@ msgid ""
 "        channels[\"virtual\"]\n"
 "    ])"
 msgstr ""
+"func _process(delta):\n"
+"    # Get CPU usage\n"
+"    var dsp_usage = Performance.get_monitor(\"FmodCPUUsage/DSP\")\n"
+"    var stream_usage = Performance.get_monitor(\"FmodCPUUsage/Stream\")\n"
+"\n"
+"    # Get channel statistics\n"
+"    var system = FmodServer.main_system\n"
+"    var channels = system.get_channels_playing()\n"
+"\n"
+"    print(\"DSP: %.2f%% | Real channels: %d | Virtual: %d\" % [\n"
+"        dsp_usage,\n"
+"        channels[\"real\"],\n"
+"        channels[\"virtual\"]\n"
+"    ])"
 
 #: ../../source/user_guide/mixer.rst:312 1f9b75784f084778abd76a7e9808e9b7
 msgid "最佳实践"
-msgstr ""
+msgstr "Best Practices"
 
 #: ../../source/user_guide/mixer.rst:314 d9a80d229397416f962990aa053f56d3
 msgid "**规划总线结构** - 在项目早期设计好总线层级"
-msgstr ""
+msgstr "**Plan bus structure** - Design bus hierarchy early in the project"
 
 #: ../../source/user_guide/mixer.rst:315 daef9ee2ee6c4c56ba4c9381bfbcebb4
 msgid "**标准化命名** - 使用统一的命名规范（如 \"Music\", \"SFX\", \"Voice\"）"
-msgstr ""
+msgstr "**Standardize naming** - Use consistent naming conventions (e.g., \"Music\", \"SFX\", \"Voice\")"
 
 #: ../../source/user_guide/mixer.rst:316 e7fadd506fb74bc4964b412a2d969d65
 msgid "**默认音量归一化** - 所有总线默认 0 dB，通过调整音频文件本身来平衡"
-msgstr ""
+msgstr "**Normalize default volume** - All buses default to 0 dB, balance by adjusting audio files themselves"
 
 #: ../../source/user_guide/mixer.rst:317 267cb46637944c9d8a3ab94127353c6f
 msgid "**使用快照管理状态** - 为不同游戏状态（游戏、暂停、菜单）创建混音快照"
-msgstr ""
+msgstr "**Use snapshots for state management** - Create mix snapshots for different game states (gameplay, pause, menu)"
 
 #: ../../source/user_guide/mixer.rst:318 9d3eb7f1d1894be38bd16aecf762e966
 msgid "**避免过多总线** - 总线过多会增加 CPU 开销，保持简洁的层级结构"
-msgstr ""
+msgstr "**Avoid too many buses** - Too many buses increase CPU overhead, keep hierarchy simple"
 
 #: ../../source/user_guide/mixer.rst:321 bfc22d5da82a42518c4ccc8fe35a0fbc
 msgid "注意事项"
-msgstr ""
+msgstr "Notes"
 
 #: ../../source/user_guide/mixer.rst:323 5bc7767b486f4c3bae2422e9ac3b3203
 msgid "总线布局与 Godot AudioServer 同步，修改一个会影响另一个"
-msgstr ""
+msgstr "Bus layout is synchronized with Godot AudioServer, modifying one affects the other"
 
 #: ../../source/user_guide/mixer.rst:324 e6965a721f9743e1b325d5cac5e66b68
 msgid "通道组可以嵌套，但建议保持层级不要太深"
-msgstr ""
+msgstr "Channel groups can be nested, but keep hierarchy shallow"
 
 #: ../../source/user_guide/mixer.rst:325 be0929a2c23a4f5d97cd842d2828898b
 msgid "静音和独奏是独立的状态，可以同时设置"
-msgstr ""
+msgstr "Mute and solo are independent states, can be set simultaneously"
 
 #: ../../source/user_guide/mixer.rst:326 99affbbcadc948a4bb1573795518d280
 msgid "3D 衰减在通道级别计算，在总线级别混合"
-msgstr ""
+msgstr "3D attenuation is calculated at channel level, mixed at bus level"
 

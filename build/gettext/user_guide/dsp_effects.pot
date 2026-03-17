@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Godot FmodPlayer \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-13 11:19+0800\n"
+"POT-Creation-Date: 2026-03-17 19:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,307 +17,307 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/user_guide/dsp_effects.rst:2
-#: dd6943a3effd4b4183060569633d6eca
+#: dccc95ecbe8c4fe59662899959bbd15a
 msgid "DSP 效果器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:4
-#: 0b75daf14a024bdd9fec512246c6bae5
+#: df9f204e3b93440fbedda9cb36c9491b
 msgid "Godot-FmodPlayer 内置 16+ 种专业级 DSP（数字信号处理）效果器，用于实时音频处理。"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:7
-#: 43629f3c471348a480f0607623ee044f
+#: 0d25da224dbc4b87b9747b5bc478a4a4
 msgid "DSP 类型"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:10
-#: f6ad6dde977941bd85b1481a72fb0d1b
+#: 6f3b863d40354202b088f31742f0cff2
 msgid "效果器列表"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:15
-#: 78bd649d209b45fb806e22ec88eb8df2
+#: 4b5786a873394db3b85fadbda8a4f87c
 msgid "效果器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:16
-#: 88c01561cc144f919ca6d501c06a3e15
+#: 9c117b2b20904c73bf5634842dda5501
 msgid "类型常量"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:17
-#: 3cae6b4224674897873ab472c71946f6
+#: a4664d88e0e24ec69c317b1a5fabc17e
 msgid "说明"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:18
-#: fc1886d2ef894f908b35ec03a10a1dcb
+#: c71877c713074e848af0c4b0342477ef
 msgid "增益"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:19
-#: efbbfdc68113433baff4715c6051a91f
+#: 926c7605ff7f4375bfc4ce857ca46800
 msgid "``DSP_TYPE_AMPLIFY``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:20
-#: c72f903bde6d4c18aafefe2853aa975a
+#: 52557a5397a244c4ac6f0e42b5147a8e
 msgid "简单的音量放大/衰减"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:21
-#: 3fbe6cf436934ca9b0cc89c53fa9dd1c
+#: adc8df6d26424f72acffbba01e94b4ed
 msgid "6段均衡器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:22
-#: 4978c2837fca4f059455cb9554604ac9
+#: 809c4d5789c641249a0b98d5acc58352
 msgid "``DSP_TYPE_EQ6``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:23
-#: 219feaf147234fcfb274907a1a73a9b2
+#: 74fa026076ab4069ba0b786213933d25
 msgid "6段参数均衡器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:24
-#: 9dd609d08f3740058d9bf767e659138a
+#: 19304c6b68ca4fc185b96f14f7eaa2c0
 msgid "10段均衡器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:25
-#: 63d4348d60fe4e41b260052c8d10fc47
+#: fe7beaa6fcfa4ae3bd210e46a111d30a
 msgid "``DSP_TYPE_EQ10``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:26
-#: 18eaf0c4c0704fc9ad815b81901c21fd
+#: 86c47d4c748c4d8fbd2901b342a2269b
 msgid "10段参数均衡器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:27
-#: 1b4364eae1f249eb8725f98d1e4f675e
+#: 82c6d1a5d9644804943fff2c3e716f7b
 msgid "21段均衡器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:28
-#: b0360f3326f24431bc0eaf456d31aaa8
+#: 90aab9f53fb8432dbe9dcd76f29f16d3
 msgid "``DSP_TYPE_EQ21``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:29
-#: 1395365f8b5647ac8d4f29b112c5b435
+#: c05b2c7bbaff4795b0862edfd5f17a78
 msgid "21段参数均衡器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:30
-#: 68982db5511443639611e5455704107d
+#: 0e9cbeed239c485ab430f8377f6d3db8
 msgid "滤波器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:31
-#: af98255650644c59af113c2206e78d0f
+#: bd54549e2b3243ce8d1d2188b760497a
 msgid "``DSP_TYPE_FILTER``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:32
-#: 1a56057355a740668d57553241f4f171
+#: c9f6f12256fd4417b2ece46bf76d4e73
 msgid "低通/高通/带通/陷波滤波器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:33
-#: 69583adc45ec4ca19e540e05275a3ff6
+#: c75477346e564b739c824a6e7782d2ac
 msgid "混响"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:34
-#: 898bceb07b124bba8a061ab33e266de1
+#: 29b788df90bd4d5aaace0a8b413d8d58
 msgid "``DSP_TYPE_SFXREVERB``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:35
-#: fa3027a708934f8192e9bc310684f83c
+#: 867496c3674940e49d96100cc73cbb10
 msgid "房间混响效果"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:36
-#: c9196d5339914c14bf69b69d897d0da7
+#: 4020cdcade3a46dbaf87539fea81f1bd
 msgid "延迟"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:37
-#: c83c4a2eeebe4e16bc92e5007d7cafdd
+#: abab83115d3243f08f866f0dc04a1ca0
 msgid "``DSP_TYPE_DELAY``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:38
-#: 1c96c7c12ea643d986007ac6ed312c35
+#: f67459ec1fea470cb990397dc9eebe89
 msgid "回声和延迟线"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:39
-#: 9bb9cc0f79ab491d938f154ac5e2f695
+#: 3618d844e0fb4392b027e91d15d1e8be
 msgid "合唱"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:40
-#: ed136db12b55486bbe81164fb9ab28d5
+#: 4fef4b3d0b2f45b58a9f70003888442c
 msgid "``DSP_TYPE_CHORUS``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:41
-#: f51a2451b04144e7bee3c52032c455c1
+#: 57459dd6a8e54fe4a032d0305b33288c
 msgid "立体声合唱效果"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:42
-#: f401cf9cacee4ac28f05ac4d6a95c0d8
+#: 49b7fe8eeeeb4374a81d787a868c306b
 msgid "失真"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:43
-#: 44e55b547ae14b7da1b02860a97fada3
+#: 68d5c84cf9234c3ca20292a2a137e026
 msgid "``DSP_TYPE_DISTORTION``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:44
-#: cc46b92d28574966bccb822b4775c16a
+#: b3c151c06aeb43db8a07cf71e69f3a0f
 msgid "过驱动和失真"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:45
-#: 900d3e2f615444fca7b151af4e49b41f
+#: f2d7494f09964468a0e41dadde910f64
 msgid "移相器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:46
-#: 44ab0e32fdc6447fb6f7ccdbb27bb8b3
+#: 03749ee2ff174a69a45fd8b5db29bc72
 msgid "``DSP_TYPE_PHASER``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:47
-#: 9f0ab9b0a4344d04beee4acc4e41abb9
+#: e193c42c8c824f27bec071f6dcfff7f4
 msgid "相位偏移效果"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:48
-#: ca10591f40494fd3bcb448b0afc20135
+#: 9a52cd654f6a4f2aa502861d4ae467aa
 msgid "音高变换"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:49
-#: b3f77cb0fe3f4886ab64c87656f32337
+#: 870c0b8578d44bdda8c5dc5365915a32
 msgid "``DSP_TYPE_PITCHSHIFT``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:50
-#: 471252e93e354f518971e5e6c1723779
+#: 448700dfa6224a43be3a8d4b2c49c1aa
 msgid "实时音高变换"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:51
-#: db083831c58b463fba6484b13c84d795
+#: 5925a6d99e7b4e46913595906548659a
 msgid "压缩器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:52
-#: 97d6baa8b1cc42c8a2275aca896275ee
+#: 9ab74fb0d0c1464c9d16b96950b557ac
 msgid "``DSP_TYPE_COMPRESSOR``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:53
-#: 40b47e2b4656481aa9681d7edafa5d74
+#: ee1952787acc4ee880d8dca16798dc8f
 msgid "动态范围压缩"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:54
-#: 63ebc9f2cc8f4dfb93a8bcbc0651ce66
+#: 58905ca7675845159777e8ae4f2df9c7
 msgid "限制器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:55
-#: cac0fd1ace944bb9af3e20cc4bb10641
+#: a75ba0767d6f43a88e84f01de54f6b69
 msgid "``DSP_TYPE_HARDLIMITER``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:56
-#: f5f8054d91f34cd6815106fe79af5031
+#: 1f2d9e0ff52c468fb8bf9cb237377e13
 msgid "硬限制器/峰值限制"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:57
-#: a73bd02fc07542b2bdc521e05870c4d1
+#: 26a559156c0045d5851b96516218631a
 msgid "声像器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:58
-#: 92f60b5bd7b544d9bca6b0d89586f10c
+#: 7dcf59424e4c4829b0f086221f75f6f2
 msgid "``DSP_TYPE_PANNER``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:59
-#: 6a7c8d2970e64138a208a7d09e6bc1c6
+#: 4118a0ef86704a21ac422d25f8c73425
 msgid "立体声定位"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:60
-#: 8e31da400c614ec49dc81ce67931bff6
+#: 78b318303d644e2ca5fe675f4b21b7a5
 msgid "立体声增强"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:61
-#: 65a80f4f22c74ee8b5c6cc82e6af0524
+#: 243e779d7e1642dc86d2e72d1ab273a0
 msgid "``DSP_TYPE_STEREOENHANCE``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:62
-#: 4312a81f61cc4693bac0b70c318fcea6
+#: c36285195d934d7b804294391122941a
 msgid "立体声宽度控制"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:63
-#: 26230c7830ff4698afa323d877cf97f2
+#: c31e4aa17dda464ead6c769014d2c272
 msgid "频谱分析器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:64
-#: 2b4728edffc147008bb0cf48d09433ae
+#: 15529d0db992468cb776b3486ea5e84b
 msgid "``DSP_TYPE_SPECTRUMANALYZER``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:65
-#: 0ceccb9a9dd443dbaa0b1a4b1247b058
+#: 3da75a159a6746ccae4d368ef47b782c
 msgid "实时频率分析"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:66
-#: 851e8b98b8d942e998d7a6be77d9ad6e
+#: 45b055e9f34548cda6e36667426c291b
 msgid "录音"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:67
-#: 721d9a4431e74c79adf27ea72f09cd4a
+#: beefd60318ae420fb0b7af97d9788597
 msgid "``DSP_TYPE_RECORD``"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:68
-#: b8ed8bafd6bb468889fb039f109bf714
+#: 9d7f780efefa4ec2aea27cec062f6a15
 msgid "音频录制到文件"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:71
-#: 1f978ee994714da78187786c3b30965b
+#: bff041650a334d92ac7cb5b5ef91ba31
 msgid "使用 DSP 效果器"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:74
-#: de583353417144fba605d796e2c30705
+#: f519830d279344dc853ac3fec831ec1e
 msgid "创建 DSP"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:76
-#: bedbdd0125954aeeab03f5bf03961924
+#: fc24c06dab2341d8b19c56087471401d
 msgid "func create_dsp():\n"
 "    var system = FmodServer.main_system\n"
 "\n"
@@ -329,12 +329,12 @@ msgid "func create_dsp():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:88
-#: 1d2a1cf553674078b36ca386a7c90071
+#: 76d8497fdf144a54b15c64a8f90d4674
 msgid "添加到通道或总线"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:90
-#: 39d7b2018ba04ef093e1c17705ab3f93
+#: f588aa38423f41ce88fa4e3d98bd6ca3
 msgid "func add_effects():\n"
 "    var system = FmodServer.main_system\n"
 "\n"
@@ -351,12 +351,12 @@ msgid "func add_effects():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:107
-#: 8f8e597c2432448ba8f8722a88f2a214
+#: b6a1613687174a77b07e422eb69787eb
 msgid "控制 DSP 参数"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:109
-#: fc355b9f1d3b4d8fbd3c2f89efebedaa
+#: 7d1e16b8068247ff88f44459c4e94a96
 msgid "func control_dsp(dsp: FmodDSP):\n"
 "    # 启用/禁用\n"
 "    dsp.set_active(true)\n"
@@ -379,12 +379,12 @@ msgid "func control_dsp(dsp: FmodDSP):\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:132
-#: 67fa80e30a2b4a15b5a511f6c3dc141d
+#: 744a1fdcbbc3422bb8d6b502af587d6b
 msgid "从通道/总线移除 DSP"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:134
-#: b1e7ebc2aeb94706a1259da61c18399c
+#: cb054d16fabf4ce797d140419ea87c75
 msgid "func remove_dsp():\n"
 "    var master = FmodServer.main_system.get_master_channel_group()\n"
 "    var dsp = master.get_dsp(0)  # 获取第一个 DSP\n"
@@ -395,17 +395,17 @@ msgid "func remove_dsp():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:145
-#: 749be0d6e21045f1add0f5a918862001
+#: dc5a46e543ac45c6acdcd2165b4b2f01
 msgid "常用效果器详解"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:148
-#: 05e04e9ffc0b4d80871cbe7acc2a81e7
+#: 157322b313ea480ab9f36db93ab1111b
 msgid "混响（Reverb）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:150
-#: 3ba168e994414196950c65d6cc9eaa90
+#: f7c05d8f422b4ba6a6aa518c1f88d1dc
 msgid "func setup_reverb():\n"
 "    var system = FmodServer.main_system\n"
 "    var reverb = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)\n"
@@ -435,12 +435,12 @@ msgid "func setup_reverb():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:180
-#: 3ef988ccccfe4830b05e57cef8848a45
+#: 9e4296f929da4cc99192b6f3f7180f7a
 msgid "均衡器（EQ）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:182
-#: f2e09bb8a3ef4d3eb5aca66c2aa6ea74
+#: f7a4c11cb23a46ac80f25ea7a2b98f31
 msgid "func setup_eq():\n"
 "    var system = FmodServer.main_system\n"
 "    var eq = system.create_dsp_by_type(FmodDSP.DSP_TYPE_EQ)\n"
@@ -469,12 +469,12 @@ msgid "func setup_eq():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:211
-#: b3c1861d5fb041dd81fe70c06cdd77be
+#: 9ce07df9c46a4861af55e48ebc62e622
 msgid "滤波器（Filter）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:213
-#: ce2f08d954fe4812b151da243de905e9
+#: 61dda484e6d44ffd86b184895792051a
 msgid "func setup_filter():\n"
 "    var system = FmodServer.main_system\n"
 "    var filter = system.create_dsp_by_type(FmodDSP.DSP_TYPE_FILTER)\n"
@@ -495,12 +495,12 @@ msgid "func setup_filter():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:234
-#: fc14bbc9be6e4280830d9e7ec2e788a8
+#: 29766a6a27ee4925a29780cb3f649466
 msgid "延迟（Delay）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:236
-#: 958a0f767fcd4eafb6e55cb8ed581f02
+#: 1fefa8c74acd4e569ef67ee785330ac1
 msgid "func setup_delay():\n"
 "    var system = FmodServer.main_system\n"
 "    var delay = system.create_dsp_by_type(FmodDSP.DSP_TYPE_DELAY)\n"
@@ -517,12 +517,12 @@ msgid "func setup_delay():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:253
-#: c473060e59ae4376b1f8738606eeb932
+#: fb4fa433b9a844dd93097225ee3d14b1
 msgid "失真（Distortion）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:255
-#: 047fbb8c368443d1ad004bf719bf4279
+#: e42283141c464948bf85afab736e343c
 msgid "func setup_distortion():\n"
 "    var system = FmodServer.main_system\n"
 "    var distortion = system.create_dsp_by_type(FmodDSP.DSP_TYPE_DISTORTION)\n"
@@ -534,12 +534,12 @@ msgid "func setup_distortion():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:267
-#: 53133815b24a453eaac8097b00edb879
+#: 808b9f5170c24828ac122efa5e449dad
 msgid "音高变换（Pitch Shift）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:269
-#: 083dcec3f8fd4445a810d8b04b4214f6
+#: 40f42d9ae69046c589777d5143682dc7
 msgid "func setup_pitch_shift():\n"
 "    var system = FmodServer.main_system\n"
 "    var pitch = system.create_dsp_by_type(FmodDSP.DSP_TYPE_PITCHSHIFT)\n"
@@ -557,12 +557,12 @@ msgid "func setup_pitch_shift():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:287
-#: 8ccd790f7531406c9944baa5c6bb3553
+#: eef2dc827dad40aab8403eb1d6cd440f
 msgid "频谱分析器（Spectrum Analyzer）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:289
-#: ba37af64f29b49a4ac868a0d1756f591
+#: b90db342e6d941bf9a5de879dd11f49b
 msgid "extends Node\n"
 "\n"
 "var spectrum_dsp: FmodDSP\n"
@@ -589,22 +589,22 @@ msgid "extends Node\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:316
-#: b1200073995c4705b290d5ac5f9562d7
+#: ebf5edf4e45042ec9f8740cb8b321428
 msgid "效果器路由"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:319
-#: 749bad5ee43346c5a68157fc2624982b
+#: 0fb7ff888a824abf85866e1082f24e67
 msgid "串联连接"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:321
-#: 2dd859c7d808471687e13a44a85626a8
+#: 3fd93a44f92a4ca3aa0b2ebc78350c0f
 msgid "信号依次通过多个效果器："
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:323
-#: dbb7a109f5f04ff78984fe5943ed371b
+#: 1721479a904d4f94a611844c515a6261
 msgid "func chain_effects():\n"
 "    var system = FmodServer.main_system\n"
 "    var bus = system.get_master_channel_group()\n"
@@ -618,17 +618,17 @@ msgid "func chain_effects():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:337
-#: c0a02cfb7df54ded8983586c3e3dbf65
+#: 78599d15ff30428b84624840239c629e
 msgid "并联连接"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:339
-#: 84db027cd5434c56b8f132ddcab4e37e
+#: 0fc6f906711d453c9ac01938e89699fc
 msgid "使用 DSP 连接创建并行处理："
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:341
-#: 8ee2d62cc4dc4c3ba7946331a6f71343
+#: e3c167bd01e14ca887015a8c1458058f
 msgid "func parallel_effects():\n"
 "    var system = FmodServer.main_system\n"
 "\n"
@@ -647,17 +647,17 @@ msgid "func parallel_effects():\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:360
-#: 72bad8d184f14d5abd906befbbbd53b5
+#: fd2013f9e2cc4ee18b5296dcfe5dfcf6
 msgid "动态效果器管理"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:363
-#: 832b69d146e84b3080a6374581ee5809
+#: 3e92b44b7ab848f48ee4f4c26fce3cea
 msgid "效果器预设"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:365
-#: 724cfa36c66248ad84cfba4ce2e90d6e
+#: ac6bf57b7e8f45e697b2ded211b76f7a
 msgid "class_name ReverbPreset\n"
 "extends RefCounted\n"
 "\n"
@@ -692,12 +692,12 @@ msgid "class_name ReverbPreset\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:400
-#: 3e6bcf0df0a94802acfa28a85b959e0f
+#: 10ab3cceec1f4301b0c378d5814fb55a
 msgid "运行时切换效果"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:402
-#: 40c508bc78f24f3ab6c1692af5d2752d
+#: b3d3c37777a94f488ad4bce6ef481157
 msgid "func switch_effect_area(area_name: String):\n"
 "    var system = FmodServer.main_system\n"
 "    var reverb = get_current_reverb_dsp()\n"
@@ -712,51 +712,51 @@ msgid "func switch_effect_area(area_name: String):\n"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:417
-#: b3951657080145ae99fa00fc2b30b658
+#: 455cd8e713914ff4b89f04ca7ca354c4
 msgid "性能考虑"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:419
-#: a94e0541102643e88c4e9db5a3046a37
+#: 695042d1a33946ea9b27c4394bade7ba
 msgid "**DSP 消耗 CPU** - 每个激活的 DSP 都会增加 CPU 负担"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:420
-#: 8a668fa5f96b4490849b11da1239c587
+#: 95a9a375b7934e308734ed0e740505c5
 msgid "**使用旁通而非移除** - 临时禁用效果时使用 ``set_bypass(true)`` 比频繁添加/移除更高效"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:421
-#: f75fecc6735545ab8006f7a99dd50efe
+#: 1f2d2f3729264813b749553d6000611a
 msgid "**注意 FFT 大小** - 音高变换和频谱分析器的 FFT 大小影响延迟和 CPU 使用"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:422
-#: 14f5d59b1e58409faf70202898328f6f
+#: dd739fbcec3a46548f738413f9affb01
 msgid "**复用 DSP** - 相同设置的效果器可以在多个通道间复用"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:425
-#: 74125af476654f7aac6cc43922640cf3
+#: 7335e86d57bf437888247a767f7bc80f
 msgid "最佳实践"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:427
-#: 258651b0cc7e455dbbb25d58b158ec47
+#: 9cc219be720b46d082aeb0c50048a1e7
 msgid "**效果顺序** - EQ -> 动态处理（压缩器）-> 空间效果（混响）"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:428
-#: e47b236675904ad7ab30d1150652a21d
+#: 62331f8441b944d6b9b73db863323429
 msgid "**总线效果** - 将混响等效果放在总线上，多个通道共享"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:429
-#: 3642c54f238e408f9c6f703d1da2304a
+#: 7c5bde5885454c868190ed90484fa1d0
 msgid "**参数平滑** - 避免每帧大幅改变 DSP 参数，使用插值"
 msgstr ""
 
 #: ../../source/user_guide/dsp_effects.rst:430
-#: 2a08da2af0b44f168566c925e3450a68
+#: 26565aa0fa6d4611a8a93911beb0f628
 msgid "**资源管理** - 场景切换时记得释放不再使用的 DSP"
 msgstr ""
