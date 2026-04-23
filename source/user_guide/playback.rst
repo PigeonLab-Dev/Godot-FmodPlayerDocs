@@ -206,37 +206,37 @@ FmodAudioSampleEmitter
 
 .. code-block:: gdscript
 
-    func adjust_audio(channel: FmodChannel):
-        # 设置音量（分贝）
-        channel.set_volume_db(-10.0)  # -10 dB
-        channel.set_volume_db(0.0)    # 0 dB（原始音量）
-        channel.set_volume_db(6.0)    // +6 dB（放大）
+    func adjust_audio(channel: FmodChannel) -> void:
+        # Set volume in decibels
+        channel.volume_db = -10.0 # -10 dB
+        channel.volume_db = 0.0 # 0 dB (original volume)
+        channel.volume_db = 6.0 # +6 dB (approximately double volume)
         
-        # 设置音调
-        channel.set_pitch(1.0)   # 正常
-        channel.set_pitch(0.5)   # 一半速度（低八度）
-        channel.set_pitch(2.0)   # 双倍速度（高八度）
+        # Set pitch
+        channel.pitch = 1.0 # Normal pitch
+        channel.pitch = 0.5 # Half speed (one octave down)
+        channel.pitch = 2.0 # Double speed (one octave up)
         
-        # 设置声像
-        channel.set_pan(-1.0)    # 左声道
-        channel.set_pan(0.0)     # 居中
-        channel.set_pan(1.0)     # 右声道
+        # Set pan
+        channel.set_pan(-1.0) # Left only
+        channel.set_pan(0.0) # Center
+        channel.set_pan(1.0) # Right only
 
 播放位置
 ~~~~~~~~
 
 .. code-block:: gdscript
 
-    func control_position(channel: FmodChannel):
-        # 获取当前位置（毫秒）
-        var position_ms = channel.get_position(FmodChannel.TIMEUNIT_MS)
+    func control_position(channel: FmodChannel) -> void:
+        # Get current position in milliseconds
+        var position_ms: int = channel.get_position(FmodChannel.TIMEUNIT_MS)
         
-        # 跳转到指定位置
-        channel.set_position(30000, FmodChannel.TIMEUNIT_MS)  # 30秒处
+        # Jump to 30 seconds
+        channel.set_position(30000, FmodChannel.TIMEUNIT_MS)
         
-        # 获取总长度
-        var sound = channel.get_current_sound()
-        var length = sound.get_length()
+        # Get total length of the sound
+        var sound: FmodSound = channel.get_current_sound()
+        var length: float = sound.get_length()
         print("Total length: %.2f seconds" % length)
 
 循环控制
@@ -244,15 +244,15 @@ FmodAudioSampleEmitter
 
 .. code-block:: gdscript
 
-    func setup_looping(channel: FmodChannel):
-        # 设置循环次数（-1 = 无限循环）
-        channel.set_loop_count(-1)
+    func setup_looping(channel: FmodChannel) -> void:
+        # Set infinite looping (-1 for infinite loops)
+        channel.loop_count = -1
         
-        # 设置循环次数（3次）
-        channel.set_loop_count(3)
+        # Set loop count (3 times)
+        channel.loop_count = 3
         
-        # 关闭循环
-        channel.set_loop_count(0)
+        # Disable looping
+        channel.loop_count = 0
 
 3D 音频
 -------
@@ -264,24 +264,24 @@ FmodAudioSampleEmitter
 
     extends Node3D
 
-    @onready var player = $FmodAudioStreamPlayer
+    @onready var player: FmodAudioStreamPlayer = $FmodAudioStreamPlayer
 
-    func _ready():
-        # 启用 3D 模式需要在创建声音时设置 MODE_3D
-        var system = FmodServer.main_system
-        var sound = system.create_sound_from_file(
+    func _ready() -> void:
+        # Enable 3D mode on the sound
+        var system: FmodSystem = FmodServer.main_system
+        var sound: FmodSound = system.create_sound_from_file(
             "res://sfx/3d_sound.wav",
             FmodSystem.MODE_3D
         )
         
-        # 获取通道并设置 3D 属性
-        var channel = system.play_sound(sound, null, false)
+        # Get the channel and set 3D attributes
+        var channel: FmodChannel = system.play_sound(sound, system.get_master_channel_group(), false)
         
-        # 设置位置
-        var pos = Vector3(10, 0, 5)
+        # Set position and velocity for 3D sound
+        var pos: Vector3 = Vector3(10, 0, 5)
         channel.set_3d_attributes(pos, Vector3.ZERO)
         
-        # 设置衰减模式
+        # Set distance attenuation
         channel.set_3d_min_max_distance(1.0, 100.0)
         channel.set_3d_level(1.0)
 
@@ -292,38 +292,16 @@ FmodAudioSampleEmitter
 
     extends CharacterBody3D
 
-    func _physics_process(delta):
-        # 更新监听器位置（通常与摄像机关联）
-        var system = FmodServer.main_system
+    func _physics_process(_delta: float) -> void:
+        # Update 3D listener attributes based on the player's position and orientation
+        var system: FmodSystem = FmodServer.main_system
         system.set_3d_listener_attributes(
-            0,                          # 监听器索引
-            global_position,            # 位置
-            velocity,                   # 速度
-            -global_transform.basis.z,  # 前向向量
-            global_transform.basis.y    # 上向量
+            0,
+            global_position,
+            velocity,
+            -global_transform.basis.z,
+            global_transform.basis.y
         )
-
-性能优化
---------
-
-虚拟语音
-~~~~~~~~
-
-FMOD 使用虚拟语音系统管理大量声音：
-
-.. code-block:: gdscript
-
-    func _ready():
-        var system = FmodServer.main_system
-        
-        # 设置最大真实通道数
-        system.set_advanced_settings({
-            "max_channels": 64,
-            "max_virtual_channels": 1024
-        })
-        
-        # 距离太远的声音会自动变为虚拟（静音但继续"播放"）
-        # 当听众靠近时会自动恢复真实播放
 
 最佳实践
 --------

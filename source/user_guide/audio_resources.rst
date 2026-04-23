@@ -122,11 +122,11 @@ FmodAudioStream
 .. code-block:: gdscript
 
     # 流式加载 - 适合背景音乐（默认）
-    var bgm_stream = FmodAudioStream.load_from_file("res://music/background.mp3")
+    var bgm_stream: FmodAudioStream = FmodAudioStream.load_from_file("res://music/background.mp3")
     bgm_stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
     
     # 样本加载 - 适合音效
-    var sfx_stream = FmodAudioStream.load_from_file("res://sfx/explosion.wav",
+    var sfx_stream: FmodAudioStream = FmodAudioStream.load_from_file("res://sfx/explosion.wav",
         FmodAudioStream.MODE_SAMPLE)
 
 从内存加载
@@ -272,16 +272,11 @@ FmodAudioStream
     extends Node
 
     func setup_looping_music():
-        var stream = FmodAudioStream.load_from_file("res://music/loop.mp3")
-        
-        # 设置循环模式
+        var stream: FmodAudioStream = FmodAudioStream.load_from_file("res://music/loop.mp3")
         stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
         
-        # 或使用双向循环
-        # stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP_BIDI
-        
-        $MusicPlayer.stream = stream
-        $MusicPlayer.play()
+        $FmodAudioStreamPlayer.stream = stream
+        $FmodAudioStreamPlayer.play()
 
 最佳实践
 --------
@@ -291,7 +286,6 @@ FmodAudioStream
 #. **预加载常用资源** - 在游戏启动时加载常用音效
 #. **使用资源路径** - 优先使用 ``res://`` 路径，便于打包
 #. **注意文件格式** - OGG 适合音乐，WAV 适合短音效
-#. **及时清理资源** - 不再使用的音频调用 ``clear()`` 释放内存
 
 注意事项
 --------

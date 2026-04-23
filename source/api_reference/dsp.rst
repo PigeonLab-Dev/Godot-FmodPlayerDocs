@@ -219,6 +219,8 @@ DSP 之间的连接，用于信号路由。
      - Array
      - 获取混合矩阵
 
+.. _audio_FmodAudioEffect:
+
 FmodAudioEffect
 ---------------
 

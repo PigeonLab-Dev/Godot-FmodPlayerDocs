@@ -8,7 +8,7 @@
 - **操作系统**: Windows 10/11, Android
 - **编译器** (如需从源码构建):
   - Windows: MSVC v145+ (Visual Studio 2022)
-  - Android: Android NDK
+  - Android: Android SDK, Android NDK
 
 .. important::
    
@@ -37,14 +37,13 @@
     └── addons/
         └── fmod_player/
             ├── bin/
-            │   ├── fmod_player.gdextension      # GDExtension 配置
-            │   ├── fmod.dll                     # Windows FMOD 运行库（需自行下载）
-            │   ├── libfmod.so                   # Android FMOD 运行库（需自行下载）
-            │   ├── fmod_player.windows.*.dll    # 插件 DLL
+            │   ├── fmod_player.gdextension
+            │   ├── fmod.dll
+            │   ├── fmod_player.windows.template_debug.x86_64.dll
             │   └── ...
             └── ...
 
-4. 在 Godot 编辑器中，进入 **项目 > 项目设置 > 插件**，启用 "FmodPlayer"
+4. 在 Godot 编辑器中，进入 **项目 > 项目设置 > 插件**，启用 "FMOD Player"
 
 方式二：从源码构建
 ~~~~~~~~~~~~~~~~~~~~
@@ -65,33 +64,26 @@
     git clone --recursive https://github.com/LuYingYiLong/Godot-FmodPlayer.git
     cd Godot-FmodPlayer
 
-.. note::
-   
-   使用 ``--recursive`` 参数确保 ``godot-cpp`` 子模块被正确克隆。
-
 Windows 构建
 ^^^^^^^^^^^^
 
 .. code-block:: bash
 
-    # 调试版本
+    # Debug version
     scons platform=windows target=template_debug arch=x86_64
 
-    # 发布版本
+    # Release version
     scons platform=windows target=template_release arch=x86_64
-
-    # 编辑器版本
-    scons platform=windows target=editor arch=x86_64
 
 Android 构建
 ^^^^^^^^^^^^
 
 .. code-block:: bash
 
-    # ARM64 调试版本
+    # ARM64 Debug version
     scons platform=android target=template_debug arch=arm64
 
-    # ARM64 发布版本
+    # ARM64 Release version
     scons platform=android target=template_release arch=arm64
 
 构建选项说明
@@ -104,14 +96,14 @@ Android 构建
      - 可选值
      - 说明
    * - ``platform``
-     - ``windows``, ``android``
-     - 目标平台
+     - ``windows``, ``android``, ``linux``, ``macos``
+     - 构建目标平台
    * - ``target``
-     - ``template_debug``, ``template_release``, ``editor``
+     - ``template_debug``, ``template_release``
      - 构建目标类型
    * - ``arch``
      - ``x86_64``, ``arm64``, ``arm32``, ``x86_32``
-     - 目标架构
+     - 构建目标架构
 
 输出位置
 ^^^^^^^^
@@ -144,13 +136,13 @@ FMOD 运行库获取
 **Windows:**
 
 - 文件: ``fmod.dll`` （发布版）或 ``fmodL.dll`` （调试版）
-- 位置: ``api/core/lib/x64/``
+- 位置（默认）: ``C://Program Files(x86)/FMOD SoundSystem/FMOD Studio API Windows/api/core/lib/x64/``
 - 放置到: ``addons/fmod_player/bin/``
 
 **Android:**
 
 - 文件: ``libfmod.so`` （发布版）或 ``libfmodL.so`` （调试版）
-- 位置: ``api/core/lib/android/`` （按架构选择子目录）
+- 位置（默认）: ``api/core/lib/android/`` （按架构选择子目录）
 - 放置到: 需要打包到 APK 的库目录
 
 许可证说明
@@ -168,12 +160,10 @@ FMOD 运行库获取
 3. 在节点面板中搜索 "Fmod"，应该能看到以下节点：
 
    - ``FmodAudioStreamPlayer`` - 流式音频播放器
-   - ``FmodAudioSampleEmitter`` - 采样音频发射器
 
 4. 在资源面板中创建新资源，应该能看到：
 
-   - ``FmodAudioStream`` - 流式音频资源
-   - ``FmodAudioSample`` - 采样音频资源
+   - ``FmodAudioStream`` - 音频资源
    - ``FmodAudioBusLayout`` - 音频总线布局
 
 常见问题
@@ -198,9 +188,6 @@ Android 构建失败
 ~~~~~~~~~~~~~~~~
 
 - 确保 Android NDK 已正确安装并设置环境变量
-- 确认 ``godot-cpp`` 子模块已初始化::
-
-    git submodule update --init --recursive
 
 下一步
 ------

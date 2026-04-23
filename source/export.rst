@@ -182,7 +182,7 @@ GDExtension 配置
 
 **Windows：**
 
-.. code-block:: batch
+.. code-block:: bash
 
     scons platform=windows target=template_release arch=x86_64
 
@@ -304,4 +304,4 @@ FMOD 许可
 MIT 许可
 ~~~~~~~~
 
-Godot-FmodPlayer 插件本身使用 MIT 许可证，可以自由使用和修改。
+Godot-FmodPlayer 插件本身使用 `MIT <https://opensource.org/licenses/MIT>`_ 许可证，可以自由使用和修改。

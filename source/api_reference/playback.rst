@@ -1,6 +1,8 @@
 播放控制 API
 ============
 
+.. _FmodChannelControl:
+
 FmodChannelControl
 ------------------
 
@@ -127,6 +129,8 @@ DSP 效果
      - void
      - 设置 3D 级别
 
+.. _FmodChannel:
+
 FmodChannel
 -----------
 
@@ -206,6 +210,8 @@ FmodChannel
     
     # 设置无限循环
     channel.set_loop_count(-1)
+
+.. _FmodChannelGroup:
 
 FmodChannelGroup
 ----------------

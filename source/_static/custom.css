@@ -1,0 +1,7 @@
+pre,
+code,
+.code-block,
+.highlight pre {
+    font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Courier New", monospace !important;
+    font-size: 0.9em;
+}
