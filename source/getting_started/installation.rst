@@ -1,195 +1,203 @@
 安装指南
 ========
 
-系统要求
---------
+本页说明如何把 Godot-FmodPlayer 安装到 Godot 项目中，并补齐 FMOD Core API
+运行库。推荐优先使用预编译版本；只有需要修改插件源码或自行适配平台时，才需要从源码构建。
 
-- **Godot 版本**: 4.1 或更高版本
-- **操作系统**: Windows 10/11, Android
-- **编译器** (如需从源码构建):
-  - Windows: MSVC v145+ (Visual Studio 2022)
-  - Android: Android SDK, Android NDK
+安装前确认
+----------
+
+开始前请确认：
+
+- Godot 版本为 4.1 或更高版本。
+- 目标平台目前为 Windows x86_64 或 Android arm64。
+- 已准备好从 FMOD 官网下载 FMOD Engine。
 
 .. important::
-   
-   **FMOD 运行库需要手动下载**
-   
-   由于 FMOD 的许可协议不允许二次分发，你需要自行从 
-   `FMOD 官网 <https://www.fmod.com/download>`_ 下载 FMOD Core API。
-   
-   - 注册/登录 FMOD 账户
-   - 下载对应平台的 FMOD Core API
-   - 将运行库文件（如 Windows 的 ``fmod.dll``）放置到插件目录
 
-安装方式
+   Godot-FmodPlayer 插件本身不包含 FMOD 运行库。由于 FMOD 的许可要求，
+   你需要自行从 `FMOD 下载页面 <https://www.fmod.com/download>`_ 获取
+   FMOD Engine，并把对应平台的运行库复制到项目中。
+
+预编译版本（推荐）
+------------------
+
+下载插件
+~~~~~~~~
+
+#. 从 `Godot Asset Library <https://godotengine.org/asset-library/asset/4905>`_
+   下载插件，或从
+   `GitHub Releases <https://github.com/LuYingYiLong/Godot-FmodPlayer/releases>`_
+   下载发布包。
+#. 解压后，将 ``addons/fmod_player`` 复制到你的 Godot 项目：
+
+   .. code-block:: text
+
+      res://
+      └── addons/
+          └── fmod_player/
+              ├── plugin.cfg
+              ├── fmod_check.gd
+              ├── fmod_player_main.gd
+              └── bin/
+                  ├── fmod_player.gdextension
+                  ├── fmod_player.windows.template_debug.x86_64.dll
+                  ├── fmod_player.windows.template_release.x86_64.dll
+                  ├── libfmod_player.android.template_debug.arm64.so
+                  └── libfmod_player.android.template_release.arm64.so
+
+补齐 FMOD 运行库
+~~~~~~~~~~~~~~~~
+
+访问 `FMOD 下载页面 <https://www.fmod.com/download>`_，登录账户后下载
+**FMOD Engine**。解压后，根据目标平台复制运行库。
+
+.. list-table::
+   :header-rows: 1
+
+   * - 平台
+     - 需要的文件
+     - 放置位置
+   * - Windows x86_64
+     - ``fmod.dll``
+     - ``res://addons/fmod_player/bin/``
+   * - Android arm64
+     - ``libfmod.so``、``fmod.jar``
+     - 参见 :doc:`../export` 的 Android 导出配置
+
+Windows 项目安装完成后，目录通常类似这样：
+
+.. code-block:: text
+
+   res://
+   └── addons/
+       └── fmod_player/
+           └── bin/
+               ├── fmod_player.gdextension
+               ├── fmod.dll
+               ├── fmod_player.windows.template_debug.x86_64.dll
+               └── fmod_player.windows.template_release.x86_64.dll
+
+.. note::
+
+   编辑器插件会在启用时检查 ``fmod.dll``、``libfmod.so`` 或 ``libfmod.dylib``。
+   如果没有找到 FMOD 运行库，Godot 会显示提示窗口，并引导你前往 FMOD 下载页面。
+
+启用插件
+~~~~~~~~
+
+#. 打开 Godot 编辑器。
+#. 进入 **项目 > 项目设置 > 插件**。
+#. 找到 ``FMOD Player`` 并启用。
+#. 如果刚刚复制了 FMOD 运行库，建议重启一次 Godot 编辑器。
+
+验证安装
 --------
 
-方式一：预编译二进制文件（推荐）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+启用成功后，可以用下面几项快速确认插件是否可用：
 
-1. 从 `GitHub Releases <https://github.com/LuYingYiLong/Godot-FmodPlayer/releases>`_ 下载最新版本
+#. 在添加节点面板中搜索 ``Fmod``，应能看到：
 
-2. 解压下载的文件，将 ``addons/fmod_player`` 文件夹复制到你的 Godot 项目的 ``res://addons/`` 目录下
+   - ``FmodAudioStreamPlayer``
+   - ``FmodAudioStreamPlayer2D``
+   - ``FmodAudioStreamPlayer3D``
 
-3. 从 FMOD 官网下载 FMOD Core API，将运行库文件放入插件目录::
+#. 在资源创建菜单中搜索 ``Fmod``，应能看到：
 
-    res://
-    └── addons/
-        └── fmod_player/
-            ├── bin/
-            │   ├── fmod_player.gdextension
-            │   ├── fmod.dll
-            │   ├── fmod_player.windows.template_debug.x86_64.dll
-            │   └── ...
-            └── ...
+   - ``FmodAudioStream``
+   - ``FmodAudioBusLayout``
 
-4. 在 Godot 编辑器中，进入 **项目 > 项目设置 > 插件**，启用 "FMOD Player"
+#. 打开 Godot 输出面板，确认没有 FMOD 运行库缺失或 GDExtension 加载失败的错误。
 
-方式二：从源码构建
-~~~~~~~~~~~~~~~~~~~~
+如果节点或资源类型没有出现，通常是 FMOD 运行库缺失、平台架构不匹配，或
+``addons/fmod_player`` 没有放在项目的 ``res://addons/`` 目录下。
+
+从源码构建
+----------
+
+只有在需要修改 C++ 源码、调试 GDExtension，或自行生成平台二进制文件时，才需要从源码构建。
 
 前置要求
-^^^^^^^^
+~~~~~~~~
 
-- Python 3.8+
-- SCons 4.0+
-- C++ 编译器 (MSVC v145+ 或 Android NDK)
+- Python 3.11 或更高版本
+- SCons 4.10 或更高版本
 - Git
+- C++17 编译环境
+- Windows 构建需要 MSVC
+- Android 构建需要 Android SDK、NDK 与 JDK
 
 获取源码
-^^^^^^^^
+~~~~~~~~
 
 .. code-block:: bash
 
-    git clone --recursive https://github.com/LuYingYiLong/Godot-FmodPlayer.git
-    cd Godot-FmodPlayer
+   git clone --recursive https://github.com/LuYingYiLong/Godot-FmodPlayer.git
+   cd Godot-FmodPlayer
 
 Windows 构建
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 .. code-block:: bash
 
-    # Debug version
-    scons platform=windows target=template_debug arch=x86_64
-
-    # Release version
-    scons platform=windows target=template_release arch=x86_64
+   scons platform=windows target=template_debug arch=x86_64
+   scons platform=windows target=template_release arch=x86_64
 
 Android 构建
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 .. code-block:: bash
 
-    # ARM64 Debug version
-    scons platform=android target=template_debug arch=arm64
+   scons platform=android target=template_debug arch=arm64
+   scons platform=android target=template_release arch=arm64
 
-    # ARM64 Release version
-    scons platform=android target=template_release arch=arm64
+构建输出
+~~~~~~~~
 
-构建选项说明
-^^^^^^^^^^^^
+构建完成后，将生成的二进制文件放入 ``addons/fmod_player/bin/``。当前插件的
+``fmod_player.gdextension`` 默认引用以下文件名：
+
+.. code-block:: text
+
+   addons/fmod_player/bin/
+   ├── fmod_player.windows.template_debug.x86_64.dll
+   ├── fmod_player.windows.template_release.x86_64.dll
+   ├── libfmod_player.android.template_debug.arm64.so
+   └── libfmod_player.android.template_release.arm64.so
+
+如果你修改了输出文件名或目标平台，需要同步更新 ``bin/fmod_player.gdextension``。
+
+构建选项
+~~~~~~~~
 
 .. list-table::
    :header-rows: 1
 
    * - 选项
-     - 可选值
+     - 常用值
      - 说明
    * - ``platform``
-     - ``windows``, ``android``, ``linux``, ``macos``
+     - ``windows``、 ``android``
      - 构建目标平台
    * - ``target``
-     - ``template_debug``, ``template_release``
-     - 构建目标类型
+     - ``template_debug``、 ``template_release``
+     - 调试版或发布版
    * - ``arch``
-     - ``x86_64``, ``arm64``, ``arm32``, ``x86_32``
+     - ``x86_64``、 ``arm64``
      - 构建目标架构
 
-输出位置
-^^^^^^^^
+FMOD 授权说明
+-------------
 
-构建完成后，二进制文件位于::
-
-    addons/bin/
-    ├── fmod_player.windows.{target}.{arch}.dll    # Windows
-    ├── libfmod_player.android.{target}.{arch}.so  # Android
-    └── ...
-
-FMOD 运行库获取
-----------------
-
-由于 FMOD 的许可协议不允许二次分发，你需要自行下载 FMOD Core API 运行库。
-
-下载步骤
-~~~~~~~~
-
-1. 访问 `FMOD 官网下载页面 <https://www.fmod.com/download>`_
-2. 注册或登录 FMOD 账户
-3. 下载 **FMOD Engine** （选择对应你的开发平台的版本）
-4. 解压下载的文件
-
-获取运行库文件
-~~~~~~~~~~~~~~
-
-根据你的目标平台，从下载的 FMOD Engine 中找到对应的运行库文件：
-
-**Windows:**
-
-- 文件: ``fmod.dll`` （发布版）或 ``fmodL.dll`` （调试版）
-- 位置（默认）: ``C://Program Files(x86)/FMOD SoundSystem/FMOD Studio API Windows/api/core/lib/x64/``
-- 放置到: ``addons/fmod_player/bin/``
-
-**Android:**
-
-- 文件: ``libfmod.so`` （发布版）或 ``libfmodL.so`` （调试版）
-- 位置（默认）: ``api/core/lib/android/`` （按架构选择子目录）
-- 放置到: 需要打包到 APK 的库目录
-
-许可证说明
-~~~~~~~~~~
-
-- FMOD 允许免费用于非商业项目
-- **商业项目需要获取 FMOD 许可证**
-- 详见 `FMOD 许可页面 <https://www.fmod.com/licensing>`_
-
-验证安装
---------
-
-1. 打开 Godot 编辑器
-2. 创建一个新场景
-3. 在节点面板中搜索 "Fmod"，应该能看到以下节点：
-
-   - ``FmodAudioStreamPlayer`` - 流式音频播放器
-
-4. 在资源面板中创建新资源，应该能看到：
-
-   - ``FmodAudioStream`` - 音频资源
-   - ``FmodAudioBusLayout`` - 音频总线布局
-
-常见问题
---------
-
-插件未显示在节点列表中
-~~~~~~~~~~~~~~~~~~~~~~
-
-- 检查 ``addons/bin/fmod_player.gdextension`` 文件是否存在
-- 检查对应平台的 DLL/SO 文件是否存在
-- 查看 Godot 编辑器的 **输出** 面板是否有加载错误
-- 确认 Godot 版本 >= 4.1
-
-FMOD 初始化失败
-~~~~~~~~~~~~~~~
-
-- 检查 ``fmod.dll`` (Windows) 或 ``libfmod.so`` (Android) 是否在正确位置
-- 检查音频设备是否正常工作
-- 查看 Godot 控制台输出获取详细错误信息
-
-Android 构建失败
-~~~~~~~~~~~~~~~~
-
-- 确保 Android NDK 已正确安装并设置环境变量
+Godot-FmodPlayer 使用 MIT 许可证；FMOD Engine 使用 Firelight Technologies Pty Ltd
+的独立许可。发布、商业化或面向特定平台分发项目前，请阅读
+`FMOD Licensing <https://www.fmod.com/licensing>`_ 与
+`FMOD Legal Information <https://www.fmod.com/legal>`_。
 
 下一步
 ------
 
-安装完成后，请阅读 :doc:`quick_start` 了解如何使用本插件。
+安装完成后，请阅读 :doc:`quick_start` 播放第一段音频。
+
+遇到问题时，可以查看 :ref:`常见问题 <faq>`，尤其是运行库缺失、导出后无声音和
+平台架构不匹配相关条目。

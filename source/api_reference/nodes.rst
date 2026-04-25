@@ -56,6 +56,17 @@ FmodAudioStreamPlayer
     - "Master"
     - 输出到的音频总线名称
 
+信号
+~~~~
+
+.. list-table::
+  :header-rows: 1
+
+  * - 信号
+    - 说明
+  * - finished()
+    - 播放自然结束时发出
+
 方法
 ~~~~
 
@@ -187,30 +198,19 @@ void set_auto_play(enable: `bool`_)
 
 .. _FmodAudioStreamPlayer-set_bus:
 
-void set_bus(bus: `StringName`)_
+void set_bus(bus: `StringName`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置输出总线名称
 
 .. _FmodAudioStreamPlayer-get_bus:
 
-`StringName` get_bus() const_
+`StringName`_ get_bus() const_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前输出总线名称
 
 如果设置的总线不存在，则返回 ``"Master"``
-
-信号
-~~~~
-
-.. list-table::
-  :header-rows: 1
-
-  * - 信号
-    - 说明
-  * - finished()
-    - 播放自然结束时发出
 
 示例
 ~~~~
@@ -304,6 +304,17 @@ FmodAudioStreamPlayer2D
     - max_polyphony
     - 1
     - 最大复音数量
+
+信号
+~~~~
+
+.. list-table::
+  :header-rows: 1
+
+  * - 信号
+    - 说明
+  * - finished()
+    - 播放自然结束时发出
 
 方法
 ~~~~
@@ -490,14 +501,14 @@ void set_panning_strength(panning_strength: `float`_)
 
 .. _FmodAudioStreamPlayer2D-set_bus:
 
-void set_bus(bus: `StringName`)_
+void set_bus(bus: `StringName`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置输出总线名称
 
 .. _FmodAudioStreamPlayer2D-get_bus:
 
-`StringName` get_bus() const_
+`StringName`_ get_bus() const_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前输出总线名称
@@ -547,17 +558,6 @@ void set_max_polyphony(max_polyphony: `int`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回内部播放通道，可用于高级控制
-
-信号
-~~~~
-
-.. list-table::
-  :header-rows: 1
-
-  * - 信号
-    - 说明
-  * - finished()
-    - 播放自然结束时发出
 
 示例
 ~~~~
@@ -668,6 +668,17 @@ FmodAudioStreamPlayer3D
     - doppler_tracking
     - 0
     - 多普勒速度追踪模式
+
+信号
+~~~~
+
+.. list-table::
+  :header-rows: 1
+
+  * - 信号
+    - 说明
+  * - finished()
+    - 播放自然结束时发出
 
 方法
 ~~~~
@@ -1008,17 +1019,6 @@ DopplerTracking
     - 2
     - 在物理处理帧中计算速度
 
-信号
-~~~~
-
-.. list-table::
-  :header-rows: 1
-
-  * - 信号
-    - 说明
-  * - finished()
-    - 播放自然结束时发出
-
 示例
 ~~~~
 
@@ -1094,6 +1094,21 @@ FmodGeometryInstance3D
     - show_debug_gizmo
     - true
     - 是否显示编辑器调试 Gizmo
+
+信号
+~~~~
+
+.. list-table::
+  :header-rows: 1
+
+  * - 信号
+    - 说明
+  * - geometry_created()
+    - 几何体创建成功后发出
+  * - geometry_cleared()
+    - 几何体被清空后发出
+  * - geometry_rebuilt()
+    - 几何体重建成功后发出
 
 方法
 ~~~~
@@ -1221,21 +1236,6 @@ void clear_geometry()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回内部 :ref:`FmodGeometry<FmodGeometry>` 对象
-
-信号
-~~~~
-
-.. list-table::
-  :header-rows: 1
-
-  * - 信号
-    - 说明
-  * - geometry_created()
-    - 几何体创建成功后发出
-  * - geometry_cleared()
-    - 几何体被清空后发出
-  * - geometry_rebuilt()
-    - 几何体重建成功后发出
 
 示例
 ~~~~

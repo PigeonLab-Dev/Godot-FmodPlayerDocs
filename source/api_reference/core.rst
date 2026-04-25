@@ -362,6 +362,20 @@ void set_driver(driver: `int`_)
 常规设置
 ^^^^^^^^
 
+.. _FmodSystem-set_software_channels:
+
+void set_software_channels(num_software_channels: `int`_)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置软件混音器可使用的最大 Channel 数量。
+
+.. _FmodSystem-get_software_channels:
+
+`int`_ get_software_channels() const
+++++++++++++++++++++++++++++++++++++
+
+返回软件混音器可使用的最大 Channel 数量。
+
 .. _FmodSystem-set_software_format:
   
 void set_software_format(sample_rate: `int`_, speaker_mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`, num_raw_speakers: `int`_)
@@ -492,6 +506,333 @@ void set_speaker_position(speaker: :ref:`FmodSpeaker<FmodSpeaker>`, x: `float`_,
     - `bool`_
     - 扬声器是否激活
 
+3D 声音设置
+^^^^^^^^^^^
+
+.. _FmodSystem-set_doppler_scale:
+
+void set_doppler_scale(doppler_scale: `float`_)
++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置全局多普勒效果缩放因子。
+
+.. _FmodSystem-get_doppler_scale:
+
+`float`_ get_doppler_scale() const
+++++++++++++++++++++++++++++++++++
+
+返回全局多普勒效果缩放因子。
+
+.. _FmodSystem-set_distance_factor:
+
+void set_distance_factor(distance_factor: `float`_)
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置世界距离到米的换算比例。
+
+.. _FmodSystem-get_distance_factor:
+
+`float`_ get_distance_factor() const
+++++++++++++++++++++++++++++++++++++
+
+返回世界距离到米的换算比例。
+
+.. _FmodSystem-set_rolloff_scale:
+
+void set_rolloff_scale(rolloff_scale: `float`_)
++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置全局 3D 距离衰减缩放因子。
+
+.. _FmodSystem-get_rolloff_scale:
+
+`float`_ get_rolloff_scale() const
+++++++++++++++++++++++++++++++++++
+
+返回全局 3D 距离衰减缩放因子。
+
+.. _FmodSystem-set_3d_num_listeners:
+
+void set_3d_num_listeners(num_listeners: `int`_)
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置 3D 声音场景中的监听器数量。
+
+.. _FmodSystem-get_3d_num_listeners:
+
+`int`_ get_3d_num_listeners() const
++++++++++++++++++++++++++++++++++++
+
+返回 3D 声音场景中的监听器数量。
+
+高级设置
+^^^^^^^^
+
+.. _FmodSystem-set_max_mpeg_codecs:
+
+void set_max_mpeg_codecs(max_codecs: `int`_)
+++++++++++++++++++++++++++++++++++++++++++++
+
+设置最大 MPEG 解码器数量。
+
+.. _FmodSystem-get_max_mpeg_codecs:
+
+`int`_ get_max_mpeg_codecs() const
+++++++++++++++++++++++++++++++++++
+
+返回最大 MPEG 解码器数量。
+
+.. _FmodSystem-set_max_adpcm_codecs:
+
+void set_max_adpcm_codecs(max_codecs: `int`_)
++++++++++++++++++++++++++++++++++++++++++++++
+
+设置最大 IMA-ADPCM 解码器数量。
+
+.. _FmodSystem-get_max_adpcm_codecs:
+
+`int`_ get_max_adpcm_codecs() const
++++++++++++++++++++++++++++++++++++
+
+返回最大 IMA-ADPCM 解码器数量。
+
+.. _FmodSystem-set_max_xma_codecs:
+
+void set_max_xma_codecs(max_codecs: `int`_)
++++++++++++++++++++++++++++++++++++++++++++
+
+设置最大 XMA 解码器数量。
+
+.. _FmodSystem-get_max_xma_codecs:
+
+`int`_ get_max_xma_codecs() const
++++++++++++++++++++++++++++++++++
+
+返回最大 XMA 解码器数量。
+
+.. _FmodSystem-set_max_vorbis_codecs:
+
+void set_max_vorbis_codecs(max_codecs: `int`_)
+++++++++++++++++++++++++++++++++++++++++++++++
+
+设置最大 Vorbis 解码器数量。
+
+.. _FmodSystem-get_max_vorbis_codecs:
+
+`int`_ get_max_vorbis_codecs() const
+++++++++++++++++++++++++++++++++++++
+
+返回最大 Vorbis 解码器数量。
+
+.. _FmodSystem-set_max_at9_codecs:
+
+void set_max_at9_codecs(max_codecs: `int`_)
++++++++++++++++++++++++++++++++++++++++++++
+
+设置最大 AT9 解码器数量。
+
+.. _FmodSystem-get_max_at9_codecs:
+
+`int`_ get_max_at9_codecs() const
++++++++++++++++++++++++++++++++++
+
+返回最大 AT9 解码器数量。
+
+.. _FmodSystem-set_max_fadpcm_codecs:
+
+void set_max_fadpcm_codecs(max_codecs: `int`_)
+++++++++++++++++++++++++++++++++++++++++++++++
+
+设置最大 FADPCM 解码器数量。
+
+.. _FmodSystem-get_max_fadpcm_codecs:
+
+`int`_ get_max_fadpcm_codecs() const
+++++++++++++++++++++++++++++++++++++
+
+返回最大 FADPCM 解码器数量。
+
+.. _FmodSystem-set_max_opus_codecs:
+
+void set_max_opus_codecs(max_codecs: `int`_)
+++++++++++++++++++++++++++++++++++++++++++++
+
+设置最大 Opus 解码器数量。
+
+.. _FmodSystem-get_max_opus_codecs:
+
+`int`_ get_max_opus_codecs() const
+++++++++++++++++++++++++++++++++++
+
+返回最大 Opus 解码器数量。
+
+.. _FmodSystem-set_asio_num_channels:
+
+void set_asio_num_channels(num_channels: `int`_)
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置 ASIO 输入和输出通道数量。
+
+.. _FmodSystem-get_asio_num_channels:
+
+`int`_ get_asio_num_channels() const
+++++++++++++++++++++++++++++++++++++
+
+返回 ASIO 输入和输出通道数量。
+
+.. _FmodSystem-set_vol0_virtual_vol:
+
+void set_vol0_virtual_vol(vol: `float`_)
+++++++++++++++++++++++++++++++++++++++++
+
+设置低于该音量时转为虚拟声道的阈值。
+
+.. _FmodSystem-get_vol0_virtual_vol:
+
+`float`_ get_vol0_virtual_vol() const
++++++++++++++++++++++++++++++++++++++
+
+返回低于该音量时转为虚拟声道的阈值。
+
+.. _FmodSystem-set_default_decode_buffer_size:
+
+void set_default_decode_buffer_size(size: `int`_)
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置流式解码双缓冲区默认大小。
+
+.. _FmodSystem-get_default_decode_buffer_size:
+
+`int`_ get_default_decode_buffer_size() const
++++++++++++++++++++++++++++++++++++++++++++++
+
+返回流式解码双缓冲区默认大小。
+
+.. _FmodSystem-set_profile_port:
+
+void set_profile_port(port: `int`_)
++++++++++++++++++++++++++++++++++++
+
+设置 FMOD Profiler 监听端口。
+
+.. _FmodSystem-get_profile_port:
+
+`int`_ get_profile_port() const
++++++++++++++++++++++++++++++++
+
+返回 FMOD Profiler 监听端口。
+
+.. _FmodSystem-set_geometry_max_fade_time:
+
+void set_geometry_max_fade_time(time: `int`_)
++++++++++++++++++++++++++++++++++++++++++++++
+
+设置几何遮挡变化时 Channel 淡入新音量的最长时间。
+
+.. _FmodSystem-get_geometry_max_fade_time:
+
+`int`_ get_geometry_max_fade_time() const
++++++++++++++++++++++++++++++++++++++++++
+
+返回几何遮挡变化时 Channel 淡入新音量的最长时间。
+
+.. _FmodSystem-set_distance_filter_center_freq:
+
+void set_distance_filter_center_freq(freq: `float`_)
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置距离滤波器默认中心频率。
+
+.. _FmodSystem-get_distance_filter_center_freq:
+
+`float`_ get_distance_filter_center_freq() const
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+返回距离滤波器默认中心频率。
+
+.. _FmodSystem-set_reverb_3d_instance:
+
+void set_reverb_3d_instance(instance: `int`_)
++++++++++++++++++++++++++++++++++++++++++++++
+
+设置 Reverb3D 使用的全局混响实例索引。
+
+.. _FmodSystem-get_reverb_3d_instance:
+
+`int`_ get_reverb_3d_instance() const
++++++++++++++++++++++++++++++++++++++
+
+返回 Reverb3D 使用的全局混响实例索引。
+
+.. _FmodSystem-set_dsp_buffer_pool_size:
+
+void set_dsp_buffer_pool_size(size: `int`_)
++++++++++++++++++++++++++++++++++++++++++++
+
+设置 DSP 缓冲池中间混合缓冲区数量。
+
+.. _FmodSystem-get_dsp_buffer_pool_size:
+
+`int`_ get_dsp_buffer_pool_size() const
++++++++++++++++++++++++++++++++++++++++
+
+返回 DSP 缓冲池中间混合缓冲区数量。
+
+.. _FmodSystem-set_resampler_method:
+
+void set_resampler_method(method: :ref:`FmodResamplerMethod<FmodResamplerMethod>`)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置软件混音器使用的重采样方法。
+
+.. _FmodSystem-get_resampler_method:
+
+:ref:`FmodResamplerMethod<FmodResamplerMethod>` get_resampler_method() const
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+返回软件混音器使用的重采样方法。
+
+.. _FmodSystem-set_random_seed:
+
+void set_random_seed(seed: `int`_)
+++++++++++++++++++++++++++++++++++
+
+设置 FMOD 内部随机数生成器种子。
+
+.. _FmodSystem-get_random_seed:
+
+`int`_ get_random_seed() const
+++++++++++++++++++++++++++++++
+
+返回 FMOD 内部随机数生成器种子。
+
+.. _FmodSystem-set_max_convolution_threads:
+
+void set_max_convolution_threads(max_threads: `int`_)
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置卷积混响 DSP 可使用的最大 CPU 线程数。
+
+.. _FmodSystem-get_max_convolution_threads:
+
+`int`_ get_max_convolution_threads() const
+++++++++++++++++++++++++++++++++++++++++++
+
+返回卷积混响 DSP 可使用的最大 CPU 线程数。
+
+.. _FmodSystem-set_max_spatial_objects:
+
+void set_max_spatial_objects(max_objects: `int`_)
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置每个 FmodSystem 可预留的最大空间对象数量。
+
+.. _FmodSystem-get_max_spatial_objects:
+
+`int`_ get_max_spatial_objects() const
+++++++++++++++++++++++++++++++++++++++
+
+返回每个 FmodSystem 可预留的最大空间对象数量。
 网络配置
 ^^^^^^^^
 
@@ -586,6 +927,33 @@ void set_network_timeout(timeout: `int`_)
     - `int`_
     - 实际可听的声道数量
 
+.. _FmodSystem-get_cpu_usage:
+
+`Dictionary`_ get_cpu_usage() const
++++++++++++++++++++++++++++++++++++
+
+返回 Core API 各部分的 CPU 使用率信息。
+
+.. _FmodSystem-get_file_usage:
+
+`Dictionary`_ get_file_usage() const
+++++++++++++++++++++++++++++++++++++
+
+返回文件读取用量信息，包括样本、流和其他读取字节数。
+
+.. _FmodSystem-get_default_mix_matrix:
+
+``PackedFloat32Array`` get_default_mix_matrix(source_speaker_mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`, target_speaker_mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`, array_length: `int`_, hop: `int`_) const
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+返回从一种扬声器模式转换到另一种扬声器模式的默认混音矩阵。
+
+.. _FmodSystem-get_speaker_mode_channels:
+
+`int`_ get_speaker_mode_channels(mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`) const
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+返回指定扬声器模式对应的通道数量。
 声音与获取
 ^^^^^^^^^^
 
@@ -659,12 +1027,12 @@ void set_network_timeout(timeout: `int`_)
 
 .. _FmodSystem-create_reverb_3d:
 
-:ref:`FmodReverb3D<FmodReverb3D>` create_reverb_3d() const
+**FmodReverb3D** create_reverb_3d() const
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 创建一个用于空间音频混响效果的3D混响区域
 
-返回一个 :ref:`FmodReverb3D<FmodReverb3D>` 对象，该对象可以在3D空间中定位并配置混响参数
+返回一个 **FmodReverb3D** 对象，该对象可以在3D空间中定位并配置混响参数
 
 使用此功能可以创建如洞穴、礼堂或房间等环境音效
   
@@ -675,7 +1043,7 @@ void set_network_timeout(timeout: `int`_)
 
 在一个通道上播放声音，通过指定的通道组路由
 
-如果 ``paused`` 为 ``true``，通道将以暂停状态开始，直到调用 :ref:`FmodChannel.set_paused()<FmodChannel-set_paused>` 并传入 ``false`` 才会产生声音
+如果 ``paused`` 为 ``true``，通道将以暂停状态开始，直到调用 :ref:`FmodChannelControl.set_paused()<FmodChannelControl-set_paused>` 并传入 ``false`` 才会产生声音
 
 返回一个 :ref:`FmodChannel<FmodChannel>` 句柄，可用于控制播放
   
@@ -686,7 +1054,7 @@ FmodChannel play_dsp(dsp: :ref:`FmodDSP<FmodDSP>`, channel_group: :ref:`FmodChan
 
 在通道上播放 DSP 及其输入信号，通过指定的通道组路由
 
-如果 ``paused`` 为 ``true``，通道将以暂停状态开始，并且在调用 :ref:`FmodChannel.set_paused()<FmodChannel-set_paused>` 并传入 ``false`` 之前不会发出声音
+如果 ``paused`` 为 ``true``，通道将以暂停状态开始，并且在调用 :ref:`FmodChannelControl.set_paused()<FmodChannelControl-set_paused>` 并传入 ``false`` 之前不会发出声音
   
 返回一个 :ref:`FmodChannel<FmodChannel>` 句柄，可用于控制播放
   
@@ -812,7 +1180,7 @@ void set_reverb_properties(instance: `int`_, decay_time: `float`_, early_delay: 
 
 设置指定混响实例的混响属性
 
-混响实例 ID 是通过 :ref:`create_reverb_3d()<FmodSystem-reate_reverb_3d>` 创建的 :ref:`FmodReverb3D` 对象的 ID
+混响实例 ID 是通过 :ref:`create_reverb_3d()<FmodSystem-create_reverb_3d>` 创建的 **FmodReverb3D** 对象的 ID
 
 - ``decay_time`` —— 混响衰减时间，单位为毫秒
 - ``early_delay`` —— 早期反射的延迟时间，单位为毫秒
@@ -916,8 +1284,10 @@ void detach_channel_group_from_port(channel_group: :ref:`FmodChannelGroup<FmodCh
     - 类型
     - 说明
   * - num_drivers
+    - `int`_
     - 可用录音设备的总数
   * - num_connected
+    - `int`_
     - 当前连接的录音设备数量
   
 .. _FmodSystem-get_record_driver_info:
@@ -989,7 +1359,7 @@ void record_stop(id: `int`_)
 
 .. _FmodSystem-create_geometry:
 
-:ref:`FmodGeometry<FmodGeometry>` create_geometry(max_polygons: `int`_ = 9999, max_vertices: `int`_ = 9999) const
+**FmodGeometry** create_geometry(max_polygons: `int`_ = 9999, max_vertices: `int`_ = 9999) const
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 为 3D 遮挡计算创建一个几何体对象，用于模拟场景中物理物体对声音的遮挡
@@ -999,10 +1369,10 @@ void record_stop(id: `int`_)
 
 .. _FmodSystem-load_geometry:
 
-:ref:`FmodGeometry<FmodGeometry>` load_geometry(data: `PackedByteArray`_) const
+**FmodGeometry** load_geometry(data: `PackedByteArray`_) const
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-从提供的 **PackedByteArray** 加载几何数据并创建一个 :ref:`FmodGeometry<FmodGeometry>` 对象，对于从磁盘加载复杂几何形状非常有用
+从提供的 **PackedByteArray** 加载几何数据并创建一个 **FmodGeometry** 对象，对于从磁盘加载复杂几何形状非常有用
 
 .. warning:: 数据格式必须符合 FMOD 的几何数据规范，通常包含顶点和多边形信息
   
@@ -1053,6 +1423,19 @@ void unlock_dsp()
 
 .. warning:: 必须在 :ref:`unlock_dsp()<FmodSystem-lock_dsp>` 之后调用
 
+.. _FmodSystem-set_3d_rolloff_callback:
+
+void set_3d_rolloff_callback(callback: `Callable`_)
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置自定义 3D 距离衰减回调。回调应接收距离并返回衰减值。
+
+.. _FmodSystem-get_3d_rolloff_callback:
+
+`Callable`_ get_3d_rolloff_callback() const
++++++++++++++++++++++++++++++++++++++++++++
+
+返回当前自定义 3D 距离衰减回调。
 枚举
 ~~~~
 

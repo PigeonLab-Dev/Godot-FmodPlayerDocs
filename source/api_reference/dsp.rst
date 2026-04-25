@@ -1,6 +1,8 @@
 DSP 效果器 API
 ==============
 
+.. warning:: 由于版本变更，此章节尚未更新
+
 .. _FmodDSP:
 
 FmodDSP

@@ -1,307 +1,327 @@
 导出说明
 ========
 
-本文档说明如何在导出 Godot 项目时正确配置 FmodPlayer 插件。
+本文说明如何在导出 Godot 项目时打包 Godot-FmodPlayer 和 FMOD 运行库。
+如果你还没有完成插件安装，请先阅读 :doc:`getting_started/installation`。
 
-导出前准备
+导出前检查
 ----------
 
-确认文件结构
+确认插件文件
 ~~~~~~~~~~~~
 
-确保 ``addons/`` 目录包含以下文件::
+导出前，项目中应包含 ``addons/fmod_player`` 插件目录。Windows 项目通常至少需要：
 
-    res://
-    └── addons/
-        └── fmod_player/
-            ├── bin/
-            │   ├── fmod_player.gdextension      # GDExtension 配置
-            │   ├── fmod.dll                     # Windows FMOD 运行时
-            │   ├── fmod_player.windows.template_debug.x86_64.dll
-            │   ├── fmod_player.windows.template_release.x86_64.dll
-            │   └── icons/                       # 类图标
-            └── fmod_player_plugin/              # 编辑器插件
-                ├── plugin.cfg
-                └── fmod_player_plugin.gd
+.. code-block:: text
 
-平台特定文件
-~~~~~~~~~~~~
-
-**Windows 导出需要：**
-
-- ``fmod_player.windows.template_release.x86_64.dll`` （发布版）
-- ``fmod.dll`` （FMOD 运行库，发布版）
-
-**Android 导出需要：**
-
-- ``libfmod_player.android.template_release.arm64.so``
-- ``libfmod.so`` （需要手动添加到 APK）
-
-Godot 导出配置
---------------
-
-导出预设设置
-~~~~~~~~~~~~
-
-1. 打开 **项目 > 导出**
-2. 选择或创建导出预设
-3. 在 **资源** 标签页中：
-
-   - 确保 ``addons/fmod_player/`` 目录被包含
-   - 不需要的文件（如 ``.obj``, ``.os``）可以排除
-
-Windows 导出
-^^^^^^^^^^^^
-
-.. list-table::
-   :header-rows: 1
-
-   * - 设置项
-     - 推荐值
-     - 说明
-   * - 导出路径
-     - 项目目录
-     - 便于调试
-   * - 可执行文件
-     - 自定义名称
-     - 如 ``MyGame.exe``
-   * - 嵌入 PCK
-     - 可选
-     - 单文件发布时启用
-
-Android 导出
-^^^^^^^^^^^^
-
-.. list-table::
-   :header-rows: 1
-
-   * - 设置项
-     - 推荐值
-     - 说明
-   * - 导出格式
-     - APK 或 AAB
-     - 根据发布需求选择
-   * - 架构
-     - arm64-v8a
-     - 主要目标架构
-   * - 目标 SDK
-     - 30+
-     - Google Play 要求
-
-FMOD 库配置
------------
-
-Windows
-~~~~~~~
-
-发布时使用 FMOD 发布版库：
-
-.. code-block:: batch
-
-    # 确保使用 fmod.dll（而非 fmodL.dll）
-    # 调试版（Debug）：fmodL.dll
-    # 发布版（Release）：fmod.dll
-
-Android
-~~~~~~~
-
-需要将 FMOD 库打包到 APK：
+   res://
+   └── addons/
+       └── fmod_player/
+           ├── plugin.cfg
+           ├── fmod_check.gd
+           ├── fmod_player_main.gd
+           └── bin/
+               ├── fmod_player.gdextension
+               ├── fmod.dll
+               ├── fmod_player.windows.template_debug.x86_64.dll
+               ├── fmod_player.windows.template_release.x86_64.dll
+               └── icons/
 
 .. important::
-   
-   **FMOD Android 运行库需要手动下载**
-   
-   由于 FMOD 的许可协议不允许二次分发，你需要自行从 
-   `FMOD 官网 <https://www.fmod.com/download>`_ 下载 FMOD Engine Android 运行库
 
-1. 下载 `OpenJDK17 <https://adoptium.net/temurin/releases/?variant=openjdk17&version=17&os=any&arch=any>`_
-2. 下载 `Android SDK <https://developer.android.com/studio>`_
-3. 下载 `Gradle-8.11.1-bin <https://services.gradle.org/distributions/gradle-8.11.1-bin.zip>`_
-4. 安装 Android 构建模板： **项目** > **安装 Android 模板**
+   FMOD 运行库不会随插件一起分发。你需要自行从
+   `FMOD 下载页面 <https://www.fmod.com/download>`_ 下载 FMOD Engine，
+   并根据目标平台复制对应的运行库。
 
-  .. image:: _static/install_android_template.png
-     :align: center
+确认 GDExtension 配置
+~~~~~~~~~~~~~~~~~~~~~
 
-5. 将 ``FMOD runtime library`` 和 ``libfmod_player.so`` 文件复制到 ``res://android/build/libs/debug/`` 和 ``res://android/build/libs/release/`` 目录下
-6. 将 ``fmod.jar`` 添加到 ``res://android/build/libs/`` 目录，并在 ``res://android/build/build.gradle`` 中添加依赖：
-
-   .. code-block:: 
-
-       dependencies {
-           implementation files('libs/fmod.jar')
-       }
-
-7. 在 ``res://android/build/src/main/java/com/godot/game/GodotApp.java`` 中加载 FMOD 库：
-
-   .. code-block:: java
-
-       @Override
-       public void onCreate(Bundle savedInstanceState) {
-           // Decide according to your own situation whether to load debug or release version
-           System.loadLibrary("fmodL");           // Debug version
-           System.loadLibrary("fmod");            // Release version
-           SplashScreen.installSplashScreen(this);
-           EdgeToEdge.enable(this);
-           super.onCreate(savedInstanceState);
-       }
-
-8. 在导出设置中选择正确的架构（arm64-v8a）
-9. 选择 ``gradle_build/use_gradle_build`` 选项以使用 Gradle 构建系统
-
-  .. image:: _static/use_gradle_build.png
-      :align: center
-    
-10. 导出 APK 或 AAB 文件
-
-GDExtension 配置
-~~~~~~~~~~~~~~~~
-
-检查 ``fmod_player.gdextension`` 文件确保包含发布库路径：
+当前插件默认支持 Windows x86_64 和 Android arm64。``addons/fmod_player/bin/fmod_player.gdextension``
+中应包含类似配置：
 
 .. code-block:: ini
 
-    [configuration]
-    entry_symbol = "example_library_init"
-    compatibility_minimum = "4.1"
+   [configuration]
+   entry_symbol = "fmod_player_init"
+   compatibility_minimum = "4.1"
+   reloadable = true
 
-    [libraries]
-    windows.debug.x86_64 = "fmod_player.windows.template_debug.x86_64.dll"
-    windows.release.x86_64 = "fmod_player.windows.template_release.x86_64.dll"
-    android.debug.arm64 = "libfmod_player.android.template_debug.arm64.so"
-    android.release.arm64 = "libfmod_player.android.template_release.arm64.so"
+   [libraries]
+   windows.debug.x86_64 = "fmod_player.windows.template_debug.x86_64.dll"
+   windows.release.x86_64 = "fmod_player.windows.template_release.x86_64.dll"
+   android.debug.arm64 = "libfmod_player.android.template_debug.arm64.so"
+   android.release.arm64 = "libfmod_player.android.template_release.arm64.so"
 
-    [dependencies]
-    windows.debug.x86_64 = { "fmod.dll" : "" }
-    windows.release.x86_64 = { "fmod.dll" : "" }
+   [dependencies]
+   windows.debug.x86_64 = { "fmod.dll" : "" }
+   windows.release.x86_64 = { "fmod.dll" : "" }
 
-自定义构建
-----------
+如果你修改了二进制文件名、平台或架构，需要同步修改此文件。
 
-从源码构建发布版
-~~~~~~~~~~~~~~~~
+Godot 导出预设
+--------------
 
-**Windows：**
+#. 打开 **项目 > 导出**。
+#. 创建或选择目标平台的导出预设。
+#. 在 **资源** 标签页中，确认 ``addons/fmod_player/`` 和音频资源会被包含。
+#. 如果使用 Android，请启用 Gradle 构建并安装 Android 构建模板。
 
-.. code-block:: bash
-
-    scons platform=windows target=template_release arch=x86_64
-
-**Android：**
-
-.. code-block:: bash
-
-    scons platform=android target=template_release arch=arm64
-
-优化选项
-~~~~~~~~
-
-.. code-block:: python
-
-    # 在 SConstruct 中添加优化选项
-    # 发布版默认启用优化
-    
-    # 可以额外启用 LTO（链接时优化）
-    env.Append(LINKFLAGS=["/LTCG"])  # MSVC
-    env.Append(CCFLAGS=["/GL"])      # MSVC
-
-调试导出问题
+Windows 导出
 ------------
 
-常见问题
+需要的文件
+~~~~~~~~~~
+
+Windows x86_64 发布版需要：
+
+- ``addons/fmod_player/bin/fmod_player.gdextension``
+- ``addons/fmod_player/bin/fmod_player.windows.template_release.x86_64.dll``
+- ``addons/fmod_player/bin/fmod.dll``
+- 项目中使用到的音频资源
+
+.. note::
+
+   发布版请使用 ``fmod.dll``。``fmodL.dll`` 是 FMOD 的日志/调试版本，通常不用于正式发布。
+   当前插件的 Windows 依赖配置默认查找 ``fmod.dll``。
+
+导出建议
 ~~~~~~~~
 
-**FMOD 初始化失败**
+.. list-table::
+   :header-rows: 1
 
-- 检查 ``fmod.dll`` 是否在可执行文件同目录
-- 检查音频设备是否正常工作
-- 查看 Godot 控制台错误输出
+   * - 设置项
+     - 建议
+   * - 架构
+     - ``x86_64``
+   * - 导出模板
+     - 使用 release 模板进行正式发布
+   * - 嵌入 PCK
+     - 可按项目发布方式选择
+   * - 首次验证
+     - 先导出到空目录，确认缺失文件更容易排查
 
-**找不到 GDExtension**
+导出后检查
+~~~~~~~~~~
 
-- 确认 ``.gdextension`` 文件路径正确
-- 检查对应平台的 DLL/SO 文件是否存在
-- 检查 Godot 版本兼容性
+运行导出的 ``.exe``，确认：
 
-**Android 崩溃**
+- 游戏能够正常启动。
+- 没有 GDExtension 加载失败错误。
+- 音频可以播放。
+- 控制台或日志中没有 ``fmod.dll`` 缺失提示。
 
-- 确认所有必要的 ``.so`` 文件已打包
-- 检查 ABI 架构匹配
-- 查看 Android Logcat 日志
+Android 导出
+------------
+
+Android 比 Windows 多一步：除了插件自己的 ``libfmod_player``，还要把 FMOD 的
+``libfmod.so`` 和 ``fmod.jar`` 放进 Android 构建模板。
+
+准备文件
+~~~~~~~~
+
+需要准备：
+
+- ``addons/fmod_player/bin/libfmod_player.android.template_release.arm64.so``
+- 从 FMOD Engine Android 包中取得的 ``libfmod.so``
+- 从 FMOD Engine Android 包中取得的 ``fmod.jar``
+
+.. seealso:: `为 Android 导出 <https://docs.godotengine.org/zh-cn/4.x/tutorials/export/exporting_for_android.html>`_ 如何为导出到 Android 做准备。
+
+安装 Android 构建模板
+~~~~~~~~~~~~~~~~~~~~~
+
+在 Godot 中执行 **项目 > 安装 Android 构建模板**。
+
+.. image:: _static/install_android_template.png
+   :align: center
+
+安装后，项目中会出现 ``res://android/build/`` 目录。
+
+复制运行库
+~~~~~~~~~~
+
+将 Android arm64 运行库复制到 Gradle 工程的库目录。目录可以按项目需要组织，
+但应保证最终 APK/AAB 中包含对应 ABI 的 ``.so`` 文件。
+
+常见做法是放入：
+
+.. code-block:: text
+
+   res://android/build/libs/
+   ├── debug/
+   │   ├── arm64-v8a/
+   │   │   ├── libfmod.so
+   │   │   └── libfmod_player.android.template_debug.arm64.so
+   └── release/
+       └── arm64-v8a/
+           ├── libfmod.so
+           └── libfmod_player.android.template_release.arm64.so
+
+实际目录可能会随 Godot 版本和模板结构不同而调整。关键是 ABI 必须匹配导出预设中的
+``arm64-v8a``。
+
+添加 fmod.jar
+~~~~~~~~~~~~~
+
+将 ``fmod.jar`` 放入：
+
+.. code-block:: text
+
+   res://android/build/libs/fmod.jar
+
+然后在 ``res://android/build/build.gradle`` 的 ``dependencies`` 中加入：
+
+.. code-block:: groovy
+
+   dependencies {
+       implementation files("libs/fmod.jar")
+   }
+
+加载 FMOD 库
+~~~~~~~~~~~~
+
+在 Android 启动代码中加载 FMOD 运行库。通常是在 ``GodotApp.java`` 的
+``onCreate`` 中调用：
+
+.. code-block:: java
+
+   @Override
+   public void onCreate(Bundle savedInstanceState) {
+       System.loadLibrary("fmod");
+       super.onCreate(savedInstanceState);
+   }
+
+.. note::
+
+   如果你使用 FMOD 调试库，则库名可能是 ``fmodL``。发布版通常使用 ``fmod``。
+   不要在同一个发布构建里同时加载 ``fmod`` 和 ``fmodL``。
+
+导出设置
+~~~~~~~~
+
+#. 在 Android 导出预设中选择 ``arm64-v8a``。
+#. 启用 Gradle 构建。
+
+   .. image:: _static/use_gradle_build.png
+      :align: center
+
+#. 导出 APK 或 AAB。
+#. 在真机上测试音频播放，不要只依赖编辑器或模拟器结果。
+
+源码构建发布库
+--------------
+
+如果你修改了插件 C++ 源码，需要重新构建平台二进制。
+
+Windows release：
+
+.. code-block:: bash
+
+   scons platform=windows target=template_release arch=x86_64
+
+Android release：
+
+.. code-block:: bash
+
+   scons platform=android target=template_release arch=arm64
+
+构建完成后，将生成的二进制复制到 ``addons/fmod_player/bin/``，并确认
+``fmod_player.gdextension`` 中的文件名一致。
+
+导出排错
+--------
+
+Windows 常见问题
+~~~~~~~~~~~~~~~~
+
+**导出后启动失败或提示找不到 GDExtension**
+
+- 确认 ``fmod_player.gdextension`` 被包含在导出包中。
+- 确认 release 版本的 ``fmod_player.windows.template_release.x86_64.dll`` 存在。
+- 确认导出架构为 ``x86_64``。
+- 确认 Godot 版本不低于插件要求的 ``4.1``。
+
+**提示找不到 fmod.dll**
+
+- 确认 ``addons/fmod_player/bin/fmod.dll`` 存在。
+- 确认使用的是 Windows x86_64 的 FMOD Core 运行库。
+- 尝试将 ``fmod.dll`` 与导出的可执行文件放在同一目录中，以排除运行时搜索路径问题。
+
+Android 常见问题
+~~~~~~~~~~~~~~~~
+
+**启动后崩溃**
+
+- 确认 ``libfmod.so`` 已打包进 APK/AAB。
+- 确认 ABI 是 ``arm64-v8a``，并与 ``libfmod_player.android.template_release.arm64.so`` 匹配。
+- 确认启动代码中已调用 ``System.loadLibrary("fmod")``。
+- 使用 Logcat 查看原始错误。
+
+**导出后没有声音**
+
+- 确认音频资源被包含在导出包中。
+- 优先使用 ``res://`` 路径，不要依赖开发机绝对路径。
+- 检查 FMOD 初始化日志和 Godot 输出。
 
 日志查看
 ~~~~~~~~
 
-**Windows：**
+Windows 可以使用 Godot 控制台、编辑器输出面板，或从命令行启动导出的程序查看日志。
 
-使用 Godot 编辑器的 **输出** 面板或命令行启动查看日志。
-
-**Android：**
+Android 可使用：
 
 .. code-block:: bash
 
-    adb logcat -s godot
-    adb logcat | grep FMOD
+   adb logcat -s godot
+   adb logcat | grep FMOD
 
-性能优化
+发布前检查清单
+--------------
+
+Windows
+~~~~~~~
+
+- ``fmod_player.gdextension`` 已包含。
+- ``fmod_player.windows.template_release.x86_64.dll`` 已包含。
+- ``fmod.dll`` 已包含。
+- 所有音频资源已包含。
+- 在空目录中运行导出版本并测试播放。
+
+Android
+~~~~~~~
+
+- Android 导出预设启用了 ``arm64-v8a``。
+- 已启用 Gradle 构建。
+- ``libfmod_player.android.template_release.arm64.so`` 已包含。
+- ``libfmod.so`` 已打包到正确 ABI 目录。
+- ``fmod.jar`` 已加入 Gradle 依赖。
+- 启动代码已加载 FMOD 运行库。
+- 已在真机上测试播放。
+
+性能建议
 --------
 
-导出前优化建议
-~~~~~~~~~~~~~~
+- 背景音乐和较长音频优先使用 ``MODE_STREAM``。
+- 短音效、频繁触发的声音优先使用 ``MODE_SAMPLE``。
+- 移动平台上谨慎使用大量实时 DSP，优先在总线上共享效果。
+- 控制同时播放的通道数量，避免不必要的重叠播放。
+- 发布前在目标设备上观察 ``FmodCPUUsage`` 和 ``FmodFileUsage`` 监视器。
 
-#. **音频格式优化**
-   
-   - 背景音乐使用 OGG Vorbis（压缩率高）
-   - 音效使用短 WAV 或 OGG
-   - 避免使用未压缩的大 WAV 文件
-
-#. **流式 vs 采样**
-   
-   - 大文件使用 ``FmodAudioStream``
-   - 音效使用 ``FmodAudioSample``
-
-#. **DSP 效果**
-   
-   - 移动设备减少 DSP 使用
-   - 在总线上共享效果器
-
-#. **通道数限制**
-   
-   - 设置合理的 ``max_channels``
-   - 使用虚拟语音系统
-
-发布清单
---------
-
-Windows 发布检查
-~~~~~~~~~~~~~~~~
-
-- [ ] ``fmod_player.windows.template_release.x86_64.dll``
-- [ ] ``fmod.dll`` （发布版，非 fmodL.dll）
-- [ ] ``fmod_player.gdextension``
-- [ ] 所有音频资源已包含
-- [ ] 测试音频播放正常
-
-Android 发布检查
-~~~~~~~~~~~~~~~~
-
-- [ ] ``libfmod_player.android.template_release.arm64.so``
-- [ ] ``libfmod.so`` 已打包
-- [ ] ``fmod_player.gdextension``
-- [ ] 目标架构设置正确
-- [ ] 权限配置（如需录音功能）
-
-许可证合规
+许可与署名
 ----------
 
-FMOD 许可
-~~~~~~~~~
+Godot-FmodPlayer 插件本身使用 `MIT 许可证 <https://opensource.org/license/MIT>`_。
+FMOD Engine 是 Firelight Technologies Pty Ltd 的专有软件，使用和分发需要遵守
+FMOD 官方许可条款。
 
-- FMOD 是 Firelight Technologies Pty Ltd 的专有音频引擎
-- 非商业项目可以免费使用
-- 商业项目需要从 `fmod.com <https://www.fmod.com>`_ 获取许可证
-- 需要在游戏中显示 FMOD 署名（非商业）
+发布前请阅读：
 
-MIT 许可
-~~~~~~~~
+- `FMOD Licensing <https://www.fmod.com/licensing>`_
+- `FMOD Legal Information <https://www.fmod.com/legal>`_
+- `FMOD Attribution <https://www.fmod.com/attribution>`_
 
-Godot-FmodPlayer 插件本身使用 `MIT <https://opensource.org/licenses/MIT>`_ 许可证，可以自由使用和修改。
+.. important::
+
+   FMOD 的许可、价格和署名要求可能会更新。本文只说明 Godot-FmodPlayer 的导出配置，
+   不替代 FMOD 官方许可文本。
