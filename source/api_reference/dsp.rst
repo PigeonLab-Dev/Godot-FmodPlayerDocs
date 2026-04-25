@@ -354,7 +354,7 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
 .. code-block:: gdscript
 
     func create_callback() -> int:
-        # 返回 FMOD_RESULT 枚举值 (FMOD_OK = 0)
+        # Return an FMOD_RESULT enum value. FMOD_OK = 0.
         return 0
 
 **处理回调：**
@@ -362,15 +362,15 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
 .. code-block:: gdscript
 
     func process_callback(length: int, in_buffers: Dictionary, inputs_idle: bool, op: int) -> Dictionary:
-        # length: 采样数
-        # in_buffers: 输入缓冲区字典 {索引: PackedFloat32Array}
-        # inputs_idle: 输入是否空闲
-        # op: 处理操作类型 (0=查询, 1=执行)
+        # length: sample count
+        # in_buffers: input buffer dictionary {index: PackedFloat32Array}
+        # inputs_idle: whether the input is idle
+        # op: process operation type (0=query, 1=perform)
         
-        # 返回字典:
+        # Return dictionary:
         return {
-            "outbuffers": {0: output_array},  # 输出缓冲区
-            "outchannels": [channel_count],   # 输出通道数
+            "outbuffers": {0: output_array},  # Output buffers
+            "outchannels": [channel_count],   # Output channel count
             "result": 0  # FMOD_RESULT
         }
 
@@ -379,16 +379,16 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
 .. code-block:: gdscript
 
     func read_callback(in_array: PackedFloat32Array, length: int, in_channels: int) -> Dictionary:
-        # in_array: 输入音频数据
-        # length: 采样数
-        # in_channels: 输入通道数
+        # in_array: input audio data
+        # length: sample count
+        # in_channels: input channel count
         
-        # 处理音频...
+        # Process audio.
         var out_array = PackedFloat32Array()
         out_array.resize(length * in_channels)
         
         for i in range(length * in_channels):
-            out_array[i] = in_array[i] * 0.5  # 衰减
+            out_array[i] = in_array[i] * 0.5  # Attenuation
         
         return {
             "output": out_array,
@@ -401,9 +401,9 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
 .. code-block:: gdscript
 
     func set_param_float_callback(index: int, value: float) -> int:
-        # index: 参数索引
-        # value: 参数值
-        print("设置参数 ", index, " = ", value)
+        # index: parameter index
+        # value: parameter value
+        print("Set parameter ", index, " = ", value)
         return 0  # FMOD_OK
 
 **参数获取回调：**
@@ -411,10 +411,10 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
 .. code-block:: gdscript
 
     func get_param_float_callback(index: int) -> Dictionary:
-        # index: 参数索引
+        # index: parameter index
         return {
-            "value": 1.0,       # 参数值
-            "valuestr": "1.0",  # 值的字符串表示
+            "value": 1.0,       # Parameter value
+            "valuestr": "1.0",  # String representation
             "result": 0         # FMOD_RESULT
         }
 
@@ -430,25 +430,25 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
     extends FmodAudioEffect
 
     func _on_dsp_create(dsp_state) -> bool:
-        # 初始化自定义数据
+        # Initialize custom data.
         return true
 
     func _on_dsp_process(dsp_state, length, inbuffer, outbuffer, op) -> bool:
-        # 处理音频数据
-        # inbuffer: 输入音频数据
-        # outbuffer: 输出音频数据
-        # length: 采样数
+        # Process audio data.
+        # inbuffer: input audio data
+        # outbuffer: output audio data
+        # length: sample count
         
         for i in range(length):
-            outbuffer[i] = inbuffer[i] * 0.5  # 简单衰减
+            outbuffer[i] = inbuffer[i] * 0.5  # Simple attenuation
         
         return true
 
     func _on_dsp_release(dsp_state) -> bool:
-        # 清理资源
+        # Clean up resources.
         return true
 
-    # 使用
+    # Usage
     func apply_effect():
         var effect = MyCustomEffect.new()
         var system = FmodServer.main_system
@@ -463,21 +463,21 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
     func create_custom_dsp():
         var system = FmodServer.main_system
         
-        # 创建自定义 DSP
+        # Create a custom DSP.
         var dsp = system.create_dsp("MyCustomDSP")
         
-        # 设置创建回调
+        # Set the create callback.
         dsp.set_create_callback(func() -> int:
-            print("DSP 已创建")
+            print("DSP created")
             return 0  # FMOD_OK
         )
         
-        # 设置处理回调
+        # Set the process callback.
         dsp.set_process_callback(func(length: int, in_buffers: Dictionary, inputs_idle: bool, op: int) -> Dictionary:
             if op == 0:  # FMOD_DSP_PROCESS_QUERY
-                # 返回支持的输出格式
+                # Return the supported output format.
                 return {
-                    "outchannels": [2],  # 立体声输出
+                    "outchannels": [2],  # Stereo output
                     "result": 0
                 }
             
@@ -489,9 +489,9 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
                 var out_data = PackedFloat32Array()
                 out_data.resize(in_data.size())
                 
-                # 简单的增益处理
+                # Simple gain processing.
                 for j in range(in_data.size()):
-                    out_data[j] = in_data[j] * 0.7  # 降低音量
+                    out_data[j] = in_data[j] * 0.7  # Lower the volume.
                 
                 out_buffers[i] = out_data
             
@@ -502,13 +502,13 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
             }
         )
         
-        # 设置释放回调
+        # Set the release callback.
         dsp.set_release_callback(func() -> int:
-            print("DSP 已释放")
+            print("DSP released")
             return 0
         )
         
-        # 添加到主总线
+        # Add it to the master bus.
         var master = system.get_master_channel_group()
         master.add_dsp(0, dsp)
 
@@ -523,7 +523,7 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
         
         var gain = 0.5
         
-        # 设置读取回调（逐采样处理）
+        # Set the read callback for per-sample processing.
         dsp.set_read_callback(func(in_array: PackedFloat32Array, length: int, in_channels: int) -> Dictionary:
             var out_array = PackedFloat32Array()
             out_array.resize(length * in_channels)
@@ -538,7 +538,7 @@ FmodDSP 支持通过 Callable 设置各种回调函数，实现自定义 DSP 行
             }
         )
         
-        # 设置参数回调以动态调整增益
+        # Set parameter callbacks to adjust gain dynamically.
         dsp.set_setparam_float_callback(func(index: int, value: float) -> int:
             if index == 0:
                 gain = value

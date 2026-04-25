@@ -47,7 +47,7 @@ FmodChannelControl
     - mute
     - false
     - 静音状态
-  * - ``PackedVector3Array``
+  * - `PackedVector3Array`_
     - 3d_custom_rolloff
     - PackedVector3Array()
     - 自定义 3D 距离衰减曲线
@@ -265,14 +265,14 @@ void set_3d_cone_settings(inside_cone_angle: `float`_, outside_cone_angle: `floa
 
 .. _FmodChannelControl-set_3d_custom_rolloff:
 
-void set_3d_custom_rolloff(points: ``PackedVector3Array``)
+void set_3d_custom_rolloff(points: `PackedVector3Array`_)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 设置自定义 3D 距离衰减曲线。通常需要配合 ``FMOD_MODE_3D_CUSTOMROLLOFF`` 使用。
 
 .. _FmodChannelControl-get_3d_custom_rolloff:
 
-``PackedVector3Array`` get_3d_custom_rolloff() const
+`PackedVector3Array`_ get_3d_custom_rolloff() const
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 返回当前自定义 3D 距离衰减曲线。
@@ -280,7 +280,7 @@ void set_3d_custom_rolloff(points: ``PackedVector3Array``)
 .. _FmodChannelControl-set_3d_distance_filter:
 
 void set_3d_distance_filter(custom: `bool`_, custom_level: `float`_, center_freq: `float`_)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 设置 3D 距离滤波器覆盖值，用于随距离改变低通/高通滤波表现。
 
@@ -395,16 +395,18 @@ void set_mix_levels_input(levels: ``PackedFloat32Array``)
 .. _FmodChannelControl-set_mix_levels_output:
 
 void set_mix_levels_output(front_left: `float`_, front_right: `float`_, center: `float`_, lfe: `float`_, surround_left: `float`_, surround_right: `float`_, back_left: `float`_, back_right: `float`_)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 为每个输出扬声器设置音量电平。
 
 .. _FmodChannelControl-set_mix_matrix:
 
 void set_mix_matrix(matrix: ``PackedFloat32Array``, outchannels: `int`_, inchannels: `int`_, inchannel_hop: `int`_ = 0)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 设置二维声像矩阵，将输入通道列映射到输出扬声器行。``matrix`` 的长度应至少覆盖 ``outchannels * inchannel_hop``，当 ``inchannel_hop`` 为 ``0`` 时使用 ``inchannels``。
+
+.. seealso:: 混音矩阵、上混音与下混音的说明和示例见 :ref:`mixer-mix-matrix`。
 
 .. _FmodChannelControl-get_mix_matrix:
 
@@ -692,7 +694,7 @@ void set_loop_points(start: `int`_, end: `int`_, timeunit: :ref:`FmodTimeUnit<Fm
 .. _FmodChannel-get_loop_points:
 
 `Dictionary`_ get_loop_points(timeunit: :ref:`FmodTimeUnit<FmodTimeUnit>` = FMOD_TIME_UNIT_MS) const
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 返回循环点字典，包含 ``start`` 和 ``end``。
 

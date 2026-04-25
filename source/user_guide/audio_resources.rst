@@ -121,11 +121,11 @@ FmodAudioStream
 
 .. code-block:: gdscript
 
-    # 流式加载 - 适合背景音乐（默认）
+    # Stream loading, suitable for background music by default.
     var bgm_stream: FmodAudioStream = FmodAudioStream.load_from_file("res://music/background.mp3")
     bgm_stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
     
-    # 样本加载 - 适合音效
+    # Sample loading, suitable for sound effects.
     var sfx_stream: FmodAudioStream = FmodAudioStream.load_from_file("res://sfx/explosion.wav",
         FmodAudioStream.MODE_SAMPLE)
 
@@ -134,7 +134,7 @@ FmodAudioStream
 
 .. code-block:: gdscript
 
-    # 从 PackedByteArray 加载
+    # Load from PackedByteArray.
     var audio_data: PackedByteArray = load_audio_from_somewhere()
     
     var stream = FmodAudioStream.new()
@@ -194,7 +194,7 @@ FmodAudioStream
     var current_track: int = 0
 
     func _ready():
-        # 加载播放列表（流式模式）
+        # Load the playlist in stream mode.
         for i in range(3):
             var stream = FmodAudioStream.load_from_file(
                 "res://music/track_%d.mp3" % i,
@@ -218,7 +218,7 @@ FmodAudioStream
     var sfx_cache: Dictionary = {}
 
     func preload_sfx(sfx_name: String, path: String):
-        # 使用样本模式加载音效
+        # Load sound effects in sample mode.
         var stream = FmodAudioStream.load_from_file(path, 
             FmodAudioStream.MODE_SAMPLE)
         sfx_cache[sfx_name] = stream
@@ -228,7 +228,7 @@ FmodAudioStream
             push_error("SFX not found: " + sfx_name)
             return
         
-        # 使用 emitter 播放
+        # Play through an emitter.
         var emitter = FmodAudioSampleEmitter.new()
         add_child(emitter)
         
@@ -236,7 +236,7 @@ FmodAudioStream
         emitter.bus = bus
         emitter.emit()
         
-        # 播放完成后自动释放
+        # Release automatically after playback.
         await get_tree().create_timer(5.0).timeout
         emitter.queue_free()
 
@@ -250,13 +250,13 @@ FmodAudioStream
     @onready var player = $FmodAudioStreamPlayer
 
     func load_and_play_large_file(path: String):
-        # 创建加载线程避免卡顿
+        # Create a loading thread to avoid stutter.
         var thread = Thread.new()
         thread.start(func():
             var stream = FmodAudioStream.load_from_file(path,
                 FmodAudioStream.MODE_STREAM)
             
-            # 返回主线程更新
+            # Return to the main thread for updates.
             call_deferred("_on_stream_loaded", stream)
         )
 

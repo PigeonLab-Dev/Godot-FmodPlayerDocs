@@ -141,13 +141,13 @@ FmodAudioSampleEmitter
     func play_sound_simple(path: String):
         var system = FmodServer.main_system
         
-        # 创建声音
+        # Create the sound.
         var sound = system.create_sound_from_file(path, FmodSystem.MODE_DEFAULT)
         
-        # 获取主通道组
+        # Get the master channel group.
         var master = system.get_master_channel_group()
         
-        # 播放（paused=false 立即播放）
+        # Play immediately with paused set to false.
         var channel = system.play_sound(sound, master, false)
         
         return channel
@@ -160,21 +160,21 @@ FmodAudioSampleEmitter
     func play_sound_advanced(path: String):
         var system = FmodServer.main_system
         
-        # 创建声音（使用特定模式）
+        # Create the sound with specific mode flags.
         var mode = FmodSystem.MODE_LOOP_OFF | FmodSystem.MODE_3D
         var sound = system.create_sound_from_file(path, mode)
         
-        # 创建通道组
+        # Create a channel group.
         var sfx_group = system.create_channel_group("SFX")
         
-        # 播放并暂停（准备状态）
+        # Start paused so the channel can be configured first.
         var channel = system.play_sound(sound, sfx_group, true)
         
-        # 设置参数
+        # Set playback parameters.
         channel.set_volume_db(-6.0)
         channel.set_pitch(1.2)
         
-        # 开始播放
+        # Start playback.
         channel.set_paused(false)
         
         return channel
@@ -190,14 +190,14 @@ FmodAudioSampleEmitter
 .. code-block:: gdscript
 
     func control_playback(channel: FmodChannel):
-        # 暂停/继续
+        # Pause and resume.
         channel.set_paused(true)
         channel.set_paused(false)
         
-        # 停止
+        # Stop playback.
         channel.stop()
         
-        # 检查播放状态
+        # Check playback state.
         if channel.is_playing():
             print("Channel is playing")
 

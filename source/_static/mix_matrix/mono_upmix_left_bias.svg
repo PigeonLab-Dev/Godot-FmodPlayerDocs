@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366 422" role="img">
+<defs>
+<filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#64748b" flood-opacity="0.16"/>
+</filter>
+</defs>
+<rect x="16" y="16" width="334" height="390" rx="12" fill="#ffffff" stroke="#dbe4f0" stroke-width="1"/>
+<text x="36" y="50" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#111827">Mono to stereo upmix</text>
+<text x="36" y="78" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" fill="#526176">Send one mono source to two outputs, biased to the left.</text>
+<text x="266.0" y="104" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#64748b">Input channels</text>
+<text x="34" y="212.0" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#64748b">Output</text>
+<rect x="220" y="118" width="92" height="34" rx="8" fill="#eef4ff" stroke="#c7d2e5" stroke-width="1"/>
+<text x="266.0" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#334155">Mono</text>
+<rect x="118" y="160" width="94" height="62" rx="8" fill="#f8fafc" stroke="#c7d2e5" stroke-width="1"/>
+<text x="165.0" y="198" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#334155">Out L</text>
+<rect x="220" y="160" width="92" height="62" rx="8" fill="#2b76b9" stroke="#b6c6dc" stroke-width="1"/>
+<text x="266.0" y="199" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">1</text>
+<rect x="118" y="230" width="94" height="62" rx="8" fill="#f8fafc" stroke="#c7d2e5" stroke-width="1"/>
+<text x="165.0" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#334155">Out R</text>
+<rect x="220" y="230" width="92" height="62" rx="8" fill="#a6c5e6" stroke="#b6c6dc" stroke-width="1"/>
+<text x="266.0" y="269" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#102033">0.35</text>
+<text x="36" y="328" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#64748b">Result</text>
+<text x="118" y="358" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#172033">Out L = Mono * 1.0</text>
+<text x="118" y="386" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" fill="#172033">Out R = Mono * 0.35</text>
+</svg>

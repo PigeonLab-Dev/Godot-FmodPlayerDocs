@@ -73,7 +73,7 @@ FmodAudioStreamPlayer
 .. _FmodAudioStreamPlayer-set_stream:
 
 void set_stream(stream: :ref:`FmodAudioStream<FmodAudioStream>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置要播放的音频流
 
@@ -82,7 +82,7 @@ void set_stream(stream: :ref:`FmodAudioStream<FmodAudioStream>`)
 .. _FmodAudioStreamPlayer-get_stream:
 
 :ref:`FmodAudioStream<FmodAudioStream>` get_stream() const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前设置的音频流
 
@@ -205,7 +205,7 @@ void set_bus(bus: `StringName`_)
 
 .. _FmodAudioStreamPlayer-get_bus:
 
-`StringName`_ get_bus() const_
+`StringName`_ get_bus() const
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前输出总线名称
@@ -508,8 +508,8 @@ void set_bus(bus: `StringName`_)
 
 .. _FmodAudioStreamPlayer2D-get_bus:
 
-`StringName`_ get_bus() const_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`StringName`_ get_bus() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前输出总线名称
 
@@ -1242,7 +1242,7 @@ void clear_geometry()
 
 .. code-block:: gdscript
 
-    # 节点结构：
+    # Node hierarchy:
     # WallMesh (MeshInstance3D)
     #   FmodGeometryInstance3D
 

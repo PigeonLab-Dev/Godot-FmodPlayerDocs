@@ -60,6 +60,7 @@ rst_epilog = """
 .. _Transform3D: https://docs.godotengine.org/en/4.x/classes/class_transform3d.html
 .. _Node: https://docs.godotengine.org/en/4.x/classes/class_node.html
 .. _Node3D: https://docs.godotengine.org/en/4.x/classes/class_node3d.html
+.. _PackedVector3Array: https://docs.godotengine.org/en/4.x/classes/class_packedvector3array.html
 .. _PackedByteArray: https://docs.godotengine.org/en/4.x/classes/class_packedbytearray.html
 .. _Object: https://docs.godotengine.org/en/4.x/classes/class_object.html
 .. _RefCounted: https://docs.godotengine.org/en/4.x/classes/class_refcounted.html
@@ -67,7 +68,7 @@ rst_epilog = """
 .. _Callable: https://docs.godotengine.org/en/4.x/classes/class_callable.html
 .. _SceneTree: https://docs.godotengine.org/en/stable/classes/class_scenetree.html#scenetree
 .. _AudioServer: https://docs.godotengine.org/en/4.x/classes/class_audioserver.html#audioserver
-.. Camera2D: https://docs.godotengine.org/en/stable/classes/class_camera2d.html#camera2d
+.. _Camera2D: https://docs.godotengine.org/en/stable/classes/class_camera2d.html#camera2d
 .. _MeshInstance3D: https://docs.godotengine.org/en/stable/classes/class_meshinstance3d.html#meshinstance3d
 .. _CollisionShape3D: https://docs.godotengine.org/en/stable/classes/class_collisionshape3d.html#collisionshape3d
 .. _GDExtension: https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/index.html
