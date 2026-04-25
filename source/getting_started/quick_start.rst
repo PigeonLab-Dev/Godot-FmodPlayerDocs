@@ -96,7 +96,7 @@
         var channel: FmodChannel = system.play_sound(sound, master_group, false)
 
 添加 DSP 效果
-~~~~~~~~
+~~~~~~~~~~~~~
 
 .. code-block:: gdscript
 

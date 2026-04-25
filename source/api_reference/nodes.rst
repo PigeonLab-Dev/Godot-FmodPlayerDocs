@@ -1,554 +1,1302 @@
 节点 API
 ========
 
+.. _FmodAudioStreamPlayer:
+
 FmodAudioStreamPlayer
 ---------------------
 
-继承自：Node
+继承自： `Node`_
 
-用于播放 ``FmodAudioStream`` 资源的节点，适合背景音乐和长时间音频。
+**用于播放 2D 非空间化音频流的节点**
+
+描述
+~~~~
+
+**FmodAudioStreamPlayer** 用于播放 :ref:`FmodAudioStream<FmodAudioStream>` 资源，适合背景音乐、UI 音效和不需要空间定位的音频
+
+播放时节点会从 :ref:`FmodServer<FmodServer>` 获取指定总线对应的 :ref:`FmodChannelGroup<FmodChannelGroup>`。如果找不到指定总线，则回退到 Master 总线
 
 属性
 ~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 属性
-     - 类型
-     - 说明
-   * - ``stream``
-     - FmodAudioStream
-     - 要播放的音频流
-   * - ``playing``
-     - bool
-     - 是否正在播放（只读）
-   * - ``volume_db``
-     - float
-     - 音量（分贝，默认 0.0）
-   * - ``pitch``
-     - float
-     - 音调（默认 1.0）
-   * - ``auto_play``
-     - bool
-     - 自动播放（默认 false）
-   * - ``bus``
-     - String
-     - 音频总线名称（默认 "Master"）
-   * - ``stream_paused``
-     - bool
-     - 流暂停状态
+  * - 类型
+    - 名称
+    - 初始值
+    - 说明
+  * - :ref:`FmodAudioStream<FmodAudioStream>`
+    - stream
+    - null
+    - 要播放的音频流资源
+  * - `bool`_
+    - playing
+    - false
+    - 设置为 ``true`` 开始播放，设置为 ``false`` 停止播放
+  * - `bool`_
+    - stream_paused
+    - false
+    - 是否暂停当前播放流
+  * - `float`_
+    - volume_db
+    - 0.0
+    - 播放音量，单位为分贝
+  * - `float`_
+    - pitch_scale
+    - 1.0
+    - 播放速度和音高缩放
+  * - `bool`_
+    - auto_play
+    - false
+    - 进入场景树后自动播放
+  * - `StringName`_
+    - bus
+    - "Master"
+    - 输出到的音频总线名称
 
 方法
 ~~~~
 
-.. list-table::
-   :header-rows: 1
+.. _FmodAudioStreamPlayer-set_stream:
 
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``play(from_position=0.0)``
-     - void
-     - 从指定位置开始播放
-   * - ``stop()``
-     - void
-     - 停止播放
-   * - ``seek(position)``
-     - void
-     - 跳转到指定位置（秒）
-   * - ``get_playback_position()``
-     - float
-     - 获取当前播放位置（秒）
-   * - ``set_stream(stream)``
-     - void
-     - 设置音频流
-   * - ``get_stream()``
-     - FmodAudioStream
-     - 获取音频流
-   * - ``set_bus(bus)``
-     - void
-     - 设置音频总线
-   * - ``get_bus()``
-     - String
-     - 获取音频总线
-   * - ``set_volume_db(volume_db)``
-     - void
-     - 设置音量
-   * - ``get_volume_db()``
-     - float
-     - 获取音量
-   * - ``set_pitch(pitch)``
-     - void
-     - 设置音调
-   * - ``get_pitch()``
-     - float
-     - 获取音调
+void set_stream(stream: :ref:`FmodAudioStream<FmodAudioStream>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置要播放的音频流
+
+如果当前正在播放，会先停止当前通道并清除播放状态
+
+.. _FmodAudioStreamPlayer-get_stream:
+
+:ref:`FmodAudioStream<FmodAudioStream>` get_stream() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前设置的音频流
+
+.. _FmodAudioStreamPlayer-play:
+
+void play(from_position: `float`_ = 0.0)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+从指定位置开始播放，单位为秒
+
+如果内部通道仍然有效，会复用该通道并跳转到指定位置；否则会从当前 ``stream`` 创建新的 FMOD 通道
+
+.. _FmodAudioStreamPlayer-seek:
+
+void seek(to_position: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+跳转到指定播放位置，单位为秒
+
+.. _FmodAudioStreamPlayer-stop:
+
+void stop()
+^^^^^^^^^^^
+
+停止播放并清除暂停状态
+
+.. _FmodAudioStreamPlayer-set_playing:
+
+void set_playing(playing: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置播放状态
+
+传入 ``true`` 等同于调用 :ref:`play()<FmodAudioStreamPlayer-play>`，传入 ``false`` 等同于调用 :ref:`stop()<FmodAudioStreamPlayer-stop>`
+
+.. _FmodAudioStreamPlayer-is_playing:
+
+`bool`_ is_playing() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果内部通道有效且正在播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer-set_stream_paused:
+
+void set_stream_paused(paused: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+暂停或恢复当前播放流
+
+.. _FmodAudioStreamPlayer-get_stream_paused:
+
+`bool`_ get_stream_paused() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放流的暂停状态
+
+.. _FmodAudioStreamPlayer-get_playback_position:
+
+`float`_ get_playback_position() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放位置，单位为秒
+
+如果内部通道无效，则返回 ``0.0``
+
+.. _FmodAudioStreamPlayer-set_volume_db:
+
+void set_volume_db(volume_db: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置音量，单位为分贝
+
+如果正在播放，会立即同步到底层通道
+
+.. _FmodAudioStreamPlayer-get_volume_db:
+
+`float`_ get_volume_db() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前音量，单位为分贝
+
+.. _FmodAudioStreamPlayer-set_pitch_scale:
+
+void set_pitch_scale(pitch_scale: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置播放速度和音高缩放
+
+``1.0`` 表示原始速度，``2.0`` 表示两倍速度，``0.5`` 表示半速
+
+.. _FmodAudioStreamPlayer-get_pitch_scale:
+
+`float`_ get_pitch_scale() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放速度和音高缩放
+
+.. _FmodAudioStreamPlayer-set_auto_play:
+
+void set_auto_play(enable: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否在进入场景树后自动播放
+
+编辑器预览状态下不会自动播放
+
+.. _FmodAudioStreamPlayer-is_autoplay_enabled:
+
+`bool`_ is_autoplay_enabled() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了自动播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer-set_bus:
+
+void set_bus(bus: `StringName`)_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置输出总线名称
+
+.. _FmodAudioStreamPlayer-get_bus:
+
+`StringName` get_bus() const_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前输出总线名称
+
+如果设置的总线不存在，则返回 ``"Master"``
 
 信号
 ~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 信号
-     - 说明
-   * - ``finished()``
-     - 播放完成时发出
+  * - 信号
+    - 说明
+  * - finished()
+    - 播放自然结束时发出
 
 示例
 ~~~~
 
 .. code-block:: gdscript
 
-    extends Node
+    @onready var music: FmodAudioStreamPlayer = $FmodAudioStreamPlayer
 
-    @onready var player = $FmodAudioStreamPlayer
+    func _ready() -> void:
+        music.stream = FmodAudioStream.load_from_file("res://music/bgm.ogg", FmodAudioStream.MODE_STREAM)
+        music.bus = "Music"
+        music.volume_db = -6.0
+        music.play()
 
-    func _ready():
-        # 加载并播放（流式模式）
-        var stream = FmodAudioStream.load_from_file("res://music/bgm.mp3",
-            FmodAudioStream.MODE_STREAM)
-        
-        player.stream = stream
-        player.volume_db = -6.0
-        player.play()
-        
-        # 连接完成信号
-        player.finished.connect(_on_playback_finished)
-
-    func _on_playback_finished():
-        print("Playback finished!")
-        
-    func fade_out():
+    func fade_out() -> void:
         var tween = create_tween()
-        tween.tween_property(player, "volume_db", -80.0, 2.0)
-        tween.tween_callback(player.stop)
+        tween.tween_property(music, "volume_db", -40.0, 1.5)
+        tween.tween_callback(music.stop)
 
-FmodAudioSampleEmitter
-----------------------
+.. _FmodAudioStreamPlayer2D:
 
-继承自：Node
+FmodAudioStreamPlayer2D
+-----------------------
 
-用于播放短音频（音效）的节点，内部使用 ``FmodAudioStream`` 并自动设置 ``MODE_SAMPLE`` 标志。
+继承自： ``Node2D``
+
+**用于在 2D 场景中播放带距离衰减和声像的音频流**
+
+描述
+~~~~
+
+**FmodAudioStreamPlayer2D** 基于节点在 2D 世界中的位置计算音量衰减和左右声像。它会将音频流强制为 2D 模式，距离衰减由节点逻辑手动控制
+
+监听位置优先使用 :ref:`FmodServer<FmodServer>` 中记录的 2D 摄像机信息；如果没有记录，则尝试使用当前视口的 `Camera2D`_
 
 属性
 ~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 属性
-     - 类型
-     - 说明
-   * - ``stream``
-     - FmodAudioStream
-     - 要播放的音频（自动使用样本模式）
-   * - ``auto_emit``
-     - bool
-     - 自动发射（设置流时自动播放，默认 false）
-   * - ``bus``
-     - String
-     - 音频总线名称（默认 "Master"）
+  * - 类型
+    - 名称
+    - 初始值
+    - 说明
+  * - :ref:`FmodAudioStream<FmodAudioStream>`
+    - stream
+    - null
+    - 要播放的音频流资源
+  * - `bool`_
+    - playing
+    - false
+    - 设置为 ``true`` 开始播放，设置为 ``false`` 停止播放
+  * - `bool`_
+    - stream_paused
+    - false
+    - 是否暂停当前播放流
+  * - `float`_
+    - volume_db
+    - 0.0
+    - 基础音量，单位为分贝
+  * - `float`_
+    - pitch_scale
+    - 1.0
+    - 播放速度和音高缩放
+  * - `bool`_
+    - autoplay
+    - false
+    - 进入场景树后自动播放
+  * - `float`_
+    - max_distance
+    - 2000.0
+    - 超过该像素距离后静音
+  * - `float`_
+    - attenuation
+    - 1.0
+    - 距离衰减曲线强度
+  * - `float`_
+    - panning_strength
+    - 1.0
+    - 左右声像强度
+  * - `StringName`_
+    - bus
+    - "Master"
+    - 输出到的音频总线名称
+  * - `int`_
+    - area_mask
+    - 1
+    - 2D 物理区域遮罩
+  * - `int`_
+    - max_polyphony
+    - 1
+    - 最大复音数量
 
 方法
 ~~~~
 
-.. list-table::
-   :header-rows: 1
+.. _FmodAudioStreamPlayer2D-set_stream:
 
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``emit()``
-     - void
-     - 播放一次音频
-   * - ``set_stream(stream)``
-     - void
-     - 设置音频流
-   * - ``get_stream()``
-     - FmodAudioStream
-     - 获取音频流
-   * - ``set_auto_emit(enable)``
-     - void
-     - 设置自动发射
-   * - ``is_autoemit_enabled()``
-     - bool
-     - 获取自动发射状态
+void set_stream(stream: :ref:`FmodAudioStream<FmodAudioStream>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置要播放的音频流
+
+如果当前正在播放，会先停止当前通道并清除播放状态
+
+.. _FmodAudioStreamPlayer2D-get_stream:
+
+:ref:`FmodAudioStream<FmodAudioStream>` get_stream() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前设置的音频流
+
+.. _FmodAudioStreamPlayer2D-play:
+
+void play(from_position: `float`_ = 0.0)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+从指定位置开始播放，单位为秒
+
+播放前会为音频流添加 :ref:`FmodMode<FmodMode>` 里的 ``FMOD_MODE_2D`` 标志并重新创建缓存声音
+
+.. _FmodAudioStreamPlayer2D-seek:
+
+void seek(to_position: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+跳转到指定播放位置，单位为秒
+
+.. _FmodAudioStreamPlayer2D-stop:
+
+void stop()
+^^^^^^^^^^^
+
+停止播放并清除暂停状态
+
+.. _FmodAudioStreamPlayer2D-set_playing:
+
+void set_playing(playing: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置播放状态
+
+.. _FmodAudioStreamPlayer2D-is_playing:
+
+`bool`_ is_playing() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果内部通道有效且正在播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer2D-set_stream_paused:
+
+void set_stream_paused(paused: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+暂停或恢复当前播放流
+
+.. _FmodAudioStreamPlayer2D-get_stream_paused:
+
+`bool`_ get_stream_paused() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放流的暂停状态
+
+.. _FmodAudioStreamPlayer2D-get_playback_position:
+
+`float`_ get_playback_position() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放位置，单位为秒
+
+.. _FmodAudioStreamPlayer2D-set_volume_db:
+
+void set_volume_db(volume_db: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置基础音量，单位为分贝
+
+实际播放音量还会受到距离衰减影响
+
+.. _FmodAudioStreamPlayer2D-get_volume_db:
+
+`float`_ get_volume_db() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回基础音量，单位为分贝
+
+.. _FmodAudioStreamPlayer2D-set_volume_linear:
+
+void set_volume_linear(volume_linear: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+使用线性音量设置基础音量
+
+.. _FmodAudioStreamPlayer2D-get_volume_linear:
+
+`float`_ get_volume_linear() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+以线性音量返回基础音量
+
+.. _FmodAudioStreamPlayer2D-set_pitch_scale:
+
+void set_pitch_scale(pitch_scale: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置播放速度和音高缩放
+
+.. _FmodAudioStreamPlayer2D-get_pitch_scale:
+
+`float`_ get_pitch_scale() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放速度和音高缩放
+
+.. _FmodAudioStreamPlayer2D-set_autoplay:
+
+void set_autoplay(enable: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否在进入场景树后自动播放
+
+.. _FmodAudioStreamPlayer2D-is_autoplay_enabled:
+
+`bool`_ is_autoplay_enabled() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了自动播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer2D-set_max_distance:
+
+void set_max_distance(pixels: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置最大可听距离，单位为像素
+
+小于等于 ``0.0`` 的值会被限制为 ``1.0``
+
+.. _FmodAudioStreamPlayer2D-get_max_distance:
+
+`float`_ get_max_distance() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回最大可听距离，单位为像素
+
+.. _FmodAudioStreamPlayer2D-set_attenuation:
+
+void set_attenuation(curve: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置距离衰减曲线强度
+
+数值越大，随距离衰减越快
+
+.. _FmodAudioStreamPlayer2D-get_attenuation:
+
+`float`_ get_attenuation() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回距离衰减曲线强度
+
+.. _FmodAudioStreamPlayer2D-set_panning_strength:
+
+void set_panning_strength(panning_strength: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置左右声像强度
+
+小于 ``0.0`` 的值会被限制为 ``0.0``
+
+.. _FmodAudioStreamPlayer2D-get_panning_strength:
+
+`float`_ get_panning_strength() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回左右声像强度
+
+.. _FmodAudioStreamPlayer2D-set_bus:
+
+void set_bus(bus: `StringName`)_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置输出总线名称
+
+.. _FmodAudioStreamPlayer2D-get_bus:
+
+`StringName` get_bus() const_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前输出总线名称
+
+如果没有设置，则返回 ``"Master"``
+
+.. _FmodAudioStreamPlayer2D-set_area_mask:
+
+void set_area_mask(mask: `int`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置 2D 物理区域遮罩
+
+.. _FmodAudioStreamPlayer2D-get_area_mask:
+
+`int`_ get_area_mask() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回 2D 物理区域遮罩
+
+.. _FmodAudioStreamPlayer2D-set_max_polyphony:
+
+void set_max_polyphony(max_polyphony: `int`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置最大复音数量
+
+小于 ``1`` 的值会被限制为 ``1``
+
+.. _FmodAudioStreamPlayer2D-get_max_polyphony:
+
+`int`_ get_max_polyphony() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回最大复音数量
+
+.. _FmodAudioStreamPlayer2D-has_stream_playback:
+
+`bool`_ has_stream_playback() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果内部通道对象有效，则返回 ``true``
+
+.. _FmodAudioStreamPlayer2D-get_stream_playback:
+
+:ref:`FmodChannel<FmodChannel>` get_stream_playback() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回内部播放通道，可用于高级控制
+
+信号
+~~~~
+
+.. list-table::
+  :header-rows: 1
+
+  * - 信号
+    - 说明
+  * - finished()
+    - 播放自然结束时发出
 
 示例
 ~~~~
 
 .. code-block:: gdscript
 
-    extends Node
+    @onready var ambience: FmodAudioStreamPlayer2D = $FmodAudioStreamPlayer2D
 
-    @onready var emitter = $FmodAudioSampleEmitter
-    var shoot_stream: FmodAudioStream
+    func _ready() -> void:
+        ambience.stream = FmodAudioStream.load_from_file("res://audio/river.ogg", FmodAudioStream.MODE_STREAM)
+        ambience.bus = "Ambience"
+        ambience.max_distance = 1200.0
+        ambience.attenuation = 1.5
+        ambience.panning_strength = 1.0
+        ambience.play()
 
-    func _ready():
-        # 预加载音效（样本模式）
-        shoot_stream = FmodAudioStream.load_from_file("res://sfx/shoot.wav",
-            FmodAudioStream.MODE_SAMPLE)
-        
-        emitter.stream = shoot_stream
-        emitter.bus = "SFX"
-
-    func _input(event):
-        if event.is_action_pressed("shoot"):
-            play_shoot_sound()
-
-    func play_shoot_sound():
-        emitter.emit()
-
-    # 自动发射示例
-    func setup_auto_emit():
-        var stream = FmodAudioStream.load_from_file("res://sfx/heartbeat.wav",
-            FmodAudioStream.MODE_SAMPLE)
-        
-        emitter.stream = stream
-        emitter.auto_emit = true  # 设置流时自动播放
+.. _FmodAudioStreamPlayer3D:
 
 FmodAudioStreamPlayer3D
 -----------------------
 
-继承自：Node3D
+继承自： `Node3D`_
 
-用于在 3D 空间中播放音频的节点，支持距离衰减、多普勒效应和定向发射。适合环境音效、NPC 语音等需要空间定位的音频。
+**用于在 3D 空间中播放音频流的节点**
+
+描述
+~~~~
+
+**FmodAudioStreamPlayer3D** 会将声音作为 FMOD 3D 通道播放，并持续同步节点的全局位置、速度、距离衰减、距离滤波器和发射角度设置
+
+它适合环境声源、角色语音、机器声、移动物体声源等需要空间定位的音频
 
 属性
 ~~~~
 
-基础属性
-^^^^^^^^
-
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 属性
-     - 类型
-     - 说明
-   * - ``stream``
-     - FmodAudioStream
-     - 要播放的音频流
-   * - ``playing``
-     - bool
-     - 是否正在播放（只读）
-   * - ``stream_paused``
-     - bool
-     - 流暂停状态
-   * - ``volume_db``
-     - float
-     - 音量（分贝，默认 0.0，范围 -80~24）
-   * - ``pitch``
-     - float
-     - 音调（默认 1.0，范围 0.01~4.0）
-   * - ``auto_play``
-     - bool
-     - 自动播放（默认 false）
-   * - ``bus``
-     - StringName
-     - 音频总线名称（默认 "Master"）
-
-3D 属性
-^^^^^^^
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 说明
-   * - ``max_distance``
-     - float
-     - 最大距离（米，默认 10.0）
-   * - ``unit_size``
-     - float
-     - 单位大小（米，默认 1.0，控制衰减起点）
-   * - ``attenuation_model``
-     - int
-     - 衰减模型（见下方常量）
-   * - ``area_mask``
-     - int
-     - 区域遮罩（用于 Area 过滤）
-
-发射角度
-^^^^^^^^
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 说明
-   * - ``emission_angle_enabled``
-     - bool
-     - 启用发射角度限制（默认 false）
-   * - ``emission_angle``
-     - float
-     - 发射角度（度，默认 45，范围 0~90）
-   * - ``emission_angle_filter_attenuation_db``
-     - float
-     - 超出角度时的衰减（dB，默认 -12）
-
-距离滤波器
-^^^^^^^^^^
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 说明
-   * - ``attenuation_filter_cutoff_hz``
-     - float
-     - 距离滤波器截止频率（Hz，默认 5000）
-   * - ``attenuation_filter_db``
-     - float
-     - 距离滤波器衰减（dB，默认 0，范围 -80~0）
-
-多普勒效应
-^^^^^^^^^^
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 说明
-   * - ``doppler_tracking``
-     - int
-     - 多普勒追踪模式（见下方常量）
+  * - 类型
+    - 名称
+    - 初始值
+    - 说明
+  * - :ref:`FmodAudioStream<FmodAudioStream>`
+    - stream
+    - null
+    - 要播放的音频流资源
+  * - `int`_
+    - attenuation_model
+    - 2
+    - 3D 距离衰减模型
+  * - `float`_
+    - volume_db
+    - 0.0
+    - 基础音量，单位为分贝
+  * - `float`_
+    - unit_size
+    - 1.0
+    - FMOD 最小衰减距离
+  * - `float`_
+    - pitch_scale
+    - 1.0
+    - 播放速度和音高缩放
+  * - `bool`_
+    - playing
+    - false
+    - 设置为 ``true`` 开始播放，设置为 ``false`` 停止播放
+  * - `bool`_
+    - auto_play
+    - false
+    - 进入场景树后自动播放
+  * - `bool`_
+    - stream_paused
+    - false
+    - 是否暂停当前播放流
+  * - `float`_
+    - max_distance
+    - 10.0
+    - 最大衰减距离倍数，实际最大距离为 ``max_distance * unit_size``
+  * - `StringName`_
+    - bus
+    - "Master"
+    - 输出到的音频总线名称
+  * - `int`_
+    - area_mask
+    - 1
+    - 物理区域遮罩
+  * - `bool`_
+    - emission_angle_enabled
+    - false
+    - 是否启用方向性发射锥
+  * - `float`_
+    - emission_angle
+    - 45.0
+    - 发射内锥角，单位为度
+  * - `float`_
+    - emission_angle_filter_attenuation_db
+    - -12.0
+    - 发射锥外的音量衰减，单位为分贝
+  * - `float`_
+    - attenuation_filter_cutoff_hz
+    - 5000.0
+    - 距离滤波器截止频率，单位为 Hz
+  * - `float`_
+    - attenuation_filter_db
+    - 0.0
+    - 距离滤波器衰减，单位为分贝
+  * - `int`_
+    - doppler_tracking
+    - 0
+    - 多普勒速度追踪模式
 
 方法
 ~~~~
 
-.. list-table::
-   :header-rows: 1
+.. _FmodAudioStreamPlayer3D-set_stream:
 
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``play(from_position=0.0)``
-     - void
-     - 从指定位置开始播放（秒）
-   * - ``seek(position)``
-     - void
-     - 跳转到指定位置（秒）
-   * - ``stop()``
-     - void
-     - 停止播放
-   * - ``is_playing()``
-     - bool
-     - 是否正在播放
-   * - ``get_playback_position()``
-     - float
-     - 获取当前播放位置（秒）
-   * - ``get_stream()``
-     - FmodAudioStream
-     - 获取音频流
-   * - ``set_stream(stream)``
-     - void
-     - 设置音频流
-   * - ``get_channel()``
-     - FmodChannel
-     - 获取内部通道（用于高级控制）
+void set_stream(stream: :ref:`FmodAudioStream<FmodAudioStream>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-常量
+设置要播放的音频流
+
+如果当前正在播放，会先停止当前通道并清除播放状态
+
+.. _FmodAudioStreamPlayer3D-get_stream:
+
+:ref:`FmodAudioStream<FmodAudioStream>` get_stream() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前设置的音频流
+
+.. _FmodAudioStreamPlayer3D-play:
+
+void play(from_position: `float`_ = 0.0)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+从指定位置开始播放，单位为秒
+
+播放时会创建 FMOD 3D 通道，并应用当前 3D 衰减、滤波、发射角度和多普勒设置
+
+.. _FmodAudioStreamPlayer3D-seek:
+
+void seek(to_position: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+跳转到指定播放位置，单位为秒
+
+.. _FmodAudioStreamPlayer3D-stop:
+
+void stop()
+^^^^^^^^^^^
+
+停止播放并清除暂停状态
+
+.. _FmodAudioStreamPlayer3D-set_playing:
+
+void set_playing(playing: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置播放状态
+
+.. _FmodAudioStreamPlayer3D-is_playing:
+
+`bool`_ is_playing() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果内部通道有效且正在播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer3D-set_stream_paused:
+
+void set_stream_paused(paused: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+暂停或恢复当前播放流
+
+.. _FmodAudioStreamPlayer3D-get_stream_paused:
+
+`bool`_ get_stream_paused() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放流的暂停状态
+
+.. _FmodAudioStreamPlayer3D-get_playback_position:
+
+`float`_ get_playback_position() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放位置，单位为秒
+
+.. _FmodAudioStreamPlayer3D-set_volume_db:
+
+void set_volume_db(volume_db: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置基础音量，单位为分贝
+
+.. _FmodAudioStreamPlayer3D-get_volume_db:
+
+`float`_ get_volume_db() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回基础音量，单位为分贝
+
+.. _FmodAudioStreamPlayer3D-set_pitch_scale:
+
+void set_pitch_scale(pitch_scale: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置播放速度和音高缩放
+
+.. _FmodAudioStreamPlayer3D-get_pitch_scale:
+
+`float`_ get_pitch_scale() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前播放速度和音高缩放
+
+.. _FmodAudioStreamPlayer3D-set_auto_play:
+
+void set_auto_play(enable: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否在进入场景树后自动播放
+
+.. _FmodAudioStreamPlayer3D-is_autoplay_enabled:
+
+`bool`_ is_autoplay_enabled() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了自动播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer3D-set_bus:
+
+void set_bus(bus: `StringName`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置输出总线名称
+
+.. _FmodAudioStreamPlayer3D-get_bus:
+
+`StringName`_ get_bus() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前输出总线名称
+
+如果没有设置，则返回 ``"Master"``
+
+.. _FmodAudioStreamPlayer3D-set_max_distance:
+
+void set_max_distance(distance: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置最大衰减距离倍数
+
+实际 FMOD 最大距离为 ``max_distance * unit_size``，小于 ``0.01`` 的值会被限制为 ``0.01``
+
+.. _FmodAudioStreamPlayer3D-get_max_distance:
+
+`float`_ get_max_distance() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回最大衰减距离倍数
+
+.. _FmodAudioStreamPlayer3D-set_unit_size:
+
+void set_unit_size(size: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置 FMOD 最小衰减距离
+
+小于 ``0.001`` 的值会被限制为 ``0.001``
+
+.. _FmodAudioStreamPlayer3D-get_unit_size:
+
+`float`_ get_unit_size() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回 FMOD 最小衰减距离
+
+.. _FmodAudioStreamPlayer3D-set_attenuation_model:
+
+void set_attenuation_model(model: :ref:`AttenuationModel<FmodAudioStreamPlayer3D-AttenuationModel>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置距离衰减模型
+
+如果当前通道有效，会立即重新应用 3D 衰减设置
+
+.. _FmodAudioStreamPlayer3D-get_attenuation_model:
+
+:ref:`AttenuationModel<FmodAudioStreamPlayer3D-AttenuationModel>` get_attenuation_model() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前距离衰减模型
+
+.. _FmodAudioStreamPlayer3D-set_emission_angle_enabled:
+
+void set_emission_angle_enabled(enabled: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+启用或禁用方向性发射锥
+
+.. _FmodAudioStreamPlayer3D-is_emission_angle_enabled:
+
+`bool`_ is_emission_angle_enabled() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了方向性发射锥，则返回 ``true``
+
+.. _FmodAudioStreamPlayer3D-set_emission_angle:
+
+void set_emission_angle(angle: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置发射内锥角，单位为度
+
+值会被限制在 ``0.0`` 到 ``90.0`` 之间
+
+.. _FmodAudioStreamPlayer3D-get_emission_angle:
+
+`float`_ get_emission_angle() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回发射内锥角，单位为度
+
+.. _FmodAudioStreamPlayer3D-set_emission_angle_filter_attenuation_db:
+
+void set_emission_angle_filter_attenuation_db(db: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置发射锥外的音量衰减，单位为分贝
+
+值会被限制在 ``-80.0`` 到 ``0.0`` 之间
+
+.. _FmodAudioStreamPlayer3D-get_emission_angle_filter_attenuation_db:
+
+`float`_ get_emission_angle_filter_attenuation_db() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回发射锥外的音量衰减，单位为分贝
+
+.. _FmodAudioStreamPlayer3D-set_attenuation_filter_cutoff_hz:
+
+void set_attenuation_filter_cutoff_hz(freq: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置距离滤波器截止频率，单位为 Hz
+
+值会被限制在 ``10.0`` 到 ``22050.0`` 之间
+
+.. _FmodAudioStreamPlayer3D-get_attenuation_filter_cutoff_hz:
+
+`float`_ get_attenuation_filter_cutoff_hz() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回距离滤波器截止频率，单位为 Hz
+
+.. _FmodAudioStreamPlayer3D-set_attenuation_filter_db:
+
+void set_attenuation_filter_db(db: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置距离滤波器衰减，单位为分贝
+
+值会被限制在 ``-80.0`` 到 ``0.0`` 之间
+
+.. _FmodAudioStreamPlayer3D-get_attenuation_filter_db:
+
+`float`_ get_attenuation_filter_db() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回距离滤波器衰减，单位为分贝
+
+.. _FmodAudioStreamPlayer3D-set_doppler_tracking:
+
+void set_doppler_tracking(tracking: :ref:`DopplerTracking<FmodAudioStreamPlayer3D-DopplerTracking>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置多普勒速度追踪模式
+
+禁用时底层通道的多普勒级别为 ``0.0``；启用时根据节点位移计算速度
+
+.. _FmodAudioStreamPlayer3D-get_doppler_tracking:
+
+:ref:`DopplerTracking<FmodAudioStreamPlayer3D-DopplerTracking>` get_doppler_tracking() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前多普勒速度追踪模式
+
+.. _FmodAudioStreamPlayer3D-set_area_mask:
+
+void set_area_mask(mask: `int`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置物理区域遮罩
+
+.. _FmodAudioStreamPlayer3D-get_area_mask:
+
+`int`_ get_area_mask() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回物理区域遮罩
+
+枚举
 ~~~~
 
-衰减模型
-^^^^^^^^
+.. _FmodAudioStreamPlayer3D-AttenuationModel:
+
+AttenuationModel
+^^^^^^^^^^^^^^^^
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 常量
-     - 值
-     - 说明
-   * - ``ATTENUATION_INVERSE_DISTANCE``
-     - 0
-     - 反距离衰减
-   * - ``ATTENUATION_INVERSE_SQUARE_DISTANCE``
-     - 1
-     - 反距离平方衰减
-   * - ``ATTENUATION_LOGARITHMIC``
-     - 2
-     - 对数衰减（线性到最大距离）
-   * - ``ATTENUATION_DISABLED``
-     - 3
-     - 禁用衰减
+  * - 成员
+    - 值
+    - 说明
+  * - ATTENUATION_INVERSE_DISTANCE
+    - 0
+    - 反距离衰减
+  * - ATTENUATION_INVERSE_SQUARE_DISTANCE
+    - 1
+    - 平方反距离衰减
+  * - ATTENUATION_LOGARITHMIC
+    - 2
+    - 线性滚降，最大距离处静音
+  * - ATTENUATION_DISABLED
+    - 3
+    - 禁用距离衰减
 
-多普勒追踪
-^^^^^^^^^^
+.. _FmodAudioStreamPlayer3D-DopplerTracking:
+
+DopplerTracking
+^^^^^^^^^^^^^^^
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 常量
-     - 值
-     - 说明
-   * - ``DOPPLER_TRACKING_DISABLED``
-     - 0
-     - 禁用多普勒效应
-   * - ``DOPPLER_TRACKING_IDLE_STEP``
-     - 1
-     - 在 _process 中追踪
-   * - ``DOPPLER_TRACKING_PHYSICS_STEP``
-     - 2
-     - 在 _physics_process 中追踪
+  * - 成员
+    - 值
+    - 说明
+  * - DOPPLER_TRACKING_DISABLED
+    - 0
+    - 禁用多普勒追踪
+  * - DOPPLER_TRACKING_IDLE_STEP
+    - 1
+    - 在普通处理帧中计算速度
+  * - DOPPLER_TRACKING_PHYSICS_STEP
+    - 2
+    - 在物理处理帧中计算速度
 
 信号
 ~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 信号
-     - 说明
-   * - ``finished()``
-     - 播放完成时发出
+  * - 信号
+    - 说明
+  * - finished()
+    - 播放自然结束时发出
 
 示例
 ~~~~
 
-基础 3D 音频
-^^^^^^^^^^^^
-
 .. code-block:: gdscript
 
-    extends Node3D
+    @onready var engine_sound: FmodAudioStreamPlayer3D = $FmodAudioStreamPlayer3D
 
-    @onready var player_3d = $FmodAudioStreamPlayer3D
-
-    func _ready():
-        # 加载 3D 音频流
-        var stream = FmodAudioStream.load_from_file(
-            "res://audio/ambience_cave.wav",
-            FmodAudioStream.MODE_STREAM
-        )
-        
-        player_3d.stream = stream
-        player_3d.volume_db = -6.0
-        player_3d.max_distance = 20.0
-        player_3d.unit_size = 2.0
-        player_3d.auto_play = true
-
-带发射角度的音频
-^^^^^^^^^^^^^^^^
-
-.. code-block:: gdscript
-
-    extends Node3D
-
-    @onready var speaker = $FmodAudioStreamPlayer3D
-
-    func _ready():
-        var stream = FmodAudioStream.load_from_file(
-            "res://audio/announcement.wav",
-            FmodAudioStream.MODE_STREAM
-        )
-        
-        speaker.stream = stream
-        
-        # 启用定向发射（类似喇叭）
-        speaker.emission_angle_enabled = true
-        speaker.emission_angle = 30.0  # 30度内为清晰区域
-        speaker.emission_angle_filter_attenuation_db = -20.0
-        
-        # 让发射方向跟随节点旋转
-        speaker.rotation.y = PI / 4  # 指向特定方向
-
-动态控制 3D 音频
-^^^^^^^^^^^^^^^^
-
-.. code-block:: gdscript
-
-    extends CharacterBody3D
-
-    @onready var engine_sound = $FmodAudioStreamPlayer3D
-
-    func _ready():
-        var stream = FmodAudioStream.load_from_file(
-            "res://audio/engine.wav",
-            FmodAudioStream.MODE_STREAM
-        )
-        
-        engine_sound.stream = stream
-        engine_sound.doppler_tracking = FmodAudioStreamPlayer3D.DOPPLER_TRACKING_PHYSICS_STEP
+    func _ready() -> void:
+        engine_sound.stream = FmodAudioStream.load_from_file("res://audio/engine.ogg", FmodAudioStream.MODE_STREAM)
+        engine_sound.bus = "SFX"
+        engine_sound.max_distance = 40.0
+        engine_sound.unit_size = 1.5
         engine_sound.attenuation_model = FmodAudioStreamPlayer3D.ATTENUATION_INVERSE_SQUARE_DISTANCE
-        engine_sound.max_distance = 50.0
+        engine_sound.doppler_tracking = FmodAudioStreamPlayer3D.DOPPLER_TRACKING_PHYSICS_STEP
         engine_sound.play()
 
-    func _physics_process(delta):
-        # 根据速度调整音调
-        var speed = velocity.length()
-        engine_sound.pitch = 1.0 + (speed / 100.0)
+.. code-block:: gdscript
 
-切换音频总线
-^^^^^^^^^^^^
+    @onready var speaker: FmodAudioStreamPlayer3D = $Speaker
+
+    func _ready() -> void:
+        speaker.emission_angle_enabled = true
+        speaker.emission_angle = 30.0
+        speaker.emission_angle_filter_attenuation_db = -18.0
+
+.. _FmodGeometryInstance3D:
+
+FmodGeometryInstance3D
+----------------------
+
+继承自： `Node3D`_
+
+**从 3D 网格生成 FMOD 遮挡几何体的节点**
+
+描述
+~~~~
+
+**FmodGeometryInstance3D** 用于将场景中的几何体注册到 FMOD Geometry 系统，让 3D 声音可以根据场景遮挡产生直达声和混响遮挡
+
+此节点应作为 `MeshInstance3D`_ 或 `CollisionShape3D`_ 的子节点使用。当前源码已完整支持从 `MeshInstance3D`_ 构建三角形几何体；从 `CollisionShape3D`_ 构建仍未完整实现
+
+属性
+~~~~
+
+.. list-table::
+  :header-rows: 1
+
+  * - 类型
+    - 名称
+    - 初始值
+    - 说明
+  * - `float`_
+    - direct_occlusion
+    - 0.5
+    - 直达声遮挡强度
+  * - `float`_
+    - reverb_occlusion
+    - 0.5
+    - 混响声遮挡强度
+  * - `bool`_
+    - double_sided
+    - true
+    - 多边形是否双面遮挡
+  * - `bool`_
+    - active
+    - true
+    - 几何体是否参与遮挡计算
+  * - `bool`_
+    - auto_rebuild
+    - true
+    - 进入场景或属性变化时自动重建几何体
+  * - `bool`_
+    - show_debug_gizmo
+    - true
+    - 是否显示编辑器调试 Gizmo
+
+方法
+~~~~
+
+.. _FmodGeometryInstance3D-set_direct_occlusion:
+
+void set_direct_occlusion(value: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置直达声遮挡强度
+
+值会被限制在 ``0.0`` 到 ``1.0`` 之间。启用 ``auto_rebuild`` 且几何体有效时会重建几何体
+
+.. _FmodGeometryInstance3D-get_direct_occlusion:
+
+`float`_ get_direct_occlusion() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回直达声遮挡强度
+
+.. _FmodGeometryInstance3D-set_reverb_occlusion:
+
+void set_reverb_occlusion(value: `float`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置混响声遮挡强度
+
+值会被限制在 ``0.0`` 到 ``1.0`` 之间。启用 ``auto_rebuild`` 且几何体有效时会重建几何体
+
+.. _FmodGeometryInstance3D-get_reverb_occlusion:
+
+`float`_ get_reverb_occlusion() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回混响声遮挡强度
+
+.. _FmodGeometryInstance3D-set_double_sided:
+
+void set_double_sided(value: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置多边形是否双面遮挡
+
+.. _FmodGeometryInstance3D-get_double_sided:
+
+`bool`_ get_double_sided() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果多边形为双面遮挡，则返回 ``true``
+
+.. _FmodGeometryInstance3D-set_active:
+
+void set_active(value: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置几何体是否参与遮挡计算
+
+如果几何体已创建，会立即同步到底层 :ref:`FmodGeometry<FmodGeometry>`
+
+.. _FmodGeometryInstance3D-get_active:
+
+`bool`_ get_active() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果几何体处于激活状态，则返回 ``true``
+
+.. _FmodGeometryInstance3D-set_auto_rebuild:
+
+void set_auto_rebuild(value: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否自动重建几何体
+
+启用后节点会开启处理，用于编辑器中的网格变化检测
+
+.. _FmodGeometryInstance3D-get_auto_rebuild:
+
+`bool`_ get_auto_rebuild() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了自动重建，则返回 ``true``
+
+.. _FmodGeometryInstance3D-set_show_debug_gizmo:
+
+void set_show_debug_gizmo(value: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否显示编辑器调试 Gizmo
+
+.. _FmodGeometryInstance3D-get_show_debug_gizmo:
+
+`bool`_ get_show_debug_gizmo() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了调试 Gizmo，则返回 ``true``
+
+.. _FmodGeometryInstance3D-rebuild_geometry:
+
+void rebuild_geometry()
+^^^^^^^^^^^^^^^^^^^^^^^
+
+重新检测源节点并重建 FMOD 几何体
+
+成功后会发出 ``geometry_rebuilt`` 和 ``geometry_created`` 信号
+
+.. _FmodGeometryInstance3D-clear_geometry:
+
+void clear_geometry()
+^^^^^^^^^^^^^^^^^^^^^
+
+释放当前 FMOD 几何体并清空引用
+
+成功清空时会发出 ``geometry_cleared`` 信号
+
+.. _FmodGeometryInstance3D-has_valid_geometry:
+
+`bool`_ has_valid_geometry() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果内部几何体存在且有效，则返回 ``true``
+
+.. _FmodGeometryInstance3D-get_geometry:
+
+:ref:`FmodGeometry<FmodGeometry>` get_geometry() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回内部 :ref:`FmodGeometry<FmodGeometry>` 对象
+
+信号
+~~~~
+
+.. list-table::
+  :header-rows: 1
+
+  * - 信号
+    - 说明
+  * - geometry_created()
+    - 几何体创建成功后发出
+  * - geometry_cleared()
+    - 几何体被清空后发出
+  * - geometry_rebuilt()
+    - 几何体重建成功后发出
+
+示例
+~~~~
 
 .. code-block:: gdscript
 
-    extends Area3D
+    # 节点结构：
+    # WallMesh (MeshInstance3D)
+    #   FmodGeometryInstance3D
 
-    # 当进入水下区域时切换音频总线
-    func _on_body_entered(body):
-        if body.has_node("FmodAudioStreamPlayer3D"):
-            var player = body.get_node("FmodAudioStreamPlayer3D")
-            player.bus = "Underwater"  # 使用带低通滤波器的总线
+    @onready var occluder: FmodGeometryInstance3D = $WallMesh/FmodGeometryInstance3D
 
-属性对比
+    func _ready() -> void:
+        occluder.direct_occlusion = 0.8
+        occluder.reverb_occlusion = 0.4
+        occluder.double_sided = true
+        occluder.rebuild_geometry()
+
+节点对比
 --------
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 特性
-     - FmodAudioStreamPlayer
-     - FmodAudioSampleEmitter
-     - FmodAudioStreamPlayer3D
-   * - 继承自
-     - Node
-     - Node
-     - Node3D
-   * - 资源类型
-     - FmodAudioStream
-     - FmodAudioStream
-     - FmodAudioStream
-   * - 播放方式
-     - 播放/停止/跳转
-     - 发射（一次性）
-     - 播放/停止/跳转（3D）
-   * - 适合场景
-     - 背景音乐、长音频
-     - 音效、短音频
-     - 3D 空间音频
-   * - 3D 支持
-     - ❌
-     - ❌
-     - ✅
-   * - 距离衰减
-     - ❌
-     - ❌
-     - ✅
-   * - 多普勒效应
-     - ❌
-     - ❌
-     - ✅
-   * - 定向发射
-     - ❌
-     - ❌
-     - ✅
-   * - 音量控制
-     - ✅
-     - ❌（使用总线）
-     - ✅
-   * - 音调控制
-     - ✅
-     - ❌
-     - ✅
-   * - 自动播放
-     - auto_play 属性
-     - auto_emit 属性
-     - auto_play 属性
+  * - 特性
+    - FmodAudioStreamPlayer
+    - FmodAudioStreamPlayer2D
+    - FmodAudioStreamPlayer3D
+    - FmodGeometryInstance3D
+  * - 继承自
+    - Node
+    - Node2D
+    - Node3D
+    - Node3D
+  * - 主要用途
+    - 非空间化播放
+    - 2D 空间播放
+    - 3D 空间播放
+    - 3D 遮挡几何体
+  * - 播放音频
+    - 是
+    - 是
+    - 是
+    - 否
+  * - 距离衰减
+    - 否
+    - 是
+    - 是
+    - 不适用
+  * - 声像/空间定位
+    - 否
+    - 2D 声像
+    - 3D 定位
+    - 不适用
+  * - 多普勒
+    - 否
+    - 否
+    - 是
+    - 不适用
+  * - 适合场景
+    - 背景音乐、UI 音效
+    - 2D 环境声、地图音源
+    - 3D 声源、角色语音
+    - 墙体、障碍物、遮挡体

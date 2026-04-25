@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.abspath('_extensions'))
 project = 'Godot FmodPlayer'
 copyright = '2026, LuYingYiLong'
 author = 'LuYingYiLong'
+html_logo = "_static/fmod_player_docs_logo.png"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -38,27 +39,47 @@ html_css_files = [
     'custom.css',
 ]
 
+html_theme_options = {
+  "show_toc_level": 4,
+  "use_repository_button": True,
+  "repository_url": "https://github.com/LuYingYiLong/Godot-FmodPlayerDocs",
+  "use_issues_button": True,
+}
+
 # 全局可用的外部链接别名（所有 .rst 文件均可使用）
 rst_epilog = """
-.. _int: https://docs.godotengine.org/zh-cn/4.x/classes/class_int.html
-.. _float: https://docs.godotengine.org/zh-cn/4.x/classes/class_float.html
-.. _bool: https://docs.godotengine.org/zh-cn/4.x/classes/class_bool.html
-.. _String: https://docs.godotengine.org/zh-cn/4.x/classes/class_string.html
-.. _Dictionary: https://docs.godotengine.org/zh-cn/4.x/classes/class_dictionary.html
-.. _Array: https://docs.godotengine.org/zh-cn/4.x/classes/class_array.html
-.. _Vector3: https://docs.godotengine.org/zh-cn/4.x/classes/class_vector3.html
-.. _Transform3D: https://docs.godotengine.org/zh-cn/4.x/classes/class_transform3d.html
-.. _Node: https://docs.godotengine.org/zh-cn/4.x/classes/class_node.html
-.. _Node3D: https://docs.godotengine.org/zh-cn/4.x/classes/class_node3d.html
-.. _PackedByteArray: https://docs.godotengine.org/zh-cn/4.x/classes/class_packedbytearray.html
-.. _RefCounted: https://docs.godotengine.org/zh-cn/4.x/classes/class_refcounted.html
-.. _Resource: https://docs.godotengine.org/zh-cn/4.x/classes/class_resource.html
-.. _Callable: https://docs.godotengine.org/zh-cn/4.x/classes/class_callable.html
+.. _int: https://docs.godotengine.org/en/4.x/classes/class_int.html
+.. _float: https://docs.godotengine.org/en/4.x/classes/class_float.html
+.. _bool: https://docs.godotengine.org/en/4.x/classes/class_bool.html
+.. _Variant: https://docs.godotengine.org/en/4.x/classes/class_variant.html
+.. _String: https://docs.godotengine.org/en/4.x/classes/class_string.html
+.. _StringName: https://docs.godotengine.org/en/4.x/classes/class_string_name.html
+.. _Dictionary: https://docs.godotengine.org/en/4.x/classes/class_dictionary.html
+.. _Array: https://docs.godotengine.org/en/4.x/classes/class_array.html
+.. _Vector3: https://docs.godotengine.org/en/4.x/classes/class_vector3.html
+.. _Transform3D: https://docs.godotengine.org/en/4.x/classes/class_transform3d.html
+.. _Node: https://docs.godotengine.org/en/4.x/classes/class_node.html
+.. _Node3D: https://docs.godotengine.org/en/4.x/classes/class_node3d.html
+.. _PackedByteArray: https://docs.godotengine.org/en/4.x/classes/class_packedbytearray.html
+.. _Object: https://docs.godotengine.org/en/4.x/classes/class_object.html
+.. _RefCounted: https://docs.godotengine.org/en/4.x/classes/class_refcounted.html
+.. _Resource: https://docs.godotengine.org/en/4.x/classes/class_resource.html
+.. _Callable: https://docs.godotengine.org/en/4.x/classes/class_callable.html
+.. _SceneTree: https://docs.godotengine.org/en/stable/classes/class_scenetree.html#scenetree
+.. _AudioServer: https://docs.godotengine.org/en/4.x/classes/class_audioserver.html#audioserver
+.. Camera2D: https://docs.godotengine.org/en/stable/classes/class_camera2d.html#camera2d
+.. _MeshInstance3D: https://docs.godotengine.org/en/stable/classes/class_meshinstance3d.html#meshinstance3d
+.. _CollisionShape3D: https://docs.godotengine.org/en/stable/classes/class_collisionshape3d.html#collisionshape3d
+.. _GDExtension: https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/index.html
 """
 
 # multi-language docs
 # 检测 Read the Docs 的语言设置，默认为中文
 language = os.getenv('READTHEDOCS_LANGUAGE', 'zh_CN')
+
+# 搜索语言设置为英文，避免 Sphinx 中文搜索的 JS 错误
+# (ChineseStemmer 未定义导致搜索功能完全失效)
+html_search_language = 'en'
 
 locale_dirs = ['../locales/']                   # 翻译文件存放目录
 gettext_compact = False                         # 为每个源文件生成独立的 .po 文件

@@ -5,3 +5,13 @@ code,
     font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Courier New", monospace !important;
     font-size: 0.9em;
 }
+
+h4:has(a.headerlink) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h5:has(a.headerlink) {
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -125,7 +125,7 @@ Android
 5. 将 ``FMOD runtime library`` 和 ``libfmod_player.so`` 文件复制到 ``res://android/build/libs/debug/`` 和 ``res://android/build/libs/release/`` 目录下
 6. 将 ``fmod.jar`` 添加到 ``res://android/build/libs/`` 目录，并在 ``res://android/build/build.gradle`` 中添加依赖：
 
-   .. code-block:: gradle
+   .. code-block:: 
 
        dependencies {
            implementation files('libs/fmod.jar')
