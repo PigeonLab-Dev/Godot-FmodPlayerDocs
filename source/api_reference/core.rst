@@ -941,7 +941,7 @@ void set_network_timeout(timeout: `int`_)
 
 .. _FmodSystem-get_default_mix_matrix:
 
-``PackedFloat32Array`` get_default_mix_matrix(source_speaker_mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`, target_speaker_mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`, array_length: `int`_, hop: `int`_) const
+`PackedFloat32Array`_ get_default_mix_matrix(source_speaker_mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`, target_speaker_mode: :ref:`FmodSpeakerMode<FmodSpeakerMode>`, array_length: `int`_, hop: `int`_) const
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 返回从一种扬声器模式转换到另一种扬声器模式的默认混音矩阵。
@@ -1025,12 +1025,12 @@ void set_network_timeout(timeout: `int`_)
 
 .. _FmodSystem-create_reverb_3d:
 
-**FmodReverb3D** create_reverb_3d() const
+:ref:`FmodReverb3D` create_reverb_3d() const
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 创建一个用于空间音频混响效果的3D混响区域。
 
-返回一个 **FmodReverb3D** 对象，该对象可以在3D空间中定位并配置混响参数。
+返回一个 :ref:`FmodReverb3D` 对象，该对象可以在3D空间中定位并配置混响参数。
 
 使用此功能可以创建如洞穴、礼堂或房间等环境音效。
   
@@ -1178,7 +1178,7 @@ void set_reverb_properties(instance: `int`_, decay_time: `float`_, early_delay: 
 
 设置指定混响实例的混响属性。
 
-混响实例 ID 是通过 :ref:`create_reverb_3d()<FmodSystem-create_reverb_3d>` 创建的 **FmodReverb3D** 对象的 ID。
+混响实例 ID 是通过 :ref:`create_reverb_3d()<FmodSystem-create_reverb_3d>` 创建的 :ref:`FmodReverb3D` 对象的 ID。
 
 - ``decay_time`` —— 混响衰减时间，单位为毫秒
 - ``early_delay`` —— 早期反射的延迟时间，单位为毫秒
@@ -1357,7 +1357,7 @@ void record_stop(id: `int`_)
 
 .. _FmodSystem-create_geometry:
 
-**FmodGeometry** create_geometry(max_polygons: `int`_ = 9999, max_vertices: `int`_ = 9999) const
+:ref:`FmodGeometry` create_geometry(max_polygons: `int`_ = 9999, max_vertices: `int`_ = 9999) const
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 为 3D 遮挡计算创建一个几何体对象，用于模拟场景中物理物体对声音的遮挡。
@@ -1367,10 +1367,10 @@ void record_stop(id: `int`_)
 
 .. _FmodSystem-load_geometry:
 
-**FmodGeometry** load_geometry(data: `PackedByteArray`_) const
+:ref:`FmodGeometry` load_geometry(data: `PackedByteArray`_) const
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-从提供的 **PackedByteArray** 加载几何数据并创建一个 **FmodGeometry** 对象，对于从磁盘加载复杂几何形状非常有用。
+从提供的 **PackedByteArray** 加载几何数据并创建一个 :ref:`FmodGeometry` 对象，对于从磁盘加载复杂几何形状非常有用。
 
 .. warning:: 数据格式必须符合 FMOD 的几何数据规范，通常包含顶点和多边形信息
   

@@ -1,0 +1,391 @@
+# English translations for Godot FmodPlayer.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer
+"
+"Report-Msgid-Bugs-To: 
+"
+"POT-Creation-Date: 2026-04-26 23:57+0800
+"
+"PO-Revision-Date: 2026-04-27 00:00+0800
+"
+"Last-Translator: Codex <codex@example.invalid>
+"
+"Language: en
+"
+"Language-Team: en <LL@li.org>
+"
+"Plural-Forms: nplurals=2; plural=(n != 1);
+"
+"MIME-Version: 1.0
+"
+"Content-Type: text/plain; charset=utf-8
+"
+"Content-Transfer-Encoding: 8bit
+"
+
+
+#: ../../source/user_guide/faq.rst:4
+#: b676463e55b045dba5c87504df175bd1
+msgid "常见问题"
+msgstr "FAQ"
+
+#: ../../source/user_guide/faq.rst:6
+#: 43603bd08cde4689bca552548d03674e
+msgid "本章节整理使用 Godot-FmodPlayer 时经常遇到的问题。若问题与 FMOD 授权、平台发布或商业项目有关，请以 FMOD 官方文档与实际项目合同为准。"
+msgstr ""
+"This chapter collects common issues encountered when using Godot-FmodPlayer. For questions about FMOD licensing, platform publishing, or commercial projects, always rely on the official FMOD documentation and your actual project agreement."
+
+#: ../../source/user_guide/faq.rst:11
+#: 290896c9bbc44de594de3a3c7a4c36ef
+msgid "使用 Godot-FmodPlayer 插件有哪些许可条款？"
+msgstr "What licenses apply when using Godot-FmodPlayer?"
+
+#: ../../source/user_guide/faq.rst:13
+#: 6bd4036efff54bfebf6ad0e930b5be8a
+msgid "Godot-FmodPlayer 插件本身使用 `MIT 许可证 <https://opensource.org/license/MIT>`_。 这意味着你可以自由使用、修改和分发本插件，但需要保留原始版权与许可证声明。"
+msgstr ""
+"The Godot-FmodPlayer plugin itself uses the `MIT license <https://opensource.org/license/MIT>`_. This means you can freely use, modify, and distribute the plugin, but you must keep the original copyright and license notice."
+
+#: ../../source/user_guide/faq.rst:16
+#: cd04bda954ce4d63889492ebca128ea7
+msgid ""
+"需要注意的是，Godot-FmodPlayer 依赖 **FMOD Engine**。FMOD 是 Firelight Technologies Pty Ltd 的专有音频引擎，并不随本插件一起变成开源软件。 如果你的项目会发布、商业化或在特定平台上分发，请阅读 `FMOD Licensing <https://www.fmod.com/licensing>`_ 与 `FMOD Legal Information <https://www.fmod.com/legal>`_，并根据你的项目情况 注册项目或获取相应授权。"
+msgstr ""
+"Note that Godot-FmodPlayer depends on **FMOD Engine**. FMOD is a proprietary audio engine by Firelight Technologies Pty Ltd and does not become open source through this plugin. If your project will be published, commercialized, or distributed on a specific platform, read `FMOD Licensing <https://www.fmod.com/licensing>`_ and `FMOD Legal Information <https://www.fmod.com/legal>`_."
+
+#: ../../source/user_guide/faq.rst:26
+#: 1ded5fda940e4ad8bcce78ac702823cc
+msgid "Godot-FmodPlayer 支持 FMOD Studio Event 或 Bank 吗？"
+msgstr "Does Godot-FmodPlayer support FMOD Studio Events or Banks?"
+
+#: ../../source/user_guide/faq.rst:28
+#: c830ce0593c8492fb91c2e2c5ec2d420
+msgid "目前 Godot-FmodPlayer 主要面向 **FMOD Core API**，重点是音频文件播放、 通道控制、混音、DSP 效果与 3D 音频等底层功能。"
+msgstr ""
+"Currently, Godot-FmodPlayer mainly targets the **FMOD Core API**. Its focus is lower-level functionality such as audio file playback, channel control, mixing, DSP effects, and 3D audio."
+
+#: ../../source/user_guide/faq.rst:31
+#: fe7e990da097435fae6b29bae9dd8b4c
+msgid ""
+"它不等同于 FMOD Studio 集成，也不提供完整的 Studio Event 工作流。如果你的项目 依赖 FMOD Studio 的事件、参数、Bank 构建与音频设计师工作流，可以考虑使用 `fmod-gdextension <https://github.com/utopia-rise/fmod-gdextension>`_。"
+msgstr ""
+"It is not the same as an FMOD Studio integration and does not provide a complete Studio Event workflow. If your project depends on FMOD Studio events, parameters, Bank builds, or an audio-designer workflow, consider `fmod-gdextension <https://github.com/utopia-rise/fmod-gdextension>`_."
+
+#: ../../source/user_guide/faq.rst:38
+#: 9d27b8bc15e541e48164b9ab999e3c71
+msgid "为什么导入 Godot-FmodPlayer 插件后 Godot 报错找不到指定模块？"
+msgstr "Why does Godot report that a specified module cannot be found after importing the plugin?"
+
+#: ../../source/user_guide/faq.rst:40
+#: 7fbcd6ec993e4fecb795dffb3cc393c2
+msgid ""
+"请检查是否手动将 FMOD 运行库（如 Windows 的 ``fmod.dll``）放在 ``res://addons/fmod_player/`` 目录之下。如果没有下载 FMOD 运行库请从 `FMOD <https://www.fmod.com>`_ 下载。"
+msgstr ""
+"Check whether you manually placed the FMOD runtime library, such as ``fmod.dll`` on Windows, under ``res://addons/fmod_player/``. If you have not downloaded the FMOD runtime libraries, download them from `FMOD <https://www.fmod.com>`_."
+
+#: ../../source/user_guide/faq.rst:42
+#: cb203be7a3954731b08cf839daa281fe
+msgid "因为根据 `FMOD EULA <https://www.fmod.com/legal>`_，Godot-FmodPlayer 无权二次分发 FMOD 运行库。"
+msgstr ""
+"Godot-FmodPlayer cannot redistribute the FMOD runtime libraries because of the `FMOD EULA <https://www.fmod.com/legal>`_."
+
+#: ../../source/user_guide/faq.rst:47
+#: d879f65274884ee58dd100a8ee4303f8
+msgid "为什么播放时没有声音？"
+msgstr "Why is there no sound during playback?"
+
+#: ../../source/user_guide/faq.rst:49
+#: 3b0d9fc668254871a236b6ec75054869
+msgid "可以按以下顺序检查："
+msgstr "Check the following in order:"
+
+#: ../../source/user_guide/faq.rst:51
+#: 729fa3a9d2a24ea5879e09b3dcfac047
+msgid "确认场景中使用的是 ``FmodAudioStreamPlayer`` 或对应的 FMOD 播放节点。"
+msgstr "Make sure the scene uses ``FmodAudioStreamPlayer`` or the corresponding FMOD playback node."
+
+#: ../../source/user_guide/faq.rst:52
+#: 3b607f184e354872aaa33a4b11ec946d
+msgid "确认 ``stream`` 已正确设置，并且音频路径存在。"
+msgstr "Make sure ``stream`` is set correctly and the audio path exists."
+
+#: ../../source/user_guide/faq.rst:53
+#: c71ba14e84c0480a9c0740e13b7ad613
+msgid "确认播放器的 ``playing`` 状态、音量、暂停状态没有被脚本覆盖。"
+msgstr "Make sure the player's ``playing`` state, volume, and paused state are not being overwritten by a script."
+
+#: ../../source/user_guide/faq.rst:54
+#: 93ecde6e4b8444b3ab382f73d3a28abe
+msgid "确认主通道组或目标通道组没有被静音，音量没有被设置为 0。"
+msgstr "Make sure the master channel group or target channel group is not muted and its volume is not set to 0."
+
+#: ../../source/user_guide/faq.rst:55
+#: 2517a309f871481b8532d6b8da6fa0db
+msgid "查看 Godot 输出面板中是否有 FMOD 初始化、文件加载或解码相关错误。"
+msgstr "Check Godot's Output panel for FMOD initialization, file loading, or decoding errors."
+
+#: ../../source/user_guide/faq.rst:57
+#: 8e97ce44dc4f4841965d3a910243cf48
+msgid "如果使用代码加载音频，建议先用一个简单的 ``res://`` 路径测试，排除路径、 导入设置和打包路径带来的影响。"
+msgstr "If you load audio from code, first test with a simple ``res://`` path to rule out path, import, and packaging issues."
+
+#: ../../source/user_guide/faq.rst:63
+#: 53d4d5fad0a94339b66bcc1a06c6191d
+msgid "背景音乐和短音效应该分别使用哪种加载模式？"
+msgstr "Which loading mode should I use for background music and short sound effects?"
+
+#: ../../source/user_guide/faq.rst:65
+#: 5d274e640d5448ed88e8b26f2bee7b28
+msgid "一般建议："
+msgstr "The general recommendation is:"
+
+#: ../../source/user_guide/faq.rst:67
+#: a8a6208897754753b892520c50061e29
+msgid "背景音乐、语音、环境音等较长音频使用 ``MODE_STREAM``。"
+msgstr "Use ``MODE_STREAM`` for longer audio such as background music, voice, and ambience."
+
+#: ../../source/user_guide/faq.rst:68
+#: 02fdf44b2bd24bc08fecd03abaa2bbaf
+msgid "点击音、攻击音效、爆炸声等短音效使用 ``MODE_SAMPLE``。"
+msgstr "Use ``MODE_SAMPLE`` for short sound effects such as clicks, attacks, and explosions."
+
+#: ../../source/user_guide/faq.rst:70
+#: 76a9923a33864203a76d04d8115c9d5c
+msgid "``MODE_STREAM`` 会按需读取音频数据，适合较长文件，可以降低内存占用。 ``MODE_SAMPLE`` 会把音频加载到内存中，播放延迟更低，适合频繁触发的短音效。"
+msgstr ""
+"``MODE_STREAM`` reads audio data on demand, so it is suitable for longer files and reduces memory usage. ``MODE_SAMPLE`` loads audio into memory, which gives lower playback latency and is better for frequently triggered short sounds."
+
+#: ../../source/user_guide/faq.rst:76
+#: 6279f37f71a749699113840c2434bf3c
+msgid "为什么导出后音频无法播放？"
+msgstr "Why does audio fail to play after export?"
+
+#: ../../source/user_guide/faq.rst:78
+#: b8926edcd5e84a7d876ba97e7ffc1b5d
+msgid "导出后无法播放通常与路径、资源打包或动态库有关："
+msgstr "Export playback failures are usually related to paths, resource packaging, or dynamic libraries:"
+
+#: ../../source/user_guide/faq.rst:80
+#: 858feb9a1db447ccb7d06907093c2ce3
+msgid "确认音频文件被包含在 Godot 导出包中。"
+msgstr "Make sure the audio files are included in the Godot export package."
+
+#: ../../source/user_guide/faq.rst:81
+#: 72e8adaff65145259fa5097bf8be42df
+msgid "优先使用 ``res://`` 路径引用项目内资源，避免依赖开发机上的绝对路径。"
+msgstr "Prefer ``res://`` paths for project resources and avoid absolute paths from the development machine."
+
+#: ../../source/user_guide/faq.rst:82
+#: 2d45200c3e5c4f4392dc8300d519c2dd
+msgid "确认目标平台包含对应架构的 FMOD 运行时库与 GDExtension 文件。"
+msgstr "Make sure the target platform includes the FMOD runtime library and GDExtension files for the correct architecture."
+
+#: ../../source/user_guide/faq.rst:83
+#: 87d10e405e6a49038f8c4d10098538a0
+msgid "检查导出模板、平台架构和插件提供的二进制文件是否匹配。"
+msgstr "Check that the export template, platform architecture, and plugin binaries match."
+
+#: ../../source/user_guide/faq.rst:84
+#: ce67eb276c6a45a9b4fd65cc9da51ddc
+msgid "在导出版本中打开日志输出，查看是否有文件找不到或动态库加载失败的错误。"
+msgstr "Enable logs in the exported build and check for missing files or dynamic library loading failures."
+
+#: ../../source/user_guide/faq.rst:86
+#: 66056f3af09f48709e733cb5b373870d
+msgid "如果开发环境可以播放但导出后失败，优先检查导出预设中的资源过滤规则和插件二进制文件。"
+msgstr ""
+"If playback works in the development environment but fails after export, first check resource filters in the export preset and the plugin binary files."
+
+#: ../../source/user_guide/faq.rst:91
+#: 066af2e095664c628d49e0466013847b
+msgid "可以把 Godot 原生 AudioStreamPlayer 和 FmodAudioStreamPlayer 混用吗？"
+msgstr "Can Godot AudioStreamPlayer and FmodAudioStreamPlayer be used together?"
+
+#: ../../source/user_guide/faq.rst:93
+#: 01b03213bcd5402eb89662f841443a4e
+msgid "可以混用，但两者属于不同的音频系统。Godot 原生 ``AudioStreamPlayer`` 走 Godot 的音频服务器， ``FmodAudioStreamPlayer`` 走 FMOD 系统。"
+msgstr ""
+"Yes, but they belong to different audio systems. Godot's built-in ``AudioStreamPlayer`` goes through Godot's audio server, while ``FmodAudioStreamPlayer`` goes through the FMOD system."
+
+#: ../../source/user_guide/faq.rst:96
+#: 41b04b235cbd486f89b52b577f2f26d3
+msgid "如果同一个项目中同时使用两套系统，需要分别管理它们的音量、暂停、总线和生命周期。 对于需要 FMOD DSP、通道组或 3D 音频控制的声音，建议统一使用 FMOD 播放节点， 避免混音逻辑分散。"
+msgstr ""
+"If both systems are used in the same project, manage their volume, pause behavior, buses, and lifetimes separately. For sounds that need FMOD DSP, channel groups, or 3D audio control, prefer using FMOD playback nodes consistently so the mixing logic stays in one place."
+
+#: ../../source/user_guide/faq.rst:103
+#: 4fa0a170c1be4d99b2f116367a7e1d14
+msgid "什么时候需要手动释放音频资源？"
+msgstr "When do I need to release audio resources manually?"
+
+#: ../../source/user_guide/faq.rst:105
+#: 1ac7a69b75544b1cbc6e2946ab932ec2
+msgid "大多数 Godot 资源会随着引用释放而自动清理，但在以下场景中建议主动管理："
+msgstr ""
+"Most Godot resources are cleaned up automatically when references are released, but active management is recommended in these cases:"
+
+#: ../../source/user_guide/faq.rst:107
+#: f6f92bb558eb4e198bbf0a14859b0316
+msgid "运行时动态加载了大量音频文件。"
+msgstr "You dynamically load many audio files at runtime."
+
+#: ../../source/user_guide/faq.rst:108
+#: 97c77fda05c4441cb2e48c3f066af4a7
+msgid "使用 ``MODE_SAMPLE`` 预加载了大量短音效。"
+msgstr "You preload many short sound effects with ``MODE_SAMPLE``."
+
+#: ../../source/user_guide/faq.rst:109
+#: 40978049635f4d8b93af488652aaf6a5
+msgid "关卡切换时需要释放当前关卡专用的音频资源。"
+msgstr "You need to release audio resources that are only used by the current level during a level transition."
+
+#: ../../source/user_guide/faq.rst:110
+#: d67135c62a094cbba4a8a83fa36253a8
+msgid "创建了临时播放器、发射器、DSP 或通道组。"
+msgstr "You create temporary players, emitters, DSPs, or channel groups."
+
+#: ../../source/user_guide/faq.rst:112
+#: bc504582e05f4fffa09c7c24c229b5c7
+msgid "对于不再使用的节点可以调用 ``queue_free()``。对于音频资源，如果文档或 API 提供了 ``clear()`` 等清理方法，可以在确认没有播放器继续使用它之后再调用。"
+msgstr ""
+"For nodes that are no longer used, call ``queue_free()``. For audio resources, if the documentation or API provides cleanup methods such as ``clear()``, call them only after confirming that no player is still using the resource."
+
+#: ../../source/user_guide/faq.rst:118
+#: e5120ebdc0534c1785cb326316ef0a9c
+msgid "DSP 效果没有生效怎么办？"
+msgstr "What should I do if a DSP effect does not work?"
+
+#: ../../source/user_guide/faq.rst:120
+#: 1783c6f1502d4347be421a108ee36401
+msgid "先确认 DSP 被添加到了正确的位置。DSP 可以挂在主通道组、指定通道组，或某个正在播放的 通道上；如果加到了错误的通道组，目标声音就不会经过这个效果器。"
+msgstr ""
+"First confirm that the DSP was added to the correct place. A DSP can be attached to the master channel group, a specific channel group, or a currently playing channel. If it is added to the wrong channel group, the target sound will not pass through the effect."
+
+#: ../../source/user_guide/faq.rst:123
+#: 993c5c086c4a404681b9cbc747f5dd43
+msgid "还需要检查："
+msgstr "Also check:"
+
+#: ../../source/user_guide/faq.rst:125
+#: 2412224a98774077877857943b59ea23
+msgid "DSP 是否成功创建。"
+msgstr "Whether the DSP was created successfully."
+
+#: ../../source/user_guide/faq.rst:126
+#: 46ea4a1ec46045baabec14da5033d8e7
+msgid "参数索引和参数类型是否正确。"
+msgstr "Whether the parameter index and parameter type are correct."
+
+#: ../../source/user_guide/faq.rst:127
+#: 47c5a0fad8fb4f98b91d8a0bad6a25f6
+msgid "DSP 是否被 bypass。"
+msgstr "Whether the DSP is bypassed."
+
+#: ../../source/user_guide/faq.rst:128
+#: 37dac982b048464d8a765bd9edbb6ec1
+msgid "目标声音是否正在通过该通道或通道组播放。"
+msgstr "Whether the target sound is playing through that channel or channel group."
+
+#: ../../source/user_guide/faq.rst:129
+#: f281f601a54e444f90ec94736057cbe5
+msgid "DSP 的添加顺序是否符合预期。"
+msgstr "Whether the DSP insertion order matches your expectation."
+
+#: ../../source/user_guide/faq.rst:131
+#: 2bdd911f521c412c82a5df5dbff86ce0
+msgid "调试时可以先把 DSP 加到主通道组上确认效果本身可用，再移动到更具体的通道组。"
+msgstr ""
+"When debugging, first add the DSP to the master channel group to confirm that the effect itself works, then move it to a more specific channel group."
+
+#: ../../source/user_guide/faq.rst:136
+#: 5e6a40f0463b490abbeb93fcbc305e97
+msgid "移动平台上使用时需要注意什么？"
+msgstr "What should I watch out for on mobile platforms?"
+
+#: ../../source/user_guide/faq.rst:138
+#: 1329224b597445a7844f3c5c6b41044f
+msgid "移动平台更容易受到内存、CPU 和文件读取速度的影响。建议："
+msgstr "Mobile platforms are more sensitive to memory, CPU, and file I/O speed. Recommended practices:"
+
+#: ../../source/user_guide/faq.rst:140
+#: d4fcafb35ba646a7a00dcceb7253c8eb
+msgid "背景音乐使用 ``MODE_STREAM``。"
+msgstr "Use ``MODE_STREAM`` for background music."
+
+#: ../../source/user_guide/faq.rst:141
+#: 62953fe16f3047c6804a3347849f4e35
+msgid "高频短音效使用 ``MODE_SAMPLE`` 并提前加载。"
+msgstr "Use ``MODE_SAMPLE`` for high-frequency short sound effects and load them ahead of time."
+
+#: ../../source/user_guide/faq.rst:142
+#: bfd209683afb4e30b7d44feb019d1324
+msgid "避免同时创建过多 DSP，尤其是混响、卷积、复杂滤波等较重效果。"
+msgstr ""
+"Avoid creating too many DSP effects at once, especially heavier effects such as reverb, convolution, and complex filters."
+
+#: ../../source/user_guide/faq.rst:143
+#: a5ac516746284ad3afdbf66791af5665
+msgid "控制同时播放的通道数量。"
+msgstr "Control the number of channels playing at the same time."
+
+#: ../../source/user_guide/faq.rst:144
+#: 6d7fedc542724eddb80c699b13ea2470
+msgid "在真机上测试延迟、性能和导出包内容。"
+msgstr "Test latency, performance, and exported package contents on a real device."
+
+#: ../../source/user_guide/faq.rst:146
+#: 5bb896600fec49bfaaae92193b6210b5
+msgid "模拟器和编辑器中的表现不能完全代表真机，发布前应以目标设备测试结果为准。"
+msgstr ""
+"Behavior in the editor or emulator does not fully represent a real device. Use target-device test results as the source of truth before release."
+
+#: ../../source/user_guide/faq.rst:151
+#: fc750d9272284e23acc078f250d27ad9
+msgid "遇到崩溃或 FMOD 错误时应该如何定位？"
+msgstr "How should I investigate crashes or FMOD errors?"
+
+#: ../../source/user_guide/faq.rst:153
+#: da9ca8f254014747b1ee5533f1060a9d
+msgid "建议先收集以下信息："
+msgstr "Start by collecting:"
+
+#: ../../source/user_guide/faq.rst:155
+#: 54a29086b0c1443bb910ed1f631a0d4d
+msgid "Godot 版本、插件版本和目标平台。"
+msgstr "Godot version, plugin version, and target platform."
+
+#: ../../source/user_guide/faq.rst:156
+#: 37aec99f98da497cb6cba74c236b8e33
+msgid "触发问题的最小复现场景。"
+msgstr "A minimal reproduction scene."
+
+#: ../../source/user_guide/faq.rst:157
+#: ef5d1668e4d5495e9ec7388c446a595a
+msgid "Godot 输出面板中的完整错误信息。"
+msgstr "The full error output from Godot's Output panel."
+
+#: ../../source/user_guide/faq.rst:158
+#: a24e9012155c4c4286cfbb2140bf578d
+msgid "使用的音频格式、加载模式和播放方式。"
+msgstr "The audio format, loading mode, and playback method being used."
+
+#: ../../source/user_guide/faq.rst:159
+#: 99c6d7c9343e4c3e9abe0bda6158a33e
+msgid "是否只在导出版本或特定设备上出现。"
+msgstr "Whether the issue only appears in exported builds or on specific devices."
+
+#: ../../source/user_guide/faq.rst:161
+#: 75ae613b757f465fa7fc2e521b768ec2
+msgid "如果问题可以稳定复现，尽量创建一个只包含必要场景和音频文件的最小项目。这样更容易判断是 路径、导入、平台二进制、FMOD 初始化，还是具体 API 调用导致的问题。"
+msgstr ""
+"If the issue can be reproduced consistently, create a minimal project containing only the necessary scene and audio files. This makes it easier to determine whether the cause is a path, import setting, platform binary, FMOD initialization, or a specific API call."
+
+#: ../../source/user_guide/faq.rst:164
+#: 20126e681dfe40008705fe2e875458a9
+msgid "如果无法解决问题，可以在 `Github issue <https://github.com/LuYingYiLong/Godot-FmodPlayer/issues>`_ 提出问题或寻求解决方法。"
+msgstr ""
+"If you cannot solve the issue, you can open a `GitHub issue <https://github.com/LuYingYiLong/Godot-FmodPlayer/issues>`_ or look for help there."

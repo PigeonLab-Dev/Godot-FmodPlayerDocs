@@ -1,559 +1,494 @@
-# SOME DESCRIPTIVE TITLE.
+# English translations for Godot FmodPlayer.
 # Copyright (C) 2026, LuYingYiLong
-# This file is distributed under the same license as the Godot FmodPlayer
-# package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+# This file is distributed under the same license as the Godot FmodPlayer package.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot FmodPlayer \n"
+"Project-Id-Version: Godot FmodPlayer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-13 11:19+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2026-04-26 23:57+0800\n"
+"PO-Revision-Date: 2026-04-27 00:00+0800\n"
+"Last-Translator: Codex <codex@example.invalid>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Sphinx gettext + Codex PO generator\n"
+
 
 #: ../../source/getting_started/installation.rst:2
-#: 3caa641ee6594cb2aa7b3e6a546755b0
+#: 5a0b1f91a66c4f288c3e210237d13b3b
 msgid "安装指南"
 msgstr "Installation Guide"
 
-#: ../../source/getting_started/installation.rst:5
-#: 0a7ad9f57c4c4741a2515aa05659b316
-msgid "系统要求"
-msgstr "System Requirements"
-
-#: ../../source/getting_started/installation.rst:7
-#: b5c8972e032a48ef80b7d657c991a413
-msgid "**Godot 版本**: 4.1 或更高版本"
-msgstr "**Godot Version**: 4.1 or higher"
+#: ../../source/getting_started/installation.rst:4
+#: 498e25b4628b4f18bf8e7c8ee14745e6
+msgid "本页说明如何把 Godot-FmodPlayer 安装到 Godot 项目中，并补齐 FMOD Core API 运行库。推荐优先使用预编译版本；只有需要修改插件源码或自行适配平台时，才需要从源码构建。"
+msgstr ""
+"This page explains how to install Godot-FmodPlayer into a Godot project and add the required FMOD Core API runtime libraries. In most cases, use the prebuilt package. Build from source only when you need to modify the plugin source code or adapt it to another platform."
 
 #: ../../source/getting_started/installation.rst:8
-#: 6f5765f75f964123b6465275f74644d1
-msgid "**操作系统**: Windows 10/11, Android"
-msgstr "**Operating System**: Windows 10/11, Android"
+#: a1c0503362994171a3c777022c1d8123
+msgid "安装前确认"
+msgstr "Before You Start"
 
-#: ../../source/getting_started/installation.rst:9
-#: 1b6a89c9c5324e00ba9df9c332222ab2
+#: ../../source/getting_started/installation.rst:10
+#: 2a20c87b80b84ddd9d65ea0545f39328
+msgid "开始前请确认："
+msgstr "Before you begin, make sure that:"
+
+#: ../../source/getting_started/installation.rst:12
+#: 920f0168f5824b3a8467af6ec54aa6c6
+msgid "Godot 版本为 4.1 或更高版本。"
+msgstr "Your Godot version is 4.1 or later."
+
+#: ../../source/getting_started/installation.rst:13
+#: 15200fc6b4bc4728b1029965dc8a281a
+msgid "目标平台目前为 Windows x86_64 或 Android arm64。"
+msgstr "Your target platform is currently Windows x86_64 or Android arm64."
+
+#: ../../source/getting_started/installation.rst:14
+#: f6dd079c56d24605a8d0be317108f356
+msgid "已准备好从 FMOD 官网下载 FMOD Engine。"
+msgstr "You are ready to download FMOD Engine from the official FMOD website."
+
+#: ../../source/getting_started/installation.rst:18
+#: 3c9ed0a52d9e410d9df9943b9c97cdb0
 msgid ""
-"**编译器** (如需从源码构建): - Windows: MSVC v145+ (Visual Studio 2022) - Android: "
-"Android NDK"
+"Godot-FmodPlayer 插件本身不包含 FMOD 运行库。由于 FMOD 的许可要求， 你需要自行从 `FMOD 下载页面 <https://www.fmod.com/download>`_ 获取 FMOD Engine，并把对应平台的运行库复制到项目中。"
 msgstr ""
-"**Compiler** (if building from source): - Windows: MSVC v145+ (Visual Studio 2022) - Android: "
-"Android NDK"
+"Godot-FmodPlayer does not include the FMOD runtime libraries. Because of FMOD licensing requirements, you must download FMOD Engine yourself from the `FMOD download page <https://www.fmod.com/download>`_ and copy the runtime libraries for your target platform into the project."
 
-#: ../../source/getting_started/installation.rst:15
-#: 08719a41436f46e2baca44193e4cf799
-msgid "**FMOD 运行库需要手动下载**"
-msgstr "**FMOD runtime library needs to be downloaded manually**"
+#: ../../source/getting_started/installation.rst:23
+#: 1faa7ec1fcb746539fa1fd88f7196616
+msgid "预编译版本（推荐）"
+msgstr "Prebuilt Package (Recommended)"
 
-#: ../../source/getting_started/installation.rst:17
-#: c0758bcf426a43ae91f56f30322c18d6
-msgid ""
-"由于 FMOD 的许可协议不允许二次分发，你需要自行从 `FMOD 官网 <https://www.fmod.com/download>`_ 下载"
-" FMOD Core API。"
-msgstr ""
-"Due to FMOD's licensing agreement, redistribution is not allowed. You need to download the "
-"FMOD Core API from `FMOD website <https://www.fmod.com/download>`_ yourself."
-
-#: ../../source/getting_started/installation.rst:20
-#: 3ba1a5f5c08844f1866ddaaffb40caaf
-msgid "注册/登录 FMOD 账户"
-msgstr "Register/Login to FMOD account"
-
-#: ../../source/getting_started/installation.rst:21
-#: 506bbe5823b44e8596a505081c65e2cf
-msgid "下载对应平台的 FMOD Core API"
-msgstr "Download FMOD Core API for your platform"
-
-#: ../../source/getting_started/installation.rst:22
-#: f5b633eae1e341d7b4e67a6eadda1709
-msgid "将运行库文件（如 Windows 的 ``fmod.dll``）放置到插件目录"
-msgstr "Place runtime library files (e.g., ``fmod.dll`` for Windows) in the plugin directory"
-
-#: ../../source/getting_started/installation.rst:25
-#: 63c03de9c0384c11971d44a4e0cb9b74
-msgid "安装方式"
-msgstr "Installation Methods"
+#: ../../source/getting_started/installation.rst:26
+#: 51efbc4a6aed40b1944a693ceb902f12
+msgid "下载插件"
+msgstr "Download the Plugin"
 
 #: ../../source/getting_started/installation.rst:28
-#: 95a978720bab458baf8d050cf59f7b98
-msgid "方式一：预编译二进制文件（推荐）"
-msgstr "Method 1: Precompiled Binaries (Recommended)"
-
-#: ../../source/getting_started/installation.rst:30
-#: de54875be7c2416dba5ab0fe6e22bd94
+#: 3e1ce6d2c4db4fb18adfbaadc4de92c7
 msgid ""
-"从 `GitHub Releases <https://github.com/LuYingYiLong/Godot-"
-"FmodPlayer/releases>`_ 下载最新版本"
+"从 `Godot Asset Library <https://godotengine.org/asset-library/asset/4905>`_ 下载插件，或从 `GitHub Releases <https://github.com/LuYingYiLong/Godot-FmodPlayer/releases>`_ 下载发布包。"
 msgstr ""
-"Download the latest version from `GitHub Releases <https://github.com/LuYingYiLong/Godot-"
-"FmodPlayer/releases>`_"
+"Download the plugin from the `Godot Asset Library <https://godotengine.org/asset-library/asset/4905>`_, or download a release package from `GitHub Releases <https://github.com/LuYingYiLong/Godot-FmodPlayer/releases>`_."
 
 #: ../../source/getting_started/installation.rst:32
-#: 11615ee385474c0ebca00360182c4066
-msgid "解压下载的文件，将 ``addons/fmod_player`` 文件夹复制到你的 Godot 项目的 ``res://addons/`` 目录下"
-msgstr "Extract the downloaded file and copy the ``addons/fmod_player`` folder to your Godot project's ``res://addons/`` directory"
+#: 1125cb21683f46819438421b6d9db103
+msgid "解压后，将 ``addons/fmod_player`` 复制到你的 Godot 项目："
+msgstr "After extracting the package, copy ``addons/fmod_player`` into your Godot project:"
 
 #: ../../source/getting_started/installation.rst:34
-#: 90189bc10de74166ae43afa59be1de99
-msgid "从 FMOD 官网下载 FMOD Core API，将运行库文件放入插件目录::"
-msgstr "Download FMOD Core API from FMOD website and place runtime library files in the plugin directory::"
-
-#: ../../source/getting_started/installation.rst:36
-#: d057b79fb01841658a95db86ab618539
+#: 34bbf77be03c4efaa7a7a7a3c62a53ed
 msgid ""
 "res://\n"
 "└── addons/\n"
 "    └── fmod_player/\n"
-"        ├── bin/\n"
-"        │   ├── fmod_player.gdextension      # GDExtension 配置\n"
-"        │   ├── fmod.dll                     # Windows FMOD 运行库（需自行下载）\n"
-"        │   ├── libfmod.so                   # Android FMOD 运行库（需自行下载）\n"
-"        │   ├── fmod_player.windows.*.dll    # 插件 DLL\n"
-"        │   └── ...\n"
-"        └── ..."
+"        ├── plugin.cfg\n"
+"        ├── fmod_check.gd\n"
+"        ├── fmod_player_main.gd\n"
+"        └── bin/\n"
+"            ├── fmod_player.gdextension\n"
+"            ├── fmod_player.windows.template_debug.x86_64.dll\n"
+"            ├── fmod_player.windows.template_release.x86_64.dll\n"
+"            ├── libfmod_player.android.template_debug.arm64.so\n"
+"            └── libfmod_player.android.template_release.arm64.so"
 msgstr ""
 "res://\n"
 "└── addons/\n"
 "    └── fmod_player/\n"
-"        ├── bin/\n"
-"        │   ├── fmod_player.gdextension      # GDExtension config\n"
-"        │   ├── fmod.dll                     # Windows FMOD runtime (download required)\n"
-"        │   ├── libfmod.so                   # Android FMOD runtime (download required)\n"
-"        │   ├── fmod_player.windows.*.dll    # Plugin DLL\n"
-"        │   └── ...\n"
-"        └── ..."
-
-#: ../../source/getting_started/installation.rst:47
-#: 73994111856443179eea6eda985edc0b
-msgid "在 Godot 编辑器中，进入 **项目 > 项目设置 > 插件**，启用 \"FmodPlayer\""
-msgstr "In Godot editor, go to **Project > Project Settings > Plugins**, enable \"FmodPlayer\""
+"        ├── plugin.cfg\n"
+"        ├── fmod_check.gd\n"
+"        ├── fmod_player_main.gd\n"
+"        └── bin/\n"
+"            ├── fmod_player.gdextension\n"
+"            ├── fmod_player.windows.template_debug.x86_64.dll\n"
+"            ├── fmod_player.windows.template_release.x86_64.dll\n"
+"            ├── libfmod_player.android.template_debug.arm64.so\n"
+"            └── libfmod_player.android.template_release.arm64.so"
 
 #: ../../source/getting_started/installation.rst:50
-#: b51c2809651f46acaa99e3ddc1a61c1d
-msgid "方式二：从源码构建"
-msgstr "Method 2: Build from Source"
+#: 00f20dafdd2a4fbba56b0db62db023aa
+msgid "补齐 FMOD 运行库"
+msgstr "Add the FMOD Runtime Libraries"
 
-#: ../../source/getting_started/installation.rst:53
-#: d92ca6b9b77f4f748aa035f9f35046d2
-msgid "前置要求"
-msgstr "Prerequisites"
-
-#: ../../source/getting_started/installation.rst:55
-#: b606149464734a9fb2ef82fd237a96e5
-msgid "Python 3.8+"
-msgstr "Python 3.8+"
-
-#: ../../source/getting_started/installation.rst:56
-#: 04cb76e297a54b3c80b197d645001309
-msgid "SCons 4.0+"
-msgstr "SCons 4.0+"
-
-#: ../../source/getting_started/installation.rst:57
-#: 42187035e11f4329a88181e15ee25fcf
-msgid "C++ 编译器 (MSVC v145+ 或 Android NDK)"
-msgstr "C++ Compiler (MSVC v145+ or Android NDK)"
+#: ../../source/getting_started/installation.rst:52
+#: 18bfa421e09e44e48f9d79127dd36311
+msgid "访问 `FMOD 下载页面 <https://www.fmod.com/download>`_，登录账户后下载 **FMOD Engine**。解压后，根据目标平台复制运行库。"
+msgstr ""
+"Open the `FMOD download page <https://www.fmod.com/download>`_, sign in, and download **FMOD Engine**. After extracting it, copy the runtime libraries required by your target platform."
 
 #: ../../source/getting_started/installation.rst:58
-#: a802d87a2e954dd7b2b3f44914c7aac8
+#: edd6ea5679d94805a67312c6e16fa5fc
+msgid "平台"
+msgstr "Platform"
+
+#: ../../source/getting_started/installation.rst:59
+#: 9dc9d193ab7044a49a60044d52830090
+msgid "需要的文件"
+msgstr "Required files"
+
+#: ../../source/getting_started/installation.rst:60
+#: dbd9436761e44d3e9236db3a3a50131f
+msgid "放置位置"
+msgstr "Location"
+
+#: ../../source/getting_started/installation.rst:61
+#: d5bab43b49834fbf9709b881b20b895a
+msgid "Windows x86_64"
+msgstr "Windows x86_64"
+
+#: ../../source/getting_started/installation.rst:62
+#: 5350fce835974008bcca0f7df4e284be
+msgid "``fmod.dll``"
+msgstr "``fmod.dll``"
+
+#: ../../source/getting_started/installation.rst:63
+#: c22e79aad7ab4fb1a89440848f03a083
+msgid "``res://addons/fmod_player/bin/``"
+msgstr "``res://addons/fmod_player/bin/``"
+
+#: ../../source/getting_started/installation.rst:64
+#: 87a84851002d4efbb71db0d7bbd37f3e
+msgid "Android arm64"
+msgstr "Android arm64"
+
+#: ../../source/getting_started/installation.rst:65
+#: 605162aedaa94d6abe0e45c014f68d14
+msgid "``libfmod.so``、``fmod.jar``"
+msgstr "``libfmod.so`` and ``fmod.jar``"
+
+#: ../../source/getting_started/installation.rst:66
+#: 4afc162bbee44699a8014a9dc8e3cd44
+msgid "参见 :doc:`../export` 的 Android 导出配置"
+msgstr "See the Android export setup in :doc:`../export`."
+
+#: ../../source/getting_started/installation.rst:68
+#: 463778ad0bfb426ea40e8d0d92fc3ff1
+msgid "Windows 项目安装完成后，目录通常类似这样："
+msgstr "After installing the Windows version, the project usually looks like this:"
+
+#: ../../source/getting_started/installation.rst:70
+#: e5ebbeeec01c4a7c983b6ebd34612254
+msgid ""
+"res://\n"
+"└── addons/\n"
+"    └── fmod_player/\n"
+"        └── bin/\n"
+"            ├── fmod_player.gdextension\n"
+"            ├── fmod.dll\n"
+"            ├── fmod_player.windows.template_debug.x86_64.dll\n"
+"            └── fmod_player.windows.template_release.x86_64.dll"
+msgstr ""
+"res://\n"
+"└── addons/\n"
+"    └── fmod_player/\n"
+"        └── bin/\n"
+"            ├── fmod_player.gdextension\n"
+"            ├── fmod.dll\n"
+"            ├── fmod_player.windows.template_debug.x86_64.dll\n"
+"            └── fmod_player.windows.template_release.x86_64.dll"
+
+#: ../../source/getting_started/installation.rst:83
+#: 1d4b10ba51014a3d9b03daa5df1016b2
+msgid "编辑器插件会在启用时检查 ``fmod.dll``、``libfmod.so`` 或 ``libfmod.dylib``。 如果没有找到 FMOD 运行库，Godot 会显示提示窗口，并引导你前往 FMOD 下载页面。"
+msgstr ""
+"When enabled, the editor plugin checks for ``fmod.dll``, ``libfmod.so``, or ``libfmod.dylib``. If the FMOD runtime library cannot be found, Godot displays a prompt and points you to the FMOD download page."
+
+#: ../../source/getting_started/installation.rst:87
+#: aaef6d955c7a4f5eabf7a1e0c7737bf9
+msgid "启用插件"
+msgstr "Enable the Plugin"
+
+#: ../../source/getting_started/installation.rst:89
+#: 6fcb41ed9ffe4a7584db342295d9c9d8
+msgid "打开 Godot 编辑器。"
+msgstr "Open the Godot editor."
+
+#: ../../source/getting_started/installation.rst:90
+#: d963fd75c5e946dfabc1b2ae4da5e903
+msgid "进入 **项目 > 项目设置 > 插件**。"
+msgstr "Go to **Project > Project Settings > Plugins**."
+
+#: ../../source/getting_started/installation.rst:91
+#: f68a148c797e4a48aa07bb7e42ad2700
+msgid "找到 ``FMOD Player`` 并启用。"
+msgstr "Find ``FMOD Player`` and enable it."
+
+#: ../../source/getting_started/installation.rst:92
+#: 88d452d361df44c9ab3c81db8fedc792
+msgid "如果刚刚复制了 FMOD 运行库，建议重启一次 Godot 编辑器。"
+msgstr "If you just copied the FMOD runtime libraries, restart the Godot editor once."
+
+#: ../../source/getting_started/installation.rst:95
+#: d235b0d0122740b5a2ce88be9e33e1f9
+msgid "验证安装"
+msgstr "Verify the Installation"
+
+#: ../../source/getting_started/installation.rst:97
+#: 6af868f173ae46e1a1ea269152bfa3e4
+msgid "启用成功后，可以用下面几项快速确认插件是否可用："
+msgstr "After enabling the plugin, you can quickly check that it is available:"
+
+#: ../../source/getting_started/installation.rst:99
+#: 4ed0a41d53f34092ba9e84cc03a5f135
+msgid "在添加节点面板中搜索 ``Fmod``，应能看到："
+msgstr "Search for ``Fmod`` in the Add Node dialog. You should see:"
+
+#: ../../source/getting_started/installation.rst:101
+#: baa2448fca1245aba2bd51d895cf0518
+msgid "``FmodAudioStreamPlayer``"
+msgstr "``FmodAudioStreamPlayer``"
+
+#: ../../source/getting_started/installation.rst:102
+#: 13e575cac39d48c4b1ebcef045686fea
+msgid "``FmodAudioStreamPlayer2D``"
+msgstr "``FmodAudioStreamPlayer2D``"
+
+#: ../../source/getting_started/installation.rst:103
+#: 9f7bb769a24841888065eeb9290305e5
+msgid "``FmodAudioStreamPlayer3D``"
+msgstr "``FmodAudioStreamPlayer3D``"
+
+#: ../../source/getting_started/installation.rst:105
+#: acf8cb1fd13f4352b66e480691d0d256
+msgid "在资源创建菜单中搜索 ``Fmod``，应能看到："
+msgstr "Search for ``Fmod`` in the resource creation menu. You should see:"
+
+#: ../../source/getting_started/installation.rst:107
+#: 81442f7326f44d92a372ad84aaff88c6
+msgid "``FmodAudioStream``"
+msgstr "``FmodAudioStream``"
+
+#: ../../source/getting_started/installation.rst:108
+#: ad87a03b4dbf461fbd76206cd6853717
+msgid "``FmodAudioBusLayout``"
+msgstr "``FmodAudioBusLayout``"
+
+#: ../../source/getting_started/installation.rst:110
+#: 94cb564d2ca7452fad063c58db9f4a32
+msgid "打开 Godot 输出面板，确认没有 FMOD 运行库缺失或 GDExtension 加载失败的错误。"
+msgstr "Open Godot's Output panel and confirm that there are no missing FMOD runtime errors or GDExtension loading errors."
+
+#: ../../source/getting_started/installation.rst:112
+#: 0bab1cd4b6d847bd919d8dccfbd21f2d
+msgid "如果节点或资源类型没有出现，通常是 FMOD 运行库缺失、平台架构不匹配，或 ``addons/fmod_player`` 没有放在项目的 ``res://addons/`` 目录下。"
+msgstr ""
+"If the node or resource types do not appear, the usual causes are a missing FMOD runtime library, a platform architecture mismatch, or ``addons/fmod_player`` not being placed under the project's ``res://addons/`` directory."
+
+#: ../../source/getting_started/installation.rst:116
+#: 756c30d1ea834cc2bb9e4958163cad88
+msgid "从源码构建"
+msgstr "Build from Source"
+
+#: ../../source/getting_started/installation.rst:118
+#: 19b7ae8b15364a5f9ab6a6c387b1abe9
+msgid "只有在需要修改 C++ 源码、调试 GDExtension，或自行生成平台二进制文件时，才需要从源码构建。"
+msgstr ""
+"Build from source only when you need to modify the C++ source code, debug the GDExtension, or generate platform binaries yourself."
+
+#: ../../source/getting_started/installation.rst:121
+#: f2af307208ce4d37bcc65f08afd0fd7b
+msgid "前置要求"
+msgstr "Requirements"
+
+#: ../../source/getting_started/installation.rst:123
+#: 44ce0ca1217c4e2b9838ef5ce1c0656f
+msgid "Python 3.11 或更高版本"
+msgstr "Python 3.11 or later"
+
+#: ../../source/getting_started/installation.rst:124
+#: 600eae7990414da594b2c0343427158d
+msgid "SCons 4.10 或更高版本"
+msgstr "SCons 4.10 or later"
+
+#: ../../source/getting_started/installation.rst:125
+#: 9db3a6a590b24fdf92491808668c8766
 msgid "Git"
 msgstr "Git"
 
-#: ../../source/getting_started/installation.rst:61
-#: 22268f730a4e4918b32eb0f1f53eabaf
+#: ../../source/getting_started/installation.rst:126
+#: 12dd0b880afa48dfaf181276b9af659a
+msgid "C++17 编译环境"
+msgstr "A C++17 build environment"
+
+#: ../../source/getting_started/installation.rst:127
+#: f95a47ad9a894ec1989b2b47f8a8fcac
+msgid "Windows 构建需要 MSVC"
+msgstr "Windows builds require MSVC."
+
+#: ../../source/getting_started/installation.rst:128
+#: 90c0734f2302428aaed2f61f6b66da3f
+msgid "Android 构建需要 Android SDK、NDK 与 JDK"
+msgstr "Android builds require the Android SDK, NDK, and JDK."
+
+#: ../../source/getting_started/installation.rst:131
+#: 7f60db36c61a46b8856823d7f44ecbc4
 msgid "获取源码"
-msgstr "Get Source Code"
+msgstr "Get the Source Code"
 
-#: ../../source/getting_started/installation.rst:63
-#: 802cfe704ac942e299aa36845b905c8f
+#: ../../source/getting_started/installation.rst:133
+#: d09a12963d4a4817808807dfd613f2c3
 msgid ""
-"git clone --recursive https://github.com/LuYingYiLong/Godot-"
-"FmodPlayer.git\n"
+"git clone --recursive https://github.com/LuYingYiLong/Godot-FmodPlayer.git\n"
 "cd Godot-FmodPlayer"
 msgstr ""
-"git clone --recursive https://github.com/LuYingYiLong/Godot-"
-"FmodPlayer.git\n"
+"git clone --recursive https://github.com/LuYingYiLong/Godot-FmodPlayer.git\n"
 "cd Godot-FmodPlayer"
 
-#: ../../source/getting_started/installation.rst:70
-#: f9c69cc20f2e4cd4a4e553d83a2a49f4
-msgid "使用 ``--recursive`` 参数确保 ``godot-cpp`` 子模块被正确克隆。"
-msgstr "Use the ``--recursive`` flag to ensure the ``godot-cpp`` submodule is cloned correctly."
-
-#: ../../source/getting_started/installation.rst:73
-#: 18bd3890ff1349d5a89b230dc28bad23
+#: ../../source/getting_started/installation.rst:139
+#: 2d89aad31e684021ad57eced0f81ef64
 msgid "Windows 构建"
-msgstr "Windows Build"
+msgstr "Build for Windows"
 
-#: ../../source/getting_started/installation.rst:75
-#: 7148b5134ead4f92abadaf142fb9ca2e
+#: ../../source/getting_started/installation.rst:141
+#: bfcabb2adc11437cb9cd8da04249814e
 msgid ""
-"# 调试版本\n"
 "scons platform=windows target=template_debug arch=x86_64\n"
-"\n"
-"# 发布版本\n"
-"scons platform=windows target=template_release arch=x86_64\n"
-"\n"
-"# 编辑器版本\n"
-"scons platform=windows target=editor arch=x86_64"
+"scons platform=windows target=template_release arch=x86_64"
 msgstr ""
-"# Debug version\n"
 "scons platform=windows target=template_debug arch=x86_64\n"
-"\n"
-"# Release version\n"
-"scons platform=windows target=template_release arch=x86_64\n"
-"\n"
-"# Editor version\n"
-"scons platform=windows target=editor arch=x86_64"
+"scons platform=windows target=template_release arch=x86_64"
 
-#: ../../source/getting_started/installation.rst:87
-#: e5f7bee97921440da0513b79d0185520
+#: ../../source/getting_started/installation.rst:147
+#: 7ebd502a01d34dd189d71b125e6170a5
 msgid "Android 构建"
-msgstr "Android Build"
+msgstr "Build for Android"
 
-#: ../../source/getting_started/installation.rst:89
-#: 5b974280369f4d738047cdb6428ced7c
+#: ../../source/getting_started/installation.rst:149
+#: c859aa26904442e7bc1182138b097986
 msgid ""
-"# ARM64 调试版本\n"
 "scons platform=android target=template_debug arch=arm64\n"
-"\n"
-"# ARM64 发布版本\n"
 "scons platform=android target=template_release arch=arm64"
 msgstr ""
-"# ARM64 debug version\n"
 "scons platform=android target=template_debug arch=arm64\n"
-"\n"
-"# ARM64 release version\n"
 "scons platform=android target=template_release arch=arm64"
 
-#: ../../source/getting_started/installation.rst:98
-#: 2e66b5d00a264ee0befe7f7065357565
-msgid "构建选项说明"
+#: ../../source/getting_started/installation.rst:155
+#: 1c94c6036fec41519fce84b57db03b50
+msgid "构建输出"
+msgstr "Build Output"
+
+#: ../../source/getting_started/installation.rst:157
+#: 23a09b5541f74f5393f4c3d53f1f3c81
+msgid "构建完成后，将生成的二进制文件放入 ``addons/fmod_player/bin/``。当前插件的 ``fmod_player.gdextension`` 默认引用以下文件名："
+msgstr ""
+"After building, place the generated binaries in ``addons/fmod_player/bin/``. The current ``fmod_player.gdextension`` file references these filenames by default:"
+
+#: ../../source/getting_started/installation.rst:160
+#: 8da89679f04845ca95a87259b3bbded8
+msgid ""
+"addons/fmod_player/bin/\n"
+"├── fmod_player.windows.template_debug.x86_64.dll\n"
+"├── fmod_player.windows.template_release.x86_64.dll\n"
+"├── libfmod_player.android.template_debug.arm64.so\n"
+"└── libfmod_player.android.template_release.arm64.so"
+msgstr ""
+"addons/fmod_player/bin/\n"
+"├── fmod_player.windows.template_debug.x86_64.dll\n"
+"├── fmod_player.windows.template_release.x86_64.dll\n"
+"├── libfmod_player.android.template_debug.arm64.so\n"
+"└── libfmod_player.android.template_release.arm64.so"
+
+#: ../../source/getting_started/installation.rst:168
+#: 90535be03b0f46a59fdc264c9fa9eeeb
+msgid "如果你修改了输出文件名或目标平台，需要同步更新 ``bin/fmod_player.gdextension``。"
+msgstr "If you change the output filenames or target platform, update ``bin/fmod_player.gdextension`` accordingly."
+
+#: ../../source/getting_started/installation.rst:171
+#: d17dd9e2827749eb9a064443428567b7
+msgid "构建选项"
 msgstr "Build Options"
 
-#: ../../source/getting_started/installation.rst:103
-#: 9b941e5f6c5b40259115ee4353fa186a
+#: ../../source/getting_started/installation.rst:176
+#: 9b6040a5e13945919d47944c38462899
 msgid "选项"
 msgstr "Option"
 
-#: ../../source/getting_started/installation.rst:104
-#: bb8381ea718841a99d8772eb978f7d75
-msgid "可选值"
-msgstr "Possible Values"
+#: ../../source/getting_started/installation.rst:177
+#: c694e97a2fc7431f8fbbdd6369255469
+msgid "常用值"
+msgstr "Common values"
 
-#: ../../source/getting_started/installation.rst:105
-#: ef1466adeffb4106b71caa5e7a40b5ef
+#: ../../source/getting_started/installation.rst:178
+#: 14ab7999a00c4c489f25638582b6e697
 msgid "说明"
 msgstr "Description"
 
-#: ../../source/getting_started/installation.rst:106
-#: f53916a4cff84554b1f926cd523a0f80
+#: ../../source/getting_started/installation.rst:179
+#: f19fc34b90a645cda3bbec5116a9a0a6
 msgid "``platform``"
 msgstr "``platform``"
 
-#: ../../source/getting_started/installation.rst:107
-#: 6cc79752ee4145f1a6dc5ab0dd8e5fad
-msgid "``windows``, ``android``"
-msgstr "``windows``, ``android``"
+#: ../../source/getting_started/installation.rst:180
+#: 523160b6646548d697489bf2306ebf9b
+msgid "``windows``、 ``android``"
+msgstr "``windows`` or ``android``"
 
-#: ../../source/getting_started/installation.rst:108
-#: a18ee330c7ae4d4c99a2985113eb87dc
-msgid "目标平台"
-msgstr "Target platform"
+#: ../../source/getting_started/installation.rst:181
+#: 41bf66e05c3f46228eccfa4aff0d7fe5
+msgid "构建目标平台"
+msgstr "Target platform to build for."
 
-#: ../../source/getting_started/installation.rst:109
-#: 7e8273df44fe4b5db4b304f4738f0dc1
+#: ../../source/getting_started/installation.rst:182
+#: 8a3f74048b4d46b0a0663c9993d004db
 msgid "``target``"
 msgstr "``target``"
 
-#: ../../source/getting_started/installation.rst:110
-#: e87966d784464a97912000850928f64f
-msgid "``template_debug``, ``template_release``, ``editor``"
-msgstr "``template_debug``, ``template_release``, ``editor``"
+#: ../../source/getting_started/installation.rst:183
+#: a6b3d3859e9448d685c1c0155616e187
+msgid "``template_debug``、 ``template_release``"
+msgstr "``template_debug`` or ``template_release``"
 
-#: ../../source/getting_started/installation.rst:111
-#: a7989d3e9c1a485bbc6e7aa9880a7f4e
-msgid "构建目标类型"
-msgstr "Build target type"
+#: ../../source/getting_started/installation.rst:184
+#: 75fa9358a9f64e6fab58792cc819e6d3
+msgid "调试版或发布版"
+msgstr "Debug or release build."
 
-#: ../../source/getting_started/installation.rst:112
-#: 4b0a691d80c44268a3f14c72af2b940f
+#: ../../source/getting_started/installation.rst:185
+#: b9d5e9faef6e4c438e825b1200773a25
 msgid "``arch``"
 msgstr "``arch``"
 
-#: ../../source/getting_started/installation.rst:113
-#: e3281a9415db4d0cbd1494ed33264f4c
-msgid "``x86_64``, ``arm64``, ``arm32``, ``x86_32``"
-msgstr "``x86_64``, ``arm64``, ``arm32``, ``x86_32``"
-
-#: ../../source/getting_started/installation.rst:114
-#: f9f9408bc5d4470c8bcfcaae6533137e
-msgid "目标架构"
-msgstr "Target architecture"
-
-#: ../../source/getting_started/installation.rst:117
-#: f542b69b9813413a8ee7576a2f92ebc1
-msgid "输出位置"
-msgstr "Output Location"
-
-#: ../../source/getting_started/installation.rst:119
-#: ab776df14d1c47f7bb960db4cf2bf1e7
-msgid "构建完成后，二进制文件位于::"
-msgstr "After building, binary files are located at::"
-
-#: ../../source/getting_started/installation.rst:121
-#: ecff096d8d1d493fb0e1cf155ad18356
-#, python-brace-format
-msgid ""
-"addons/bin/\n"
-"├── fmod_player.windows.{target}.{arch}.dll    # Windows\n"
-"├── libfmod_player.android.{target}.{arch}.so  # Android\n"
-"└── ..."
-msgstr ""
-"addons/bin/\n"
-"├── fmod_player.windows.{target}.{arch}.dll    # Windows\n"
-"├── libfmod_player.android.{target}.{arch}.so  # Android\n"
-"└── ..."
-
-#: ../../source/getting_started/installation.rst:127
-#: d70791d13c7f4db288bbf699ebaf72a8
-msgid "FMOD 运行库获取"
-msgstr "FMOD Runtime Library Acquisition"
-
-#: ../../source/getting_started/installation.rst:129
-#: 4cbc14cfa4c2424484ffd52b372bc766
-msgid "由于 FMOD 的许可协议不允许二次分发，你需要自行下载 FMOD Core API 运行库。"
-msgstr "Due to FMOD's licensing agreement, you need to download the FMOD Core API runtime library yourself."
-
-#: ../../source/getting_started/installation.rst:132
-#: 9f8a2334f992412bbc53ceb4bc0fc05f
-msgid "下载步骤"
-msgstr "Download Steps"
-
-#: ../../source/getting_started/installation.rst:134
-#: 2e8e27738398473db0b70daf2a8b8a19
-msgid "访问 `FMOD 官网下载页面 <https://www.fmod.com/download>`_"
-msgstr "Visit `FMOD website download page <https://www.fmod.com/download>`_"
-
-#: ../../source/getting_started/installation.rst:135
-#: 4db18a1ecece45cc87fdc065af0c3090
-msgid "注册或登录 FMOD 账户"
-msgstr "Register or login to FMOD account"
-
-#: ../../source/getting_started/installation.rst:136
-#: ea4070c5db624b7ab757dada736e6261
-msgid "下载 **FMOD Engine** （选择对应你的开发平台的版本）"
-msgstr "Download **FMOD Engine** (select version for your development platform)"
-
-#: ../../source/getting_started/installation.rst:137
-#: f01c85aa14fd43b1bd58ff925fd79d3e
-msgid "解压下载的文件"
-msgstr "Extract the downloaded file"
-
-#: ../../source/getting_started/installation.rst:140
-#: 6a0ad32dfa974731a50166fe3d5f0388
-msgid "获取运行库文件"
-msgstr "Get Runtime Library Files"
-
-#: ../../source/getting_started/installation.rst:142
-#: 17bf2760ead449cfac0826cc67ef5b78
-msgid "根据你的目标平台，从下载的 FMOD Engine 中找到对应的运行库文件："
-msgstr "Find the corresponding runtime library files from the downloaded FMOD Engine for your target platform:"
-
-#: ../../source/getting_started/installation.rst:144
-#: bbfbd77ee4cf475294319e5a0f43db9b
-msgid "**Windows:**"
-msgstr "**Windows:**"
-
-#: ../../source/getting_started/installation.rst:146
-#: 1a4cd5cfd7064c099ca8cbe3b7a3cef5
-msgid "文件: ``fmod.dll`` （发布版）或 ``fmodL.dll`` （调试版）"
-msgstr "Files: ``fmod.dll`` (release) or ``fmodL.dll`` (debug)"
-
-#: ../../source/getting_started/installation.rst:147
-#: 7107a601737449c8a86f387b3ec31fc2
-msgid "位置: ``api/core/lib/x64/``"
-msgstr "Location: ``api/core/lib/x64/``"
-
-#: ../../source/getting_started/installation.rst:148
-#: edc50b4b41254ebc9e66b4f0dcc4314f
-msgid "放置到: ``addons/fmod_player/bin/``"
-msgstr "Place to: ``addons/fmod_player/bin/``"
-
-#: ../../source/getting_started/installation.rst:150
-#: edd50e8b64e843c3a791d4494967b9b5
-msgid "**Android:**"
-msgstr "**Android:**"
-
-#: ../../source/getting_started/installation.rst:152
-#: 7e643f54235f41c2bd55ec22c43c72ff
-msgid "文件: ``libfmod.so`` （发布版）或 ``libfmodL.so`` （调试版）"
-msgstr "Files: ``libfmod.so`` (release) or ``libfmodL.so`` (debug)"
-
-#: ../../source/getting_started/installation.rst:153
-#: 506f5864e8944754b3a4cf7f9dcaf9fb
-msgid "位置: ``api/core/lib/android/`` （按架构选择子目录）"
-msgstr "Location: ``api/core/lib/android/`` (select subdirectory by architecture)"
-
-#: ../../source/getting_started/installation.rst:154
-#: 3c064619ca2f467ab931a4d649ce6c10
-msgid "放置到: 需要打包到 APK 的库目录"
-msgstr "Place to: library directory that needs to be packaged into APK"
-
-#: ../../source/getting_started/installation.rst:157
-#: d180d1744ae34a6a8a538b1f209a916e
-msgid "许可证说明"
-msgstr "License Information"
-
-#: ../../source/getting_started/installation.rst:159
-#: e0d5a39f7e344f01b98b69e519cac76f
-msgid "FMOD 允许免费用于非商业项目"
-msgstr "FMOD is free for non-commercial projects"
-
-#: ../../source/getting_started/installation.rst:160
-#: ae7e80b12f3641e78074782044dd35ae
-msgid "**商业项目需要获取 FMOD 许可证**"
-msgstr "**Commercial projects require obtaining an FMOD license**"
-
-#: ../../source/getting_started/installation.rst:161
-#: 89adcd015d934c91ab6cf8443a5b09a5
-msgid "详见 `FMOD 许可页面 <https://www.fmod.com/licensing>`_"
-msgstr "See `FMOD licensing page <https://www.fmod.com/licensing>`_ for details"
-
-#: ../../source/getting_started/installation.rst:164
-#: c05c3ca4f8864f7bbb4353a2cf7a7360
-msgid "验证安装"
-msgstr "Verify Installation"
-
-#: ../../source/getting_started/installation.rst:166
-#: 66b936bff8944c869e3d42e7c0d3ee3d
-msgid "打开 Godot 编辑器"
-msgstr "Open Godot editor"
-
-#: ../../source/getting_started/installation.rst:167
-#: 0108b90bd3df4f2195264b1d16b09a55
-msgid "创建一个新场景"
-msgstr "Create a new scene"
-
-#: ../../source/getting_started/installation.rst:168
-#: a7570b739c154b14838bba3d0e517ba6
-msgid "在节点面板中搜索 \"Fmod\"，应该能看到以下节点："
-msgstr "Search for \"Fmod\" in the node panel, you should see the following nodes:"
-
-#: ../../source/getting_started/installation.rst:170
-#: 77afe5f342054515b3a6be648b9e2693
-msgid "``FmodAudioStreamPlayer`` - 流式音频播放器"
-msgstr "``FmodAudioStreamPlayer`` - Streaming audio player"
-
-#: ../../source/getting_started/installation.rst:171
-#: 15aac129afe84dd1bd6a5ef33b152198
-msgid "``FmodAudioSampleEmitter`` - 采样音频发射器"
-msgstr "``FmodAudioSampleEmitter`` - Sample audio emitter"
-
-#: ../../source/getting_started/installation.rst:173
-#: ef1fa50b95f7423588419a14aef45806
-msgid "在资源面板中创建新资源，应该能看到："
-msgstr "Create new resources in the resource panel, you should see:"
-
-#: ../../source/getting_started/installation.rst:175
-#: 34ae97fde8e8457bb2c9b26fce482976
-msgid "``FmodAudioStream`` - 流式音频资源"
-msgstr "``FmodAudioStream`` - Streaming audio resource"
-
-#: ../../source/getting_started/installation.rst:176
-#: a3a6af52d9f544b180c423adb526d047
-msgid "``FmodAudioSample`` - 采样音频资源"
-msgstr "``FmodAudioSample`` - Sample audio resource"
-
-#: ../../source/getting_started/installation.rst:177
-#: 9fa3cb7f34fb47f3ba852cc1de9155ba
-msgid "``FmodAudioBusLayout`` - 音频总线布局"
-msgstr "``FmodAudioBusLayout`` - Audio bus layout"
-
-#: ../../source/getting_started/installation.rst:180
-#: 2ca74df736a24ce39bf583e786f6d20a
-msgid "常见问题"
-msgstr "FAQ"
-
-#: ../../source/getting_started/installation.rst:183
-#: 975cf74a4f4746f88e1718c44f3c0bec
-msgid "插件未显示在节点列表中"
-msgstr "Plugin not showing in node list"
-
-#: ../../source/getting_started/installation.rst:185
-#: b351b916127c4627b1e5627885666470
-msgid "检查 ``addons/bin/fmod_player.gdextension`` 文件是否存在"
-msgstr "Check if ``addons/bin/fmod_player.gdextension`` file exists"
-
 #: ../../source/getting_started/installation.rst:186
-#: c29ce46d33ec41d79d034e506b1f1412
-msgid "检查对应平台的 DLL/SO 文件是否存在"
-msgstr "Check if DLL/SO files for your platform exist"
+#: 941f32b007a34518a2ba5ad80114559b
+msgid "``x86_64``、 ``arm64``"
+msgstr "``x86_64`` or ``arm64``"
 
 #: ../../source/getting_started/installation.rst:187
-#: ebd56bf66cf34d61b0b40c55173c3a90
-msgid "查看 Godot 编辑器的 **输出** 面板是否有加载错误"
-msgstr "Check the **Output** panel in Godot editor for loading errors"
+#: f8255e0a8d51415a8ed286be203d1a38
+msgid "构建目标架构"
+msgstr "Target architecture to build for."
 
-#: ../../source/getting_started/installation.rst:188
-#: 0948e3739ed34687a68d10feeff83074
-msgid "确认 Godot 版本 >= 4.1"
-msgstr "Confirm Godot version >= 4.1"
+#: ../../source/getting_started/installation.rst:190
+#: 29a2842fc15d4d1789832b580e691f2a
+msgid "FMOD 授权说明"
+msgstr "FMOD Licensing Notes"
 
-#: ../../source/getting_started/installation.rst:191
-#: f5834f1cd71f4793b160d19f6fa538be
-msgid "FMOD 初始化失败"
-msgstr "FMOD initialization failed"
-
-#: ../../source/getting_started/installation.rst:193
-#: 669bc2d6cc8a44ed85b6e45be0a72264
-msgid "检查 ``fmod.dll`` (Windows) 或 ``libfmod.so`` (Android) 是否在正确位置"
-msgstr "Check if ``fmod.dll`` (Windows) or ``libfmod.so`` (Android) is in the correct location"
-
-#: ../../source/getting_started/installation.rst:194
-#: 39febec57641432482e522d56cd319c7
-msgid "检查音频设备是否正常工作"
-msgstr "Check if audio device is working properly"
-
-#: ../../source/getting_started/installation.rst:195
-#: f75d2cdb253244cb8319b4bd059d2be5
-msgid "查看 Godot 控制台输出获取详细错误信息"
-msgstr "Check Godot console output for detailed error information"
+#: ../../source/getting_started/installation.rst:192
+#: 14067d45d7614f79945a2394ce9e4bd3
+msgid ""
+"Godot-FmodPlayer 使用 MIT 许可证；FMOD Engine 使用 Firelight Technologies Pty Ltd 的独立许可。发布、商业化或面向特定平台分发项目前，请阅读 `FMOD Licensing <https://www.fmod.com/licensing>`_ 与 `FMOD Legal Information <https://www.fmod.com/legal>`_。"
+msgstr ""
+"Godot-FmodPlayer uses the MIT license. FMOD Engine is covered by a separate license from Firelight Technologies Pty Ltd. Before publishing, commercializing, or distributing a project for a specific platform, read `FMOD Licensing <https://www.fmod.com/licensing>`_ and `FMOD Legal Information <https://www.fmod.com/legal>`_."
 
 #: ../../source/getting_started/installation.rst:198
-#: a44a76aefe11408e9fe16d5cbae21a29
-msgid "Android 构建失败"
-msgstr "Android build failed"
+#: bd948a778e074eb499fbc2ff82998f85
+msgid "下一步"
+msgstr "Next Step"
 
 #: ../../source/getting_started/installation.rst:200
-#: 2a97635fd114428d81ace808840e6157
-msgid "确保 Android NDK 已正确安装并设置环境变量"
-msgstr "Ensure Android NDK is properly installed and environment variables are set"
+#: b6f40da48fe14f569c62cc6b8e48af24
+msgid "安装完成后，请阅读 :doc:`quick_start` 播放第一段音频。"
+msgstr "After installation, read :doc:`quick_start` to play your first audio file."
 
-#: ../../source/getting_started/installation.rst:201
-#: f164e632e3004c71b349184d492a0e2d
-msgid "确认 ``godot-cpp`` 子模块已初始化::"
-msgstr "Confirm ``godot-cpp`` submodule is initialized::"
-
-#: ../../source/getting_started/installation.rst:203
-#: 416d7f70e26a4b66a8690bb7e0d0b35d
-msgid "git submodule update --init --recursive"
-msgstr "git submodule update --init --recursive"
-
-#: ../../source/getting_started/installation.rst:206
-#: 6f4285e9711445dcaa27d85860110d1c
-msgid "下一步"
-msgstr "Next Steps"
-
-#: ../../source/getting_started/installation.rst:208
-#: ed64cb76a39e44eba03cb2dd9b12f782
-msgid "安装完成后，请阅读 :doc:`quick_start` 了解如何使用本插件。"
-msgstr "After installation, please read :doc:`quick_start` to learn how to use this plugin."
+#: ../../source/getting_started/installation.rst:202
+#: 3e7a871a80fc4db9a9a237cbd1f9b86f
+msgid "遇到问题时，可以查看 :ref:`常见问题 <faq>`，尤其是运行库缺失、导出后无声音和 平台架构不匹配相关条目。"
+msgstr ""
+"If you run into problems, check :ref:`FAQ <faq>`, especially the entries about missing runtime libraries, no sound after export, and platform architecture mismatches."
