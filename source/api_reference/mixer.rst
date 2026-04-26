@@ -118,7 +118,7 @@ void remove_effect(index: `int`_)
 .. _FmodAudioBus-get_effect:
 
 :ref:`FmodAudioEffect<FmodAudioEffect>` get_effect(index: `int`_) const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回效果链中指定索引处的 :ref:`FmodAudioEffect<FmodAudioEffect>`
 
@@ -358,9 +358,3 @@ void sync_from_audio_server()
 
 同步会保留或创建 ``Master`` 总线，重建其他总线，连接父子关系，并同步音量、静音、独奏、旁路状态和支持的 Godot 音频效果
 
-.. _FmodAudioBusLayout-sync_bus_state:
-
-void sync_bus_state(bus_name: `String`_, audio_server_bus_index: `int`_) const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-从 Godot `AudioServer`_ 的指定总线索引同步单个总线的音量、静音、独奏和旁路状态

@@ -1,659 +1,573 @@
 空间音频 API
 ============
 
-.. warning:: 该章节尚未完善
-
-本节介绍用于 3D 音频空间化的类，包括几何遮挡、3D 混响区域和声音分组。
+.. _FmodGeometry:
 
 FmodGeometry
 ------------
 
-继承自：RefCounted
+继承自： `RefCounted`_
 
-用于 3D 音频遮挡计算的几何体对象。
+**用于 3D 声音遮挡计算的 FMOD 几何体对象**
 
-FmodGeometry 用于创建影响 3D 音频传播的几何形状。你可以定义多边形作为遮挡物，根据属性阻挡或衰减声音。
+描述
+~~~~
 
-.. note::
-   几何遮挡需要在系统初始化时设置 ``FMOD_INIT_FLAG_CHANNEL_LOWPASS`` 标志。
+**FmodGeometry** 封装 FMOD Geometry，用多边形描述场景中的墙体、地形、门板等遮挡物。FMOD 会根据声源与监听器之间的几何体计算直达声遮挡和混响遮挡，常用于让 3D 声音在墙后变闷、变小，或减少混响发送。
 
-主要功能
-~~~~~~~~
+几何体通常通过 :ref:`FmodSystem.create_geometry()<FmodSystem-create_geometry>` 创建，也可以通过 :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>` 从保存后的字节数据加载。
 
-- 创建多边形形状阻挡声源和听者之间的路径
-- 配置遮挡属性（直达声和混响路径衰减）
-- 支持双面多边形
-- 在 3D 空间中定位、旋转和缩放几何体
-- 序列化几何体数据以高效加载/保存
+.. note:: 几何遮挡通常需要在初始化 FMOD 系统时启用 ``FMOD_INIT_FLAG_CHANNEL_LOWPASS``，否则低通遮挡效果不会按预期工作。
 
 属性
 ~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 属性
-     - 类型
-     - 说明
-   * - ``active``
-     - bool
-     - 几何体是否参与遮挡计算
-   * - ``position``
-     - Vector3
-     - 几何体在世界空间中的位置
-   * - ``rotation``
-     - Vector3
-     - 几何体在世界空间中的旋转（度）
-   * - ``scale``
-     - Vector3
-     - 几何体的缩放
+  * - 类型
+    - 名称
+    - 初始值
+    - 说明
+  * - `bool`_
+    - active
+    - true
+    - 几何体是否参与遮挡计算
+  * - `Vector3`_
+    - position
+    - Vector3()
+    - 几何体在世界空间中的位置
+  * - `Vector3`_
+    - rotation
+    - Vector3()
+    - 几何体在世界空间中的旋转，编辑器中按角度显示
+  * - `Vector3`_
+    - scale
+    - Vector3(1, 1, 1)
+    - 几何体缩放
 
 方法
 ~~~~
 
-添加多边形
+有效性检查
 ^^^^^^^^^^
 
-.. code-block:: gdscript
+.. _FmodGeometry-geometry_is_valid:
 
-    add_polygon(direct_occlusion: float, reverb_occlusion: float, double_sided: bool, num_vertices: int, vertices: Array[Vector3]) -> int
+`bool`_ geometry_is_valid() const
++++++++++++++++++++++++++++++++++
 
-添加多边形到几何体：
+如果底层 FMOD Geometry 句柄有效，则返回 ``true``。
 
-- ``direct_occlusion``: 直达声遮挡因子（0.0 = 无遮挡，1.0 = 完全遮挡）
-- ``reverb_occlusion``: 混响路径遮挡因子
-- ``double_sided``: 是否双面遮挡
-- ``num_vertices``: 顶点数量（至少 3 个）
-- ``vertices``: 顶点位置数组
+.. _FmodGeometry-geometry_is_null:
 
-返回多边形索引，失败返回 -1。
+`bool`_ geometry_is_null() const
+++++++++++++++++++++++++++++++++
 
-变换方法
-^^^^^^^^
+如果底层 FMOD Geometry 句柄为空或不可用，则返回 ``true``。
 
-.. list-table::
-   :header-rows: 1
-
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``set_position(position)``
-     - void
-     - 设置几何体位置
-   * - ``set_rotation(rotation)``
-     - void
-     - 设置几何体旋转（度）
-   * - ``set_scale(scale)``
-     - void
-     - 设置几何体缩放
-   * - ``get_position()``
-     - Vector3
-     - 获取位置
-   * - ``get_rotation()``
-     - Vector3
-     - 获取旋转
-   * - ``get_scale()``
-     - Vector3
-     - 获取缩放
-
-多边形操作
-^^^^^^^^^^
-
-.. list-table::
-   :header-rows: 1
-
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``get_num_polygons()``
-     - int
-     - 获取多边形数量
-   * - ``get_polygon_attributes(index)``
-     - Dictionary
-     - 获取多边形属性
-   * - ``set_polygon_attributes(index, direct_occlusion, reverb_occlusion, double_sided)``
-     - void
-     - 设置多边形属性
-   * - ``get_polygon_num_vertices(index)``
-     - int
-     - 获取多边形顶点数
-   * - ``get_polygon_vertex(index, vertex_index)``
-     - Vector3
-     - 获取多边形顶点位置
-   * - ``set_polygon_vertex(index, vertex_index, vertex)``
-     - void
-     - 设置多边形顶点位置
-
-序列化
+多边形
 ^^^^^^
 
-.. list-table::
-   :header-rows: 1
+.. _FmodGeometry-add_polygon:
 
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``get_save_size()``
-     - int
-     - 获取序列化所需字节数
-   * - ``save()``
-     - PackedByteArray
-     - 序列化几何体到字节数组
-   * - ``release()``
-     - void
-     - 释放几何体资源
+`int`_ add_polygon(direct_occlusion: `float`_, reverb_occlusion: `float`_, double_sided: `bool`_, vertices: `PackedVector3Array`_)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-状态检查
-^^^^^^^^
+向几何体添加一个遮挡多边形，并返回新多边形索引。``direct_occlusion`` 控制直达声遮挡，``reverb_occlusion`` 控制混响路径遮挡，范围通常为 ``0.0`` 到 ``1.0``。
 
-.. list-table::
-   :header-rows: 1
+.. _FmodGeometry-set_polygon_attributes:
 
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``geometry_is_valid()``
-     - bool
-     - 几何体是否有效
-   * - ``geometry_is_null()``
-     - bool
-     - 几何体句柄是否为空
-   * - ``get_active()``
-     - bool
-     - 几何体是否激活
-   * - ``set_active(active)``
-     - void
-     - 设置激活状态
+void set_polygon_attributes(index: `int`_, direct_occlusion: `float`_, reverb_occlusion: `float`_, double_sided: `bool`_)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-使用示例
-~~~~~~~~
+修改指定多边形的遮挡属性。
 
-**创建墙体遮挡：**
+.. _FmodGeometry-get_polygon_attributes:
 
-.. code-block:: gdscript
+`Dictionary`_ get_polygon_attributes(index: `int`_) const
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    extends Node3D
+返回多边形属性字典，包含 ``direct_occlusion``、``reverb_occlusion`` 和 ``double_sided``。
 
-    var wall_geometry: FmodGeometry
+.. _FmodGeometry-get_polygon_num_vertices:
 
-    func _ready():
-        var system = FmodServer.main_system
-        
-        # Create geometry with up to 10 polygons and 100 vertices.
-        wall_geometry = system.create_geometry(10, 100)
-        
-        # Define a rectangular wall with four vertices.
-        var vertices = [
-            Vector3(-5, 0, 0),
-            Vector3(5, 0, 0),
-            Vector3(5, 3, 0),
-            Vector3(-5, 3, 0)
-        ]
-        
-        # Add a double-sided occlusion polygon.
-        wall_geometry.add_polygon(
-            1.0,    # Fully occlude direct sound
-            0.8,    # Strong reverb occlusion
-            true,   # Double-sided occlusion
-            4,      # Four vertices
-            vertices
-        )
-        
-        # Set position.
-        wall_geometry.position = Vector3(0, 0, 10)
+`int`_ get_polygon_num_vertices(index: `int`_) const
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    func _exit_tree():
-        if wall_geometry:
-            wall_geometry.release()
+返回指定多边形的顶点数量。
 
-**动态启用/禁用遮挡：**
+.. _FmodGeometry-set_polygon_vertex:
 
-.. code-block:: gdscript
+void set_polygon_vertex(index: `int`_, vertex_index: `int`_, vertex: `Vector3`_)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    func toggle_door(is_open: bool):
-        # Disable occlusion when the door is open, enable it when closed.
-        wall_geometry.set_active(not is_open)
+设置指定多边形中的单个顶点位置。
+
+.. _FmodGeometry-get_polygon_vertex:
+
+`Vector3`_ get_polygon_vertex(index: `int`_, vertex_index: `int`_) const
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+返回指定多边形中的单个顶点位置。
+
+.. _FmodGeometry-get_max_polygons:
+
+`Dictionary`_ get_max_polygons() const
+++++++++++++++++++++++++++++++++++++++
+
+返回几何体容量信息，通常包含 ``max_polygons`` 和 ``max_vertices``。
+
+变换
+^^^^
+
+.. _FmodGeometry-set_position:
+
+void set_position(position: `Vector3`_)
++++++++++++++++++++++++++++++++++++++++
+
+设置几何体位置。
+
+.. _FmodGeometry-get_position:
+
+`Vector3`_ get_position() const
++++++++++++++++++++++++++++++++
+
+返回几何体位置。
+
+.. _FmodGeometry-set_rotation:
+
+void set_rotation(rotation: `Vector3`_)
++++++++++++++++++++++++++++++++++++++++
+
+设置几何体旋转。
+
+.. _FmodGeometry-get_rotation:
+
+`Vector3`_ get_rotation() const
++++++++++++++++++++++++++++++++
+
+返回几何体旋转。
+
+.. _FmodGeometry-set_scale:
+
+void set_scale(scale: `Vector3`_)
++++++++++++++++++++++++++++++++++
+
+设置几何体缩放。
+
+.. _FmodGeometry-get_scale:
+
+`Vector3`_ get_scale() const
+++++++++++++++++++++++++++++
+
+返回几何体缩放。
+
+.. _FmodGeometry-set_transform:
+
+void set_transform(transform: `Transform3D`_)
+++++++++++++++++++++++++++++++++++++++++++++++
+
+一次性同步几何体的 3D 变换。
+
+状态与资源
+^^^^^^^^^^
+
+.. _FmodGeometry-set_active:
+
+void set_active(active: `bool`_)
+++++++++++++++++++++++++++++++++
+
+启用或禁用几何体遮挡计算。
+
+.. _FmodGeometry-get_active:
+
+`bool`_ get_active() const
+++++++++++++++++++++++++++
+
+如果几何体处于激活状态，则返回 ``true``。
+
+.. _FmodGeometry-get_save_size:
+
+`int`_ get_save_size() const
+++++++++++++++++++++++++++++
+
+返回序列化当前几何体所需的字节数。
+
+.. _FmodGeometry-save:
+
+`PackedByteArray`_ save() const
++++++++++++++++++++++++++++++++
+
+将几何体序列化为字节数组，可之后通过 :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>` 加载。
+
+.. _FmodGeometry-release:
+
+void release()
+++++++++++++++
+
+释放底层 FMOD Geometry。释放后该对象不应继续用于遮挡计算。
+
+.. _FmodReverb3D:
 
 FmodReverb3D
 ------------
 
-继承自：RefCounted
+继承自： `RefCounted`_
 
-3D 混响区域，用于空间音频混响效果。
+**FMOD 3D 混响对象，用于在空间中创建球形混响区域**
 
-FmodReverb3D 在 3D 空间中创建球形混响区域，根据与混响中心的距离为声音应用环境混响。这允许你创建真实的空间音频环境，声音进入特定区域（如洞穴、大厅或房间）时变得更加混响。
+描述
+~~~~
 
-.. note::
-   使用 ``FmodSystem.create_reverb_3d()`` 创建此类的实例。
+**FmodReverb3D** 表示一个低层级 3D 混响区域。它通过中心位置、最小距离和最大距离定义影响范围：声源在最小距离内获得完整混响，在最小距离到最大距离之间逐渐衰减，超过最大距离则基本不受影响。
 
-3D 属性
-~~~~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``set_3d_attributes(position, min_distance, max_distance)``
-     - void
-     - 设置 3D 属性
-   * - ``get_3d_attributes()``
-     - Dictionary
-     - 获取 3D 属性（position, min_distance, max_distance）
-
-- 当声源在 ``min_distance`` 内时，获得完整混响
-- 在 ``min_distance`` 和 ``max_distance`` 之间，混响逐渐衰减
-- 超过 ``max_distance``，无混响效果
-
-混响参数
-~~~~~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 默认值
-     - 说明
-   * - ``decay_time``
-     - float
-     - 1500.0
-     - 混响衰减时间（毫秒）
-   * - ``early_delay``
-     - float
-     - 7.0
-     - 早期反射延迟（毫秒）
-   * - ``late_delay``
-     - float
-     - 11.0
-     - 后期混响延迟（毫秒）
-   * - ``early_late_mix``
-     - float
-     - 50.0
-     - 早期/后期混响混合比例
-   * - ``wet_level``
-     - float
-     - -6.0
-     - 湿信号电平（dB）
-
-频率控制
-~~~~~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 默认值
-     - 说明
-   * - ``hf_decay_ratio``
-     - float
-     - 50.0
-     - 高频衰减比例（%）
-   * - ``hf_reference``
-     - float
-     - 5000.0
-     - 高频参考频率（Hz）
-   * - ``high_cut``
-     - float
-     - 0.0
-     - 高频截止（dB）
-   * - ``low_shelf_frequency``
-     - float
-     - 250.0
-     - 低频参考频率（Hz）
-   * - ``low_shelf_gain``
-     - float
-     - 0.0
-     - 低频增益（dB）
-
-密度控制
-~~~~~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 属性
-     - 类型
-     - 默认值
-     - 范围
-     - 说明
-   * - ``density``
-     - float
-     - 100.0
-     - 0.0-100.0
-     - 模态密度
-   * - ``diffusion``
-     - float
-     - 50.0
-     - 0.0-100.0
-     - 扩散度（回声密度）
-
-状态管理
-~~~~~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``set_active(active)``
-     - void
-     - 启用/禁用混响区域
-   * - ``get_active()``
-     - bool
-     - 是否激活
-   * - ``reverb_3d_is_valid()``
-     - bool
-     - 混响是否有效
-   * - ``reverb_3d_is_null()``
-     - bool
-     - 句柄是否为空
-   * - ``release()``
-     - void
-     - 释放资源
-
-使用示例
-~~~~~~~~
-
-**创建洞穴混响效果：**
-
-.. code-block:: gdscript
-
-    extends Node3D
-
-    @export var cave_position: Vector3 = Vector3(50, 0, 50)
-    var cave_reverb: FmodReverb3D
-
-    func _ready():
-        var system = FmodServer.main_system
-        
-        # Create a 3D reverb area.
-        cave_reverb = system.create_reverb_3d()
-        
-        # Set position and influence range.
-        cave_reverb.set_3d_attributes(
-            cave_position,  # Center position
-            5.0,            # Full reverb within 5 meters
-            20.0            # No reverb beyond 20 meters
-        )
-        
-        # Configure cave reverb parameters.
-        cave_reverb.decay_time = 2500.0      # Long decay for a large cave
-        cave_reverb.density = 80.0           # High density
-        cave_reverb.diffusion = 70.0         # High diffusion
-        cave_reverb.early_delay = 20.0       # Long early delay
-        cave_reverb.late_delay = 40.0        # Long late delay
-        cave_reverb.hf_decay_ratio = 40.0    # Faster high-frequency decay
-        cave_reverb.wet_level = -3.0         # Stronger reverb
-
-    func _exit_tree():
-        if cave_reverb:
-            cave_reverb.release()
-
-**预设配置：**
-
-.. code-block:: gdscript
-
-    func apply_room_preset(reverb: FmodReverb3D, room_type: String):
-        match room_type:
-            "small_room":
-                reverb.decay_time = 500.0
-                reverb.early_delay = 5.0
-                reverb.density = 70.0
-            "hall":
-                reverb.decay_time = 2000.0
-                reverb.early_delay = 15.0
-                reverb.density = 90.0
-            "cave":
-                reverb.decay_time = 3000.0
-                reverb.early_delay = 30.0
-                reverb.hf_decay_ratio = 30.0
-
-FmodSoundGroup
---------------
-
-继承自：RefCounted
-
-声音分组，用于控制播放限制和集体行为。
-
-FmodSoundGroup 用于管理具有共享播放约束的声音集合。它允许你限制同时可听到的声音数量，并定义当超过该限制时的行为。
-
-适用场景
-~~~~~~~~
-
-- **武器声音** - 限制同时播放数量，防止音频混乱
-- **环境音效** - 平滑淡入淡出
-- **语音/对话** - 优先播放重要台词
+通常使用 :ref:`FmodSystem.create_reverb_3d()<FmodSystem-create_reverb_3d>` 创建此对象；如果希望直接放在场景树中并跟随节点位置，请使用 :ref:`FmodReverbZone3D<FmodReverbZone3D>`。
 
 属性
 ~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 属性
-     - 类型
-     - 默认值
-     - 说明
-   * - ``max_audible``
-     - int
-     - 0
-     - 最大同时可听声音数（0 = 无限制）
-   * - ``behavior``
-     - Behavior
-     - FAIL
-     - 超过限制时的行为
-   * - ``mute_fade_speed``
-     - float
-     - 0.0
-     - 静音淡入淡出速度
-   * - ``volume_db``
-     - float
-     - 0.0
-     - 分组音量（dB）
-
-行为枚举
-~~~~~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 常量
-     - 值
-     - 说明
-   * - ``BEHAVIOR_FAIL``
-     - 0
-     - 超过限制时播放失败
-   * - ``BEHAVIOR_MUTE``
-     - 1
-     - 新声音静音，其他停止后恢复
-   * - ``BEHAVIOR_STEAL_LOWEST``
-     - 2
-     - 抢夺音量最低的声音
+  * - 类型
+    - 名称
+    - 初始值
+    - 说明
+  * - `bool`_
+    - active
+    - true
+    - 混响是否参与输出
+  * - `float`_
+    - decay_time
+    - 1500.0
+    - 混响衰减时间，单位为毫秒
+  * - `float`_
+    - density
+    - 100.0
+    - 后期混响密度，范围通常为 ``0.0`` 到 ``100.0``
+  * - `float`_
+    - diffusion
+    - 50.0
+    - 回声扩散度，范围通常为 ``0.0`` 到 ``100.0``
+  * - `float`_
+    - early_delay
+    - 7.0
+    - 早期反射延迟，单位为毫秒
+  * - `float`_
+    - early_late_mix
+    - 50.0
+    - 早期反射与后期混响的混合比例
+  * - `float`_
+    - hf_decay_ratio
+    - 50.0
+    - 高频衰减比例
+  * - `float`_
+    - hf_reference
+    - 5000.0
+    - 高频参考频率，单位为 Hz
+  * - `float`_
+    - high_cut
+    - 0.0
+    - 高频截止或衰减参数
+  * - `float`_
+    - late_delay
+    - 11.0
+    - 后期混响延迟，单位为毫秒
+  * - `float`_
+    - low_shelf_frequency
+    - 250.0
+    - 低频搁架参考频率，单位为 Hz
+  * - `float`_
+    - low_shelf_gain
+    - 0.0
+    - 低频搁架增益，单位为分贝
+  * - `float`_
+    - wet_level
+    - -6.0
+    - 混响湿声电平，单位为分贝
 
 方法
 ~~~~
 
+空间范围
+^^^^^^^^
+
+.. _FmodReverb3D-set_3d_attributes:
+
+void set_3d_attributes(position: `Vector3`_, min_distance: `float`_, max_distance: `float`_)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+设置混响区域中心位置、完整混响半径和淡出结束半径。
+
+.. _FmodReverb3D-get_3d_attributes:
+
+`Dictionary`_ get_3d_attributes() const
++++++++++++++++++++++++++++++++++++++++
+
+返回 3D 属性字典，包含 ``position``、``min_distance`` 和 ``max_distance``。
+
+.. _FmodReverb3D-set_properties:
+
+void set_properties(properties: `Dictionary`_)
+++++++++++++++++++++++++++++++++++++++++++++++
+
+从字典批量设置混响参数。适合保存和恢复预设。
+
+.. _FmodReverb3D-get_properties:
+
+`Dictionary`_ get_properties() const
+++++++++++++++++++++++++++++++++++++
+
+返回当前混响参数字典。
+
+参数
+^^^^
+
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``set_max_audible(max_audible)``
-     - void
-     - 设置最大可听数量
-   * - ``get_max_audible()``
-     - int
-     - 获取最大可听数量
-   * - ``set_max_audible_behavior(behavior)``
-     - void
-     - 设置行为模式
-   * - ``get_max_audible_behavior()``
-     - Behavior
-     - 获取行为模式
-   * - ``set_mute_fade_speed(speed)``
-     - void
-     - 设置淡入淡出速度
-   * - ``get_mute_fade_speed()``
-     - float
-     - 获取淡入淡出速度
-   * - ``set_volume_db(volume_db)``
-     - void
-     - 设置分组音量
-   * - ``get_volume_db()``
-     - float
-     - 获取分组音量
-   * - ``get_name()``
-     - String
-     - 获取分组名称
-   * - ``get_num_sounds()``
-     - int
-     - 获取声音数量
-   * - ``get_num_playing()``
-     - int
-     - 获取正在播放的通道数
-   * - ``get_sound(index)``
-     - FmodSound
-     - 获取指定索引的声音
-   * - ``stop()``
-     - void
-     - 停止组内所有声音
-   * - ``release()``
-     - void
-     - 释放分组
-   * - ``sound_group_is_valid()``
-     - bool
-     - 分组是否有效
-   * - ``sound_group_is_null()``
-     - bool
-     - 句柄是否为空
+  * - 方法
+    - 说明
+  * - ``set_decay_time(decay_time)`` / ``get_decay_time()``
+    - 设置或返回混响衰减时间
+  * - ``set_early_delay(early_delay)`` / ``get_early_delay()``
+    - 设置或返回早期反射延迟
+  * - ``set_late_delay(late_delay)`` / ``get_late_delay()``
+    - 设置或返回后期混响延迟
+  * - ``set_hf_reference(hf_reference)`` / ``get_hf_reference()``
+    - 设置或返回高频参考频率
+  * - ``set_hf_decay_ratio(hf_decay_ratio)`` / ``get_hf_decay_ratio()``
+    - 设置或返回高频衰减比例
+  * - ``set_diffusion(diffusion)`` / ``get_diffusion()``
+    - 设置或返回混响扩散度
+  * - ``set_density(density)`` / ``get_density()``
+    - 设置或返回混响密度
+  * - ``set_low_shelf_frequency(low_shelf_frequency)`` / ``get_low_shelf_frequency()``
+    - 设置或返回低频搁架参考频率
+  * - ``set_low_shelf_gain(low_shelf_gain)`` / ``get_low_shelf_gain()``
+    - 设置或返回低频搁架增益
+  * - ``set_high_cut(high_cut)`` / ``get_high_cut()``
+    - 设置或返回高频截止参数
+  * - ``set_early_late_mix(early_late_mix)`` / ``get_early_late_mix()``
+    - 设置或返回早期/后期混响混合比例
+  * - ``set_wet_level(wet_level)`` / ``get_wet_level()``
+    - 设置或返回混响湿声电平
 
-使用示例
-~~~~~~~~
+状态与资源
+^^^^^^^^^^
 
-**限制武器音效数量：**
+.. _FmodReverb3D-set_active:
 
-.. code-block:: gdscript
+void set_active(active: `bool`_)
+++++++++++++++++++++++++++++++++
 
-    extends Node
+启用或禁用该混响区域。
 
-    var weapon_sound_group: FmodSoundGroup
+.. _FmodReverb3D-get_active:
 
-    func _ready():
-        var system = FmodServer.main_system
-        
-        # Create a weapon sound group.
-        weapon_sound_group = system.create_sound_group("Weapons")
-        
-        # Allow up to four weapon sounds at once.
-        weapon_sound_group.max_audible = 4
-        
-        # Steal the quietest sound when the limit is exceeded.
-        weapon_sound_group.behavior = FmodSoundGroup.BEHAVIOR_STEAL_LOWEST
-        
-        # Set fade speed.
-        weapon_sound_group.mute_fade_speed = 5.0
+`bool`_ get_active() const
+++++++++++++++++++++++++++
 
-    func play_weapon_sound(weapon_type: String):
-        var system = FmodServer.main_system
-        
-        # Create the sound and assign it to the group.
-        var sound = system.create_sound_from_file(
-            "res://sfx/weapons/%s.wav" % weapon_type
-        )
-        
-        # Add the sound to the group through the FMOD API,
-        # then play it.
-        var channel = system.play_sound(sound, null, false)
+如果混响区域处于激活状态，则返回 ``true``。
 
-    func _exit_tree():
-        if weapon_sound_group:
-            weapon_sound_group.release()
+.. _FmodReverb3D-reverb_3d_is_valid:
 
-**环境音效分组控制：**
+`bool`_ reverb_3d_is_valid() const
+++++++++++++++++++++++++++++++++++
 
-.. code-block:: gdscript
+如果底层 FMOD Reverb3D 句柄有效，则返回 ``true``。
 
-    extends Node
+.. _FmodReverb3D-reverb_3d_is_null:
 
-    var ambient_group: FmodSoundGroup
+`bool`_ reverb_3d_is_null() const
++++++++++++++++++++++++++++++++++
 
-    func _ready():
-        var system = FmodServer.main_system
-        ambient_group = system.create_sound_group("Ambience")
-        
-        # Allow multiple ambience sounds at once.
-        ambient_group.max_audible = 10
-        
-        # Mute new sounds until a slot is available.
-        ambient_group.behavior = FmodSoundGroup.BEHAVIOR_MUTE
-        
-        # Fade in slowly.
-        ambient_group.mute_fade_speed = 2.0
+如果底层 FMOD Reverb3D 句柄为空或不可用，则返回 ``true``。
 
-    func fade_out_ambience():
-        # Lower the volume of the whole ambience group.
-        var tween = create_tween()
-        tween.tween_method(
-            func(vol): ambient_group.volume_db = vol,
-            ambient_group.volume_db,
-            -80.0,
-            3.0
-        )
+.. _FmodReverb3D-release:
 
-综合示例
---------
+void release()
+++++++++++++++
 
-**完整的 3D 音频场景：**
+释放底层 FMOD Reverb3D。
 
-.. code-block:: gdscript
+.. _FmodReverbZone3D:
 
-    extends Node3D
+FmodReverbZone3D
+----------------
 
-    var room_geometry: FmodGeometry
-    var room_reverb: FmodReverb3D
-    var fx_group: FmodSoundGroup
+继承自： `Node3D`_
 
-    func _ready():
-        setup_room_occlusion()
-        setup_room_reverb()
-        setup_sound_groups()
+**场景树中的 3D 混响区域节点**
 
-    func setup_room_occlusion():
-        var system = FmodServer.main_system
-        room_geometry = system.create_geometry(100, 1000)
-        
-        # Create four walls.
-        var walls = [
-            [Vector3(-10, 0, -10), Vector3(10, 0, -10), Vector3(10, 5, -10), Vector3(-10, 5, -10)],  # Back wall
-            [Vector3(-10, 0, 10), Vector3(-10, 0, -10), Vector3(-10, 5, -10), Vector3(-10, 5, 10)],   # Left wall
-            # ... other walls
-        ]
-        
-        for wall in walls:
-            room_geometry.add_polygon(1.0, 0.9, true, wall.size(), wall)
+描述
+~~~~
 
-    func setup_room_reverb():
-        var system = FmodServer.main_system
-        room_reverb = system.create_reverb_3d()
-        room_reverb.set_3d_attributes(Vector3.ZERO, 8.0, 15.0)
-        room_reverb.decay_time = 1200.0
-        room_reverb.diffusion = 60.0
+**FmodReverbZone3D** 是 :ref:`FmodReverb3D<FmodReverb3D>` 的节点封装。节点进入场景树后会创建内部混响对象，并使用节点的全局位置作为球形混响区域中心。启用 ``sync_transform`` 时，节点移动会同步到 FMOD 混响区域。
 
-    func setup_sound_groups():
-        var system = FmodServer.main_system
-        fx_group = system.create_sound_group("Effects")
-        fx_group.max_audible = 8
-        fx_group.behavior = FmodSoundGroup.BEHAVIOR_STEAL_LOWEST
+属性
+~~~~
 
-    func _exit_tree():
-        if room_geometry:
-            room_geometry.release()
-        if room_reverb:
-            room_reverb.release()
-        if fx_group:
-            fx_group.release()
+.. list-table::
+  :header-rows: 1
+
+  * - 类型
+    - 名称
+    - 初始值
+    - 说明
+  * - `bool`_
+    - active
+    - true
+    - 该混响区域是否参与输出
+  * - `bool`_
+    - sync_transform
+    - true
+    - 是否每帧同步节点位置到内部混响对象
+  * - `float`_
+    - min_distance
+    - 5.0
+    - 完整混响半径
+  * - `float`_
+    - max_distance
+    - 20.0
+    - 混响淡出结束半径
+  * - :ref:`Preset<FmodReverbZone3D-Preset>`
+    - preset
+    - PRESET_GENERIC
+    - 混响预设；手动修改参数后会切换为 ``PRESET_CUSTOM``
+  * - `float`_
+    - decay_time
+    - 1500.0
+    - 混响衰减时间，单位为毫秒
+  * - `float`_
+    - early_delay
+    - 7.0
+    - 早期反射延迟，单位为毫秒
+  * - `float`_
+    - late_delay
+    - 11.0
+    - 后期混响延迟，单位为毫秒
+  * - `float`_
+    - hf_reference
+    - 5000.0
+    - 高频参考频率，单位为 Hz
+  * - `float`_
+    - hf_decay_ratio
+    - 83.0
+    - 高频衰减比例
+  * - `float`_
+    - diffusion
+    - 100.0
+    - 扩散度
+  * - `float`_
+    - density
+    - 100.0
+    - 密度
+  * - `float`_
+    - low_shelf_frequency
+    - 250.0
+    - 低频搁架参考频率
+  * - `float`_
+    - low_shelf_gain
+    - 0.0
+    - 低频搁架增益
+  * - `float`_
+    - high_cut
+    - 14500.0
+    - 高频截止频率
+  * - `float`_
+    - early_late_mix
+    - 96.0
+    - 早期/后期混响混合比例
+  * - `float`_
+    - wet_level
+    - -8.0
+    - 混响湿声电平，单位为分贝
+
+方法
+~~~~
+
+.. _FmodReverbZone3D-get_reverb:
+
+:ref:`FmodReverb3D<FmodReverb3D>` get_reverb() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回该节点内部创建并管理的 :ref:`FmodReverb3D<FmodReverb3D>`。如果节点尚未进入场景树或创建失败，则返回 ``null``。
+
+.. note:: 其它属性均通过同名 getter / setter 暴露，例如 ``set_min_distance()`` / ``get_min_distance()``、``set_preset()`` / ``get_preset()`` 和 ``set_wet_level()`` / ``get_wet_level()``。
+
+枚举
+~~~~
+
+.. _FmodReverbZone3D-Preset:
+
+Preset
+^^^^^^
+
+.. list-table::
+  :header-rows: 1
+
+  * - 成员
+    - 值
+    - 说明
+  * - PRESET_CUSTOM
+    - 0
+    - 自定义参数
+  * - PRESET_OFF
+    - 1
+    - 关闭混响
+  * - PRESET_GENERIC
+    - 2
+    - 通用混响
+  * - PRESET_PADDED_CELL
+    - 3
+    - 软包小房间
+  * - PRESET_ROOM
+    - 4
+    - 普通房间
+  * - PRESET_BATHROOM
+    - 5
+    - 浴室
+  * - PRESET_LIVING_ROOM
+    - 6
+    - 客厅
+  * - PRESET_STONE_ROOM
+    - 7
+    - 石室
+  * - PRESET_AUDITORIUM
+    - 8
+    - 礼堂
+  * - PRESET_CONCERT_HALL
+    - 9
+    - 音乐厅
+  * - PRESET_CAVE
+    - 10
+    - 洞穴
+  * - PRESET_ARENA
+    - 11
+    - 竞技场
+  * - PRESET_HANGAR
+    - 12
+    - 机库
+  * - PRESET_HALLWAY
+    - 13
+    - 走廊
+  * - PRESET_STONE_CORRIDOR
+    - 14
+    - 石质走廊
+  * - PRESET_ALLEY
+    - 15
+    - 小巷
+  * - PRESET_FOREST
+    - 16
+    - 森林
+  * - PRESET_CITY
+    - 17
+    - 城市
+  * - PRESET_MOUNTAINS
+    - 18
+    - 山地
+  * - PRESET_UNDERWATER
+    - 19
+    - 水下

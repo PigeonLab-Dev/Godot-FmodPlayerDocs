@@ -67,27 +67,6 @@ void set_mode_flags(flags: `int`_)
 
 返回当前创建模式标志。
 
-.. _FmodAudioStream-add_mode_flag:
-
-void add_mode_flag(flag: :ref:`CreateMode<FmodAudioStream-CreateMode>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-向当前创建模式中添加一个标志。
-
-.. _FmodAudioStream-remove_mode_flag:
-
-void remove_mode_flag(flag: :ref:`CreateMode<FmodAudioStream-CreateMode>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-从当前创建模式中移除一个标志。
-
-.. _FmodAudioStream-has_mode_flag:
-
-`bool`_ has_mode_flag(flag: :ref:`CreateMode<FmodAudioStream-CreateMode>`) const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-如果当前创建模式包含指定标志，则返回 ``true``。
-
 .. _FmodAudioStream-get_sound:
 
 :ref:`FmodSound<FmodSound>` get_sound()
@@ -141,12 +120,6 @@ void clear()
 
 清除音频数据并释放内部 :ref:`FmodSound<FmodSound>` 资源。这将释放内存并将流重置为空状态。
 
-.. _FmodAudioStream-invalidate_sound:
-
-void invalidate_sound()
-^^^^^^^^^^^^^^^^^^^^^^^
-
-仅释放并清空已缓存的 :ref:`FmodSound<FmodSound>`，保留音频数据。下次调用 :ref:`get_sound()<FmodAudioStream-get_sound>` 时会重新创建声音。
 枚举
 ~~~~
 

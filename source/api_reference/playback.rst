@@ -560,13 +560,6 @@ void clear_callback()
 
 清除 ChannelControl 回调。
 
-.. _FmodChannelControl-_on_callback:
-
-void _on_callback(controltype: `int`_, callbacktype: `int`_, commanddata1: `int`_, commanddata2: `int`_)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-C++ 子类可重写的回调处理函数。GDScript 通常使用 ``callback_received`` 信号，而不是直接调用该方法。
-
 .. _FmodChannel:
 
 FmodChannel
@@ -583,16 +576,6 @@ FmodChannel
 
 方法
 ~~~~
-
-内部设置
-^^^^^^^^
-
-.. _FmodChannel-setup:
-
-void setup(channel: `int`_)
-+++++++++++++++++++++++++++
-
-绑定底层 FMOD::Channel 指针。该方法主要供扩展内部使用。
 
 有效性检查
 ^^^^^^^^^^
@@ -722,13 +705,6 @@ void set_loop_points(start: `int`_, end: `int`_, timeunit: :ref:`FmodTimeUnit<Fm
 
 返回该 Channel 在 FMOD 系统通道池中的索引。
 
-.. _FmodChannel-_on_callback:
-
-void _on_callback(controltype: `int`_, callbacktype: `int`_, commanddata1: `int`_, commanddata2: `int`_)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-处理 Channel 级别 FMOD 回调的 C++ 重写函数。
-
 .. _FmodChannelGroup:
 
 FmodChannelGroup
@@ -745,16 +721,6 @@ FmodChannelGroup
 
 方法
 ~~~~
-
-内部设置
-^^^^^^^^
-
-.. _FmodChannelGroup-setup:
-
-void setup(channel_group: `int`_)
-+++++++++++++++++++++++++++++++++
-
-绑定底层 FMOD::ChannelGroup 指针。该方法主要供扩展内部使用。
 
 有效性检查
 ^^^^^^^^^^
@@ -898,16 +864,6 @@ FmodSoundGroup
 +++++++++++++++++++++++++++++++++++
 
 如果底层 FMOD::SoundGroup 句柄为空或不可用，则返回 ``true``。
-
-内部设置
-^^^^^^^^
-
-.. _FmodSoundGroup-setup:
-
-void setup(sound_group: `int`_)
-+++++++++++++++++++++++++++++++
-
-绑定底层 FMOD::SoundGroup 指针。该方法主要供扩展内部使用。
 
 基础功能
 ^^^^^^^^

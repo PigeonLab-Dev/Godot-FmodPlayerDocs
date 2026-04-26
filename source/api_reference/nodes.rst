@@ -1,4 +1,4 @@
-节点 API
+﻿节点 API
 ========
 
 .. _FmodAudioStreamPlayer:
@@ -51,6 +51,10 @@ FmodAudioStreamPlayer
     - auto_play
     - false
     - 进入场景树后自动播放
+  * - `bool`_
+    - preload_on_set_stream
+    - false
+    - 设置 ``stream`` 时是否立即预加载内部 :ref:`FmodSound<FmodSound>`
   * - `StringName`_
     - bus
     - "Master"
@@ -94,6 +98,13 @@ void play(from_position: `float`_ = 0.0)
 从指定位置开始播放，单位为秒
 
 如果内部通道仍然有效，会复用该通道并跳转到指定位置；否则会从当前 ``stream`` 创建新的 FMOD 通道
+
+.. _FmodAudioStreamPlayer-preload_stream:
+
+`bool`_ preload_stream()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+预加载当前 ``stream``，提前创建内部 :ref:`FmodSound<FmodSound>`，用于减少第一次播放时的延迟。创建成功返回 ``true``。
 
 .. _FmodAudioStreamPlayer-seek:
 
@@ -196,6 +207,20 @@ void set_auto_play(enable: `bool`_)
 
 如果启用了自动播放，则返回 ``true``
 
+.. _FmodAudioStreamPlayer-set_preload_on_set_stream:
+
+void set_preload_on_set_stream(enable: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否在赋值 ``stream`` 时立即预加载。
+
+.. _FmodAudioStreamPlayer-is_preload_on_set_stream_enabled:
+
+`bool`_ is_preload_on_set_stream_enabled() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了赋值时预加载，则返回 ``true``。
+
 .. _FmodAudioStreamPlayer-set_bus:
 
 void set_bus(bus: `StringName`_)
@@ -280,6 +305,10 @@ FmodAudioStreamPlayer2D
     - autoplay
     - false
     - 进入场景树后自动播放
+  * - `bool`_
+    - preload_on_set_stream
+    - false
+    - 设置 ``stream`` 时是否立即预加载内部 :ref:`FmodSound<FmodSound>`
   * - `float`_
     - max_distance
     - 2000.0
@@ -343,6 +372,13 @@ void play(from_position: `float`_ = 0.0)
 从指定位置开始播放，单位为秒
 
 播放前会为音频流添加 :ref:`FmodMode<FmodMode>` 里的 ``FMOD_MODE_2D`` 标志并重新创建缓存声音
+
+.. _FmodAudioStreamPlayer2D-preload_stream:
+
+`bool`_ preload_stream()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+预加载当前 ``stream``，提前创建内部 :ref:`FmodSound<FmodSound>`。创建成功返回 ``true``。
 
 .. _FmodAudioStreamPlayer2D-seek:
 
@@ -450,6 +486,20 @@ void set_autoplay(enable: `bool`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 如果启用了自动播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer2D-set_preload_on_set_stream:
+
+void set_preload_on_set_stream(enable: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否在赋值 ``stream`` 时立即预加载。
+
+.. _FmodAudioStreamPlayer2D-is_preload_on_set_stream_enabled:
+
+`bool`_ is_preload_on_set_stream_enabled() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了赋值时预加载，则返回 ``true``。
 
 .. _FmodAudioStreamPlayer2D-set_max_distance:
 
@@ -629,6 +679,10 @@ FmodAudioStreamPlayer3D
     - false
     - 进入场景树后自动播放
   * - `bool`_
+    - preload_on_set_stream
+    - false
+    - 设置 ``stream`` 时是否立即预加载内部 :ref:`FmodSound<FmodSound>`
+  * - `bool`_
     - stream_paused
     - false
     - 是否暂停当前播放流
@@ -707,6 +761,13 @@ void play(from_position: `float`_ = 0.0)
 从指定位置开始播放，单位为秒
 
 播放时会创建 FMOD 3D 通道，并应用当前 3D 衰减、滤波、发射角度和多普勒设置
+
+.. _FmodAudioStreamPlayer3D-preload_stream:
+
+`bool`_ preload_stream()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+预加载当前 ``stream``，提前创建内部 :ref:`FmodSound<FmodSound>`。创建成功返回 ``true``。
 
 .. _FmodAudioStreamPlayer3D-seek:
 
@@ -798,6 +859,20 @@ void set_auto_play(enable: `bool`_)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 如果启用了自动播放，则返回 ``true``
+
+.. _FmodAudioStreamPlayer3D-set_preload_on_set_stream:
+
+void set_preload_on_set_stream(enable: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否在赋值 ``stream`` 时立即预加载。
+
+.. _FmodAudioStreamPlayer3D-is_preload_on_set_stream_enabled:
+
+`bool`_ is_preload_on_set_stream_enabled() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了赋值时预加载，则返回 ``true``。
 
 .. _FmodAudioStreamPlayer3D-set_bus:
 
@@ -1049,7 +1124,7 @@ DopplerTracking
 FmodGeometryInstance3D
 ----------------------
 
-继承自： `Node3D`_
+继承自： `StaticBody3D`_
 
 **从 3D 网格生成 FMOD 遮挡几何体的节点**
 
@@ -1058,7 +1133,7 @@ FmodGeometryInstance3D
 
 **FmodGeometryInstance3D** 用于将场景中的几何体注册到 FMOD Geometry 系统，让 3D 声音可以根据场景遮挡产生直达声和混响遮挡
 
-此节点应作为 `MeshInstance3D`_ 或 `CollisionShape3D`_ 的子节点使用。当前源码已完整支持从 `MeshInstance3D`_ 构建三角形几何体；从 `CollisionShape3D`_ 构建仍未完整实现
+此节点可以自动扫描父级或指定节点，也可以直接使用 ``mesh`` 资源创建 FMOD 几何体。它继承自 `StaticBody3D`_，方便作为场景遮挡体一起组织。
 
 属性
 ~~~~
@@ -1070,6 +1145,18 @@ FmodGeometryInstance3D
     - 名称
     - 初始值
     - 说明
+  * - :ref:`SourceMode<FmodGeometryInstance3D-SourceMode>`
+    - source_mode
+    - SOURCE_AUTO
+    - 几何体来源模式
+  * - `NodePath`_
+    - source_node_path
+    - NodePath()
+    - 指定要扫描的源节点路径
+  * - `Mesh`_
+    - mesh
+    - null
+    - 直接用于构建遮挡几何体的网格资源
   * - `float`_
     - direct_occlusion
     - 0.5
@@ -1090,6 +1177,18 @@ FmodGeometryInstance3D
     - auto_rebuild
     - true
     - 进入场景或属性变化时自动重建几何体
+  * - `bool`_
+    - sync_transform
+    - true
+    - 是否同步节点变换到底层 :ref:`FmodGeometry<FmodGeometry>`
+  * - `bool`_
+    - recursive_source_scan
+    - true
+    - 自动模式下是否递归扫描子节点
+  * - `int`_
+    - primitive_segments
+    - 16
+    - 从基础碰撞形状生成几何体时使用的分段数
   * - `bool`_
     - show_debug_gizmo
     - true
@@ -1112,6 +1211,48 @@ FmodGeometryInstance3D
 
 方法
 ~~~~
+
+.. _FmodGeometryInstance3D-set_source_mode:
+
+void set_source_mode(mode: :ref:`SourceMode<FmodGeometryInstance3D-SourceMode>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置几何体来源模式。可自动扫描、使用碰撞形状、使用 MeshInstance3D，或直接使用 ``mesh`` 资源。
+
+.. _FmodGeometryInstance3D-get_source_mode:
+
+:ref:`SourceMode<FmodGeometryInstance3D-SourceMode>` get_source_mode() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前几何体来源模式。
+
+.. _FmodGeometryInstance3D-set_source_node_path:
+
+void set_source_node_path(path: `NodePath`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置要扫描的源节点路径。
+
+.. _FmodGeometryInstance3D-get_source_node_path:
+
+`NodePath`_ get_source_node_path() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前源节点路径。
+
+.. _FmodGeometryInstance3D-set_mesh:
+
+void set_mesh(mesh: `Mesh`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置直接用于构建遮挡几何体的 Mesh 资源。
+
+.. _FmodGeometryInstance3D-get_mesh:
+
+`Mesh`_ get_mesh() const
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前 Mesh 资源。
 
 .. _FmodGeometryInstance3D-set_direct_occlusion:
 
@@ -1191,6 +1332,48 @@ void set_auto_rebuild(value: `bool`_)
 
 如果启用了自动重建，则返回 ``true``
 
+.. _FmodGeometryInstance3D-set_sync_transform:
+
+void set_sync_transform(value: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置是否同步节点变换到底层几何体。
+
+.. _FmodGeometryInstance3D-get_sync_transform:
+
+`bool`_ get_sync_transform() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了变换同步，则返回 ``true``。
+
+.. _FmodGeometryInstance3D-set_recursive_source_scan:
+
+void set_recursive_source_scan(value: `bool`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置自动扫描源节点时是否递归扫描子节点。
+
+.. _FmodGeometryInstance3D-get_recursive_source_scan:
+
+`bool`_ get_recursive_source_scan() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+如果启用了递归扫描，则返回 ``true``。
+
+.. _FmodGeometryInstance3D-set_primitive_segments:
+
+void set_primitive_segments(segments: `int`_)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+设置从基础碰撞形状生成几何体时使用的分段数。
+
+.. _FmodGeometryInstance3D-get_primitive_segments:
+
+`int`_ get_primitive_segments() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回基础形状分段数。
+
 .. _FmodGeometryInstance3D-set_show_debug_gizmo:
 
 void set_show_debug_gizmo(value: `bool`_)
@@ -1214,6 +1397,13 @@ void rebuild_geometry()
 
 成功后会发出 ``geometry_rebuilt`` 和 ``geometry_created`` 信号
 
+.. _FmodGeometryInstance3D-sync_geometry_transform:
+
+void sync_geometry_transform()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+立即将节点当前变换同步到底层 :ref:`FmodGeometry<FmodGeometry>`。
+
 .. _FmodGeometryInstance3D-clear_geometry:
 
 void clear_geometry()
@@ -1236,6 +1426,47 @@ void clear_geometry()
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回内部 :ref:`FmodGeometry<FmodGeometry>` 对象
+
+.. _FmodGeometryInstance3D-get_polygon_count:
+
+`int`_ get_polygon_count() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前构建出的遮挡多边形数量。
+
+.. _FmodGeometryInstance3D-get_vertex_count:
+
+`int`_ get_vertex_count() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+返回当前构建出的顶点数量。
+
+枚举
+~~~~
+
+.. _FmodGeometryInstance3D-SourceMode:
+
+SourceMode
+^^^^^^^^^^
+
+.. list-table::
+  :header-rows: 1
+
+  * - 成员
+    - 值
+    - 说明
+  * - SOURCE_AUTO
+    - 0
+    - 自动选择可用来源
+  * - SOURCE_COLLISION_SHAPES
+    - 1
+    - 从 `CollisionShape3D`_ 构建
+  * - SOURCE_MESH_INSTANCE
+    - 2
+    - 从 `MeshInstance3D`_ 构建
+  * - SOURCE_MESH_RESOURCE
+    - 3
+    - 从 `Mesh`_ 资源构建
 
 示例
 ~~~~
