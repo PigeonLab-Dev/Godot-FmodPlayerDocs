@@ -690,7 +690,7 @@ FmodAudioEffectFilter
     - cutoff_hz
     - 2000.0
     - 截止频率，单位为 Hz
-  * - :ref:`FmodAudioEffectFilter.FilterDB<FmodAudioEffectFilter-FilterDB>`
+  * - :ref:`FilterDB<FmodAudioEffectFilter-FilterDB>`
     - db
     - FILTER_6DB
     - 截止曲线斜率
@@ -722,15 +722,15 @@ void set_cutoff_hz(cutoff_hz: `float`_)
 
 .. _FmodAudioEffectFilter-set_db:
 
-void set_db(db: :ref:`FmodAudioEffectFilter.FilterDB<FmodAudioEffectFilter-FilterDB>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_db(db: :ref:`FilterDB<FmodAudioEffectFilter-FilterDB>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置滤波器斜率。
 
 .. _FmodAudioEffectFilter-get_db:
 
-:ref:`FmodAudioEffectFilter.FilterDB<FmodAudioEffectFilter-FilterDB>` get_db() const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`FilterDB<FmodAudioEffectFilter-FilterDB>` get_db() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回滤波器斜率。
 
@@ -767,7 +767,7 @@ void set_resonance(resonance: `float`_)
 
 .. _FmodAudioEffectFilter-FilterDB:
 
-FmodAudioEffectFilter.FilterDB
+FilterDB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -813,7 +813,7 @@ FmodAudioEffectEQ
     - 名称
     - 初始值
     - 说明
-  * - :ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>`
+  * - :ref:`Preset<FmodAudioEffectEQ-Preset>`
     - preset
     - PRESET_6_BANDS
     - 均衡器频段预设
@@ -829,7 +829,7 @@ FmodAudioEffectEQ
     - band_0_q 到 band_n_q
     - 0.707
     - 对应频段 Q 值
-  * - :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`
+  * - :ref:`FilterType<FmodAudioEffectEQ-FilterType>`
     - band_0_filter_type 到 band_n_filter_type
     - FILTER_PEAKING
     - 对应频段滤波器类型
@@ -839,15 +839,15 @@ FmodAudioEffectEQ
 
 .. _FmodAudioEffectEQ-set_preset:
 
-void set_preset(preset: :ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_preset(preset: :ref:`Preset<FmodAudioEffectEQ-Preset>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置均衡器频段预设，并重建频段列表。
 
 .. _FmodAudioEffectEQ-get_preset:
 
-:ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>` get_preset() const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Preset<FmodAudioEffectEQ-Preset>` get_preset() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前频段预设。
 
@@ -888,15 +888,15 @@ void set_band_frequency(band_idx: `int`_, frequency: `float`_)
 
 .. _FmodAudioEffectEQ-set_band_filter_type:
 
-void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FilterType<FmodAudioEffectEQ-FilterType>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置指定频段的滤波器类型。
 
 .. _FmodAudioEffectEQ-get_band_filter_type:
 
-:ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回指定频段的滤波器类型。
 
@@ -919,7 +919,7 @@ void set_band_q(band_idx: `int`_, q: `float`_)
 
 .. _FmodAudioEffectEQ-Preset:
 
-FmodAudioEffectEQ.Preset
+Preset
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -940,7 +940,7 @@ FmodAudioEffectEQ.Preset
 
 .. _FmodAudioEffectEQ-FilterType:
 
-FmodAudioEffectEQ.FilterType
+FilterType
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -1031,7 +1031,7 @@ FmodAudioEffectEQ6
     - band_0_q 到 band_n_q
     - 0.707
     - 对应频段 Q 值
-  * - :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`
+  * - :ref:`FilterType<FmodAudioEffectEQ-FilterType>`
     - band_0_filter_type 到 band_n_filter_type
     - FILTER_PEAKING
     - 对应频段滤波器类型
@@ -1041,15 +1041,15 @@ FmodAudioEffectEQ6
 
 .. _FmodAudioEffectEQ6-set_preset:
 
-void set_preset(preset: :ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_preset(preset: :ref:`Preset<FmodAudioEffectEQ-Preset>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置均衡器频段预设，并重建频段列表。
 
 .. _FmodAudioEffectEQ6-get_preset:
 
-:ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>` get_preset() const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Preset<FmodAudioEffectEQ-Preset>` get_preset() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前频段预设。
 
@@ -1090,15 +1090,15 @@ void set_band_frequency(band_idx: `int`_, frequency: `float`_)
 
 .. _FmodAudioEffectEQ6-set_band_filter_type:
 
-void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FilterType<FmodAudioEffectEQ-FilterType>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置指定频段的滤波器类型。
 
 .. _FmodAudioEffectEQ6-get_band_filter_type:
 
-:ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回指定频段的滤波器类型。
 
@@ -1152,7 +1152,7 @@ FmodAudioEffectEQ10
     - band_0_q 到 band_n_q
     - 0.707
     - 对应频段 Q 值
-  * - :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`
+  * - :ref:`FilterType<FmodAudioEffectEQ-FilterType>`
     - band_0_filter_type 到 band_n_filter_type
     - FILTER_PEAKING
     - 对应频段滤波器类型
@@ -1162,15 +1162,15 @@ FmodAudioEffectEQ10
 
 .. _FmodAudioEffectEQ10-set_preset:
 
-void set_preset(preset: :ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_preset(preset: :ref:`Preset<FmodAudioEffectEQ-Preset>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置均衡器频段预设，并重建频段列表。
 
 .. _FmodAudioEffectEQ10-get_preset:
 
-:ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>` get_preset() const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Preset<FmodAudioEffectEQ-Preset>` get_preset() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前频段预设。
 
@@ -1211,15 +1211,15 @@ void set_band_frequency(band_idx: `int`_, frequency: `float`_)
 
 .. _FmodAudioEffectEQ10-set_band_filter_type:
 
-void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FilterType<FmodAudioEffectEQ-FilterType>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置指定频段的滤波器类型。
 
 .. _FmodAudioEffectEQ10-get_band_filter_type:
 
-:ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回指定频段的滤波器类型。
 
@@ -1273,7 +1273,7 @@ FmodAudioEffectEQ21
     - band_0_q 到 band_n_q
     - 0.707
     - 对应频段 Q 值
-  * - :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`
+  * - :ref:`FilterType<FmodAudioEffectEQ-FilterType>`
     - band_0_filter_type 到 band_n_filter_type
     - FILTER_PEAKING
     - 对应频段滤波器类型
@@ -1283,15 +1283,15 @@ FmodAudioEffectEQ21
 
 .. _FmodAudioEffectEQ21-set_preset:
 
-void set_preset(preset: :ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_preset(preset: :ref:`Preset<FmodAudioEffectEQ-Preset>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置均衡器频段预设，并重建频段列表。
 
 .. _FmodAudioEffectEQ21-get_preset:
 
-:ref:`FmodAudioEffectEQ.Preset<FmodAudioEffectEQ-Preset>` get_preset() const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Preset<FmodAudioEffectEQ-Preset>` get_preset() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回当前频段预设。
 
@@ -1332,14 +1332,14 @@ void set_band_frequency(band_idx: `int`_, frequency: `float`_)
 
 .. _FmodAudioEffectEQ21-set_band_filter_type:
 
-void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>`)
+void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FilterType<FmodAudioEffectEQ-FilterType>`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置指定频段的滤波器类型。
 
 .. _FmodAudioEffectEQ21-get_band_filter_type:
 
-:ref:`FmodAudioEffectEQ.FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
+:ref:`FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(band_idx: `int`_) const
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回指定频段的滤波器类型。
@@ -1810,7 +1810,7 @@ FmodAudioEffectDistortion
     - 名称
     - 初始值
     - 说明
-  * - :ref:`FmodAudioEffectDistortion.Mode<FmodAudioEffectDistortion-Mode>`
+  * - :ref:`Mode<FmodAudioEffectDistortion-Mode>`
     - mode
     - MODE_CLIP
     - 失真算法
@@ -1840,15 +1840,15 @@ FmodAudioEffectDistortion
 
 .. _FmodAudioEffectDistortion-set_mode:
 
-void set_mode(mode: :ref:`FmodAudioEffectDistortion.Mode<FmodAudioEffectDistortion-Mode>`)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+void set_mode(mode: :ref:`Mode<FmodAudioEffectDistortion-Mode>`)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置失真算法。
 
 .. _FmodAudioEffectDistortion-get_mode:
 
-:ref:`FmodAudioEffectDistortion.Mode<FmodAudioEffectDistortion-Mode>` get_mode() const
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Mode<FmodAudioEffectDistortion-Mode>` get_mode() const
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回失真算法。
 
@@ -1927,7 +1927,7 @@ void set_oversample(oversample: `int`_)
 
 .. _FmodAudioEffectDistortion-Mode:
 
-FmodAudioEffectDistortion.Mode
+Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -2101,7 +2101,7 @@ FmodAudioEffectPitchShift
     - pitch_scale
     - 1.0
     - 音高倍率
-  * - :ref:`FmodAudioEffectPitchShift.FFTSize<FmodAudioEffectPitchShift-FFTSize>`
+  * - :ref:`FFTSize<FmodAudioEffectPitchShift-FFTSize>`
     - fft_size
     - FFT_SIZE_2048
     - FFT 窗口大小
@@ -2129,14 +2129,14 @@ void set_pitch_scale(pitch_scale: `float`_)
 
 .. _FmodAudioEffectPitchShift-set_fft_size:
 
-void set_fft_size(fft_size: :ref:`FmodAudioEffectPitchShift.FFTSize<FmodAudioEffectPitchShift-FFTSize>`)
+void set_fft_size(fft_size: :ref:`FFTSize<FmodAudioEffectPitchShift-FFTSize>`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置 FFT 窗口大小。
 
 .. _FmodAudioEffectPitchShift-get_fft_size:
 
-:ref:`FmodAudioEffectPitchShift.FFTSize<FmodAudioEffectPitchShift-FFTSize>` get_fft_size() const
+:ref:`FFTSize<FmodAudioEffectPitchShift-FFTSize>` get_fft_size() const
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回 FFT 窗口大小。
@@ -2160,7 +2160,7 @@ void set_oversampling(oversampling: `int`_)
 
 .. _FmodAudioEffectPitchShift-FFTSize:
 
-FmodAudioEffectPitchShift.FFTSize
+FFTSize
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -2752,7 +2752,7 @@ FmodAudioEffectSpectrumAnalyzer
     - buffer_length
     - 2.0
     - 分析缓冲长度，单位为秒
-  * - :ref:`FmodAudioEffectSpectrumAnalyzer.FFTSize<FmodAudioEffectSpectrumAnalyzer-FFTSize>`
+  * - :ref:`FFTSize<FmodAudioEffectSpectrumAnalyzer-FFTSize>`
     - fft_size
     - FFT_SIZE_1024
     - FFT 窗口大小
@@ -2776,14 +2776,14 @@ void set_buffer_length(buffer_length: `float`_)
 
 .. _FmodAudioEffectSpectrumAnalyzer-set_fft_size:
 
-void set_fft_size(fft_size: :ref:`FmodAudioEffectSpectrumAnalyzer.FFTSize<FmodAudioEffectSpectrumAnalyzer-FFTSize>`)
+void set_fft_size(fft_size: :ref:`FFTSize<FmodAudioEffectSpectrumAnalyzer-FFTSize>`)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 设置 FFT 窗口大小。
 
 .. _FmodAudioEffectSpectrumAnalyzer-get_fft_size:
 
-:ref:`FmodAudioEffectSpectrumAnalyzer.FFTSize<FmodAudioEffectSpectrumAnalyzer-FFTSize>` get_fft_size() const
+:ref:`FFTSize<FmodAudioEffectSpectrumAnalyzer-FFTSize>` get_fft_size() const
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回 FFT 窗口大小。
@@ -2818,7 +2818,7 @@ void update_spectrum()
 
 .. _FmodAudioEffectSpectrumAnalyzer-get_magnitude_for_frequency_range:
 
-`Vector2`_ get_magnitude_for_frequency_range(begin: `float`_, end: `float`_, mode: :ref:`FmodAudioEffectSpectrumAnalyzer.MagnitudeMode<FmodAudioEffectSpectrumAnalyzer-MagnitudeMode>` = MAGNITUDE_MAX) const
+`Vector2`_ get_magnitude_for_frequency_range(begin: `float`_, end: `float`_, mode: :ref:`MagnitudeMode<FmodAudioEffectSpectrumAnalyzer-MagnitudeMode>` = MAGNITUDE_MAX) const
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 返回指定频率范围内左右声道的幅度。
@@ -2828,7 +2828,7 @@ void update_spectrum()
 
 .. _FmodAudioEffectSpectrumAnalyzer-FFTSize:
 
-FmodAudioEffectSpectrumAnalyzer.FFTSize
+FFTSize
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -2858,7 +2858,7 @@ FmodAudioEffectSpectrumAnalyzer.FFTSize
 
 .. _FmodAudioEffectSpectrumAnalyzer-MagnitudeMode:
 
-FmodAudioEffectSpectrumAnalyzer.MagnitudeMode
+MagnitudeMode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
@@ -2978,7 +2978,7 @@ void set_format(format: :ref:`FmodAudioEffectRecord.Format<FmodAudioEffectRecord
 
 .. _FmodAudioEffectRecord-Format:
 
-FmodAudioEffectRecord.Format
+Format
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::

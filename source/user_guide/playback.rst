@@ -1,300 +1,271 @@
 播放控制
 ========
 
-Godot-FmodPlayer 提供灵活的播放控制功能，支持通过节点或代码直接控制音频播放。
+本章讲“怎样把声音播出来，以及播出来以后怎样控制它”。
 
-播放节点
---------
+刚开始使用时，优先用播放节点。只有当你需要更细的控制，例如一次性创建 :ref:`Sound<glossary-sound>`、拿到 :ref:`Channel<glossary-channel>`、手动设置循环点或 3D 属性时，再使用代码播放。
 
-FmodAudioStreamPlayer
-~~~~~~~~~~~~~~~~~~~~~
-
-用于播放 ``FmodAudioStream`` 资源的节点，适合背景音乐和长时间音频。
-
-**主要属性：**
+先选哪种播放方式
+----------------
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 属性
-     - 类型
-     - 说明
-   * - ``stream``
-     - FmodAudioStream
-     - 要播放的音频流
-   * - ``playing``
-     - bool (readonly)
-     - 是否正在播放
-   * - ``volume_db``
-     - float
-     - 音量（分贝）
-   * - ``pitch``
-     - float
-     - 音调（1.0 = 正常）
-   * - ``autoplay``
-     - bool
-     - 场景开始时自动播放
-   * - ``bus``
-     - String
-     - 音频总线名称
+  * - 需求
+    - 推荐方式
+  * - 背景音乐、长音频、场景里的固定播放器
+    - :ref:`FmodAudioStreamPlayer<FmodAudioStreamPlayer>`
+  * - 2D 场景里的音效
+    - :ref:`FmodAudioStreamPlayer2D<FmodAudioStreamPlayer2D>`
+  * - 3D 世界里的声源
+    - :ref:`FmodAudioStreamPlayer3D<FmodAudioStreamPlayer3D>`
+  * - 同一个短音效频繁触发
+    - 预加载 :ref:`音频资产<glossary-audio-asset>`，或复用 :ref:`Sound<glossary-sound>`
+  * - 播放后还要精细控制
+    - 取得 :ref:`Channel<glossary-channel>`
 
-**主要方法：**
+如果你不确定，先用节点。节点能处理大多数播放、停止、音量、音高和总线路由需求。
 
-.. list-table::
-   :header-rows: 1
+用节点播放
+----------
 
-   * - 方法
-     - 说明
-   * - ``play(from_position=0.0)``
-     - 从指定位置开始播放
-   * - ``stop()``
-     - 停止播放
-   * - ``seek(position)``
-     - 跳转到指定位置
-   * - ``get_playback_position()``
-     - 获取当前播放位置
-
-**代码示例：**
+最常见的写法是给节点设置 ``stream``，然后调用 ``play()``。
 
 .. code-block:: gdscript
 
     extends Node
 
-    @onready var player = $FmodAudioStreamPlayer
+    @onready var music := $FmodAudioStreamPlayer
 
     func _ready():
-        var stream = FmodAudioStream.new()
+        var stream := FmodAudioStream.new()
         stream.file_path = "res://music/bgm.mp3"
-        player.stream = stream
+
+        music.stream = stream
+        music.bus = "Music"
 
     func play_music():
-        player.play()
+        music.play()
 
     func stop_music():
-        player.stop()
+        music.stop()
 
-    func fade_volume(target_db: float, duration: float):
-        var tween = create_tween()
-        tween.tween_property(player, "volume_db", target_db, duration)
+这里的 ``stream`` 是 Godot-FmodPlayer 的音频资源。底层真正交给 FMOD 播放时，会创建 :ref:`Sound<glossary-sound>`，播放出来的一次声音会对应一个 :ref:`Channel<glossary-channel>`。
 
-FmodAudioSampleEmitter
-~~~~~~~~~~~~~~~~~~~~~~
-
-用于播放 ``FmodAudioSample`` 资源的节点，适合音效和短音频。
-
-**主要属性：**
+常用节点属性
+~~~~~~~~~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 属性
-     - 类型
-     - 说明
-   * - ``sample``
-     - FmodAudioSample
-     - 要播放的采样
-   * - ``auto_emit``
-     - bool
-     - 自动发射（设置 sample 时自动播放）
-   * - ``bus``
-     - String
-     - 音频总线名称
+  * - 属性
+    - 用途
+  * - ``stream``
+    - 要播放的音频资源
+  * - ``volume_db``
+    - 音量，单位为分贝；``0.0`` 是原始音量
+  * - ``pitch``
+    - 音高和速度倍率；``1.0`` 是正常
+  * - ``autoplay``
+    - 场景开始时自动播放
+  * - ``bus``
+    - 输出到哪个 :ref:`Bus<glossary-bus>`
+  * - ``playing``
+    - 当前是否正在播放
 
-**主要方法：**
+淡入淡出
+~~~~~~~~
 
-.. list-table::
-   :header-rows: 1
+节点是 Godot 节点，可以直接用 Tween：
 
-   * - 方法
-     - 说明
-   * - ``emit()``
-     - 播放一次采样
-   * - ``set_sample(sample)``
-     - 设置并加载采样
+.. code-block:: gdscript
 
-**代码示例：**
+    func fade_music(target_db: float, duration: float):
+        var tween := create_tween()
+        tween.tween_property(music, "volume_db", target_db, duration)
+
+播放一次短音效
+--------------
+
+如果只是“按按钮、开枪、拾取物品”这种一次性短音效，可以放一个播放器节点，然后反复调用 ``play()``：
 
 .. code-block:: gdscript
 
     extends Node
 
-    @onready var emitter = $FmodAudioSampleEmitter
+    @onready var hit := $HitPlayer
 
     func _ready():
-        var sample = FmodAudioSample.new()
-        sample.file_path = "res://sfx/shoot.wav"
-        emitter.sample = sample
+        var stream := FmodAudioStream.new()
+        stream.file_path = "res://sfx/hit.wav"
+        hit.stream = stream
+        hit.bus = "SFX"
 
-    func play_shoot():
-        emitter.emit()
+    func play_hit():
+        hit.play()
 
-直接代码播放
+如果同一个声音可能重叠播放很多次，例如一秒内触发多发子弹，建议考虑代码播放或对象池，避免一个节点来不及处理所有重叠声音。
+
+用代码播放
+----------
+
+代码播放会更接近 FMOD 的工作方式：
+
+1. 用 :ref:`System<glossary-system>` 创建 :ref:`Sound<glossary-sound>`。
+2. 选择输出到哪个 :ref:`Bus<glossary-bus>` / :ref:`ChannelGroup<glossary-channelgroup>`。
+3. 调用 ``play_sound()``，得到这次播放的 :ref:`Channel<glossary-channel>`。
+
+.. code-block:: gdscript
+
+    func play_sound(path: String, bus_name: String = "SFX") -> FmodChannel:
+        var system := FmodServer.get_main_system()
+
+        var sound := system.create_sound_from_file(path)
+        var bus := system.get_channel_group_by_name(bus_name)
+        var channel := system.play_sound(sound, bus, false)
+
+        return channel
+
+返回的 ``channel`` 只代表“这一次播放”。同一个 ``sound`` 播放三次，就会有三个不同的 :ref:`Channel<glossary-channel>`。
+
+先暂停再配置
+~~~~~~~~~~~~
+
+有时你希望声音开始前先设置音量、音高或 3D 位置。可以让它以暂停状态创建，配置完成后再恢复：
+
+.. code-block:: gdscript
+
+    func play_configured(path: String) -> FmodChannel:
+        var system := FmodServer.get_main_system()
+        var sound := system.create_sound_from_file(path)
+        var sfx_bus := system.get_channel_group_by_name("SFX")
+
+        var channel := system.play_sound(sound, sfx_bus, true)
+        channel.volume_db = -6.0
+        channel.pitch = 1.2
+        channel.set_paused(false)
+
+        return channel
+
+控制一次播放
 ------------
 
-不通过节点，直接使用 ``FmodSystem`` 播放音频。
+:ref:`Channel<glossary-channel>` 是“一次正在播放的声音”。它可以暂停、停止、调音量、调音高、跳转位置，也可以设置 3D 属性。
 
-基本播放
-~~~~~~~~
-
-.. code-block:: gdscript
-
-    func play_sound_simple(path: String):
-        var system = FmodServer.main_system
-        
-        # Create the sound.
-        var sound = system.create_sound_from_file(path, FmodSystem.MODE_DEFAULT)
-        
-        # Get the master channel group.
-        var master = system.get_master_channel_group()
-        
-        # Play immediately with paused set to false.
-        var channel = system.play_sound(sound, master, false)
-        
-        return channel
-
-高级播放控制
-~~~~~~~~~~~~
+暂停、恢复和停止
+~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
 
-    func play_sound_advanced(path: String):
-        var system = FmodServer.main_system
-        
-        # Create the sound with specific mode flags.
-        var mode = FmodSystem.MODE_LOOP_OFF | FmodSystem.MODE_3D
-        var sound = system.create_sound_from_file(path, mode)
-        
-        # Create a channel group.
-        var sfx_group = system.create_channel_group("SFX")
-        
-        # Start paused so the channel can be configured first.
-        var channel = system.play_sound(sound, sfx_group, true)
-        
-        # Set playback parameters.
-        channel.set_volume_db(-6.0)
-        channel.set_pitch(1.2)
-        
-        # Start playback.
-        channel.set_paused(false)
-        
-        return channel
+    func pause_channel(channel: FmodChannel, paused: bool):
+        if channel != null:
+            channel.set_paused(paused)
 
-通道控制
---------
+    func stop_channel(channel: FmodChannel):
+        if channel != null:
+            channel.stop()
 
-``FmodChannel`` 代表一个正在播放的声音实例。
+    func is_still_playing(channel: FmodChannel) -> bool:
+        return channel != null and channel.is_playing()
 
-播放状态控制
-~~~~~~~~~~~~
+音量、音高和声像
+~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
 
-    func control_playback(channel: FmodChannel):
-        # Pause and resume.
-        channel.set_paused(true)
-        channel.set_paused(false)
-        
-        # Stop playback.
-        channel.stop()
-        
-        # Check playback state.
-        if channel.is_playing():
-            print("Channel is playing")
+    func adjust_channel(channel: FmodChannel):
+        channel.volume_db = -10.0
+        channel.pitch = 1.0
 
-音量和音调
-~~~~~~~~~~
+        # -1.0 在左边，0.0 在中间，1.0 在右边。
+        channel.set_pan(0.25)
 
-.. code-block:: gdscript
-
-    func adjust_audio(channel: FmodChannel) -> void:
-        # Set volume in decibels
-        channel.volume_db = -10.0 # -10 dB
-        channel.volume_db = 0.0 # 0 dB (original volume)
-        channel.volume_db = 6.0 # +6 dB (approximately double volume)
-        
-        # Set pitch
-        channel.pitch = 1.0 # Normal pitch
-        channel.pitch = 0.5 # Half speed (one octave down)
-        channel.pitch = 2.0 # Double speed (one octave up)
-        
-        # Set pan
-        channel.set_pan(-1.0) # Left only
-        channel.set_pan(0.0) # Center
-        channel.set_pan(1.0) # Right only
+``pitch`` 会同时影响音高和播放速度。``0.5`` 听起来更低也更慢，``2.0`` 听起来更高也更快。
 
 播放位置
 ~~~~~~~~
 
+位置通常用毫秒控制。适合音乐跳转、从某个时间点继续播放，或做简单的预览工具。
+
 .. code-block:: gdscript
 
-    func control_position(channel: FmodChannel) -> void:
-        # Get current position in milliseconds
-        var position_ms: int = channel.get_position(FmodChannel.TIMEUNIT_MS)
-        
-        # Jump to 30 seconds
+    func jump_to_30_seconds(channel: FmodChannel):
         channel.set_position(30000, FmodChannel.TIMEUNIT_MS)
-        
-        # Get total length of the sound
-        var sound: FmodSound = channel.get_current_sound()
-        var length: float = sound.get_length()
-        print("Total length: %.2f seconds" % length)
 
-循环控制
-~~~~~~~~
+    func print_position(channel: FmodChannel):
+        var position_ms := channel.get_position(FmodChannel.TIMEUNIT_MS)
+        print("position: ", position_ms, " ms")
+
+循环
+~~~~
 
 .. code-block:: gdscript
 
-    func setup_looping(channel: FmodChannel) -> void:
-        # Set infinite looping (-1 for infinite loops)
+    func loop_forever(channel: FmodChannel):
         channel.loop_count = -1
-        
-        # Set loop count (3 times)
+
+    func loop_three_times(channel: FmodChannel):
         channel.loop_count = 3
-        
-        # Disable looping
+
+    func disable_loop(channel: FmodChannel):
         channel.loop_count = 0
 
-3D 音频
--------
+循环是否生效还和创建声音时使用的播放模式有关。常规节点播放通常更适合简单循环；需要精确控制循环点时，再直接控制 :ref:`Channel<glossary-channel>` 和 :ref:`Sound<glossary-sound>`。
 
-设置 3D 位置和属性
-~~~~~~~~~~~~~~~~~~
+2D 与 3D 播放
+-------------
+
+2D 声音不跟随世界位置变化，适合 UI、音乐、旁白。3D 声音会根据 :ref:`Listener<glossary-listener>` 和声源的位置计算距离、方向和衰减。
+
+优先使用 3D 播放节点
+~~~~~~~~~~~~~~~~~~~~
+
+在 3D 场景里，最简单的方式是使用 :ref:`FmodAudioStreamPlayer3D<FmodAudioStreamPlayer3D>`。它会把节点位置同步给 FMOD。
 
 .. code-block:: gdscript
 
     extends Node3D
 
-    @onready var player: FmodAudioStreamPlayer = $FmodAudioStreamPlayer
+    @onready var emitter := $FmodAudioStreamPlayer3D
 
-    func _ready() -> void:
-        # Enable 3D mode on the sound
-        var system: FmodSystem = FmodServer.main_system
-        var sound: FmodSound = system.create_sound_from_file(
-            "res://sfx/3d_sound.wav",
-            FmodSystem.MODE_3D
-        )
-        
-        # Get the channel and set 3D attributes
-        var channel: FmodChannel = system.play_sound(sound, system.get_master_channel_group(), false)
-        
-        # Set position and velocity for 3D sound
-        var pos: Vector3 = Vector3(10, 0, 5)
-        channel.set_3d_attributes(pos, Vector3.ZERO)
-        
-        # Set distance attenuation
-        channel.set_3d_min_max_distance(1.0, 100.0)
-        channel.set_3d_level(1.0)
+    func play_at_current_position():
+        emitter.bus = "SFX"
+        emitter.play()
 
-3D 监听器
-~~~~~~~~~
+如果声音应该跟随敌人、车辆、门、机关或环境物件，就把播放器作为这些节点的子节点。
+
+代码方式设置 3D 位置
+~~~~~~~~~~~~~~~~~~~~
+
+只有在你直接代码播放时，才需要手动设置 3D 属性：
+
+.. code-block:: gdscript
+
+    func play_3d_sound(path: String, position: Vector3):
+        var system := FmodServer.get_main_system()
+        var sound := system.create_sound_from_file(path, FmodSystem.MODE_3D)
+        var bus := system.get_channel_group_by_name("SFX")
+
+        var channel := system.play_sound(sound, bus, true)
+        channel.set_3d_attributes(position, Vector3.ZERO)
+        channel.set_3d_min_max_distance(1.0, 30.0)
+        channel.set_paused(false)
+
+        return channel
+
+这里的 ``MODE_3D`` 很重要。没有用 3D 模式创建的声音，即使设置了位置，也不会按 3D 声源来计算。
+
+监听器
+~~~~~~
+
+:ref:`Listener<glossary-listener>` 表示玩家“从哪里听”。通常它跟随玩家角色或主摄像机。
 
 .. code-block:: gdscript
 
     extends CharacterBody3D
 
-    func _physics_process(_delta: float) -> void:
-        # Update 3D listener attributes based on the player's position and orientation
-        var system: FmodSystem = FmodServer.main_system
+    func _physics_process(_delta):
+        var system := FmodServer.get_main_system()
         system.set_3d_listener_attributes(
             0,
             global_position,
@@ -303,19 +274,39 @@ FmodAudioSampleEmitter
             global_transform.basis.y
         )
 
-最佳实践
+如果 3D 声音听起来方向不对、距离不对，先检查监听器位置和朝向。
+
+常见问题
 --------
 
-#. **使用节点播放背景音乐** - 便于场景管理
-#. **使用 Emitter 播放音效** - 便于复用和批量管理
-#. **及时释放资源** - 不再使用的 Channel 会自动释放
-#. **合理使用通道组** - 按类型（音乐、音效、语音）分组管理
-#. **3D 音频优化** - 设置合适的衰减距离，避免远距离计算
+声音没有播放
+~~~~~~~~~~~~
 
-注意事项
---------
+按顺序检查：
 
-- 通道数量受 ``max_channels`` 限制
-- 停止播放的通道会自动释放
-- 3D 音频需要在创建声音时启用 ``MODE_3D``
-- 音调变化会影响播放速度（以及音高）
+- 音频路径是否正确。
+- 播放节点是否有 ``stream``。
+- 目标 :ref:`Bus<glossary-bus>` 是否存在，是否被静音。
+- 音量是否太低。
+- 3D 声音是否离 :ref:`Listener<glossary-listener>` 太远。
+
+声音只能播放一次
+~~~~~~~~~~~~~~~~
+
+如果同一个节点还在播放，再调用 ``play()`` 可能会重启这一次播放，而不是创建新的重叠声音。需要重叠播放时，可以创建多个播放器、使用对象池，或直接用 ``play_sound()`` 获取多个 :ref:`Channel<glossary-channel>`。
+
+大量声音时卡顿
+~~~~~~~~~~~~~~
+
+短音效可以优先用 Sample 方式或预加载；长音乐优先用 Stream 方式。两者的区别见 :ref:`Stream 与 Sample<glossary-stream-sample>`。
+
+同时播放很多声音时，也可以关注 :ref:`Virtual Channel<glossary-virtual-channel>`。FMOD 可能会让听不见或优先级低的声音进入虚拟状态，以减少混音开销。
+
+建议
+----
+
+- 入门先用播放节点，不要一开始就直接操作底层对象。
+- 需要控制“这一次播放”时，再拿 :ref:`Channel<glossary-channel>`。
+- 长音乐走 ``Music`` 总线，短音效走 ``SFX`` 总线。
+- 3D 声音优先用 :ref:`FmodAudioStreamPlayer3D<FmodAudioStreamPlayer3D>`。
+- 代码播放时，如果要先配置参数，就用暂停状态创建，再恢复播放。

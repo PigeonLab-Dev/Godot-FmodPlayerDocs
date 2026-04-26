@@ -401,12 +401,12 @@ void set_mix_levels_output(front_left: `float`_, front_right: `float`_, center: 
 
 .. _FmodChannelControl-set_mix_matrix:
 
-void set_mix_matrix(matrix: ``PackedFloat32Array``, outchannels: `int`_, inchannels: `int`_, inchannel_hop: `int`_ = 0)
+void set_mix_matrix(matrix: `PackedFloat32Array`_, outchannels: `int`_, inchannels: `int`_, inchannel_hop: `int`_ = 0)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 设置二维声像矩阵，将输入通道列映射到输出扬声器行。``matrix`` 的长度应至少覆盖 ``outchannels * inchannel_hop``，当 ``inchannel_hop`` 为 ``0`` 时使用 ``inchannels``。
 
-.. seealso:: 混音矩阵、上混音与下混音的说明和示例见 :ref:`mixer-mix-matrix`。
+.. seealso:: 混音矩阵、上混音与下混音的说明和示例见 :ref:`glossary-mix-matrix`。
 
 .. _FmodChannelControl-get_mix_matrix:
 

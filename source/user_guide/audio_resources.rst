@@ -1,296 +1,238 @@
 音频资源
 ========
 
-Godot-FmodPlayer 使用统一的 ``FmodAudioStream`` 资源类来管理音频数据，通过不同的 **创建模式标志（CreateMode）** 来适应不同的使用场景。
+本章讲“音频文件怎样变成可以播放的资源”。
 
-音频资源类型
+在 Godot-FmodPlayer 里，常用资源是 :ref:`FmodAudioStream<FmodAudioStream>`。你可以把它理解成 Godot 侧保存音频数据和播放设置的对象。真正播放时，它会在底层创建 :ref:`Sound<glossary-sound>`，再由播放器或系统播放成一次 :ref:`Channel<glossary-channel>`。
+
+先选加载方式
 ------------
+
+最重要的选择只有一个：长音频用 Stream，短音效用 Sample。
+
+.. list-table::
+  :header-rows: 1
+
+  * - 声音类型
+    - 推荐模式
+    - 原因
+  * - 背景音乐
+    - ``MODE_STREAM``
+    - 文件通常较大，边读边播更省内存
+  * - 长旁白、长环境声
+    - ``MODE_STREAM``
+    - 播放时间长，不适合全部放进内存
+  * - UI 声、按钮声
+    - ``MODE_SAMPLE``
+    - 文件短，追求快速响应
+  * - 武器、脚步、拾取音效
+    - ``MODE_SAMPLE``
+    - 可能频繁触发，低延迟更重要
+  * - 很短但只播放一次的声音
+    - 两者都可以
+    - 优先按项目内存和延迟需求决定
+
+这两个概念也可以看 :ref:`Stream 与 Sample<glossary-stream-sample>`。
 
 FmodAudioStream
-~~~~~~~~~~~~~~~
+---------------
 
-统一的音频资源类，支持流式和样本两种加载模式。
+**FmodAudioStream** 是最常用的音频资源类。它保存音频数据和创建模式，例如是否流式播放、是否作为样本加载、是否循环。
 
-**创建模式标志：**
-
-.. list-table::
-   :header-rows: 1
-
-   * - 标志
-     - 说明
-     - 适用场景
-   * - ``MODE_STREAM``
-     - 流式加载，数据按需从内存流式读取
-     - 背景音乐、长音频、环境音效
-   * - ``MODE_SAMPLE``
-     - 样本模式，数据完全加载到内存
-     - 音效、短音频、需要低延迟播放
-   * - ``MODE_LOOP``
-     - 循环播放标志
-     - 需要循环的音频
-   * - ``MODE_LOOP_BIDI``
-     - 双向循环（乒乓循环）
-     - 特殊循环效果
-
-**流式模式（MODE_STREAM）特点：**
-
-- 内存效率高（只缓存少量数据）
-- 适合长时间播放
-- 支持无缝循环
-- 可实时跳转播放位置
-
-**样本模式（MODE_SAMPLE）特点：**
-
-- 播放延迟极低
-- 适合频繁触发
-- 支持多实例同时播放
-- 内存占用与文件大小成正比
-
-加载模式对比
-------------
+常用创建模式
+~~~~~~~~~~~~
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 特性
-     - MODE_STREAM
-     - MODE_SAMPLE
-   * - 内存占用
-     - 低
-     - 高（完整文件）
-   * - 播放延迟
-     - 较高
-     - 极低
-   * - 适用场景
-     - 背景音乐、长音频
-     - 音效、短音频
-   * - 支持格式
-     - 所有 FMOD 格式
-     - 所有 FMOD 格式
-   * - 循环支持
-     - 是
-     - 是
+  * - 标志
+    - 说明
+  * - ``MODE_STREAM``
+    - 流式播放，适合音乐和长音频
+  * - ``MODE_SAMPLE``
+    - 样本播放，适合短音效和低延迟播放
+  * - ``MODE_LOOP``
+    - 循环播放
+  * - ``MODE_LOOP_BIDI``
+    - 双向循环，类似来回播放
 
-支持的音频格式
---------------
-
-.. list-table::
-   :header-rows: 1
-
-   * - 格式
-     - 扩展名
-     - 支持情况
-   * - MP3
-     - .mp3
-     - ✅
-   * - WAV
-     - .wav
-     - ✅
-   * - OGG Vorbis
-     - .ogg
-     - ✅
-   * - FLAC
-     - .flac
-     - ✅
-   * - MOD
-     - .mod
-     - ✅
-   * - XM
-     - .xm
-     - ✅
-   * - S3M
-     - .s3m
-     - ✅
-   * - IT
-     - .it
-     - ✅
-   * - MIDI
-     - .mid
-     - ✅
-   * - AIFF
-     - .aiff
-     - ✅
-
-资源加载方式
-------------
-
-从文件加载（推荐）
-~~~~~~~~~~~~~~~~~~
-
-使用静态方法 ``load_from_file()`` 从文件系统加载音频：
+这些标志可以用 ``|`` 组合：
 
 .. code-block:: gdscript
 
-    # Stream loading, suitable for background music by default.
-    var bgm_stream: FmodAudioStream = FmodAudioStream.load_from_file("res://music/background.mp3")
-    bgm_stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
-    
-    # Sample loading, suitable for sound effects.
-    var sfx_stream: FmodAudioStream = FmodAudioStream.load_from_file("res://sfx/explosion.wav",
-        FmodAudioStream.MODE_SAMPLE)
+    var flags := FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
+
+从文件加载
+----------
+
+推荐优先使用 ``res://`` 路径，这样导出项目时更容易保持一致。
+
+.. code-block:: gdscript
+
+    var music := FmodAudioStream.load_from_file(
+        "res://music/bgm.ogg",
+        FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
+    )
+
+    var hit := FmodAudioStream.load_from_file(
+        "res://sfx/hit.wav",
+        FmodAudioStream.MODE_SAMPLE
+    )
+
+加载后可以直接交给播放器：
+
+.. code-block:: gdscript
+
+    @onready var music_player := $FmodAudioStreamPlayer
+
+    func _ready():
+        music_player.stream = music
+        music_player.bus = "Music"
+        music_player.play()
 
 从内存加载
-~~~~~~~~~~
+----------
+
+如果音频来自加密包、网络、存档或你自己的加载流程，可以把二进制数据放进 ``audio_data``。
 
 .. code-block:: gdscript
 
-    # Load from PackedByteArray.
-    var audio_data: PackedByteArray = load_audio_from_somewhere()
-    
-    var stream = FmodAudioStream.new()
-    stream.audio_data = audio_data
-    stream.mode_flags = FmodAudioStream.MODE_SAMPLE
+    func load_from_bytes(data: PackedByteArray) -> FmodAudioStream:
+        var stream := FmodAudioStream.new()
+        stream.audio_data = data
+        stream.mode_flags = FmodAudioStream.MODE_SAMPLE
+        return stream
 
-资源属性
---------
+这种方式要注意：播放期间资源对象必须还活着。不要在声音还没播放完时把保存数据的对象释放掉。
 
-.. list-table::
-   :header-rows: 1
+预加载常用音效
+--------------
 
-   * - 属性
-     - 类型
-     - 说明
-   * - ``audio_data``
-     - PackedByteArray
-     - 原始音频数据（二进制）
-   * - ``mode_flags``
-     - int
-     - 创建模式标志组合
-   * - ``data_loaded``
-     - bool
-     - 数据是否已加载（只读）
-
-方法
-~~~~
-
-.. list-table::
-   :header-rows: 1
-
-   * - 方法
-     - 返回值
-     - 说明
-   * - ``get_sound()``
-     - FmodSound
-     - 获取 FMOD 声音对象（延迟创建）
-   * - ``get_length()``
-     - float
-     - 获取音频长度（秒）
-   * - ``clear()``
-     - void
-     - 清理音频数据和声音资源
-
-使用示例
---------
-
-背景音乐的流式播放
-~~~~~~~~~~~~~~~~~~
+短音效经常会反复播放。可以在场景开始时先加载好，之后直接复用。
 
 .. code-block:: gdscript
 
     extends Node
 
-    @onready var bgm_player = $BGMPlayer
-    var bgm_tracks: Array[FmodAudioStream] = []
-    var current_track: int = 0
+    var sfx := {}
 
     func _ready():
-        # Load the playlist in stream mode.
-        for i in range(3):
-            var stream = FmodAudioStream.load_from_file(
-                "res://music/track_%d.mp3" % i,
-                FmodAudioStream.MODE_STREAM)
-            bgm_tracks.append(stream)
-        
+        sfx["hit"] = FmodAudioStream.load_from_file(
+            "res://sfx/hit.wav",
+            FmodAudioStream.MODE_SAMPLE
+        )
+        sfx["pickup"] = FmodAudioStream.load_from_file(
+            "res://sfx/pickup.wav",
+            FmodAudioStream.MODE_SAMPLE
+        )
+
+    func play_sfx(name: String):
+        if not sfx.has(name):
+            push_error("SFX not found: " + name)
+            return
+
+        var player := FmodAudioStreamPlayer.new()
+        add_child(player)
+        player.stream = sfx[name]
+        player.bus = "SFX"
+        player.play()
+
+        await get_tree().create_timer(3.0).timeout
+        player.queue_free()
+
+如果你的项目会大量重叠播放短音效，可以进一步做播放器对象池。入门阶段先用上面的方式更容易理解。
+
+背景音乐播放列表
+----------------
+
+音乐通常用 ``MODE_STREAM``，需要循环时再加 ``MODE_LOOP``。
+
+.. code-block:: gdscript
+
+    extends Node
+
+    @onready var player := $FmodAudioStreamPlayer
+    var tracks: Array[FmodAudioStream] = []
+    var current_index := 0
+
+    func _ready():
+        tracks.append(FmodAudioStream.load_from_file(
+            "res://music/track_0.ogg",
+            FmodAudioStream.MODE_STREAM
+        ))
+        tracks.append(FmodAudioStream.load_from_file(
+            "res://music/track_1.ogg",
+            FmodAudioStream.MODE_STREAM
+        ))
+
         play_track(0)
 
     func play_track(index: int):
-        current_track = index
-        bgm_player.stream = bgm_tracks[index]
-        bgm_player.play()
-
-音效池管理
-~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    extends Node
-
-    var sfx_cache: Dictionary = {}
-
-    func preload_sfx(sfx_name: String, path: String):
-        # Load sound effects in sample mode.
-        var stream = FmodAudioStream.load_from_file(path, 
-            FmodAudioStream.MODE_SAMPLE)
-        sfx_cache[sfx_name] = stream
-
-    func play_sfx(sfx_name: String, bus: String = "SFX"):
-        if not sfx_cache.has(sfx_name):
-            push_error("SFX not found: " + sfx_name)
-            return
-        
-        # Play through an emitter.
-        var emitter = FmodAudioSampleEmitter.new()
-        add_child(emitter)
-        
-        emitter.stream = sfx_cache[sfx_name]
-        emitter.bus = bus
-        emitter.emit()
-        
-        # Release automatically after playback.
-        await get_tree().create_timer(5.0).timeout
-        emitter.queue_free()
-
-动态加载大文件
-~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    extends Node
-
-    @onready var player = $FmodAudioStreamPlayer
-
-    func load_and_play_large_file(path: String):
-        # Create a loading thread to avoid stutter.
-        var thread = Thread.new()
-        thread.start(func():
-            var stream = FmodAudioStream.load_from_file(path,
-                FmodAudioStream.MODE_STREAM)
-            
-            # Return to the main thread for updates.
-            call_deferred("_on_stream_loaded", stream)
-        )
-
-    func _on_stream_loaded(stream: FmodAudioStream):
-        player.stream = stream
+        current_index = index
+        player.stream = tracks[index]
+        player.bus = "Music"
         player.play()
 
-循环播放设置
-~~~~~~~~~~~~
+查询音频信息
+------------
+
+``FmodAudioStream`` 可以查询长度，也可以取得底层 :ref:`Sound<glossary-sound>`。
 
 .. code-block:: gdscript
 
-    extends Node
+    func print_stream_info(stream: FmodAudioStream):
+        print("loaded: ", stream.is_data_loaded())
+        print("length: ", stream.get_length())
 
-    func setup_looping_music():
-        var stream: FmodAudioStream = FmodAudioStream.load_from_file("res://music/loop.mp3")
-        stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
-        
-        $FmodAudioStreamPlayer.stream = stream
-        $FmodAudioStreamPlayer.play()
+        var sound := stream.get_sound()
+        if sound:
+            print("sound length: ", sound.get_length())
 
-最佳实践
+普通播放通常不需要直接操作 ``FmodSound``。只有在你需要更底层的信息、回调或特殊播放控制时，才去拿它。
+
+支持格式
 --------
 
-#. **背景音乐使用 MODE_STREAM** - 降低内存占用，支持大文件
-#. **音效使用 MODE_SAMPLE** - 确保低延迟播放
-#. **预加载常用资源** - 在游戏启动时加载常用音效
-#. **使用资源路径** - 优先使用 ``res://`` 路径，便于打包
-#. **注意文件格式** - OGG 适合音乐，WAV 适合短音效
+常见格式包括 ``.wav``、``.ogg``、``.mp3``、``.flac``、``.aiff``，以及部分模块音乐格式如 ``.mod``、``.xm``、``.s3m``、``.it``。
 
-注意事项
+实用建议：
+
+- 音乐优先考虑 ``ogg`` 或 ``mp3``。
+- 短音效优先考虑 ``wav``。
+- 需要无缝循环时，优先测试 ``ogg`` 或 ``wav`` 的循环点表现。
+- 特殊格式在导出前一定要在目标平台测试。
+
+常见问题
 --------
 
-- 流式音频在播放期间音频数据必须保持有效
-- 样本音频会占用与文件大小相等的内存
-- 某些格式（如 MIDI）可能需要额外配置
-- 移动设备上注意流式音频的内存占用
+音效第一次播放有延迟
+~~~~~~~~~~~~~~~~~~~~
+
+把短音效用 ``MODE_SAMPLE`` 加载，并在进入场景前预加载。
+
+音乐占用内存太高
+~~~~~~~~~~~~~~~~
+
+检查是否把音乐用了 ``MODE_SAMPLE``。长音乐一般应该使用 ``MODE_STREAM``。
+
+循环不生效
+~~~~~~~~~~
+
+确认创建模式里包含 ``MODE_LOOP``：
+
+.. code-block:: gdscript
+
+    stream.mode_flags = FmodAudioStream.MODE_STREAM | FmodAudioStream.MODE_LOOP
+
+打包后找不到文件
+~~~~~~~~~~~~~~~~
+
+优先使用 ``res://`` 路径，并确认音频文件被包含在 Godot 导出规则中。
+
+建议
+----
+
+- 长音乐、长环境声：``MODE_STREAM``。
+- 短音效、UI 声、频繁触发的声音：``MODE_SAMPLE``。
+- 常用短音效提前加载，避免第一次播放卡顿。
+- 能用播放节点时先用播放节点，需要底层控制时再碰 :ref:`Sound<glossary-sound>` 和 :ref:`Channel<glossary-channel>`。

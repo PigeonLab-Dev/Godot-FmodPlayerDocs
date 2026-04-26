@@ -1,430 +1,257 @@
 DSP 效果器
 ==========
 
-Godot-FmodPlayer 内置 16+ 种专业级 DSP（数字信号处理）效果器，用于实时音频处理。
+本章讲“怎样给声音加效果”。
 
-DSP 类型
---------
+:ref:`DSP<glossary-dsp>` 是音频效果处理单元。混响、滤波、延迟、压缩、频谱分析都可以看成 DSP。刚开始使用时，建议优先用 ``FmodAudioEffect*`` 这些资源类，把效果加到 :ref:`Bus<glossary-bus>` 上；只有需要非常底层的控制时，再直接操作 :ref:`FmodDSP<FmodDSP>`。
 
-效果器列表
-~~~~~~~~~~
+先决定加在哪里
+--------------
 
 .. list-table::
-   :header-rows: 1
+  :header-rows: 1
 
-   * - 效果器
-     - 类型常量
-     - 说明
-   * - 增益
-     - ``DSP_TYPE_AMPLIFY``
-     - 简单的音量放大/衰减
-   * - 6段均衡器
-     - ``DSP_TYPE_EQ6``
-     - 6段参数均衡器
-   * - 10段均衡器
-     - ``DSP_TYPE_EQ10``
-     - 10段参数均衡器
-   * - 21段均衡器
-     - ``DSP_TYPE_EQ21``
-     - 21段参数均衡器
-   * - 滤波器
-     - ``DSP_TYPE_FILTER``
-     - 低通/高通/带通/陷波滤波器
-   * - 混响
-     - ``DSP_TYPE_SFXREVERB``
-     - 房间混响效果
-   * - 延迟
-     - ``DSP_TYPE_DELAY``
-     - 回声和延迟线
-   * - 合唱
-     - ``DSP_TYPE_CHORUS``
-     - 立体声合唱效果
-   * - 失真
-     - ``DSP_TYPE_DISTORTION``
-     - 过驱动和失真
-   * - 移相器
-     - ``DSP_TYPE_PHASER``
-     - 相位偏移效果
-   * - 音高变换
-     - ``DSP_TYPE_PITCHSHIFT``
-     - 实时音高变换
-   * - 压缩器
-     - ``DSP_TYPE_COMPRESSOR``
-     - 动态范围压缩
-   * - 限制器
-     - ``DSP_TYPE_HARDLIMITER``
-     - 硬限制器/峰值限制
-   * - 声像器
-     - ``DSP_TYPE_PANNER``
-     - 立体声定位
-   * - 立体声增强
-     - ``DSP_TYPE_STEREOENHANCE``
-     - 立体声宽度控制
-   * - 频谱分析器
-     - ``DSP_TYPE_SPECTRUMANALYZER``
-     - 实时频率分析
-   * - 录音
-     - ``DSP_TYPE_RECORD``
-     - 音频录制到文件
+  * - 需求
+    - 推荐做法
+  * - 所有音乐一起加滤波
+    - 把效果加到 ``Music`` 总线
+  * - 所有环境声一起加混响
+    - 把效果加到 ``Ambient`` 总线
+  * - 只影响一次播放
+    - 拿到这次播放的 :ref:`Channel<glossary-channel>` 后添加 DSP
+  * - 只是调整左右位置
+    - 优先用 :ref:`FmodChannelControl.set_pan()<FmodChannelControl-set_pan>`，不需要单独加效果
+  * - 做频谱 UI
+    - 使用 ``FmodAudioEffectSpectrumAnalyzer``
 
-使用 DSP 效果器
----------------
+对多数项目来说，“效果加到总线”最容易维护。比如暂停菜单打开时，只要给 ``Music`` 总线加低通或降低音量，所有音乐都会一起变化。
 
-创建 DSP
-~~~~~~~~
+常用效果怎么选
+--------------
+
+.. list-table::
+  :header-rows: 1
+
+  * - 效果
+    - 类
+    - 常见用途
+  * - 增益
+    - :ref:`FmodAudioEffectAmplify<FmodAudioEffectAmplify>`
+    - 放大或衰减声音
+  * - 滤波器
+    - :ref:`FmodAudioEffectFilter<FmodAudioEffectFilter>`
+    - 水下、墙后、暂停菜单变闷
+  * - 均衡器
+    - :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>`
+    - 调整低频、中频、高频
+  * - 混响
+    - :ref:`FmodAudioEffectReverb<FmodAudioEffectReverb>`
+    - 房间、洞穴、走廊空间感
+  * - 延迟
+    - :ref:`FmodAudioEffectDelay<FmodAudioEffectDelay>`
+    - 回声、节奏延迟
+  * - 压缩器
+    - :ref:`FmodAudioEffectCompressor<FmodAudioEffectCompressor>`
+    - 控制动态范围，让声音更稳定
+  * - 频谱分析器
+    - :ref:`FmodAudioEffectSpectrumAnalyzer<FmodAudioEffectSpectrumAnalyzer>`
+    - 音乐可视化、频段检测
+  * - 录音
+    - :ref:`FmodAudioEffectRecord<FmodAudioEffectRecord>`
+    - 录制经过某条总线的声音
+
+给总线添加效果
+--------------
+
+下面示例给 ``Music`` 总线加一个低通滤波器。它会让音乐听起来更闷，适合暂停菜单、角色潜水、隔墙听声等场景。
 
 .. code-block:: gdscript
 
-    func create_dsp():
-        var system = FmodServer.main_system
-        
-        # Create a DSP by type.
-        var reverb = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)
-        
-        # Or create another DSP by type.
-        var delay = system.create_dsp_by_type(FmodDSP.DSP_TYPE_DELAY)
+    func add_pause_filter():
+        var layout := FmodServer.get_audio_bus_layout()
 
-添加到通道或总线
+        var filter := FmodAudioEffectFilter.new()
+        filter.cutoff_hz = 1200.0
+        filter.resonance = 0.2
+
+        layout.add_bus_effect("Music", filter)
+
+效果加到总线后，经过这条 :ref:`Bus<glossary-bus>` 的声音都会受影响。
+
+旁路效果
+--------
+
+如果只是临时关闭效果，优先用旁路，而不是反复创建和删除。
+
+.. code-block:: gdscript
+
+    func set_music_effects_enabled(enabled: bool):
+        var layout := FmodServer.get_audio_bus_layout()
+        layout.set_bus_bypass("Music", not enabled)
+
+旁路的意思是：信号仍然通过，但跳过这条总线上的效果处理。
+
+常用效果示例
+------------
+
+暂停菜单：音乐变闷
 ~~~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
 
-    func add_effects():
-        var system = FmodServer.main_system
-        
-        # Create a reverb DSP.
-        var reverb = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)
-        
-        # Add it to the master bus.
-        var master = system.get_master_channel_group()
-        master.add_dsp(0, reverb)  # Index 0 is the start of the signal chain.
-        
-        # Or add it to a specific channel.
-        var channel = play_some_sound()
-        channel.add_dsp(0, reverb)
+    var pause_filter := FmodAudioEffectFilter.new()
 
-控制 DSP 参数
-~~~~~~~~~~~~~
+    func _ready():
+        pause_filter.cutoff_hz = 1000.0
+        pause_filter.resonance = 0.1
+        FmodServer.get_audio_bus_layout().add_bus_effect("Music", pause_filter)
+        FmodServer.get_audio_bus_layout().set_bus_bypass("Music", true)
+
+    func set_paused_audio(paused: bool):
+        FmodServer.get_audio_bus_layout().set_bus_bypass("Music", not paused)
+
+房间混响：给环境声加空间感
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
 
-    func control_dsp(dsp: FmodDSP):
-        # Enable or disable.
-        dsp.set_active(true)
-        
-        # Bypass the effect while letting the signal pass through.
-        dsp.set_bypass(false)
-        
-        # Set parameters. Parameter indices and values depend on the DSP type.
-        dsp.set_parameter_float(0, 0.5)   # Float parameter
-        dsp.set_parameter_int(1, 44100)   # Integer parameter
-        dsp.set_parameter_bool(2, true)   # Boolean parameter
-        
-        # Get a parameter value.
-        var value = dsp.get_parameter_float(0)
-        
-        # Get parameter metadata.
-        var info = dsp.get_parameter_info(0)
-        print("Parameter name: %s" % info.name)
-        print("Min: %f, Max: %f" % [info.min, info.max])
+    func setup_room_reverb():
+        var reverb := FmodAudioEffectReverb.new()
+        reverb.room_size = 0.7
+        reverb.damping = 0.45
+        reverb.wet = 0.35
+        reverb.dry = 1.0
 
-从通道/总线移除 DSP
+        FmodServer.get_audio_bus_layout().add_bus_effect("Ambient", reverb)
+
+均衡器：削弱刺耳频段
 ~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
 
-    func remove_dsp():
-        var master = FmodServer.main_system.get_master_channel_group()
-        var dsp = master.get_dsp(0)  # Get the first DSP.
-        
-        if dsp:
-            master.remove_dsp(dsp)
-            dsp.release()  # Release DSP resources.
+    func soften_sfx():
+        var eq := FmodAudioEffectEQ10.new()
 
-常用效果器详解
---------------
+        # 降低较高频段，让音效不那么刺耳。
+        eq.set_band_gain_db(7, -3.0)
+        eq.set_band_gain_db(8, -4.0)
 
-混响（Reverb）
-~~~~~~~~~~~~~~
+        FmodServer.get_audio_bus_layout().add_bus_effect("SFX", eq)
+
+延迟：给特殊音效加回声
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
 
-    func setup_reverb():
-        var system = FmodServer.main_system
-        var reverb = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)
-        
-        # Parameters:
-        # 0 - Decay Time (0.0 ~ 20000.0 ms)
-        # 1 - Early Delay (0.0 ~ 300.0 ms)
-        # 2 - Late Delay (0.0 ~ 100.0 ms)
-        # 3 - HF Decay Ratio (0.0 ~ 100.0%)
-        # 4 - Diffusion (0.0 ~ 100.0%)
-        # 5 - Density (0.0 ~ 100.0%)
-        # 6 - Low Shelf Frequency (20.0 ~ 1000.0 Hz)
-        # 7 - Low Shelf Gain (-36.0 ~ 12.0 dB)
-        # 8 - High Cut (1000.0 ~ 20000.0 Hz)
-        # 9 - Early Late Mix (0.0 ~ 100.0%)
-        # 10 - Wet Level (-80.0 ~ 20.0 dB)
-        # 11 - Dry Level (-80.0 ~ 20.0 dB)
-        
-        # Small room settings.
-        reverb.set_parameter_float(0, 800.0)    # Short decay
-        reverb.set_parameter_float(1, 7.0)      # Short early delay
-        reverb.set_parameter_float(3, 50.0)     # Mid/high frequency decay
-        reverb.set_parameter_float(10, -6.0)    # Moderate reverb amount
-        
-        var master = system.get_master_channel_group()
-        master.add_dsp(0, reverb)
+    func add_echo_to_voice_bus():
+        var delay := FmodAudioEffectDelay.new()
+        delay.tap1_delay_ms = 180.0
+        delay.tap1_level_db = -8.0
+        delay.tap2_active = false
+        delay.feedback_active = true
+        delay.feedback_delay_ms = 260.0
+        delay.feedback_level_db = -12.0
 
-均衡器（EQ）
-~~~~~~~~~~~~
+        FmodServer.get_audio_bus_layout().add_bus_effect("Voice", delay)
+
+频谱分析：读取音乐能量
+~~~~~~~~~~~~~~~~~~~~~~
+
+``FmodAudioEffectSpectrumAnalyzer`` 不改变声音，它只是读取频谱数据。适合音乐可视化、根据低频驱动画面等。
 
 .. code-block:: gdscript
 
-    func setup_eq():
-        var system = FmodServer.main_system
-        var eq = system.create_dsp_by_type(FmodDSP.DSP_TYPE_EQ)
-        
-        # EQ parameters:
-        # Each band has three parameters: Frequency, Gain, Q.
-        # Three bands are supported by default.
-        
-        # Low frequency boost.
-        eq.set_parameter_float(0, 100.0)   # Frequency (Hz)
-        eq.set_parameter_float(1, 6.0)     # Gain (dB)
-        eq.set_parameter_float(2, 1.0)     # Q value
-        
-        # Mid frequency cut.
-        eq.set_parameter_float(3, 1000.0)  # Frequency
-        eq.set_parameter_float(4, -3.0)    # Gain
-        eq.set_parameter_float(5, 2.0)     # Q value
-        
-        # High frequency boost.
-        eq.set_parameter_float(6, 8000.0)  # Frequency
-        eq.set_parameter_float(7, 3.0)     # Gain
-        eq.set_parameter_float(8, 1.0)     # Q value
-        
-        var music_bus = system.get_channel_group_by_name("Music")
-        music_bus.add_dsp(0, eq)
-
-滤波器（Filter）
-~~~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    func setup_filter():
-        var system = FmodServer.main_system
-        var filter = system.create_dsp_by_type(FmodDSP.DSP_TYPE_FILTER)
-        
-        # Parameters:
-        # 0 - Type: 0=low-pass, 1=high-pass, 2=band-pass, 3=notch
-        # 1 - Frequency: cutoff frequency (1.0 ~ 22000.0 Hz)
-        # 2 - Q: resonance (0.0 ~ 100.0)
-        
-        # Low-pass filter for an underwater effect.
-        filter.set_parameter_int(0, 0)        # Low-pass
-        filter.set_parameter_float(1, 400.0)  # 400 Hz cutoff
-        filter.set_parameter_float(2, 1.0)    # Low resonance
-        
-        # Or use a high-pass filter for a telephone effect.
-        # filter.set_parameter_int(0, 1)        # High-pass
-        # filter.set_parameter_float(1, 800.0)  # 800 Hz cutoff
-
-延迟（Delay）
-~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    func setup_delay():
-        var system = FmodServer.main_system
-        var delay = system.create_dsp_by_type(FmodDSP.DSP_TYPE_DELAY)
-        
-        # Parameters:
-        # 0 - Delay: delay time (0.0 ~ 10000.0 ms)
-        # 1 - Feedback: feedback amount (0.0 ~ 100.0%)
-        # 2 - Mix: dry/wet mix (0.0 ~ 100.0%)
-        
-        # Echo effect.
-        delay.set_parameter_float(0, 375.0)   # 375 ms delay
-        delay.set_parameter_float(1, 40.0)    # 40% feedback
-        delay.set_parameter_float(2, 50.0)    # 50% mix
-
-失真（Distortion）
-~~~~~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    func setup_distortion():
-        var system = FmodServer.main_system
-        var distortion = system.create_dsp_by_type(FmodDSP.DSP_TYPE_DISTORTION)
-        
-        # Parameters:
-        # 0 - Level: distortion amount (0.0 ~ 1.0)
-        
-        distortion.set_parameter_float(0, 0.3)  # Light distortion
-
-音高变换（Pitch Shift）
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    func setup_pitch_shift():
-        var system = FmodServer.main_system
-        var pitch = system.create_dsp_by_type(FmodDSP.DSP_TYPE_PITCHSHIFT)
-        
-        # Parameters:
-        # 0 - Pitch: 0.5=one octave down, 1.0=normal, 2.0=one octave up
-        # 1 - FFT Size: 256, 512, 1024, 2048, 4096
-        # 2 - Max Channels
-        
-        # Pitch up for a chipmunk effect.
-        pitch.set_parameter_float(0, 1.5)
-        
-        # Pitch down.
-        # pitch.set_parameter_float(0, 0.75)
-
-频谱分析器（Spectrum Analyzer）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    extends Node
-
-    var spectrum_dsp: FmodDSP
-    var spectrum_data: Array[float] = []
+    var analyzer := FmodAudioEffectSpectrumAnalyzer.new()
 
     func _ready():
-        var system = FmodServer.main_system
-        spectrum_dsp = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SPECTRUMANALYZER)
-        
-        # Parameters:
-        # 0 - Window Type: 0=rectangular, 1=triangle, 2=Hamming, 3=Hanning, 4=Blackman
-        # 1 - Window Size: must be >= 64 and a power of two
-        
-        spectrum_dsp.set_parameter_int(0, 3)   # Hanning window
-        spectrum_dsp.set_parameter_int(1, 1024) # 1024-point FFT
-        
-        var master = system.get_master_channel_group()
-        master.add_dsp(0, spectrum_dsp)
+        analyzer.fft_size = FmodAudioEffectSpectrumAnalyzer.FFT_SIZE_2048
+        FmodServer.get_audio_bus_layout().add_bus_effect("Music", analyzer)
 
-    func _process(delta):
-        # Get spectrum data.
-        var data = spectrum_dsp.get_parameter_data(0)
-        # data contains amplitude values for each frequency band.
+    func _process(_delta):
+        analyzer.update_spectrum()
 
-效果器路由
-----------
+        var bass := analyzer.get_magnitude_for_frequency_range(
+            20.0,
+            250.0,
+            FmodAudioEffectSpectrumAnalyzer.MAGNITUDE_AVERAGE
+        )
 
-串联连接
-~~~~~~~~
+        print("bass energy: ", bass.length())
 
-信号依次通过多个效果器：
+录音：录下某条总线
+~~~~~~~~~~~~~~~~~~
+
+``FmodAudioEffectRecord`` 会让声音原样通过，同时在录制开启时缓存经过总线的音频。
 
 .. code-block:: gdscript
 
-    func chain_effects():
-        var system = FmodServer.main_system
-        var bus = system.get_master_channel_group()
-        
-        # Signal flow: input -> EQ -> Reverb -> output.
-        var eq = system.create_dsp_by_type(FmodDSP.DSP_TYPE_EQ)
-        var reverb = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)
-        
-        bus.add_dsp(0, eq)
-        bus.add_dsp(1, reverb)  # After the EQ.
+    var recorder := FmodAudioEffectRecord.new()
 
-并联连接
-~~~~~~~~
+    func _ready():
+        recorder.format = FmodAudioEffectRecord.FORMAT_16_BITS
+        FmodServer.get_audio_bus_layout().add_bus_effect("Master", recorder)
 
-使用 DSP 连接创建并行处理：
+    func start_recording():
+        recorder.recording_active = true
 
-.. code-block:: gdscript
+    func stop_recording() -> AudioStreamWAV:
+        recorder.recording_active = false
+        return recorder.get_recording()
 
-    func parallel_effects():
-        var system = FmodServer.main_system
-        
-        # Create a mix bus.
-        var wet_bus = system.create_channel_group("Wet")
-        var master = system.get_master_channel_group()
-        master.add_group(wet_bus)
-        
-        # Dry signal goes directly to the master bus.
-        # Wet signal goes through reverb before reaching the master bus.
-        var reverb = system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)
-        wet_bus.add_dsp(0, reverb)
-        
-        # Adjust the dry/wet balance.
-        wet_bus.set_volume_db(-6.0)  # Keep the wet signal slightly lower.
-
-动态效果器管理
---------------
-
-效果器预设
-~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    class_name ReverbPreset
-    extends RefCounted
-
-    const SMALL_ROOM = {
-        "decay": 800.0,
-        "early_delay": 7.0,
-        "late_delay": 11.0,
-        "hf_decay": 83.0,
-        "diffusion": 100.0,
-        "density": 100.0,
-        "wet_level": -6.0
-    }
-
-    const LARGE_HALL = {
-        "decay": 4000.0,
-        "early_delay": 20.0,
-        "late_delay": 30.0,
-        "hf_decay": 59.0,
-        "diffusion": 100.0,
-        "density": 100.0,
-        "wet_level": -3.0
-    }
-
-    static func apply(dsp: FmodDSP, preset: Dictionary):
-        dsp.set_parameter_float(0, preset["decay"])
-        dsp.set_parameter_float(1, preset["early_delay"])
-        dsp.set_parameter_float(2, preset["late_delay"])
-        dsp.set_parameter_float(3, preset["hf_decay"])
-        dsp.set_parameter_float(4, preset["diffusion"])
-        dsp.set_parameter_float(5, preset["density"])
-        dsp.set_parameter_float(10, preset["wet_level"])
-
-运行时切换效果
-~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    func switch_effect_area(area_name: String):
-        var system = FmodServer.main_system
-        var reverb = get_current_reverb_dsp()
-        
-        match area_name:
-            "small_room":
-                ReverbPreset.apply(reverb, ReverbPreset.SMALL_ROOM)
-            "cave":
-                ReverbPreset.apply(reverb, ReverbPreset.LARGE_HALL)
-            "outdoor":
-                reverb.set_active(false)  # No reverb outdoors.
-
-性能考虑
+效果顺序
 --------
 
-#. **DSP 消耗 CPU** - 每个激活的 DSP 都会增加 CPU 负担
-#. **使用旁通而非移除** - 临时禁用效果时使用 ``set_bypass(true)`` 比频繁添加/移除更高效
-#. **注意 FFT 大小** - 音高变换和频谱分析器的 FFT 大小影响延迟和 CPU 使用
-#. **复用 DSP** - 相同设置的效果器可以在多个通道间复用
+多个 :ref:`DSP<glossary-dsp>` 会组成 :ref:`DSP 链<glossary-dsp-chain>`。声音会按顺序经过它们，所以顺序会影响听感。
 
-最佳实践
+一个容易理解的默认顺序是：
+
+.. code-block:: text
+
+    均衡器 / 滤波器 -> 压缩器 -> 失真 -> 延迟 / 混响 -> 分析器 / 录音
+
+这不是硬规则。比如先失真再混响，和先混响再失真，听起来会很不一样。调效果时建议一次只改一个变量，边听边调。
+
+什么时候直接用 FmodDSP
+----------------------
+
+``FmodAudioEffect*`` 更适合用户指南里的常规用法；``FmodDSP`` 更接近底层 FMOD。
+
+只有在这些情况才建议直接用 :ref:`FmodDSP<FmodDSP>`：
+
+- 需要访问 FMOD 内置 DSP 的原始参数索引。
+- 需要手动插入某个 :ref:`Channel<glossary-channel>` 的 DSP 链。
+- 需要自定义 DSP 回调或做实验性处理。
+- 你已经知道对应 DSP 的参数含义和范围。
+
+一个最小示例：
+
+.. code-block:: gdscript
+
+    func add_low_level_reverb():
+        var system := FmodServer.main_system
+        var reverb := system.create_dsp_by_type(FmodDSP.DSP_TYPE_SFXREVERB)
+        var master := system.get_master_channel_group()
+
+        master.add_dsp(0, reverb)
+
+低层 DSP 参数通常是数字索引，不如 ``FmodAudioEffectReverb.room_size`` 这类属性直观。普通项目优先使用效果资源类。
+
+性能建议
 --------
 
-#. **效果顺序** - EQ -> 动态处理（压缩器）-> 空间效果（混响）
-#. **总线效果** - 将混响等效果放在总线上，多个通道共享
-#. **参数平滑** - 避免每帧大幅改变 DSP 参数，使用插值
-#. **资源管理** - 场景切换时记得释放不再使用的 DSP
+- 每个启用的 :ref:`DSP<glossary-dsp>` 都会增加 CPU 开销。
+- 多个声音共享同一种效果时，放到总线上通常更省。
+- 临时关闭效果时，用旁路比反复添加、移除更稳定。
+- 频谱分析和音高变换这类 FFT 效果更容易吃 CPU。
+- 不要每帧大幅跳变参数；需要变化时用插值或 Tween。
+
+排查清单
+--------
+
+效果没有声音变化时，先检查：
+
+- 声音是否真的输出到这条 :ref:`Bus<glossary-bus>`。
+- 总线是否被旁路。
+- 效果参数是否太轻，听不出来。
+- 效果是否加到了错误的总线。
+- 多个效果顺序是否和预期一致。

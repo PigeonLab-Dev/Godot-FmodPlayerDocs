@@ -1,33 +1,42 @@
 混音系统
 ========
 
-Godot-FmodPlayer 提供专业级的混音系统，支持音频总线、通道组和实时参数调整。
+本章讲的是“声音最后从哪里出来、怎样一起调音量、怎样一起加效果”。
+
+如果你刚开始使用 Godot-FmodPlayer，可以先把 :ref:`Bus<glossary-bus>` 理解成 Godot 的音频总线：音乐走 ``Music``，音效走 ``SFX``，对白走 ``Voice``。把声音分到不同总线后，就可以一次性控制一整类声音。
+
+什么时候需要混音系统
+--------------------
+
+常见需求可以这样对应：
+
+.. list-table::
+  :header-rows: 1
+
+  * - 你想做的事
+    - 推荐做法
+  * - 调低所有音乐
+    - 把音乐播放到 ``Music`` 总线，然后调这个总线的 ``volume_db``
+  * - 暂停时让音效静音
+    - 静音 ``SFX`` 总线
+  * - 对所有脚步声加滤波
+    - 建一个 ``Footsteps`` 总线，并把效果加到这个总线上
+  * - 对单个正在播放的声音微调
+    - 取得 :ref:`Channel<glossary-channel>`，只控制这一次播放
+  * - 对一组声音统一控制
+    - 使用 :ref:`Bus<glossary-bus>` 或它底层的 :ref:`ChannelGroup<glossary-channelgroup>`
 
 核心概念
 --------
 
-音频总线（Audio Bus）
-~~~~~~~~~~~~~~~~~~~~~
+Bus
+~~~
 
-音频总线是混音系统的基本单元，用于组织和控制一组音频通道。每个总线都有自己的音量、效果和路由设置。
+:ref:`Bus<glossary-bus>` 是一条混音路径。你可以把它想成一条“声音分类管道”。
 
-通道组（Channel Group）
-~~~~~~~~~~~~~~~~~~~~~~~~
+例如：
 
-通道组是 FMOD 底层的混音概念，``FmodAudioBus`` 对其进行了包装，提供更友好的接口。
-
-总线布局（Bus Layout）
-~~~~~~~~~~~~~~~~~~~~~~
-
-总线布局定义了项目中所有音频总线的结构，与 Godot 的 AudioServer 同步。
-
-使用音频总线
-------------
-
-默认总线结构
-~~~~~~~~~~~~
-
-插件初始化时会创建与 Godot AudioServer 同步的总线结构::
+.. code-block:: text
 
     Master
     ├── Music
@@ -35,433 +44,270 @@ Godot-FmodPlayer 提供专业级的混音系统，支持音频总线、通道组
     ├── Voice
     └── Ambient
 
-将声音路由到总线
-~~~~~~~~~~~~~~~~
+所有声音最后都会汇入 ``Master``。如果把背景音乐送到 ``Music``，把按钮音效送到 ``SFX``，以后就可以分别控制它们。
 
-.. code-block:: gdscript
-
-    extends Node
-
-    @onready var player = $FmodAudioStreamPlayer
-
-    func _ready():
-        # Option 1: Use the node property.
-        player.bus = "Music"
-
-    func play_on_bus():
-        # Option 2: Specify the bus when playing from code.
-        var system = FmodServer.main_system
-        var sfx_bus = system.get_channel_group_by_name("SFX")
-        
-        var sound = system.create_sound_from_file("res://sfx/hit.wav")
-        var channel = system.play_sound(sound, sfx_bus, false)
-
-控制总线参数
+ChannelGroup
 ~~~~~~~~~~~~
 
-.. code-block:: gdscript
+:ref:`ChannelGroup<glossary-channelgroup>` 是 FMOD 底层用于混合一组 :ref:`Channel<glossary-channel>` 的对象。普通使用时优先操作 :ref:`FmodAudioBus<FmodAudioBus>` 或总线布局；只有需要更底层的播放控制时，才直接拿 :ref:`FmodChannelGroup<FmodChannelGroup>`。
 
-    func control_bus():
-        var system = FmodServer.main_system
-        var music_bus = system.get_channel_group_by_name("Music")
-        
-        # Set volume in decibels.
-        music_bus.set_volume_db(-12.0)
-        
-        # Mute the bus.
-        music_bus.set_mute(true)
-        
-        # Solo this bus by muting other buses.
-        music_bus.set_solo(true)
-        
-        # Pause all channels under this bus.
-        music_bus.set_paused(true)
+DSP
+~~~
 
-自定义总线布局
+:ref:`DSP<glossary-dsp>` 是音频效果处理单元。混响、滤波、延迟、压缩、频谱分析都属于 DSP。多个声音要共享同一个效果时，通常把效果加到总线上，而不是给每个声音单独加。
+
+把声音送到总线
 --------------
 
-创建总线
-~~~~~~~~
-
-.. code-block:: gdscript
-
-    func create_custom_bus():
-        var layout = FmodServer.get_audio_bus_layout()
-        
-        # Create a new bus under Master.
-        var ui_bus = layout.create_audio_bus("UI", "Master")
-        
-        # Set the initial volume.
-        ui_bus.set_volume_db(-6.0)
-
-嵌套总线
-~~~~~~~~
-
-.. code-block:: gdscript
-
-    func create_nested_buses():
-        var layout = FmodServer.get_audio_bus_layout()
-        
-        # Create child buses under SFX.
-        var weapon_bus = layout.create_audio_bus("Weapons", "SFX")
-        var footstep_bus = layout.create_audio_bus("Footsteps", "SFX")
-        
-        # Create the hierarchy.
-        # Master -> SFX -> Weapons
-        #            -> Footsteps
-
-程序化总线管理
-~~~~~~~~~~~~~~
+最简单的方式是设置播放节点的 ``bus``：
 
 .. code-block:: gdscript
 
     extends Node
 
-    var bus_volumes: Dictionary = {}
+    @onready var music := $MusicPlayer
+    @onready var hit_sfx := $HitPlayer
 
     func _ready():
-        # Save original volumes.
-        save_bus_volumes()
+        music.bus = "Music"
+        hit_sfx.bus = "SFX"
 
-    func save_bus_volumes():
-        var system = FmodServer.main_system
-        var master = system.get_master_channel_group()
-        
-        # Iterate over all child buses.
-        var num_buses = master.get_num_groups()
-        for i in range(num_buses):
-            var bus = master.get_group(i)
-            bus_volumes[bus.get_name()] = bus.get_volume_db()
+    func play_music():
+        music.play()
 
-    func mute_all_except(bus_name: String):
-        var system = FmodServer.main_system
-        var master = system.get_master_channel_group()
-        
-        var num_buses = master.get_num_groups()
-        for i in range(num_buses):
-            var bus = master.get_group(i)
-            bus.set_mute(bus.get_name() != bus_name)
+    func play_hit():
+        hit_sfx.play()
 
-    func restore_all_buses():
-        var system = FmodServer.main_system
-        var master = system.get_master_channel_group()
-        
-        var num_buses = master.get_num_groups()
-        for i in range(num_buses):
-            var bus = master.get_group(i)
-            var name = bus.get_name()
-            if bus_volumes.has(name):
-                bus.set_volume_db(bus_volumes[name])
-            bus.set_mute(false)
-
-混音技术
---------
-
-.. _mixer-mix-matrix:
-
-混音矩阵、上混音与下混音
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-混音矩阵（Mix Matrix）用于控制 **输入声道** 如何分配到 **输出声道**。
-可以把它理解成一张权重表：每一列是一个输入声道，每一行是一个输出声道，表格中的数值表示
-“这个输入声道有多少信号送到这个输出声道”。
-
-以一个立体声输入送到立体声输出为例：
-
-.. figure:: ../_static/mix_matrix/stereo_identity.svg
-   :alt: 立体声输入原样输出到立体声输出的混音矩阵
-   :align: center
-   :width: 100%
-
-这个矩阵表示左声道只进左扬声器，右声道只进右扬声器。用更直观的形式写就是：
-
-.. code-block:: text
-
-    输出 L = 输入 L * 1.0 + 输入 R * 0.0
-    输出 R = 输入 L * 0.0 + 输入 R * 1.0
-
-上混音
-^^^^^^
-
-上混音（Upmix）是把较少的输入声道分配到更多输出声道。例如把单声道音效送到立体声输出，
-或者把立体声音乐送到 5.1 输出。
-
-最常见的单声道到立体声上混音，是把同一份单声道信号同时送到左右声道。听感上它会位于正中间。
-如果希望这个单声道声音偏左，可以降低右声道电平：
-
-.. figure:: ../_static/mix_matrix/mono_upmix_left_bias.svg
-   :alt: 单声道上混到偏左立体声输出的混音矩阵
-   :align: center
-   :width: 80%
-
-在 Godot-FmodPlayer 中，简单左右声像通常直接用
-:ref:`FmodChannelControl.set_pan()<FmodChannelControl-set_pan>` 更方便。
-只有在需要精确控制多声道分配时，才需要手动设置混音矩阵。
-
-下混音
-^^^^^^
-
-下混音（Downmix）是把较多的输入声道折叠到较少输出声道。例如把立体声转为单声道，
-或者把 5.1 输出到立体声设备。
-
-一个常见的立体声到单声道下混矩阵如下：
-
-.. figure:: ../_static/mix_matrix/stereo_downmix_mono.svg
-   :alt: 立体声下混到单声道的混音矩阵
-   :align: center
-   :width: 80%
-
-这表示左右声道各取一半相加：
-
-.. code-block:: text
-
-    输出 Mono = 输入 L * 0.5 + 输入 R * 0.5
-
-不要简单使用 ``1.0 + 1.0`` 做下混。两个满电平信号直接相加可能让输出超过正常范围，
-造成削波或听感上的突然变大。实际项目里可以从 ``0.5``、``0.707`` 或更保守的值开始，
-再根据素材响度和目标平台调整。
-
-5.1 到立体声的简化示例
-^^^^^^^^^^^^^^^^^^^^^^
-
-5.1 声道通常可以按以下顺序理解：
-
-.. code-block:: text
-
-    Front Left, Front Right, Center, LFE, Surround Left, Surround Right
-
-一个简化的 5.1 到立体声下混矩阵可以写成：
-
-.. figure:: ../_static/mix_matrix/surround_downmix_stereo.svg
-   :alt: 5.1 声道下混到立体声的混音矩阵
-   :align: center
-   :width: 100%
-
-这里的思路是：
-
-- 左前和右前分别进入对应的左右输出。
-- 中置声道同时进入左右输出，并降低到 ``0.707``，避免居中内容过响。
-- 左环绕进入左输出，右环绕进入右输出，也适当降低。
-- LFE 是低频效果声道，不一定适合直接混入普通立体声输出，是否加入要看项目需求。
-
-.. warning::
-
-   多声道下混没有唯一正确答案。不同平台、设备、耳机虚拟环绕、影院标准和游戏风格可能需要不同矩阵。
-   对关键内容做下混时，必须用实际目标设备听测。
-
-在代码中设置混音矩阵
-^^^^^^^^^^^^^^^^^^^^
-
-:ref:`FmodChannelControl.set_mix_matrix()<FmodChannelControl-set_mix_matrix>` 接收一个
-``PackedFloat32Array``，并指定输出声道数、输入声道数和输入声道步长。
-矩阵按“输出行优先”的方式书写：先写输出 0 接收各输入的权重，再写输出 1，以此类推。
-
-下面示例把立体声左右声道对调：
+如果你直接用代码播放 :ref:`Sound<glossary-sound>`，就把目标 :ref:`ChannelGroup<glossary-channelgroup>` 传给 ``play_sound()``：
 
 .. code-block:: gdscript
 
-    func swap_stereo(channel: FmodChannel) -> void:
-        var matrix := PackedFloat32Array([
-            0.0, 1.0, # Out L = In R
-            1.0, 0.0, # Out R = In L
-        ])
+    func play_ui_sound(path: String):
+        var system := FmodServer.main_system
+        var ui_bus := system.get_channel_group_by_name("UI")
+        var sound := system.create_sound_from_file(path)
+        return system.play_sound(sound, ui_bus, false)
 
-        channel.set_mix_matrix(matrix, 2, 2)
+控制总线音量、静音和独奏
+------------------------
 
-下面示例把单声道上混到立体声，并让声音偏左：
+音量通常用分贝（dB）表示：
 
-.. code-block:: gdscript
-
-    func mono_to_left_biased_stereo(channel: FmodChannel) -> void:
-        var matrix := PackedFloat32Array([
-            1.0,  # Out L = Mono * 1.0
-            0.35, # Out R = Mono * 0.35
-        ])
-
-        channel.set_mix_matrix(matrix, 2, 1)
-
-下面示例把立体声下混为单声道：
+- ``0.0`` 表示原始音量。
+- 负数表示变小，例如 ``-6.0``。
+- 正数表示变大，但要小心失真。
 
 .. code-block:: gdscript
 
-    func stereo_to_mono(channel: FmodChannel) -> void:
-        var matrix := PackedFloat32Array([
-            0.5, 0.5, # Out Mono = In L * 0.5 + In R * 0.5
-        ])
+    func set_music_quiet():
+        var system := FmodServer.main_system
+        var music := system.get_channel_group_by_name("Music")
 
-        channel.set_mix_matrix(matrix, 1, 2)
+        music.volume_db = -12.0
 
-如果你只是想调整单个播放实例的左右位置，优先使用
-:ref:`FmodChannelControl.set_pan()<FmodChannelControl-set_pan>`。
-如果你只是想整体调节输入或输出电平，可以先看
-:ref:`FmodChannelControl.set_mix_levels_input()<FmodChannelControl-set_mix_levels_input>` 和
-:ref:`FmodChannelControl.set_mix_levels_output()<FmodChannelControl-set_mix_levels_output>`。
-混音矩阵更适合处理多声道格式转换、特殊声道路由、左右声道互换、单声道偏置和调试音频资产等场景。
+    func mute_sfx(muted: bool):
+        var system := FmodServer.main_system
+        var sfx := system.get_channel_group_by_name("SFX")
+
+        sfx.mute = muted
+
+    func solo_voice(enabled: bool):
+        var system := FmodServer.main_system
+        var voice := system.get_channel_group_by_name("Voice")
+
+        voice.solo = enabled
+
+``mute`` 是让这条总线静音。``solo`` 是只听这条总线，常用于调试对白、环境声或音乐。
+
+和 Godot 音频总线同步
+---------------------
+
+Godot-FmodPlayer 的 FMOD 总线布局会和 Godot 的 `AudioServer`_ 总线布局同步。也就是说，你在 Godot 的音频总线面板里创建的 ``Music``、``SFX``、``Voice`` 等总线，也可以被映射到 FMOD 侧使用。
+
+通常情况下，你只需要通过 :ref:`FmodServer.get_audio_bus_layout()<FmodServer-get_audio_bus_layout>` 取得当前布局：
+
+.. code-block:: gdscript
+
+    func get_layout():
+        var layout := FmodServer.get_audio_bus_layout()
+        return layout
+
+如果你在运行时修改了 Godot 的音频总线结构，可以让 FMOD 侧按需同步：
+
+.. code-block:: gdscript
+
+    func sync_buses_from_godot():
+        var layout := FmodServer.get_audio_bus_layout()
+        layout.sync_from_audio_server_if_changed()
+
+同步会保留或创建 ``Master`` 总线，并根据 Godot 当前的总线结构更新 FMOD 侧的总线、父子关系、音量、静音、独奏、旁路状态和支持的音频效果。
+
+.. note::
+
+   如果项目的总线结构主要在 Godot 编辑器里维护，推荐优先通过 Godot 音频总线面板创建总线，再让 FMOD 布局同步。只有运行时需要临时总线，或者你明确希望由代码管理总线结构时，再手动调用 ``create_audio_bus()``。
+
+创建自己的总线
+--------------
+
+默认总线不够用时，可以通过 Godot 音频总线面板新增总线，然后同步到 FMOD。也可以直接通过 :ref:`FmodAudioBusLayout<FmodAudioBusLayout>` 在代码中创建新总线：
+
+.. code-block:: gdscript
+
+    func setup_extra_buses():
+        var layout := FmodServer.get_audio_bus_layout()
+
+        layout.create_audio_bus("UI", "Master")
+        layout.create_audio_bus("Weapons", "SFX")
+        layout.create_audio_bus("Footsteps", "SFX")
+
+建议总线层级先保持简单：
+
+.. code-block:: text
+
+    Master
+    ├── Music
+    ├── SFX
+    │   ├── Weapons
+    │   └── Footsteps
+    ├── Voice
+    └── UI
+
+如果不确定是否要新建总线，先问自己一句：以后是否要单独调它的音量、静音或效果？如果答案是“是”，就适合拆成总线。
+
+给总线添加效果
+--------------
+
+总线效果适合处理“一整类声音”。例如所有室内脚步声都变闷，或者暂停菜单打开时让音乐带一点低通。
+
+.. code-block:: gdscript
+
+    func add_pause_filter():
+        var layout := FmodServer.get_audio_bus_layout()
+
+        var filter := FmodAudioEffectFilter.new()
+        filter.cutoff_hz = 1200.0
+        filter.resonance = 0.2
+
+        layout.add_bus_effect("Music", filter)
+
+这里的滤波器就是一个 :ref:`DSP<glossary-dsp>`。如果只想影响某一次播放，不要加到总线上；去控制那一次播放返回的 :ref:`Channel<glossary-channel>` 会更合适。
 
 淡入淡出
-~~~~~~~~
+--------
+
+总线对象不是 Godot 节点，不能直接用 ``tween_property()`` 绑属性动画。可以用一个循环逐帧插值：
 
 .. code-block:: gdscript
 
     func fade_bus(bus_name: String, target_db: float, duration: float):
-        var system = FmodServer.main_system
-        var bus = system.get_channel_group_by_name(bus_name)
-        
-        var tween = create_tween()
-        tween.set_trans(Tween.TRANS_LINEAR)
-        tween.set_ease(Tween.EASE_IN_OUT)
-        
-        # Use a custom volume interpolation loop here.
-        # ChannelGroup cannot be tweened directly.
-        var start_db = bus.get_volume_db()
-        var elapsed = 0.0
-        
+        var system := FmodServer.main_system
+        var bus := system.get_channel_group_by_name(bus_name)
+        if bus == null:
+            return
+
+        var start_db := bus.get_volume_db()
+        var elapsed := 0.0
+
         while elapsed < duration:
             await get_tree().process_frame
             elapsed += get_process_delta_time()
-            var t = elapsed / duration
-            var current_db = lerp(start_db, target_db, t)
-            bus.set_volume_db(current_db)
 
-侧链压缩（Ducking）
-~~~~~~~~~~~~~~~~~~~~
+            var t := clampf(elapsed / duration, 0.0, 1.0)
+            bus.set_volume_db(lerpf(start_db, target_db, t))
 
-当语音播放时自动降低音乐音量：
+        bus.set_volume_db(target_db)
+
+常见用法是暂停时压低音乐：
 
 .. code-block:: gdscript
 
-    extends Node
+    func on_pause_changed(paused: bool):
+        if paused:
+            fade_bus("Music", -10.0, 0.25)
+        else:
+            fade_bus("Music", 0.0, 0.25)
 
-    @onready var voice_player = $VoicePlayer
-    var music_bus: FmodChannelGroup
-    var normal_music_db: float = 0.0
-    var ducked_music_db: float = -12.0
+降低音乐给对白让位
+------------------
 
-    func _ready():
-        var system = FmodServer.main_system
-        music_bus = system.get_channel_group_by_name("Music")
-        normal_music_db = music_bus.get_volume_db()
+这个效果常被叫作 ducking，意思是对白播放时先把音乐压低，播放结束后再恢复。
 
-    func play_voice(path: String):
-        # Duck the music.
-        duck_music(true)
-        
-        # Play the voice line.
-        var system = FmodServer.main_system
-        var voice_bus = system.get_channel_group_by_name("Voice")
-        var sound = system.create_sound_from_file(path)
-        var channel = system.play_sound(sound, voice_bus, false)
-        
-        # Wait until the voice line finishes.
-        while channel.is_playing():
+.. code-block:: gdscript
+
+    var normal_music_db := 0.0
+    var ducked_music_db := -12.0
+
+    func play_voice_line(path: String):
+        await fade_bus("Music", ducked_music_db, 0.2)
+
+        var system := FmodServer.main_system
+        var voice_bus := system.get_channel_group_by_name("Voice")
+        var sound := system.create_sound_from_file(path)
+        var channel := system.play_sound(sound, voice_bus, false)
+
+        while channel != null and channel.is_playing():
             await get_tree().process_frame
-        
-        # Restore the music volume.
-        duck_music(false)
 
-    func duck_music(duck: bool):
-        var target_db = ducked_music_db if duck else normal_music_db
-        fade_bus("Music", target_db, 0.3)
+        await fade_bus("Music", normal_music_db, 0.3)
 
-快照系统（Mix Snapshots）
-~~~~~~~~~~~~~~~~~~~~~~~~~
+这不是必须使用压缩器才能完成。对多数游戏来说，直接调低音乐总线已经足够清楚，也更容易理解和调试。
 
-保存和恢复混音状态：
+高级：混音矩阵什么时候需要看
+----------------------------
 
-.. code-block:: gdscript
+:ref:`Mix Matrix<glossary-mix-matrix>` 可以精确控制“哪个输入声道送到哪个输出声道”。如果你只是想让声音偏左或偏右，优先用 :ref:`FmodChannelControl.set_pan()<FmodChannelControl-set_pan>`。
 
-    class_name MixSnapshot
-    extends RefCounted
+只有在这些情况下，才建议继续研究 :ref:`FmodChannelControl.set_mix_matrix()<FmodChannelControl-set_mix_matrix>`：
 
-    var bus_volumes: Dictionary = {}
-    var bus_effects: Dictionary = {}
+- 要把单声道手动分配到多声道输出，也就是 :ref:`Upmix<glossary-upmix>`。
+- 要把 5.1 等多声道内容折叠成立体声，也就是 :ref:`Downmix<glossary-downmix>`。
+- 要交换左右声道或做特殊声道路由。
+- 要调试某个音频资产的声道顺序。
 
-    static func capture() -> MixSnapshot:
-        var snapshot = MixSnapshot.new()
-        var system = FmodServer.main_system
-        var master = system.get_master_channel_group()
-        
-        var num_buses = master.get_num_groups()
-        for i in range(num_buses):
-            var bus = master.get_group(i)
-            var name = bus.get_name()
-            snapshot.bus_volumes[name] = bus.get_volume_db()
-        
-        return snapshot
-
-    func apply(duration: float = 0.0):
-        var system = FmodServer.main_system
-        
-        for bus_name in bus_volumes:
-            var bus = system.get_channel_group_by_name(bus_name)
-            if bus:
-                if duration > 0:
-                    # Apply a tweened transition here.
-                    pass  # Implement fade interpolation.
-                else:
-                    bus.set_volume_db(bus_volumes[bus_name])
-
-# Usage example
-var gameplay_snapshot: MixSnapshot
-var pause_snapshot: MixSnapshot
-
-func _ready():
-    gameplay_snapshot = MixSnapshot.capture()
-    
-    # Create the mix state used while paused.
-    var system = FmodServer.main_system
-    var music = system.get_channel_group_by_name("Music")
-    var sfx = system.get_channel_group_by_name("SFX")
-    
-    music.set_volume_db(-6.0)
-    sfx.set_mute(true)
-    
-    pause_snapshot = MixSnapshot.capture()
-    
-    # Restore the gameplay state.
-    gameplay_snapshot.apply()
-
-func on_game_paused():
-    pause_snapshot.apply(0.5)  # 0.5 second transition
-
-func on_game_resumed():
-    gameplay_snapshot.apply(0.5)
-
-性能监控
---------
-
-使用 Godot Performance 监视器查看混音性能：
+一个最小示例：把立体声左右声道对调。
 
 .. code-block:: gdscript
 
-    func _process(delta):
-        # Get CPU usage.
-        var dsp_usage = Performance.get_monitor("FmodCPUUsage/DSP")
-        var stream_usage = Performance.get_monitor("FmodCPUUsage/Stream")
-        
-        # Get channel statistics.
-        var system = FmodServer.main_system
-        var channels = system.get_channels_playing()
-        
-        print("DSP: %.2f%% | Real channels: %d | Virtual: %d" % [
-            dsp_usage,
-            channels["real"],
-            channels["virtual"]
+    func swap_stereo(channel: FmodChannel):
+        var matrix := PackedFloat32Array([
+            0.0, 1.0,
+            1.0, 0.0,
         ])
 
-最佳实践
---------
+        channel.set_mix_matrix(matrix, 2, 2)
 
-#. **规划总线结构** - 在项目早期设计好总线层级
-#. **标准化命名** - 使用统一的命名规范（如 "Music", "SFX", "Voice"）
-#. **默认音量归一化** - 所有总线默认 0 dB，通过调整音频文件本身来平衡
-#. **使用快照管理状态** - 为不同游戏状态（游戏、暂停、菜单）创建混音快照
-#. **避免过多总线** - 总线过多会增加 CPU 开销，保持简洁的层级结构
+性能与排查
+----------
 
-注意事项
---------
+混音相关问题可以从三处开始看：
 
-- 总线布局与 Godot AudioServer 同步，修改一个会影响另一个
-- 通道组可以嵌套，但建议保持层级不要太深
-- 静音和独奏是独立的状态，可以同时设置
-- 3D 衰减在通道级别计算，在总线级别混合
+- 声音是否被送到了正确的 :ref:`Bus<glossary-bus>`。
+- 目标总线是否被静音、独奏或音量过低。
+- 是否有过多 :ref:`DSP<glossary-dsp>` 同时启用。
+
+可以在 Godot 性能监视器中查看 FMOD 注册的性能项：
+
+.. code-block:: gdscript
+
+    func _process(_delta):
+        var dsp_usage = Performance.get_monitor("FmodCPUUsage/DSP")
+        var stream_usage = Performance.get_monitor("FmodCPUUsage/Stream")
+        var channels = FmodServer.main_system.get_channels_playing()
+
+        print("DSP: %.2f%% | Stream: %.2f%% | Real: %d | Virtual: %d" % [
+            dsp_usage,
+            stream_usage,
+            channels["real"],
+            channels["virtual"],
+        ])
+
+这里的 ``Virtual`` 指 :ref:`Virtual Channel<glossary-virtual-channel>`。它不一定是错误，很多时候只是 FMOD 在帮你节省混音资源。
+
+建议
+----
+
+- 先用 ``Master``、``Music``、``SFX``、``Voice``、``UI`` 这样的简单结构。
+- 只有需要单独控制时才继续拆分总线。
+- 多个声音共享效果时，把 :ref:`DSP<glossary-dsp>` 加到总线上。
+- 单个声音的临时控制，优先使用播放返回的 :ref:`Channel<glossary-channel>`。
+- 不要一开始就设计很深的总线树；能听清、能维护，比“看起来专业”更重要。
