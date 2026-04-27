@@ -35,7 +35,7 @@ msgstr "Inherits: `Resource`_"
 #: ../../source/api_reference/audio.rst:11
 #: d8143bb6718240b2aa673120fd1386bf
 msgid "**表示用于 FMOD 播放的音频流的资源**"
-msgstr "**represents used for FMOD audio stream**."
+msgstr "**Resource representing an audio stream for FMOD playback.**"
 
 #: ../../source/api_reference/audio.rst:14
 #: ../../source/api_reference/audio.rst:197
@@ -49,15 +49,13 @@ msgstr "Description"
 #: ../../source/api_reference/audio.rst:16
 #: 103d0f4fdff34169b55960c0452ba12a
 msgid "FmodAudioStream 是一个资源，用于通过 FMOD 音频引擎播放音频数据。它支持从文件（包括 ``res://`` 路径）加载音频，并提供可配置的创建模式以进行流式或基于样本的播放"
-msgstr ""
-"FmodAudioStream, used for through FMOD audio audio data. file (``res://`` path) load audio, and provides can creation mode or."
+msgstr "FmodAudioStream is a resource for playing audio data through the FMOD audio engine. It supports loading audio from files, including ``res://`` paths, and provides configurable creation modes for streamed or sample-based playback."
 
 #: ../../source/api_reference/audio.rst:18
 #: 783020d169fd456d847f912796b1d7f0
 msgid ""
 "可以使用 :ref:`FmodAudioStreamPlayer<FmodAudioStreamPlayer>` 播放该流，也可以直接使用 FMOD 的通道系统。底层的 :ref:`FmodSound<FmodSound>` 对象会在首次通过 :ref:`get_sound()<FmodAudioStream-get_sound>` 请求时惰性创建"
-msgstr ""
-"Can :ref:`FmodAudioStreamPlayer<FmodAudioStreamPlayer>`, can FMOD channel. underlying :ref:`FmodSound<FmodSound>` object will in through :ref:`get_sound()<FmodAudioStream-get_sound>` when creates."
+msgstr "The stream can be played with :ref:`FmodAudioStreamPlayer<FmodAudioStreamPlayer>` or used directly with FMOD's channel system. The underlying :ref:`FmodSound<FmodSound>` object is created lazily the first time :ref:`get_sound()<FmodAudioStream-get_sound>` is requested."
 
 #: ../../source/api_reference/audio.rst:21
 #: 241409f1e2ed42fa925720200b3ddd77
@@ -135,8 +133,7 @@ msgstr "PackedByteArray()"
 #: cfc227a61864413ab4404eb7587f8c5e
 msgid ""
 "从文件加载的原始音频数据。通常由音频导入器或通过 :ref:`load_from_file()<FmodAudioStream-load_from_file>` 设置。数据存储在内存中，并在调用 :ref:`get_sound()<FmodAudioStream-get_sound>` 时用于创建 FMOD 声音对象"
-msgstr ""
-"File load audio data. usually audio importer or through :ref:`load_from_file()<FmodAudioStream-load_from_file>` sets. in memory, and in :ref:`get_sound()<FmodAudioStream-get_sound>` when used for creates FMOD sound object."
+msgstr "Raw audio data loaded from a file. This is usually set by the audio importer or by :ref:`load_from_file()<FmodAudioStream-load_from_file>`. The data is stored in memory and used to create the FMOD sound object when :ref:`get_sound()<FmodAudioStream-get_sound>` is called."
 
 #: ../../source/api_reference/audio.rst:34
 #: ../../source/api_reference/audio.rst:246
@@ -185,8 +182,7 @@ msgstr "1"
 #: cc83d2c6b81b412cb5f194afec3c32b0
 msgid ""
 "创建模式标志，用于确定音频的加载和播放方式。这是 :ref:`CreateMode<FmodAudioStream-CreateMode>` 值的位掩码。当这些标志被更改时，内部的 :ref:`FmodSound<FmodSound>` 会被释放，并将在下一次调用 :ref:`get_sound()<FmodAudioStream-get_sound>` 时使用新的标志重新创建"
-msgstr ""
-"Creates mode flags, used for audio load and. :ref:`CreateMode<FmodAudioStream-CreateMode>`. when, internal :ref:`FmodSound<FmodSound>` will releases, and in :ref:`get_sound()<FmodAudioStream-get_sound>` when creates."
+msgstr "Creation mode flags that determine how the audio is loaded and played. This is a bitmask of :ref:`CreateMode<FmodAudioStream-CreateMode>` values. When the flags change, the internal :ref:`FmodSound<FmodSound>` is released and recreated with the new flags on the next :ref:`get_sound()<FmodAudioStream-get_sound>` call."
 
 #: ../../source/api_reference/audio.rst:40
 #: ../../source/api_reference/audio.rst:204
@@ -225,9 +221,7 @@ msgstr "void set_mode_flags(flags: `int`_)"
 #: ../../source/api_reference/audio.rst:61
 #: 36a5ecb18af14f43b81d61bea0ee36f2
 msgid "设置创建 :ref:`FmodSound<FmodSound>` 时使用的模式标志。修改后会使已缓存的声音失效，下次 :ref:`get_sound()<FmodAudioStream-get_sound>` 会使用新标志重新创建。"
-msgstr ""
-"Sets creates :ref:`FmodSound<FmodSound>` when mode flags. after will cache sound, :ref:`get_sound()<FmodAudioStream-get_sound>` will creates."
-
+msgstr "Sets the mode flags used when creating the :ref:`FmodSound<FmodSound>`. Changing this invalidates the cached sound, and the next :ref:`get_sound()<FmodAudioStream-get_sound>` call recreates it with the new flags."
 #: ../../source/api_reference/audio.rst:66
 #: c5f4517861534f33a2da83db27e44158
 msgid "`int`_ get_mode_flags() const"
@@ -246,9 +240,7 @@ msgstr ":ref:`FmodSound<FmodSound>` get_sound()"
 #: ../../source/api_reference/audio.rst:75
 #: 7855a10518d74cc9a38da21b5b123e84
 msgid "返回此流的 **FmodSound** 对象，如有必要则创建它（懒创建）。声音会使用当前 ``mode_flags`` 创建。如果未加载音频数据或 FMOD 系统不可用，则返回空引用。"
-msgstr ""
-"Returns **FmodSound** object, creates (creates). sound will current ``mode_flags`` creates. if load audio data or FMOD can, returns reference."
-
+msgstr "Returns this stream's **FmodSound** object, creating it lazily if needed. The sound is created with the current ``mode_flags``. If no audio data is loaded or the FMOD system is unavailable, an empty reference is returned."
 #: ../../source/api_reference/audio.rst:80
 #: fb91cf042abf4b61ac3c96afdc30fe15
 msgid "`bool`_ preload()"
@@ -257,8 +249,7 @@ msgstr "`bool`_ preload()"
 #: ../../source/api_reference/audio.rst:82
 #: 255800929ad443c9bc13aeeb9b1affb2
 msgid "立即创建并缓存内部 :ref:`FmodSound<FmodSound>`，用于减少首次播放时的延迟。创建成功返回 ``true``。"
-msgstr "Creates and cache internal :ref:`FmodSound<FmodSound>`, used for when delay. creates successfully returns ``true``."
-
+msgstr "Immediately creates and caches the internal :ref:`FmodSound<FmodSound>` to reduce first-play latency. Returns ``true`` if creation succeeds."
 #: ../../source/api_reference/audio.rst:87
 #: 1534afdadd8c4339a6b77fb51f32565a
 msgid "`bool`_ is_preloaded() const"
@@ -277,7 +268,7 @@ msgstr "`float`_ get_length() const"
 #: ../../source/api_reference/audio.rst:96
 #: 48ae7bfcd40b4c78b769afd126f37734
 msgid "返回音频的长度（以秒为单位）。如果声音未创建或未加载任何数据，则返回 ``0.0``。"
-msgstr "Returns audio (as unit). if sound creates or load, returns ``0.0``."
+msgstr "Returns the audio length in seconds. If no sound has been created or no data has been loaded, returns ``0.0``."
 
 #: ../../source/api_reference/audio.rst:101
 #: f47f58c2e618408c8becffa94b1a37f0
@@ -297,7 +288,7 @@ msgstr ":ref:`FmodAudioStream<FmodAudioStream>` load_from_file(path: `String`_, 
 #: ../../source/api_reference/audio.rst:110
 #: b3094c0920f9469f97fc6eb36ab938a8
 msgid "从文件路径加载音频流。路径可以是 Godot 资源路径（例如 ``\"res://audio/music.mp3\"``）或绝对文件路径。"
-msgstr "File path load audio stream. path can Godot path (``\"res://audio/music.mp3\"``) or file path."
+msgstr "Loads an audio stream from a file path. The path can be a Godot resource path, such as ``\"res://audio/music.mp3\"``, or an absolute file path."
 
 #: ../../source/api_reference/audio.rst:112
 #: 622b3162bf8142fc87b2b7b1375c0eac
@@ -395,7 +386,7 @@ msgstr "MODE_STREAM"
 #: ../../source/api_reference/audio.rst:142
 #: ee0af30ed74544009defc32056b74dc2
 msgid "从内存中流式传输音频。音频数据是逐步读取的，而不是一次性完全解码。这可以减少大文件的内存使用，但在播放时可能会增加 CPU 开销"
-msgstr "Memory audio. audio data,. can file memory, in when can will CPU."
+msgstr "Streams audio from memory. Audio data is read progressively instead of being fully decoded at once. This can reduce memory usage for large files, but may increase CPU cost during playback."
 
 #: ../../source/api_reference/audio.rst:143
 #: 2cf8f218621344369684150ef81016c7
@@ -420,7 +411,7 @@ msgstr "2"
 #: ../../source/api_reference/audio.rst:145
 #: c9017c4c90c94efc8e6a8093baaa20de
 msgid "将整个音频文件作为样本加载到内存中。这可以实现更快的播放和更低的 CPU 使用率，但会消耗更多内存。最适合短音效使用"
-msgstr "Audio file as load to memory. can and CPU, will memory. suitable for."
+msgstr "Loads the entire audio file into memory as a sample. This can provide faster playback and lower CPU usage, but consumes more memory. Best for short sound effects."
 
 #: ../../source/api_reference/audio.rst:146
 #: 548c0910cf5d457d9ca14c8f35a4d1e1
@@ -445,7 +436,7 @@ msgstr "4"
 #: ../../source/api_reference/audio.rst:148
 #: dfbb3b61868e4941843432da6bb9500a
 msgid "启用正常循环播放。当音频播放到末尾时，它会回到开头重新播放"
-msgstr "Loop. audio to when, will to."
+msgstr "Enables normal looping. When playback reaches the end, it returns to the beginning and plays again."
 
 #: ../../source/api_reference/audio.rst:149
 #: fa9b9b47d11747f4a034dc1651f0d1d9
@@ -466,7 +457,7 @@ msgstr "8"
 #: ../../source/api_reference/audio.rst:151
 #: 33e86b445f7147b98e69807634647ee8
 msgid "启用双向（乒乓）循环播放。当音频播放到末尾时，它会向后播放到开始位置，然后再次向前播放，创建一个无缝的来回循环"
-msgstr "() loop. audio to when, will after to position, after before, creates loop."
+msgstr "Enables bidirectional (ping-pong) looping. When playback reaches the end, it plays backward to the start position, then forward again, creating a seamless back-and-forth loop."
 
 #: ../../source/api_reference/audio.rst:154
 #: d099057e21c7485186b4bbdbf164a0e4
@@ -580,7 +571,7 @@ msgstr "`bool`_ sound_is_valid() const"
 #: ../../source/api_reference/audio.rst:221
 #: d6b8b3b1c2ad457fa6a7fa257f8944bd
 msgid "如果声音实例已成功初始化并且音效可用，则返回 ``true``。这表示声音已准备好处理音频操作"
-msgstr "Returns ``true`` if sound instance successfully and can."
+msgstr "Returns ``true`` if the sound instance has been initialized successfully and is available. This means the sound is ready for audio operations."
 
 #: ../../source/api_reference/audio.rst:224
 #: ca99a68f47364b12a7a2a23c73cc43a2
@@ -680,12 +671,11 @@ msgstr "`float`_ get_length(time_unit: :ref:`FmodSystem.FmodTimeUnit<FmodTimeUni
 #: ../../source/api_reference/audio.rst:264
 #: f29d402fe9944f42886cbada04e69643
 msgid "返回指定时间单位的声音长度。当使用毫秒（ **FMOD_TIME_UNIT_MS** ）时，结果以秒为单位返回。对于其他单位如字节或 PCM 样本，则返回原始值"
-msgstr "Returns specified when unit sound. (**FMOD_TIME_UNIT_MS**) when, as unit returns. for unit or PCM, returns."
-
+msgstr "Returns the sound length in the specified time unit. When milliseconds (**FMOD_TIME_UNIT_MS**) are used, the result is returned in seconds. For other units such as bytes or PCM samples, the raw value is returned."
 #: ../../source/api_reference/audio.rst:266
 #: 2c1a28a0f0b945f1ae080440f8d5e87a
 msgid ":ref:`FmodSystem.FmodTimeUnit<FmodTimeUnit>` 获取可用的时间单位选项"
-msgstr ":ref:`FmodSystem.FmodTimeUnit<FmodTimeUnit>` gets can when unit."
+msgstr ":ref:`FmodSystem.FmodTimeUnit<FmodTimeUnit>` lists the available time unit options."
 
 #: ../../source/api_reference/audio.rst:271
 #: 1b02a50097534a90bd396cca0e98c6e6
@@ -730,8 +720,7 @@ msgstr "`Dictionary`_ get_tag(index: `int`_, name: `String`_ = \"\") const"
 #: ../../source/api_reference/audio.rst:295
 #: b6ca419e196344cb8543b051952888b7
 msgid "从声音中检索元数据标签。可以通过索引或名称检索标签。如果名称非空，它将搜索具有该名称的标签；否则，它将检索指定索引处的标签"
-msgstr "Sound label. can through index or name label. if name, name label; otherwise, specified index label."
-
+msgstr "Retrieves metadata tags from the sound. Tags can be retrieved by index or by name. If the name is not empty, a tag with that name is searched; otherwise, the tag at the specified index is returned."
 #: ../../source/api_reference/audio.rst:297
 #: 85d2da5635de4ad3a7d9226ae4c22813
 msgid "返回一个字典，包括："
@@ -823,7 +812,7 @@ msgstr "`bool`_"
 #: ../../source/api_reference/audio.rst:322
 #: 527a7ecdc031409593bf5fb242fd537d
 msgid "如果标签已更新（用于流式来源），则为 ``true``"
-msgstr "If label updates (used for), as ``true``"
+msgstr "``true`` if the tag has been updated, which is mainly used for streaming sources."
 
 #: ../../source/api_reference/audio.rst:325
 #: 5743b12ef1b44770affd81c69d263c3e
@@ -863,8 +852,7 @@ msgstr "percent_buffered"
 #: ../../source/api_reference/audio.rst:345
 #: 6fe689a17b074cbbaf77da568abb9b9f
 msgid "流式声音缓冲区填充的百分比"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Stream buffer fill percentage."
 #: ../../source/api_reference/audio.rst:346
 #: 397d244a981a43898b2f7393a2d609a0
 msgid "starving"
@@ -989,7 +977,7 @@ msgstr "Returns MOD/S3M/XM/IT/MIDI file channel volume, unit as."
 #: ../../source/api_reference/audio.rst:413
 #: 9be280dff26444fda57005cd39e4edf3
 msgid "这仅适用于模块音乐格式。使用 ``get_music_num_channels()`` 来获取可用通道的数量"
-msgstr "Used for. ``get_music_num_channels()`` gets can channel."
+msgstr "This only applies to module music formats. Use ``get_music_num_channels()`` to get the number of available channels."
 
 #: ../../source/api_reference/audio.rst:418
 #: b98f7ed595ed4d818cbb6fb31ec1ebb1
@@ -1029,8 +1017,7 @@ msgstr "`int`_ get_sync_point(index: `int`_) const"
 #: ../../source/api_reference/audio.rst:441
 #: 8fc35807c8a54874a91f9b6735788523
 msgid "返回指定索引处的同步点句柄。同步点是音频文件中的嵌入标记（例如，WAV 文件中的循环点或提示点）"
-msgstr "Returns specified index synchronizes handle. synchronizes audio file (, WAV file loop or)."
-
+msgstr "Returns the sync point handle at the specified index. Sync points are embedded markers in an audio file, such as loop points or cue points in a WAV file."
 #: ../../source/api_reference/audio.rst:443
 #: 4aab33681a8f4e5e86505887f4fb5736
 msgid "使用 ``get_sync_point_info()`` 获取返回的同步点句柄的信息"
@@ -1689,8 +1676,7 @@ msgstr "25"
 #: ../../source/api_reference/audio.rst:666
 #: b73d7f5c47e1434cb4179cba291a35c2
 msgid "支持的最大声音类型"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum supported sound type."
 #: ../../source/api_reference/audio.rst:671
 #: f105e8d1494d48eb98eb331f0c114068
 msgid "FmodSoundFormat"
@@ -1714,8 +1700,7 @@ msgstr "FMOD_SOUND_FORMAT_PCM8"
 #: ../../source/api_reference/audio.rst:684
 #: 11a90b9f30314a77bb1927488cdc4143
 msgid "8位整数PCM数据"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "8-bit integer PCM data."
 #: ../../source/api_reference/audio.rst:685
 #: 5aae3aeb90e34d22b65e7f950c09f49d
 msgid "FMOD_SOUND_FORMAT_PCM16"
@@ -1724,8 +1709,7 @@ msgstr "FMOD_SOUND_FORMAT_PCM16"
 #: ../../source/api_reference/audio.rst:687
 #: f50f382025ac4f63b7e2480b08235adf
 msgid "16位整数PCM数据"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "16-bit integer PCM data."
 #: ../../source/api_reference/audio.rst:688
 #: be65b0775651498f9b1eb694a01a8b37
 msgid "FMOD_SOUND_FORMAT_PCM24"
@@ -1734,8 +1718,7 @@ msgstr "FMOD_SOUND_FORMAT_PCM24"
 #: ../../source/api_reference/audio.rst:690
 #: 4a87e2b6bafe4fac9c0071ce8eca0425
 msgid "24位整数PCM数据"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "24-bit integer PCM data."
 #: ../../source/api_reference/audio.rst:691
 #: 7d7dcb3ee07245d3bca089fef3cf91ed
 msgid "FMOD_SOUND_FORMAT_PCM32"
@@ -1744,8 +1727,7 @@ msgstr "FMOD_SOUND_FORMAT_PCM32"
 #: ../../source/api_reference/audio.rst:693
 #: ac0aec226a634476a230d2e434aab3d7
 msgid "32位整数PCM数据"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "32-bit integer PCM data."
 #: ../../source/api_reference/audio.rst:694
 #: 66eccdccf02b4945b15144ae667f1387
 msgid "FMOD_SOUND_FORMAT_PCMFLOAT"
@@ -1754,8 +1736,7 @@ msgstr "FMOD_SOUND_FORMAT_PCMFLOAT"
 #: ../../source/api_reference/audio.rst:696
 #: 08526574071641bb9742c570d93daa27
 msgid "32位浮点PCM数据"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "32-bit floating-point PCM data."
 #: ../../source/api_reference/audio.rst:697
 #: 5ef68d80adb948d2b824b66bef512767
 msgid "FMOD_SOUND_FORMAT_BITSTREAM"
@@ -1774,8 +1755,7 @@ msgstr "FMOD_SOUND_FORMAT_MAX"
 #: ../../source/api_reference/audio.rst:702
 #: 1e8fe4b524e146f1a336a892eba9a8b0
 msgid "支持的最大声音格式"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum supported sound format."
 #: ../../source/api_reference/audio.rst:707
 #: ca7b67f0eede42e0bf090da8a8a3a8b9
 msgid "FmodTagType"
@@ -1829,8 +1809,7 @@ msgstr "FMOD_TAG_TYPE_SHOUTCAST"
 #: ../../source/api_reference/audio.rst:729
 #: 491513832cdb49f488604bc1bdabe958
 msgid "SHOUTcast 互联网流元数据"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "SHOUTcast internet stream metadata."
 #: ../../source/api_reference/audio.rst:730
 #: 0fbf6793bd05487f9df31c1ce5cb9ead
 msgid "FMOD_TAG_TYPE_ICECAST"
@@ -1869,7 +1848,7 @@ msgstr "FMOD_TAG_TYPE_PLAYLIST"
 #: ../../source/api_reference/audio.rst:741
 #: b64d7a30e4d44972b24b14736739af0e
 msgid "播放列表文件如PLS、M3U、ASX和WAX会通过该标签类型填充播放列表信息"
-msgstr "File PLS, M3U, ASX and WAX will through label."
+msgstr "Playlist files such as PLS, M3U, ASX, and WAX use this tag type to provide playlist information."
 
 #: ../../source/api_reference/audio.rst:742
 #: db5dce6fb7314edcb8c1d57fdb38722b
@@ -1901,8 +1880,7 @@ msgstr "FMOD_TAG_TYPE_MAX"
 #: ../../source/api_reference/audio.rst:750
 #: eed4552ffcec4481ac0d0c4028bc0670
 msgid "支持的最大标签类型数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum supported tag type count."
 #: ../../source/api_reference/audio.rst:755
 #: cdc7a43b5ee64adf8c28615e207f4699
 msgid "FmodTagDataType"
@@ -1946,8 +1924,7 @@ msgstr "FMOD_TAG_DATA_TYPE_STRING"
 #: ../../source/api_reference/audio.rst:774
 #: 91526c0cb62643afb241ae3023cefb09
 msgid "8位ASCII字元字符串"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "8-bit ASCII character string."
 #: ../../source/api_reference/audio.rst:775
 #: a3b896b8541749e495864685894925e7
 msgid "FMOD_TAG_DATA_TYPE_STRING_UTF16"
@@ -1956,8 +1933,7 @@ msgstr "FMOD_TAG_DATA_TYPE_STRING_UTF16"
 #: ../../source/api_reference/audio.rst:777
 #: bb3d3d2d44554cf5aa82a891e8e1b7fd
 msgid "16位UTF字符串"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "16-bit UTF string."
 #: ../../source/api_reference/audio.rst:778
 #: f64917b3a1e849319fe7a29c2dbbd214
 msgid "FMOD_TAG_DATA_TYPE_STRING_UTF16BE"
@@ -1966,8 +1942,7 @@ msgstr "FMOD_TAG_DATA_TYPE_STRING_UTF16BE"
 #: ../../source/api_reference/audio.rst:780
 #: b8481ad7118f4916afed33c7bd793f30
 msgid "16位UTF字符串大端序字节序"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "16-bit UTF string, big-endian byte order."
 #: ../../source/api_reference/audio.rst:781
 #: 0eec22ca3e1448c9911a585e0e98b9b7
 msgid "FMOD_TAG_DATA_TYPE_STRING_UTF8"
@@ -1986,8 +1961,7 @@ msgstr "FMOD_TAG_DATA_TYPE_MAX"
 #: ../../source/api_reference/audio.rst:786
 #: 9dc4fa6c94734220a30d7b8244a956d7
 msgid "支持的最大标签数据类型数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum supported tag data type count."
 #: ../../source/api_reference/audio.rst:791
 #: 2320cc471588426693c0a9fb13b72425
 msgid "FmodOpenState"
@@ -2061,8 +2035,7 @@ msgstr "FMOD_OPEN_STATE_PLAYING"
 #: ../../source/api_reference/audio.rst:819
 #: 68d6d1150372466fb8caa94176a12098
 msgid "已经准备好并可以播放，但目前无法释放，否则主线会停滞"
-msgstr "And can, before releases, otherwise will."
-
+msgstr "Ready for playback, but cannot be released yet without stalling the main thread."
 #: ../../source/api_reference/audio.rst:820
 #: 16c1ba6f881a458485f946cb3877d869
 msgid "FMOD_OPEN_STATE_SETPOSITION"
@@ -2081,8 +2054,7 @@ msgstr "FMOD_OPEN_STATE_MAX"
 #: ../../source/api_reference/audio.rst:825
 #: d85ffa682bb84bf09bca56a59a243be9
 msgid "开放状态类型的最大数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum open state type count."
 #: ../../source/api_reference/audio.rst:830
 #: b04bdc44c61c4fa59ed13b3c0bb433f5
 msgid "FmodSoundLock"
@@ -2111,8 +2083,7 @@ msgstr "In after, ``unlock()``, or RAII (object)."
 #: ../../source/api_reference/audio.rst:845
 #: a6c83c90f8cb4dfd954c6fb0add26f2e
 msgid "锁定声音可能代价较大，因为它会阻塞混音线程。请尽量少用且仅用于短时间"
-msgstr "Sound can, as will mixing. used for when."
-
+msgstr "Locking a sound can be expensive because it blocks the mixer thread. Use it sparingly and only for short periods."
 #: ../../source/api_reference/audio.rst:853
 #: 2952a0f33a124ae1b5096e58a79e854a
 msgid "`PackedByteArray`_ get_data1() const"

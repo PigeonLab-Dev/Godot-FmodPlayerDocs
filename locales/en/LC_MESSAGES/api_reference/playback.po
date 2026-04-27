@@ -60,7 +60,7 @@ msgstr ""
 #: ../../source/api_reference/playback.rst:18
 #: 404745abd3874622991157114e4e76ef
 msgid "该类主要作为基类使用，通常通过 :ref:`FmodChannel<FmodChannel>` 或 :ref:`FmodChannelGroup<FmodChannelGroup>` 获取实例。"
-msgstr "As, usually through :ref:`FmodChannel<FmodChannel>` or :ref:`FmodChannelGroup<FmodChannelGroup>` gets instance."
+msgstr "This class is mainly used as a base class. Instances are usually obtained through :ref:`FmodChannel<FmodChannel>` or :ref:`FmodChannelGroup<FmodChannelGroup>`."
 
 #: ../../source/api_reference/playback.rst:21
 #: ../../source/api_reference/playback.rst:822
@@ -208,8 +208,7 @@ msgstr "volume_ramp"
 #: ../../source/api_reference/playback.rst:45
 #: ff58f7cb83294649814ad20f435fd572
 msgid "音量变化是否使用平滑斜坡"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Whether volume changes use a smooth ramp."
 #: ../../source/api_reference/playback.rst:47
 #: 3037fbfdb26c4b3baa06bfe873cbfce1
 msgid "mute"
@@ -362,7 +361,7 @@ msgstr "`bool`_ channel_control_is_null() const"
 #: ../../source/api_reference/playback.rst:108
 #: 316e096ce072475ebeb926d16de04daf
 msgid "如果底层 FMOD::ChannelControl 句柄为空或不可用，则返回 ``true``。"
-msgstr "Returns ``true`` if underlying FMOD::ChannelControl handle as or can."
+msgstr "Returns ``true`` if the underlying FMOD::ChannelControl handle is null or unavailable."
 
 #: ../../source/api_reference/playback.rst:111
 #: c4c7da079bba4a4eba0f64e8f06e14ed
@@ -419,7 +418,7 @@ msgstr "void set_mode(mode: :ref:`FmodMode<FmodMode>`)"
 #: ../../source/api_reference/playback.rst:146
 #: c10587ce7d164be1bfbefb4041e84212
 msgid "设置 FMOD 播放模式标志，用于控制循环、2D/3D、距离衰减等行为。"
-msgstr "Sets FMOD mode flags, used for controls loop, 2D/3D, distance attenuation as."
+msgstr "Sets FMOD playback mode flags for behavior such as looping, 2D/3D mode, and distance attenuation."
 
 #: ../../source/api_reference/playback.rst:151
 #: 03dcf55cfc3b4f98b543e8a711b3e578
@@ -541,8 +540,7 @@ msgstr "void set_3d_attributes(pos: `Vector3`_, vel: `Vector3`_)"
 #: ../../source/api_reference/playback.rst:229
 #: f8d7d93b5722442b9b99c798eb707312
 msgid "设置 3D 位置和速度，用于平移、距离衰减和多普勒计算。"
-msgstr "Sets 3D position and velocity, used for, distance attenuation and Doppler calculates."
-
+msgstr "Sets the 3D position and velocity used for panning, distance attenuation, and Doppler calculation."
 #: ../../source/api_reference/playback.rst:234
 #: 5fa699bff46a453c8f6083d36c59ffe8
 msgid "`Dictionary`_ get_3d_attributes() const"
@@ -830,8 +828,7 @@ msgstr "void set_reverb_properties(instance: `int`_, wet: `float`_)"
 #: ../../source/api_reference/playback.rst:426
 #: 79a63e34b29e493185fccacbd6803cce
 msgid "设置指定全局混响实例的发送电平。"
-msgstr "Sets specified reverb instance."
-
+msgstr "Sets the send level for the specified global reverb instance."
 #: ../../source/api_reference/playback.rst:431
 #: 4a2f4a77937f4ec3905b301b65848469
 msgid "`float`_ get_reverb_properties(instance: `int`_) const"
@@ -840,8 +837,7 @@ msgstr "`float`_ get_reverb_properties(instance: `int`_) const"
 #: ../../source/api_reference/playback.rst:433
 #: ed58eed865bb41e78e5fe225722aa0a3
 msgid "返回指定全局混响实例的发送电平。"
-msgstr "Returns specified reverb instance."
-
+msgstr "Returns the send level for the specified global reverb instance."
 #: ../../source/api_reference/playback.rst:438
 #: 5f32899014ab465e8af1029c67ef1a3b
 msgid "void set_low_pass_gain(gain: `float`_)"
@@ -915,8 +911,7 @@ msgstr "void set_dsp_index(dsp: :ref:`FmodDSP<FmodDSP>`, index: `int`_)"
 #: ../../source/api_reference/playback.rst:485
 #: 2e849a7ab19949839a766635a518b27a
 msgid "设置指定 DSP 单元在 DSP 链中的索引。"
-msgstr "Sets specified DSP in DSP index."
-
+msgstr "Sets the index of the specified DSP unit in the DSP chain."
 #: ../../source/api_reference/playback.rst:490
 #: e6b48200530c4dabb0ad2892fc68c68f
 msgid "`int`_ get_dsp_index(dsp: :ref:`FmodDSP<FmodDSP>`) const"
@@ -925,8 +920,7 @@ msgstr "`int`_ get_dsp_index(dsp: :ref:`FmodDSP<FmodDSP>`) const"
 #: ../../source/api_reference/playback.rst:492
 #: d1feda23562e46b3beada6e7592abe6d
 msgid "返回指定 DSP 单元在 DSP 链中的索引。"
-msgstr "Returns specified DSP in DSP index."
-
+msgstr "Returns the index of the specified DSP unit in the DSP chain."
 #: ../../source/api_reference/playback.rst:495
 #: 82f0fb93de4645c58d76d1d0b0af855d
 msgid "样本精准排程"
@@ -1069,7 +1063,7 @@ msgstr "`bool`_ channel_is_null() const"
 #: ../../source/api_reference/playback.rst:595
 #: 0a02772da2bc4605bb57cf6445b58c35
 msgid "如果底层 FMOD::Channel 句柄为空或不可用，则返回 ``true``。"
-msgstr "Returns ``true`` if underlying FMOD::Channel handle as or can."
+msgstr "Returns ``true`` if the underlying FMOD::Channel handle is null or unavailable."
 
 #: ../../source/api_reference/playback.rst:598
 #: 6de8a2ba51684232a832215903cb65de
@@ -1199,8 +1193,7 @@ msgstr "Returns loop, ``start`` and ``end``."
 #: ../../source/api_reference/playback.rst:685
 #: 67f44a25ee464462b5da49f44313d671
 msgid "状态与信息"
-msgstr "State and."
-
+msgstr "State and Information"
 #: ../../source/api_reference/playback.rst:690
 #: 09ae3a32bbb3495980164e0bf4cac87b
 msgid "`bool`_ is_virtual() const"
@@ -1239,15 +1232,13 @@ msgstr "FmodChannelGroup"
 #: ../../source/api_reference/playback.rst:715
 #: 6abc0df7868648848cb8598c0dd3bf2a
 msgid "**用于组织和混合多个 Channel 的通道组**"
-msgstr "**used for and Channel channel group**."
+msgstr "**Channel group for organizing and mixing multiple Channels.**"
 
 #: ../../source/api_reference/playback.rst:720
 #: bf6920b447b041e1bca5911958d2fdc2
 msgid ""
 "**FmodChannelGroup** 表示 FMOD 的 ChannelGroup，可作为多个 Channel 或子 ChannelGroup 的输入目标。它继承通用的播放、音量、DSP 和调度控制能力，适合用于分组混音、总线式控制和批量停止声音。"
-msgstr ""
-"**FmodChannelGroup** represents FMOD ChannelGroup, can as Channel or ChannelGroup input., volume, DSP and controls, suitable for used for mixing, bus controls and stop sound."
-
+msgstr "**FmodChannelGroup** represents an FMOD ChannelGroup that can act as the input target for multiple Channels or child ChannelGroups. It inherits common playback, volume, DSP, and scheduling controls, making it suitable for grouped mixing, bus-style control, and stopping groups of sounds."
 #: ../../source/api_reference/playback.rst:731
 #: 5b8c2ef443ff4014bd8845da696ed046
 msgid "`bool`_ channel_group_is_valid() const"
@@ -1266,7 +1257,7 @@ msgstr "`bool`_ channel_group_is_null() const"
 #: ../../source/api_reference/playback.rst:740
 #: da3da638805f4f55ae8f1d067bd308c9
 msgid "如果底层 FMOD::ChannelGroup 句柄为空或不可用，则返回 ``true``。"
-msgstr "Returns ``true`` if underlying FMOD::ChannelGroup handle as or can."
+msgstr "Returns ``true`` if the underlying FMOD::ChannelGroup handle is null or unavailable."
 
 #: ../../source/api_reference/playback.rst:743
 #: fa573265d3b94e3587a24e5fbf072e48
@@ -1291,8 +1282,7 @@ msgstr ":ref:`FmodChannel<FmodChannel>` get_channel(index: `int`_) const"
 #: ../../source/api_reference/playback.rst:757
 #: 7bcd5dcb1f2d411996f57deedaf6794b
 msgid "返回指定索引处的 Channel。"
-msgstr "Returns specified index Channel."
-
+msgstr "Returns the Channel at the specified index."
 #: ../../source/api_reference/playback.rst:760
 #: b7aa3074d3644459bb6949ba0b34a2b2
 msgid "ChannelGroup 管理"
@@ -1382,8 +1372,7 @@ msgstr "**used for and manages FmodSound as object**."
 #: ../../source/api_reference/playback.rst:819
 #: 79d0524ddb1a4c03b500c7d911005bcc
 msgid "**FmodSoundGroup** 封装 FMOD::SoundGroup，可为一组声音设置最大同时可听数量、超出限制时的处理策略、静音淡出速度和整体音量。"
-msgstr "**FmodSoundGroup** wraps FMOD::SoundGroup, can as sound sets when can, when, mute velocity and volume."
-
+msgstr "**FmodSoundGroup** wraps FMOD::SoundGroup and lets a group of sounds share a maximum audible count, overflow behavior, mute fade speed, and overall volume."
 #: ../../source/api_reference/playback.rst:831
 #: 1fda615fdf7a458cb18e4c3d7bbcdb71
 msgid "`int`_"
@@ -1402,8 +1391,7 @@ msgstr "-1"
 #: ../../source/api_reference/playback.rst:834
 #: 25e0a7c6c17d483aba3249c06cc6ae52
 msgid "同时可听到的最大播放数量"
-msgstr "When can to."
-
+msgstr "Maximum number of simultaneously audible playbacks."
 #: ../../source/api_reference/playback.rst:835
 #: c6fdc9c2521d4aa8a1b368288a77792c
 msgid ":ref:`Behavior<FmodSoundGroup-Behavior>`"
@@ -1459,7 +1447,7 @@ msgstr "`bool`_ sound_group_is_null() const"
 #: ../../source/api_reference/playback.rst:866
 #: 0e5f365aac8e4644a0092ef4a2f55f17
 msgid "如果底层 FMOD::SoundGroup 句柄为空或不可用，则返回 ``true``。"
-msgstr "Returns ``true`` if underlying FMOD::SoundGroup handle as or can."
+msgstr "Returns ``true`` if the underlying FMOD::SoundGroup handle is null or unavailable."
 
 #: ../../source/api_reference/playback.rst:869
 #: 399e972efe6a4178b2a1d589ae52be12
@@ -1474,7 +1462,7 @@ msgstr "void set_max_audible(max_audible: `int`_)"
 #: ../../source/api_reference/playback.rst:876
 #: 72d4ea380732423b85fa3ff711da47c2
 msgid "设置 SoundGroup 中同时可听到的最大播放数量。"
-msgstr "Sets SoundGroup when can to."
+msgstr "Sets the maximum number of playbacks that can be audible at the same time in the SoundGroup."
 
 #: ../../source/api_reference/playback.rst:881
 #: 326de474db934f1989583b057cedaba4
@@ -1484,7 +1472,7 @@ msgstr "`int`_ get_max_audible() const"
 #: ../../source/api_reference/playback.rst:883
 #: 533deaf07b1f4993864f7c5a130046cf
 msgid "返回 SoundGroup 中同时可听到的最大播放数量。"
-msgstr "Returns SoundGroup when can to."
+msgstr "Returns the maximum number of playbacks that can be audible at the same time in the SoundGroup."
 
 #: ../../source/api_reference/playback.rst:888
 #: b5988ce06745468c9ee5b2501274d273
@@ -1494,8 +1482,7 @@ msgstr "void set_max_audible_behavior(behavior: :ref:`Behavior<FmodSoundGroup-Be
 #: ../../source/api_reference/playback.rst:890
 #: 152db894ccc24f79baaa76229afd7258
 msgid "设置超过最大可听数量时的处理方式。"
-msgstr "Sets can when."
-
+msgstr "Sets the behavior used when the maximum audible count is exceeded."
 #: ../../source/api_reference/playback.rst:895
 #: f1999e26edbf474b9da7a9676705ff6c
 msgid ":ref:`Behavior<FmodSoundGroup-Behavior>` get_max_audible_behavior() const"
@@ -1504,8 +1491,7 @@ msgstr ":ref:`Behavior<FmodSoundGroup-Behavior>` get_max_audible_behavior() cons
 #: ../../source/api_reference/playback.rst:897
 #: bcda49ae503448fea4149f8bb4f6072e
 msgid "返回超过最大可听数量时的处理方式。"
-msgstr "Returns can when."
-
+msgstr "Returns the behavior used when the maximum audible count is exceeded."
 #: ../../source/api_reference/playback.rst:902
 #: 56ddc8ac3af7470b9f206526593ee124
 msgid "void set_mute_fade_speed(speed: `float`_)"
@@ -1514,8 +1500,7 @@ msgstr "void set_mute_fade_speed(speed: `float`_)"
 #: ../../source/api_reference/playback.rst:904
 #: 332f4ce4bb474ff78ff798ae42fd61f2
 msgid "设置因最大可听数量限制而静音或恢复时的淡变速度。"
-msgstr "Sets can mute or resume when velocity."
-
+msgstr "Sets the fade speed used when muting or restoring sounds because of the maximum audible count limit."
 #: ../../source/api_reference/playback.rst:909
 #: 05e85671128840cf9d43fa137447afea
 msgid "`float`_ get_mute_fade_speed() const"
@@ -1619,7 +1604,7 @@ msgstr "0"
 #: ../../source/api_reference/playback.rst:991
 #: 32116e74cad04bb58b2e6340d8f5df1e
 msgid "调用播放接口时，如果超过最大可听数量则播放失败"
-msgstr "When, if can."
+msgstr "Playback fails when the playback API is called and the maximum audible count is exceeded."
 
 #: ../../source/api_reference/playback.rst:992
 #: 52aa385398d5414f81b45719d1c7932f
@@ -1664,4 +1649,4 @@ msgstr "3"
 #: ../../source/api_reference/playback.rst:1000
 #: ca0e8d7bb73d4825b3736292df0482d7
 msgid "行为枚举数量"
-msgstr "As."
+msgstr "Number of behavior enum values."

@@ -53,8 +53,7 @@ msgstr "Description"
 #: ../../source/api_reference/nodes.rst:16
 #: 55af470263d047b7881e1d1de880afec
 msgid "**FmodAudioStreamPlayer** 用于播放 :ref:`FmodAudioStream<FmodAudioStream>` 资源，适合背景音乐、UI 音效和不需要空间定位的音频"
-msgstr "**FmodAudioStreamPlayer** used for :ref:`FmodAudioStream<FmodAudioStream>`, suitable for, UI and needs audio."
-
+msgstr "**FmodAudioStreamPlayer** plays :ref:`FmodAudioStream<FmodAudioStream>` resources. It is suitable for background music, UI sounds, and audio that does not need spatial positioning."
 #: ../../source/api_reference/nodes.rst:18
 #: d89c998605024f0e93642112706fcf23
 msgid "播放时节点会从 :ref:`FmodServer<FmodServer>` 获取指定总线对应的 :ref:`FmodChannelGroup<FmodChannelGroup>`。如果找不到指定总线，则回退到 Master 总线"
@@ -474,8 +473,7 @@ msgstr "finished()"
 #: dc8d623b0e984d9cb8218af1a047da79
 #: eef9b224f81b49eab5039472f5a91db5
 msgid "播放自然结束时发出"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Emitted when playback ends naturally."
 #: ../../source/api_reference/nodes.rst:75
 #: ../../source/api_reference/nodes.rst:349
 #: ../../source/api_reference/nodes.rst:738
@@ -567,9 +565,7 @@ msgstr "`bool`_ preload_stream()"
 #: ../../source/api_reference/nodes.rst:107
 #: 4239a547da60433ab26c04c9a3eb3d4a
 msgid "预加载当前 ``stream``，提前创建内部 :ref:`FmodSound<FmodSound>`，用于减少第一次播放时的延迟。创建成功返回 ``true``。"
-msgstr ""
-"Load current ``stream``, before creates internal :ref:`FmodSound<FmodSound>`, used for when delay. creates successfully returns ``true``."
-
+msgstr "Preloads the current ``stream`` by creating the internal :ref:`FmodSound<FmodSound>` ahead of time to reduce first-play latency. Returns ``true`` if creation succeeds."
 #: ../../source/api_reference/nodes.rst:112
 #: ../../source/api_reference/nodes.rst:386
 #: ../../source/api_reference/nodes.rst:775
@@ -947,12 +943,11 @@ msgstr "FmodAudioStreamPlayer2D"
 #: ../../source/api_reference/nodes.rst:263
 #: 6f435e1382364457a4e36f67606fc2e4
 msgid "继承自： ``Node2D``"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Inherits: ``Node2D``"
 #: ../../source/api_reference/nodes.rst:265
 #: e335481d4d1448c99308d915265f978b
 msgid "**用于在 2D 场景中播放带距离衰减和声像的音频流**"
-msgstr "**used for in 2D distance attenuation and audio stream**."
+msgstr "**Audio stream node for 2D scenes with distance attenuation and panning.**"
 
 #: ../../source/api_reference/nodes.rst:270
 #: 9c08deb49dd846c799438850c6146a64
@@ -1054,8 +1049,7 @@ msgstr "1"
 #: ../../source/api_reference/nodes.rst:331
 #: 03086015253c40c3ae072a08e53e5701
 msgid "2D 物理区域遮罩"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "2D physics area mask."
 #: ../../source/api_reference/nodes.rst:333
 #: 3699a4b0d1f1420081580e67bbed047e
 msgid "max_polyphony"
@@ -1076,8 +1070,7 @@ msgstr "Before will as audio stream adds :ref:`FmodMode<FmodMode>` ``FMOD_MODE_2
 #: 9a1f90109ce548e4bd40326f39beb289
 #: 2c55b43862c541ae96b8c3e1bf47e399
 msgid "预加载当前 ``stream``，提前创建内部 :ref:`FmodSound<FmodSound>`。创建成功返回 ``true``。"
-msgstr "Load current ``stream``, before creates internal :ref:`FmodSound<FmodSound>`. creates successfully returns ``true``."
-
+msgstr "Preloads the current ``stream`` by creating the internal :ref:`FmodSound<FmodSound>` ahead of time. Returns ``true`` if creation succeeds."
 #: ../../source/api_reference/nodes.rst:437
 #: ../../source/api_reference/nodes.rst:826
 #: 353bb770139641a2ab57a74f302b07f7
@@ -1130,8 +1123,7 @@ msgstr "void set_max_distance(pixels: `float`_)"
 #: ../../source/api_reference/nodes.rst:509
 #: fd8400a5394845b7a75ab01408a26224
 msgid "设置最大可听距离，单位为像素"
-msgstr "Sets can distance, unit as pixels."
-
+msgstr "Sets the maximum audible distance, in pixels."
 #: ../../source/api_reference/nodes.rst:511
 #: ba05a48bbb5b4bf9ba89016c380cbce5
 msgid "小于等于 ``0.0`` 的值会被限制为 ``1.0``"
@@ -1147,8 +1139,7 @@ msgstr "`float`_ get_max_distance() const"
 #: ../../source/api_reference/nodes.rst:518
 #: 98635c1d054442f6a1a191a686508a21
 msgid "返回最大可听距离，单位为像素"
-msgstr "Returns can distance, unit as pixels."
-
+msgstr "Returns the maximum audible distance, in pixels."
 #: ../../source/api_reference/nodes.rst:523
 #: 92fc085172b342a09d4cd17593150100
 msgid "void set_attenuation(curve: `float`_)"
@@ -1273,7 +1264,7 @@ msgstr ":ref:`FmodChannel<FmodChannel>` get_stream_playback() const"
 #: ../../source/api_reference/nodes.rst:610
 #: d3ccdf541ffa42279b61d9ea10955fbb
 msgid "返回内部播放通道，可用于高级控制"
-msgstr "Returns internal channel, can used for controls."
+msgstr "Returns the internal playback channel for advanced control."
 
 #: ../../source/api_reference/nodes.rst:615
 #: 88e5752ca076432eb8f21243832d121a
@@ -1313,7 +1304,7 @@ msgstr "Inherits: `Node3D`_"
 #: ../../source/api_reference/nodes.rst:634
 #: 18ba191da73d496196c8834e83c973e5
 msgid "**用于在 3D 空间中播放音频流的节点**"
-msgstr "**used for in 3D audio stream node**."
+msgstr "**Node for playing audio streams in 3D space.**"
 
 #: ../../source/api_reference/nodes.rst:639
 #: 25145aa68b7046fe84cdd4f2ab011156
@@ -1380,8 +1371,7 @@ msgstr "emission_angle_enabled"
 #: ../../source/api_reference/nodes.rst:704
 #: 7af8c0582f844d2a8c7a004cab445c36
 msgid "是否启用方向性发射锥"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Whether the directional emission cone is enabled."
 #: ../../source/api_reference/nodes.rst:706
 #: 268442e7143348138e570f175170fb92
 msgid "emission_angle"
@@ -1395,8 +1385,7 @@ msgstr "45.0"
 #: ../../source/api_reference/nodes.rst:708
 #: c49d86ad9b5549778806d55689c6cd41
 msgid "发射内锥角，单位为度"
-msgstr "Unit as."
-
+msgstr "Inner emission cone angle, in degrees."
 #: ../../source/api_reference/nodes.rst:710
 #: e2a02aa9ff664e25ba8095aa6f58a2ca
 msgid "emission_angle_filter_attenuation_db"
@@ -1461,8 +1450,7 @@ msgstr "Doppler velocity."
 #: ../../source/api_reference/nodes.rst:763
 #: 7257d218fc2a4ab99ae4f5608c95e7c0
 msgid "播放时会创建 FMOD 3D 通道，并应用当前 3D 衰减、滤波、发射角度和多普勒设置"
-msgstr "When will creates FMOD 3D channel, and current 3D attenuation, filtering, and Doppler sets."
-
+msgstr "Creates an FMOD 3D channel when playback starts, and applies the current 3D attenuation, filtering, emission angle, and Doppler settings."
 #: ../../source/api_reference/nodes.rst:896
 #: 1beddbbf7a2c43d0af68a72c671242d9
 msgid "void set_max_distance(distance: `float`_)"
@@ -2013,8 +2001,7 @@ msgstr "recursive_source_scan"
 #: ../../source/api_reference/nodes.rst:1187
 #: 350b0ce9b0d94bb8ad2237143c58ac2c
 msgid "自动模式下是否递归扫描子节点"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Whether automatic mode recursively scans child nodes."
 #: ../../source/api_reference/nodes.rst:1189
 #: f7a268d80bea412e9c85bb7f44e1c3ed
 msgid "primitive_segments"
@@ -2038,8 +2025,7 @@ msgstr "show_debug_gizmo"
 #: ../../source/api_reference/nodes.rst:1195
 #: b0a283173a1a4c2da10b1c356111e56b
 msgid "是否显示编辑器调试 Gizmo"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Whether to show the editor debug gizmo."
 #: ../../source/api_reference/nodes.rst:1205
 #: 3812336349a14595a5bf735c1c3faa92
 msgid "geometry_created()"
@@ -2048,8 +2034,7 @@ msgstr "geometry_created()"
 #: ../../source/api_reference/nodes.rst:1206
 #: 47c90d64a5604d7d972b5350c2706dda
 msgid "几何体创建成功后发出"
-msgstr "Geometry creates successfully after."
-
+msgstr "Emitted after the geometry is created successfully."
 #: ../../source/api_reference/nodes.rst:1207
 #: 9b8883fdd7ac487f857ddc79759515a3
 msgid "geometry_cleared()"
@@ -2519,13 +2504,11 @@ msgstr "Spatialization."
 #: ../../source/api_reference/nodes.rst:1506
 #: 8ae1e2217d704ca7893500b5949ffe09
 msgid "2D 空间播放"
-msgstr "2D."
-
+msgstr "2D spatial playback"
 #: ../../source/api_reference/nodes.rst:1507
 #: e0de2a32eca24762b55e300f0fe7111f
 msgid "3D 空间播放"
-msgstr "3D."
-
+msgstr "3D spatial playback"
 #: ../../source/api_reference/nodes.rst:1508
 #: a6bb8e4c1eb648d088cc6c21a0a9e416
 msgid "3D 遮挡几何体"
@@ -2581,18 +2564,15 @@ msgstr "Not applicable"
 #: ../../source/api_reference/nodes.rst:1519
 #: 0619274f56e743d0b522464d75b5a618
 msgid "声像/空间定位"
-msgstr "/."
-
+msgstr "Panning / spatial positioning"
 #: ../../source/api_reference/nodes.rst:1521
 #: f52ad4a66af94a51a4dc78aca34b9c48
 msgid "2D 声像"
-msgstr "2D."
-
+msgstr "2D panning"
 #: ../../source/api_reference/nodes.rst:1522
 #: 5012f75be21f4aecaf9b28434cf6c413
 msgid "3D 定位"
-msgstr "3D."
-
+msgstr "3D positioning"
 #: ../../source/api_reference/nodes.rst:1524
 #: bee28b3ba59942ac92260948dc10ae4e
 msgid "多普勒"
@@ -2606,13 +2586,11 @@ msgstr "Suitable for."
 #: ../../source/api_reference/nodes.rst:1530
 #: 8cd3f2c63ec343bab484f168afd7ff21
 msgid "背景音乐、UI 音效"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Background music and UI sounds."
 #: ../../source/api_reference/nodes.rst:1531
 #: cc09855daa0e4c31915b66be4b32c371
 msgid "2D 环境声、地图音源"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "2D ambience and map sound sources."
 #: ../../source/api_reference/nodes.rst:1532
 #: ca83f84c8a4c40bb85a19cbd0d9f22f8
 msgid "3D 声源、角色语音"
@@ -2621,4 +2599,4 @@ msgstr "3D sound source."
 #: ../../source/api_reference/nodes.rst:1533
 #: cfaf69ce9698466f958a3f43f89ae205
 msgid "墙体、障碍物、遮挡体"
-msgstr "Provides the API behavior described by this entry."
+msgstr "Walls, obstacles, and occluders."

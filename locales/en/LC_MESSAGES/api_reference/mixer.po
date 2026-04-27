@@ -64,8 +64,7 @@ msgstr "Bus can:"
 #: ../../source/api_reference/mixer.rst:22
 #: 018573f53d1a48ba9987cf11ada41aa5
 msgid "将音频组织成逻辑分类（音乐、音效、对话等）"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Organizes audio into logical categories, such as music, sound effects, and dialogue."
 #: ../../source/api_reference/mixer.rst:23
 #: 7acf320211134ad5ae55252be1ee6640
 msgid "对一组声音应用效果"
@@ -194,9 +193,7 @@ msgstr "Specified name and can channel group bus."
 #: ../../source/api_reference/mixer.rst:64
 #: 498de04d3b3345f2a9bcc5fcc8b9ae23
 msgid "如果名称为 ``\"Master\"``，会直接使用 FMOD 主通道组作为总线；否则会创建新的 :ref:`FmodChannelGroup<FmodChannelGroup>` 并连接到父通道组"
-msgstr ""
-"If name as ``\"Master\"``, will FMOD master channel group as bus; otherwise will creates :ref:`FmodChannelGroup<FmodChannelGroup>` and connection to channel group."
-
+msgstr "If the name is ``\"Master\"``, the FMOD master channel group is used directly as the bus; otherwise a new :ref:`FmodChannelGroup<FmodChannelGroup>` is created and connected to the parent channel group."
 #: ../../source/api_reference/mixer.rst:69
 #: 33daa36f23e64e55a8fefacd9322b244
 msgid "void set_parent(parent: :ref:`FmodChannelGroup<FmodChannelGroup>`)"
@@ -500,8 +497,7 @@ msgstr ":ref:`FmodAudioBus<FmodAudioBus>` get_audio_bus(name: `String`_) const"
 #: ../../source/api_reference/mixer.rst:249
 #: c8f7af42decd4bbbab195dc7f3628f94
 msgid "返回具有指定名称的 :ref:`FmodAudioBus<FmodAudioBus>`"
-msgstr "Returns specified name :ref:`FmodAudioBus<FmodAudioBus>`."
-
+msgstr "Returns the :ref:`FmodAudioBus<FmodAudioBus>` with the specified name."
 #: ../../source/api_reference/mixer.rst:251
 #: 6f7759bb451641b1b45f6fdf41cde7e3
 msgid "如果不存在具有该名称的总线，则返回 ``null``"
@@ -540,8 +536,7 @@ msgstr "void set_bus_volume(name: `String`_, volume_db: `float`_)"
 #: ../../source/api_reference/mixer.rst:274
 #: f0880f04212d4edfb3b7cbfaf234a0b9
 msgid "设置指定总线的音量，单位为分贝"
-msgstr "Sets specified bus volume, unit as."
-
+msgstr "Sets the volume of the specified bus, in decibels."
 #: ../../source/api_reference/mixer.rst:279
 #: 2a93a47eac784ef894a08475b814fbc8
 msgid "`float`_ get_bus_volume(name: `String`_) const"
@@ -550,8 +545,7 @@ msgstr "`float`_ get_bus_volume(name: `String`_) const"
 #: ../../source/api_reference/mixer.rst:281
 #: c1b9a65804a24b219adc3c26a8b488b3
 msgid "返回指定总线的音量，单位为分贝"
-msgstr "Returns specified bus volume, unit as."
-
+msgstr "Returns the volume of the specified bus, in decibels."
 #: ../../source/api_reference/mixer.rst:283
 #: 6165848206454648a488b6e522e22bc3
 msgid "如果总线不存在或无效，则返回 ``0.0``"
@@ -565,8 +559,7 @@ msgstr "void set_bus_solo(name: `String`_, solo: `bool`_)"
 #: ../../source/api_reference/mixer.rst:290
 #: 490dfaac2d254906bfd1fa2ff2b34f7f
 msgid "设置指定总线的独奏状态，并更新所有总线的最终静音状态"
-msgstr "Sets specified bus solo state, and updates bus mute state."
-
+msgstr "Sets the solo state of the specified bus and updates the final mute state of all buses."
 #: ../../source/api_reference/mixer.rst:295
 #: cca0c25e04fd41a68427b27047ecf289
 msgid "`bool`_ bus_is_solo(name: `String`_) const"
@@ -585,8 +578,7 @@ msgstr "void set_bus_mute(name: `String`_, mute: `bool`_)"
 #: ../../source/api_reference/mixer.rst:304
 #: b12344b0ddb44b12ae4ef0923e4e389a
 msgid "设置指定总线的用户静音状态，并更新所有总线的最终静音状态"
-msgstr "Sets specified bus mute state, and updates bus mute state."
-
+msgstr "Sets the user mute state of the specified bus and updates the final mute state of all buses."
 #: ../../source/api_reference/mixer.rst:309
 #: 3b25fda8861b46ce8a81553c1933c762
 msgid "`bool`_ bus_is_mute(name: `String`_) const"
@@ -605,8 +597,7 @@ msgstr "void set_bus_bypass(name: `String`_, bypass: `bool`_)"
 #: ../../source/api_reference/mixer.rst:318
 #: 4cbcf250f30b401c9b5654c33bbad0f9
 msgid "设置指定总线的效果旁路状态，并立即同步到总线上的 DSP"
-msgstr "Sets specified bus effect bypass state, and synchronizes to bus DSP."
-
+msgstr "Sets the effect bypass state of the specified bus and immediately synchronizes it to the DSP on the bus."
 #: ../../source/api_reference/mixer.rst:323
 #: 88d2f2cc30d640a89a6786b8872c0c5b
 msgid "`bool`_ bus_is_bypass(name: `String`_) const"
@@ -650,8 +641,7 @@ msgstr ":ref:`FmodAudioEffect<FmodAudioEffect>` get_bus_effect(bus_name: `String
 #: ../../source/api_reference/mixer.rst:348
 #: 12dcad0af642438c93730e377093b7ec
 msgid "返回指定总线上的指定索引处的 :ref:`FmodAudioEffect<FmodAudioEffect>`"
-msgstr "Returns specified bus specified index :ref:`FmodAudioEffect<FmodAudioEffect>`."
-
+msgstr "Returns the :ref:`FmodAudioEffect<FmodAudioEffect>` at the specified index on the specified bus."
 #: ../../source/api_reference/mixer.rst:350
 #: cbfd9563347c4f6fa38caaabb7087b30
 msgid "如果总线或效果不存在，则返回 ``null``"
@@ -670,5 +660,4 @@ msgstr "And Godot `AudioServer`_ current bus layout synchronizes."
 #: ../../source/api_reference/mixer.rst:359
 #: 4e384aa428694b0cbd48a4ce65c83172
 msgid "同步会保留或创建 ``Master`` 总线，重建其他总线，连接父子关系，并同步音量、静音、独奏、旁路状态和支持的 Godot 音频效果"
-msgstr ""
-"Synchronizes will or creates ``Master`` bus, bus, connection, and synchronizes volume, mute, solo, bypass state and Godot audio effect."
+msgstr "Synchronization preserves or creates the ``Master`` bus, rebuilds other buses, connects parent-child relationships, and synchronizes volume, mute, solo, bypass state, and supported Godot audio effects."

@@ -37,7 +37,7 @@ msgstr "Inherits: `RefCounted`_"
 #: ../../source/api_reference/spatial.rst:11
 #: 954a277f43c6431da17fbeac6fc725fa
 msgid "**用于 3D 声音遮挡计算的 FMOD 几何体对象**"
-msgstr "**used for 3D sound occlusion calculates FMOD geometry object**."
+msgstr "**FMOD geometry object for 3D sound occlusion calculation.**"
 
 #: ../../source/api_reference/spatial.rst:14
 #: ../../source/api_reference/spatial.rst:221
@@ -58,9 +58,7 @@ msgstr ""
 #: 8c2805f4a1734446ab4a7bebd123ccaa
 msgid ""
 "几何体通常通过 :ref:`FmodSystem.create_geometry()<FmodSystem-create_geometry>` 创建，也可以通过 :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>` 从保存后的字节数据加载。"
-msgstr ""
-"Geometry usually through :ref:`FmodSystem.create_geometry()<FmodSystem-create_geometry>` creates, can through :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>` after load."
-
+msgstr "Geometry is usually created with :ref:`FmodSystem.create_geometry()<FmodSystem-create_geometry>`, or loaded from saved byte data with :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>`."
 #: ../../source/api_reference/spatial.rst:20
 #: 8149127b65ee47199c3ba39a4d3739b2
 msgid "几何遮挡通常需要在初始化 FMOD 系统时启用 ``FMOD_INIT_FLAG_CHANNEL_LOWPASS``，否则低通遮挡效果不会按预期工作。"
@@ -236,7 +234,7 @@ msgstr "`bool`_ geometry_is_null() const"
 #: ../../source/api_reference/spatial.rst:67
 #: eb27c9671b9845759bedfa1123968994
 msgid "如果底层 FMOD Geometry 句柄为空或不可用，则返回 ``true``。"
-msgstr "Returns ``true`` if underlying FMOD Geometry handle as or can."
+msgstr "Returns ``true`` if the underlying FMOD Geometry handle is null or unavailable."
 
 #: ../../source/api_reference/spatial.rst:70
 #: c02d9de05df440d7a80e043c02ed105c
@@ -286,8 +284,7 @@ msgstr "`int`_ get_polygon_num_vertices(index: `int`_) const"
 #: ../../source/api_reference/spatial.rst:98
 #: 3e4c49da5f754eca9892c1d4faaf8648
 msgid "返回指定多边形的顶点数量。"
-msgstr "Returns specified polygon."
-
+msgstr "Returns the vertex count of the specified polygon."
 #: ../../source/api_reference/spatial.rst:103
 #: 7619e57a31684bf2868eac49dbe83ae7
 msgid "void set_polygon_vertex(index: `int`_, vertex_index: `int`_, vertex: `Vector3`_)"
@@ -296,8 +293,7 @@ msgstr "void set_polygon_vertex(index: `int`_, vertex_index: `int`_, vertex: `Ve
 #: ../../source/api_reference/spatial.rst:105
 #: c76e8dbf486f40049992d651ebea1a2f
 msgid "设置指定多边形中的单个顶点位置。"
-msgstr "Sets specified polygon position."
-
+msgstr "Sets the position of a single vertex in the specified polygon."
 #: ../../source/api_reference/spatial.rst:110
 #: 714c1718bb7c4de6b15cd0f6ee225e24
 msgid "`Vector3`_ get_polygon_vertex(index: `int`_, vertex_index: `int`_) const"
@@ -306,8 +302,7 @@ msgstr "`Vector3`_ get_polygon_vertex(index: `int`_, vertex_index: `int`_) const
 #: ../../source/api_reference/spatial.rst:112
 #: 88ede21921b84632a94c9588e13495f1
 msgid "返回指定多边形中的单个顶点位置。"
-msgstr "Returns specified polygon position."
-
+msgstr "Returns the position of a single vertex in the specified polygon."
 #: ../../source/api_reference/spatial.rst:117
 #: 2a2990028c4f429da47808494c607e6c
 msgid "`Dictionary`_ get_max_polygons() const"
@@ -442,7 +437,7 @@ msgstr "`PackedByteArray`_ save() const"
 #: ../../source/api_reference/spatial.rst:202
 #: 587b15888d5b40759906f73471d705ae
 msgid "将几何体序列化为字节数组，可之后通过 :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>` 加载。"
-msgstr "Geometry as, can after through :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>` load."
+msgstr "Serializes the geometry to a byte array that can later be loaded with :ref:`FmodSystem.load_geometry()<FmodSystem-load_geometry>`."
 
 #: ../../source/api_reference/spatial.rst:207
 #: ../../source/api_reference/spatial.rst:391
@@ -454,7 +449,7 @@ msgstr "void release()"
 #: ../../source/api_reference/spatial.rst:209
 #: 3ba8ca7f117d41408d0e7e9267437f08
 msgid "释放底层 FMOD Geometry。释放后该对象不应继续用于遮挡计算。"
-msgstr "Releases underlying FMOD Geometry. releases after object used for occlusion calculates."
+msgstr "Releases the underlying FMOD Geometry. After release, the object should no longer be used for occlusion calculation."
 
 #: ../../source/api_reference/spatial.rst:214
 #: 774cdd1ecf104334834f767dec1b25a0
@@ -469,15 +464,13 @@ msgstr "**FMOD 3D reverb object used to create spherical reverb zones**"
 #: ../../source/api_reference/spatial.rst:223
 #: ced46d9ef4554e159ca2bd78ec45d3ee
 msgid "**FmodReverb3D** 表示一个低层级 3D 混响区域。它通过中心位置、最小距离和最大距离定义影响范围：声源在最小距离内获得完整混响，在最小距离到最大距离之间逐渐衰减，超过最大距离则基本不受影响。"
-msgstr ""
-"**FmodReverb3D** represents 3D reverb zone. through position, distance and distance range: sound source in distance reverb, in distance to distance attenuation, distance."
+msgstr "**FmodReverb3D** represents a low-level 3D reverb zone. Its influence is defined by center position, minimum distance, and maximum distance: sources inside the minimum distance receive full reverb, sources between minimum and maximum distance fade out gradually, and sources beyond the maximum distance are mostly unaffected."
 
 #: ../../source/api_reference/spatial.rst:225
 #: 68722b87a0e2455086114f66c6caeff7
 msgid ""
 "通常使用 :ref:`FmodSystem.create_reverb_3d()<FmodSystem-create_reverb_3d>` 创建此对象；如果希望直接放在场景树中并跟随节点位置，请使用 :ref:`FmodReverbZone3D<FmodReverbZone3D>`。"
-msgstr ""
-"Usually :ref:`FmodSystem.create_reverb_3d()<FmodSystem-create_reverb_3d>` creates object; if in scene tree and node position, :ref:`FmodReverbZone3D<FmodReverbZone3D>`."
+msgstr "This object is usually created with :ref:`FmodSystem.create_reverb_3d()<FmodSystem-create_reverb_3d>`. If you want a reverb zone directly in the scene tree that follows a node position, use :ref:`FmodReverbZone3D<FmodReverbZone3D>`."
 
 #: ../../source/api_reference/spatial.rst:240
 #: a7ee6577d165469eba742e99ec995dc1
@@ -668,8 +661,7 @@ msgstr "5000.0"
 #: c522c31fd2164799b4e8fbe21d5dccaf
 #: 917feedb64e7425f9fae4fe45883aa08
 msgid "高频参考频率，单位为 Hz"
-msgstr "Unit as Hz."
-
+msgstr "High-frequency reference frequency, in Hz."
 #: ../../source/api_reference/spatial.rst:270
 #: ../../source/api_reference/spatial.rst:476
 #: fbd3acf579644d2b84e48bdcf92ba16a
@@ -729,8 +721,7 @@ msgstr "250.0"
 #: ../../source/api_reference/spatial.rst:280
 #: e934cc6e0c8b4e7ebd8ccc478b5acaec
 msgid "低频搁架参考频率，单位为 Hz"
-msgstr "Unit as Hz."
-
+msgstr "Low-shelf reference frequency, in Hz."
 #: ../../source/api_reference/spatial.rst:282
 #: ../../source/api_reference/spatial.rst:472
 #: 645b9ca2474043c495954ccd1fbef9fe
@@ -741,8 +732,7 @@ msgstr "low_shelf_gain"
 #: ../../source/api_reference/spatial.rst:284
 #: 9d31403f7f0b4435bd4a361f59cee75c
 msgid "低频搁架增益，单位为分贝"
-msgstr "Unit as."
-
+msgstr "Low-shelf gain, in decibels."
 #: ../../source/api_reference/spatial.rst:286
 #: ../../source/api_reference/spatial.rst:484
 #: 0817c284492840cc80d3a0c05469861b
@@ -960,7 +950,7 @@ msgstr "`bool`_ reverb_3d_is_null() const"
 #: ../../source/api_reference/spatial.rst:386
 #: 511a04af135d4b2691d40ad07a0192a9
 msgid "如果底层 FMOD Reverb3D 句柄为空或不可用，则返回 ``true``。"
-msgstr "Returns ``true`` if underlying FMOD Reverb3D handle as or can."
+msgstr "Returns ``true`` if the underlying FMOD Reverb3D handle is null or unavailable."
 
 #: ../../source/api_reference/spatial.rst:393
 #: d00fd7abe82345009412cfdda22653e7
@@ -986,9 +976,7 @@ msgstr "**scene tree 3D reverb zone node**."
 #: b2855f19a129462fa90b2929d8b35b1e
 msgid ""
 "**FmodReverbZone3D** 是 :ref:`FmodReverb3D<FmodReverb3D>` 的节点封装。节点进入场景树后会创建内部混响对象，并使用节点的全局位置作为球形混响区域中心。启用 ``sync_transform`` 时，节点移动会同步到 FMOD 混响区域。"
-msgstr ""
-"**FmodReverbZone3D** :ref:`FmodReverb3D<FmodReverb3D>` node wraps. node scene tree after will creates internal reverb object, and node global position as reverb zone. ``sync_transform`` when, node will synchronizes to FMOD reverb zone."
-
+msgstr "**FmodReverbZone3D** is a node wrapper around :ref:`FmodReverb3D<FmodReverb3D>`. When the node enters the scene tree, it creates an internal reverb object and uses the node's global position as the center of the spherical reverb zone. When ``sync_transform`` is enabled, node movement is synchronized to the FMOD reverb zone."
 #: ../../source/api_reference/spatial.rst:422
 #: da20cb782daf4ad8bb3874f4bd7f879d
 msgid "该混响区域是否参与输出"
@@ -1114,8 +1102,7 @@ msgstr ":ref:`FmodReverb3D<FmodReverb3D>` get_reverb() const"
 #: ../../source/api_reference/spatial.rst:496
 #: 8a21d8d393974a75ade6b3bd9cb52177
 msgid "返回该节点内部创建并管理的 :ref:`FmodReverb3D<FmodReverb3D>`。如果节点尚未进入场景树或创建失败，则返回 ``null``。"
-msgstr ""
-"Returns node internal creates and manages :ref:`FmodReverb3D<FmodReverb3D>`. if node scene tree or creates, returns ``null``."
+msgstr "Returns the :ref:`FmodReverb3D<FmodReverb3D>` created and managed internally by this node. Returns ``null`` if the node has not entered the scene tree or creation failed."
 
 #: ../../source/api_reference/spatial.rst:498
 #: 75a6795dbdc14d83a856fae0d2669ad0

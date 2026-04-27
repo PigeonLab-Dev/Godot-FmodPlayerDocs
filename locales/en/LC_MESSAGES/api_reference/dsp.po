@@ -466,8 +466,7 @@ msgstr "`Dictionary`_ get_input(index: `int`_) const"
 #: ../../source/api_reference/dsp.rst:55
 #: b722c1a79b1e4612a23226ad49809852
 msgid "返回指定输入连接信息，通常包含输入 DSP 和连接对象。"
-msgstr "Returns specified input connection, usually input DSP and connection object."
-
+msgstr "Returns information for the specified input connection, usually including the input DSP and connection object."
 #: ../../source/api_reference/dsp.rst:60
 #: 603d9c15ce18475c8fc1a984c56ae0f9
 msgid "`Dictionary`_ get_output(index: `int`_) const"
@@ -476,8 +475,7 @@ msgstr "`Dictionary`_ get_output(index: `int`_) const"
 #: ../../source/api_reference/dsp.rst:62
 #: 2cf97358c1db4703802b0225be80a5a0
 msgid "返回指定输出连接信息，通常包含输出 DSP 和连接对象。"
-msgstr "Returns specified output connection, usually output DSP and connection object."
-
+msgstr "Returns information for the specified output connection, usually including the output DSP and connection object."
 #: ../../source/api_reference/dsp.rst:67
 #: bb33322ea1a14302a923699800515b42
 msgid "`int`_ get_num_inputs() const"
@@ -521,8 +519,7 @@ msgstr "Input and / or output connection."
 #: ../../source/api_reference/dsp.rst:93
 #: 71ece5399079480c95225772038c88a1
 msgid "通道格式与计量"
-msgstr "Channel and."
-
+msgstr "Channel Format and Metering"
 #: ../../source/api_reference/dsp.rst:98
 #: 9f3458ec178c453abbd4a103a7b16482
 msgid "void set_channel_format(numchannels: `int`_, speakermode: `int`_)"
@@ -531,8 +528,7 @@ msgstr "void set_channel_format(numchannels: `int`_, speakermode: `int`_)"
 #: ../../source/api_reference/dsp.rst:100
 #: f2ac75d07afd4197a23b2ade9692ff4b
 msgid "设置 DSP 输出通道数和扬声器模式。"
-msgstr "Sets DSP output channel and."
-
+msgstr "Sets the DSP output channel count and speaker mode."
 #: ../../source/api_reference/dsp.rst:105
 #: 8ea5f6c07e9d41749191c26a37ff000a
 msgid "`Dictionary`_ get_channel_format() const"
@@ -661,8 +657,7 @@ msgstr "Sets or gets parameter."
 #: ../../source/api_reference/dsp.rst:176
 #: 51fa383a7c7147eba96a3cb78a15c07b
 msgid "状态与信息"
-msgstr "State and."
-
+msgstr "State and Information"
 #: ../../source/api_reference/dsp.rst:181
 #: 0488dbc7d07047c69352bbbf5d37969e
 msgid "void set_active(active: `bool`_)"
@@ -771,8 +766,7 @@ msgstr "`Dictionary`_ get_info() const"
 #: ../../source/api_reference/dsp.rst:253
 #: 62a6d383eb7744f7a26ea9fbd423696e
 msgid "返回 DSP 概述信息，通常包括名称、版本、通道数和配置宽度等。"
-msgstr "Returns DSP, usually name, version, channel and."
-
+msgstr "Returns DSP overview information, usually including name, version, channel count, and configuration width."
 #: ../../source/api_reference/dsp.rst:258
 #: 6b0fc5c2eb1b4b1a98738a14e067157d
 msgid "`Dictionary`_ get_cpu_usage() const"
@@ -801,9 +795,7 @@ msgstr "Callback."
 #: ../../source/api_reference/dsp.rst:272
 #: a4c14c34756b40f082ff5bddcdab3e19
 msgid "自定义 DSP 可以通过 Callable 接收 FMOD 生命周期、处理和参数访问回调。每个回调都有对应的 ``set_*_callback(callback)`` 与 ``get_*_callback()`` 方法。"
-msgstr ""
-"DSP can through Callable FMOD lifecycle, and parameter callback. callback ``set_*_callback(callback)`` and ``get_*_callback()``."
-
+msgstr "Custom DSP units can receive FMOD lifecycle, processing, and parameter access callbacks through Callables. Each callback has matching ``set_*_callback(callback)`` and ``get_*_callback()`` methods."
 #: ../../source/api_reference/dsp.rst:277
 #: b1f817bb298146488cf1c218b351fd03
 msgid "回调组"
@@ -1069,8 +1061,7 @@ msgstr "3"
 #: ../../source/api_reference/dsp.rst:318
 #: b4669deb17474167a69b0c33901a2296
 msgid "共振低通滤波器，已弃用"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Resonant low-pass filter, deprecated."
 #: ../../source/api_reference/dsp.rst:319
 #: 24fdbbe941864ba1b3584d1c674e17e5
 msgid "DSP_TYPE_ITLOWPASS"
@@ -1119,8 +1110,7 @@ msgstr "5"
 #: ../../source/api_reference/dsp.rst:324
 #: 085bf460d945438db4f85dfbc2db21bc
 msgid "共振高通滤波器，已弃用"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Resonant high-pass filter, deprecated."
 #: ../../source/api_reference/dsp.rst:325
 #: bc35708846ee4bd394d397d1d4585900
 msgid "DSP_TYPE_ECHO"
@@ -1238,8 +1228,7 @@ msgstr "12"
 #: ../../source/api_reference/dsp.rst:345
 #: d263ebee6c794295b967fe39158d2985
 msgid "参数均衡器，已弃用"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Parametric equalizer, deprecated."
 #: ../../source/api_reference/dsp.rst:346
 #: d29719919252446a83356fc6e83caba7
 msgid "DSP_TYPE_PITCHSHIFT"
@@ -1392,8 +1381,7 @@ msgstr "22"
 #: ../../source/api_reference/dsp.rst:375
 #: ad382af1b56249a5b4bfdefc1c78430e
 msgid "接收多个发送 DSP 的信号"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Receives signals from multiple send DSP units."
 #: ../../source/api_reference/dsp.rst:376
 #: 20f942465f4a4906bc1a59662e3e1c4f
 msgid "DSP_TYPE_HIGHPASS_SIMPLE"
@@ -1467,8 +1455,7 @@ msgstr "27"
 #: ../../source/api_reference/dsp.rst:390
 #: d7903b506be4473183ae45783ab08265
 msgid "响度和真实峰值分析"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Loudness and true peak analysis."
 #: ../../source/api_reference/dsp.rst:391
 #: f2aae28bf4bb48cd87426335ff95482c
 msgid "DSP_TYPE_CONVOLUTIONREVERB"
@@ -1497,8 +1484,7 @@ msgstr "29"
 #: ../../source/api_reference/dsp.rst:396
 #: 4c1afea8b36448299a9f63764ec01fe8
 msgid "通道增益、通道分组与扬声器格式转换"
-msgstr "Channel, channel and."
-
+msgstr "Channel Gain, Grouping, and Speaker Format Conversion"
 #: ../../source/api_reference/dsp.rst:397
 #: 4876bf19c6b74bd7b9ef7701170c871d
 msgid "DSP_TYPE_TRANSCEIVER"
@@ -1512,8 +1498,7 @@ msgstr "30"
 #: ../../source/api_reference/dsp.rst:399
 #: 598409d2324248d38df5e50dce95ae28
 msgid "全局槽位式发送和接收"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Global slot-based send and receive."
 #: ../../source/api_reference/dsp.rst:400
 #: 6ed182ae437d4e5c8a3e8c7f08da2388
 msgid "DSP_TYPE_OBJECTPAN"
@@ -1557,8 +1542,7 @@ msgstr "33"
 #: ../../source/api_reference/dsp.rst:408
 #: 35af4e74e6ef4f52b8f9bf6cb143d8c9
 msgid "多段动态处理，已弃用"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Multiband dynamics processor, deprecated."
 #: ../../source/api_reference/dsp.rst:409
 #: 7d7b94ff7786497fbaa54e06045cf4b5
 msgid "DSP_TYPE_MAX"
@@ -1572,8 +1556,7 @@ msgstr "34"
 #: ../../source/api_reference/dsp.rst:411
 #: a0ea14dc2b1c4403a1e851d6debf2850
 msgid "DSP 类型边界值"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "DSP type boundary value."
 #: ../../source/api_reference/dsp.rst:412
 #: 16f420f5d0dd46288096d64b49402add
 msgid "DSP_TYPE_FORCEINT"
@@ -1587,8 +1570,7 @@ msgstr "65536"
 #: ../../source/api_reference/dsp.rst:414
 #: 3b9bd443b97944c484308c6a1d3c7528
 msgid "强制枚举以整型大小存储"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Forces the enum to be stored as an integer-sized value."
 #: ../../source/api_reference/dsp.rst:419
 #: b0c6421f8d114436a94527c7467a8e6e
 msgid "FmodDSPParameterDataType"
@@ -1632,8 +1614,7 @@ msgstr "-2"
 #: ../../source/api_reference/dsp.rst:435
 #: 2a415122b7484fe0a000d94de4e8a048
 msgid "单个 3D 属性结构"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Single 3D attributes structure."
 #: ../../source/api_reference/dsp.rst:436
 #: 1dd850e9b3594d389a81b4316f2f5b8e
 msgid "DSP_PARAMETER_DATA_TYPE_SIDECHAIN"
@@ -1677,8 +1658,7 @@ msgstr "-5"
 #: ../../source/api_reference/dsp.rst:444
 #: 2be2fc0ccb0e4300924066fe4c33e8c9
 msgid "多个 3D 属性结构"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Multiple 3D attributes structures."
 #: ../../source/api_reference/dsp.rst:445
 #: 9e314ad45db54cf2b08f6f4a4e11e030
 msgid "DSP_PARAMETER_DATA_TYPE_ATTENUATION_RANGE"
@@ -1737,9 +1717,7 @@ msgstr "**DSP node connection object**."
 #: ../../source/api_reference/dsp.rst:467
 #: f37d13e7163b4e59a00c0a59125f4a09
 msgid "**FmodDSPConnection** 表示两个 :ref:`FmodDSP<FmodDSP>` 之间的一条连接。可以通过它调整连接混合电平、混音矩阵，并查询输入输出 DSP。"
-msgstr ""
-"**FmodDSPConnection** represents :ref:`FmodDSP<FmodDSP>` connection. can through connection, mix matrix, and queries input output DSP."
-
+msgstr "**FmodDSPConnection** represents a connection between two :ref:`FmodDSP<FmodDSP>` units. It can adjust the connection mix level and mix matrix, and query the input and output DSP units."
 #: ../../source/api_reference/dsp.rst:479
 #: ../../source/api_reference/dsp.rst:625
 #: ../../source/api_reference/dsp.rst:629
@@ -1946,7 +1924,7 @@ msgstr "void set_mix_matrix(matrix: `PackedFloat32Array`_, outchannels: `int`_, 
 #: ../../source/api_reference/dsp.rst:506
 #: 702b9857b7d946328dc412a810cb676d
 msgid "设置连接的混音矩阵，用于自定义输入通道到输出通道的映射。"
-msgstr "Sets connection mix matrix, used for input channel to output channel."
+msgstr "Sets the connection mix matrix used to customize input-channel to output-channel mapping."
 
 #: ../../source/api_reference/dsp.rst:511
 #: b10cdce0e8904473b6f455612a0ec043
@@ -2127,8 +2105,7 @@ msgstr ": :ref:`FmodAudioEffect<FmodAudioEffect>`"
 #: ../../source/api_reference/dsp.rst:608
 #: ea65a7be899a4e1db78b4dacce68ad87
 msgid "**简单增益效果，用于放大或衰减信号。**"
-msgstr "**effect, used for or attenuation.**."
-
+msgstr "**Simple gain effect for amplifying or attenuating a signal.**"
 #: ../../source/api_reference/dsp.rst:613
 #: f726250879964e48ac0348ca06dad3fa
 msgid "**FmodAudioEffectAmplify** 会在总线效果链中创建一个增益 DSP。它适合做总线音量微调、临时放大或衰减，也可以在运行时用 ``volume_db`` 或 ``volume_linear`` 做平滑的强度控制。"
@@ -2143,8 +2120,7 @@ msgstr "volume_db"
 #: ../../source/api_reference/dsp.rst:628
 #: aca2eff99e104d31bfc8922edaaf631a
 msgid "增益，单位为分贝"
-msgstr "Unit as."
-
+msgstr "Gain, in decibels."
 #: ../../source/api_reference/dsp.rst:630
 #: eddbd3b70d434a91ae3632f78bbae200
 msgid "volume_linear"
@@ -2254,8 +2230,7 @@ msgstr "2000.0"
 #: ../../source/api_reference/dsp.rst:692
 #: 749c1291acaf405bab28388402400d7c
 msgid "截止频率，单位为 Hz"
-msgstr "Unit as Hz."
-
+msgstr "Cutoff frequency, in Hz."
 #: ../../source/api_reference/dsp.rst:693
 #: 7734ee2cb8ff43fa95a379a96de93ac3
 msgid ":ref:`FilterDB<FmodAudioEffectFilter-FilterDB>`"
@@ -2309,8 +2284,7 @@ msgstr "0.5"
 #: ../../source/api_reference/dsp.rst:704
 #: ddba2215bed34f6b85f6d52c1f7ee60e
 msgid "截止频率附近的共振提升"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Resonance boost around the cutoff frequency."
 #: ../../source/api_reference/dsp.rst:712
 #: 29062551b63b42f692fb57acce162b99
 msgid "void set_cutoff_hz(cutoff_hz: `float`_)"
@@ -2614,8 +2588,7 @@ msgstr "void set_preset(preset: :ref:`Preset<FmodAudioEffectEQ-Preset>`)"
 #: 73afb522c4564236a3af1913ae160ecd
 #: cf32ba39cd914ed4984cdba6353bc7bc
 msgid "设置均衡器频段预设，并重建频段列表。"
-msgstr "Sets and."
-
+msgstr "Sets the equalizer band preset and rebuilds the band list."
 #: ../../source/api_reference/dsp.rst:850
 #: ../../source/api_reference/dsp.rst:1052
 #: ../../source/api_reference/dsp.rst:1173
@@ -2680,8 +2653,7 @@ msgstr "void set_band_gain_db(band_idx: `int`_, gain_db: `float`_)"
 #: 76d5c16794ce4a78a2583b54b0c39fc5
 #: d118c7358c884f34bf5ba2ae937223b1
 msgid "设置指定频段的增益，单位为分贝。"
-msgstr "Sets specified, unit as."
-
+msgstr "Sets the gain of the specified band, in decibels."
 #: ../../source/api_reference/dsp.rst:871
 #: ../../source/api_reference/dsp.rst:1073
 #: ../../source/api_reference/dsp.rst:1194
@@ -2702,8 +2674,7 @@ msgstr "`float`_ get_band_gain_db(band_idx: `int`_) const"
 #: 20b47fe4119842d1bb0cdecd77cdd0b5
 #: bba02aba19774013a0d26d179696cecc
 msgid "返回指定频段的增益，单位为分贝。"
-msgstr "Returns specified, unit as."
-
+msgstr "Returns the gain of the specified band, in decibels."
 #: ../../source/api_reference/dsp.rst:878
 #: ../../source/api_reference/dsp.rst:1080
 #: ../../source/api_reference/dsp.rst:1201
@@ -2724,8 +2695,7 @@ msgstr "void set_band_frequency(band_idx: `int`_, frequency: `float`_)"
 #: 4c322f5c04824542b35359cf5298a172
 #: 2d1f820ea1d441e2a98732c4c4444417
 msgid "设置指定频段的中心频率。"
-msgstr "Sets specified."
-
+msgstr "Sets the center frequency of the specified band."
 #: ../../source/api_reference/dsp.rst:885
 #: ../../source/api_reference/dsp.rst:1087
 #: ../../source/api_reference/dsp.rst:1208
@@ -2746,8 +2716,7 @@ msgstr "`float`_ get_band_frequency(band_idx: `int`_) const"
 #: e0d620ee85104ce185f7802330474763
 #: 4124b29b399b49a5bffa96e05915c39b
 msgid "返回指定频段的中心频率。"
-msgstr "Returns specified."
-
+msgstr "Returns the center frequency of the specified band."
 #: ../../source/api_reference/dsp.rst:892
 #: ../../source/api_reference/dsp.rst:1094
 #: ../../source/api_reference/dsp.rst:1215
@@ -2768,8 +2737,7 @@ msgstr "void set_band_filter_type(band_idx: `int`_, filter_type: :ref:`FilterTyp
 #: 1b3e510b3450419794b5c5cb4a517636
 #: 38eed63add054d90bbdc9be3c3000768
 msgid "设置指定频段的滤波器类型。"
-msgstr "Sets specified filter."
-
+msgstr "Sets the filter type of the specified band."
 #: ../../source/api_reference/dsp.rst:899
 #: ../../source/api_reference/dsp.rst:1101
 #: ../../source/api_reference/dsp.rst:1222
@@ -2790,8 +2758,7 @@ msgstr ":ref:`FilterType<FmodAudioEffectEQ-FilterType>` get_band_filter_type(ban
 #: d994058dbfdb444998c6a368423744ed
 #: 9e2b3c8ea65745c5bdc5ec2d15c36c04
 msgid "返回指定频段的滤波器类型。"
-msgstr "Returns specified filter."
-
+msgstr "Returns the filter type of the specified band."
 #: ../../source/api_reference/dsp.rst:906
 #: ../../source/api_reference/dsp.rst:1108
 #: ../../source/api_reference/dsp.rst:1229
@@ -3039,9 +3006,7 @@ msgstr "**6-band equalizer preset.**"
 #: e004412605364f08bc5e628f46ef622f
 msgid ""
 "**FmodAudioEffectEQ6** 是 :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 的 6 频段预设版本。默认频段为 ``32``、``100``、``320``、``1000``、``3200``、``10000`` Hz。它继承 :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 的全部属性和方法。"
-msgstr ""
-"**FmodAudioEffectEQ6** :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 6 version. default as ``32``, ``100``, ``320``, ``1000``, ``3200``, ``10000`` Hz. :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` and."
-
+msgstr "**FmodAudioEffectEQ6** is the 6-band preset version of :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>`. Its default bands are ``32``, ``100``, ``320``, ``1000``, ``3200``, and ``10000`` Hz. It inherits all properties and methods from :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>`."
 #: ../../source/api_reference/dsp.rst:1122
 #: 86413ab9111748f1a46191291428a60b
 msgid "FmodAudioEffectEQ10"
@@ -3056,9 +3021,7 @@ msgstr "**10-band equalizer preset.**"
 #: 77ed3aa495474cb2b72cd029ee5290dc
 msgid ""
 "**FmodAudioEffectEQ10** 是 :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 的 10 频段预设版本。默认频段为 ``31.25``、``62.5``、``125``、``250``、``500``、``1000``、``2000``、``4000``、``8000``、``16000`` Hz。它继承 :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 的全部属性和方法。"
-msgstr ""
-"**FmodAudioEffectEQ10** :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 10 version. default as ``31.25``, ``62.5``, ``125``, ``250``, ``500``, ``1000``, ``2000``, ``4000``, ``8000``, ``16000`` Hz. :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` and."
-
+msgstr "**FmodAudioEffectEQ10** is the 10-band preset version of :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>`. Its default bands are ``31.25``, ``62.5``, ``125``, ``250``, ``500``, ``1000``, ``2000``, ``4000``, ``8000``, and ``16000`` Hz. It inherits all properties and methods from :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>`."
 #: ../../source/api_reference/dsp.rst:1243
 #: aa6bb960e0cc481e8aa0f3b32341d9c6
 msgid "FmodAudioEffectEQ21"
@@ -3073,9 +3036,7 @@ msgstr "**21-band equalizer preset.**"
 #: ce22aab6bff64111b72dff82a235710d
 msgid ""
 "**FmodAudioEffectEQ21** 是 :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 的 21 频段预设版本。默认频段从 ``22`` Hz 延伸到 ``22000`` Hz。它继承 :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 的全部属性和方法。"
-msgstr ""
-"**FmodAudioEffectEQ21** :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` 21 version. default ``22`` Hz to ``22000`` Hz. :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>` and."
-
+msgstr "**FmodAudioEffectEQ21** is the 21-band preset version of :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>`. Its default bands range from ``22`` Hz to ``22000`` Hz. It inherits all properties and methods from :ref:`FmodAudioEffectEQ<FmodAudioEffectEQ>`."
 #: ../../source/api_reference/dsp.rst:1364
 #: de5f204d8bda49d5988d2834e6da01f5
 msgid "FmodAudioEffectDelay"
@@ -3084,13 +3045,11 @@ msgstr "FmodAudioEffectDelay"
 #: ../../source/api_reference/dsp.rst:1368
 #: 8b596d27474945af88ae867d308597e3
 msgid "**双 Tap 延迟与反馈延迟效果。**"
-msgstr "**Tap delay and delay effect.**."
-
+msgstr "**Dual-tap delay and feedback delay effect.**"
 #: ../../source/api_reference/dsp.rst:1373
 #: 7b1c19312fa9436f8918f9517f7476a1
 msgid "**FmodAudioEffectDelay** 提供两个独立 Tap 和一个可选反馈回路。每个 Tap 都可以设置延迟时间、电平和声像，反馈回路则可以设置延迟、电平和低通截止频率。"
-msgstr "**FmodAudioEffectDelay** provides Tap and can. Tap can sets delay when, and, can sets delay, and."
-
+msgstr "**FmodAudioEffectDelay** provides two independent taps and an optional feedback loop. Each tap can set delay time, level, and pan, while the feedback loop can set delay, level, and low-pass cutoff frequency."
 #: ../../source/api_reference/dsp.rst:1386
 #: ../../source/api_reference/dsp.rst:1656
 #: ../../source/api_reference/dsp.rst:2502
@@ -3158,8 +3117,7 @@ msgstr "-6.0"
 #: ../../source/api_reference/dsp.rst:1400
 #: e08fae972f0b4479902ae1c3c121dacf
 msgid "第一个 Tap 的电平"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Level of the first tap."
 #: ../../source/api_reference/dsp.rst:1402
 #: 64c0a2979f2348c6bcc24da17f8cff0e
 msgid "tap1_pan"
@@ -3173,8 +3131,7 @@ msgstr "0.2"
 #: ../../source/api_reference/dsp.rst:1404
 #: a4ce8fec2de1475f9f229b97bce84c42
 msgid "第一个 Tap 的声像"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Pan of the first tap."
 #: ../../source/api_reference/dsp.rst:1406
 #: f322ff366fb94c1c8107ff3c5d3aba70
 msgid "tap2_active"
@@ -3213,8 +3170,7 @@ msgstr "-12.0"
 #: ../../source/api_reference/dsp.rst:1416
 #: 7782f750176a4bbe9fef8d4004441014
 msgid "第二个 Tap 的电平"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Level of the second tap."
 #: ../../source/api_reference/dsp.rst:1418
 #: 111c09a62a9e4c9e8a66f944d20c5fec
 msgid "tap2_pan"
@@ -3228,8 +3184,7 @@ msgstr "-0.4"
 #: ../../source/api_reference/dsp.rst:1420
 #: 4981433f90db48b8affe2ece384d0845
 msgid "第二个 Tap 的声像"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Pan of the second tap."
 #: ../../source/api_reference/dsp.rst:1422
 #: d597877c0a61469fb41d49b7555c5a0d
 msgid "feedback_active"
@@ -3660,8 +3615,7 @@ msgstr "void set_voice_delay_ms(voice: `int`_, delay_ms: `float`_)"
 #: ../../source/api_reference/dsp.rst:1710
 #: 17209f0749d24804bdadb32a3744f6a4
 msgid "设置指定 voice 的延迟时间。"
-msgstr "Sets specified voice delay when."
-
+msgstr "Sets the delay time of the specified voice."
 #: ../../source/api_reference/dsp.rst:1715
 #: 96142fa5d2de4434a163d58ea76e598f
 msgid "`float`_ get_voice_delay_ms(voice: `int`_) const"
@@ -3670,8 +3624,7 @@ msgstr "`float`_ get_voice_delay_ms(voice: `int`_) const"
 #: ../../source/api_reference/dsp.rst:1717
 #: 7499dffdfbbe4fd0a50fe13f4b6f1dc9
 msgid "返回指定 voice 的延迟时间。"
-msgstr "Returns specified voice delay when."
-
+msgstr "Returns the delay time of the specified voice."
 #: ../../source/api_reference/dsp.rst:1722
 #: d857ed1f6dda48e9a90faa41387cc3f6
 msgid "void set_voice_rate_hz(voice: `int`_, rate_hz: `float`_)"
@@ -3680,8 +3633,7 @@ msgstr "void set_voice_rate_hz(voice: `int`_, rate_hz: `float`_)"
 #: ../../source/api_reference/dsp.rst:1724
 #: fea08bdc5d3344dc8c51e90b04e2dc08
 msgid "设置指定 voice 的调制速率。"
-msgstr "Sets specified voice."
-
+msgstr "Sets the modulation rate of the specified voice."
 #: ../../source/api_reference/dsp.rst:1729
 #: fdf3c83b5867483f85e60e1edb05d933
 msgid "`float`_ get_voice_rate_hz(voice: `int`_) const"
@@ -3690,8 +3642,7 @@ msgstr "`float`_ get_voice_rate_hz(voice: `int`_) const"
 #: ../../source/api_reference/dsp.rst:1731
 #: b87648253bc944d885b327dac8c4d544
 msgid "返回指定 voice 的调制速率。"
-msgstr "Returns specified voice."
-
+msgstr "Returns the modulation rate of the specified voice."
 #: ../../source/api_reference/dsp.rst:1736
 #: 6d9a65fd6bff4fc69c022630d36b8e9d
 msgid "void set_voice_depth_ms(voice: `int`_, depth_ms: `float`_)"
@@ -3700,8 +3651,7 @@ msgstr "void set_voice_depth_ms(voice: `int`_, depth_ms: `float`_)"
 #: ../../source/api_reference/dsp.rst:1738
 #: 62c822a9bd5648e19a847a63634ec51e
 msgid "设置指定 voice 的调制深度。"
-msgstr "Sets specified voice."
-
+msgstr "Sets the modulation depth of the specified voice."
 #: ../../source/api_reference/dsp.rst:1743
 #: 644b785470c94dad9c6782da9058acd2
 msgid "`float`_ get_voice_depth_ms(voice: `int`_) const"
@@ -3710,8 +3660,7 @@ msgstr "`float`_ get_voice_depth_ms(voice: `int`_) const"
 #: ../../source/api_reference/dsp.rst:1745
 #: 7b21cc36ccbe493a834852214afdf81a
 msgid "返回指定 voice 的调制深度。"
-msgstr "Returns specified voice."
-
+msgstr "Returns the modulation depth of the specified voice."
 #: ../../source/api_reference/dsp.rst:1750
 #: cb3a056f839047d995c7aa0cf1fbfb35
 msgid "void set_voice_level_db(voice: `int`_, level_db: `float`_)"
@@ -3720,8 +3669,7 @@ msgstr "void set_voice_level_db(voice: `int`_, level_db: `float`_)"
 #: ../../source/api_reference/dsp.rst:1752
 #: 980bb0e5e7ef4a278804294e3e5a992d
 msgid "设置指定 voice 的电平。"
-msgstr "Sets specified voice."
-
+msgstr "Sets the level of the specified voice."
 #: ../../source/api_reference/dsp.rst:1757
 #: ab34cf8a0cfa435c8f8e6fea809fab4c
 msgid "`float`_ get_voice_level_db(voice: `int`_) const"
@@ -3730,8 +3678,7 @@ msgstr "`float`_ get_voice_level_db(voice: `int`_) const"
 #: ../../source/api_reference/dsp.rst:1759
 #: fc86119bab874e368d88d1f736ba72c5
 msgid "返回指定 voice 的电平。"
-msgstr "Returns specified voice."
-
+msgstr "Returns the level of the specified voice."
 #: ../../source/api_reference/dsp.rst:1764
 #: 0d7542b263c241e290faf1a5cf5828ba
 msgid "void set_voice_cutoff_hz(voice: `int`_, cutoff_hz: `float`_)"
@@ -3740,8 +3687,7 @@ msgstr "void set_voice_cutoff_hz(voice: `int`_, cutoff_hz: `float`_)"
 #: ../../source/api_reference/dsp.rst:1766
 #: dd006a5f9d2b4fb293bea8013a46c079
 msgid "设置指定 voice 的截止频率。"
-msgstr "Sets specified voice."
-
+msgstr "Sets the cutoff frequency of the specified voice."
 #: ../../source/api_reference/dsp.rst:1771
 #: b6ed20878a034521a3f0188c6fbac110
 msgid "`float`_ get_voice_cutoff_hz(voice: `int`_) const"
@@ -3750,8 +3696,7 @@ msgstr "`float`_ get_voice_cutoff_hz(voice: `int`_) const"
 #: ../../source/api_reference/dsp.rst:1773
 #: c28a248124b54afe9303299bd0292c0e
 msgid "返回指定 voice 的截止频率。"
-msgstr "Returns specified voice."
-
+msgstr "Returns the cutoff frequency of the specified voice."
 #: ../../source/api_reference/dsp.rst:1778
 #: fb281ee60ad44febb7019ba507419d2b
 msgid "void set_voice_pan(voice: `int`_, pan: `float`_)"
@@ -3760,8 +3705,7 @@ msgstr "void set_voice_pan(voice: `int`_, pan: `float`_)"
 #: ../../source/api_reference/dsp.rst:1780
 #: 16014e68c2294566a2491cc092aab5e1
 msgid "设置指定 voice 的声像。"
-msgstr "Sets specified voice."
-
+msgstr "Sets the pan of the specified voice."
 #: ../../source/api_reference/dsp.rst:1785
 #: 8fad1ea8a3a14a91b30592e72f9d8d17
 msgid "`float`_ get_voice_pan(voice: `int`_) const"
@@ -3770,8 +3714,7 @@ msgstr "`float`_ get_voice_pan(voice: `int`_) const"
 #: ../../source/api_reference/dsp.rst:1787
 #: 8100862cfbe2404296f001ab1e680163
 msgid "返回指定 voice 的声像。"
-msgstr "Returns specified voice."
-
+msgstr "Returns the pan of the specified voice."
 #: ../../source/api_reference/dsp.rst:1792
 #: de33fa8cc87e4ddc910a6156c0725ea1
 msgid "FmodAudioEffectDistortion"
@@ -4054,8 +3997,7 @@ msgstr "FmodAudioEffectPhaser"
 #: ../../source/api_reference/dsp.rst:1965
 #: 18d853ef815b4915b1beba34e8e2dc01
 msgid "**移相器效果。**"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "**Phaser effect.**"
 #: ../../source/api_reference/dsp.rst:1970
 #: 92013579d0524928ad491c2f3d80872b
 msgid ""
@@ -4236,8 +4178,7 @@ msgstr "FmodAudioEffectPitchShift"
 #: ../../source/api_reference/dsp.rst:2083
 #: a9f1301f71dd480a899039ff15fa3b18
 msgid "**音高变换效果。**"
-msgstr "**pitch transform effect.**."
-
+msgstr "**Pitch shifting effect.**"
 #: ../../source/api_reference/dsp.rst:2088
 #: 9f7f248e37c645329d103117951c7806
 msgid "**FmodAudioEffectPitchShift** 用 FFT 处理改变信号音高。``pitch_scale`` 控制音高倍率，``fft_size`` 与 ``oversampling`` 会影响声音质量、延迟和 CPU 开销。"
@@ -4435,15 +4376,12 @@ msgstr "FmodAudioEffectCompressor"
 #: ../../source/api_reference/dsp.rst:2198
 #: 02ba0dcefd6141c9bfd4fb29ed325b0f
 msgid "**动态压缩器。**"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "**Dynamic compressor.**"
 #: ../../source/api_reference/dsp.rst:2203
 #: 9937219d288349208961e2eb8ee43178
 msgid ""
 "**FmodAudioEffectCompressor** 用于压低超过阈值的动态范围，并可通过输出增益补偿响度。``threshold_db`` 决定开始压缩的位置，``ratio`` 决定压缩强度，``attack_us`` 和 ``release_ms`` 控制响应速度，``mix`` 可用于并行压缩。"
-msgstr ""
-"**FmodAudioEffectCompressor** used for range, and can through output. ``threshold_db`` compression position, ``ratio`` compression, ``attack_us`` and ``release_ms`` controls velocity, ``mix`` can used for and compression."
-
+msgstr "**FmodAudioEffectCompressor** reduces the dynamic range above the threshold and can compensate loudness with output gain. ``threshold_db`` sets where compression begins, ``ratio`` sets compression strength, ``attack_us`` and ``release_ms`` control response speed, and ``mix`` can be used for parallel compression."
 #: ../../source/api_reference/dsp.rst:2216
 #: 8672dcffb48d4f099b4e432a009bbafe
 msgid "threshold_db"
@@ -4661,8 +4599,7 @@ msgstr "`StringName`_ get_sidechain() const"
 #: ../../source/api_reference/dsp.rst:2343
 #: f06b6323198348659c47a778e3aad504
 msgid "返回侧链总线名。"
-msgstr "Returns bus."
-
+msgstr "Returns the sidechain bus name."
 #: ../../source/api_reference/dsp.rst:2348
 #: f8ed5d12696141ab870c195743624e72
 msgid "FmodAudioEffectHardLimiter"
@@ -4671,13 +4608,11 @@ msgstr "FmodAudioEffectHardLimiter"
 #: ../../source/api_reference/dsp.rst:2352
 #: c9f136a4010745b8b0fb4a519b1b963c
 msgid "**硬限制器，用于限制峰值电平。**"
-msgstr "**, used for.**."
-
+msgstr "**Hard limiter for limiting peak level.**"
 #: ../../source/api_reference/dsp.rst:2357
 #: f7e06c301b3446d9a2d6bd12b17c6cbc
 msgid "**FmodAudioEffectHardLimiter** 用于阻止信号峰值超过指定上限。它常放在总线效果链后段，用于保护输出、抑制突发峰值或给某个总线做简单的安全限制。"
-msgstr "**FmodAudioEffectHardLimiter** used for specified. in bus effect chain after, used for output, or bus."
-
+msgstr "**FmodAudioEffectHardLimiter** prevents signal peaks from exceeding the specified ceiling. It is often placed near the end of a bus effect chain to protect output, suppress sudden peaks, or provide a simple safety limit for a bus."
 #: ../../source/api_reference/dsp.rst:2370
 #: 6cf3e4e1f85e414cbb24a9799a504647
 msgid "ceiling_db"
@@ -4776,8 +4711,7 @@ msgstr "FmodAudioEffectPanner"
 #: ../../source/api_reference/dsp.rst:2434
 #: 352cf4c589b84cecbbf318bdeef36969
 msgid "**左右声像控制。**"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "**Left/right panning control.**"
 #: ../../source/api_reference/dsp.rst:2439
 #: 0fbdf0b1c4b54836a6ac5aa2714823dd
 msgid "**FmodAudioEffectPanner** 提供简单的左右声像偏移。``pan`` 为负时偏左，为正时偏右，适合 2D UI 声音、非空间化音效或总线级声像调整。"
@@ -4791,8 +4725,7 @@ msgstr "pan"
 #: ../../source/api_reference/dsp.rst:2454
 #: eaa75d3e8f5c4ed99aaf24d983be5093
 msgid "声像位置，负值偏左，正值偏右"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Pan position. Negative values pan left; positive values pan right."
 #: ../../source/api_reference/dsp.rst:2462
 #: 3e0dc295cc7849b5b85bde571287b41a
 msgid "void set_pan(pan: `float`_)"
@@ -5052,8 +4985,7 @@ msgstr "FmodAudioEffectStereoEnhance"
 #: ../../source/api_reference/dsp.rst:2652
 #: e1d5ab70e78643b0819ab81b825d992b
 msgid "**立体声增强效果。**"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "**Stereo enhancement effect.**"
 #: ../../source/api_reference/dsp.rst:2657
 #: bec97d1dde634243ac65f141060bcc27
 msgid ""
@@ -5158,13 +5090,11 @@ msgstr "FmodAudioEffectSpectrumAnalyzer"
 #: ../../source/api_reference/dsp.rst:2734
 #: 93524ea332eb4a2eb7e4a080f83812cc
 msgid "**频谱分析器，可读取频段幅度、RMS 和频谱重心。**"
-msgstr "**spectrum analysis, can, RMS and.**."
-
+msgstr "**Spectrum analyzer that can read band magnitudes, RMS, and spectral centroid.**"
 #: ../../source/api_reference/dsp.rst:2739
 #: 59cf2d50f19f4cf5a37136f6ab2ef5cf
 msgid "**FmodAudioEffectSpectrumAnalyzer** 会在总线效果链中插入 FFT DSP，并从中读取频谱数据。它不会主动改变声音，主要用于可视化、节拍/能量检测、频段驱动的 UI 或调试混音。"
-msgstr "**FmodAudioEffectSpectrumAnalyzer** will in bus effect chain FFT DSP, and. will sound, used for can, /, UI or mixing."
-
+msgstr "**FmodAudioEffectSpectrumAnalyzer** inserts an FFT DSP into the bus effect chain and reads spectrum data from it. It does not alter the sound by itself, and is mainly useful for visualization, beat or energy detection, band-driven UI, and mix debugging."
 #: ../../source/api_reference/dsp.rst:2752
 #: ../../source/api_reference/dsp.rst:3054
 #: 26db98c276854faba4e7ba0fa65aa3c8
@@ -5180,8 +5110,7 @@ msgstr "2.0"
 #: ../../source/api_reference/dsp.rst:2754
 #: e124a615410d44489caadca6e979334b
 msgid "分析缓冲长度，单位为秒"
-msgstr "Unit as."
-
+msgstr "Analysis buffer length, in seconds."
 #: ../../source/api_reference/dsp.rst:2755
 #: 0ffc404aacf34ccc92f66342cdf939ef
 msgid ":ref:`FFTSize<FmodAudioEffectSpectrumAnalyzer-FFTSize>`"
@@ -5229,8 +5158,7 @@ msgstr "void update_spectrum()"
 #: ../../source/api_reference/dsp.rst:2796
 #: 9ba6e19466254a849343928ec1713c6a
 msgid "主动刷新频谱数据。"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Actively refreshes spectrum data."
 #: ../../source/api_reference/dsp.rst:2801
 #: 617a13dbd7af4effb9fe2f57317c4148
 msgid "`int`_ get_bin_count() const"
@@ -5271,8 +5199,7 @@ msgstr ""
 #: ../../source/api_reference/dsp.rst:2824
 #: 8faddee3a90542d0bd3359fc79abeab1
 msgid "返回指定频率范围内左右声道的幅度。"
-msgstr "Returns specified range."
-
+msgstr "Returns the left and right channel magnitudes within the specified frequency range."
 #: ../../source/api_reference/dsp.rst:2862
 #: 46c64f2c42bf49a2a95100c336e32b63
 msgid "MagnitudeMode"
@@ -5348,15 +5275,12 @@ msgstr "FmodAudioEffectRecord"
 #: ../../source/api_reference/dsp.rst:2905
 #: f1a85cd8c892488fbd4039db5f5acc78
 msgid "**录音效果，会让信号原样通过，并在录制时缓存经过该总线的音频。**"
-msgstr "**effect, will through, and in when cache bus audio.**."
-
+msgstr "**Recording effect that passes the signal through unchanged and caches audio passing through the bus while recording.**"
 #: ../../source/api_reference/dsp.rst:2910
 #: 7214d14a44c94b79b9076c4522d99232
 msgid ""
 "**FmodAudioEffectRecord** 是一个通过型录音 DSP。它不会改变总线输出，而是在 ``recording_active`` 启用时把经过效果器的音频写入内部缓冲。停止录制后，可以通过 ``get_recording()`` 得到 `AudioStreamWAV`_，也可以通过 ``get_waveform_snapshot()`` 获取波形预览数据。"
-msgstr ""
-"**FmodAudioEffectRecord** through DSP. will bus output, in ``recording_active`` when effect audio internal. stop after, can through ``get_recording()`` to `AudioStreamWAV`_, can through ``get_waveform_snapshot()`` gets."
-
+msgstr "**FmodAudioEffectRecord** is a pass-through recording DSP. It does not change the bus output; when ``recording_active`` is enabled, it writes audio passing through the effect into an internal buffer. After recording stops, use ``get_recording()`` to obtain an `AudioStreamWAV`_, or ``get_waveform_snapshot()`` to obtain waveform preview data."
 #: ../../source/api_reference/dsp.rst:2922
 #: 5b242bc038e54602895c03e0fc064a86
 msgid ":ref:`FmodAudioEffectRecord.Format<FmodAudioEffectRecord-Format>`"
@@ -5538,8 +5462,7 @@ msgstr "FmodAudioEffectCapture"
 #: ../../source/api_reference/dsp.rst:3036
 #: 3c061500b6774be3b7ab779d7ba2b1d3
 msgid "**捕获效果，可从环形缓冲中取出经过该总线的音频帧。**"
-msgstr "**effect, can bus audio.**."
-
+msgstr "**Capture effect that can read audio frames passing through the bus from a ring buffer.**"
 #: ../../source/api_reference/dsp.rst:3041
 #: cff2d8d4d02947839cb76f75dc117c91
 msgid ""
@@ -5550,8 +5473,7 @@ msgstr ""
 #: ../../source/api_reference/dsp.rst:3056
 #: 28fc429ff058405798dfdcfa27afbf93
 msgid "环形缓冲长度，单位为秒"
-msgstr "Unit as."
-
+msgstr "Ring buffer length, in seconds."
 #: ../../source/api_reference/dsp.rst:3066
 #: d3f4db20737b49a09619fd70cebfd007
 msgid "设置环形缓冲长度。"

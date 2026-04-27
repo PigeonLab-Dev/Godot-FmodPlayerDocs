@@ -44,18 +44,13 @@ msgstr "Description"
 msgid ""
 "**FmodServer** 是一个全局单例，用于管理 Godot 中的 FMOD Core API 音频系统。它初始化并维护主 FMOD "
 "系统实例，注册性能监控以跟踪 CPU 和文件使用情况，管理音频总线布局，并连接到 Godot 的 `SceneTree`_ 以进行每帧更新。"
-msgstr ""
-"**FmodServer**, used for manages Godot FMOD Core API audio. and FMOD "
-"instance, performance monitor CPU and file, manages audio bus, and "
-"connection to Godot `SceneTree`_ updates."
+msgstr "**FmodServer** is a global singleton for managing the FMOD Core API audio system in Godot. It initializes and maintains the main FMOD system instance, registers performance monitors for CPU and file usage, manages the audio bus layout, and connects to Godot's `SceneTree`_ for per-frame updates."
 
 #: ../../source/api_reference/core.rst:19 aa35671dc0114d628558f3b6c3255fc0
 msgid ""
 "服务器在 `GDExtension`_ 加载期间自动初始化，并处理所有 FMOD 生命周期管理。它创建的性能监控可以在 Godot 的调试器 > "
 "监视器选项卡中查看，以跟踪 FMOD 的资源使用情况。"
-msgstr ""
-"In `GDExtension`_ load, and FMOD lifecycle manages. creates performance "
-"monitor can in Godot >, FMOD."
+msgstr "The server initializes automatically when the `GDExtension`_ is loaded and handles the FMOD lifecycle. The performance monitors it creates can be viewed in Godot's Debugger > Monitors tab to track FMOD resource usage."
 
 #: ../../source/api_reference/core.rst:21 dbc9a616e09f4e43bfe03c8b55814c0e
 msgid "**性能监控：**"
@@ -79,8 +74,7 @@ msgstr "FmodCPUUsage/Stream"
 
 #: ../../source/api_reference/core.rst:30 977321d02c024283a0fae7aba51337c4
 msgid "流解码 CPU 使用百分比"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Stream decoding CPU usage percentage."
 #: ../../source/api_reference/core.rst:31 c256b43d854c4a338d2c32c0ebfb0971
 msgid "FmodCPUUsage/Geometry"
 msgstr "FmodCPUUsage/Geometry"
@@ -119,24 +113,21 @@ msgstr "FmodFileUsage/SampleBytesRead"
 
 #: ../../source/api_reference/core.rst:40 f2877c4a8bb44e798de25748bb1d9d13
 msgid "从磁盘读取的样本字节数"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Sample bytes read from disk."
 #: ../../source/api_reference/core.rst:41 226a247280484bf4bc5901cab6ecc19f
 msgid "FmodFileUsage/StreamBytesRead"
 msgstr "FmodFileUsage/StreamBytesRead"
 
 #: ../../source/api_reference/core.rst:42 4870da641d3c4f9ead454217a64b5d2d
 msgid "从磁盘读取的流字节数"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Stream bytes read from disk."
 #: ../../source/api_reference/core.rst:43 79030445a0c9452a816657e933b808e7
 msgid "FmodFileUsage/OtherBytesRead"
 msgstr "FmodFileUsage/OtherBytesRead"
 
 #: ../../source/api_reference/core.rst:44 decd01357597475496de683a8e18cecf
 msgid "从磁盘读取的其他字节数"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Other bytes read from disk."
 #: ../../source/api_reference/core.rst:47
 #: ../../source/api_reference/core.rst:214 95abba49aa904ba9a39b2c3c8dca5298
 #: d36c6cd786194be5b7a3e0f0738c2af2
@@ -156,11 +147,7 @@ msgid ""
 "这将扫描 Godot 的 `AudioServer`_ 总线层级并创建对应的 "
 ":ref:`FmodAudioBusLayout<FmodAudioBusLayout>` 和 "
 ":ref:`FmodAudioBus<FmodAudioBus>` 实例，以确保 FMOD 的总线结构与 Godot 的总线结构同步。"
-msgstr ""
-"Godot `AudioServer`_ bus and creates "
-":ref:`FmodAudioBusLayout<FmodAudioBusLayout>` and "
-":ref:`FmodAudioBus<FmodAudioBus>` instance, FMOD bus and Godot bus "
-"synchronizes."
+msgstr "Scans the Godot `AudioServer`_ bus hierarchy and creates matching :ref:`FmodAudioBusLayout<FmodAudioBusLayout>` and :ref:`FmodAudioBus<FmodAudioBus>` instances so the FMOD bus structure stays synchronized with Godot's bus structure."
 
 #: ../../source/api_reference/core.rst:61 054d19d973b54c59ac97862588216fc3
 msgid ""
@@ -174,10 +161,7 @@ msgstr ""
 msgid ""
 "返回用于管理音频总线及其路由的音频总线布局。该总线布局与 Godot 的 `AudioServer`_ 总线布局同步，并提供 FMOD "
 "特定的总线功能，包括 DSP 效果。"
-msgstr ""
-"Returns used for manages audio bus routing audio bus. bus layout and "
-"Godot `AudioServer`_ bus layout synchronizes, and provides FMOD bus, DSP "
-"effect."
+msgstr "Returns the audio bus layout used to manage buses and routing. The layout is synchronized with Godot's `AudioServer`_ bus layout and provides FMOD-specific bus features, including DSP effects."
 
 #: ../../source/api_reference/core.rst:68 a918ffef846c47c7bc75996d7a8090a2
 msgid ":ref:`FmodSystem<FmodSystem>` get_main_system() static"
@@ -185,9 +169,7 @@ msgstr ":ref:`FmodSystem<FmodSystem>` get_main_system() static"
 
 #: ../../source/api_reference/core.rst:70 11b5a2e9a3e34903aee9386d4781ff0d
 msgid "返回主要的 FMOD 系统实例。这是创建声音、通道、DSP 效果和其他 FMOD 对象的主要接口。系统在服务器启动时会根据项目设置自动初始化。"
-msgstr ""
-"Returns FMOD instance. creates sound, channel, DSP effect and FMOD "
-"object. in when will sets."
+msgstr "Returns the main FMOD system instance. This is the primary interface for creating sounds, channels, DSP effects, and other FMOD objects. The system is initialized automatically from project settings when the server starts."
 
 #: ../../source/api_reference/core.rst:75 428b77f303874ca1bd553f68b4304f71
 msgid ""
@@ -199,9 +181,7 @@ msgstr ""
 
 #: ../../source/api_reference/core.rst:77 4a40ae10f148484e9cc0aca4b293d73e
 msgid "返回默认情况下所有声音通过的主通道组。它是通道组层次结构的根，可以用于控制所有正在播放声音的全局音量、音高和效果。"
-msgstr ""
-"Returns default sound through master channel group. channel group, can "
-"used for controls in sound volume, pitch and effect."
+msgstr "Returns the master channel group through which all sounds pass by default. It is the root of the channel group hierarchy and can control global volume, pitch, and effects for all currently playing sounds."
 
 #: ../../source/api_reference/core.rst:82 ffdeb8045ad944c6af540fb1433467a5
 msgid "void reset_main_system(system: :ref:`FmodSystem<FmodSystem>`) static"
@@ -227,9 +207,7 @@ msgstr "**FMOD::System object, provides audio manages and controls**."
 msgid ""
 "**FmodSystem** 封装了 FMOD 核心 API 的 FMOD::System "
 "对象，并提供全面的音频系统管理功能。该类负责系统初始化、音频设备管理、声音创建、播放控制以及录音功能。"
-msgstr ""
-"**FmodSystem** wraps FMOD API FMOD::System object, and provides audio "
-"manages., audio manages, sound creates, controls."
+msgstr "**FmodSystem** wraps the FMOD::System object from the FMOD Core API and provides comprehensive audio system management. It is responsible for system initialization, audio device management, sound creation, playback control, and recording."
 
 #: ../../source/api_reference/core.rst:100 fd48cb585f68406fbcccde5b8bd215c1
 msgid ""
@@ -496,8 +474,7 @@ msgstr "default_decode_buffer_size"
 
 #: ../../source/api_reference/core.rst:127 764207fce5de497087a85690ec30cc4e
 msgid "流式解码双缓冲区默认大小"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Default size of the stream decoding double buffer."
 #: ../../source/api_reference/core.rst:129 f130b8f20b3a42bfa61101d870ae3ad4
 msgid "distance_factor"
 msgstr "distance_factor"
@@ -541,8 +518,7 @@ msgstr "dsp_buffer_pool_size"
 
 #: ../../source/api_reference/core.rst:143 286f11cd338b4914a5c7ae893d19d948
 msgid "DSP 中间混合缓冲区数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Number of intermediate DSP mix buffers."
 #: ../../source/api_reference/core.rst:145 e4b2d2f773e6422e8679720f5fd6034c
 msgid "geometry_max_fade_time"
 msgstr "geometry_max_fade_time"
@@ -565,8 +541,7 @@ msgstr "max_at9_codecs"
 
 #: ../../source/api_reference/core.rst:155 ceba899e3fb14046b26f0d2fab180369
 msgid "最大 AT9 解码器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum AT9 decoder count."
 #: ../../source/api_reference/core.rst:157 faa84f8003f341b7b1950d12f50399ff
 msgid "max_convolution_threads"
 msgstr "max_convolution_threads"
@@ -581,24 +556,21 @@ msgstr "max_fadpcm_codecs"
 
 #: ../../source/api_reference/core.rst:163 9b217de1880c4c29b8ba687914bcbb09
 msgid "最大 FADPCM 解码器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum FADPCM decoder count."
 #: ../../source/api_reference/core.rst:165 0254ec02e6184f30a22ac2c21a1c3d95
 msgid "max_mpeg_codecs"
 msgstr "max_mpeg_codecs"
 
 #: ../../source/api_reference/core.rst:167 6d8cef360ca4455f8a39b9fbc1a12b60
 msgid "最大 MPEG 解码器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum MPEG decoder count."
 #: ../../source/api_reference/core.rst:169 a9a9494e043641ff85b54af74b26355b
 msgid "max_opus_codecs"
 msgstr "max_opus_codecs"
 
 #: ../../source/api_reference/core.rst:171 72c20471518f4ca9a57c44e7715e71f9
 msgid "最大 Opus 解码器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum Opus decoder count."
 #: ../../source/api_reference/core.rst:173 960db544a8b84db298124edb6f0ed5f0
 msgid "max_software_channels"
 msgstr "max_software_channels"
@@ -613,24 +585,21 @@ msgstr "max_spatial_objects"
 
 #: ../../source/api_reference/core.rst:179 13058c46b73a4e8d857ed9eec4effb17
 msgid "每个系统预留的最大空间对象数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum spatial object count reserved per system."
 #: ../../source/api_reference/core.rst:181 249db274353d475b8aa1f57671098337
 msgid "max_vorbis_codecs"
 msgstr "max_vorbis_codecs"
 
 #: ../../source/api_reference/core.rst:183 420f1ae0095f43d496d3979ff8a109da
 msgid "最大 Vorbis 解码器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum Vorbis decoder count."
 #: ../../source/api_reference/core.rst:185 67078340ee9a44db98cfe9fed1936b34
 msgid "max_xma_codecs"
 msgstr "max_xma_codecs"
 
 #: ../../source/api_reference/core.rst:187 83d3b0a107b645afa1b080669579e37e
 msgid "最大 XMA 解码器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum XMA decoder count."
 #: ../../source/api_reference/core.rst:189 8004d469f9a94d349f3415d3e603b3c2
 msgid "profile_port"
 msgstr "profile_port"
@@ -645,8 +614,7 @@ msgstr "random_seed"
 
 #: ../../source/api_reference/core.rst:195 96c8bf755d9f4e05a4ab97e998acc929
 msgid "内部随机数生成器种子"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Internal random number generator seed."
 #: ../../source/api_reference/core.rst:196 1f2b38062a7342f898b193864dad91ca
 msgid ":ref:`FmodResamplerMethod<FmodResamplerMethod>`"
 msgstr ":ref:`FmodResamplerMethod<FmodResamplerMethod>`"
@@ -657,8 +625,7 @@ msgstr "resampler_method"
 
 #: ../../source/api_reference/core.rst:199 1998a3058abd4191a14f47dbc6c03481
 msgid "软件混音器重采样方法"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Software mixer resampling method."
 #: ../../source/api_reference/core.rst:201 dc8b71f1ff8240ff8fabba8b28b50fec
 msgid "reverb_3d_instance"
 msgstr "reverb_3d_instance"
@@ -715,10 +682,7 @@ msgstr ":ref:`FmodSystem<FmodSystem>` create_system() static"
 msgid ""
 "创建并返回一个新的 FMOD System 实例。对于大多数应用程序，建议使用 :ref:`FmodServer<FmodServer>` "
 "的全局单例系统，而不是直接创建多个系统实例。"
-msgstr ""
-"Creates and returns FMOD System instance. for, "
-":ref:`FmodServer<FmodServer>`, creates instance."
-
+msgstr "Creates and returns a new FMOD System instance. For most applications, use the global singleton from :ref:`FmodServer<FmodServer>` instead of creating multiple systems directly."
 #: ../../source/api_reference/core.rst:246 87270a5386e4448f9b8cf28a2e5f249b
 msgid ""
 "void init(max_channels: `int`_ = 32, flags: "
@@ -747,10 +711,7 @@ msgstr "void close()"
 msgid ""
 "关闭与输出设备的连接，并将系统恢复到未初始化状态，而不释放对象。可以通过再次调用 :ref:`init()<FmodSystem-init>` "
 "来重新初始化系统。"
-msgstr ""
-"And output device connection, and resume to state, releases object. can "
-"through :ref:`init()<FmodSystem-init>`."
-
+msgstr "Closes the connection to the output device and returns the system to an uninitialized state without releasing the object. The system can be initialized again by calling :ref:`init()<FmodSystem-init>`."
 #: ../../source/api_reference/core.rst:264 0f38590d32ef40c099e4fcb6ce71e095
 msgid "void release()"
 msgstr "void release()"
@@ -832,16 +793,14 @@ msgstr "`int`_ get_num_drivers() const"
 
 #: ../../source/api_reference/core.rst:315 27e54e47b48c49c4b9325c395d6cf031
 msgid "返回当前所选输出类型可用的输出驱动程序数量。"
-msgstr "Returns current output can output."
-
+msgstr "Returns the number of output drivers available for the currently selected output type."
 #: ../../source/api_reference/core.rst:320 8010be0bcfaa4bfa8e9ea2efe12e6063
 msgid "`Dictionary`_ get_driver_info(id: `int`_) const"
 msgstr "`Dictionary`_ get_driver_info(id: `int`_) const"
 
 #: ../../source/api_reference/core.rst:322 71171777e02e4706808d3ca789bb04ad
 msgid "返回指定索引的声音设备的识别信息。"
-msgstr "Returns specified index sound."
-
+msgstr "Returns identification information for the audio device at the specified index."
 #: ../../source/api_reference/core.rst:324
 #: ../../source/api_reference/core.rst:882
 #: ../../source/api_reference/core.rst:913
@@ -984,16 +943,14 @@ msgstr "void set_software_channels(num_software_channels: `int`_)"
 
 #: ../../source/api_reference/core.rst:370 a5bb9ba6358c443cbbfc75c1bdfce21c
 msgid "设置软件混音器可使用的最大 Channel 数量。"
-msgstr "Sets mixing can Channel."
-
+msgstr "Sets the maximum number of Channels available to the software mixer."
 #: ../../source/api_reference/core.rst:375 057d2ec0da814c448d3c513e6cbcfb38
 msgid "`int`_ get_software_channels() const"
 msgstr "`int`_ get_software_channels() const"
 
 #: ../../source/api_reference/core.rst:377 b4df75b5eeff48c1a652e792ca89bfe8
 msgid "返回软件混音器可使用的最大 Channel 数量。"
-msgstr "Returns mixing can Channel."
-
+msgstr "Returns the maximum number of Channels available to the software mixer."
 #: ../../source/api_reference/core.rst:382 efc46e9517f3418fb8901c1454f36285
 msgid ""
 "void set_software_format(sample_rate: `int`_, speaker_mode: "
@@ -1016,8 +973,7 @@ msgstr "``speaker_mode`` —— output (, 5.1)."
 
 #: ../../source/api_reference/core.rst:388 8835bb4e036148019f62080742ca8661
 msgid "``num_raw_speakers`` —— 原始扬声器模式下的扬声器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "``num_raw_speakers`` -- Number of speakers in raw speaker mode."
 #: ../../source/api_reference/core.rst:390 e86e3c926e4a4cebbf726a0dc66a3df1
 msgid "必须在调用 :ref:`init()<FmodSystem-init>` 之前调用"
 msgstr "In :ref:`init()<FmodSystem-init>` before."
@@ -1048,8 +1004,7 @@ msgstr "num_raw_speakers"
 
 #: ../../source/api_reference/core.rst:413 c4a54264dc9d4ddcb85553918f768295
 msgid "原始扬声器模式下的扬声器数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Number of speakers in raw speaker mode."
 #: ../../source/api_reference/core.rst:418 6db4ab95a4534514bc8127e8891e7c92
 msgid "void set_dsp_buffer_size(buffer_length: `int`_, num_buffers: `int`_)"
 msgstr "void set_dsp_buffer_size(buffer_length: `int`_, num_buffers: `int`_)"
@@ -1070,24 +1025,21 @@ msgstr "`Dictionary`_ get_dsp_buffer_size() const"
 
 #: ../../source/api_reference/core.rst:429 49e0e6d772504e63b76a4f41abd2e745
 msgid "返回当前 DSP 缓冲区大小设置，格式为字典，包括："
-msgstr "Returns current DSP sets, as,:."
-
+msgstr "Returns the current DSP buffer size settings as a dictionary containing:"
 #: ../../source/api_reference/core.rst:437 56fb9038909f49afaaec538dd8b11f93
 msgid "buffer_length"
 msgstr "buffer_length"
 
 #: ../../source/api_reference/core.rst:439 c429acf783a14563bccb134a0efe82f0
 msgid "每个缓冲区的样本长度"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Sample length of each buffer."
 #: ../../source/api_reference/core.rst:440 7cb052d5f0474961b09a5900773e1262
 msgid "num_buffers"
 msgstr "num_buffers"
 
 #: ../../source/api_reference/core.rst:442 c0f1e7bd7530468fa63037b2a91d7d53
 msgid "环形缓冲区中的缓冲区数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Number of buffers in the ring buffer."
 #: ../../source/api_reference/core.rst:447 f93b6b0fb9144a91b2906b5ec91908a9
 msgid ""
 "void set_stream_buffer_size(file_buffer_size: `int`_ = 16384, "
@@ -1164,8 +1116,7 @@ msgstr ""
 
 #: ../../source/api_reference/core.rst:489 2ac7f2b5c29248bda4b9678ac61dd3b4
 msgid "返回指定扬声器的位置，作为一个字典，包括："
-msgstr "Returns specified position, as,:."
-
+msgstr "Returns the position of the specified speaker as a dictionary containing:"
 #: ../../source/api_reference/core.rst:497 995a2cba707c4d44942b7d658fc9e0e4
 msgid "x"
 msgstr "x"
@@ -1577,7 +1528,7 @@ msgstr "void set_max_spatial_objects(max_objects: `int`_)"
 
 #: ../../source/api_reference/core.rst:826 922e658bf0aa473c90cb5e06127305d0
 msgid "设置每个 FmodSystem 可预留的最大空间对象数量。"
-msgstr "Sets FmodSystem can object."
+msgstr "Sets the maximum number of spatial objects that can be reserved per FmodSystem."
 
 #: ../../source/api_reference/core.rst:831 61943e3f015d4cf2990bccf8775e5ddd
 msgid "`int`_ get_max_spatial_objects() const"
@@ -1585,8 +1536,7 @@ msgstr "`int`_ get_max_spatial_objects() const"
 
 #: ../../source/api_reference/core.rst:833 50741bc4891e462ba4045c4e832a7b89
 msgid "返回每个 FmodSystem 可预留的最大空间对象数量。 网络配置 ^^^^^^^^"
-msgstr "Returns FmodSystem can object. ^^^^^^^^."
-
+msgstr "Returns the maximum number of spatial objects that can be reserved per FmodSystem."
 #: ../../source/api_reference/core.rst:840 77c3b41eb632471cb0c2d604bc531b1e
 msgid "void set_network_proxy(proxy: `String`_)"
 msgstr "void set_network_proxy(proxy: `String`_)"
@@ -1597,8 +1547,7 @@ msgstr "As after connection sets URL."
 
 #: ../../source/api_reference/core.rst:844 c4652399d8054e708f43c6f0e6bbcb65
 msgid "传递空字符串以禁用代理。"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Pass an empty string to disable the proxy."
 #: ../../source/api_reference/core.rst:847 21db972f7e5847d3b8af6ff39807359f
 msgid "以 host:port 格式指定代理，例如 ``www.fmod.com:8888`` （如果未指定端口，则默认为端口 80）"
 msgstr "Host:port specified, ``www.fmod.com:8888`` (if specified, default as 80)."
@@ -1661,8 +1610,7 @@ msgstr "build_number"
 
 #: ../../source/api_reference/core.rst:895 46d66e0a3e9444d4a7b535fdece8b9f7
 msgid "FMOD 构建号字符串"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "FMOD build number string."
 #: ../../source/api_reference/core.rst:900 fde5cee57ede4079901fa43ab3fecd6b
 msgid "`int`_ get_output_handle() const"
 msgstr "`int`_ get_output_handle() const"
@@ -1697,8 +1645,7 @@ msgstr "real_channels"
 
 #: ../../source/api_reference/core.rst:926 f02d1a27d8ab43408f7db4286e43217c
 msgid "实际可听的声道数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Number of actually audible channels."
 #: ../../source/api_reference/core.rst:931 67ffa8852aa84ab697bed6954848dde8
 msgid "`Dictionary`_ get_cpu_usage() const"
 msgstr "`Dictionary`_ get_cpu_usage() const"
@@ -1743,8 +1690,7 @@ msgstr ""
 
 #: ../../source/api_reference/core.rst:954 19691d7baa844bee8c29fba4ad8c6de3
 msgid "返回指定扬声器模式对应的通道数量。 声音与获取 ^^^^^^^^^^"
-msgstr "Returns specified channel. sound and gets ^^^^^^^^^^."
-
+msgstr "Returns the channel count for the specified speaker mode."
 #: ../../source/api_reference/core.rst:961 f07bb061be884924a1a3300d11854c5d
 msgid ""
 ":ref:`FmodSound<FmodSound>` create_sound_from_file(path: `String`_, mode:"
@@ -1882,7 +1828,7 @@ msgstr ":ref:`FmodReverb3D` create_reverb_3d() const"
 
 #: ../../source/api_reference/core.rst:1031 e0901f86a1304344bbab0cb548e8006b
 msgid "创建一个用于空间音频混响效果的3D混响区域。"
-msgstr "Creates used for audio reverb effect 3D reverb zone."
+msgstr "Creates a 3D reverb zone for spatial audio reverb effects."
 
 #: ../../source/api_reference/core.rst:1033 83ab16989294482cbc40c614c5f513f9
 msgid "返回一个 :ref:`FmodReverb3D` 对象，该对象可以在3D空间中定位并配置混响参数。"
@@ -1890,7 +1836,7 @@ msgstr "Returns a :ref:`FmodReverb3D` object that can be positioned in 3D space 
 
 #: ../../source/api_reference/core.rst:1035 26cce229b7d4471b916b66bf75c0c791
 msgid "使用此功能可以创建如洞穴、礼堂或房间等环境音效。"
-msgstr "Can creates, or."
+msgstr "Use this to create environmental acoustics such as caves, halls, or rooms."
 
 #: ../../source/api_reference/core.rst:1040 72c4dff63bed4c499c174f801d67c2ff
 msgid ""
@@ -1904,7 +1850,7 @@ msgstr ""
 
 #: ../../source/api_reference/core.rst:1042 874b8c45eef541d6b5053b7606d8d0f7
 msgid "在一个通道上播放声音，通过指定的通道组路由。"
-msgstr "In channel sound, through specified channel group routing."
+msgstr "Plays a sound on a Channel and routes it through the specified ChannelGroup."
 
 #: ../../source/api_reference/core.rst:1044 6496face1d7546bebb381d6c20bb47ab
 msgid ""
@@ -1920,7 +1866,7 @@ msgstr ""
 #: ../../source/api_reference/core.rst:1057 9a3bbb94555b4e9ba2f359cfe18c6a5d
 #: b86c21880cbc42b581519f56021bd600
 msgid "返回一个 :ref:`FmodChannel<FmodChannel>` 句柄，可用于控制播放。"
-msgstr "Returns :ref:`FmodChannel<FmodChannel>` handle, can used for controls."
+msgstr "Returns a :ref:`FmodChannel<FmodChannel>` handle that can be used to control playback."
 
 #: ../../source/api_reference/core.rst:1051 76e416ab789141c9ae0fdd5228cf3a7d
 msgid ""
@@ -1960,8 +1906,7 @@ msgstr "`Dictionary`_ get_dsp_info_by_type(type: `int`_) const"
 
 #: ../../source/api_reference/core.rst:1071 1e61f3ee4fb7426f9e0ff9512052fb59
 msgid "检索有关内置 DSP 类型的信息。"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Retrieves information about a built-in DSP type."
 #: ../../source/api_reference/core.rst:1083 734cf00a3fa04aac8e811aa50640ee4e
 msgid "DSP 的名称"
 msgstr "DSP name."
@@ -2062,8 +2007,7 @@ msgstr "Returns sound default sound."
 
 #: ../../source/api_reference/core.rst:1129 97b9ee21d27e457c9bbe7aab187c25cd
 msgid "主声音组可用于设置全局播放限制并控制所有声音的整体行为。"
-msgstr "Sound can used for sets and controls sound as."
-
+msgstr "The master sound group can be used to set global playback limits and control the overall behavior of all sounds."
 #: ../../source/api_reference/core.rst:1132 f23644d1fd834a48a58ce6c19d3e9484
 msgid "运行控制"
 msgstr "Controls."
@@ -2098,16 +2042,14 @@ msgstr "``forward`` —— before."
 
 #: ../../source/api_reference/core.rst:1146 92b39c7d596c47468eb37d4932100cb5
 msgid "``up`` —— 听者的上向量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "``up`` -- The listener up vector."
 #: ../../source/api_reference/core.rst:1151 8728b4c4b1e34d95acfe414cfa42e244
 msgid "`Dictionary`_ get_3d_listener_attributes(listener: `int`_) const"
 msgstr "`Dictionary`_ get_3d_listener_attributes(listener: `int`_) const"
 
 #: ../../source/api_reference/core.rst:1153 1fa499120945440f9aebc2d4f7680958
 msgid "以字典形式返回指定监听器的 3D 属性："
-msgstr "Returns specified listener 3D:"
-
+msgstr "Returns the specified listener's 3D attributes as a dictionary:"
 #: ../../source/api_reference/core.rst:1161 7d06cd9c2bb34da790fb57dd5c0abcdb
 msgid "position"
 msgstr "position"
@@ -2165,8 +2107,7 @@ msgstr ""
 
 #: ../../source/api_reference/core.rst:1179 30b8e26402ec4fe0bc391c25f794ed5a
 msgid "设置指定混响实例的混响属性。"
-msgstr "Sets specified reverb instance reverb."
-
+msgstr "Sets the reverb properties for the specified reverb instance."
 #: ../../source/api_reference/core.rst:1181 9a3d85d9d20240c3bad42cab156d524e
 msgid ""
 "混响实例 ID 是通过 :ref:`create_reverb_3d()<FmodSystem-create_reverb_3d>` 创建的 "
@@ -2229,8 +2170,7 @@ msgstr "`Dictionary`_ get_reverb_properties(instance: `int`_) const"
 
 #: ../../source/api_reference/core.rst:1201 6d90901bdb5046b5bd8fbda2e3ecadf5
 msgid "以字典形式返回指定全局混响实例的混响属性，包括所有参数："
-msgstr "Returns specified reverb instance reverb, parameter:"
-
+msgstr "Returns the reverb properties for the specified global reverb instance as a dictionary containing all parameters:"
 #: ../../source/api_reference/core.rst:1209 f02e91ae7c3e49e682ce2a10cb09dc8c
 msgid "decay_time"
 msgstr "decay_time"
@@ -2377,16 +2317,14 @@ msgstr "`Dictionary`_ get_record_num_drivers() const"
 
 #: ../../source/api_reference/core.rst:1274 84127b77e5fd4def9fd0df2bc4e3d964
 msgid "返回有关可用录音设备的信息"
-msgstr "Returns can."
-
+msgstr "Returns information about the available recording devices."
 #: ../../source/api_reference/core.rst:1284 8321acf07f334f3faa539f6a3a61371d
 msgid "num_drivers"
 msgstr "num_drivers"
 
 #: ../../source/api_reference/core.rst:1286 1de61a137969447fbffd13c78944a2c9
 msgid "可用录音设备的总数"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Total number of available recording devices."
 #: ../../source/api_reference/core.rst:1287 d108380834f7435dbb1917ce6a67dce6
 msgid "num_connected"
 msgstr "num_connected"
@@ -2429,8 +2367,7 @@ msgstr "`int`_ get_record_position(id: `int`_) const"
 
 #: ../../source/api_reference/core.rst:1330 ada5c5f8ad72473493d95f175d8c6be1
 msgid "返回指定录音设备的当前 PCM 采样录音位置。"
-msgstr "Returns specified current PCM position."
-
+msgstr "Returns the current PCM sample recording position for the specified recording device."
 #: ../../source/api_reference/core.rst:1335 2db9e3c3878c4ee3b46fe4438a85544f
 msgid "void record_start(id: `int`_, sound: FmodSound, loop: `bool`_)"
 msgstr "void record_start(id: `int`_, sound: FmodSound, loop: `bool`_)"
@@ -2546,8 +2483,7 @@ msgstr "void lock_dsp()"
 
 #: ../../source/api_reference/core.rst:1409 351da5f30bdf4fb0b0310ffeb9d96f21
 msgid "锁住 DSP 引擎互斥锁。"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Locks the DSP engine mutex."
 #: ../../source/api_reference/core.rst:1411 48284152964643e0b05108abd6644ddd
 msgid "在需要原子操作的多次DSP调用时使用，这对于确保在执行这些调用时 DSP 处理不会被中断非常有用。"
 msgstr "In needs DSP when, for in when DSP will."
@@ -2562,8 +2498,7 @@ msgstr "void unlock_dsp()"
 
 #: ../../source/api_reference/core.rst:1420 50960ad82953468ea3ec36bf6cbadfa7
 msgid "解锁 DSP 引擎互斥锁。"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Unlocks the DSP engine mutex."
 #: ../../source/api_reference/core.rst:1422 30c5e78ff9944a9fbfd14306e12a540c
 msgid "必须在 :ref:`unlock_dsp()<FmodSystem-lock_dsp>` 之后调用"
 msgstr "In :ref:`unlock_dsp()<FmodSystem-lock_dsp>` after."
@@ -2634,10 +2569,7 @@ msgstr "FMOD_INIT_FLAG_STREAM_FROM_UPDATE"
 
 #: ../../source/api_reference/core.rst:1456 1bf0ce67af0b46f6a24887769e84054f
 msgid "内部不创建流线程。流由 :ref:`FmodSystem.update()<FmodSystem-update>` 驱动。主要用于非实时输出"
-msgstr ""
-"Internal creates. :ref:`FmodSystem.update()<FmodSystem-update>`. used for"
-" when output."
-
+msgstr "Does not create an internal stream thread. Streaming is driven by :ref:`FmodSystem.update()<FmodSystem-update>`. Mainly used for non-real-time output."
 #: ../../source/api_reference/core.rst:1457 32316030f12d40df9034904cc0b6ca8f
 msgid "FMOD_INIT_FLAG_MIX_FROM_UPDATE"
 msgstr "FMOD_INIT_FLAG_MIX_FROM_UPDATE"
@@ -3141,10 +3073,7 @@ msgstr "HTML5"
 
 #: ../../source/api_reference/core.rst:1571 fb28e8679d9640b6b2e779881a3dd29d
 msgid "Web Audio ScriptProcessorNode 输出（如果 AudioWorkletNode 不可用，默认为 HTML5）"
-msgstr ""
-"Web Audio ScriptProcessorNode output (if AudioWorkletNode can, default as"
-" HTML5)."
-
+msgstr "Web Audio ScriptProcessorNode output. Used as the HTML5 default when AudioWorkletNode is unavailable."
 #: ../../source/api_reference/core.rst:1572 61e87262c86c4dfea8e0f047ce99b5de
 msgid "FMOD_OUTPUT_TYPE_NNAUDIO"
 msgstr "FMOD_OUTPUT_TYPE_NNAUDIO"
@@ -3218,8 +3147,7 @@ msgstr "iOS"
 
 #: ../../source/api_reference/core.rst:1591 9807a821c17649bcb068dfa81cf12d47
 msgid "PHASE 框架（禁用）"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "PHASE framework (disabled)."
 #: ../../source/api_reference/core.rst:1592 36c76e9006b64b50b7bf78b5e8353a04
 msgid "FMOD_OUTPUT_TYPE_OHAUDIO"
 msgstr "FMOD_OUTPUT_TYPE_OHAUDIO"
@@ -3246,8 +3174,7 @@ msgstr "22"
 
 #: ../../source/api_reference/core.rst:1599 6756e5c5a06a470695ed837d19f260ec
 msgid "支持的最大输出类型数量"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Maximum supported output type count."
 #: ../../source/api_reference/core.rst:1600 f71c3035fabb41a7b45f428dfd8877ce
 msgid "FMOD_OUTPUT_TYPE_FORCEINT"
 msgstr "FMOD_OUTPUT_TYPE_FORCEINT"
@@ -3399,8 +3326,7 @@ msgstr "FMOD_SPEAKER_MODE_DEFAULT"
 
 #: ../../source/api_reference/core.rst:1675 20f99cb22dbf4c4fbe03774796c5becd
 msgid "平台默认扬声器模式"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Platform default speaker mode."
 #: ../../source/api_reference/core.rst:1676 040d23c2fc984efd9520c4ef2445f0a1
 msgid "FMOD_SPEAKER_MODE_RAW"
 msgstr "FMOD_SPEAKER_MODE_RAW"
@@ -3601,8 +3527,7 @@ msgstr "4096"
 
 #: ../../source/api_reference/core.rst:1756 c87bcfcb2db44c358fb84a5bf7e497a3
 msgid "按原始 PCM 数据打开"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Open as raw PCM data."
 #: ../../source/api_reference/core.rst:1757 6792744f0e514112bf5f79e932536f44
 msgid "FMOD_MODE_OPENONLY"
 msgstr "FMOD_MODE_OPENONLY"
@@ -3637,8 +3562,7 @@ msgstr "32768"
 
 #: ../../source/api_reference/core.rst:1765 6cdd3434512b4991898206fb0831f47a
 msgid "扫描 MPEG 帧信息"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Scan MPEG frame information."
 #: ../../source/api_reference/core.rst:1766 d0a4c97d585642eaa4b1081d8790f84c
 msgid "FMOD_MODE_NONBLOCKING"
 msgstr "FMOD_MODE_NONBLOCKING"
@@ -3909,8 +3833,7 @@ msgstr "FMOD_PORT_TYPE_COPYRIGHT_MUSIC"
 
 #: ../../source/api_reference/core.rst:1891 85148c072f97459ea0aefa65b70ed49d
 msgid "受版权保护音乐端口"
-msgstr "Provides the API behavior described by this entry."
-
+msgstr "Copyright-protected music port."
 #: ../../source/api_reference/core.rst:1892 d0fc8891947041018a7a8e595ebea7c3
 msgid "FMOD_PORT_TYPE_VOICE"
 msgstr "FMOD_PORT_TYPE_VOICE"
