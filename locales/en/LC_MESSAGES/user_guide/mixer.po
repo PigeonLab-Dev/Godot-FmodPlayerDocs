@@ -38,7 +38,7 @@ msgstr ""
 #: ../../source/user_guide/mixer.rst:9
 #: cafdcfe0d62c4c92a2e1323f41366ea4
 msgid "什么时候需要混音系统"
-msgstr "When You Need the Mixing System"
+msgstr "When is a mixing system needed"
 
 #: ../../source/user_guide/mixer.rst:11
 #: ffdc6e1e1faa4baa815243351ee7df7c
@@ -172,7 +172,7 @@ msgstr ""
 #: ../../source/user_guide/mixer.rst:60
 #: b78020326825434b8a40dfadf0a78891
 msgid "把声音送到总线"
-msgstr "Route Sounds to a Bus"
+msgstr "Send Audio to a Bus"
 
 #: ../../source/user_guide/mixer.rst:62
 #: a8fdd5436fe34428879752f2b21d0c50

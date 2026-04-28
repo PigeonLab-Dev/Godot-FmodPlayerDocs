@@ -346,7 +346,7 @@ msgstr "In Godot, run **Project > Install Android Build Template**."
 #: ../../source/export.rst:139
 #: b5688c99477443409273551c869b7fc4
 msgid "安装后，项目中会出现 ``res://android/build/`` 目录。"
-msgstr "After installation, the project will contain a ``res://android/build/`` directory."
+msgstr "After installation, ``res://android/build/`` directory will appear in the project."
 
 #: ../../source/export.rst:142
 #: 23a5de33458e482d86598a8315a99fd5
@@ -357,12 +357,12 @@ msgstr "Copy Runtime Libraries"
 #: f403536a1f924839a998883adade0c71
 msgid "将 Android arm64 运行库复制到 Gradle 工程的库目录。目录可以按项目需要组织， 但应保证最终 APK/AAB 中包含对应 ABI 的 ``.so`` 文件。"
 msgstr ""
-"Copy the Android arm64 runtime libraries into the Gradle project's library directory. The directory can be organized to fit your project, but the final APK/AAB must contain the ``.so`` files for the matching ABI."
+"Copy the Android arm64 runtime libraries into the Gradle project's library directory. The directory can be organized according to project needs, but it should be ensured that the final APK/AAB contains the corresponding ABI ``.so`` files."
 
 #: ../../source/export.rst:147
 #: 44f9f014192f46eeb48da3163d72f613
 msgid "常见做法是放入："
-msgstr "A common layout is:"
+msgstr "Common layout is:"
 
 #: ../../source/export.rst:149
 #: af1de94823604d50aab25cc324c3eaa1
@@ -391,7 +391,7 @@ msgstr ""
 #: e0490d91c9ce446fba704645d7c8de20
 msgid "实际目录可能会随 Godot 版本和模板结构不同而调整。关键是 ABI 必须匹配导出预设中的 ``arm64-v8a``。"
 msgstr ""
-"The exact directory may change depending on the Godot version and template structure. The key point is that the ABI must match ``arm64-v8a`` in the export preset."
+"The actual directory may change depending on the Godot version and template structure. The key point is that the ABI must match ``arm64-v8a`` in the export preset."
 
 #: ../../source/export.rst:165
 #: 958cfe3b625541418773f7555aac8c45
