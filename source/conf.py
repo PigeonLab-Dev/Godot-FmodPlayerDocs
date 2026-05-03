@@ -42,7 +42,7 @@ html_css_files = [
 html_theme_options = {
   "show_toc_level": 4,
   "use_repository_button": True,
-  "repository_url": "https://github.com/LuYingYiLong/Godot-FmodPlayerDocs",
+  "repository_url": "https://github.com/PigeonLab-Dev/Godot-FmodPlayerDocs",
   "use_issues_button": True,
 }
 
