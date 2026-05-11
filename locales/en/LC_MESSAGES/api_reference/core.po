@@ -81,7 +81,7 @@ msgstr "FmodCPUUsage/Geometry"
 
 #: ../../source/api_reference/core.rst:32 edcf90124b85432fbe005f1f79d937df
 msgid "3D 几何处理 CPU 使用百分比"
-msgstr "3D CPU."
+msgstr "CPU usage percentage for 3D geometry processing."
 
 #: ../../source/api_reference/core.rst:33 f68e4d87e19e4b64828bffe5f6acb390
 msgid "FmodCPUUsage/Update"
@@ -488,7 +488,7 @@ msgstr "1.0"
 
 #: ../../source/api_reference/core.rst:131 76d92417febb4c08afb69d96a9063a15
 msgid "世界距离到米的换算比例"
-msgstr "Distance to."
+msgstr "Scale factor for converting world distance to meters."
 
 #: ../../source/api_reference/core.rst:133 bb6f1677e3df4d3387fc0f13b026e0a8
 msgid "distance_filter_center_freq"
@@ -502,7 +502,7 @@ msgstr "0.0"
 
 #: ../../source/api_reference/core.rst:135 560e0cbd2b2341ea8339f367d67c73cd
 msgid "距离滤波器默认中心频率"
-msgstr "Distance filter default."
+msgstr "Default center frequency of the distance filter."
 
 #: ../../source/api_reference/core.rst:137 033446a4b4b744c7bad561b4eb0afdc4
 msgid "doppler_scale"
@@ -525,7 +525,7 @@ msgstr "geometry_max_fade_time"
 
 #: ../../source/api_reference/core.rst:147 13185c89aeb74ae589c17dc378feea76
 msgid "几何遮挡音量淡变最大时间"
-msgstr "Occlusion volume when."
+msgstr "Maximum fade time for geometry occlusion volume."
 
 #: ../../source/api_reference/core.rst:149 3e2db729f7244d5595f05c411f08fddd
 msgid "max_adpcm_codecs"
@@ -541,7 +541,7 @@ msgstr "max_at9_codecs"
 
 #: ../../source/api_reference/core.rst:155 ceba899e3fb14046b26f0d2fab180369
 msgid "最大 AT9 解码器数量"
-msgstr "Maximum AT9 decoder count."
+msgstr "Maximum number of AT9 decoders."
 #: ../../source/api_reference/core.rst:157 faa84f8003f341b7b1950d12f50399ff
 msgid "max_convolution_threads"
 msgstr "max_convolution_threads"
@@ -556,21 +556,21 @@ msgstr "max_fadpcm_codecs"
 
 #: ../../source/api_reference/core.rst:163 9b217de1880c4c29b8ba687914bcbb09
 msgid "最大 FADPCM 解码器数量"
-msgstr "Maximum FADPCM decoder count."
+msgstr "Maximum number of FADPCM decoders."
 #: ../../source/api_reference/core.rst:165 0254ec02e6184f30a22ac2c21a1c3d95
 msgid "max_mpeg_codecs"
 msgstr "max_mpeg_codecs"
 
 #: ../../source/api_reference/core.rst:167 6d8cef360ca4455f8a39b9fbc1a12b60
 msgid "最大 MPEG 解码器数量"
-msgstr "Maximum MPEG decoder count."
+msgstr "Maximum number of MPEG decoders."
 #: ../../source/api_reference/core.rst:169 a9a9494e043641ff85b54af74b26355b
 msgid "max_opus_codecs"
 msgstr "max_opus_codecs"
 
 #: ../../source/api_reference/core.rst:171 72c20471518f4ca9a57c44e7715e71f9
 msgid "最大 Opus 解码器数量"
-msgstr "Maximum Opus decoder count."
+msgstr "Maximum number of Opus decoders."
 #: ../../source/api_reference/core.rst:173 960db544a8b84db298124edb6f0ed5f0
 msgid "max_software_channels"
 msgstr "max_software_channels"
@@ -592,14 +592,14 @@ msgstr "max_vorbis_codecs"
 
 #: ../../source/api_reference/core.rst:183 420f1ae0095f43d496d3979ff8a109da
 msgid "最大 Vorbis 解码器数量"
-msgstr "Maximum Vorbis decoder count."
+msgstr "Maximum number of Vorbis decoders."
 #: ../../source/api_reference/core.rst:185 67078340ee9a44db98cfe9fed1936b34
 msgid "max_xma_codecs"
 msgstr "max_xma_codecs"
 
 #: ../../source/api_reference/core.rst:187 83d3b0a107b645afa1b080669579e37e
 msgid "最大 XMA 解码器数量"
-msgstr "Maximum XMA decoder count."
+msgstr "Maximum number of XMA decoders."
 #: ../../source/api_reference/core.rst:189 8004d469f9a94d349f3415d3e603b3c2
 msgid "profile_port"
 msgstr "profile_port"
@@ -648,7 +648,7 @@ msgstr "vol0_virtual_vol"
 
 #: ../../source/api_reference/core.rst:211 a6285b6b114b4cc784f2bc4340717903
 msgid "低于该音量的声道转为虚拟声道"
-msgstr "Volume as."
+msgstr "Channels below this volume become virtual channels."
 
 #: ../../source/api_reference/core.rst:217 dc86ce7aa6d9448986a4a9ce456dc748
 msgid "有效性检查"
@@ -858,7 +858,7 @@ msgstr "`String`_"
 
 #: ../../source/api_reference/core.rst:334 0f3bae702eee481c9847065bf9213a70
 msgid "设备的名称"
-msgstr "Name."
+msgstr "Name of the device."
 
 #: ../../source/api_reference/core.rst:335
 #: ../../source/api_reference/core.rst:1309 5e18436e6c6e43ef9b0f0d156f18a744
@@ -871,7 +871,7 @@ msgstr "guid"
 #: aa09a37e4c8f4ed38368194fc8f5bd9e
 #, python-brace-format
 msgid "设备的唯一标识符，格式为 ``{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}``"
-msgstr "As ``{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}``"
+msgstr "Unique device identifier, formatted as ``{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}``."
 
 #: ../../source/api_reference/core.rst:338
 #: ../../source/api_reference/core.rst:1312 059255b24922474480cb1b6b21b1b3bc
@@ -883,7 +883,7 @@ msgstr "system_rate"
 #: ../../source/api_reference/core.rst:1314 629d8850c31543d4a2b650776f64dd1c
 #: 972a151d7749432695e6e513d0a12d21
 msgid "设备的默认采样率"
-msgstr "Default."
+msgstr "Default sample rate of the device."
 
 #: ../../source/api_reference/core.rst:341
 #: ../../source/api_reference/core.rst:408
@@ -901,7 +901,7 @@ msgstr ":ref:`FmodSpeakerMode<FmodSpeakerMode>`"
 
 #: ../../source/api_reference/core.rst:343 2a56bd24db6d4eae886b53a1bcb66a6f
 msgid "默认扬声器模式"
-msgstr "Default."
+msgstr "Default speaker mode."
 
 #: ../../source/api_reference/core.rst:344
 #: ../../source/api_reference/core.rst:1318 14d11d8b4fa24f26be1760feb69950c1
@@ -976,7 +976,7 @@ msgid "``num_raw_speakers`` —— 原始扬声器模式下的扬声器数量"
 msgstr "``num_raw_speakers`` -- Number of speakers in raw speaker mode."
 #: ../../source/api_reference/core.rst:390 e86e3c926e4a4cebbf726a0dc66a3df1
 msgid "必须在调用 :ref:`init()<FmodSystem-init>` 之前调用"
-msgstr "In :ref:`init()<FmodSystem-init>` before."
+msgstr "Must be called before :ref:`init()<FmodSystem-init>`."
 
 #: ../../source/api_reference/core.rst:395 3e117013d52243fa9e5f3217d50471ac
 msgid "`Dictionary`_ get_software_format() const"
@@ -992,11 +992,11 @@ msgstr "sample_rate"
 
 #: ../../source/api_reference/core.rst:407 59f5e221e1944dbbbf9d5420148bca3f
 msgid "当前输出采样率"
-msgstr "Current output."
+msgstr "Current output sample rate."
 
 #: ../../source/api_reference/core.rst:410 70ec3a66b0c34084964a105b1fe8b401
 msgid "当前扬声器输出配置"
-msgstr "Current output."
+msgstr "Current speaker output configuration."
 
 #: ../../source/api_reference/core.rst:411 0f9ad8ba28ad48b5b55b5f081ac2540a
 msgid "num_raw_speakers"
@@ -1017,7 +1017,7 @@ msgstr "Sets mixing DSP."
 msgid ""
 "较小的缓冲区可以减少延迟，但会增加 CPU 使用率并增加音频中断的风险，且必须在 :ref:`init()<FmodSystem-init>` "
 "之前调用！"
-msgstr "Can delay, will CPU and audio, in :ref:`init()<FmodSystem-init>` before ！."
+msgstr "Smaller buffers can reduce latency, but increase CPU usage and the risk of audio dropouts. This must be called before :ref:`init()<FmodSystem-init>`!"
 
 #: ../../source/api_reference/core.rst:427 0dd3d6e7676140ebbd8fb0e7b0376688
 msgid "`Dictionary`_ get_dsp_buffer_size() const"
@@ -1543,20 +1543,20 @@ msgstr "void set_network_proxy(proxy: `String`_)"
 
 #: ../../source/api_reference/core.rst:842 ff00cee792ee43ab8dea968a5842508e
 msgid "为所有后续的互联网流连接设置代理服务器 URL。"
-msgstr "As after connection sets URL."
+msgstr "Sets the proxy server URL for all subsequent internet stream connections."
 
 #: ../../source/api_reference/core.rst:844 c4652399d8054e708f43c6f0e6bbcb65
 msgid "传递空字符串以禁用代理。"
 msgstr "Pass an empty string to disable the proxy."
 #: ../../source/api_reference/core.rst:847 21db972f7e5847d3b8af6ff39807359f
 msgid "以 host:port 格式指定代理，例如 ``www.fmod.com:8888`` （如果未指定端口，则默认为端口 80）"
-msgstr "Host:port specified, ``www.fmod.com:8888`` (if specified, default as 80)."
+msgstr "Specify the proxy in host:port format, for example ``www.fmod.com:8888``. If no port is specified, port 80 is used by default."
 
 #: ../../source/api_reference/core.rst:849 6ca88bb56ec94e3c8be94f2f560e0e0c
 msgid ""
 "基本身份验证支持使用 ``user:password@host:port`` 格式，例如 "
 "``bob:sekrit123@www.fmod.com:8888``"
-msgstr "``user:password@host:port``, ``bob:sekrit123@www.fmod.com:8888``"
+msgstr "Basic authentication supports the ``user:password@host:port`` format, for example ``bob:sekrit123@www.fmod.com:8888``."
 
 #: ../../source/api_reference/core.rst:854 a122f8cdb9564397af722fc893547abd
 msgid "`String`_ get_network_proxy() const"
@@ -1621,7 +1621,7 @@ msgstr "Returns output handle. for Windows, usually WASAPI or DirectSound handle
 
 #: ../../source/api_reference/core.rst:904 a772274927ac4b5ca8426adee483daa4
 msgid "这对于需要直接访问底层音频设备的高级用户很有用。"
-msgstr "For needs underlying audio."
+msgstr "This is useful for advanced users who need direct access to the underlying audio device."
 
 #: ../../source/api_reference/core.rst:909 2d7646bb50ca486eac00e814ac27bbfd
 msgid "`Dictionary`_ get_channels_playing() const"
@@ -1637,7 +1637,7 @@ msgstr "channels"
 
 #: ../../source/api_reference/core.rst:923 9abb20474bf3485e90f2e2fcf7f903db
 msgid "当前正在播放的频道总数"
-msgstr "Current in."
+msgstr "Total number of channels currently playing."
 
 #: ../../source/api_reference/core.rst:924 2819c71770a44c49829eee1dfdc061c6
 msgid "real_channels"
@@ -2073,7 +2073,7 @@ msgstr "velocity"
 
 #: ../../source/api_reference/core.rst:1166 d3aeece514c042fb88ac3ac224539edf
 msgid "听者的速度，用于多普勒计算"
-msgstr "Velocity, used for Doppler calculates."
+msgstr "Listener velocity, used for Doppler calculations."
 
 #: ../../source/api_reference/core.rst:1167 665d26296b5a459296fd67e37c18c3c4
 msgid "forward"
@@ -2193,7 +2193,7 @@ msgstr "late_delay"
 
 #: ../../source/api_reference/core.rst:1217 25e331fa3ad047538f18109cc991daf5
 msgid "后期反射的延迟时间，单位为毫秒，默认 11 毫秒，范围：0-100 毫秒"
-msgstr "After delay when, unit as, default 11, range: 0-100."
+msgstr "Late reflection delay time, in milliseconds. Default: 11 ms. Range: 0-100 ms."
 
 #: ../../source/api_reference/core.rst:1218 7b24fba0732b4702a96da349d330b74e
 msgid "hf_reference"
@@ -2217,7 +2217,7 @@ msgstr "diffusion"
 
 #: ../../source/api_reference/core.rst:1226 25714a7c1e8f4808bcd80a5dd0138114
 msgid "混响扩散程度，默认 50%，范围 10-100%"
-msgstr "Reverb, default 50%, range 10-100%."
+msgstr "Reverb diffusion amount. Default: 50%. Range: 10-100%."
 
 #: ../../source/api_reference/core.rst:1227 da01d4adfbf44627af9ccb4be5fa79b0
 msgid "density"
@@ -2225,7 +2225,7 @@ msgstr "density"
 
 #: ../../source/api_reference/core.rst:1229 5ca1ac3df36544469306bcb7d87dd186
 msgid "混响密度，默认 100%，范围 0-100%"
-msgstr "Reverb, default 100%, range 0-100%."
+msgstr "Reverb density. Default: 100%. Range: 0-100%."
 
 #: ../../source/api_reference/core.rst:1230 f191a7cabb4543d888019704fbc35fb5
 msgid "low_shelf_frequency"
@@ -2249,7 +2249,7 @@ msgstr "high_cut"
 
 #: ../../source/api_reference/core.rst:1238 6df516721bee4851840c39ee71c10c23
 msgid "混响高频截止频率，单位为赫兹，默认 20000 赫兹，范围：0-20000"
-msgstr "Reverb, unit as, default 20000, range: 0-20000."
+msgstr "Reverb high-frequency cutoff, in hertz. Default: 20000 Hz. Range: 0-20000."
 
 #: ../../source/api_reference/core.rst:1239 2bfebf456a064306867120a8f6dc6397
 msgid "early_late_mix"
@@ -2265,7 +2265,7 @@ msgstr "wet_level"
 
 #: ../../source/api_reference/core.rst:1244 fde9d0c37d2940d5890d659fb7be038d
 msgid "湿信号（混响）级别，单位为分贝，默认 -6 分贝，范围：-80-20 分贝"
-msgstr "(reverb), unit as, default -6, range: -80-20."
+msgstr "Wet signal (reverb) level, in decibels. Default: -6 dB. Range: -80-20 dB."
 
 #: ../../source/api_reference/core.rst:1249 57ff09c721f84d5e976c8dd22c9b72d8
 msgid ""
@@ -2289,7 +2289,7 @@ msgstr "Audio routing to output, controls or output."
 
 #: ../../source/api_reference/core.rst:1255 a7283f00ac804776992791e13bdb54a2
 msgid ":ref:`FmodPortType<FmodPortType>` 了解可用的端口类型"
-msgstr ":ref:`FmodPortType<FmodPortType>` can."
+msgstr "See :ref:`FmodPortType<FmodPortType>` for the available port types."
 
 #: ../../source/api_reference/core.rst:1260 4f31da92dafe4356b75b690a626bdc3b
 msgid ""
@@ -2331,7 +2331,7 @@ msgstr "num_connected"
 
 #: ../../source/api_reference/core.rst:1289 f0fa5b501451499884b1b9351196603d
 msgid "当前连接的录音设备数量"
-msgstr "Current connection."
+msgstr "Number of currently connected recording devices."
 
 #: ../../source/api_reference/core.rst:1294 a069eb239fcd4f0c9e98e8ce964b26d2
 msgid "`Dictionary`_ get_record_driver_info(id: `int`_) const"
@@ -2343,7 +2343,7 @@ msgstr "Returns index specified."
 
 #: ../../source/api_reference/core.rst:1308 ad34131978d24c38ba6c1f6b1fc0607a
 msgid "录音设备的名称"
-msgstr "Name."
+msgstr "Name of the recording device."
 
 #: ../../source/api_reference/core.rst:1317 7ec0619281334adaa3267d67764360fc
 msgid "扬声器模式"
@@ -2378,7 +2378,7 @@ msgstr "Specified to provides audio object."
 
 #: ../../source/api_reference/core.rst:1339 449b395632274ad7aa11997d70ee3b89
 msgid "如果 ``loop`` 为 ``true``，当录音达到缓冲区末尾时，会从音频缓冲区的开头重新开始录音"
-msgstr "If ``loop`` as ``true``, to when, will audio."
+msgstr "If ``loop`` is ``true``, recording restarts from the beginning of the audio buffer when it reaches the end."
 
 #: ../../source/api_reference/core.rst:1344 4b836eb359f645e1b14d70e8b6877479
 msgid "void record_stop(id: `int`_)"
@@ -2437,7 +2437,7 @@ msgstr ""
 
 #: ../../source/api_reference/core.rst:1375 2ba94a4b401344c8a4ad51f77180bb15
 msgid "数据格式必须符合 FMOD 的几何数据规范，通常包含顶点和多边形信息"
-msgstr "FMOD, usually and polygon."
+msgstr "The data format must follow FMOD's geometry data specification, usually containing vertex and polygon information."
 
 #: ../../source/api_reference/core.rst:1380 b97800ab57a94463b8bd04bc3434b198
 msgid ""
@@ -2470,8 +2470,9 @@ msgstr "Reverb sound occlusion (0.0-1.0)."
 #: ../../source/api_reference/core.rst:1399 4e9d4c5f29214ffdbcb4db1be7fb690e
 msgid "如果已经创建了单面多边形，重要的是要正确获取源和监听器的位置，因为从点A到点B的遮挡可能与从点B到点A的遮挡不同"
 msgstr ""
-"If creates polygon, gets and listener position, as A to B occlusion can "
-"and B to A occlusion."
+"If single-sided polygons have been created, it is important to query the "
+"source and listener positions correctly, because occlusion from point A to "
+"point B may differ from occlusion from point B to point A."
 
 #: ../../source/api_reference/core.rst:1402 76fd3ba2988d46af8d7776c8007774ee
 msgid "其它"
@@ -2490,7 +2491,7 @@ msgstr "In needs DSP when, for in when DSP will."
 
 #: ../../source/api_reference/core.rst:1413 d41352a2a96b4981a92df3ea7a8753d2
 msgid "始终与 :ref:`unlock_dsp()<FmodSystem-unlock_dsp>` 配对使用"
-msgstr "And :ref:`unlock_dsp()<FmodSystem-unlock_dsp>`"
+msgstr "Always pair this with :ref:`unlock_dsp()<FmodSystem-unlock_dsp>`."
 
 #: ../../source/api_reference/core.rst:1418 61319d7bbcfd4ed29fc40086375cf0de
 msgid "void unlock_dsp()"
@@ -2501,7 +2502,7 @@ msgid "解锁 DSP 引擎互斥锁。"
 msgstr "Unlocks the DSP engine mutex."
 #: ../../source/api_reference/core.rst:1422 30c5e78ff9944a9fbfd14306e12a540c
 msgid "必须在 :ref:`unlock_dsp()<FmodSystem-lock_dsp>` 之后调用"
-msgstr "In :ref:`unlock_dsp()<FmodSystem-lock_dsp>` after."
+msgstr "Must be called after :ref:`unlock_dsp()<FmodSystem-lock_dsp>`."
 
 #: ../../source/api_reference/core.rst:1427 276c25921f604f62bc1c49822b12cb36
 msgid "void set_3d_rolloff_callback(callback: `Callable`_)"
@@ -2620,7 +2621,7 @@ msgstr "4"
 
 #: ../../source/api_reference/core.rst:1462 575e63c089b8423c93ed6a92eca7235a
 msgid "三维计算将采用右手坐标进行，而非默认的左手坐标。更多信息请参见词汇表的“惯性”部分"
-msgstr "Calculates, default. “”."
+msgstr "3D calculations use right-handed coordinates instead of the default left-handed coordinates. See the glossary section on handedness for more information."
 
 #: ../../source/api_reference/core.rst:1463 87805896e63c4721b92ec3490bee63f5
 msgid "FMOD_INIT_FLAG_CLIP_OUTPUT"
@@ -2715,8 +2716,9 @@ msgstr "131072"
 #: ../../source/api_reference/core.rst:1477 7776a4a9245a472eb84f9b2d98d06c10
 msgid "任何音量为0的声音都会变成虚拟声音，除了它们的位置在虚拟中更新外不会被处理。请调整 FmodSystem 属性来处理除了 0 以外的音量切换到虚拟"
 msgstr ""
-"Volume as 0 sound will sound, position in updates will. FmodSystem 0 "
-"volume to."
+"Any sound with volume 0 becomes virtual and is not processed except for "
+"virtual position updates. Adjust the FmodSystem properties to make sounds "
+"become virtual at a volume other than 0."
 
 #: ../../source/api_reference/core.rst:1478 0c1fecda22cb4976a0e8fa581f03bd2d
 msgid "FMOD_INIT_FLAG_GEOMETRY_USECLOSEST"
@@ -2730,7 +2732,7 @@ msgstr "262144"
 
 #: ../../source/api_reference/core.rst:1480 74061fd017d84c65af9ab9220d26cb70
 msgid "使用几何引擎时，只需处理最近的多边形，而不是累积所有声音到听者线路相交的多边形"
-msgstr "When, polygon, sound to polygon."
+msgstr "When using the geometry engine, process only the nearest polygon instead of accumulating all polygons intersected by the sound-to-listener line."
 
 #: ../../source/api_reference/core.rst:1481 cd4414b62d2045f7b740af6f529a766b
 msgid "FMOD_INIT_FLAG_PREFER_DOLBY_DOWNMIX"
@@ -2747,8 +2749,9 @@ msgid ""
 "使用立体声输出设备 :ref:`FmodSpeakerMode` 中的 ``FMOD_SPEAKER_MODE_5POINT1`` 时，请使用 "
 "Dolby Pro Logic II 的下混算法，而非默认的立体声下混算法"
 msgstr ""
-"Output device :ref:`FmodSpeakerMode` ``FMOD_SPEAKER_MODE_5POINT1`` when, "
-"Dolby Pro Logic II, default."
+"When using ``FMOD_SPEAKER_MODE_5POINT1`` from :ref:`FmodSpeakerMode` on a "
+"stereo output device, use the Dolby Pro Logic II downmix algorithm instead "
+"of the default stereo downmix algorithm."
 
 #: ../../source/api_reference/core.rst:1484 5b0b0c7411ae4a3985a040b85b787e44
 msgid "FMOD_INIT_FLAG_THREAD_UNSAFE"
@@ -2762,7 +2765,7 @@ msgstr "1048576"
 
 #: ../../source/api_reference/core.rst:1486 9f4abd69f0cc41d18ab383772aa38ebb
 msgid "禁用 API 调用的线程安全。只有在从 FMOD 从单线程调用且未使用 Studio API 时才使用！"
-msgstr "API. in FMOD Studio API when ！."
+msgstr "Disables thread safety for API calls. Use this only when calling FMOD from a single thread and not using the Studio API!"
 
 #: ../../source/api_reference/core.rst:1487 2829d023f1f1484aa6aa7dfb2141cbd0
 msgid "FMOD_INIT_FLAG_PROFILE_METER_ALL"
@@ -2779,8 +2782,9 @@ msgid ""
 "虽然速度较慢，但可以为图表中的每个DSP单元添加电平计量。使用DSP::setMeteringEnable来单独关闭电表。设置这个标志意味着有 "
 "``FMOD_INIT_PROFILE_ENABLE``"
 msgstr ""
-"Velocity, can as DSP adds. DSP::setMeteringEnable. sets "
-"``FMOD_INIT_PROFILE_ENABLE``"
+"Although slower, this adds level metering to every DSP unit in the graph. "
+"Use DSP::setMeteringEnable to disable meters individually. Setting this flag "
+"implies ``FMOD_INIT_PROFILE_ENABLE``."
 
 #: ../../source/api_reference/core.rst:1490 2041622e70414e65ac7cee53ba4e2250
 msgid "FMOD_INIT_FLAG_MEMORY_TRACKING"
@@ -2798,13 +2802,15 @@ msgid ""
 "`FMOD_STUDIO_INIT_MEMORY_TRACKING <https://www.fmod.com/docs/2.02/api"
 "/studio-api-system.html#fmod_studio_init_memory_tracking>`_ 隐含"
 msgstr ""
-"Memory. before in Studio API when. memory and. "
+"Enables memory allocation tracking. Currently only effective when using the "
+"Studio API. This increases memory usage and reduces performance. This flag "
+"is implied by "
 "`FMOD_STUDIO_INIT_MEMORY_TRACKING <https://www.fmod.com/docs/2.02/api"
-"/studio-api-system.html#fmod_studio_init_memory_tracking>`_"
+"/studio-api-system.html#fmod_studio_init_memory_tracking>`_."
 
 #: ../../source/api_reference/core.rst:1494 a250faad28c74532b68ce6a92d2daca5
 msgid ":ref:`FmodSystem.init()<FmodSystem-init>` 来初始化 FMOD 系统"
-msgstr ":ref:`FmodSystem.init()<FmodSystem-init>` FMOD."
+msgstr "Use :ref:`FmodSystem.init()<FmodSystem-init>` to initialize the FMOD system."
 
 #: ../../source/api_reference/core.rst:1499 e937a5e58e6348438a99be5700a5b0f6
 msgid "FmodOutputType"
@@ -2830,7 +2836,7 @@ msgstr "All"
 
 #: ../../source/api_reference/core.rst:1511 382a203a0f6246aabd22349fa9f5ee8a
 msgid "选择平台的最佳输出模式，这是默认的"
-msgstr "Output, default."
+msgstr "Selects the best output mode for the platform. This is the default."
 
 #: ../../source/api_reference/core.rst:1512 aff10f75bc8d40e986df537270d3c4ce
 msgid "FMOD_OUTPUT_TYPE_UNKNOWN"
@@ -2953,7 +2959,7 @@ msgstr "Linux"
 
 #: ../../source/api_reference/core.rst:1543 f7071725598044ffba9cf01cb43dfbdb
 msgid "脉冲音频（如果有，默认使用 Linux 版本）"
-msgstr "Audio (if, default Linux version)."
+msgstr "PulseAudio, if available. This is the default on Linux builds."
 
 #: ../../source/api_reference/core.rst:1544 e52f5bbb32254bd7b8d95cf650e40af2
 msgid "FMOD_OUTPUT_TYPE_ALSA"
@@ -2988,7 +2994,7 @@ msgstr "Mac、iOS"
 
 #: ../../source/api_reference/core.rst:1551 3315dd7df51842278295f35fd1880d60
 msgid "核心音频（Mac 和 iOS 默认）"
-msgstr "Audio (Mac and iOS default)."
+msgstr "Core Audio. This is the default on Mac and iOS."
 
 #: ../../source/api_reference/core.rst:1552 91b5d991bed94a26a0f24f0b98f932bf
 msgid "FMOD_OUTPUT_TYPE_AUDIOTRACK"
@@ -3174,7 +3180,7 @@ msgstr "22"
 
 #: ../../source/api_reference/core.rst:1599 6756e5c5a06a470695ed837d19f260ec
 msgid "支持的最大输出类型数量"
-msgstr "Maximum supported output type count."
+msgstr "Maximum number of supported output types."
 #: ../../source/api_reference/core.rst:1600 f71c3035fabb41a7b45f428dfd8877ce
 msgid "FMOD_OUTPUT_TYPE_FORCEINT"
 msgstr "FMOD_OUTPUT_TYPE_FORCEINT"
@@ -3503,7 +3509,7 @@ msgstr "2048"
 
 #: ../../source/api_reference/core.rst:1750 667e309083484d1587f64088e8c46f70
 msgid "从内存数据打开"
-msgstr "Memory."
+msgstr "Open from memory data."
 
 #: ../../source/api_reference/core.rst:1751 86dc3a31189f4b98887c9ebfc9640ddd
 msgid "FMOD_MODE_OPENMEMORY_POINT"
@@ -3677,7 +3683,7 @@ msgstr "134217728"
 
 #: ../../source/api_reference/core.rst:1801 dbf71196cae74983a13ffdb26e3a06fc
 msgid "使用低内存模式"
-msgstr "Memory."
+msgstr "Use low-memory mode."
 
 #: ../../source/api_reference/core.rst:1802 42664135b7634d89802f9ad2947c5e76
 msgid "FMOD_MODE_VIRTUAL_PLAYFROMSTART"
@@ -3725,7 +3731,7 @@ msgstr "FMOD_TIME_UNIT_RAWBYTES"
 
 #: ../../source/api_reference/core.rst:1828 077cffe2ddac4696a861fda88de727a7
 msgid "原始字节单位"
-msgstr "Unit."
+msgstr "Raw byte units."
 
 #: ../../source/api_reference/core.rst:1829 1576667f06db4c5d97773ea15710a609
 msgid "FMOD_TIME_UNIT_PCMFRACTION"
@@ -3741,7 +3747,7 @@ msgstr "FMOD_TIME_UNIT_MODORDER"
 
 #: ../../source/api_reference/core.rst:1834 d3b1013ddd4943bdab1fad8a4c5f3e5b
 msgid "模块音乐顺序单位"
-msgstr "Unit."
+msgstr "Module music order units."
 
 #: ../../source/api_reference/core.rst:1835 64bc3635e4eb4d52aa88f012d56fe6c2
 msgid "FMOD_TIME_UNIT_MODROW"
@@ -3749,7 +3755,7 @@ msgstr "FMOD_TIME_UNIT_MODROW"
 
 #: ../../source/api_reference/core.rst:1837 a68ae741919947d48918e9830db685ef
 msgid "模块音乐行单位"
-msgstr "Unit."
+msgstr "Module music row units."
 
 #: ../../source/api_reference/core.rst:1838 3cdabdc7899a4d3e91ddc703d54f0701
 msgid "FMOD_TIME_UNIT_MODPATTERN"
@@ -3757,7 +3763,7 @@ msgstr "FMOD_TIME_UNIT_MODPATTERN"
 
 #: ../../source/api_reference/core.rst:1840 24352530acb741008edc6d6ba7b25ab9
 msgid "模块音乐样式单位"
-msgstr "Unit."
+msgstr "Module music pattern units."
 
 #: ../../source/api_reference/core.rst:1845 e4d8ae2e9f9b443795c2aa59a4eb4569
 msgid "FmodResamplerMethod"
@@ -3769,7 +3775,7 @@ msgstr "FMOD_RESAMPLER_DEFAULT"
 
 #: ../../source/api_reference/core.rst:1855 5a565469cbf14dcebeb919a53c94c5f6
 msgid "默认重采样方式"
-msgstr "Default."
+msgstr "Default resampling method."
 
 #: ../../source/api_reference/core.rst:1856 7b2fc0dd0551407891203faab83a03a2
 msgid "FMOD_RESAMPLER_NOINTERP"

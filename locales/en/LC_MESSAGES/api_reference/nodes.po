@@ -333,7 +333,7 @@ msgstr "0.0"
 #: ../../source/api_reference/nodes.rst:45
 #: e25fd17e1da24951b701abfaa27cb9d7
 msgid "播放音量，单位为分贝"
-msgstr "Volume, unit as."
+msgstr "Playback volume, in decibels."
 
 #: ../../source/api_reference/nodes.rst:47
 #: ../../source/api_reference/nodes.rst:301
@@ -965,7 +965,7 @@ msgstr "Position :ref:`FmodServer<FmodServer>` 2D; if, current `Camera2D`_"
 #: 8af70a1577a849a795cc14e1a9ebb336
 #: df017c787f63436d853a45b4892d9482
 msgid "基础音量，单位为分贝"
-msgstr "Volume, unit as."
+msgstr "Base volume, in decibels."
 
 #: ../../source/api_reference/nodes.rst:305
 #: 16fdf64cb9b444138feac370d5fa8313
@@ -1399,7 +1399,7 @@ msgstr "-12.0"
 #: ../../source/api_reference/nodes.rst:712
 #: 1c76fcd7ff904632871ccc41e14de110
 msgid "发射锥外的音量衰减，单位为分贝"
-msgstr "Volume attenuation, unit as."
+msgstr "Volume attenuation outside the emission cone, in decibels."
 
 #: ../../source/api_reference/nodes.rst:714
 #: 3bbcddf42ddb42838b35a8b5c18f59fe
@@ -1424,7 +1424,7 @@ msgstr "attenuation_filter_db"
 #: ../../source/api_reference/nodes.rst:720
 #: 7f71a4c9cd384947bd28e1f34127d73a
 msgid "距离滤波器衰减，单位为分贝"
-msgstr "Distance filter attenuation, unit as."
+msgstr "Distance filter attenuation, in decibels."
 
 #: ../../source/api_reference/nodes.rst:722
 #: a2239db2ac05460f9b071fcc6036c4c9
@@ -1981,7 +1981,7 @@ msgstr "auto_rebuild"
 #: ../../source/api_reference/nodes.rst:1179
 #: 2402ccfbf94b4fc4920c4b5047282a77
 msgid "进入场景或属性变化时自动重建几何体"
-msgstr "Or when geometry."
+msgstr "Automatically rebuilds geometry when entering the scene or when properties change."
 
 #: ../../source/api_reference/nodes.rst:1181
 #: 9d1b92bc01cc44edbaff09f79b02085f
@@ -2015,7 +2015,7 @@ msgstr "16"
 #: ../../source/api_reference/nodes.rst:1191
 #: e19b7a3a8f524258a275c32a37d058b5
 msgid "从基础碰撞形状生成几何体时使用的分段数"
-msgstr "Geometry when."
+msgstr "Number of segments used when generating geometry from the base collision shape."
 
 #: ../../source/api_reference/nodes.rst:1193
 #: af143dbff7a545298b6d0d35e4801109
@@ -2400,7 +2400,7 @@ msgstr "SourceMode"
 #: ../../source/api_reference/nodes.rst:1460
 #: 0433651403084ffa9a4735f822ec5a70
 msgid "自动选择可用来源"
-msgstr "Can."
+msgstr "Automatically selects an available source."
 
 #: ../../source/api_reference/nodes.rst:1461
 #: 24ece7d7fdf8430d8d9342c42a8a9892

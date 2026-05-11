@@ -171,7 +171,7 @@ msgstr "0.0"
 #: ../../source/api_reference/mixer.rst:52
 #: 29d6f4f8c6e84442af2dffb6bfee0ac3
 msgid "总线音量，单位为分贝"
-msgstr "Bus volume, unit as."
+msgstr "Bus volume, in decibels."
 
 #: ../../source/api_reference/mixer.rst:55
 #: ../../source/api_reference/mixer.rst:233
@@ -526,7 +526,7 @@ msgstr "Removes specified name audio bus."
 #: ../../source/api_reference/mixer.rst:267
 #: 1d995cff14ce40aebbbc5f356f06cfc6
 msgid "``Master`` 总线无法被移除"
-msgstr "``Master`` bus removes."
+msgstr "The ``Master`` bus cannot be removed."
 
 #: ../../source/api_reference/mixer.rst:272
 #: c59993a4bfae4067b753f2709df02e1a

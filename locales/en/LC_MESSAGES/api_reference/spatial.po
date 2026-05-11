@@ -62,7 +62,7 @@ msgstr "Geometry is usually created with :ref:`FmodSystem.create_geometry()<Fmod
 #: ../../source/api_reference/spatial.rst:20
 #: 8149127b65ee47199c3ba39a4d3739b2
 msgid "几何遮挡通常需要在初始化 FMOD 系统时启用 ``FMOD_INIT_FLAG_CHANNEL_LOWPASS``，否则低通遮挡效果不会按预期工作。"
-msgstr "Occlusion usually needs in FMOD when ``FMOD_INIT_FLAG_CHANNEL_LOWPASS``, otherwise occlusion effect will."
+msgstr "Geometry occlusion usually requires ``FMOD_INIT_FLAG_CHANNEL_LOWPASS`` to be enabled when initializing the FMOD system; otherwise, low-pass occlusion will not work as expected."
 
 #: ../../source/api_reference/spatial.rst:23
 #: ../../source/api_reference/spatial.rst:228
@@ -551,7 +551,7 @@ msgstr "1500.0"
 #: 3a803616c4e0441eb4dbeba8c258e1fd
 #: 4a203d3b14d6463a939753d03a186065
 msgid "混响衰减时间，单位为毫秒"
-msgstr "Reverb attenuation when, unit as."
+msgstr "Reverb decay time, in milliseconds."
 
 #: ../../source/api_reference/spatial.rst:246
 #: ../../source/api_reference/spatial.rst:464
@@ -572,7 +572,7 @@ msgstr "100.0"
 #: ../../source/api_reference/spatial.rst:248
 #: a3f66fe777f946e4bfc8dfca035a1dd8
 msgid "后期混响密度，范围通常为 ``0.0`` 到 ``100.0``"
-msgstr "After reverb, range usually as ``0.0`` to ``100.0``"
+msgstr "Late reverb density, usually in the range ``0.0`` to ``100.0``."
 
 #: ../../source/api_reference/spatial.rst:250
 #: ../../source/api_reference/spatial.rst:460
@@ -614,7 +614,7 @@ msgstr "7.0"
 #: b6aa5e0d956f42cea672729e716c3d6d
 #: 528d64626a14447fb6d548cd711fff45
 msgid "早期反射延迟，单位为毫秒"
-msgstr "Delay, unit as."
+msgstr "Early reflection delay, in milliseconds."
 
 #: ../../source/api_reference/spatial.rst:258
 #: ../../source/api_reference/spatial.rst:480
@@ -681,7 +681,7 @@ msgstr "0.0"
 #: ../../source/api_reference/spatial.rst:272
 #: ab57a64363994c959c775d73ce259b33
 msgid "高频截止或衰减参数"
-msgstr "Or attenuation parameter."
+msgstr "High-frequency cutoff or attenuation parameter."
 
 #: ../../source/api_reference/spatial.rst:274
 #: ../../source/api_reference/spatial.rst:448
@@ -702,7 +702,7 @@ msgstr "11.0"
 #: d658ee4887da45b398db427a7e8bd04c
 #: aef058423efa4c1ab500d6d4dba8887f
 msgid "后期混响延迟，单位为毫秒"
-msgstr "After reverb delay, unit as."
+msgstr "Late reverb delay, in milliseconds."
 
 #: ../../source/api_reference/spatial.rst:278
 #: ../../source/api_reference/spatial.rst:468
@@ -750,7 +750,7 @@ msgstr "-6.0"
 #: 181d97e421cb4c3e80e355debb251ee6
 #: 36a9de3170034c8c974baf4f41629397
 msgid "混响湿声电平，单位为分贝"
-msgstr "Reverb, unit as."
+msgstr "Wet reverb level, in decibels."
 
 #: ../../source/api_reference/spatial.rst:294
 #: 583cf3ec332f44eabba1174ae1c8ca00
@@ -810,7 +810,7 @@ msgstr "``set_decay_time(decay_time)`` / ``get_decay_time()``"
 #: ../../source/api_reference/spatial.rst:333
 #: 3a7fcf8a5ed449f3bf43aea0e0d50f30
 msgid "设置或返回混响衰减时间"
-msgstr "Sets or returns reverb attenuation when."
+msgstr "Sets or returns the reverb decay time."
 
 #: ../../source/api_reference/spatial.rst:334
 #: 90c7ef8dd8e04ebfad2fd8d99fe8ef96
@@ -900,7 +900,7 @@ msgstr "``set_high_cut(high_cut)`` / ``get_high_cut()``"
 #: ../../source/api_reference/spatial.rst:351
 #: ddd49ac77f89421eb4985bb7b3dc0d3e
 msgid "设置或返回高频截止参数"
-msgstr "Sets or returns parameter."
+msgstr "Sets or returns the high-frequency cutoff parameter."
 
 #: ../../source/api_reference/spatial.rst:352
 #: 23822eec1bec4b20959e2fece52d820e
@@ -1109,7 +1109,10 @@ msgstr "Returns the :ref:`FmodReverb3D<FmodReverb3D>` created and managed intern
 msgid ""
 "其它属性均通过同名 getter / setter 暴露，例如 ``set_min_distance()`` / ``get_min_distance()``、``set_preset()`` / ``get_preset()`` 和 ``set_wet_level()`` / ``get_wet_level()``。"
 msgstr ""
-"Through getter / setter, ``set_min_distance()`` / ``get_min_distance()``, ``set_preset()`` / ``get_preset()`` and ``set_wet_level()`` / ``get_wet_level()``."
+"Other properties are exposed through getter / setter pairs with the same "
+"names, such as ``set_min_distance()`` / ``get_min_distance()``, "
+"``set_preset()`` / ``get_preset()``, and ``set_wet_level()`` / "
+"``get_wet_level()``."
 
 #: ../../source/api_reference/spatial.rst:501
 #: 9456c085519d4a49a71cefec9e2fed9b
@@ -1144,7 +1147,7 @@ msgstr "0"
 #: ../../source/api_reference/spatial.rst:516
 #: 4632ce01aa634c7ebc540b26c6fcd538
 msgid "自定义参数"
-msgstr "Parameter."
+msgstr "Custom parameter."
 
 #: ../../source/api_reference/spatial.rst:517
 #: cf8db36c8e2a4ba89c5ad6c91987d070

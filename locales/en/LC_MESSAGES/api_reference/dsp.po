@@ -622,7 +622,7 @@ msgstr "``set_parameter_float(index, value)`` / ``get_parameter_float(index)``"
 #: ../../source/api_reference/dsp.rst:167
 #: 41dc905c628842f6a2fc7800fcd566c0
 msgid "设置或获取浮点参数"
-msgstr "Sets or gets parameter."
+msgstr "Sets or gets a floating-point parameter."
 
 #: ../../source/api_reference/dsp.rst:168
 #: df188068067540bb8c5045f5ccdb131f
@@ -632,7 +632,7 @@ msgstr "``set_parameter_int(index, value)`` / ``get_parameter_int(index)``"
 #: ../../source/api_reference/dsp.rst:169
 #: 3451072d668648caadd152686082e578
 msgid "设置或获取整数参数"
-msgstr "Sets or gets parameter."
+msgstr "Sets or gets an integer parameter."
 
 #: ../../source/api_reference/dsp.rst:170
 #: 6e6d9f3974794af1984764aa5610095a
@@ -642,7 +642,7 @@ msgstr "``set_parameter_bool(index, value)`` / ``get_parameter_bool(index)``"
 #: ../../source/api_reference/dsp.rst:171
 #: 5d9c59f527874742812b64c0cca548c3
 msgid "设置或获取布尔参数"
-msgstr "Sets or gets parameter."
+msgstr "Sets or gets a boolean parameter."
 
 #: ../../source/api_reference/dsp.rst:172
 #: edf2b3885de24af48c9c3a40ce074051
@@ -652,7 +652,7 @@ msgstr "``set_parameter_data(index, data)`` / ``get_parameter_data(index)``"
 #: ../../source/api_reference/dsp.rst:173
 #: e34a84f65b7d4d24b96876f0d12ad51a
 msgid "设置或获取字节数据参数"
-msgstr "Sets or gets parameter."
+msgstr "Sets or gets a byte data parameter."
 
 #: ../../source/api_reference/dsp.rst:176
 #: 51fa383a7c7147eba96a3cb78a15c07b
@@ -814,7 +814,7 @@ msgstr "``create``、``release``、``reset``"
 #: ../../source/api_reference/dsp.rst:282
 #: 0ef1d8d443ee45bbbbb8022d7df5ab03
 msgid "DSP 创建、释放和重置时调用"
-msgstr "DSP creates, releases and when."
+msgstr "Called when the DSP is created, released, or reset."
 
 #: ../../source/api_reference/dsp.rst:283
 #: 8c479e3228ca4021b9554430da87fc72
@@ -834,7 +834,7 @@ msgstr "Audio read, block processing, processing state, and playback position ch
 #: ../../source/api_reference/dsp.rst:286
 #: fab99952fda445639e40dbb154478770
 msgid "参数设置"
-msgstr "Parameter sets."
+msgstr "Parameter set"
 
 #: ../../source/api_reference/dsp.rst:287
 #: 57528c88130e460aaa28c19cb1992096
@@ -844,12 +844,12 @@ msgstr "``setparam_float``、``setparam_int``、``setparam_bool``、``setparam_d
 #: ../../source/api_reference/dsp.rst:288
 #: 328c563740594694be111db42932f168
 msgid "外部写入 DSP 参数时调用"
-msgstr "DSP parameter when."
+msgstr "Called when an external caller writes a DSP parameter."
 
 #: ../../source/api_reference/dsp.rst:289
 #: e97df5234002493d8655d3197513336d
 msgid "参数读取"
-msgstr "Parameter."
+msgstr "Parameter read"
 
 #: ../../source/api_reference/dsp.rst:290
 #: 1ce3af545e454183b7880b5db6e280cb
@@ -859,7 +859,7 @@ msgstr "``getparam_float``、``getparam_int``、``getparam_bool``、``getparam_d
 #: ../../source/api_reference/dsp.rst:291
 #: 6121956a66fe4f47a6fe9ab4d35eef1e
 msgid "外部读取 DSP 参数时调用"
-msgstr "DSP parameter when."
+msgstr "Called when an external caller reads a DSP parameter."
 
 #: ../../source/api_reference/dsp.rst:294
 #: ../../source/api_reference/dsp.rst:537
@@ -1194,7 +1194,7 @@ msgstr "10"
 #: ../../source/api_reference/dsp.rst:339
 #: a97bb20578a04307a2ec5a191cad4dd3
 msgid "归一化或放大声音到指定水平"
-msgstr "Or sound to specified."
+msgstr "Normalizes or amplifies the sound to the specified level."
 
 #: ../../source/api_reference/dsp.rst:340
 #: 4825a6713b65486cad1c4d7fb5304139
@@ -1211,7 +1211,7 @@ msgstr "11"
 #: ../../source/api_reference/dsp.rst:342
 #: 0adfaed7878e49f894b95f7c42935ebf
 msgid "限制声音电平"
-msgstr "Sound."
+msgstr "Limits the sound level."
 
 #: ../../source/api_reference/dsp.rst:343
 #: 4745eb96232246bd8afdbc6142deaaac
@@ -1366,7 +1366,7 @@ msgstr "21"
 #: ../../source/api_reference/dsp.rst:372
 #: 256392accbe5424eac6f3c27b5f2a200
 msgid "将信号发送到返回 DSP"
-msgstr "To returns DSP."
+msgstr "Sends the signal to a return DSP."
 
 #: ../../source/api_reference/dsp.rst:373
 #: 70f83fa647994e93ba3d89e5282e287a
@@ -1527,7 +1527,7 @@ msgstr "32"
 #: ../../source/api_reference/dsp.rst:405
 #: e8221002730744b0a5beb6bba4f4a69e
 msgid "五段参数均衡器"
-msgstr "Parameter."
+msgstr "Five-band parametric equalizer."
 
 #: ../../source/api_reference/dsp.rst:406
 #: 0b97d0dee66c4ce785e70dd7c01a1c31
@@ -1892,7 +1892,7 @@ msgstr "0.0"
 #: ../../source/api_reference/dsp.rst:482
 #: 8aef1c17b1cf4e7a89345427cd379eef
 msgid "连接混合电平，单位为分贝"
-msgstr "Connection, unit as."
+msgstr "Connection mix level, in decibels."
 
 #: ../../source/api_reference/dsp.rst:490
 #: 3b11903a37824841a5c6e27eb4ad13d2
@@ -2154,7 +2154,7 @@ msgstr "1.0"
 #: ../../source/api_reference/dsp.rst:632
 #: e281b26c03e1486e933df7644ecab170
 msgid "线性增益；该属性隐藏在 Inspector 中，但可以从脚本访问"
-msgstr "In Inspector, can."
+msgstr "Linear gain. This property is hidden in the Inspector but can be accessed from scripts."
 
 #: ../../source/api_reference/dsp.rst:640
 #: 6d414f517c974b4a824f90e4eee1718c
@@ -2365,7 +2365,7 @@ msgstr "FilterDB"
 #: ../../source/api_reference/dsp.rst:781
 #: 59ef84a309494736a948becae9c639c2
 msgid "每倍频程 6 dB 的斜率"
-msgstr "6 dB."
+msgstr "6 dB per octave slope."
 
 #: ../../source/api_reference/dsp.rst:782
 #: 40c272f980264489b53d8967944b1fb3
@@ -2375,7 +2375,7 @@ msgstr "FILTER_12DB"
 #: ../../source/api_reference/dsp.rst:784
 #: 881b58eb64e64275a64a5382b14a1e12
 msgid "每倍频程 12 dB 的斜率"
-msgstr "12 dB."
+msgstr "12 dB per octave slope."
 
 #: ../../source/api_reference/dsp.rst:785
 #: b6c4e5d544fa4c6f93a9cc9ec7fd663e
@@ -2385,7 +2385,7 @@ msgstr "FILTER_18DB"
 #: ../../source/api_reference/dsp.rst:787
 #: e36d4633dea14ba4b1703f98e50b5520
 msgid "每倍频程 18 dB 的斜率"
-msgstr "18 dB."
+msgstr "18 dB per octave slope."
 
 #: ../../source/api_reference/dsp.rst:788
 #: 9b85f3863e4d4bc4b4db25fc22810b30
@@ -2395,7 +2395,7 @@ msgstr "FILTER_24DB"
 #: ../../source/api_reference/dsp.rst:790
 #: 5efad262309442d2a701b5a6dde0df3e
 msgid "每倍频程 24 dB 的斜率"
-msgstr "24 dB."
+msgstr "24 dB per octave slope."
 
 #: ../../source/api_reference/dsp.rst:795
 #: 8597542b1f0646eeab2f27bf12878ebe
@@ -3100,7 +3100,7 @@ msgstr "250.0"
 #: ../../source/api_reference/dsp.rst:1396
 #: 5ad07a7fb08d48109450d04879665b30
 msgid "第一个 Tap 的延迟时间"
-msgstr "Tap delay when."
+msgstr "Delay time of the first tap."
 
 #: ../../source/api_reference/dsp.rst:1398
 #: fe1c595cb7f6408987a346945d261fdf
@@ -3155,7 +3155,7 @@ msgstr "500.0"
 #: ../../source/api_reference/dsp.rst:1412
 #: 2d66034e644a4c7cb4ed0fa7f8a04e35
 msgid "第二个 Tap 的延迟时间"
-msgstr "Tap delay when."
+msgstr "Delay time of the second tap."
 
 #: ../../source/api_reference/dsp.rst:1414
 #: 8a36b966af05475eaa885bf64cf9d314
@@ -3208,7 +3208,7 @@ msgstr "340.0"
 #: ../../source/api_reference/dsp.rst:1428
 #: e9ae62fa34eb407ab77ba12094dcd554
 msgid "反馈延迟时间"
-msgstr "Delay when."
+msgstr "Feedback delay time."
 
 #: ../../source/api_reference/dsp.rst:1430
 #: 0d9b5a372bc2455eb41b96fcca444a7e
@@ -4430,7 +4430,7 @@ msgstr "20.0"
 #: ../../source/api_reference/dsp.rst:2230
 #: 4c18479f72294f1787f0ca4ca7ebcf25
 msgid "启动时间，单位为微秒"
-msgstr "When, unit as."
+msgstr "Attack time, in microseconds."
 
 #: ../../source/api_reference/dsp.rst:2232
 #: cfa6d2bf3c5741c3ac1f6ff6b80297f8
@@ -4440,7 +4440,7 @@ msgstr "release_ms"
 #: ../../source/api_reference/dsp.rst:2234
 #: 60084a0c48c64c7b92bbfa7e30663bc0
 msgid "释放时间，单位为毫秒"
-msgstr "Releases when, unit as."
+msgstr "Release time, in milliseconds."
 
 #: ../../source/api_reference/dsp.rst:2238
 #: c24e1d941212494a92ea7a8d911ff6c3
@@ -4651,7 +4651,7 @@ msgstr "0.1"
 #: ../../source/api_reference/dsp.rst:2380
 #: 0dae5115ad764d35846f94e9d8c3e1ca
 msgid "释放时间"
-msgstr "Releases when."
+msgstr "Release time."
 
 #: ../../source/api_reference/dsp.rst:2388
 #: e3b493a2c8414595bf2a2e553f94b71d
@@ -4810,7 +4810,7 @@ msgstr "150.0"
 #: ../../source/api_reference/dsp.rst:2516
 #: aed0befcbed94570989816b630211df7
 msgid "预延迟时间，单位为毫秒"
-msgstr "Delay when, unit as."
+msgstr "Pre-delay time, in milliseconds."
 
 #: ../../source/api_reference/dsp.rst:2518
 #: 05a666ce50e64a02be5002ef81f8fd16
@@ -5010,7 +5010,7 @@ msgstr "time_pullout_ms"
 #: ../../source/api_reference/dsp.rst:2676
 #: 84ab7ac628a34e7f88bd42cbfa6a8750
 msgid "时间差拉开量，单位为毫秒"
-msgstr "When, unit as."
+msgstr "Time spread amount, in milliseconds."
 
 #: ../../source/api_reference/dsp.rst:2678
 #: 69e5309535834932a0ca8c331793bc70
@@ -5213,7 +5213,7 @@ msgstr "MAGNITUDE_AVERAGE"
 #: ../../source/api_reference/dsp.rst:2872
 #: 6c480fff50484afc91a563246bdae866
 msgid "返回频率范围内的平均幅度"
-msgstr "Returns range."
+msgstr "Returns the average magnitude within the frequency range."
 
 #: ../../source/api_reference/dsp.rst:2873
 #: 8ef198ff1d3d46ad97c0ccf1628270c4
@@ -5223,7 +5223,7 @@ msgstr "MAGNITUDE_MAX"
 #: ../../source/api_reference/dsp.rst:2875
 #: f0ba6e953e5c43a1a0f895247c88d412
 msgid "返回频率范围内的最大幅度"
-msgstr "Returns range."
+msgstr "Returns the maximum magnitude within the frequency range."
 
 #: ../../source/api_reference/dsp.rst:2878
 #: ../../source/api_reference/dsp.rst:3001
@@ -5301,7 +5301,7 @@ msgstr "FORMAT_16_BITS"
 #: ../../source/api_reference/dsp.rst:2925
 #: 306a1bb8921f4d789be40cb21ccbdfc6
 msgid "导出为 `AudioStreamWAV`_ 时使用的采样格式"
-msgstr "As `AudioStreamWAV`_ when."
+msgstr "Sample format used when exporting as `AudioStreamWAV`_."
 
 #: ../../source/api_reference/dsp.rst:2927
 #: 6398a131593d475d8e638ef2b92b5276

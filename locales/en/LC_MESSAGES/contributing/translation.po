@@ -1,0 +1,210 @@
+# English translations for Godot FmodPlayer.
+# Copyright (C) 2026, LuYingYiLong
+# This file is distributed under the same license as the Godot FmodPlayer
+# package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Godot FmodPlayer \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-12 00:48+0800\n"
+"PO-Revision-Date: 2026-05-12 00:00+0800\n"
+"Last-Translator: Codex <codex@example.invalid>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/contributing/translation.rst:4 e81e470007ab4ccf948a85af060a37aa
+msgid "翻译 Godot-FmodPlayer"
+msgstr "Translating Godot-FmodPlayer"
+
+#: ../../source/contributing/translation.rst:6 04bb005aac7447d88e5b3bb020b8200d
+msgid ""
+"Godot-FmodPlayer 的文档和插件界面都需要稳定的翻译维护。翻译贡献不只是把中文逐句替换成英文，更重要的是保持术语、API "
+"名称、示例代码和页面结构一致。"
+msgstr ""
+"Both the Godot-FmodPlayer documentation and plugin interface need stable "
+"translation maintenance. Translation contributions are not just about "
+"replacing Chinese sentences with English; more importantly, they keep "
+"terminology, API names, example code, and page structure consistent."
+
+#: ../../source/contributing/translation.rst:9 e9e6915b8faa432a8c4b79e5eb498371
+msgid "在线文档翻译"
+msgstr "Online Documentation Translation"
+
+#: ../../source/contributing/translation.rst:11
+#: 8c8cc2b6a1594e3bb340c094bd76fb97
+msgid ""
+"在线文档使用 `Sphinx <https://www.sphinx-doc.org/en/master/>`_ 构建，源文件位于 "
+"``source/``，格式为 reStructuredText。"
+msgstr ""
+"The online documentation is built with `Sphinx <https://www.sphinx-"
+"doc.org/en/master/>`_. The source files are in ``source/`` and use the "
+"reStructuredText format."
+
+#: ../../source/contributing/translation.rst:13
+#: 07219a5614684fafb594a1d188d21b58
+msgid "英文文档通过 gettext / PO 文件维护。请不要直接复制一份英文 ``.rst`` 来翻译，否则后续中文源文档更新时很难同步。"
+msgstr "The English documentation is maintained through gettext / PO files. Do not copy the ``.rst`` files into a separate English version, because that makes future updates from the Chinese source documentation difficult to synchronize."
+
+#: ../../source/contributing/translation.rst:15
+#: 091561ba8b2b4e838078fe6e227117f3
+msgid "常用流程如下："
+msgstr "The common workflow is:"
+
+#: ../../source/contributing/translation.rst:17
+#: f97aec19204747ec942fb16f19f665c7
+msgid ""
+"sphinx-build -b gettext source build/gettext\n"
+"sphinx-intl update -p build/gettext -l en"
+msgstr ""
+"sphinx-build -b gettext source build/gettext\n"
+"sphinx-intl update -p build/gettext -l en"
+
+#: ../../source/contributing/translation.rst:22
+#: 921df8d8a4344d27aa0edb8c2c804b34
+msgid "翻译文件位于："
+msgstr "Translation files are located at:"
+
+#: ../../source/contributing/translation.rst:24
+#: c5a2c27bdea94e43994d400492aca7c7
+msgid "locales/en/LC_MESSAGES/"
+msgstr "locales/en/LC_MESSAGES/"
+
+#: ../../source/contributing/translation.rst:28
+#: 5ccfa54ebb63475ca4bef776b08130dd
+msgid "修改 ``.po`` 后，编译并构建英文 HTML："
+msgstr "After editing ``.po`` files, compile them and build the English HTML:"
+
+#: ../../source/contributing/translation.rst:30
+#: d80da96d01d644d89fdc41dcb2f8fd39
+msgid ""
+"sphinx-intl build -l en\n"
+"sphinx-build -b html -D language=en source build/html_en"
+msgstr ""
+"sphinx-intl build -l en\n"
+"sphinx-build -b html -D language=en source build/html_en"
+
+#: ../../source/contributing/translation.rst:35
+#: 4bbe4706e9c649128ce3d70c25d253d6
+msgid "翻译时请注意："
+msgstr "When translating, keep these points in mind:"
+
+#: ../../source/contributing/translation.rst:37
+#: c966348b15204e779054d91342088a28
+msgid "``msgid`` 保持不变，只修改 ``msgstr``。"
+msgstr "Keep ``msgid`` unchanged and edit only ``msgstr``."
+
+#: ../../source/contributing/translation.rst:38
+#: bcfcba1d316d421fb5180a4bd3c3ca48
+msgid "API 类名、方法名、属性名和枚举名不要翻译。"
+msgstr "Do not translate API class names, method names, property names, or enum names."
+
+#: ../../source/contributing/translation.rst:39
+#: cdefe037638e465888a95a2ea444c744
+msgid "``:ref:``、``:doc:``、```code```、链接和 GDScript 示例要保持可构建。"
+msgstr "Keep ``:ref:``, ``:doc:``, ```code```, links, and GDScript examples buildable."
+
+#: ../../source/contributing/translation.rst:40
+#: 66c98afe6cb44dadab5119ce85894f19
+msgid "中文术语请优先参考 :doc:`../glossary`。"
+msgstr "For Chinese terminology, refer to :doc:`../glossary` first."
+
+#: ../../source/contributing/translation.rst:41
+#: d46178f871f24d1f8c8ce63daf577998
+msgid "如果源文档改了标题或标记，记得重新生成 gettext 模板并更新 PO。"
+msgstr "If titles or markup change in the source documentation, regenerate the gettext templates and update the PO files."
+
+#: ../../source/contributing/translation.rst:44
+#: 0756ec8aecbb40b68b38788cc4b9c40f
+msgid "离线文档翻译"
+msgstr "Offline Documentation Translation"
+
+#: ../../source/contributing/translation.rst:46
+#: a6751abe67ea474d8b9e82dc77c5e94b
+msgid "离线类参考文档使用 XML 风格的类描述。它更接近 Godot 官方类参考格式，适合编辑器内提示、类说明和属性描述。"
+msgstr "The offline class reference uses XML-style class descriptions. It is closer to Godot's official class reference format and is suitable for editor hints, class descriptions, and property descriptions."
+
+#: ../../source/contributing/translation.rst:50
+#: d71db2420ae34f3daea005063429a1f2
+msgid ""
+"`Godot class reference primer "
+"<https://docs.godotengine.org/en/4.x/engine_details/class_reference/index.html"
+"#doc-class-reference-primer>`_"
+msgstr ""
+"`Godot class reference primer "
+"<https://docs.godotengine.org/en/4.x/engine_details/class_reference/index.html"
+"#doc-class-reference-primer>`_"
+
+#: ../../source/contributing/translation.rst:52
+#: a4e8a7558b274970807b632d2d606cfd
+msgid "维护离线文档时，请保持 API 名称与 GDExtension 绑定一致。新增类、属性、方法或枚举后，应同步检查在线文档与离线文档是否都已更新。"
+msgstr "When maintaining offline documentation, keep API names consistent with the GDExtension bindings. After adding classes, properties, methods, or enums, check that both the online and offline documentation have been updated."
+
+#: ../../source/contributing/translation.rst:55
+#: b8c862892bb04a9e8c329584801f59cf
+msgid "属性本地化"
+msgstr "Property Localization"
+
+#: ../../source/contributing/translation.rst:57
+#: f9efe9337aa0400caaec054fcd650c82
+msgid "插件属性本地化用于编辑器检查器中的显示名称、分组和提示文本。它与在线文档翻译不是同一套文件。"
+msgstr "Plugin property localization is used for display names, groups, and tooltip text in the editor Inspector. It does not use the same files as the online documentation translation."
+
+#: ../../source/contributing/translation.rst:59
+#: 3117aa6925de46fe8beac722c31f2c32
+msgid "如果你修改了导出的属性名、分类或提示文本，请同时检查："
+msgstr "If you change exported property names, categories, or tooltip text, also check:"
+
+#: ../../source/contributing/translation.rst:61
+#: 89fceca4e3b740d7bd575c02d76d0a9e
+msgid "GDExtension 绑定中的属性名称。"
+msgstr "Property names in the GDExtension bindings."
+
+#: ../../source/contributing/translation.rst:62
+#: 40a44d50d9394e3a9f3648ffb229d7f5
+msgid "编辑器中实际显示的本地化文本。"
+msgstr "The localized text that is actually displayed in the editor."
+
+#: ../../source/contributing/translation.rst:63
+#: 6f703dd694a24e14a74235ecab53644c
+msgid "在线 API 文档中的属性说明。"
+msgstr "Property descriptions in the online API documentation."
+
+#: ../../source/contributing/translation.rst:66
+#: f84fba7f9638466ab1523cf381bfdf07
+msgid "翻译检查"
+msgstr "Translation Checks"
+
+#: ../../source/contributing/translation.rst:68
+#: 632f4deba6b44eac9f662560d13f9474
+msgid "提交翻译前建议至少检查："
+msgstr "Before submitting translations, check at least:"
+
+#: ../../source/contributing/translation.rst:70
+#: e2ec20b1b4f540a38fb83a6aaacfe213
+msgid "英文 HTML 能否成功构建。"
+msgstr "Whether the English HTML builds successfully."
+
+#: ../../source/contributing/translation.rst:71
+#: c3027355577342e08ebaec7569eda9af
+msgid "页面中是否残留明显中文。"
+msgstr "Whether any obvious Chinese remains on the page."
+
+#: ../../source/contributing/translation.rst:72
+#: 32be11025805424fb8f844ca38b51533
+msgid "是否存在 ``msgstr \".\"``、``#, fuzzy`` 或明显机器翻译残留。"
+msgstr "Whether there are any ``msgstr \".\"`` entries, ``#, fuzzy`` markers, or obvious machine translation leftovers."
+
+#: ../../source/contributing/translation.rst:73
+#: 6a86eb79f8f34d298b0c2257d17c35dd
+msgid "代码块、内部引用和表格是否渲染正常。"
+msgstr "Whether code blocks, internal references, and tables render correctly."
+
+#: ../../source/contributing/translation.rst:75
+#: ee5f656ff6254c57872a10bd43668f07
+msgid "如果不确定某个术语怎么翻译，可以先保留 API 原名，并在 PR 中说明疑问。术语一致性比单句看起来华丽更重要。"
+msgstr "If you are unsure how to translate a term, keep the API name first and explain the question in the PR. Terminology consistency matters more than making a single sentence sound polished."

@@ -376,7 +376,7 @@ msgstr "0"
 #: ../../source/api_reference/audio.rst:139
 #: f87db78da1f646a380db893137e1802e
 msgid "默认创建模式。没有设置特殊标志"
-msgstr "Default creation mode. sets."
+msgstr "Default creation mode. No special flags are enabled."
 
 #: ../../source/api_reference/audio.rst:140
 #: 8ca6bd3a297343c3956a9e3c1290d515
@@ -710,7 +710,7 @@ msgstr "Updates label ()."
 #: ../../source/api_reference/audio.rst:288
 #: 233618e1a87a441ba6b7291cf9c7974f
 msgid "使用 :ref:`get_tag()<FmodSound-get_tag>` 来获取单个标签信息"
-msgstr ":ref:`get_tag()<FmodSound-get_tag>` gets label."
+msgstr "Use :ref:`get_tag()<FmodSound-get_tag>` to retrieve a single tag."
 
 #: ../../source/api_reference/audio.rst:293
 #: 18b7c763a9a34549926258edcbdacd84
@@ -842,7 +842,7 @@ msgstr ":ref:`FmodOpenState<FmodOpenState>`"
 #: ../../source/api_reference/audio.rst:342
 #: d9f38ea9541b4b8fa229454c042f9d02
 msgid "当前打开状态"
-msgstr "Current state."
+msgstr "Current open state."
 
 #: ../../source/api_reference/audio.rst:343
 #: 55a34dcf4a6241c0b9d565bd7004a71f
@@ -886,7 +886,7 @@ msgstr "FMOD internal sound audio data to **PackedByteArray**. for after PCM or.
 #: ../../source/api_reference/audio.rst:360
 #: fb7859b15f5642e580e3e4112f40c887
 msgid "在读取之前使用 ``seek_data()`` 定位读取光标。"
-msgstr "In before ``seek_data()``."
+msgstr "Use ``seek_data()`` to position the read cursor before reading."
 
 #: ../../source/api_reference/audio.rst:365
 #: 9efc186e794447e385ddd251cc597e73
@@ -901,7 +901,7 @@ msgstr "In sound to PCM position. position PCM as unit specified."
 #: ../../source/api_reference/audio.rst:369
 #: e93d81484a9a4accb5ea10b5047692d7
 msgid "这会影响 ``read_data()`` 使用的位置，而不会影响播放位置"
-msgstr "Will ``read_data()`` position, will playback position."
+msgstr "This affects the position used by ``read_data()``, but does not affect the playback position."
 
 #: ../../source/api_reference/audio.rst:374
 #: 5073a77153634b0d97b13b5a47cf25e8
@@ -916,7 +916,7 @@ msgstr "Sound. or PCM. returns **FmodSoundLock** object, object provides memory.
 #: ../../source/api_reference/audio.rst:378
 #: ba8c01007d524e378c19ef6575752261
 msgid "始终确保 FmodSoundLock 被释放（超出作用域）以解锁数据"
-msgstr "FmodSoundLock releases ()."
+msgstr "Always make sure FmodSoundLock is released, or goes out of scope, to unlock the data."
 
 #: ../../source/api_reference/audio.rst:380
 #: d8e0490251b24a0a8f09128627e4deb2
@@ -947,7 +947,7 @@ msgstr "Returns MOD/S3M/XM/IT/MIDI file channel. channel file /."
 #: 390c4ad99ba341a7829000327043f13b
 #: 6587a63a27444fba837279c963f2fc4f
 msgid "这仅适用于模块音乐格式（跟踪器格式）"
-msgstr "Used for ()."
+msgstr "This only applies to module music formats (tracker formats)."
 
 #: ../../source/api_reference/audio.rst:400
 #: 52af8a2ea8fe4b8db1941b078e489a2d
@@ -962,7 +962,7 @@ msgstr "Sets MOD/S3M/XM/IT/MIDI file channel volume, as unit. / controls."
 #: ../../source/api_reference/audio.rst:404
 #: 9fa2c5299d49468fb89b13ed0d50df65
 msgid "这仅适用于模块音乐格式。有效的通道索引范围为 0 到 ``get_music_num_channels()`` - 1"
-msgstr "Used for. channel index range as 0 to ``get_music_num_channels()`` - 1."
+msgstr "This only applies to module music formats. Valid channel indices range from 0 to ``get_music_num_channels()`` - 1."
 
 #: ../../source/api_reference/audio.rst:409
 #: 66da9ede83d543f692942f806ef57a24
@@ -1002,7 +1002,7 @@ msgstr "Returns MOD/S3M/XM/IT/MIDI velocity. 1.0 represents velocity, 1.0 repres
 #: ../../source/api_reference/audio.rst:431
 #: 941643fdd92b422ab6672aeb9925e9d7
 msgid "这仅适用于模块音乐格式"
-msgstr "Used for."
+msgstr "This only applies to module music formats."
 
 #: ../../source/api_reference/audio.rst:434
 #: e58316b07a8c49b682bae8bd716cb8a8
@@ -1021,7 +1021,7 @@ msgstr "Returns the sync point handle at the specified index. Sync points are em
 #: ../../source/api_reference/audio.rst:443
 #: 4aab33681a8f4e5e86505887f4fb5736
 msgid "使用 ``get_sync_point_info()`` 获取返回的同步点句柄的信息"
-msgstr "``get_sync_point_info()`` gets returns synchronizes handle."
+msgstr "Use ``get_sync_point_info()`` to get information about the returned sync point handle."
 
 #: ../../source/api_reference/audio.rst:448
 #: 053d40a026c34fb68824a9a6419005b8
@@ -1086,7 +1086,7 @@ msgstr "Returns sound file sound. for FSB (FMOD sound) or DLS (can sound) audio.
 #: ../../source/api_reference/audio.rst:478
 #: 9c61c46cf8fa4985b2f9144f04a128da
 msgid "像 MP3 或 WAV 这样的常规音频文件通常返回该值为 0"
-msgstr "MP3 or WAV audio file usually returns as 0."
+msgstr "Regular audio files such as MP3 or WAV usually return 0 for this value."
 
 #: ../../source/api_reference/audio.rst:481
 #: 810413a9d6134586b21686a6732aa3d7
@@ -1133,7 +1133,7 @@ msgstr "Provides audio data, audio or."
 #: ../../source/api_reference/audio.rst:498
 #: 86a9ea1af7d3437680a374926f45fd7a
 msgid "回调在音频线程中执行，必须快速返回以避免音频中断。不要在回调中执行阻塞操作"
-msgstr "Callback in audio, returns audio. in callback."
+msgstr "Callbacks run on the audio thread and must return quickly to avoid audio dropouts. Do not perform blocking operations inside the callback."
 
 #: ../../source/api_reference/audio.rst:503
 #: fafe9e3b14d147e9b55b48d09bbaeb64
@@ -1238,7 +1238,7 @@ msgstr ""
 #: ../../source/api_reference/audio.rst:552
 #: a5699322bf7349b5b7bc52027ab1edb6
 msgid ":ref:`get_open_state()<FmodSound>` 用于手动轮询加载状态"
-msgstr ":ref:`get_open_state()<FmodSound>` used for load state."
+msgstr "Use :ref:`get_open_state()<FmodSound>` to manually poll the loading state."
 
 #: ../../source/api_reference/audio.rst:557
 #: b9efe825e2064b19826113c62729bf7c
@@ -1283,7 +1283,7 @@ msgstr "FMOD_SOUND_TYPE_UNKNOWN"
 #: ../../source/api_reference/audio.rst:591
 #: 12cc17ae3679480fa81e2ea7893f1ca6
 msgid "未知或不支持的音频格式"
-msgstr "Or audio."
+msgstr "Unknown or unsupported audio format."
 
 #: ../../source/api_reference/audio.rst:592
 #: aa916814a4f146fb9da88cd56c0e38a5
@@ -1303,7 +1303,7 @@ msgstr "FMOD_SOUND_TYPE_ASF"
 #: ../../source/api_reference/audio.rst:597
 #: 6ed2236528ae4d0698457ba089e22132
 msgid "Microsoft 高级系统格式（.asf、.wma、.wmv）。平台提供解码器，仅在 Windows 上可用"
-msgstr "Microsoft (.asf,.wma,.wmv). provides, in Windows can."
+msgstr "Microsoft Advanced Systems Format (.asf, .wma, .wmv). The decoder is provided by the platform and is available only on Windows."
 
 #: ../../source/api_reference/audio.rst:598
 #: f5349825eb1b44e4a3ccbf6b69454f3c
@@ -1326,7 +1326,7 @@ msgstr "3"
 #: ../../source/api_reference/audio.rst:600
 #: 14517449fd7c467f9e6febc4e971c08c
 msgid "可下载音频（.dls）。MIDI（.mid）使用的多声音库格式"
-msgstr "Can audio (.dls). MIDI (.mid) sound."
+msgstr "Downloadable Sound (.dls). A multi-sound library format used by MIDI (.mid)."
 
 #: ../../source/api_reference/audio.rst:601
 #: 33093310a8f2476785633e2088a67ebc
@@ -1336,7 +1336,7 @@ msgstr "FMOD_SOUND_TYPE_FLAC"
 #: ../../source/api_reference/audio.rst:603
 #: d9d1719c51374be9bca6ed0b3d144846
 msgid "无损音频编解码器（.flac）"
-msgstr "Audio (.flac)."
+msgstr "Lossless audio codec (.flac)."
 
 #: ../../source/api_reference/audio.rst:604
 #: e8e4e281c9164a289b3c1e7cc8a588cc
@@ -1359,7 +1359,7 @@ msgstr "5"
 #: ../../source/api_reference/audio.rst:606
 #: 1f45ea51786a4b91888dfeae04275ba0
 msgid "FMOD 采样库（.fsb）。专有多声音库格式。支持编码：PCM16、FADPCM、Vorbis、AT9、XMA、Opus"
-msgstr "FMOD (.fsb). sound.: PCM16, FADPCM, Vorbis, AT9, XMA, Opus."
+msgstr "FMOD Sample Bank (.fsb). A proprietary multi-sound library format. Supported codecs include PCM16, FADPCM, Vorbis, AT9, XMA, and Opus."
 
 #: ../../source/api_reference/audio.rst:607
 #: 685ee56290024a6daa19ec10793588d0
@@ -1432,7 +1432,7 @@ msgstr "9"
 #: ../../source/api_reference/audio.rst:618
 #: 1120a67368c74e049a3907ffbdefc98c
 msgid "动态影像专家组（.mp2，.mp3）。还支持.wav（RIFF）容器格式"
-msgstr "(.mp2,.mp3)..wav (RIFF)."
+msgstr "Moving Picture Experts Group (.mp2, .mp3). The .wav (RIFF) container format is also supported."
 
 #: ../../source/api_reference/audio.rst:619
 #: bbd4fd6ad50c4de8bc05dcfab1b1b5d9
@@ -1466,7 +1466,7 @@ msgstr "11"
 #: ../../source/api_reference/audio.rst:624
 #: 54d78c34f378490ba25d57166a32bcee
 msgid "播放列表信息容器（.asx、.pls、.m3u、.wax）。无音频，仅有标签"
-msgstr "(.asx,.pls,.m3u,.wax). audio, label."
+msgstr "Playlist information container (.asx, .pls, .m3u, .wax). Contains tags only, with no audio data."
 
 #: ../../source/api_reference/audio.rst:625
 #: d422dcb35f884a718b443f220b895be0
@@ -1481,7 +1481,7 @@ msgstr "12"
 #: ../../source/api_reference/audio.rst:627
 #: 1c6400f195fc4d98bd0b51f6bb4cfbed
 msgid "原始未压缩PCM数据（.raw）"
-msgstr "Compression PCM (.raw)."
+msgstr "Raw uncompressed PCM data (.raw)."
 
 #: ../../source/api_reference/audio.rst:628
 #: e40263448c8b42fcbdf93e379028b27b
@@ -1511,7 +1511,7 @@ msgstr "14"
 #: ../../source/api_reference/audio.rst:633
 #: 2461041799254f8286fde20a780d99a7
 msgid "用户自制的声音"
-msgstr "Sound."
+msgstr "User-created sound."
 
 #: ../../source/api_reference/audio.rst:634
 #: a18dcf8a56fd44a6b14ae040fe8c86d5
@@ -1526,7 +1526,7 @@ msgstr "15"
 #: ../../source/api_reference/audio.rst:636
 #: b7ff3b29d8ce40a2a39ff932eea0ae08
 msgid "Microsoft 波形音频文件格式（.wav）。支持的编码：无压缩PCM，IMA ADPCM。平台提供仅在Windows上可用的ACM解码扩展"
-msgstr "Microsoft audio file (.wav).: compression PCM, IMA ADPCM. provides in Windows can ACM."
+msgstr "Microsoft Waveform Audio File Format (.wav). Supported encodings include uncompressed PCM and IMA ADPCM. Platform-provided ACM codec extensions are available only on Windows."
 
 #: ../../source/api_reference/audio.rst:637
 #: 8bcefa1dddb44e019391f73b08637acd
@@ -1556,7 +1556,7 @@ msgstr "17"
 #: ../../source/api_reference/audio.rst:642
 #: 19ccfcf7a36a4278b947bb718ee9785a
 msgid "Microsoft XMA 位流支持，支持FSB（.fsb）容器格式。平台提供解码器，仅在Xbox上可用"
-msgstr "Microsoft XMA, FSB (.fsb). provides, in Xbox can."
+msgstr "Microsoft XMA bitstream support for FSB (.fsb) containers. The decoder is provided by the platform and is available only on Xbox."
 
 #: ../../source/api_reference/audio.rst:643
 #: 0b96d07c0f414f4db9d26fd49b9c4db7
@@ -1571,7 +1571,7 @@ msgstr "18"
 #: ../../source/api_reference/audio.rst:645
 #: 2d300eb329ea4dbab80d8d4bb210187b
 msgid "Apple 音频队列解码器（.mp4、.m4a、.mp3）。支持的编码：AAC、ALAC、MP3。平台提供解码器，仅在 iOS/tvOS 设备上使用"
-msgstr "Apple audio (.mp4,.m4a,.mp3).: AAC, ALAC, MP3. provides, in iOS/tvOS."
+msgstr "Apple Audio Queue decoder (.mp4, .m4a, .mp3). Supported encodings include AAC, ALAC, and MP3. The decoder is provided by the platform and is used only on iOS/tvOS devices."
 
 #: ../../source/api_reference/audio.rst:646
 #: 9905464ae36d4105835084c0da0e69ed
@@ -1586,7 +1586,7 @@ msgstr "19"
 #: ../../source/api_reference/audio.rst:648
 #: 80bc0556d25b4065a2cba25e7924797c
 msgid "索尼ATRAC9位流支持FSB（.fsb）容器格式。平台提供解码器，仅在PlayStation上可用"
-msgstr "ATRAC9FSB (.fsb). provides, in PlayStation can."
+msgstr "Sony ATRAC9 bitstream support for FSB (.fsb) containers. The decoder is provided by the platform and is available only on PlayStation."
 
 #: ../../source/api_reference/audio.rst:649
 #: f89efdcd6685468a889f30187631fade
@@ -1616,7 +1616,7 @@ msgstr "21"
 #: ../../source/api_reference/audio.rst:654
 #: 61cee5b5a4f945918519e3dcb4136c95
 msgid "Microsoft Media Foundation 解码器（.asf、.wma、.wmv、.mp4、.m4a）。平台提供的解码器，仅在 UWP 上可用"
-msgstr "Microsoft Media Foundation (.asf,.wma,.wmv,.mp4,.m4a). provides, in UWP can."
+msgstr "Microsoft Media Foundation decoder (.asf, .wma, .wmv, .mp4, .m4a). The decoder is provided by the platform and is available only on UWP."
 
 #: ../../source/api_reference/audio.rst:655
 #: 587244f81e184f2a9d3041b894c0eda0
@@ -1631,7 +1631,7 @@ msgstr "22"
 #: ../../source/api_reference/audio.rst:657
 #: 11b0f6c476e243aaa0b824d957f23453
 msgid "Google Media 编解码器（.m4a，.mp4）。平台提供的解码器，仅在安卓上提供"
-msgstr "Google Media (.m4a,.mp4). provides, in provides."
+msgstr "Google Media codec (.m4a, .mp4). The decoder is provided by the platform and is available only on Android."
 
 #: ../../source/api_reference/audio.rst:658
 #: 81c005cb08474f59ba70fed98b155f6c
@@ -1661,7 +1661,7 @@ msgstr "24"
 #: ../../source/api_reference/audio.rst:663
 #: 2f10905ced5f41de8145a19f841bcd76
 msgid "Opus 比特流支持，支持 FSB（.fsb）容器格式。平台提供解码器，仅支持 Xbox Series X|S、PS5 和 Switch"
-msgstr "Opus, FSB (.fsb). provides, Xbox Series X|S, PS5 and Switch."
+msgstr "Opus bitstream support for FSB (.fsb) containers. The decoder is provided by the platform and is supported only on Xbox Series X|S, PS5, and Switch."
 
 #: ../../source/api_reference/audio.rst:664
 #: 4f12fa45f90b4de29912e22a0797922a
@@ -1745,7 +1745,7 @@ msgstr "FMOD_SOUND_FORMAT_BITSTREAM"
 #: ../../source/api_reference/audio.rst:699
 #: 789a6fb2360648e39de193ab16dfad95
 msgid "声音数据为其原生压缩格式"
-msgstr "Sound as compression."
+msgstr "Sound data is stored in its native compressed format."
 
 #: ../../source/api_reference/audio.rst:700
 #: dd9a51adf5b54d5b9d732680fd9f50d8
@@ -1818,7 +1818,7 @@ msgstr "FMOD_TAG_TYPE_ICECAST"
 #: ../../source/api_reference/audio.rst:732
 #: bae7dab03c774158aab7b040b15ca9cc
 msgid "可在播放过程中发布的Icecast互联网流元数据"
-msgstr "Can in Icecast."
+msgstr "Icecast internet stream metadata that can be posted during playback."
 
 #: ../../source/api_reference/audio.rst:733
 #: 642b8e891acf4379949f4278471a6405
@@ -1828,7 +1828,7 @@ msgstr "FMOD_TAG_TYPE_ASF"
 #: ../../source/api_reference/audio.rst:735
 #: 9f8502e2672b49cd991d279988f50546
 msgid "高级系统格式元数据通常与Windows Media格式（如WMA）相关"
-msgstr "Usually and Windows Media (WMA)."
+msgstr "Advanced Systems Format metadata, usually associated with Windows Media formats such as WMA."
 
 #: ../../source/api_reference/audio.rst:736
 #: 1ef7908ab36d4181b2376bf445ad5dab
@@ -1838,7 +1838,7 @@ msgstr "FMOD_TAG_TYPE_MIDI"
 #: ../../source/api_reference/audio.rst:738
 #: 3e9d72045ad04889b1c99af266c324a4
 msgid "存储在MIDI文件中的元数据"
-msgstr "In MIDI file."
+msgstr "Metadata stored in MIDI files."
 
 #: ../../source/api_reference/audio.rst:739
 #: 23bc2763cf8a46adb61087e08d95f689
@@ -1870,7 +1870,7 @@ msgstr "FMOD_TAG_TYPE_USER"
 msgid ""
 "对于编解码器开发者来说，这种标签类型可以配合 `FMOD_CODEC_METADATA_FUNC <https://www.fmod.com/docs/2.02/api/plugin-api-codec.html#fmod_codec_metadata_func>`_ 生成自定义元数据"
 msgstr ""
-"For, label can `FMOD_CODEC_METADATA_FUNC <https://www.fmod.com/docs/2.02/api/plugin-api-codec.html#fmod_codec_metadata_func>`_"
+"For codec developers, this tag type can be used with `FMOD_CODEC_METADATA_FUNC <https://www.fmod.com/docs/2.02/api/plugin-api-codec.html#fmod_codec_metadata_func>`_ to generate custom metadata."
 
 #: ../../source/api_reference/audio.rst:748
 #: 2ad90832d09349c4a80eeec5004d415c
@@ -1880,7 +1880,7 @@ msgstr "FMOD_TAG_TYPE_MAX"
 #: ../../source/api_reference/audio.rst:750
 #: eed4552ffcec4481ac0d0c4028bc0670
 msgid "支持的最大标签类型数量"
-msgstr "Maximum supported tag type count."
+msgstr "Maximum number of supported tag types."
 #: ../../source/api_reference/audio.rst:755
 #: cdc7a43b5ee64adf8c28615e207f4699
 msgid "FmodTagDataType"
@@ -1951,7 +1951,7 @@ msgstr "FMOD_TAG_DATA_TYPE_STRING_UTF8"
 #: ../../source/api_reference/audio.rst:783
 #: 8a8aec043616466fa6db7b008c061738
 msgid "8位UTF字符串"
-msgstr "8UTF."
+msgstr "8-bit UTF string."
 
 #: ../../source/api_reference/audio.rst:784
 #: dccabf0324a84b448cda61f32f57a0b0
@@ -1961,7 +1961,7 @@ msgstr "FMOD_TAG_DATA_TYPE_MAX"
 #: ../../source/api_reference/audio.rst:786
 #: 9dc4fa6c94734220a30d7b8244a956d7
 msgid "支持的最大标签数据类型数量"
-msgstr "Maximum supported tag data type count."
+msgstr "Maximum number of supported tag data types."
 #: ../../source/api_reference/audio.rst:791
 #: 2320cc471588426693c0a9fb13b72425
 msgid "FmodOpenState"
@@ -1995,7 +1995,7 @@ msgstr "FMOD_OPEN_STATE_ERROR"
 #: ../../source/api_reference/audio.rst:807
 #: 5903ba301ecb42fc8c6fe30471199905
 msgid "无法打开，通常是找不到文件、内存不足等"
-msgstr "Usually to file, memory."
+msgstr "Could not open, usually because the file was not found, memory was insufficient, or a similar error occurred."
 
 #: ../../source/api_reference/audio.rst:808
 #: fe87e1844f564ed6bf93582ac72f6ed0
@@ -2025,7 +2025,7 @@ msgstr "FMOD_OPEN_STATE_SEEKING"
 #: ../../source/api_reference/audio.rst:816
 #: e1bcbd1f2d504238b85f2b918a1308de
 msgid "正在定位子声道并强制刷新流缓冲区"
-msgstr "In and."
+msgstr "Seeking a subsound and forcing the stream buffer to flush."
 
 #: ../../source/api_reference/audio.rst:817
 #: 5d9fc4d0744845118a8c7d68b242c263
@@ -2054,7 +2054,7 @@ msgstr "FMOD_OPEN_STATE_MAX"
 #: ../../source/api_reference/audio.rst:825
 #: d85ffa682bb84bf09bca56a59a243be9
 msgid "开放状态类型的最大数量"
-msgstr "Maximum open state type count."
+msgstr "Maximum number of open state types."
 #: ../../source/api_reference/audio.rst:830
 #: b04bdc44c61c4fa59ed13b3c0bb433f5
 msgid "FmodSoundLock"
@@ -2078,7 +2078,7 @@ msgstr "Sound when, FMOD will provides or (if sound,)."
 #: ../../source/api_reference/audio.rst:843
 #: 9cd12f20e8e54ce59cfb178516843a49
 msgid "在完成数据访问后，务必调用 ``unlock()``，或者使用 RAII 模式（让对象超出作用域）自动解锁"
-msgstr "In after, ``unlock()``, or RAII (object)."
+msgstr "After finishing data access, always call ``unlock()``, or use the RAII pattern by letting the object go out of scope to unlock automatically."
 
 #: ../../source/api_reference/audio.rst:845
 #: a6c83c90f8cb4dfd954c6fb0add26f2e
@@ -2127,4 +2127,4 @@ msgstr "Sound, FMOD resume, in after."
 #: ../../source/api_reference/audio.rst:878
 #: e15abcb6b5d248488595d712c3be6f46
 msgid "如果数据仍然被锁定，析构函数会自动调用此函数"
-msgstr "If, will."
+msgstr "If the data is still locked, the destructor calls this function automatically."

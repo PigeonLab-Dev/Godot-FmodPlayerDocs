@@ -803,7 +803,7 @@ msgstr ""
 #: ../../source/api_reference/playback.rst:409
 #: 41f439e1a54a4932a4ec8caac971bc07
 msgid "混音矩阵、上混音与下混音的说明和示例见 :ref:`glossary-mix-matrix`。"
-msgstr "Mix matrix, mixing and mixing and :ref:`glossary-mix-matrix`."
+msgstr "For explanations and examples of mix matrices, upmixing, and downmixing, see :ref:`glossary-mix-matrix`."
 
 #: ../../source/api_reference/playback.rst:414
 #: 87d1902b7a7248ec8d62152137df3545
@@ -1412,7 +1412,7 @@ msgstr "BEHAVIOR_FAIL"
 #: ../../source/api_reference/playback.rst:838
 #: 27ddbc834f9949ce909433a125798b0b
 msgid "超过最大可听数量时的处理方式"
-msgstr "Can when."
+msgstr "Behavior when the maximum audible count is exceeded."
 
 #: ../../source/api_reference/playback.rst:840
 #: ea5baec64c6b473eb91f7046d606048f
@@ -1427,7 +1427,7 @@ msgstr "Mute velocity."
 #: ../../source/api_reference/playback.rst:846
 #: 2d9c4284b1a94800a09ba1d61fdd5406
 msgid "SoundGroup 音量，单位为分贝"
-msgstr "SoundGroup volume, unit as."
+msgstr "SoundGroup volume, in decibels."
 
 #: ../../source/api_reference/playback.rst:857
 #: 66386d650eba4de4860fa1df472739b7
@@ -1619,7 +1619,7 @@ msgstr "1"
 #: ../../source/api_reference/playback.rst:994
 #: 8a22a334729e404e9c2ae7b875dc1ede
 msgid "超出的声音从静音开始，直到有足够声音停止后再变得可听"
-msgstr "Sound mute, to sound stop after can."
+msgstr "Extra sounds start muted and become audible after enough other sounds have stopped."
 
 #: ../../source/api_reference/playback.rst:995
 #: d94c504fb4eb450aaee24558d2f028e7
